@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <div class="text-center">
+        <h1 class="text-2xl font-bold">No se encontraron resultados</h1>
+        <p>Tu búsqueda no coincidió con ningún producto: <strong>{{ palabra }}</strong></p>
+        <a href="/" class="text-blue-600 hover:underline">Volver al inicio</a>
+    </div>
+{% endblock %}

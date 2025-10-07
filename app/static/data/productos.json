@@ -1,0 +1,323 @@
+{
+    "bizhub-c3321i": {
+        "titulo": "Bizhub C3321i",
+        "descripcion": "IMPRESORA MULTIFUNCIONAL LASER - color A4, Color y blanco y negro, formatos de papel A6-A4 y tamaño personalizado, copiar, imprimir, escanear y enviar faxes",
+        "imagen": "/static/img/productos/bizhub-c3321i.jpg",
+        "afiche": "/static/pdf/bizhubC3321i.pdf",
+        "precio": "S/ 8,565.50",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.",
+            "MODELO: BIZHUB C3321i.", 
+            "VELOCIDAD COLOR: 33 ppm.", 
+            "VELOCIDAD MONOCROMATICA: 33 ppm.", 
+            "CONECTIVIDAD WLAN: No.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 4096 MB.", 
+            "MEMORIA MAXIMA: MEM.MAX: 4096 MB.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí.", 
+            "RESOLUCION DE IMPRESION: 1200 x 1200 ppp.", 
+            "GARANTIA DE FABRICA: 12 meses on-site.",
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 6500 páginas.", 
+            "CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR.", 
+            "Fecha publicación: 13/02/2025.", 
+            "Fecha de último estado: 13/02/2025."
+        ]
+    },
+
+    "bizhub-c266i": {
+        "titulo": "Bizhub C266i",
+        "descripcion": "Impresora multifuncional A3 para entornos de oficina exigentes.",
+        "imagen": "/static/img/productos/bizhub-c266i.jpg",
+        "afiche": "/static/pdf/bizhubC266i.pdf",
+        "precio": "S/ 19,469.77",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB C226i.", 
+            "VELOCIDAD MONOCROMATICA: 36 ppm.",
+            "CONECTIVIDAD WLAN: Sí.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA MAXIMA: 6 GB.", 
+            "MEMORIA INTERNA: 6 GB", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí.", 
+            "TIPO: T/COLOR.", 
+            "COMPONENTES: CD con software, cable de poder, manual.", 
+            "DUPLEX AUTOMATICO(DA): Si.", 
+            "RESOLUCION DE CAPTURA:  600 ppp.", 
+            "RESOLUCION DE IMPRESION: 600x600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 16000 pg.", 
+            "CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR.", 
+            "Fecha publicación: 13/03/2022.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "bizhub-c451i": {
+        "titulo": "Bizhub C451i",
+        "descripcion": "Impresora multifuncion laser Velocidad: Rápida producción de documentos a 45 ppm en color y B/N.",
+        "imagen": "/static/img/productos/bizhub-c451i.jpg",
+        "afiche": "/static/pdf/bizhubC451i.pdf",
+        "precio": "S/ 38,165.50",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB C451i.", 
+            "VELOCIDAD MONOCROMATICA: 45 ppm.", 
+            "CONECTIVIDAD WLAN: Sí.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 8192 MB.", 
+            "MEMORIA MAXIMA: 8192 MB.", 
+            "SISTEMA DE MANEJO DE RAEE: Indidual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí.", 
+            "RESOLUCION DE IMPRESION: 1200 x 1200 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 40000 pg.", 
+            "CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR.", 
+            "Fecha de publicación: 13/08/2024.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "bizhub-750i": {
+        "titulo": "Bizhub 750i",
+        "descripcion": "Multifuncional láser monocromático con velocidad de impresión 75 PPM; copiado 75 CPM; memoria de 8 GB.",
+        "imagen": "/static/img/productos/bizhub-750i.jpg",
+        "afiche": "/static/pdf/bizhub750i.pdf",
+        "precio": "S/ 47,915.00",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB 750i.", 
+            "VELOCIDAD MONOCROMATICA: 75 ppm.", 
+            "CONECTIVIDAD WLAN: Sí.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 8192 MB.", 
+            "MEMORIA MAXIMA: 8192 MB.,",
+            "SISTEMA DE MANEJO DE RAEE: Individual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí.", 
+            "RESOLUCION DE IMPRESION: 1200 x 1200 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 80000 pg.", 
+            "CERTIFICACION: ISO 14001, ROHS 18001, ISO 9001, ENERGY STAR.", 
+            "Fecha de publicación: 13/08/2024.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "bizhub-c551i": {
+        "titulo": "Bizhub C551i",
+        "descripcion": "Alimentador Dual Scan. Capacidad de papel de 500 + 500 hojas y 150 en entrada manual.",
+        "imagen": "/static/img/productos/bizhub-c551i.jpg",
+        "afiche": "/static/pdf/bizhubC551i.pdf",
+        "precio": "S/ 40,696.30",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB C551i.", 
+            "VELOCIDAD MONOCROMATICA: 55 ppm.", 
+            "CONECTIVIDAD WLAN: Si.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 8192 MB.", 
+            "MEMORIA MAXIMA: 8192 MB.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si.", 
+            "RESOLUCION DE IMPRESION: 1200 x 1200 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 45000 pg.", 
+            "CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR.", 
+            "Fecha de publicación: 13/10/2024.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "bizhub-185en": {
+        "titulo": "Bizhub 185en",
+        "descripcion": "Fotocopiadora bizhub 185en Copiadora A3 monocromo equipada con funciones de impresión GDI y escáner TWAIN.",
+        "imagen": "/static/img/productos/bizhub-185en.jpg",
+        "afiche": "/static/pdf/bizhub185en.pdf",
+        "precio": "S/ 4,280.90",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB 185en.", 
+            "VELOCIDAD MONOCROMATICA: 18 ppm.", 
+            "CONECTIVIDAD WLAN: Sí.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 64 MB.", 
+            "MEMORIA MAXIMA: 64 MB.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): No.", 
+            "RESOLUCION DE IMPRESION: 600x600 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 2500 pg.", 
+            "CERTIFICACION: ISO 14001, ROHS 18001, ISO 9001.", 
+            "Fecha de publicación: 13/03/2022.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "bizhub-367": {
+        "titulo": "Bizhub 367",
+        "descripcion": "Es de gran ayuda y permite ahorrar tiempo a los usuarios. Capacidad de 1150 hojas estándar.",
+        "imagen": "/static/img/productos/bizhub-367.jpg",
+        "afiche": "/static/pdf/bizhub367.pdf",
+        "precio": "S/ 19,280.70",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB 367.", 
+            "VELOCIDAD MONOCROMATICA: 36 ppm.", 
+            "CONECTIVIDAD WLAN: No.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 2048 MB.", 
+            "MEMORIA MAXIMA: 2048 MB.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si.", 
+            "RESOLUCION DE IMPRESION: 600x600 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 20000 pg.", 
+            "CERTIFICACION: ISO 14001, ROHS, ISO 14001, ENERGY STAR.", 
+            "Fecha de publicación: 13/09/2022.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "bizhub-651i": {
+        "titulo": "Bizhub 651i",
+        "descripcion": "Impresora laser monocromática Velocidad: 65/32 páginas por minuto A4/A3.",
+        "imagen": "/static/img/productos/bizhub-651i.jpg",
+        "afiche": "/static/pdf/bizhub651i.pdf",
+        "precio": "S/ 31,154.00",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB 651i.", 
+            "VELOCIDAD MONOCROMATICA: 65 ppm.", 
+            "CONECTIVIDAD WLAN: Si.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 8192 MB.", 
+            "MEMORIA MAXIMA: 8192 MB.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si.", 
+            "RESOLUCION DE IMPRESION: 1200 x 1200 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 50000 pg.", 
+            "CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR.", 
+            "Fecha de publicación: 13/06/2024.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "ECOSYS M8124CIDN": {
+        "titulo": "ECOSYS M8124CIDN",
+        "descripcion": "Una multifuncional para A4/A3 a color con 24ppm en A4. Con su diseño compacto y su magnífica.",
+        "imagen": "/static/img/productos/ECOSYS M8124CIDN.jpg",
+        "afiche": "/static/pdf/pdf-fotocopiadoras/ECOSYSM8124CIDN.pdf",
+        "precio": "S/ 8,900.00",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB ECOSYS M8124CIDN.", 
+            "VELOCIDAD MONOCROMATICA: 24 ppm.", 
+            "VELOCIDAD COLOR: 24 ppm.", 
+            "CONECTIVIDAD WLAN: Si.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 1536 MB.", 
+            "MEMORIA MAXIMA: 1536 MB.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si.", 
+            "RESOLUCION DE IMPRESION: 1200 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 8000 pg.", 
+            "CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR.", 
+            "Fecha de publicación: 13/05/2018.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "ECOSYS MA5500IFX": {
+        "titulo": "ECOSYS MA5500IFX",
+        "descripcion": "Esta multifuncional es perfecta para equipos dinámicos con altas exigencias de productividad y eficiencia de software.",
+        "imagen": "/static/img/productos/ECOSYS MA5500IFX.jpg",
+        "afiche": "/static/pdf/pdf-fotocopiadoras/ECOSYSMA5500IFX.pdf",
+        "precio": "S/ 4,915.42",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB ECOSYS MA5500IFX.", 
+            "VELOCIDAD MONOCROMATICA: 57 ppm.", 
+            "VELOCIDAD COLOR: No aplica.", 
+            "CONECTIVIDAD WLAN: Si.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 1.5 GB.", 
+            "MEMORIA MAXIMA: 3.5 GB.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si.", 
+            "RESOLUCION DE IMPRESION: 1200 x 1200 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 50000 pg.", 
+            "CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR.", 
+            "Fecha de publicación: 13/07/2024.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "ECOSYS PA4000WX": {
+        "titulo": "ECOSYS PA4000WX",
+        "descripcion": "Equipo completo, desde una alta capacidad de papel y conexión Wi-Fi, hasta impresión dúplex y un diseño compacto.",
+        "imagen": "/static/img/productos/ECOSYS PA4000WX.jpg",
+        "afiche": "/static/pdf/pdf-fotocopiadoras/ECOSYSPA4000WX.pdf",
+        "precio": "S/ 1,120.50",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB ECOSYS PA4000WX.", 
+            "VELOCIDAD MONOCROMATICA: 42 ppm.", 
+            "VELOCIDAD COLOR: No aplica.", 
+            "CONECTIVIDAD WLAN: Si.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 512 MB.", 
+            "MEMORIA MAXIMA: 512 MB.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): No.", 
+            "RESOLUCION DE IMPRESION: 1200 x 1200 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 10000 pg.", 
+            "CERTIFICACION: ISO 9001, ISO 14001, ENERGY STAR.", 
+            "Fecha de publicación: 13/01/2025.", 
+            "Fecha de último estado: 13/01/2025."
+        ]
+    },
+
+    "WORKFORCE PRO WF-C5890": {
+        "titulo": "WORKFORCE PRO WF-C5890",
+        "descripcion": "La impresora multifunción a color WorkForce® Pro WF-C5890 presenta la próxima generación de tecnología de impresión.",
+        "imagen": "/static/img/productos/WORKFORCE PRO WF-C5890.jpg",
+        "afiche": "/static/pdf/pdf-fotocopiadoras/WORKFORCEPROWFC5890.pdf",
+        "precio": "S/ 2,358.50",
+        "caracteristicas": [
+            "MARCA: KYOCERA.", 
+            "MODELO: WORKFORCE PRO WF-C5890.", 
+            "VELOCIDAD MONOCROMATICA: 25 ppm.", 
+            "VELOCIDAD COLOR: 25 ppm.", 
+            "CONECTIVIDAD WLAN: Si.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 1024 MB.", 
+            "MEMORIA MAXIMA: 1024 MB.", 
+            "SISTEMA DE MANEJO DE RAEE: Colectivo.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si.", 
+            "RESOLUCION DE IMPRESION: 4800 ppp.", 
+            "RESOLUCION DE CAPTURA: 1200 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 8000 pg.", 
+            "CERTIFICACION: Reach, ISO 14001, ROHS.", 
+            "Fecha de publicación: 13/10/2024.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    }
+
+}
+
+
+

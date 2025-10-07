@@ -1,0 +1,1558 @@
+.topbar-custom {
+  background: linear-gradient(90deg, #006eff, #007bff);
+  color: white;
+  padding: 0.7rem 0;
+  font-size: 0.9rem;
+  border-bottom: 2px solid #0056b3;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+.social-icon {
+  color: white;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  padding: 5px 8px;
+  border-radius: 50%;
+}
+.social-icon:hover {
+  color: #fff;
+  background-color: #0056b3;
+  border: 1px solid #ffffff66;
+  box-shadow: 0 0 8px #ffffff99;
+}
+
+
+/*darle forma al titulo de la cinta de la cabecera del nombre de la empresa*/
+.nombre-empresa {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Para que se ajuste en móviles */
+  gap: 10px;
+}
+
+/* Cuadro con estilo #f0f0f0*/
+.nombre-box {
+  background-color: #FFF;
+  padding: 6px 12px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Efecto al pasar el mouse #d3e7d9*/
+.nombre-box:hover {
+  background-color: #FF5;
+  transform: translateY(-6px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Teléfono normal */
+.telefono {
+  color: #333;
+  font-weight: normal;
+}
+
+/* 🎯 Responsive para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+  .nombre-empresa {
+    justify-content: center;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .nombre-box {
+    padding: 4px 10px;
+    font-size: 15px;
+  }
+
+  .telefono {
+    font-size: 14px;
+  }
+}
+
+
+/* El buscador tendrá tamaño más pequeño y responsive */  
+.search-form-wrapper {  
+  /* Puedes ajustar el tamaño */  
+  width: 100%;  
+  max-width: 250px; /* ajusta si quieres más grande o más pequeño */  
+}  
+
+/* Ajuste en dispositivos móviles */  
+@media (max-width: 576px) {  
+  /* Oculta el formulario si quieres que solo se vea el icono y despliegue en móvil */  
+  .search-form-wrapper {  
+    width: 100%;  
+  }  
+  /* Opcional: ocultar formulario por defecto y mostrar solo con clic */  
+  /* .search-form-wrapper { display: none; } */  
+  /* y en .search-toggle: active { display: block; } */  
+}  
+
+
+.logo-img {
+  max-width: 100%;
+  height: auto;
+  width: 180px; /* Tamaño fijo para escritorio */
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    width: 120px; /* Tamaño más pequeño para móvil */
+  }
+
+  .header-center {
+    display: none !important; /* Oculta el menú central en móvil */
+  }
+}
+
+/* Ancho máximo del contenedor del header */
+.header-row.container {
+  max-width: 100%;       /* Ocupa todo el ancho */
+  padding: 0 30px;       /* Añade espacio a los lados */
+}
+.logo-img {
+  max-height: 60px;   /* Puedes ajustar a lo que necesites */
+  height: auto;       /* Mantiene proporción */
+  width: auto;
+}
+
+.logo-img:hover {
+  transform: scale(1.05);  /* Solo 5% más grande */
+  cursor: pointer;         /* Cambia a manito */
+}
+/* Menú de navegación centrado y con letras negras grandes */
+.header-center ul li a {
+  font-size: 1rem;         /* Tamaño de letra más grande */
+  font-weight: 500;
+  color: #000 !important;  /* Fuerza el color negro */
+  text-decoration: none;
+}
+.header-center ul li a:hover {
+  color: #d5192c !important; /* Color rojo al pasar el mouse */
+}
+/* Íconos del menú */
+.header-center ul li i {
+  color: #d5192c; /* Flechita roja */
+}
+/* Espaciado entre columnas 
+.header-col {
+  flex: 1;
+  padding: 4 10px;
+}
+*/
+/* Ajuste para el buscador para que no quede apretado */
+.search-form-wrapper {
+  max-width: 100%;
+}
+
+
+/* Contenedor principal del formulario */
+.search-form-wrapper {
+  max-width: 400px; /* aqui podemos ajustar todo el contenido del buscador */
+  margin: auto;
+}
+
+/* Grupo de búsqueda tipo pill */
+.pill-search-group {
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Input de texto */
+.buscador-input {
+  border: none;
+  border-right: 1px solid #ddd;
+  padding: 0.6rem 1rem;
+  font-size: 0.9em;
+  border-radius: 30px 0 0 30px;
+  background-color: #f8f9fa;
+}
+
+/* Select de categorías */
+.buscador-select {
+  border: none;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  font-size: 0.9em;
+  background-color: #f8f9fa;
+  padding: 0 1rem;
+}
+
+/* Botón rojo con ícono blanco */
+.btn-buscar {
+  background-color: #d5192c;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0 30px 30px 0;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-buscar:hover {
+  background-color: #a91423;
+}
+.btn-buscar i {
+  color: white;
+  font-size: 0.8rem;
+}
+
+/* Responsive: centrado en móviles */
+@media (max-width: 576px) {
+  .form-busqueda {
+    max-width: 100%;
+    margin-top: 10px;
+  }
+} 
+
+/*ejemplo*/ 
+.custom-carousel-btn {
+    background-color: red; 
+    border: none;
+    border-radius: 50%;
+}
+
+.carousel-control-prev .custom-icon,
+.carousel-control-next .custom-icon {
+    color: blue;
+    font-size: 2rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.5); /* fondo semitransparente */
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Aqui terminamos con la cabecera de stylos */
+/* Cinta verde del header terminacio cabecera*/
+/* Cinta verde general #0a5c0a*/
+.cinta-verde {
+  background-color: #4B4;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 50px; /* Ajusta según lo que necesites */
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.texto-marquesina-unica {
+  display: inline-block;
+  position: absolute;
+  white-space: nowrap;
+  will-change: transform;
+  animation: deslizarTexto 25s linear infinite;/*correr-unico 10s linear forwards;*/
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #fff;
+  font-size: 18px;
+  padding-left: 100%;
+  transition: color 0.3s ease;
+  top: 25%;
+  transform: translateY(-50%);
+}
+
+.texto-marquesina-unica:hover {
+  color: #ffeb3b;
+}
+
+.icono {
+  margin: 0 10px;
+}
+
+@keyframes deslizarTexto {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .texto-marquesina-unica {
+    font-size: 14px;
+    animation-duration: 12s;
+  }
+  .cinta-verde {
+    height: 40px;
+  }
+}
+
+
+/* Desde aqui ya vamos haciendo stylos con todo el cuerpo de la pagina*/
+/* Primero vamos a hacemos el stylo de los sliders o carruseles*/
+/* Ocultar texto en móviles, mostrar botón */
+.caption-responsive {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+}
+/* Texto para escritorio */
+.desktop-text {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 10px 20px;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+  /*display: none;  Oculto por defecto, se muestra con media query */
+}
+
+/* Botón centrado solo en móviles */
+.mobile-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  position: relative; /* Cambiado de absolute a relative */
+  transform: none;
+  top: auto;
+  left: auto;
+}
+/* Botón estilos */
+/* Estilo del botón */
+.mobile-button .btn {
+  background-color: #F80;
+  color: white;
+  border: none;
+  padding: 6px 16px; /* más pequeño */
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.mobile-button .btn:hover {
+  background-color: #0b74d0;
+  transform: scale(1.05);
+}
+
+/* Asegura altura uniforme en todas las pantallas */
+.slide-img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.imagen-categoria:hover {
+    transform: scale(1.06);
+}
+
+/* Insertando video para la cabecera de los sliders el ultimo sliders 4*/
+.slide-img,
+.slide-video {
+  height: 400px;
+  object-fit: cover;
+}
+
+.video-slide-container {
+  position: relative;
+}
+
+/*
+.caption-responsive {
+  position: absolute;
+  bottom: 20%;
+  left: 10%;
+  text-align: left;
+}
+*/
+@media (min-width: 768px) {
+  .desktop-text {
+    display: block;
+    animation: fadeIn 1s ease-in-out;
+  }
+  .mobile-button {
+    display: none;
+  }
+}
+
+/* Mostrar el texto solo en pantallas medianas o mayores */
+@media (max-width: 576px) {
+  .slider-container {
+    margin-bottom: 0.1rem !important; /* reducir separación debajo del slider */
+    padding-bottom: 0 !important;
+  }
+
+  .caption-responsive {
+    bottom: 10px; /* menos separación del borde inferior */
+  }
+
+  .seccion-categorias {
+    margin-top: 0.5rem !important;
+  }
+}
+
+/* Animación fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Aqui ahora va el estilo para secciones de nuestras categorias*/
+/* Título con línea */
+.titulo-ajustada {
+    font-size: 17px;
+    letter-spacing: 3px;
+}
+
+.ajuste-cercano {
+  margin-top: -10px; /* o -20px si es necesario */
+}
+
+.linea-flex {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #999;
+    max-width: 350px;
+}
+
+/*#f3f4f6*/
+.box-categoria {
+    background-color: #AAA;
+    border-radius: 10px;
+    padding: 0.3rem 0.5rem; /* menos padding lateral */
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.box-categoria:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.seccion-categorias {
+    background-color: #8DD; /* #f5f0f4 un rosado suave, ajusta si es otro */
+    padding: 1.5rem 1rem;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: 1.5rem auto;
+}
+/* Para que la imagen cresca al pasar el mouse*/
+.imagen-categoria {
+    width: 90%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    /*object-fit: contain;*/
+    transition: transform 0.3s ease; /* animación suave */
+    cursor: pointer;
+}
+.imagen-categoria:hover {
+    transform: scale(1.09); /* crece 5% */
+
+}
+
+
+.texto-categoria {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.cantidad-productos {
+    font-size: 11px;
+    color: #000;
+    font-weight: 500;
+}
+
+@media (max-width: 576px) {
+    .seccion-categorias{
+        padding: 0.5rem 0.5rem;
+        margin-top: 0.1rem;
+    }
+
+    .imagen-categoria {
+        width: 100%
+        max-height: 10px;
+    }
+
+    .box-categoria{
+        padding: 0.2rem 0.4rem;
+    }
+
+    .texto-categoria {
+      font-size: 13px;
+    }
+
+    .cantidad-productos {
+      font-size: 9px;
+    }
+
+    .linea-flex {
+      max-width: 60px;
+    }
+}
+
+/* Desde aqui va la seccion de nuestros productos destacados con sytylos personalizados */
+/* ESTILO DEL TÍTULO DE SECCIÓN DESTACADA */
+.seccion-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.linea {
+  flex-grow: 1;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.titulo-destacado {
+  font-size: 1.2rem; /* Más pequeño que antes */
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif; /* Fuente profesional */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+  text-align: center;
+}
+
+/* Esta parte es para el diseño abrir otra pagina hija con marcador */
+.resaltado-producto {
+  border: 3px solid #0a66a4;
+  background-color: #f0f8ff;
+  transition: all 0.5s ease;
+}
+
+/* RESPONSIVE PARA MÓVILES */
+@media (max-width: 576px) {
+  .titulo-destacado {
+    font-size: 1.1rem;
+  }
+}
+
+
+/* Estilo para los sliders del titulo  */
+/* Estilo base para los títulos del slider */
+.slider-titulo {
+  font-size: 1.0rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  color: #333;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Línea decorativa inferior */
+.slider-titulo::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  left: 20%;
+  bottom: 0;
+  background-color: currentColor;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.slider-titulo:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Colores personalizados por slider */
+.slider-color {
+  color: #6C63FF; /* Lavanda suave */
+}
+
+.slider-mono {
+  color: #00BFA6; /* Verde agua claro */
+}
+
+.slider-kyocera {
+  color: #FFA500; /* Naranja claro */
+}
+
+/* Responsive para móviles */
+@media (max-width: 576px) {
+  .slider-titulo {
+    font-size: 1.1rem;
+    padding: 0 10px;
+  }
+}
+
+/* Aqui es donde personalizamos los stilos de las tarjetas sliders de los productos */
+/* Estilo general de la tarjeta de los sliders para cada producto */
+
+/* Para que el cuerpo siempre empuje hacia abajo si falta altura */
+.producto-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+.producto-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Nombre del producto color-nombre-#6a1b9a*/
+.producto-nombre {
+  background-color: #ede7f6; /* lavanda suave */
+  color: #ff334f;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  padding: 0.3rem;
+  border-radius: 4px;
+}
+
+/* Precio */
+.producto-precio {
+  background-color: #f3e5f5; /* rosado-lila claro */
+  color: #4a148c;
+  font-weight: bold;
+  font-size: 0.95rem;
+  padding: 0.3rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+/* Separador decorativo */
+.separador-producto {
+  height: 2px;
+  width: 100%;
+  background-color: #9575cd;
+  border-radius: 2px;
+  margin: 10px 0;
+}
+
+/* Detalles y oferta abajo */
+.producto-footer {
+  font-size: 0.85rem;
+}
+
+/* Estilo para el enlace "Detalles" */
+.producto-detalles {
+  color: #6a1b9a;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.producto-detalles:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .producto-card {
+    width: 100%;
+  }
+
+  .producto-nombre,
+  .producto-precio {
+    font-size: 1rem;
+  }
+
+  .producto-footer {
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: flex-start;
+  }
+}
+
+/* diseño giratorio caracteristicas general que sera para las tarjetas de los productos las caracteristicas giratorias*/
+/* Contenedor general */
+/* Contenedor principal */
+.producto-card {
+    perspective: 1000px;
+    width: 15rem;
+    min-height: 20rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+    position: relative;
+}
+
+/* Contenedor que rota pointer-events: none;*/
+.producto-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  
+}
+
+/* Soporte para móviles con clase toggle 
+.producto-card-inner.volteado {
+  transform: rotateY(180deg);
+}*/
+
+/* Frente y reverso */
+.producto-card-front,
+.producto-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+/* Paso 4: evitar que el hover active el efecto cuando el cursor está sobre el footer 
+.producto-footer {
+  pointer-events: none;
+}*/
+
+/* Paso 5: aplicar el efecto flip solo si NO se está sobre producto-footer */
+.producto-card:hover:not(:has(.producto-footer:hover)) .producto-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Frente */
+.producto-card-front {
+  background: #fff;
+  z-index: 2;
+}
+
+/* Reverso */
+.producto-card-back {
+
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    transform: rotateY(180deg);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow:visible;
+}
+
+.contenido-caracteristicas {
+  width: 100%;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 35px;
+  padding-left: 1px;
+  padding-right: 1px;
+  
+}
+
+.titulo-caracteristicas {
+  background-color: #33ffb8; /* Color de fondo suave f0f0f5*/
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  color: #333; /* Letra elegante y oscura */
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 5px 45px;
+  border-radius: 20px;
+  margin-bottom: 38px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  border: 1px solid #ccc;
+  text-align: center;
+
+}
+
+.kyocera-back .titulo-caracteristicas {
+  margin-bottom: 35px; /* más separación del contenido */
+}
+
+/* Imagen */
+.producto-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive: no girar en móvil */
+@media (max-width: 768px) {
+  .producto-card:hover .producto-card-inner {
+    transform: none;
+  }
+  .producto-card-back {
+    display: none;
+  }
+}
+
+/* EN esta parte es el diseño de las targetas parte atras de las caracteristicas del producto*/
+.producto-card-back {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+  max-height: 100%;
+  box-sizing: border-box;
+}
+
+.producto-card-back h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #343a40;
+}
+
+.producto-card-back ul {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  margin: 0;
+  text-align: left;
+  max-width: 90%;
+}
+
+.producto-card-back ul li {
+  margin-bottom: 4px;
+  font-size: 0.65rem;
+  line-height: 1.3;
+  word-wrap: break-word;
+}
+
+/* Estilo para resaltar subtítulos dentro de los <li> */
+.producto-card-back ul li strong {
+  font-weight: 700;
+  color: #222;
+}
+
+/* Estilo para elevar el número (g/m²) */
+.sup {
+  vertical-align: super;
+  font-size: 0.7em;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .producto-card {
+    max-width: 90%;
+  }
+
+  .producto-card-inner:hover {
+    transform: none; /* Desactiva hover en móviles */
+  }
+}
+
+/* Esta parte es para las flechas izquierda y derecha de los sliders de nuestros productos destacados */
+.custom-carousel-btn {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.carousel-control-prev.custom-carousel-btn {
+  left: 4px; /* Ajusta más cerca del borde del slider */
+}
+.carousel-control-next.custom-carousel-btn {
+  right: 4px; /* Ajusta más cerca del borde del slider */
+}
+
+.custom-icon {
+  font-size: 1.3rem;
+  color: #6A1B9A;
+}
+
+.carousel-wrapper {
+  max-width: 1200px; /* o el ancho que se ajuste a la cantidad visible de tarjetas */
+  margin: 0 auto;
+  position: relative;
+}
+
+
+
+/* En esta parte estilizaremos toda la parte de la seccion de productos de toners y guillotinas*/
+
+.titulo-seccion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem; /* Ajusta aquí el tamaño */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    margin-top: -0.7rem;       /* opcional: lo sube más si está muy abajo */
+}
+
+.titulo-seccion::before,
+.titulo-seccion::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #333; /* Color de la línea */
+    margin: 0 1rem;
+    opacity: 0.5;
+}
+
+.producto-cards {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    background-color: #f9f9f9; /* color de fondo base */
+    /*max-width: 230px;  o 200px si deseas más pequeñas */
+    margin: auto; /* para centrar */
+    max-height: 325px; /* Puedes ajustar según necesidad */
+    overflow: hidden;
+}
+
+.producto-cards:hover {
+    transform: scale(1.06);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.producto-cards img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    max-height: 150px; /* o ajústalo a lo que se vea bien */
+    object-fit: contain; /* o "cover" si prefieres recorte */
+    width: 100%;
+}
+
+.producto-cards:hover img {
+    transform: scale(1.08);
+    filter: brightness(80%);
+}
+
+/* Cambiando color #3368ff  scale(0.8)*/
+
+/* Estilo base para todas las flechas de los tóners */
+.producto-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem; /* tamaño inicial */
+    color: #dc3545; /* color base (rojo ejemplo) */
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    pointer-events: none; /* no bloquea clics */
+}
+
+/*  transform: translateY(0);*/
+.producto-cards:hover .producto-arrow {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(360deg);
+}
+
+/* Para achicar un poco todas las tarjetas en general 
+.producto-cards .card-body {
+    font-size: 0.75rem;
+    padding: 1.1rem;
+  }*/
+
+/* === CARD BODY PERSONALIZADO ESTILO GENERAL === */
+.producto-cards .card-body {
+    background-color: #f1f1f1; /* #f9ff33 .3s ease;*/
+    font-size: 0.85rem;
+    padding: 1.2rem;
+}
+
+.producto-cards:hover .card-body {
+    background-color: #f9ff33; /* #e0e0e0 color al hacer hover */
+}
+
+/* Toner amarillo */
+.toner-amarillo {
+  background-color: #fffec5; /* fondo base */
+}
+.producto-cards:hover .toner-amarillo {
+  background-color: #f9ff33; /* al pasar mouse */
+}
+
+/* Toner magenta */
+.toner-magenta {
+  background-color: #ffe6f1;
+}
+.producto-cards:hover .toner-magenta {
+  background-color: #ff33a8;
+}
+
+/* Toner cian */
+.toner-cian {
+  background-color: #e6f7ff;
+}
+.producto-cards:hover .toner-cian {
+  background-color: #33c7ff;
+}
+
+/* Toner negro */
+.toner-negro {
+  background-color: #e9e9e9;
+}
+.producto-cards:hover .toner-negro {
+  background-color: #333;
+  color: white;
+}
+
+/* Aqui va ya el diseño para encerrar los nombres del producto de toners y guillotinas*/
+/* Estilo base para todos los badges */
+.badge-color {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 0.75rem;
+  background-color: #fff;
+  border: 2px solid;
+  transition: all 0.3s ease;
+}
+
+/* Badge amarillo */
+.toner-amarillo-badge {
+  color: #e6b800;
+  border-color: #e6b800;
+}
+
+/* Badge magenta */
+.toner-magenta-badge {
+  color: #d63384;
+  border-color: #d63384;
+}
+
+/* Badge cian */
+.toner-cian-badge {
+  color: #0dcaf0;
+  border-color: #0dcaf0;
+}
+
+/* Badge negro */
+.toner-negro-badge {
+  color: #000;
+  border-color: #000;
+}
+
+/*PARA LOS COLORES DE LA FLECHA EN LAPTOS*/
+.arrow-amarillo {
+  color: #f9ff33; /* Amarillo */
+}
+.arrow-cian {
+  color: #3368ff; /* Azul */
+}
+
+.arrow-magenta {
+  color: #ff33d4; /* Magenta */
+}
+
+.arrow-negro {
+  color: #333; /* Negro u otro tono */
+}
+
+/* Al pasar el mouse por la tarjeta, el badge crece un poco */
+.producto-cards:hover .badge-color {
+  transform: scale(1.1);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+
+/* Cambiar color del texto al hacer hover en la tarjeta */
+/* El primer <p> (ej: marca, rendimiento) */
+/* Color base normal para ambos textos */
+.card-body p {
+  transition: color 0.3s ease;
+  color: #000; /* negro por defecto */
+}
+
+/* Texto "Marca" cambia a rojo SOLO al pasar el mouse sobre él */
+.card-body p.marca-hover:hover {
+  color: #dc3545 !important; /*  rojo */
+}
+
+/* Texto "COLOR" cambia a azul SOLO al pasar el mouse sobre él */
+.card-body p.color-hover:hover {
+  color: #3368ff; /* azul */
+}
+
+.producto-cards img {
+    max-height: 195px;
+    object-fit: cover;
+}
+
+/* RESPONSIVE (opcional para reducir más en móviles) */
+
+@media (max-width: 768px) {
+  .producto-cards {
+    max-height: 95%;
+    max-width: 100%;
+
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .producto-cards img {
+    max-height: 140px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-body {
+    padding: 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .badge-color {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    white-space: nowrap;
+  }
+
+  .producto-arrow {
+    display: none; /* O escalar más pequeño */
+  }
+}
+
+/* Desde aqui diseñamos la parte de la segunda seccion de guillotinas */
+/* Fondo suave solo para esta sección #f9f9f9 #f5f5f5*/
+.card-guillotina {
+    border-radius: 1rem; /* Bordes curvos */
+    overflow: hidden;
+    transition: transform 0.4s ease;
+    border: 2px solid #dee2e6; /* Borde más grueso por defecto */
+    position: relative;
+    min-height: 400px; /* o el valor que quieras */
+}
+
+/* 1 #eaecee, 2 #f1c40f, 3 #2ecc71 */
+.bg-soft-guillotinas {
+    background-color: #2ecc71;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0.9rem;
+}
+/* Efecto de hover en la tarjeta */
+.card-guillotina:hover {
+    transform: scale(1.06);/* Borde más grueso por defecto */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.20);
+    cursor: pointer;
+}
+/* Imagen que crece al pasar el mouse */
+.card-guillotina img {
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: 250px;/*60* padding-top: 20px;*/
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.card-guillotina:hover img {
+    transform: scale(1.02); /* Imagen crece */
+    filter: brightness(0.7); /* Se oscurece ligeramente */
+}
+
+.card-guillotina:hover .flecha-hover {
+    opacity: 4;
+    transform: translateX(8px);
+}
+
+/* Flecha centrada sobre la imagen  font-weight: bold;*/
+.flecha-hover {
+    font-size: 4.1rem;
+    font-weight: 980; /* 👈 más gruesa si la fuente lo soporta */
+    transition: all 0.9s ease;
+    opacity: 0;
+    display: inline-block;
+    margin-left: 5px;
+    color: #dc3545;
+    pointer-events: none; /* para que no bloquee el clic debajo */
+    text-shadow: 0 0 2px #dc3545, 0 0 3px #dc3545; /* 👈 simula borde/grosor */
+    /* sombra para que se note más text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);*/
+}
+/* Mostrar flecha cuando se pasa el mouse sobre la tarjeta */
+.card-guillotina:hover .flecha-hover {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2) rotate(720deg);
+    pointer-events: auto;
+}
+/* Texto de características */
+.cards-bodys p.text-muted {
+    background-color: rgba(255, 215, 0, 0.15); /* fondo amarillo claro */
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Cambiar color de texto de características al pasar mouse por tarjeta */
+.card-guillotina:hover .cards-bodys p.text-muted {
+    color: #d63384; /* rosado/magenta */
+    background-color: rgba(255, 215, 0, 0.35); /* más intenso */
+}
+/* Título no cambia */
+.cards-bodys .product-title {
+    color: #212529; /* negro */
+}
+
+.titulo-enmarcado {
+    background-color: #ffffff;
+    border-radius: 60px;
+    padding: 6px 16px;
+    display: inline-block;
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Cambiar color al hacer hover en toda la tarjeta */
+.card-guillotina:hover .titulo-enmarcado {
+    background-color: #f8f9fa;
+    color: #5555ff; /* Rojo para resaltar #dc3545  #dc3545*/
+    border-color: #0000FF;
+    border-width: 1px; /* Más grueso */
+}
+
+
+/* Aqui vamos hacer ya culminando la pagina la cinta de propagandas */
+.cinta-propaganda img {
+  max-height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.cinta-propaganda img:hover {
+  transform: scale(1.04);
+}
+
+.cinta-ajustada {
+  background: #0051A1; /* azul corporativo */
+  height: 200px;
+  overflow: hidden;
+  background-image: url("/static/img/cinta-fondo.png"); /* opcional, si quieres una textura */
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+  .cinta-ajustada {
+    height: 200px;
+    padding: 1rem;
+  }
+
+  .cinta-ajustada h2 {
+    font-size: 1.2rem;
+  }
+
+  .cinta-ajustada p {
+    font-size: 0.75rem;
+  }
+}
+
+/* AQUI cinta de marcas de fotocopiadoras */
+.titulos-logos {
+  font-size: 1.1rem; /* Puedes ajustar a 2.2rem, 2.5rem, etc. si deseas más grande */
+  font-weight: 700;
+  color: #1d1d1d; /* Color oscuro personalizado */
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.logos-section {
+  background-color: #ffffff;
+}
+
+.logos-container {
+  gap: 2rem;
+}
+
+.logos-img {
+  height: 90px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logos-img:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .logos-img {
+    height: 32px;
+  }
+
+  .logos-container {
+    gap: 1rem;
+  }
+
+  .logos-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Aqui hacemos los estilos de nuestros valores */
+.valor-icono {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.valor-icono:hover {
+  transform: scale(1.4);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.titulo-valores {
+  font-size: 1.2rem; /* Puedes ajustar a 2.2rem, 2.5rem, etc. si deseas más grande */
+  font-weight: 700;
+  color: #1d1d1d; /* Color oscuro personalizado */
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* AQUI cinta final serca al pie de la pagina */
+.cinta-final{
+  background-color: #004aad;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 50px; /* Ajusta según lo que necesites */
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Desde aqui podemos hacer todos los estilos que tenemos para las funcionalidades */
+/* Estilo para dropdown en tu estructura */
+.header-center .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+  background-color: white;
+  border: 1px solid #ddd;
+  z-index: 1000;
+}
+
+.header-center .dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.header-center .dropdown-item {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.header-center .dropdown-item:hover {
+  background-color: #b3b6b7;
+  color: white;
+}
+/* Desde aqui hacemos que la cabecera header tenga un estilo al pasar el scrooll para mas abajo */
+/* Fija el header */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: all 0.3s ease;
+  background-color: white;
+  box-shadow: none;
+}
+
+/* Estilo al hacer scroll */
+.sticky-header.scrolled {
+  background-color: #ffffffee; /* Blanco semitransparente */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  transform: scale(0.98);
+}
+
+/* También puedes animar la topbar si deseas */
+#topbar {
+  transition: opacity 0.6s ease;
+}
+#topbar.scrolled {
+  opacity: 0.95;
+}
+
+
+/* Estilo de header al hacer scroll */
+.sticky-header.scrolled {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  transform: scale(0.98);
+}
+
+/* Logo transición */
+#logo {
+  transition: transform 0.3s ease;
+}
+
+
+/* Aqui es donde al seleccionar un producto desde el inicio nos marca el cuadro de ver detalles */
+.producto.seleccionado {
+  background-color: #d1e7dd; /* verde claro */
+  border-left: 4px solid #0d6efd; /* borde azul */
+  padding-left: 4px;
+  border-radius: 0.5rem;
+}
+
+
+/* Aqui vamos a diseñar para la pagina hija de consumibles el formulario y la tabla */
+
+#buscadorConsumibles {
+  transition: all 0.3s ease;
+}
+#buscadorConsumibles:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 8px rgba(220, 53, 69, 0.4);
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(220, 53, 69, 0.05);
+}
+
+.btn-outline-danger {
+  border-radius: 2rem;
+  transition: all 0.2s ease;
+}
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+  transform: scale(1.05);
+}
+
+.modal-content {
+  border-radius: 1rem;
+}
+
+
+
+
+
+/* Sección general */
+#consumibles-section {
+  background-color: #f8f9fa; /* fondo suave */
+  padding: 2rem 0;
+}
+
+/* Banner */
+#consumibles-section .banner-consumibles {
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  max-height: 220px;
+  object-fit: cover;
+}
+
+/* Cuadro informativo */
+.info-box {
+  background: white;
+  border-left: 5px solid #dc3545;
+  border-radius: .5rem;
+  padding: 1rem 1.2rem;
+  font-size: .9rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+}
+
+/* Formularios */
+#solicitudForm {
+  background: white;
+  padding: 1rem;
+  border-radius: .5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#solicitudForm .form-control:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 8px rgba(220,53,69,0.25);
+}
+
+/* Buscador */
+#buscador {
+  border-radius: 2rem;
+  padding-left: 1rem;
+  transition: all .3s ease;
+}
+#buscador:focus {
+  border-color: #dc3545;
+  box-shadow: 0 0 8px rgba(220,53,69,0.3);
+}
+
+/* Tabla */
+.table-hover tbody tr:hover {
+  background-color: rgba(220,53,69,0.05);
+}
+
+/* Botones */
+.btn-outline-danger {
+  border-radius: 2rem;
+  transition: all .2s ease;
+}
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+  transform: scale(1.05);
+}
+
+.btn-success.seleccionar-btn {
+  border-radius: 2rem;
+  font-weight: 500;
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 1rem;
+}
+
+
+/* Diseñando el titulo para todos los consumibles */
+/* Título principal dinámico */
+
+
+/* Estilo para el card de la targeta del carrito */
+
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  background: #f8f9fa;
+  border-left: 1px solid #ddd;
+  padding: 15px;
+  overflow-y: auto;
+  z-index: 1050; /* Para que quede encima */
+}
+
+
+/*CSS para la ventanita (notificación lateral) de solitud de consumibles*/
+

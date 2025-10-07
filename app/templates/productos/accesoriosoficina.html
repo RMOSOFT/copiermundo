@@ -1,0 +1,489 @@
+{% extends "index.html" %}
+
+{% block content %}
+<!-- Header with background image and text -->
+<div class="relative w-full h-32 sm:h-40 md:h-40 lg:h-44 xl:h-48">
+    <img alt="Impresora en fondo oscuro con pantalla y bandejas" class="w-full h-full object-cover" height="288" src="{{ url_for('static', path='img/productos-guillotinas/img-cinta-accesorios.png') }}" width="1930"/>
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-10 flex items-center justify-between px-6 sm:px-10 md:px-16">
+        <h1 class="text-white text-xl sm:text-2xl md:text-3xl font-normal">
+            PRODUCTO GUILLOTINAS
+        </h1>
+        <a class="text-white text-xs sm:text-sm md:text-base flex items-center gap-1 hover:underline" href="/productos/fotocopiadoras">
+            <i class="fas fa-chevron-left text-xs">
+            </i>
+            Volver a página anterior
+        </a>
+    </div>
+</div>
+
+
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6">
+    <div class="flex flex-col md:flex-row md:space-x-8">
+        <!-- Left sidebar -->
+        <aside class="w-full md:w-64 border-r border-gray-300 pb-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="font-semibold text-sm sm:text-base uppercase">
+                    BÚSQUEDA DE PRODUCTOS
+                </h2>
+                <div class="border-b border-gray-300 w-12">
+                </div>
+            </div>
+            <div>
+                <button aria-expanded="true" class="flex items-center justify-between w-full text-xs sm:text-sm font-normal text-gray-700 uppercase mb-2" type="button">
+                    <span>
+                        SECCION DE CATEGORIAS
+                    </span>
+                    <span class="text-2xl leading-none select-none">
+                        −
+                    </span>
+                </button>
+                <ul class="text-xs sm:text-sm font-normal text-gray-500 border-t border-b border-gray-300 divide-y divide-gray-300">
+                    <a href="/productos/fotocopiadoras">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES NUEVAS
+                            </span>
+                            <span class="text-gray-400">
+                                (16)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-seminuevas">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES SEMINUEVAS
+                            </span>
+                            <span class="text-gray-400">
+                                (7)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-seminuevas-series-8">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES SEMINUEVAS-SERIES(8)
+                            </span>
+                            <span class="text-gray-400">
+                                (5)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/tonerescartuchos">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                RECARGAS TONERS Y CARTUCHOS
+                            </span>
+                            <span class="text-gray-400">
+                             (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-color">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS A COLOR
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-monocromaticas">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MONOCROMÁTICAS
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/accesoriosoficina">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                ACCESORIOS DE OFICINA
+                            </span>
+                            <span class="text-gray-400">
+                                (8)
+                            </span>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="mb-8">
+            </div>
+
+            <!-- Filtro de precio dentro del <aside> -->
+            <div class="mt-4">
+                <h3 class="text-md font-semibold mb-2">Filtrar por precio</h3>
+                <form id="filtro-precio" method="get" class="space-y-2" action="/productos/filtro-precios-accesorios" >
+                    <input type="number" name="min" id="precio-min" placeholder="Mínimo" class="pl-6 pr-2 px-3 py-1 w-60 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"/>
+                    <input type="number" name="max" id="precio-max" placeholder="Máximo" class="pl-6 pr-2 px-3 py-1 w-60 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"/>
+                    <button type="submit" class="bg-blue-500 text-white px-3 py-1 rounded w-60 hover:bg-blue-700">
+                        Filtrar
+                    </button>
+                </form>
+            </div>
+
+            <div class="mb-8">
+            </div>
+
+            <div>
+                <h3 class="text-xs font-bold uppercase mb-1 border-b border-gray-300 pb-2 font-semibold text-sm sm:text-base uppercase">
+                    PRODUCTOS VISTOS
+                </h3>
+                <ul class="space-y-6 text-xs">
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c266i.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub c266i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                S/ 18,149.46
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c3321i.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub-C3321i: IMPRESORA MONOCROMÁTICA DE ALTA VELOCIDAD PARA GRUPOS
+                                DE TRABAJO  
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                S/ 7,925.40
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="https://storage.googleapis.com/a1aa/image/90bae295-9001-4e53-4fd7-936b12ff77ae.jpg" width="40"/>
+                        <div>
+                            <p>
+                                BIZHUB 360I: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                S/ 28,427.69
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-185en.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub 185en: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                $ 3,940.50
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c451i.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub c451i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                $ 35,501.50
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Right content -->
+        <section class="flex-1">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-300 pb-4 mb-4">
+                <div class="flex items-center space-x-2 mb-3 sm:mb-0">
+                    <select aria-label="Ordenar productos" class="border border-gray-300 rounded px-3 py-1 text-xs sm:text-sm">
+                        <option>
+                         Orden predeterminado
+                        </option>
+                    </select>
+                    <button aria-label="Vista en cuadrícula" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                        <i class="fas fa-th">
+                        </i>
+                    </button>
+                    <button aria-label="Vista en lista" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                        <i class="fas fa-list">
+                        </i>
+                    </button>
+                </div>
+                <nav aria-label="Paginación" class="flex items-center space-x-2 text-xs sm:text-sm text-gray-700">
+                    <button aria-current="page" class="bg-black text-white px-3 py-1" disabled="">
+                        1
+                    </button>
+                    <button class="hover:underline px-1">
+                        2
+                    </button>
+                    <span>
+                        ..
+                    </span>
+                    <button class="hover:underline px-1">
+                        5
+                    </button>
+                    <button aria-label="Siguiente página" class="px-1">
+                        <i class="fas fa-angle-double-right">
+                        </i>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Desde aqui son los productos que hay para todo tipo de guillotinas -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                <article class="text-center text-xs sm:text-sm">
+                    <button onclick="mostrarDetallesProducto(
+                      'GUILLOTINA-METALICA-WARRIOR-A3',
+                      'Esta guillotina profesional de calidad industrial ofrece una capacidad de corte de 18 x 15 cm, e incluye una hoja metálica para una precisión de corte superior. ',
+                      'img/productos-guillotinas/guillotina-a3-18-x-15-cap-15-hjs-metalica-warrior.jpg',
+                      'S/ 342.96',
+                      `MARCA: Guillotina A3 21061 de Warrior. MODELO: 21061. TAMAÑO: A3, 18x15″ (500 x 400mm). CAPACIDAD DE CORTE: 12 hojas de 75gr. Cuchilla redondeada. PIE: Con patitas de base anti deslizable. CUERPO: Cuerpo de metal. LONGITUD DE CORTE: 470mm.`,
+                      '/static/pdf/pdf-accesorios/guillotina-warrior-A3.pdf'
+                    )">
+                        <img src="{{ url_for('static', path='img/productos-guillotinas/guillotina-a3-18-x-15-cap-15-hjs-metalica-warrior.jpg') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer"/>
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        Guillotina-a3-metalica-warrior: Guillotina profesional de calidad industrial ofrece una capacidad de corte de 18x15 cm.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 342.96
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'GUILLOTINA-METALICA-WARRIOR-A3',
+                      'Esta guillotina profesional de calidad industrial ofrece una capacidad de corte de 18x15 cm, e incluye una hoja metálica para una precisión de corte superior.',
+                      'img/productos-guillotinas/guillotina-a3-18-x-15-cap-15-hjs-metalica-warrior.jpg',
+                      'S/ 342.96',
+                      `MARCA: Guillotina A3 21061 de Warrior. MODELO: 21061. TAMAÑO: A3, 18x15″ (500 x 400mm). CAPACIDAD DE CORTE: 12 hojas de 75gr. Cuchilla redondeada. PIE: Con patitas de base anti deslizable. CUERPO: Cuerpo de metal. LONGITUD DE CORTE: 470mm.`,
+                      
+                      '/static/pdf/pdf-accesorios/guillotina-warrior-A3.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="GUILLOTINA-METALICA-WARRIOR-A3">Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm">
+                    <button onclick="mostrarDetallesProducto(
+                      'GUILLOTINA A3 KW-TRIO',
+                      'Guillotina de papel tamaño A3 con base de plástico resistente y cuchilla de acero autoafilable de alta calidad.',
+                      'img/productos-guillotinas/guillotina-a3-kw-trio-13914-10-hjs-hasta-45-50-cm.jpg',
+                      'S/ 349.00',
+                      `MARCA: KW-TRIO GUILLOTINA A3. MODELO: 3914 A3. CAPACIDAD DE CORTE: Hasta 10 hojas de 80 g/m². GUILLOTINA TAMAÑO: Tamaño A3 con base de plástico resistente. CUCHILLA: Acero autoafilable de alta calidad. PLACA: Protectora translúcida. FABRICADA: Base de ABS. DISEÑO: Alineación de tamaños, protección de seguridad, bloqueo de cuchilla.`,
+                      '/static/pdf/pdf-accesorios/guillotina-a3-kw-trio.pdf'
+                    )">
+                        <img src="{{ url_for('static', path='img/productos-guillotinas/guillotina-a3-kw-trio-13914-10-hjs-hasta-45-50-cm.jpg') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer"/>
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        Guillotina-A3-kw-trio: Guillotina de papel tamaño A3 con base de plástico resistente y cuchilla de acero.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 349.00
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'GUILLOTINA A3 KW-TRIO',
+                      'Guillotina de papel tamaño A3 con base de plástico resistente y cuchilla de acero autoafilable de alta calidad.',
+                      'img/productos-guillotinas/guillotina-a3-kw-trio-13914-10-hjs-hasta-45-50-cm.jpg',
+                      'S/ 349.00',
+                      `MARCA: KW-TRIO GUILLOTINA A3. MODELO: 3914 A3. CAPACIDAD DE CORTE: Hasta 10 hojas de 80 g/m². GUILLOTINA TAMAÑO: Tamaño A3 con base de plástico resistente. CUCHILLA: Acero autoafilable de alta calidad. PLACA: Protectora translúcida. FABRICADA: Base de ABS. DISEÑO: Alineación de tamaños, protección de seguridad, bloqueo de cuchilla.`,
+                      
+                      '/static/pdf/pdf-accesorios/guillotina-a3-kw-trio.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="GUILLOTINA-A3-KW-TRIO">Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm">
+                    <button onclick="mostrarDetallesProducto(
+                      'Guillotina A4 21063 12x10 metálica Warrior.',
+                      'La Guillotina A4 21063 12x10 metálica Warrior es una máquina de corte moderna de gran calidad. Con una hoja metálica de solidez superior y un mecanismo de bloqueo seguro.',
+                      'img/productos-guillotinas/guillotina-a3-18-x-15-cap-15-hjs-metalica-warrior.jpg',
+                      'S/ 166.07',
+                      `MARCAR: Guillotina A4 metalica Warrior. MODELO: A4 21063. AREA DE LA BASE: 345 x 300 mm. MATERIAL: Metálico. CARACTERISTICAS: Cuchilla redondeada, autoafilable con seguro. CAPACIDAD DE CORTE: 15 hojas de 60 gr. DISEÑO: Alineación de tamaños, protección de seguridad, bloqueo de cuchilla. MECANISMO: Bloqueo seguro. CORTE: Materiales rígidos y laminas delgadas.`,
+                      '/static/pdf/pdf-accesorios/guillotina-a4-metalica-warrior.pdf'
+                    )">
+                        <img src="{{ url_for('static', path='img/productos-guillotinas/guillotina-a4-12-x-10-15-hjs-31-cm-metalica-warrior.jpg') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer"/>
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        Guillotina-a4-metalica-warrior: La Guillotina A4 21063 12x10 metálica Warrior es una máquina de corte moderna de gran calidad.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 166.07
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'Guillotina A4 21063 12x10 metálica Warrior.',
+                      'La Guillotina A4 21063 12 x10 metálica Warrior es una máquina de corte moderna de gran calidad. Con una hoja metálica de solidez superior y un mecanismo de bloqueo seguro.',
+                      'img/productos-guillotinas/guillotina-a4-12-x-10-15-hjs-31-cm-metalica-warrior.jpg',
+                      'S/ 166.07',
+                      `MARCAR: Guillotina A4 metalica Warrior. MODELO: A4 21063. AREA DE LA BASE: 345 x 300 mm. MATERIAL: Metálico. CARACTERISTICAS: Cuchilla redondeada, autoafilable con seguro. CAPACIDAD DE CORTE: 15 hojas de 60 gr. DISEÑO: Alineación de tamaños, protección de seguridad, bloqueo de cuchilla. MECANISMO: Bloqueo seguro. CORTE: Materiales rígidos y laminas delgadas.`,
+                      
+                      '/static/pdf/pdf-accesorios/guillotina-a4-metalica-warrior.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="GUILLOTINA-A4">Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm">
+                    <button onclick="mostrarDetallesProducto(
+                      'GUILLOTINA CUTTER A4-metálica.',
+                      'Guillotina A4 [Paper Cutter] (Capacidad 10 hojas). Garantía de 03 meses, por fallas de fábrica; no por fallas de mal manejo del equipo. [.8294/-].',
+                      'img/productos-guillotinas/guillotina-a4-metalica-c-tope-paper-cutter-capac-15-hjs-pc-1210.jpg',
+                      'S/ 78.00',
+                      `MARCA: CUTTER A4-metálica. MODELO: PAPER CUTTER. CAPACIDAD DE CORTE: Hasta 15 hojas de papel de tamaño A4 (cada hoja estándar de 80 g/m²). MATERIAL: Estructura metálica robusta. CAPACIDAD DE CORTE: Precisa y uniforme. TAMAÑO DE CORTE: A4 (210 x 297 mm). TOPE AJUSTABLE: Permite cortar con precisión. MECANISMO DE CORTE: Guillotina con cuchilla afilada y resistente. SEGURIDAD: Sistema de bloqueo del cabezal. BASE: Estable y antideslizante.`,
+                      '/static/pdf/pdf-guillotinas/guillotina-warrior-metalica.pdf'
+                    )">
+                        <img src="{{ url_for('static', path='img/productos-guillotinas/guillotina-a4-metalica-c-tope-paper-cutter-capac-15-hjs-pc-1210.jpg') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer"/>
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        Guillotina-a4-metalica: Guillotina A4 [Paper Cutter] (Capacidad 10 hojas) para grupo de trabajo oficinas.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 78.00
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'GUILLOTINA CUTTER A4-metálica.',
+                      'Guillotina A4 [Paper Cutter] (Capacidad 10 hojas). Garantía de 03 meses, por fallas de fábrica; no por fallas de mal manejo del equipo. [.8294/-].',
+                      'img/productos-guillotinas/guillotina-a4-metalica-c-tope-paper-cutter-capac-15-hjs-pc-1210.jpg',
+                      'S/ 78.00',
+                      `MARCA: CUTTER A4-metálica. MODELO: PAPER CUTTER. CAPACIDAD DE CORTE: Hasta 15 hojas de papel de tamaño A4 (cada hoja estándar de 80 g/m²). MATERIAL: Estructura metálica robusta. CAPACIDAD DE CORTE: Precisa y uniforme. TAMAÑO DE CORTE: A4 (210 x 297 mm). TOPE AJUSTABLE: Permite cortar con precisión. MECANISMO DE CORTE: Guillotina con cuchilla afilada y resistente. SEGURIDAD: Sistema de bloqueo del cabezal. BASE: Estable y antideslizante.`,
+                      
+                      '/static/pdf/pdf-accesorios/guillotina-warrior-metalica.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="GUILLOTINA-A4-METALICA-WARRIOR">Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm">
+                    <button onclick="mostrarDetallesProducto(
+                      'IGUILLOTINA SEMI INDUSTRIAL A3-A4',
+                      'Fácil ajuste para cortar en tamaños deseados, Abrazadera de corte precisa y fácil que mantiene la pila en su lugar.',
+                      'img/productos-guillotinas/GUILLOTINA-SEMI-INDUSTRIAL-A3-A4.jpg',
+                      'S/ 750.99',
+                      `Marca: Original. Tamaño de corte: 310mm. Capacidad máxima de corte: 300 hojas 75gr. Máximo grosor de corte: 40mm. Estructura de metal. Fácil ajuste para cortar en tamaños deseados. El pestillo de seguridad de la hoja evita cortar hasta que se suelta. Barra de prensado de papel. Abrazadera de corte precisa y fácil que mantiene la pila en su lugar. Tamaño de papel A4 Indicador A4 / B5 / A5 / B6 / B7 / tamaño de tarjeta postal y foto fácil y seguro de operar. Dimensiones: 395x650x320mm. Peso: 15kg.`,
+                      '/static/pdf/pdf-accesorios/GUILLOTINA-SEMI-INDUSTRIAL-A3-A4.pdf'
+                    )">
+                        <img src="{{ url_for('static', path='img/productos-guillotinas/GUILLOTINA-SEMI-INDUSTRIAL-A3-A4.jpg') }}" alt="Producto" class="mx-auto w-34 h-40 object-contain cursor-pointer"/>
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        Guillotina semi industrial-A3-A4: Fácil ajuste para cortar en tamaños deseados, Abrazadera de corte precisa y fácil.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 750.99
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'IGUILLOTINA SEMI INDUSTRIAL A3-A4',
+                      'Fácil ajuste para cortar en tamaños deseados, Abrazadera de corte precisa y fácil que mantiene la pila en su lugar.',
+                      'img/productos-guillotinas/GUILLOTINA-SEMI-INDUSTRIAL-A3-A4.jpg',
+                      'S/ 750.99',
+                      `Marca: Original. Tamaño de corte: 310mm. Capacidad máxima de corte: 300 hojas 75gr. Máximo grosor de corte: 40mm. Estructura de metal. Fácil ajuste para cortar en tamaños deseados. El pestillo de seguridad de la hoja evita cortar hasta que se suelta. Barra de prensado de papel. Abrazadera de corte precisa y fácil que mantiene la pila en su lugar. Tamaño de papel A4 Indicador A4 / B5 / A5 / B6 / B7 / tamaño de tarjeta postal y foto fácil y seguro de operar. Dimensiones: 395x650x320mm. Peso: 15kg.`,
+                      
+                      '/static/pdf/pdf-accesorios/GUILLOTINA-SEMI-INDUSTRIAL-A3-A4.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="GUILLOTINA-SEMI-INDUSTRIAL-A3-A4">Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm">
+                    <button onclick="mostrarDetallesProducto(
+                      'GUILLOTINA-BASICA-A3',
+                      'Guillotina básica con Capacidad máxima de corte: 12 hojas a la vez de 80gm, para uso en oficinas.',
+                      'img/productos-guillotinas/GUILLOTINA-BASICA-A3.jpg',
+                      'S/ 135.00',
+                      `Marca: ALE. Capacidad máxima de corte: 12 hojas a la vez de 80gm. Estructura: Metal. Largo de corte: 450mm. Cuchilla de acero Autoaflable. Medida de corte: A5, A6, A4, B4, A3. Medida: 45x38mm. Guía de papel: si.`,
+                      '/static/pdf/pdf-accesorios/GUILLOTINA-BASICA-A3.pdf'
+                    )">
+                        <img src="{{ url_for('static', path='img/productos-guillotinas/GUILLOTINA-BASICA-A3.jpg') }}" alt="Producto" class="mx-auto w-34 h-40 object-contain cursor-pointer"/>
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        Guillotina Básica-A3: Guillotina básica con Capacidad máxima de corte: 12 hojas a la vez de 80gm, para uso en oficinas.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 135.00
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'GUILLOTINA-BASICA-A3',
+                      'Guillotina básica con Capacidad máxima de corte: 12 hojas a la vez de 80gm, para uso en oficinas.',
+                      'img/productos-guillotinas/GUILLOTINA-BASICA-A3.jpg',
+                      'S/ 135.00',
+                      `Marca: ALE. Capacidad máxima de corte: 12 hojas a la vez de 80gm. Estructura: Metal. Largo de corte: 450mm. Cuchilla de acero Autoaflable. Medida de corte: A5, A6, A4, B4, A3. Medida: 45x38mm. Guía de papel: si.`,
+                      
+                      '/static/pdf/pdf-accesorios/GUILLOTINA-BASICA-A3.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="GUILLOTINA-BASICA-A3">Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm">
+                    <button onclick="mostrarDetallesProducto(
+                      'GUILLOTINA-BASICA-A4',
+                      'Guillotina Básica A4 con Capacidad máxima de corte: 12 hojas a la vez de 80gm.',
+                      'img/productos-guillotinas/GUILLOTINA-BASICA-A4.jpg',
+                      'S/ 80.00',
+                      `Marca: ALE. Capacidad máxima de corte: 12 hojas a la vez de 80gm. Estructura: Metal. Largo de corte: 300mm. Cuchilla de acero Autoafilable. Medida de corte: A5, A4. Medida: 330x250x35mm. Guía de papel: si.`,
+                      '/static/pdf/pdf-accesorios/GUILLOTINA-BASICA-A4.pdf'
+                    )">
+                        <img src="{{ url_for('static', path='img/productos-guillotinas/GUILLOTINA-BASICA-A4.jpg') }}" alt="Producto" class="mx-auto w-34 h-40 object-contain cursor-pointer"/>
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        Guillotina Básica-A4: Guillotina Básica A4 con Capacidad máxima de corte 12 hojas a la vez de 80gm.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 80.00
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'GUILLOTINA-BASICA-A4',
+                      'Guillotina Básica A4 con Capacidad máxima de corte: 12 hojas a la vez de 80gm.',
+                      'img/productos-guillotinas/GUILLOTINA-BASICA-A4.jpg',
+                      'S/ 80.00',
+                      `Marca: ALE. Capacidad máxima de corte: 12 hojas a la vez de 80gm. Estructura: Metal. Largo de corte: 300mm. Cuchilla de acero Autoafilable. Medida de corte: A5, A4. Medida: 330x250x35mm. Guía de papel: si.`,
+                      
+                      '/static/pdf/pdf-accesorios/GUILLOTINA-BASICA-A4.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="GUILLOTINA-BASICA-A4">Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm">
+                    <button onclick="mostrarDetallesProducto(
+                      'GUILLOTINA BASICA B4',
+                      'Guillotina Básica Capacidad máxima de corte 12 hojas a la vez de 80gm.',
+                      'img/productos-guillotinas/GUILLOTINA-BASICA-B4.jpg',
+                      'S/ 115.00',
+                      `Marca: ALE. Capacidad máxima de corte: 12 hojas a la vez de 80gm. Estructura: Metal. Largo de corte: 300mm. Cuchilla de acero Autoafilable. Medida de corte: A5, A5, A4, B4. Medida: 370x290x35mm. Guía de papel: si.`,
+                      '/static/pdf/pdf-guillotinas/GUILLOTINA-BASICA-B4.pdf'
+                    )">
+                        <img src="{{ url_for('static', path='img/productos-guillotinas/GUILLOTINA-BASICA-B4.jpg') }}" alt="Producto" class="mx-auto w-34 h-40 object-contain cursor-pointer"/>
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        GUILLOTINA BASICA B4: Guillotina Básica Capacidad máxima de corte 12 hojas a la vez de 80gm para oficinas y estudiantes.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 115.00
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'GUILLOTINA BASICA B4',
+                      'Guillotina Básica Capacidad máxima de corte 12 hojas a la vez de 80gm.',
+                      'img/productos-guillotinas/GUILLOTINA-BASICA-B4.jpg',
+                      'S/ 115.00',
+                      `Marca: ALE. Capacidad máxima de corte: 12 hojas a la vez de 80gm. Estructura: Metal. Largo de corte: 300mm. Cuchilla de acero Autoafilable. Medida de corte: A5, A5, A4, B4. Medida: 370x290x35mm. Guía de papel: si.`,
+                      
+                      '/static/pdf/pdf-accesorios/GUILLOTINA-BASICA-B4.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="GUILLOTINA-BASICA-B4">Ver detalles
+                    </button>
+                </article>
+            </div>
+        </section>
+    </div>
+</main>
+
+{% endblock %}

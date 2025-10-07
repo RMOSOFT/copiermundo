@@ -1,0 +1,79 @@
+{
+    "GUILLOTINA-METALICA-WARRIOR-A3": {
+        "titulo": "GUILLOTINA METALICA WARRIOR-A3",
+        "descripcion": "Esta guillotina profesional de calidad industrial ofrece una capacidad de corte de 18 x 15 cm, e incluye una hoja metálica para una precisión de corte superior.",
+        "imagen": "/static/img/productos-guillotinas/guillotina-a3-18-x-15-cap-15-hjs-metalica-warrior.jpg",
+        "afiche": "/static/pdf/pdf-accesorios/guillotina-warrior-A3.pdf",
+        "precio": "S/ 300.00",
+        "caracteristicas": [
+            "MARCA: Guillotina A3 21061 de Warrior.", 
+            "MODELO: 21061.", 
+            "TAMAÑO: A3, 18x15″ (500 x 400mm).", 
+            "CAPACIDAD DE CORTE: 12 hojas de 75gr.", 
+            "Cuchilla redondeada.", 
+            "PIE: Con patitas de base anti deslizable.", 
+            "CUERPO: Cuerpo de metal.", 
+            "LONGITUD DE CORTE: 470mm."
+        ]
+    },
+
+    "GUILLOTINA-A3-KW-TRIO": {
+        "titulo": "GUILLOTINA METALICA-A3 KW-TRIO ",
+        "descripcion": "Guillotina de papel tamaño A3 con base de plástico resistente y cuchilla de acero autoafilable de alta calidad.",
+        "imagen": "/static/img/productos-guillotinas/guillotina-a3-kw-trio-13914-10-hjs-hasta-45-50-cm.jpg",
+        "afiche": "/static/pdf/pdf-accesorios/guillotina-a3-kw-trio.pdf",
+        "precio": "S/ 349.00",
+        "caracteristicas": [
+            "MARCA: KW-TRIO GUILLOTINA A3.", 
+            "MODELO: 3914 A3.", 
+            "CAPACIDAD DE CORTE: Hasta 10 hojas de 80 g/m².", 
+            "GUILLOTINA TAMAÑO: Tamaño A3 con base de plástico resistente.", 
+            "CUCHILLA: Acero autoafilable de alta calidad.", 
+            "PLACA: Protectora translúcida.", 
+            "FABRICADA: Base de ABS.", 
+            "DISEÑO: Alineación de tamaños, protección de seguridad, bloqueo de cuchilla.",
+            "LONGITUD DE CORTE: 450mm."
+        ]
+    },
+
+    "GUILLOTINA-A4": {
+        "titulo": "GUILLOTINA METALICA-A4 21063.",
+        "descripcion": "La Guillotina A4 21063 12x10 metálica Warrior es una máquina de corte moderna de gran calidad.",
+        "imagen": "/static/img/productos-guillotinas/guillotina-a4-12-x-10-15-hjs-31-cm-metalica-warrior.jpg",
+        "afiche": "/static/pdf/pdf-accesorios/guillotina-a4-metalica-warrior.pdf",
+        "precio": "S/ 166.07",
+        "caracteristicas": [
+            "MARCAR: Guillotina A4 metalica Warrior.", 
+            "MODELO: A4 21063.", 
+            "AREA DE LA BASE: 345x300 mm.", 
+            "MATERIAL: Metálico.", 
+            "CARACTERISTICAS: Cuchilla redondeada, autoafilable con seguro.", 
+            "CAPACIDAD DE CORTE: 15 hojas de 60 gr.", 
+            "DISEÑO: Alineación de tamaños, protección de seguridad, bloqueo de cuchilla.", 
+            "MECANISMO: Bloqueo seguro.", 
+            "CORTE: Materiales rígidos y laminas delgadas."
+        ]
+    },
+
+    "GUILLOTINA-A4-METALICA-WARRIOR": {
+        "titulo": "GUILLOTINA METALICA-A4.",
+        "descripcion": "Guillotina A4 METALICA [Paper Cutter] (Capacidad 10 hojas). Garantía de 03 meses, por fallas de fábrica; no por fallas de mal manejo del equipo.",
+        "imagen": "/static/img/productos-guillotinas/guillotina-a4-metalica-c-tope-paper-cutter-capac-15-hjs-pc-1210.jpg",
+        "afiche": "/static/pdf/pdf-accesorios/guillotina-warrior-metalica.pdf",
+        "precio": "S/ 78.00",
+        "caracteristicas": [
+            "MARCA: CUTTER A4-metálica.", 
+            "MODELO: PAPER CUTTER.", 
+            "CAPACIDAD DE CORTE: Hasta 15 hojas de papel de tamaño A4 (cada hoja estándar de 80 g/m²).", 
+            "MATERIAL: Estructura metálica robusta.", 
+            "CAPACIDAD DE CORTE: Precisa y uniforme.", 
+            "TAMAÑO DE CORTE: A4 (210 x 297 mm).", 
+            "TOPE AJUSTABLE: Permite cortar con precisión.", 
+            "MECANISMO DE CORTE: Guillotina con cuchilla afilada y resistente.", 
+            "SEGURIDAD: Sistema de bloqueo del cabezal.", 
+            "BASE: Estable y antideslizante."
+        ]
+    }
+
+
+}

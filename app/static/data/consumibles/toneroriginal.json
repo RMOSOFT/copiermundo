@@ -1,0 +1,16 @@
+[
+
+    { "id": 24, "nombre": "TONER HP 85A", "tipo": "Tóner Original", "precio": "S/ 350.00" },
+    { "id": 25, "nombre": "TONER HP 78A INDIVIDUAL", "tipo": "Tóner Original", "precio": "S/ 422.00" },
+    { "id": 44, "nombre": "TK-1175 TONER PREMIUN KYOCERA", "tipo": "Tóner Premium", "precio": "S/ 135.00" },
+    { "id": 44, "nombre": "TK-1175 TONER PREMIUN KYOCERA", "tipo": "Tóner Premium", "precio": "S/ 135.00" },
+    { "id": 45, "nombre": "TK-3102 PREMIUN", "tipo": "Tóner Premium", "precio": "" },
+    { "id": 46, "nombre": "TONER JET LIVE 85A", "tipo": "Tóner Premium", "precio": "S/ 75.00" },
+    { "id": 47, "nombre": "DV-312 ORIGINAL BH 367", "tipo": "Unidad Original", "precio": "S/ 1,350.00" },
+    { "id": 48, "nombre": "DR-312K ORIGINAL NEGRO BIZHUB 367", "tipo": "Unidad Original", "precio": "S/ 990.00" },
+    { "id": 16, "nombre": "TK-1175 TONER ORIGINAL KYOCERA ECOSYS M2040-2640", "tipo": "Tóner Original", "precio": "S/ 320.00" },
+    { "id": 17, "nombre": "TK-6727 TONER ORIGINAL KYOCERA TASKALFA 8002I", "tipo": "Tóner Original", "precio": "S/ 590.00" },
+    { "id": 18, "nombre": "TK-3432 TONER ORIGINAL KYOCERA MA5500IFX", "tipo": "Tóner Original", "precio": "S/ 450.00" },
+    { "id": 19, "nombre": "TK-3102 TONER ORIGINAL KYOCERA M3040-M3640", "tipo": "Tóner Original", "precio": "S/ 320.00" }
+
+]

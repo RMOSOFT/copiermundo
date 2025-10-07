@@ -1,0 +1,147 @@
+{
+    "bizhub-C308": {
+        "titulo": "Bizhub C308",
+        "descripcion": "INFO-La Konica Minolta bizhub C308 es una multifuncional a color A3 diseñada para entornos de oficina que requieren productividad, conectividad avanzada y acabados profesionales.",
+        "imagen": "/static/img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C308.png",
+        "afiche": "/static/pdf/pdf-fotocopiadoras-seminuevas/Konica-Minolta-Bizhub-C308.pdf",
+        "precio": "S/ 4,219.00",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB C308.", 
+            "VELOCIDAD DUPLEX AUTOMATICO: Hasta 30 ppm.", 
+            "CONECTIVIDAD WLAN: Sí.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA DEL SISTEMA: 2.048 MB estándar, ampliable a 4.096 MB.", 
+            "DISCO DURO: 250 GB estándar.", 
+            "INTERFAZ: Ethernet 10/100/1000 BaseT, USB 2.0.", 
+            "PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP.", 
+            "RESOLUCION DE IMPRESION: 1.800 x 600 ppp, 1.200 x 1.200 ppp.", 
+            "LENGUAJES DE IMPRESION: PCL 6 (XL 3.0), PCL 5c, PostScript 3, XPS.", 
+            "VELOCIDAD DE COPIA/IMPRESION A3: Hasta 15 ppm.", 
+            "CERTIFICACION: ISO15408, IEEE 2600.1.", 
+            "PROTOCOLOS DE RED:TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP.", 
+            "SISTEMAS OPERATIVOS COMPATIBLES: Windows Vista/7/8/Server 2003/2008/2012, macOS X 10.x, Unix, Linux, Citrix.", 
+            "Fecha de publicación: 13/03/2022.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "bizhub-C368": {
+        "titulo": "Bizhub C368",
+        "descripcion": "INFO-La Konica Minolta bizhub C368 es una fotocopiadora multifuncional a color de volumen medio, diseñada para elevar la productividad de cualquier empresa.",
+        "imagen": "/static/img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C368.png",
+        "afiche": "/static/pdf/pdf-fotocopiadoras-seminuevas-series-8/Konica-Minolta-Bizhub-C368.pdf",
+        "precio": "S/ 4,519.00",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB C368.", 
+            "CONECTIVIDAD WLAN: Sí.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA DEL SISTEMA: 2.048 MB estándar, ampliable a 4.096 MB.", 
+            "DISCO DURO: 250 GB estándar.", 
+            "INTERFAZ: Ethernet 10/100/1000 BaseT, USB 2.0.", 
+            "PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP.", 
+            "RESOLUCION DE IMPRESION: 1.800 x 600 ppp, 1.200 x 1.200 ppp.", 
+            "LENGUAJES DE IMPRESION: PCL 6 (XL 3.0), PCL 5c, PostScript 3, XPS.", 
+            "VELOCIDAD DE COPIA/IMPRESION A3: Hasta 15 páginas por minuto.", 
+            "VELOCIDAD DE DUPLEX AUTOMATICO A4: Hasta 30 páginas por minuto.", 
+            "CERTIFICACION: ISO15408, IEEE 2600.1.", 
+            "FUNCIONES DE SEGURIDAD: Filtrado IP, SSL2/SSL3/TSL1.0, IPsec, IEEE 802.1x, autenticación de usuario, impresión segura, encriptado AES 256, sobreescritura de disco, autoborrado de memoria.", 
+            "PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP.", 
+            "TIPOS DE TRAMA: Ethernet 802.2, Ethernet 802.3, Ethernet II, Ethernet SNAP.", 
+            "SISTEMAS OPERATIVOS COMPATIBLES: Windows Vista/7/8/Server 2003/2008/2012, macOS X 10.x, Unix, Linux, Citrix.", 
+            "Fecha de publicación: 13/03/2022.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "bizhub-C458": {
+        "titulo": "Bizhub C458",
+        "descripcion": "INFO-La Konica Minolta Bizhub C458 es una multifuncional A3 de alto rendimiento diseñada para entornos empresariales que requieren velocidad, conectividad móvil, seguridad avanzada y eficiencia energética.",
+        "imagen": "/static/img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C458.png",
+        "afiche": "/static/pdf/pdf-fotocopiadoras-seminuevas-series-8/Konica-Minolta-Bizhub-C458.pdf",
+        "precio": "S/ 4,899.00",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB C458.", 
+            "CONECTIVIDAD WLAN: Sí.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA DEL SISTEMA: 4.096 MB.", 
+            "DISCO DURO: 250 GB estándar.", 
+            "INTERFAZ: Ethernet 10/100/1000 BaseT, USB 2.0.", 
+            "PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP.", 
+            "RESOLUCION DE IMPRESION: 1.800 × 600 ppp (equivalente), 1.200 × 1.200 ppp.", 
+            "LENGUAJES DE IMPRESION: PCL 6, PCL 5c, PostScript 3, XPS.", 
+            "VELOCIDAD DE COPIA/IMPRESION: Hasta 45 ppm en Blanco y Negro y Color (A4).", 
+            "RESOLUCION DE COPIA: 600 x 600 ppp.", 
+            "CERTIFICACION: ISO15408, IEEE 2600.1.", 
+            "FUNCIONES DE SEGURIDAD: Filtrado IP, SSL2/SSL3/TSL1.0, IPsec, IEEE 802.1x, autenticación de usuario, impresión segura, encriptado AES 256, sobreescritura de disco, autoborrado de memoria.", 
+            "PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP.", 
+            "GRAMAJE DE PAPEL: 52–300 g/m².", 
+            "Fecha de publicación: 13/03/2022.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "bizhub-C558": {
+        "titulo": "Bizhub C558",
+        "descripcion": "INFO-La Konica Minolta bizhub C558 es una multifuncional A3 de alto rendimiento diseñada para entornos empresariales exigentes. Con velocidades de impresión de hasta 55 páginas por minuto tanto en color como en blanco y negro, esta máquina combina potencia, conectividad avanzada, diseño intuitivo y funciones de seguridad de última generación. Ideal para oficinas que requieren productividad, versatilidad y eficiencia energética.",
+        "imagen": "/static/img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C558.png",
+        "afiche": "/static/pdf/pdf-fotocopiadoras-seminuevas-series-8/Konica-Minolta-Bizhub-C558.pdf",
+        "precio": "S/ 5,549.00",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB C558.", 
+            "VELOCIDAD AUTODUPLEX A4: Hasta 55 ppm (mono/color).", 
+            "VELOCIDAD DE ESCANEO: Hasta 120 ipm (simple), hasta 240 ipm (dúplex).", 
+            "CONECTIVIDAD WLAN: Si.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA RAM: (MB) 4.096 MB.", 
+            "DISCO DURO: 250 GB.", 
+            "INTERFAZ DE RED:  Ethernet 10/100/1000 Base-T, USB 2.0.", 
+            "INTERFAZ DE WIFI: 802.11b/g/n (Opcional).", 
+            "CAPACIDAD DE BUZON DE USUARIO: Hasta 3.000 documentos o 10.000 páginas.", 
+            "RESOLUCION DE IMPRESION: 1.800 x 600 ppp (equivalente), 1.200 x 1.200 ppp.", 
+            "FORMATOS DE ARCHIVOS: JPEG, TIFF, PDF, PDF compacto, PDF cifrado, XPS, XPS compacto, PPTX.", 
+            "CERTIFICACION: ISO15408, IEEE 2600.2 (en evaluación).", 
+            "SISTEMAS OPERATIVOS: Windows Vista/7/8/10 (32/64 bits), Windows Server 2008/2012, macOS 10.x, Unix, Linux, Citrix.", 
+            "PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk, SMB, LPD, IPP, SNMP, HTTP.", 
+            "Fecha de publicación: 13/06/2024.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "bizhub-C658": {
+        "titulo": "Bizhub C658",
+        "descripcion": "INFO-La Konica Minolta bizhub C658 es una multifuncional A3 de alto rendimiento diseñada para entornos empresariales exigentes. Con velocidades de impresión de hasta 65 páginas por minuto en color y blanco y negro, esta máquina combina potencia, conectividad móvil, seguridad avanzada y eficiencia energética en un diseño moderno y minimalista.",
+        "imagen": "/static/img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C658.png",
+        "afiche": "/static/pdf/pdf-fotocopiadoras-seminuevas-series-8/Konica-Minolta-Bizhub-C658.pdf",
+        "precio": "S/ 5,929.00",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB C658.", 
+            "VELOCIDAD A4:  Hasta 65/65 (color/monocromo).", 
+            "VELOCIDAD  (Mono/Color): simple Hasta 120/120 ipm.", 
+            "DUPLEX: Hasta 240/240 ipm.", 
+            "CONECTIVIDAD WLAN: Si.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA RAM: (MB) 4.096 MB.", 
+            "DISCO DURO: 250 GB.", 
+            "CONEXION: Ethernet 10/100/1000, USB 2.0.", 
+            "CAPACIDAD ESTANDAR: Máx. 250 hojas.", 
+            "CAPACIDAD MAXIMA: Máx. 3.300 hojas.", 
+            "RESOLUCION DE IMPRESION: 1.800 (equivalente) × 600 ppp; 1.200 x 1.200 ppp.", 
+            "FORMATOS DE ARCHIVOS: JPEG, TIFF, PDF, PDF compacto, PDF cifrado, XPS, XPS compacto, PPTX.", 
+            "SISTEMAS OPERATIVOS: Windows Vista/7/8/10 (32/64 bits), Windows Server 2008/2008 R2/2012/2012 R2, Macintosh OS 10.x, Unix, Linux, Citrix.", 
+            "PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP.", 
+            "Fecha de publicación: 13/06/2024.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    }
+
+}

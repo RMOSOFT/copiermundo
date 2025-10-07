@@ -1,0 +1,408 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+<div class="relative w-full h-32 sm:h-40 md:h-40 lg:h-44 xl:h-48">
+    <img alt="Impresora en fondo oscuro con pantalla y bandejas" class="w-full h-full object-cover" height="288" src="{{ url_for('static', path='img/productos-fotocopiadoras/img-monocromatica.jpg') }}" width="1930"/>
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-10 flex items-center justify-between px-6 sm:px-10 md:px-16">
+        <h1 class="text-white text-xl sm:text-2xl md:text-3xl font-normal">
+            IMPRESORAS MULTIFUNCIONALES SEMINUEVAS-(SERIES-8)
+        </h1>
+        <a class="text-white text-xs sm:text-sm md:text-base flex items-center gap-1 hover:underline" href="/productos/fotocopiadoras">
+            <i class="fas fa-chevron-left text-xs">
+            </i>
+            Volver a página anterior
+        </a>
+    </div>
+</div>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6">
+    <div class="flex flex-col md:flex-row md:space-x-8">
+        <!-- Left sidebar -->
+        <aside class="w-full md:w-64 border-r border-gray-300 pb-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="font-semibold text-sm sm:text-base uppercase">
+                    BÚSQUEDA DE PRODUCTOS
+                </h2>
+                <div class="border-b border-gray-300 w-12">
+                </div>
+            </div>
+
+            <div>
+                <button aria-expanded="true" class="flex items-center justify-between w-full text-xs sm:text-sm font-normal text-gray-700 uppercase mb-2" type="button">
+                    <span>
+                        SECCION DE CATEGORIAS
+                    </span>
+                    <span class="text-2xl leading-none select-none">
+                        −
+                    </span>
+                </button>
+                <ul class="text-xs sm:text-sm font-normal text-gray-500 border-t border-b border-gray-300 divide-y divide-gray-300">
+                    <a href="/productos/fotocopiadoras">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES NUEVAS
+                            </span>
+                            <span class="text-gray-400">
+                                (16)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-seminuevas">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES SEMINUEVAS
+                            </span>
+                            <span class="text-gray-400">
+                                (7)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-seminuevas-series-8">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES SEMINUEVAS-SERIES(8)
+                            </span>
+                            <span class="text-gray-400">
+                                (5)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/tonerescartuchos">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                RECARGAS TONERS Y CARTUCHOS
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-color">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS A COLOR
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-monocromaticas">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MONOCROMÁTICAS
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-kyoceras">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS KYOCERAS
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/accesoriosoficina">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                ACCESORIOS DE OFICINA
+                            </span>
+                            <span class="text-gray-400">
+                                (8)
+                            </span>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="mb-8">
+            </div>
+
+            <!-- Filtro de precio dentro del <aside> -->
+            <div class="mt-4">
+                <h3 class="text-md font-semibold mb-2">Filtrar por precio</h3>
+                <form id="filtro-precio" method="get" class="space-y-2" action="/productos/fotocopiadoras/filtro-precios-impresora-seminuevas-series-8" onsubmit="filtrarPorPrecioMonocromatica(event)" >
+                    <input type="number" name="min" id="precio-min" placeholder="Mínimo" class="pl-6 pr-2 px-3 py-1 w-60 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"/>
+                    <input type="number" name="max" id="precio-max" placeholder="Máximo" class="pl-6 pr-2 px-3 py-1 w-60 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"/>
+                    <button type="submit" class="bg-blue-600 text-white px-3 py-1 rounded w-60 hover:bg-blue-700">
+                        Filtrar
+                    </button>
+                </form>
+            </div>
+
+            <div class="mb-8">
+            </div>
+            
+            <div>
+                <h3 class="text-xs font-bold uppercase mb-1 border-b border-gray-300 pb-2 font-semibold text-sm sm:text-base uppercase">
+                    PRODUCTOS VISTOS
+                </h3>
+                <ul class="space-y-6 text-xs">
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c266i.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub c266i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                S/ 18,149.46
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c3321i.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub-C3321i: IMPRESORA MONOCROMÁTICA DE ALTA VELOCIDAD PARA GRUPOS
+                                DE TRABAJO  
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                S/ 7,925.40
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="https://storage.googleapis.com/a1aa/image/90bae295-9001-4e53-4fd7-936b12ff77ae.jpg" width="40"/>
+                        <div>
+                            <p>
+                                BIZHUB 360I: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                S/ 28,427.69
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-185en.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub 185en: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                $ 3,940.50
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c451i.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub c451i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                $ 35,501.50
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Right content -->
+        <section class="flex-1">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-300 pb-4 mb-4">
+                <div class="flex items-center space-x-2 mb-3 sm:mb-0">
+                    <select aria-label="Ordenar productos" class="border border-gray-300 rounded px-3 py-1 text-xs sm:text-sm">
+                        <option>
+                         Orden predeterminado
+                        </option>
+                    </select>
+                    <button aria-label="Vista en cuadrícula" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                        <i class="fas fa-th">
+                        </i>
+                    </button>
+                    <button aria-label="Vista en lista" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                        <i class="fas fa-list">
+                        </i>
+                    </button>
+                </div>
+                <nav aria-label="Paginación" class="flex items-center space-x-2 text-xs sm:text-sm text-gray-700">
+                    <button aria-current="page" class="bg-black text-white px-3 py-1" disabled="">
+                        1
+                    </button>
+                    <button class="hover:underline px-1">
+                        2
+                    </button>
+                    <span>
+                        ..
+                    </span>
+                    <button class="hover:underline px-1">
+                        5
+                    </button>
+                    <button aria-label="Siguiente página" class="px-1">
+                        <i class="fas fa-angle-double-right">
+                        </i>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Desde aqui van las fotocopiadoras seminuevas -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                <article class="text-center text-xs sm:text-sm">
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C308',
+                      'INFO-La Konica Minolta bizhub C308 es una multifuncional a color A3 diseñada para entornos de oficina que requieren productividad, conectividad avanzada y acabados profesionales.',
+                      'img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C308.png',
+                      'S/ 4,219.00',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C308. VELOCIDAD MONOCROMATICA: ByN Hasta 75 ppm (vertical)/Color: Hasta 60 ppm (vertical). CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA DEL SISTEMA: 2.048 MB estándar, ampliable a 4.096 MB. DISCO DURO: 250 GB estándar. INTERFAZ: Ethernet 10/100/1000 BaseT, USB 2.0. PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP. RESOLUCION DE IMPRESION: 1.800 x 600 ppp, 1.200 x 1.200 ppp. LENGUAJES DE IMPRESION: PCL 6 (XL 3.0), PCL 5c, PostScript 3, XPS. VELOCIDAD DE COPIA/IMPRESION A3: Hasta 15 ppm. CERTIFICACION: ISO15408, IEEE 2600.1. PROTOCOLOS DE RED:TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP. SISTEMAS OPERATIVOS COMPATIBLES: Windows Vista/7/8/Server 2003/2008/2012, macOS X 10.x, Unix, Linux, Citrix. Fecha de publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
+                      '/static/pdf/pdf-fotocopiadoras-seminuevas-series-8/Konica-Minolta-Bizhub-C308.pdf'
+                        )">
+                        <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer"  src="{{ url_for('static', path='img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C308.png') }}"/>
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        Bizhub C308: La Konica Minolta bizhub C308 es una multifuncional a color A3 diseñada para entornos de oficina que requieren productividad.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 4,219.00
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C308',
+                      'INFO-La Konica Minolta bizhub C308 es una multifuncional a color A3 diseñada para entornos de oficina que requieren productividad, conectividad avanzada y acabados profesionales.',
+                      'img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C308.png',
+                      'S/ 4,219.00',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C308. VELOCIDAD MONOCROMATICA: ByN Hasta 75 ppm (vertical)/Color: Hasta 60 ppm (vertical). CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA DEL SISTEMA: 2.048 MB estándar, ampliable a 4.096 MB. DISCO DURO: 250 GB estándar. INTERFAZ: Ethernet 10/100/1000 BaseT, USB 2.0. PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP. RESOLUCION DE IMPRESION: 1.800 x 600 ppp, 1.200 x 1.200 ppp. LENGUAJES DE IMPRESION: PCL 6 (XL 3.0), PCL 5c, PostScript 3, XPS. VELOCIDAD DE COPIA/IMPRESION A3: Hasta 15 ppm. CERTIFICACION: ISO15408, IEEE 2600.1. PROTOCOLOS DE RED:TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP. SISTEMAS OPERATIVOS COMPATIBLES: Windows Vista/7/8/Server 2003/2008/2012, macOS X 10.x, Unix, Linux, Citrix. Fecha de publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
+                      '/static/pdf/pdf-fotocopiadoras-seminuevas-series-8/Konica-Minolta-Bizhub-C308.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-185en">Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm">
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C368',
+                      'INFO-La Konica Minolta bizhub C368 es una fotocopiadora multifuncional a color de volumen medio, diseñada para elevar la productividad de cualquier empresa.',
+                      'img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C368.png',
+                      'S/ 4,519.00',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C368. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA DEL SISTEMA: 2.048 MB estándar, ampliable a 4.096 MB. DISCO DURO: 250 GB estándar. INTERFAZ: Ethernet 10/100/1000 BaseT, USB 2.0. PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP. RESOLUCION DE IMPRESION: 1.800 x 600 ppp, 1.200 x 1.200 ppp. LENGUAJES DE IMPRESION: PCL 6 (XL 3.0), PCL 5c, PostScript 3, XPS. VELOCIDAD DE COPIA/IMPRESION A3: Hasta 15 páginas por minuto. VELOCIDAD DE DUPLEX AUTOMATICO A4: Hasta 30 páginas por minuto.  CERTIFICACION: ISO15408, IEEE 2600.1. FUNCIONES DE SEGURIDAD: Filtrado IP, SSL2/SSL3/TSL1.0, IPsec, IEEE 802.1x, autenticación de usuario, impresión segura, encriptado AES 256, sobreescritura de disco, autoborrado de memoria. PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP. TIPOS DE TRAMA: Ethernet 802.2, Ethernet 802.3, Ethernet II, Ethernet SNAP. SISTEMAS OPERATIVOS COMPATIBLES: Windows Vista/7/8/Server 2003/2008/2012, macOS X 10.x, Unix, Linux, Citrix. Fecha de publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
+                      '/static/pdf/pdf-fotocopiadoras-seminuevas-series-8/Konica-Minolta-Bizhub-C368.pdf'
+                        )">
+                        <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer"  src="{{ url_for('static', path='img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C368.png') }}"/>
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        Bizhub C368: La Konica Minolta bizhub C368 es una fotocopiadora multifuncional a color de volumen medio, diseñada para elevar la productividad.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 4,519.00
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C368',
+                      'INFO-La Konica Minolta bizhub C368 es una fotocopiadora multifuncional a color de volumen medio, diseñada para elevar la productividad de cualquier empresa.',
+                      'img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C368.png',
+                      'S/ 4,519.00',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C368. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA DEL SISTEMA: 2.048 MB estándar, ampliable a 4.096 MB. DISCO DURO: 250 GB estándar. INTERFAZ: Ethernet 10/100/1000 BaseT, USB 2.0. PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP. RESOLUCION DE IMPRESION: 1.800 x 600 ppp, 1.200 x 1.200 ppp. LENGUAJES DE IMPRESION: PCL 6 (XL 3.0), PCL 5c, PostScript 3, XPS. VELOCIDAD DE COPIA/IMPRESION A3: Hasta 15 páginas por minuto. VELOCIDAD DE DUPLEX AUTOMATICO A4: Hasta 30 páginas por minuto.  CERTIFICACION: ISO15408, IEEE 2600.1. FUNCIONES DE SEGURIDAD: Filtrado IP, SSL2/SSL3/TSL1.0, IPsec, IEEE 802.1x, autenticación de usuario, impresión segura, encriptado AES 256, sobreescritura de disco, autoborrado de memoria. PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP. TIPOS DE TRAMA: Ethernet 802.2, Ethernet 802.3, Ethernet II, Ethernet SNAP. SISTEMAS OPERATIVOS COMPATIBLES: Windows Vista/7/8/Server 2003/2008/2012, macOS X 10.x, Unix, Linux, Citrix. Fecha de publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
+                      '/static/pdf/pdf-fotocopiadoras-seminuevas-series-8/Konica-Minolta-Bizhub-C368.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-367">Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm">
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C458',
+                      'INFO-La Konica Minolta Bizhub C458 es una multifuncional A3 de alto rendimiento diseñada para entornos empresariales que requieren velocidad, conectividad móvil, seguridad avanzada y eficiencia energética.',
+                      'img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C458.png',
+                      'S/ 4,899.00',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C458. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA DEL SISTEMA: 4.096 MB. DISCO DURO: 250 GB estándar. INTERFAZ: Ethernet 10/100/1000 BaseT, USB 2.0. PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP. RESOLUCION DE IMPRESION: 1.800 × 600 ppp (equivalente), 1.200 × 1.200 ppp. LENGUAJES DE IMPRESION: PCL 6, PCL 5c, PostScript 3, XPS. VELOCIDAD DE COPIA/IMPRESION: Hasta 45 ppm en Blanco y Negro y Color (A4). RESOLUCION DE COPIA: 600 x 600 ppp. CERTIFICACION: ISO15408, IEEE 2600.1. FUNCIONES DE SEGURIDAD: Filtrado IP, SSL2/SSL3/TSL1.0, IPsec, IEEE 802.1x, autenticación de usuario, impresión segura, encriptado AES 256, sobreescritura de disco, autoborrado de memoria. PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP. GRAMAJE DE PAPEL: 52–300 g/m². Fecha de publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
+                      '/static/pdf/pdf-fotocopiadoras-seminuevas-series-8/Konica-Minolta-Bizhub-C458.pdf'
+                        )">
+                        <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C458.png') }}"/>
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        Bizhub C458: La Konica Minolta Bizhub C458 es una multifuncional A3 de alto rendimiento diseñada para entornos empresariales que requieren velocidad.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 4,899.00
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C458',
+                      'INFO-La Konica Minolta Bizhub C458 es una multifuncional A3 de alto rendimiento diseñada para entornos empresariales que requieren velocidad, conectividad móvil, seguridad avanzada y eficiencia energética.',
+                      'img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C458.png',
+                      'S/ 4,899.00',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C458. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA DEL SISTEMA: 4.096 MB. DISCO DURO: 250 GB estándar. INTERFAZ: Ethernet 10/100/1000 BaseT, USB 2.0. PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP. RESOLUCION DE IMPRESION: 1.800 × 600 ppp (equivalente), 1.200 × 1.200 ppp. LENGUAJES DE IMPRESION: PCL 6, PCL 5c, PostScript 3, XPS. VELOCIDAD DE COPIA/IMPRESION: Hasta 45 ppm en Blanco y Negro y Color (A4). RESOLUCION DE COPIA: 600 x 600 ppp. CERTIFICACION: ISO15408, IEEE 2600.1. FUNCIONES DE SEGURIDAD: Filtrado IP, SSL2/SSL3/TSL1.0, IPsec, IEEE 802.1x, autenticación de usuario, impresión segura, encriptado AES 256, sobreescritura de disco, autoborrado de memoria. PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP. GRAMAJE DE PAPEL: 52–300 g/m². Fecha de publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
+                      
+                      '/static/pdf/pdf-fotocopiadoras-seminuevas-series-8/Konica-Minolta-Bizhub-C458.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-651i">Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm">
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C558',
+                      'INFO-La Konica Minolta bizhub C558 es una multifuncional A3 de alto rendimiento diseñada para entornos empresariales exigentes. Con velocidades de impresión de hasta 55 páginas por minuto tanto en color como en blanco y negro, esta máquina combina potencia, conectividad avanzada, diseño intuitivo y funciones de seguridad de última generación. Ideal para oficinas que requieren productividad, versatilidad y eficiencia energética.',
+                      'img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C558.png',
+                      'S/ 5,549.00',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C558. VELOCIDAD AUTODUPLEX A4: Hasta 55 ppm (mono/color). VELOCIDAD DE ESCANEO: Hasta 120 ipm (simple), hasta 240 ipm (dúplex). CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA RAM: (MB) 4.096 MB. DISCO DURO: 250 GB. INTERFAZ DE RED:  Ethernet 10/100/1000 Base-T, USB 2.0. INTERFAZ DE WIFI: 802.11b/g/n (Opcional). CAPACIDAD DE BUZON DE USUARIO: Hasta 3.000 documentos o 10.000 páginas. RESOLUCION DE IMPRESION: 1.800 x 600 ppp (equivalente), 1.200 x 1.200 ppp. FORMATOS DE ARCHIVOS: JPEG, TIFF, PDF, PDF compacto, PDF cifrado, XPS, XPS compacto, PPTX. CERTIFICACION: ISO15408, IEEE 2600.2 (en evaluación). SISTEMAS OPERATIVOS: Windows Vista/7/8/10 (32/64 bits), Windows Server 2008/2012, macOS 10.x, Unix, Linux, Citrix. PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk, SMB, LPD, IPP, SNMP, HTTP. Fecha de publicación: 13/06/2024. Fecha de último estado: 23/10/2024`,
+                        '/static/pdf/pdf-fotocopiadoras-seminuevas-series-8/Konica-Minolta-Bizhub-C558.pdf'
+                        )">
+                        <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C558.png') }}"/>
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        BIZHUB C558: La Konica Minolta bizhub C558 es una multifuncional A3 de alto rendimiento diseñada para entornos empresariales exigentes.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 5,549.00
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C558',
+                      'INFO-La Konica Minolta bizhub C558 es una multifuncional A3 de alto rendimiento diseñada para entornos empresariales exigentes. Con velocidades de impresión de hasta 55 páginas por minuto tanto en color como en blanco y negro, esta máquina combina potencia, conectividad avanzada, diseño intuitivo y funciones de seguridad de última generación. Ideal para oficinas que requieren productividad, versatilidad y eficiencia energética.',
+                      'img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C558.png',
+                      'S/ 5,549.00',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C558. VELOCIDAD AUTODUPLEX A4: Hasta 55 ppm (mono/color). VELOCIDAD DE ESCANEO: Hasta 120 ipm (simple), hasta 240 ipm (dúplex). CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA RAM: (MB) 4.096 MB. DISCO DURO: 250 GB. INTERFAZ DE RED:  Ethernet 10/100/1000 Base-T, USB 2.0. INTERFAZ DE WIFI: 802.11b/g/n (Opcional). CAPACIDAD DE BUZON DE USUARIO: Hasta 3.000 documentos o 10.000 páginas. RESOLUCION DE IMPRESION: 1.800 x 600 ppp (equivalente), 1.200 x 1.200 ppp. FORMATOS DE ARCHIVOS: JPEG, TIFF, PDF, PDF compacto, PDF cifrado, XPS, XPS compacto, PPTX. CERTIFICACION: ISO15408, IEEE 2600.2 (en evaluación). SISTEMAS OPERATIVOS: Windows Vista/7/8/10 (32/64 bits), Windows Server 2008/2012, macOS 10.x, Unix, Linux, Citrix. PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk, SMB, LPD, IPP, SNMP, HTTP. Fecha de publicación: 13/06/2024. Fecha de último estado: 23/10/2024`,
+                      '/static/pdf/pdf-fotocopiadoras-seminuevas-series-8/Konica-Minolta-Bizhub-C558.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-750i" >Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm">
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C658',
+                      'INFO-La Konica Minolta bizhub C658 es una multifuncional A3 de alto rendimiento diseñada para entornos empresariales exigentes. Con velocidades de impresión de hasta 65 páginas por minuto en color y blanco y negro, esta máquina combina potencia, conectividad móvil, seguridad avanzada y eficiencia energética en un diseño moderno y minimalista.',
+                      'img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C658.png',
+                      'S/ 5,929.00',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C658. VELOCIDAD A4:  Hasta 65/65 (color/monocromo). VELOCIDAD  (Mono/Color): simple Hasta 120/120 ipm. DUPLEX: Hasta 240/240 ipm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA RAM: (MB) 4.096 MB. DISCO DURO: 250 GB. CONEXION: Ethernet 10/100/1000, USB 2.0. CAPACIDAD ESTANDAR: Máx. 250 hojas. CAPACIDAD MAXIMA: Máx. 3.300 hojas. RESOLUCION DE IMPRESION: 1.800 (equivalente) × 600 ppp; 1.200 x 1.200 ppp. FORMATOS DE ARCHIVOS: JPEG, TIFF, PDF, PDF compacto, PDF cifrado, XPS, XPS compacto, PPTX. SISTEMAS OPERATIVOS: Windows Vista/7/8/10 (32/64 bits), Windows Server 2008/2008 R2/2012/2012 R2, Macintosh OS 10.x, Unix, Linux, Citrix. PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP. Fecha de publicación: 13/06/2024. Fecha de último estado: 23/10/2024`,
+                        '/static/pdf/pdf-fotocopiadoras-seminuevas-series-8/Konica-Minolta-Bizhub-C658.pdf'
+                        )">
+                        <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C658.png') }}"/>
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        BIZHUB C658: La Konica Minolta bizhub C658 es una multifuncional A3 de alto rendimiento diseñada para entornos empresariales exigentes.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 5,929.00
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C658',
+                      'INFO-La Konica Minolta bizhub C658 es una multifuncional A3 de alto rendimiento diseñada para entornos empresariales exigentes. Con velocidades de impresión de hasta 65 páginas por minuto en color y blanco y negro, esta máquina combina potencia, conectividad móvil, seguridad avanzada y eficiencia energética en un diseño moderno y minimalista.',
+                      'img/productos-fotocopiadoras-seminuevas-series-8/Bizhub-C658.png',
+                      'S/ 5,929.00',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C658. VELOCIDAD A4:  Hasta 65/65 (color/monocromo). VELOCIDAD  (Mono/Color): simple Hasta 120/120 ipm. DUPLEX: Hasta 240/240 ipm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA RAM: (MB) 4.096 MB. DISCO DURO: 250 GB. CONEXION: Ethernet 10/100/1000, USB 2.0. CAPACIDAD ESTANDAR: Máx. 250 hojas. CAPACIDAD MAXIMA: Máx. 3.300 hojas. RESOLUCION DE IMPRESION: 1.800 (equivalente) × 600 ppp; 1.200 x 1.200 ppp. FORMATOS DE ARCHIVOS: JPEG, TIFF, PDF, PDF compacto, PDF cifrado, XPS, XPS compacto, PPTX. SISTEMAS OPERATIVOS: Windows Vista/7/8/10 (32/64 bits), Windows Server 2008/2008 R2/2012/2012 R2, Macintosh OS 10.x, Unix, Linux, Citrix. PROTOCOLOS DE RED: TCP/IP (IPv4/IPv6), IPX/SPX, NetBEUI, AppleTalk (EtherTalk), SMB, LPD, IPP, SNMP, HTTP. Fecha de publicación: 13/06/2024. Fecha de último estado: 23/10/2024`,
+                      '/static/pdf/pdf-fotocopiadoras-seminuevas-series-8/Konica-Minolta-Bizhub-C658.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-750i" >Ver detalles
+                    </button>
+                </article>
+            </div>
+        </<section>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "index.html" %}
+
+<div class="container mt-5">
+    <h2 class="text-center text-uppercase fw-bold"> Contenido de recargas compatibles</h2>
+    <p class="text-center">Aquí irán todos los productos de recargas compatibles con sus características.</p>
+</div>
+
+<!-- productos.html -->
+
+
+{% block content %}
+<section class="container py-5">
+  <h2 class="text-center mb-4">Buscador de Consumibles</h2>
+
+  <!-- Buscador -->
+  <div class="mb-4 text-center">
+    <input type="text" id="buscadorConsumibles" class="form-control form-control-lg w-50 mx-auto"
+           placeholder="Buscar por modelo, color o código...">
+  </div>
+
+  <!-- Tabla -->
+  <div class="table-responsive">
+    <table class="table table-hover table-striped align-middle" id="tablaConsumibles">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Descripción</th>
+          <th>Precio</th>
+          <th>Categoría</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for consumible in consumibles %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>{{ consumible.descripcion }}</td>
+          <td>{{ consumible.precio }}</td>
+          <td>{{ consumible.categoria }}</td>
+          <td>
+            <button class="btn btn-outline-danger btn-sm seleccionar-btn"
+                    data-bs-toggle="modal" data-bs-target="#modalSolicitud"
+                    data-nombre="{{ consumible.descripcion }}">
+              Solicitar
+            </button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="modalSolicitud" tabindex="-1" aria-labelledby="modalSolicitudLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title" id="modalSolicitudLabel">Solicitar Consumible</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <form id="formSolicitud">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Consumible</label>
+            <input type="text" class="form-control" id="consumibleSeleccionado" readonly>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control" name="nombre" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Correo</label>
+            <input type="email" class="form-control" name="correo" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Teléfono</label>
+            <input type="tel" class="form-control" name="telefono">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="submit" class="btn btn-danger">Enviar Solicitud</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

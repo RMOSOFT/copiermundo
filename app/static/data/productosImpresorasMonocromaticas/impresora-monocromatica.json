@@ -1,0 +1,105 @@
+{
+    "bizhub-750i": {
+        "titulo": "Bizhub 750i",
+        "descripcion": "Multifuncional láser monocromático con velocidad de impresión 75 PPM; copiado 75 CPM; memoria de 8 GB.",
+        "imagen": "/static/img/productos/bizhub-750i.jpg",
+        "afiche": "/static/pdf/bizhub750i.pdf",
+        "precio": "S/ 58,417.30",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB 750i.", 
+            "VELOCIDAD MONOCROMATICA: 75 ppm.", 
+            "CONECTIVIDAD WLAN: Sí.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 8192 MB.", 
+            "MEMORIA MAXIMA: 8192 MB.,",
+            "SISTEMA DE MANEJO DE RAEE: Individual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí.", 
+            "RESOLUCION DE IMPRESION: 1200 x 1200 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 80000 pg.", 
+            "CERTIFICACION: ISO 14001, ROHS 18001, ISO 9001, ENERGY STAR.", 
+            "Fecha de publicación: 13/08/2024.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "bizhub-185en": {
+        "titulo": "Bizhub 185en",
+        "descripcion": "Fotocopiadora bizhub 185en Copiadora A3 monocromo equipada con funciones de impresión GDI y escáner TWAIN.",
+        "imagen": "/static/img/productos/bizhub-185en.jpg",
+        "afiche": "/static/pdf/bizhub185en.pdf",
+        "precio": "S/ 3,940.50",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB 185en.", 
+            "VELOCIDAD MONOCROMATICA: 18 ppm.", 
+            "CONECTIVIDAD WLAN: Sí.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 64 MB.", 
+            "MEMORIA MAXIMA: 64 MB.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): No.", 
+            "RESOLUCION DE IMPRESION: 600x600 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 2500 pg.", 
+            "CERTIFICACION: ISO 14001, ROHS 18001, ISO 9001.", 
+            "Fecha de publicación: 13/03/2022.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "bizhub-367": {
+        "titulo": "Bizhub 367",
+        "descripcion": "Es de gran ayuda y permite ahorrar tiempo a los usuarios. Capacidad de 1150 hojas estándar.",
+        "imagen": "/static/img/productos/bizhub-367.jpg",
+        "afiche": "/static/pdf/bizhub367.pdf",
+        "precio": "S/ 17,526.90",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB 367.", 
+            "VELOCIDAD MONOCROMATICA: 36 ppm.", 
+            "CONECTIVIDAD WLAN: No.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 2048 MB.", 
+            "MEMORIA MAXIMA: 2048 MB.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si.", 
+            "RESOLUCION DE IMPRESION: 600x600 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 20000 pg.", 
+            "CERTIFICACION: ISO 14001, ROHS, ISO 14001, ENERGY STAR.", 
+            "Fecha de publicación: 13/09/2022.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "bizhub-651i": {
+        "titulo": "Bizhub 651i",
+        "descripcion": "Impresora laser monocromática Velocidad: 65/32 páginas por minuto A4/A3.",
+        "imagen": "/static/img/productos/bizhub-651i.jpg",
+        "afiche": "/static/pdf/bizhub651i.pdf",
+        "precio": "S/ 28,549.20",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB 651i.", 
+            "VELOCIDAD MONOCROMATICA: 65 ppm.", 
+            "CONECTIVIDAD WLAN: Si.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 8192 MB.", 
+            "MEMORIA MAXIMA: 8192 MB.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si.", 
+            "RESOLUCION DE IMPRESION: 1200 x 1200 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 50000 pg.", 
+            "CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR.", 
+            "Fecha de publicación: 13/06/2024.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    }
+}

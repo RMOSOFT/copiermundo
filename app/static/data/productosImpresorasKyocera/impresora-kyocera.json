@@ -1,0 +1,109 @@
+{
+    "ECOSYS M8124CIDN": {
+        "titulo": "ECOSYS M8124CIDN",
+        "descripcion": "Una multifuncional para A4/A3 a color con 24ppm en A4. Con su diseño compacto y su magnífica.",
+        "imagen": "/static/img/productos/ECOSYS M8124CIDN.jpg",
+        "afiche": "/static/pdf/pdf-fotocopiadoras/ECOSYSM8124CIDN.pdf",
+        "precio": "S/ 8,440.9",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB ECOSYS M8124CIDN.", 
+            "VELOCIDAD MONOCROMATICA: 24 ppm.", 
+            "VELOCIDAD COLOR: 24 ppm.", 
+            "CONECTIVIDAD WLAN: Si.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 1536 MB.", 
+            "MEMORIA MAXIMA: 1536 MB.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si.", 
+            "RESOLUCION DE IMPRESION: 1200 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 8000 pg.", 
+            "CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR.", 
+            "Fecha de publicación: 13/05/2018.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "ECOSYS MA5500IFX": {
+        "titulo": "ECOSYS MA5500IFX",
+        "descripcion": "Esta multifuncional es perfecta para equipos dinámicos con altas exigencias de productividad y eficiencia de software.",
+        "imagen": "/static/img/productos/ECOSYS MA5500IFX.jpg",
+        "afiche": "/static/pdf/pdf-fotocopiadoras/ECOSYSMA5500IFX.pdf",
+        "precio": "S/ 6,099.00",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB ECOSYS MA5500IFX.", 
+            "VELOCIDAD MONOCROMATICA: 57 ppm.", 
+            "VELOCIDAD COLOR: No aplica.", 
+            "CONECTIVIDAD WLAN: Si.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 1.5 GB.", 
+            "MEMORIA MAXIMA: 3.5 GB.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si.", 
+            "RESOLUCION DE IMPRESION: 1200 x 1200 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 50000 pg.", 
+            "CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR.", 
+            "Fecha de publicación: 13/07/2024.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "ECOSYS PA4000WX": {
+        "titulo": "ECOSYS PA4000WX",
+        "descripcion": "Equipo completo, desde una alta capacidad de papel y conexión Wi-Fi, hasta impresión dúplex y un diseño compacto.",
+        "imagen": "/static/img/productos/ECOSYS PA4000WX.jpg",
+        "afiche": "/static/pdf/pdf-fotocopiadoras/ECOSYSPA4000WX.pdf",
+        "precio": "S/ 1124.49",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB ECOSYS PA4000WX.", 
+            "VELOCIDAD MONOCROMATICA: 42 ppm.", 
+            "VELOCIDAD COLOR: No aplica.", 
+            "CONECTIVIDAD WLAN: Si.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 512 MB.", 
+            "MEMORIA MAXIMA: 512 MB.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): No.", 
+            "RESOLUCION DE IMPRESION: 1200 x 1200 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 10000 pg.", 
+            "CERTIFICACION: ISO 9001, ISO 14001, ENERGY STAR.", 
+            "Fecha de publicación: 13/01/2025.", 
+            "Fecha de último estado: 13/01/2025."
+        ]
+    },
+
+    "WORKFORCE PRO WF-C5890": {
+        "titulo": "WORKFORCE PRO WF-C5890",
+        "descripcion": "La impresora multifunción a color WorkForce® Pro WF-C5890 presenta la próxima generación de tecnología de impresión.",
+        "imagen": "/static/img/productos/WORKFORCE PRO WF-C5890.jpg",
+        "afiche": "/static/pdf/pdf-fotocopiadoras/WORKFORCEPROWFC5890.pdf",
+        "precio": "S/ 2,083.54",
+        "caracteristicas": [
+            "MARCA: KYOCERA.", 
+            "MODELO: WORKFORCE PRO WF-C5890.", 
+            "VELOCIDAD MONOCROMATICA: 25 ppm.", 
+            "VELOCIDAD COLOR: 25 ppm.", 
+            "CONECTIVIDAD WLAN: Si.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 1024 MB.", 
+            "MEMORIA MAXIMA: 1024 MB.", 
+            "SISTEMA DE MANEJO DE RAEE: Colectivo.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si.", 
+            "RESOLUCION DE IMPRESION: 4800 ppp.", 
+            "RESOLUCION DE CAPTURA: 1200 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 8000 pg.", 
+            "CERTIFICACION: Reach, ISO 14001, ROHS.", 
+            "Fecha de publicación: 13/10/2024.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    }
+}

@@ -1,0 +1,136 @@
+{% extends "index.html" %}
+<!-- Imagen o banner -->
+
+{% block content %}
+<!-- Banner -->
+
+<div class="text-center my-0">
+    <img src="{{ url_for('static', path='img/consumibles/cinta-consumibles.jpg') }}" class="img-fluid banner-consumibles" alt="Consumibles">
+</div>
+
+<div class="container mt-5">
+  <h2 class="text-center text-uppercase fw-bold display-10" 
+      style="--title-color: #1e3a8a;">
+    Encuentre sus contenidos de recargas compatibles para todo equipo en impresoras multifuncional a láser.
+  </h2>
+    <p class="text-center titulo-dinamico" style="color: var(--title-color, #111);">
+        {{ titulo }}
+    </p>
+
+    <!-- Opcional: sub-título dinámico -->
+    {% if titulo_subtitulo %}
+        <p class="text-center subtitle" style="color: var(--title-color, #555);">
+            {{ titulo_subtitulo }}
+        </p>
+    {% endif %}
+</div>
+
+<section id="consumibles-section">
+    <div class="container">
+        <div class="row">
+            <!-- Columna principal -->
+            <div class="col-md-8">
+                <!-- Formulario -->
+                <form id="solicitudForm" method="post" class="mb-4" onsubmit="enviarSolicitud(event)">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Nombres</label>
+                            <input type="text" class="form-control" name="nombre" placeholder="Ingresa tu nombre..." required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Empresa/Organización</label>
+                            <input type="text" class="form-control" name="empresa" placeholder="Ingresa el tipo de empresa..." required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Telefono</label>
+                            <input type="number" class="form-control" name="telefono" placeholder="Ingresa tu telefono..." required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Correo(GMAIL)</label>
+                            <input type="text" class="form-control" name="correo" placeholder="Ingresa tu correo..." required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Consumible</label>
+                            <input type="text" class="form-control" name="consumible" placeholder="Escribe o selecciona..." required>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Cantidad</label>
+                            <input type="number" class="form-control" name="cantidad" min="1" required>
+                        </div>
+                        <div class="col-md-3 d-flex align-items-end">
+                            <button type="submit" class="btn btn-primary w-100">Enviar solicitud</button>
+                        </div>
+                        <textarea name="observaciones" placeholder="Observaciones (opcional)"></textarea>
+                    </div>
+                </form>
+
+                <!-- Buscador -->
+                <input type="text" id="buscador" class="form-control mb-3" placeholder="Buscar consumible...">
+
+                <!-- Tabla -->
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <th>Precio</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaConsumibles">
+                        {% for p in productos %}
+                            <tr>
+                                <td>{{ p.id }}</td>
+                                <td>{{ p.nombre }}</td>
+                                <td>{{ p.tipo }}</td>
+                                <td>{{ p.precio }}</td>
+                                <td><button class="btn btn-sm btn-success seleccionar-btn">Seleccionar</button></td>
+                                <td>
+                                    <button type="button"
+                                    class="btn btn-sm btn-warning"
+                                    onclick='addToCartFromServer({{ p | tojson | safe }})'>Agregar al carrito
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Columna informativa -->
+            <div class="col-md-4">
+                <div class="info-box">
+                    <h5 class="text-danger fw-bold mb-2">Identifica el consumible que necesitas</h5>
+                    <p class="mb-1">Consulta o descarga las listas de consumibles para identificar el correcto.</p>
+                    <p class="mb-1">Usa <strong>Ctrl + F</strong> para agilizar tu búsqueda.</p>
+                </div>
+                <h6 class="text-danger fw-bold mt-4">Información de Contáctanos</h6>
+                <ul class="list-unstyled small text-muted">
+                    <li><i class="fas fa-map-marker-alt text-success me-2"></i> Dirección: AV. Micaela Bastidas Nro-727 - Cusco, Perú</li>
+                    <li><i class="fas fa-envelope text-primary me-2"></i> Correo: copiermundo33@gmail.com</li>
+                    <li><i class="fab fa-whatsapp text-success me-2"></i> Whatsapp: +51 940 41 44 40</li>
+                    <li><i class="fab fa-instagram text-danger me-2"></i> Instagram: COPIER MUNDO E.I.R.L - PERU</li>
+                    <li><i class="fab fa-facebook text-primary me-2"></i> Facebook: COPIER MUNDO E.I.R.L - PERU</li>
+                </ul>
+            </div>
+
+            
+        </div>
+    </div>
+
+    
+
+    <!-- Toast unificado -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+      <div id="toastNotificacion" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true"
+           data-bs-autohide="true" data-bs-delay="3000">
+        <div class="d-flex">
+          <div id="toastMensaje" class="toast-body">
+              ✅ Solicitud enviada correctamente.
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{% endblock %}

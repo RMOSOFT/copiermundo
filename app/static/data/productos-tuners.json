@@ -1,0 +1,84 @@
+{
+    "TONER-AMARILLO": {
+        "titulo": "Cartucho de Toner Amarillo TN-223Y",
+        "descripcion": "Cartucho de Toner Konica Minolta TN-223Y original de color Yellow con rendimiento de 1.300 páginas de impresión.",
+        "imagen": "/static/img/productos-tuners/Tuners-color-amarillo.jpg",
+        "afiche": "/static/pdf/pdf-toners/TonerTN223Y.pdf",
+        "precio": "S/ 595.00",
+        "caracteristicas": [
+            "MARCA: SHARP.", 
+            "MODELO: TONER SHARP MX-75NTYA.", 
+            "COLOR: AMARILLO.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.",
+            "RENDIMIENTO: 60000 pg.",
+            "UNIDAD: CAJA X 01 UNIDAD.", 
+            "EMPAQUE DE FABRICA: EN: CAJA.", 
+            "NRO PARTE: MX-75NTYA.", 
+            "Fecha de publicación: 14/08/2021.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "TONER-CIAN": {
+        "titulo": "Cartucho de TONER CIAN TN-220C.",
+        "descripcion": "El Tóner Konica Minolta TN-220C tiene un rendimiento excelente si se trata de impresiones de calidad",
+        "imagen": "/static/img/productos-tuners/Tuners-color-cian.jpg",
+        "afiche": "/static/pdf/pdf-toners/TonerTN220C.pdf",
+        "precio": "S/ 217.00",
+        "caracteristicas": [
+            "MARCA: DENSITONE PREMIUM.", 
+            "MODELO: TN220C.", 
+            "COLOR: CIAN.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.",
+            "RENDIMIENTO: 26000 pg.",
+            "UNIDAD: CAJA X 01 UNIDAD.", 
+            "EMPAQUE DE FABRICA: EN: CAJA", 
+            "NRO PARTE: T-BHC221/281C.", 
+            "Fecha de publicación: 13/10/2020.", 
+            "Fecha de último estado: 21/11/2024."
+        ]
+    },
+
+    "TONER-MAGENTA": {
+        "titulo": "Cartucho de TONER MAGENTA TN220M.",
+        "descripcion": "Utiliza suministros originales de Konica Minolta, obtendrás colores vibrantes, textos nítidos, líneas finas y una salida consistente, página tras página.",
+        "imagen": "/static/img/productos-tuners/Tuners-color-magenta.jpg",
+        "afiche": "/static/pdf/pdf-toners/TonerTN220M.pdf",
+        "precio": "S/ 610.98",
+        "caracteristicas": [
+            "MARCA: DENSITONE PREMIUM.", 
+            "MODELO: TN220M.", 
+            "COLOR: MAGENTA.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.",
+            "RENDIMIENTO: 26000 pg.",
+            "UNIDAD: CAJA X 01 UNIDAD.", 
+            "EMPAQUE DE FABRICA: EN: CAJA.", 
+            "NRO PARTE: T-BHC221/281M.", 
+            "Fecha de publicación: 13/10/2020.", 
+            "Fecha de último estado: 21/11/2024."
+        ]
+    },
+
+    "TONER-NEGRO": {
+        "titulo": "Cartucho de TONER NEGRO TN323.",
+        "descripcion": "El cartucho de tóner TN-323 es un cartucho de tóner negro, lo que significa que se utiliza para imprimir documentos en blanco y negro.",
+        "imagen": "/static/img/productos-tuners/Tuners-color-negro.jpg",
+        "afiche": "/static/pdf/pdf-toners/TonerTN323.pdf",
+        "precio": "S/ 307.70",
+        "caracteristicas": [
+            "MARCA: DENSITONE PREMIUM.", 
+            "MODELO: TN323.", 
+            "COLOR: NEGR0.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.",
+            "RENDIMIENTO: 23000 pg.",
+            "UNIDAD: CAJA X 01 UNIDAD.", 
+            "EMPAQUE DE FABRICA: EN: CAJA.", 
+            "NRO PARTE: T-BH227K.", 
+            "Fecha de publicación: 13/11/2020.", 
+            "Fecha de último estado: 21/11/2024."
+        ]
+    }
+
+
+
+}

@@ -1,0 +1,178 @@
+<!-- productos.html -->
+{% extends "index.html" %}
+
+{% block content %}
+
+<section>
+    <!-- Breadcrumb + Título -->
+    <div class="bg-gray-100 py-3 px-4 mb-4 rounded">
+        <nav class="text-sm text-gray-600">
+            <a href="/" class="text-blue-600 hover:underline">Inicio</a> &gt;
+            <span>Contáctanos</span>
+        </nav>
+    </div>
+</section>
+
+<!-- contacto.html -->
+<section class="max-w-6xl mx-auto mt-10 px-4">
+    
+    <h2 class="bg-gray-100 py-3 px-4 mb-4 rounded" class="text-2xl font-bold text-center mb-4 text-blue-800">📍 Nuestra ubicación - Copier mundo - Contáctenos.</h2>
+    <p class="text-center text-gray-600 mb-6">Estamos ubicados en AV. Micaela Bastidas Nro 727 - Cusco, Perú</p>
+
+    <div class="w-full h-[400px] rounded-lgContáctenos. overflow-hidden shadow-lg">
+        <!-- Este es el mapa -->
+        <iframe 
+          src="https://www.google.com/maps?q=AV.+MICAELA+BASTIDAS+727,+Cusco,+Perú&output=embed"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+
+<section class="py-5 bg-white">
+    <div class="container">
+        <div class="row">
+            <!-- Columna izquierda: Formulario -->
+            <div class="col-12 col-md-7">
+                <h4 class="mb-4 fw-bold text-uppercase">Contáctenos</h4>
+                <form method="POST" id="form-presupuesto">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                          <label for="nombre" class="form-label">Nombres y Apellidos *</label>
+                          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo..." required>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="empresa" class="form-label">Empresa</label>
+                          <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Ingresa su empresa..." required>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="correo" class="form-label">Correo de contacto *</label>
+                          <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingresa tu correo electronico..." required>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="telefono" class="form-label">Número de contacto *</label>
+                          <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ingresa su contacto.." required>
+                        </div>
+                        <div class="col-12">
+                          <label for="asunto" class="form-label">Asunto *</label>
+                          <input type="text" class="form-control" id="asunto" name="asunto" placeholder="Ingresa su asunto..."required>
+                        </div>
+                        <div class="col-12">
+                          <label for="mensaje" class="form-label" >Describa sus dudas o comentarios</label>
+                          <textarea class="form-control" id="mensaje" name="mensaje" rows="4" placeholder="Ingresa su asunto que tiene inconvenientes..." required></textarea>
+                        </div>
+                        <div class="col-12">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="privacidad" name="privacidad" required>
+                            <label class="form-check-label" for="privacidad">
+                              He leído y acepto las <a href="#" class="text-danger">Políticas de Privacidad</a>.
+                            </label>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <button type="submit" class="btn btn-dark w-100 text-uppercase">Enviar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Columna derecha: Información -->
+            <div class="col-12 col-md-5 mt-5 mt-md-0">
+                <h5 class="text-danger fw-bold text-uppercase mb-3">Sobre Nosotros</h5>
+                <p class="text-muted">
+                Contáctanos – Somos una empresa dedicada a la importación de fotocopiadoras de konica minolta, venta mayorista y minorista de <span class="text-danger fw-semibold">máquinas fotocopiadoras</span>, repuestos e insumos. Contamos con más de <span class="fw-semibold text-dark">12 años de experiencia</span> ofreciendo soluciones confiables.
+                </p>
+
+                <h6 class="text-danger fw-bold mt-4">Información de Contáctanos</h6>
+                <ul class="list-unstyled small text-muted">
+                    <li><i class="fas fa-map-marker-alt text-success me-2"></i> Dirección: AV. Micaela Bastidas Nro-727 - Cusco, Perú</li>
+                    <li><i class="fas fa-envelope text-primary me-2"></i> Correo: copiermundo33@gmail.com</li>
+                    <li><i class="fab fa-whatsapp text-success me-2"></i> Whatsapp: +51 940 41 44 40</li>
+                    <li><i class="fab fa-instagram text-danger me-2"></i> Instagram: COPIER MUNDO E.I.R.L - PERU</li>
+                    <li><i class="fab fa-facebook text-primary me-2"></i> Facebook: COPIER MUNDO E.I.R.L - PERU</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if request.query_params.get('enviado') %}
+<div class="alert alert-success mt-4">Gracias por contactarnos. Te responderemos pronto.</div>
+{% endif %}
+
+<section>
+  <!-- CINTA ESTILIZADA -->
+  <div class="bg-gray-400 text-blue-800 py-3 text-center">
+    <h1 class="text-2xl md:text-2xl font-bold mb-1">COPIER MUNDO - CUSCO, DISTRIBUIDOR OFICIAL DE KONICA MINOLTA</h1>
+    <p class="text-base md:text-lg"></p>
+  </div>
+</section>
+
+<!-- Cuarta cinta propaganda para tuners y otros-->
+<section class="w-100">
+    <a href="/producto/impresoras">
+        <div class="container-fluid p-0">
+            <img src="{{ url_for('static', path='img/MAQUINAS-RICOH-WEB.png') }}" class="img-fluid w-100" style="max-height: 420px; object-fit: cover;" alt="Banner Promocional Copier Mundo">
+        </div>
+    </a> 
+</section>
+
+<section class="container py-5">
+    <!-- Título central con líneas -->
+    <div class="d-flex align-items-center justify-content-center mb-5">
+        <hr class="flex-grow-1 border-secondary" />
+        <h2 class="titulo-valores px-3">VALORES DE EMPRESA</h2>
+        <hr class="flex-grow-1 border-secondary" />
+    </div>
+
+    <!-- Cuadrícula de valores -->
+    <div class="row text-center gy-4">
+
+        <!-- Valor: Eficiencia -->
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
+                <i class="fas fa-star text-white"></i>
+            </div>
+            <h5 class="text-primary fw-bold mb-2">Eficiencia</h5>
+            <p class="small text-muted">
+            Productos que aumentan la productividad con soluciones multifuncionales que ahorran tiempo y recursos.
+            </p>
+        </div>
+
+        <!-- Valor: Orientación al cliente -->
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
+                <i class="fas fa-handshake text-white"></i>
+            </div>
+            <h5 class="text-primary fw-bold mb-2">Orientación al cliente</h5>
+            <p class="small text-muted">
+            Atención personalizada con equipos adecuados y un servicio postventa eficiente.
+            </p>
+        </div>
+
+        <!-- Valor: Durabilidad -->
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
+                <i class="fas fa-chess-rook text-white"></i>
+            </div>
+            <h5 class="text-primary fw-bold mb-2">Durabilidad</h5>
+            <p class="small text-muted">
+                Equipos de calidad con rendimiento constante y una vida útil prolongada.
+            </p>
+        </div>
+
+        <!-- Valor: Responsabilidad Social -->
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
+                <i class="fas fa-seedling text-white"></i>
+            </div>
+            <h5 class="text-primary fw-bold mb-2">Responsabilidad Social</h5>
+            <p class="small text-muted">
+            Promovemos el uso de insumos reciclables y tecnologías con bajo impacto ambiental.
+            </p>
+        </div>
+  </div>
+</section>
+
+
+{% endblock %}

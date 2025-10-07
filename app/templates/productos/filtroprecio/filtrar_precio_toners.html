@@ -1,0 +1,313 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+<!-- Header with background image and text img-productos-->
+<div class="relative w-full h-32 sm:h-40 md:h-40 lg:h-44 xl:h-48">
+    <img alt="Impresora en fondo oscuro con pantalla y bandejas" class="w-full h-full object-cover" height="288" src="{{ url_for('static', path='img/productos-tuners/img-cinta-toners.png') }}" width="1930"/>
+    
+    <h1 class="text-white text-xl sm:text-2xl md:text-3xl font-normal">
+        Productos filtrados
+    </h1>
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-10 flex items-center justify-between px-6 sm:px-10 md:px-16">
+        <h1 class="text-white text-xl sm:text-2xl md:text-3xl font-normal">
+            PRODUCTOS TONERS Y CARTUCHOS
+        </h1>
+        <a class="text-white text-xs sm:text-sm md:text-base flex items-center gap-1 hover:underline" href="/">
+            <i class="fas fa-chevron-left text-xs">
+            </i>
+            Volver a página anterior
+        </a>
+    </div>
+</div>
+
+
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6">
+    <div class="flex flex-col md:flex-row md:space-x-8">
+        <!-- Left sidebar -->
+        <aside class="w-full md:w-64 border-r border-gray-300 pb-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="font-semibold text-sm sm:text-base uppercase">
+                    BÚSQUEDA DE PRODUCTOS
+                </h2>
+                <div class="border-b border-gray-300 w-12">
+                </div>
+            </div>
+
+            <div>
+                <button aria-expanded="true" class="flex items-center justify-between w-full text-xs sm:text-sm font-normal text-gray-700 uppercase mb-2" type="button">
+                    <span>
+                        SECCION DE CATEGORIAS
+                    </span>
+                    <span class="text-2xl leading-none select-none">
+                        −
+                    </span>
+                </button>
+                <ul class="text-xs sm:text-sm font-normal text-gray-500 border-t border-b border-gray-300 divide-y divide-gray-300">
+                    <a href="/productos/fotocopiadoras">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES NUEVAS
+                            </span>
+                            <span class="text-gray-400">
+                                (16)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-seminuevas">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES SEMINUEVAS
+                            </span>
+                            <span class="text-gray-400">
+                                (7)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-seminuevas-series-8">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES SEMINUEVAS-SERIES(8)
+                            </span>
+                            <span class="text-gray-400">
+                                (5)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/tonerescartuchos">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                RECARGAS TONERS Y CARTUCHOS
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-color">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS A COLOR
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-monocromaticas">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MONOCROMÁTICAS
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-kyoceras">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS KYOCERAS
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/accesoriosoficina">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                ACCESORIOS DE OFICINA
+                            </span>
+                            <span class="text-gray-400">
+                                (8)
+                            </span>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="mb-8">
+            </div>
+            <!-- Filtro de precio dentro del <aside> -->
+            <div class="mt-4">
+                <h3 class="text-md font-semibold mb-2">Filtrar por precio</h3>
+                <form id="precio-form" class="space-y-2" method="get" action="/productos/filtro-precios-toners">
+                    <!-- categoría dinámica -->
+                    <input type="hidden" name="categoria" value="{{ categoria }}">
+                    
+                    <!-- precios -->
+                    <input type="number" name="min" placeholder="Precio mínimo" class="pl-6 pr-2 px-3 py-1 w-60 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" value="{{ min }}">
+                    <input type="number" name="max" placeholder="Precio máximo" class="pl-6 pr-2 px-3 py-1 w-60 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm" value="{{ max }}">
+                    
+                    <button type="submit" class="bg-blue-500 text-white px-3 py-1 rounded w-60 hover:bg-blue-700">
+                        Filtrar
+                    </button>
+                </form>
+            </div>
+            
+            
+            <div class="mb-8">
+            </div>            
+
+            <div>
+                <h3 class="text-xs font-bold uppercase mb-1 border-b border-gray-300 pb-2 font-semibold text-sm sm:text-base uppercase">
+                    PRODUCTOS VISTOS
+                </h3>
+                <ul class="space-y-6 text-xs">
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c266i.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub c266i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                S/ 18,149.46
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c3321i.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub-C3321i: IMPRESORA MONOCROMÁTICA DE ALTA VELOCIDAD PARA GRUPOS
+                                DE TRABAJO  
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                S/ 7,925.40
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="https://storage.googleapis.com/a1aa/image/90bae295-9001-4e53-4fd7-936b12ff77ae.jpg" width="40"/>
+                        <div>
+                            <p>
+                                BIZHUB 360I: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                S/ 28,427.69
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-185en.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub 185en: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                $ 3,940.50
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c451i.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub c451i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                $ 35,501.50
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        
+
+        <!-- Right content -->
+        <section class="flex-1">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-300 pb-4 mb-4">
+                <div class="flex items-center space-x-2 mb-3 sm:mb-0">
+                    <select aria-label="Ordenar productos" class="border border-gray-300 rounded px-3 py-1 text-xs sm:text-sm">
+                        <option>
+                         Orden predeterminado
+                        </option>
+                    </select>
+                    <button aria-label="Vista en cuadrícula" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                        <i class="fas fa-th">
+                        </i>
+                    </button>
+                    <button aria-label="Vista en lista" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                        <i class="fas fa-list">
+                        </i>
+                    </button>
+                </div>
+                <nav aria-label="Paginación" class="flex items-center space-x-2 text-xs sm:text-sm text-gray-700">
+                    <button aria-current="page" class="bg-black text-white px-3 py-1" disabled="">
+                        1
+                    </button>
+                    <button class="hover:underline px-1">
+                        2
+                    </button>
+                    <span>
+                        ..
+                    </span>
+                    <button class="hover:underline px-1">
+                        5
+                    </button>
+                    <button aria-label="Siguiente página" class="px-1">
+                        <i class="fas fa-angle-double-right">
+                        </i>
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Desde aqui son los productos que hay para todo tipo de fotocopiadoras -->
+            <div class="container mx-auto p-6">
+                <h2 class="text-2xl font-bold mb-4">Resultados de toners {{ categoria | capitalize }}</h2>
+                <p class="text-gray-600 mb-6">Rango aplicado: S/ {{ min }} - S/ {{ max }}</p>
+
+                {% if productos|length == 0 %}
+                    <p class="text-gray-500">⚠️ No se encontraron productos en este rango de precios.</p>
+                    <script>
+                        document.addEventListener("DOMContentLoaded", () => {
+                            showToast("⚠️ No se encontraron productos en este rango de precios.", "warning");
+                        });
+                    </script>
+                {% else %}
+                    <script>
+                        document.addEventListener("DOMContentLoaded", () => {
+                            showToast("✅ Productos cargados correctamente.", "success");
+                        });
+                    </script>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        {% for p in productos %}
+                            <div class="border rounded-lg shadow hover:shadow-lg transition p-4 bg-white">
+                                <img src="{{ p.imagen }}" alt="{{ p.nombre }}" class="w-full h-48 object-contain mb-3">
+                                <h3 class="text-lg font-semibold text-gray-800">{{ p.nombre }}</h3>
+                                <p class="text-sm text-gray-600">{{ p.descripcion }}</p>
+                                <p class="text-blue-700 font-bold mt-2">S/ {{ "%.2f"|format(p.precio) }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </section>
+    </div>
+</main>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,221 @@
+
+{% extends "index.html" %}
+
+{% block content %}
+<!-- Este codigo es la pagina hija del carrito.html -->
+<div class="max-w-5xl mx-auto py-8 px-4 grid md:grid-cols-3 gap-8">
+  <!-- Lista de productos -->
+  <div class="md:col-span-2">
+    <h2 class="text-xl font-bold mb-4">Mi carrito</h2>
+    <div id="carritoPage"></div>
+     <!-- Código promocional -->
+    <div class="mt-4">
+      <button onclick="togglePromo()" class="flex items-center text-purple-700 text-sm">
+        <i class="fas fa-ticket-alt mr-2 font-bold"></i>
+        <strong>Ingresar código promocional</strong>
+      </button>
+      <div id="promoBox" class="hidden mt-2">
+        <input type="text" id="promoInput" placeholder="P. ej. OFERTA50" 
+               class="w-full border px-2 py-1 rounded">
+        <button onclick="applyPromo()" class="bg-gray-700 text-white px-3 py-1 mt-2 rounded">Aplicar</button>
+      </div>
+    </div>
+
+    <!-- Nota -->
+    <div class="mt-4">
+      <button onclick="toggleNota()" class="flex items-center text-purple-700 text-sm">
+        <i class="fas fa-sticky-note mr-2 font-bold"></i>
+        <strong>Agregar una nota</strong>
+      </button>
+      <div id="notaBox" class="hidden mt-2">
+        <textarea id="notaInput" placeholder="P. ej. Dejar el pedido en la puerta" 
+                  class="w-full border px-2 py-1 rounded"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- Resumen del pedido -->
+  <div>
+    <h2 class="text-xl font-bold mb-4">Resumen del pedido</h2>
+    <div class="bg-gray-50 p-4 rounded-lg shadow">
+      <div class="flex justify-between mb-2">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">S/ 0.00</span>
+      </div>
+      <div class="flex justify-between mb-2">
+        <span>Envío</span>
+        <span>GRATIS</span>
+      </div>
+      <div class="flex justify-between font-bold border-t pt-2">
+        <span>Total</span>
+        <span id="cartPageTotal">S/ 0.00</span>
+      </div>
+      <!-- Botón Finalizar -->
+      <button onclick="openCheckout()" class="w-full mt-4 bg-purple-700 text-white py-2 rounded-lg font-bold">Finalizar compra</button>
+        <!-- Compra segura -->
+        <p class="text-xs text-gray-600 mt-2 flex items-center">
+            <i class="fas fa-lock mr-2 font-bold"></i>
+            <strong>Compra segura</strong>
+        </p>
+
+      <!-- Botón Seguir comprando -->
+      <a href="/consumibles/papelimpresion" class="block mt-4 text-center text-purple-700 underline">← Seguir comprando</a>
+    </div>
+  </div>
+</div>
+
+<!-- Este codigo hace que traiga todos los consumibles al carrito cuando le dices ver carrito-->
+<!-- Este código maneja el carrito en carrito.html -->
+<script>
+  let cart = JSON.parse(localStorage.getItem("carrito")) || [];
+
+  function saveCart() {
+    localStorage.setItem("carrito", JSON.stringify(cart));
+  }
+
+  // Renderizar carrito en carrito.html
+  function renderCarritoPage() {
+    const container = document.getElementById("carritoPage");
+    const subtotalEl = document.getElementById("cartSubtotal");
+    const totalEl = document.getElementById("cartPageTotal");
+
+    if (!container || !subtotalEl || !totalEl) return;
+
+    if (cart.length === 0) {
+      container.innerHTML = "<p class='text-gray-600'>Tu carrito está vacío 🛒</p>";
+      subtotalEl.textContent = "S/ 0.00";
+      totalEl.textContent = "S/ 0.00";
+      return;
+    }
+
+    let total = 0;
+    container.innerHTML = "";
+
+    cart.forEach((item, index) => {
+      const sub = item.precio * item.qty;
+      total += sub;
+
+      const div = document.createElement("div");
+      div.className = "flex items-center border-b pb-4 mb-4";
+
+      div.innerHTML = `
+        <img src="${item.imagen}" alt="${item.nombre}" class="w-24 h-24 object-cover rounded mr-4">
+        <div class="flex-1">
+          <h3 class="font-medium">${item.nombre}</h3>
+          <p class="text-sm text-gray-500">S/ ${item.precio.toFixed(2)}</p>
+          <div class="flex items-center mt-2">
+            <button onclick="updateQty(${index}, -1)" class="px-2 border">-</button>
+            <span class="px-4">${item.qty}</span>
+            <button onclick="updateQty(${index}, 1)" class="px-2 border">+</button>
+          </div>
+        </div>
+        <div class="flex flex-col items-end">
+          <p class="font-semibold">S/ ${sub.toFixed(2)}</p>
+          <button onclick="removeItem(${index})" class="text-red-600 mt-2">🗑️</button>
+        </div>
+      `;
+
+      container.appendChild(div);
+    });
+
+    subtotalEl.textContent = `S/ ${total.toFixed(2)}`;
+    totalEl.textContent = `S/ ${total.toFixed(2)}`;
+  }
+
+  function updateQty(index, delta) {
+    cart[index].qty += delta;
+    if (cart[index].qty <= 0) removeItem(index);
+    saveCart();
+    renderCarritoPage();
+  }
+
+  function removeItem(index) {
+    cart.splice(index, 1);
+    saveCart();
+    renderCarritoPage();
+  }
+
+  // Extras: promo y nota
+  function togglePromo() {
+    document.getElementById("promoBox").classList.toggle("hidden");
+  }
+
+  function applyPromo() {
+    const code = document.getElementById("promoInput").value.trim();
+    if (!code) return alert("Ingrese un código promocional");
+    alert("✅ Código aplicado: " + code);
+  }
+
+  function toggleNota() {
+    document.getElementById("notaBox").classList.toggle("hidden");
+  }
+
+  function openCheckout() {
+    const modal = document.getElementById("checkoutModal");
+    if (modal) {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+  }
+
+  function closeCheckout() {
+    const modal = document.getElementById("checkoutModal");
+    if (modal) {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", renderCarritoPage);
+
+  document.getElementById("checkoutForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+
+    const data = {
+      cliente: {
+        nombre: formData.get("nombre"),
+        correo: formData.get("correo"),
+        telefono: formData.get("telefono"),
+        empresa: formData.get("empresa"),
+        direccion: formData.get("direccion"),
+        notas: formData.get("notas"),
+      },
+      carrito: cart.map(item => ({
+        id: String(item.id || ""),
+        nombre: item.nombre || "",
+        precio: item.precio || 0,
+        imagen: item.imagen || "",
+        qty: item.qty || 1
+      }))
+    };
+
+    try {
+      const resp = await fetch("/api/enviar-pedido", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      if (resp.ok) {
+        const result = await resp.json();
+        alert("✅ Pedido enviado correctamente");
+
+        // limpiar carrito
+        cart = [];
+        saveCart();
+        renderCarritoPage();
+        closeCheckout();
+      } else {
+        const errorText = await resp.text();
+        alert("❌ Error al enviar pedido: " + errorText);
+      }
+    } catch (err) {
+      console.error("❌ Error conexión:", err);
+      alert("❌ No se pudo conectar con el servidor.");
+    }
+  });
+</script>
+
+{% endblock %}

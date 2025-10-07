@@ -1,0 +1,383 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+<div class="relative w-full h-32 sm:h-40 md:h-40 lg:h-44 xl:h-48">
+    <img alt="Impresora en fondo oscuro con pantalla y bandejas" class="w-full h-full object-cover" height="288" src="{{ url_for('static', path='img/productos-fotocopiadoras/img-color.png') }}" width="1930"/>
+    <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-10 flex items-center justify-between px-6 sm:px-10 md:px-16">
+        <h1 class="text-white text-xl sm:text-2xl md:text-3xl font-normal">
+            IMPRESORAS A COLOR
+        </h1>
+        <a class="text-white text-xs sm:text-sm md:text-base flex items-center gap-1 hover:underline" href="/productos/fotocopiadoras">
+            <i class="fas fa-chevron-left text-xs">
+            </i>
+            Volver a página anterior
+        </a>
+    </div>
+</div>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6">
+    <div class="flex flex-col md:flex-row md:space-x-8">
+        <!-- Left sidebar -->
+        <aside class="w-full md:w-64 border-r border-gray-300 pb-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="font-semibold text-sm sm:text-base uppercase">
+                    BÚSQUEDA DE PRODUCTOS
+                </h2>
+                <div class="border-b border-gray-300 w-12">
+                </div>
+            </div>
+
+            <div>
+                <button aria-expanded="true" class="flex items-center justify-between w-full text-xs sm:text-sm font-normal text-gray-700 uppercase mb-2" type="button">
+                    <span>
+                        SECCION DE CATEGORIAS
+                    </span>
+                    <span class="text-2xl leading-none select-none">
+                        −
+                    </span>
+                </button>
+                <ul class="text-xs sm:text-sm font-normal text-gray-500 border-t border-b border-gray-300 divide-y divide-gray-300">
+                    <a href="/productos/fotocopiadoras">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES NUEVAS
+                            </span>
+                            <span class="text-gray-400">
+                                (16)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-seminuevas">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES SEMINUEVAS
+                            </span>
+                            <span class="text-gray-400">
+                                (7)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-seminuevas-series-8">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES SEMINUEVAS-SERIES(8)
+                            </span>
+                            <span class="text-gray-400">
+                                (5)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/tonerescartuchos">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                RECARGAS TONERS Y CARTUCHOS
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-color">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS A COLOR
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-monocromaticas">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MONOCROMÁTICAS
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-kyoceras">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS KYOCERAS
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/accesoriosoficina">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                ACCESORIOS DE OFICINA
+                            </span>
+                            <span class="text-gray-400">
+                                (8)
+                            </span>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="mb-8">
+            </div>
+
+            <!-- Filtro de precio dentro del <aside> -->
+            <div class="mt-4">
+                <h3 class="text-md font-semibold mb-2">Filtrar por precio</h3>
+                <form id="filtro-precios-impresora-color" method="get" class="space-y-2" action="/productos/fotocopiadoras/filtro-precios-impresora-color" onsubmit="filtrarPorPrecioColor(event)">
+                    <input type="number" name="min" id="precio-min" placeholder="Mínimo" class="pl-6 pr-2 px-3 py-1 w-60 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"/>
+                    <input type="number" name="max" id="precio-max" placeholder="Máximo" class="pl-6 pr-2 px-3 py-1 w-60 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"/>
+                    <button type="submit" class="bg-blue-600 text-white px-3 py-1 rounded w-60 hover:bg-blue-700">
+                        Filtrar
+                    </button>
+                </form>
+            </div>
+
+            <div class="mb-8">
+            </div>
+
+
+            <div>
+                <h3 class="text-xs font-bold uppercase mb-1 border-b border-gray-300 pb-2 font-semibold text-sm sm:text-base uppercase">
+                    PRODUCTOS VISTOS
+                </h3>
+                <ul class="space-y-6 text-xs">
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c266i.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub c266i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                S/ 18,149.46
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c3321i.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub-C3321i: IMPRESORA MONOCROMÁTICA DE ALTA VELOCIDAD PARA GRUPOS
+                                DE TRABAJO  
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                S/ 7,925.40
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="https://storage.googleapis.com/a1aa/image/90bae295-9001-4e53-4fd7-936b12ff77ae.jpg" width="40"/>
+                        <div>
+                            <p>
+                                BIZHUB 360I: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                S/ 28,427.69
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-185en.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub 185en: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                $ 3,940.50
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c451i.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub c451i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                $ 35,501.50
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Right content -->
+        <section class="flex-1">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-300 pb-4 mb-4">
+                <div class="flex items-center space-x-2 mb-3 sm:mb-0">
+                    <select aria-label="Ordenar productos" class="border border-gray-300 rounded px-3 py-1 text-xs sm:text-sm">
+                        <option>
+                         Orden predeterminado
+                        </option>
+                    </select>
+                    <button aria-label="Vista en cuadrícula" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                        <i class="fas fa-th">
+                        </i>
+                    </button>
+                    <button aria-label="Vista en lista" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                        <i class="fas fa-list">
+                        </i>
+                    </button>
+                </div>
+                <nav aria-label="Paginación" class="flex items-center space-x-2 text-xs sm:text-sm text-gray-700">
+                    <button aria-current="page" class="bg-black text-white px-3 py-1" disabled="">
+                        1
+                    </button>
+                    <button class="hover:underline px-1">
+                        2
+                    </button>
+                    <span>
+                        ..
+                    </span>
+                    <button class="hover:underline px-1">
+                        5
+                    </button>
+                    <button aria-label="Siguiente página" class="px-1">
+                        <i class="fas fa-angle-double-right">
+                        </i>
+                    </button>
+                </nav>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                <article class="text-center text-xs sm:text-sm">
+                    <button  
+                        onclick="mostrarDetallesProducto(
+                        'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB c3321i',
+                        'IMPRESORA MULTIFUNCIONAL LASER - color A4, Color y blanco y negro, formatos de papel A6-A4 y tamaño personalizado copiar, imprimir, escanear y enviar faxes, incluido tóner de alta capacidad, función de escaneo rápido, panel de usuario similar a una tableta, Wi-Fi integrado.',
+                        'img/productos-fotocopiadoras/bizhub-c3321i.jpg',
+                        'S/ 7,925.40',
+                        `MARCA: KONICA MINOLTA. MODELO: BIZHUB C3321i. VELOCIDAD COLOR: 33 ppm. VELOCIDAD MONOCROMATICA: 33 ppm. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 4096 MB. MEMORIA MAXIMA: MEM. MAX: 4096 MB. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. 
+                        RESOLUCION DE IMPRESION: 1200 x 1200 ppp. GARANTIA DE FABRICA: 12 meses on-site. CICLO DE TRABAJO MENSUAL RECOMENDADO: 6500 páginas. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/02/2025. Fecha de último estado: 13/02/2025.`,
+                        '/static/pdf/bizhubC3321i.pdf'
+                        )">
+                        <img src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c3321i.jpg') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer" />
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        BIZHUB-C3321i: Impresora laser multifunción color A4, Color y blanco y negro, formatos de papel A6-A4 y tamaño personalizado.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 7,925.40
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                        'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB c3321i',
+                        'IMPRESORA MULTIFUNCIONAL LASER - color A4, Color y blanco y negro, formatos de papel A6-A4 y tamaño personalizado copiar, imprimir, escanear y enviar faxes, incluido tóner de alta capacidad, función de escaneo rápido, panel de usuario similar a una tableta, Wi-Fi integrado.',
+                        'img/productos-fotocopiadoras/bizhub-c3321i.jpg',
+                        'S/ 7,925.40',
+                        `MARCA: KONICA MINOLTA. MODELO: BIZHUB C3321i. VELOCIDAD COLOR: 33 ppm. VELOCIDAD MONOCROMATICA: 33 ppm. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 4096 MB. MEMORIA MAXIMA: MEM. MAX: 4096 MB. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. 
+                            RESOLUCION DE IMPRESION: 1200 x 1200 ppp. GARANTIA DE FABRICA: 12 meses on-site. CICLO DE TRABAJO MENSUAL RECOMENDADO: 6500 páginas. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/02/2025. Fecha de último estado: 13/02/2025.`,
+                          
+                        '/static/pdf/bizhubC3321i.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c3321i">Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm">
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C266i',
+                      'Es una impresora láser a color con una velocidad de impresión de 26 páginas por minuto tanto en blanco y negro como a color. Incluye funciones de escaneo, copiado y conectividad Wi-Fi, Ethernet y USB..',
+                      'img/productos-fotocopiadoras/bizhub-c266i.jpg',
+                      'S/ 18,149.46',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C226i. VELOCIDAD MONOCROMATICA: 36 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA MAXIMA: 6 GB. MEMORIA INTERNA: 6 GB AALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. TIPO: T/COLOR. COMPONENTES: CD con software, cable de poder, manual. DUPLEX AUTOMATICO(DA): Si. RESOLUCION DE CAPTURA:  600 ppp. RESOLUCION DE IMPRESION: 600x600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 16000 pg. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
+                      '/static/pdf/bizhubC266i.pdf'
+                        )">
+                        <img alt="Impresora negra cuadrada Konica Minolta vista frontal" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c266i.jpg') }}"/>
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        BIZHUB C266i: Impresora laser multifunción a color con una velocidad de impresión de 26 páginas por minuto.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 18,149.46
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                        'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C266i',
+                        'Es una impresora láser a color con una velocidad de impresión de 26 páginas por minuto tanto en blanco y negro como a color. Incluye funciones de escaneo, copiado y conectividad Wi-Fi, Ethernet y USB..',
+                        'img/productos-fotocopiadoras/bizhub-c266i.jpg',
+                        'S/ 18,149.46',
+                        `MARCA: KONICA MINOLTA. MODELO: BIZHUB C226i. VELOCIDAD MONOCROMATICA: 36 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA MAXIMA: 6 GB. MEMORIA INTERNA: 6 GB AALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. TIPO: T/COLOR. COMPONENTES: CD con software, cable de poder, manual. DUPLEX AUTOMATICO(DA): Si. RESOLUCION DE CAPTURA:  600 ppp. RESOLUCION DE IMPRESION: 600x600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 16000 pg. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
+                        '/static/pdf/bizhubC266i.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c266i">Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm">
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C451i',
+                      'Impresora multifuncional Velocidad de Impresión: Rápida producción de documentos a 45 ppm en color y B/N. Calidad de Imagen: Impresiones nítidas y vibrantes gracias a su alta resolución de 1200 x 1200 dpi. Funcionalidad Avanzada: Incluye impresión, copia, escaneo y fax con alimentación de papel flexible desde A6 hasta SRA3.',
+                      'img/productos-fotocopiadoras/bizhub-c451i.jpg',
+                      'S/ 35,501.50',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C451i. VELOCIDAD MONOCROMATICA: 45 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Indidual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 40000 pg. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha de publicación: 13/08/2024. Fecha de último estado: 23/10/2024.`,
+                      '/static/pdf/bizhubC451i.pdf'
+                        )">
+                        <img alt="Impresora Konica Minolta blanca y negra con pantalla táctil" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c451i.jpg') }}"/>
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        Bizhub c451i: Impresora multifuncion laser Velocidad: Rápida producción de documentos a 45 ppm en color y B/N.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 35,501.50
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                        'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB c451i',
+                        'Velocidad de Impresión: Rápida producción de documentos a 45 ppm en color y B/N. Calidad de Imagen: Impresiones nítidas y vibrantes gracias a su alta resolución de 1200 x 1200 dpi. Funcionalidad Avanzada: Incluye impresión, copia, escaneo y fax con alimentación de papel flexible desde A6 hasta SRA3.',
+                        'img/productos-fotocopiadoras/bizhub-c451i.jpg',
+                        'S/ 35,501.50',
+                        `MARCA: KONICA MINOLTA. MODELO: BIZHUB C451i. VELOCIDAD MONOCROMATICA: 45 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Indidual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 40000 pg. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha de publicación: 13/08/2024. Fecha de último estado: 23/10/2024.`,
+                        '/static/pdf/bizhubC451i.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c451i">Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm">
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C551i',
+                      'Alimentador Dual Scan. Capacidad de papel de 500 + 500 hojas y 150 en entrada manual. Tamaños desde A6 a SRA3, carteles de 1,2 m y de 52 a 300 gr. 8 GB de memoria, disco duro de 256 GB y estándar Gigabit Ethernet.',
+                      'img/productos-fotocopiadoras/bizhub-C551i.jpg',
+                      'S/ 38,106.30',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C551i. VELOCIDAD MONOCROMATICA: 55 ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 45000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/10/2024. Fecha de último estado: 23/10/2024.`,
+                      '/static/pdf/bizhubC551i.pdf'
+                        )">
+                        <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-C551i.jpg') }}"/>
+                    </button>
+                    <h3 class="mb-1 leading-tight">
+                        Bizhub C551i: Impresora multifuncion laser monocromatica alimentador Dual Scan. Capacidad de papel de 500 + 500 hojas.
+                    </h3>
+                    <p class="font-bold text-base sm:text-lg">
+                        S/ 38,106.30
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C551i',
+                      'Alimentador Dual Scan. Capacidad de papel de 500 + 500 hojas y 150 en entrada manual. Tamaños desde A6 a SRA3, carteles de 1,2 m y de 52 a 300 gr. 8 GB de memoria, disco duro de 256 GB y estándar Gigabit Ethernet.',
+                      'img/productos-fotocopiadoras/bizhub-C551i.jpg',
+                      'S/ 38,106.30',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C551i. VELOCIDAD MONOCROMATICA: 55 ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 45000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/10/2024. Fecha de último estado: 23/10/2024.`,
+                      '/static/pdf/bizhubC551i.pdf'
+                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c551i">Ver detalles
+                    </button>
+                </article>
+            </div>
+        </<section>      
+    </div>
+</main>
+{% endblock %}

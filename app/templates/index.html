@@ -1,0 +1,1118 @@
+ <!-- app/templates/index.html -->
+{% extends "layouts/base.html" %}
+
+{% block content %}
+<!-- Hero banner sliders cabecera del cuerpo height: 400px; -->
+<section class="relative slider-container mx-auto my-3 py-3" style="max-width: 1200px; overflow: hidden;">
+    <!-- Slider container -->
+    <div id="carouselKonica" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+
+            <!-- Slide 1 style="height: 50%;" object-fit-cover-->
+            <div class="carousel-item active">
+                <img src="{{ url_for('static', path='img/ImgCabeceraicon1.png') }}" class="d-block w-100 slide-img" alt="Slide 1">
+                <div class="carousel-caption caption-responsive">
+                    <div class="desktop-text fade-in">
+                        <h2 class="fw-bold">Tecnología</h2>
+                        <p>para el futuro - controla todo con tus dedos</p>
+                    </div>
+                    <div class="mobile-button d-block d-md-none">
+                        <a href="#servicios" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>    
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+                <img src="{{ url_for('static', path='img/ImgCabeceraicon3.png') }}" class="d-block w-100 slide-img" alt="Slide 2">
+                <div class="carousel-caption caption-responsive">
+                    <div class="desktop-text fade-in">
+                        <h2 class="fw-bold">Innovación</h2>
+                        <p>al alcance - la tecnología en tus manos</p>
+                    </div>
+                    <div class="mobile-button d-block d-md-none">
+                        <a href="#servicios" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <img src="{{ url_for('static', path='img/ImgCabeceraicon2.png') }}" class="d-block w-100 slide-img" alt="Slide 3">
+                <div class="carousel-caption caption-responsive">
+                    <div class="desktop-text fade-in">
+                        <h2 class="fw-bold">Soluciones</h2>
+                        <p>para empresas - rendimiento y eficiencia</p>
+                    </div>
+                    <div class="mobile-button d-block d-md-none">
+                        <a href="#servicios" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Slide 4: VIDEO -->
+            <div class="carousel-item">
+                <div class="video-slide-container">
+                    <video class="d-block w-100 slide-video" autoplay muted loop playsinline>
+                        <source src="{{ url_for('static', path='video/descarga.mp4') }}" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                    </video>
+                    <div class="carousel-caption caption-responsive">
+                        <div class="desktop-text fade-in text-light">
+                            <h2 class="fw-bold">Bienvenido a Copier Mundo</h2>
+                            <p>Explora soluciones audiovisuales de vanguardia con fotocopiadoras multifuncionales</p>
+                        </div>
+                        <div class="mobile-button d-block d-md-none">
+                          <a href="#servicios" class="btn btn-light">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselKonica" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselKonica" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
+
+<!-- ESPACIADO USANDO BOOTSTRAP -->
+<div class="my-4"></div> <!-- margen vertical 1.5rem arriba y abajo -->
+
+<!-- NUESTRAS CATEGORIAS -->
+<section class="container seccion-categorias py-4 my-2 ajuste-cercano ">
+      <!-- Título con líneas laterales estilo exacto -->
+    <div class="d-flex align-items-center justify-content-center mt-0 mb-0">
+        <div class="linea-flex me-3"></div>
+            <h2 class="text-center text-uppercase fw-bold mb-4 mt-0 titulo-ajustada">
+            NUESTRAS CATEGORÍAS
+            </h2>
+        <div class="linea-flex ms-3"></div>
+    </div>
+
+    <div class="row justify-content-center g-4">
+        <!-- Categoría 1 -->
+        <div class="col-10 col-sm-6 col-md-4">
+            <div class="box-categoria text-center">
+                <p class="texto-categoria mb-2"><a class="dropdown-item" href="/productos/accesoriosoficina">Accesorios de oficina</a></p>
+                <a href="/productos/accesoriosoficina">
+                    <img src="{{ url_for('static', path='img/ProductosAccesorios3.png') }}"
+                     class="img-fluid imagen-categoria mb-3" alt="Accesorios de oficina">
+                    <p class="cantidad-productos">11 PRODUCTOS</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Categoría 2 -->
+        <div class="col-10 col-sm-6 col-md-4">
+            <div class="box-categoria text-center">
+                <p class="texto-categoria mb-2"><a class="dropdown-item" href="/productos/tonerescartuchos">Cartuchos y recargas de toner</a></p>
+                <a href="/productos/tonerescartuchos">
+                    <img src="{{ url_for('static', path='img/ProductosCartuchos2.png') }}"
+                    class="img-fluid imagen-categoria mb-3" alt="Cartuchos y recargas de toner">
+                    <p class="cantidad-productos">188 PRODUCTS</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Categoría 3 -->
+        <div class="col-10 col-sm-6 col-md-4">
+            <div class="box-categoria text-center">
+                <p class="texto-categoria mb-2"><a class="dropdown-item" href="/productos/fotocopiadoras">Fotocopiadoras Multifuncionales Nuevas</a></p>
+                <a href="/productos/fotocopiadoras">
+                    <img src="{{ url_for('static', path='img/ProductosFotocopiadoras1.png') }}"
+                    class="img-fluid imagen-categoria mb-3" alt="Fotocopiadoras Multifuncionales">
+                    <p class="cantidad-productos">51 PRODUCTOS</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ESPACIADO USANDO BOOTSTRAP -->
+<div class="my-5"></div> <!-- margen vertical 1.5rem arriba y abajo -->
+
+<!-- BANNER DESTACADO - ENCIMA DE LA CINTA -->
+<section class="w-100">
+  <div class="container-fluid p-0">
+    <img src="{{ url_for('static', path='img/slide-Canon-1536x250.png') }}" class="img-fluid w-100" style="max-height: 420px; object-fit: cover;" alt="Banner Promocional Copier Mundo">
+  </div>
+</section>
+
+<!-- SEPARADOR - VISUAL ENTRE BANNER Y CINTA -->
+<div class="w-100" style="height: 40px; background-color: #f8f9fa; border-bottom: 1px solid #dee2e6;"></div>
+
+
+<!-- IMÁGENES ADICIONALES Y SELLOS -->
+<!-- CINTA DE IMÁGENES Y SELLOS -->
+<section class="w-100 py-4 bg-light">
+  <div class="container-fluid">
+    <div class="row justify-content-center align-items-center g-3 text-center">
+
+      <!-- Imagen 1 -->
+      <div class="col-6 col-sm-4 col-md-2">
+        <img src="https://storage.googleapis.com/a1aa/image/bccd6e1d-1a78-423d-a3b1-74a0cbdf4ae8.jpg" class="img-fluid rounded" alt="Oficina">
+      </div>
+
+      <!-- Imagen 2 -->
+      <div class="col-6 col-sm-4 col-md-2">
+        <img src="https://storage.googleapis.com/a1aa/image/a8c06022-9d4b-4237-471e-80a5184ade28.jpg" class="img-fluid rounded" alt="Fotocopiadora">
+      </div>
+
+      <!-- Texto y compatibilidad -->
+      <div class="col-12 col-md-4 col-lg-3">
+        <div class="d-flex flex-column align-items-center">
+          <img src="https://storage.googleapis.com/a1aa/image/b0f4639c-0597-4ac9-1fe4-7c89e9f82ae8.jpg" class="mb-2" style="width: 60px; height: 60px;" alt="Sello técnico">
+          <p class="fw-bold text-uppercase mb-1" style="font-size: 10px;">Amplia Compatibilidad</p>
+          <p class="small text-muted" style="font-size: 9px; line-height: 1.2;">
+            Aficio 1050 - 1075 - MP 2051 - MP 2060<br>
+            MP 2075 - MP 5500 - MP 6500 - MP 6503<br>
+            MP 7500 - MP 7502 - MP 7503 - MP 8002<br>
+            MP 8003 - MP 9002 - MP 9003
+          </p>
+          <img src="https://storage.googleapis.com/a1aa/image/68c91bbc-2393-465b-a35e-57711451b84f.jpg" class="mt-1" style="width: 60px; height: 120px;" alt="Cartuchos">
+        </div>
+      </div>
+
+      <!-- Logo y ayuda -->
+      <div class="col-12 col-md-4 col-lg-3">
+        <div class="d-flex flex-column align-items-center">
+          <img src="{{ url_for('static', path='img/img-cinta.jpg') }}" style="max-width: 120px;" alt="Logo Densitone">
+          <p class="text-uppercase fw-bold mb-2" style="font-size: 10px;">Tu confianza es nuestro compromiso</p>
+          <div class="bg-danger text-white px-3 py-1 rounded-pill" style="font-size: 11px; max-width: 160px; line-height: 1.2;">
+            ¿Necesitas ayuda?<br>Habla con nosotros
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Línea separadora de canto a canto para nuevos productos -->
+<div style="width: 100%; height: 1px; background-color: #dee2e6; margin: 40px 0;"></div>
+
+ <!-- Products section donde se veen todos los productos de las impresoras. -->
+<section class="container py-3">
+    <!-- TÍTULO CON LÍNEAS A LOS COSTADOS -->
+    <div class="seccion-titulo mb-5">
+      <div class="linea"></div>
+      <h2 class="titulo-destacado">Nuestros Productos Destacados</h2>
+      <div class="linea"></div>
+    </div>
+
+    <!-- GRID DE PRODUCTOS -->
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+    {% for producto in productos %}
+    <div class="col">
+      <div class="card h-100 shadow-sm border-0">
+        <img src="{{ producto.imagen }}" class="card-img-top" alt="{{ producto.nombre }}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title fw-semibold">{{ producto.nombre }}</h5>
+          <p class="card-text small text-muted">{{ producto.descripcion }}</p>
+          <a href="{{ url_for('detalle_producto', id=producto.id) }}" class="btn btn-primary mt-auto">Ver más</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section>
+    <div class="carousel-wrapper mx-auto">
+        <!-- Contenedor general de slides -->
+        <div id="carouselProductos" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1: Equipo multifuncional a color -->
+                <div class="carousel-item active">
+                    <div class="slider-categoria text-center mb-3">
+                        <h3 class="slider-titulo slider-color">Impresoras multifuncional a color</h3>
+                    </div>
+                    
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <!-- Productos del Slide 1 -->
+                        <!-- Producto 1 -->
+                        <div class="producto-card">
+                            <div class="producto-card-inner">
+                                <div class="producto-card-front border-3">
+                                    <div class="mostrar-efecto">
+                                        <img src="{{ url_for('static', path='img/productos/bizhub-c3321i.jpg') }}" class="card-img-top producto-img" alt="Producto 1">
+                                    </div>
+                                    <div class="card-body text-center p-2">
+                                        <p class="producto-nombre">Bizhub-C3321i</p>
+                                        <p class="producto-precio">Precio: S/ 8,565.50</p>
+                                        <div class="separador-producto"></div>
+                                        <div class="producto-footer d-flex justify-content-between align-items-center px-2">
+                                            <a href="/productos/fotocopiadoras?producto=bizhub-c3321i" class="producto-detalles"
+                                                >Ver Detalles</a>
+                                            <span class="badge rounded-pill bg-success d-flex align-items-center gap-1 producto-oferta">
+                                                <i class="fas fa-tag"></i> OFERTADA
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Reverso -->
+                                <div class="producto-card-back">
+                                    <div class="contenido-caracteristicas">
+                                        <div class="titulo-caracteristicas">Características</div>
+                                        <ul>
+                                            <li><strong>FUNCIONES:</strong>IMPRESORA/COPIA/ESCANER</li>
+                                            <li><strong>CTR recomendado:</strong>6500Pag</li>
+                                            <li><strong>Velocidad:</strong>33ppm Mono/33ppm color</li>
+                                            <li><strong>Conectividad:</strong>USB, LAN</li>
+                                            <li><strong>Memoria:</strong>4096MB</li>
+                                            <li><strong>Procesador:</strong>1.6 GHz</li>
+                                            <li><strong>Alimentador (ADF):</strong>80 hojas DualScan</li>
+                                            <li><strong>Dúplex Automático:</strong>Incluido</li>
+                                            <li><strong>Panel:</strong>7 pulgadas</li>
+                                            <li><strong>Tamaños de Papel:</strong>A5, A4, Oficio</li>
+                                            <li><strong>Gramaje de Papel:</strong>60 a 210 g/m<sup>2</sup></li>
+                                            <li><strong>Lenguaje de Impresión:</strong>PCL6, PS3</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Producto 2 -->
+                        <div class="producto-card">
+                            <div class="producto-card-inner">
+                                <div class="producto-card-front border-3">
+                                    <div class="mostrar-efecto">
+                                        <img src="{{ url_for('static', path='img/productos/bizhub-c266i.jpg') }}" class="card-img-top" alt="Producto 2">
+                                    </div>
+                                    <div class="card-body text-center p-2">
+                                        <p class="producto-nombre">Bizhub-C266i</p>
+                                        <p class="producto-precio">Precio: S/ 19,469.77</p>
+                                        <div class="separador-producto"></div>
+                                        <div class="producto-footer d-flex justify-content-between align-items-center px-2">
+                                            <a href="/productos/fotocopiadoras?producto=bizhub-c266i" class="producto-detalles">Ver Detalles</a>
+                                            <span class="badge rounded-pill bg-success d-flex align-items-center gap-1 producto-oferta">
+                                                <i class="fas fa-tag"></i>OFERTADA
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Reverso -->
+                                <div class="producto-card-back ">
+                                    <div class="contenido-caracteristicas">
+                                        <div class="titulo-caracteristicas">Características</div>
+                                        <ul>
+                                            <li><strong>FUNCIONES:</strong>IMPRESORA/COPIA/ESCANER</li>
+                                            <li><strong>CTR recomendado:</strong>16000Pag</li>
+                                            <li><strong>Velocidad:</strong>26ppm Mono/26ppm color</li>
+                                            <li><strong>Conectividad:</strong>USB, LAN, WLAM</li>
+                                            <li><strong>Memoria:</strong>6GB</li>
+                                            <li><strong>Alimentador (ADF):</strong>130 hojas</li>
+                                            <li><strong>Dúplex Automático:</strong>Incluido</li>
+                                            <li><strong>Panel:</strong>7 pulgadas</li>
+                                            <li><strong>Tamaños de Papel:</strong>A5, A4, A3</li>
+                                            <li><strong>Gramaje de Papel:</strong>60 a 256 g/m<sup>2</sup></li>
+                                            <li><strong>Lenguaje de Impresión:</strong>PCL6, PS3</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Producto 3 -->
+                        <div class="producto-card">
+                            <div class="producto-card-inner">
+                                <div class="producto-card-front border-3">
+                                    <div class="mostrar-efecto">
+                                        <img src="{{ url_for('static', path='img/productos/bizhub-c451i.jpg') }}" class="card-img-top" alt="Producto 3">
+                                    </div>
+                                    <div class="card-body text-center p-2">
+                                        <p class="producto-nombre">Bizhub-C451i</p>
+                                        <p class="producto-precio">Precio: S/ 38,165.50</p>
+                                        <div class="separador-producto"></div>
+                                        <div class="producto-footer d-flex justify-content-between align-items-center px-2">
+                                            <a href="/productos/fotocopiadoras?producto=bizhub-c451i" class="producto-detalles">Ver Detalles</a>
+                                            <span class="badge rounded-pill bg-success d-flex align-items-center gap-1 producto-oferta">
+                                                <i class="fas fa-tag"></i> OFERTADA
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Reverso -->
+                                <div class="producto-card-back ">
+                                    <div class="contenido-caracteristicas">
+                                        <div class="titulo-caracteristicas">Características</div>
+                                        <ul>
+                                            <li><strong>FUNCIONES:</strong>IMPRESORA/COPIA/ESCANER</li>
+                                            <li><strong>CTR recomendado:</strong>40000Pag</li>
+                                            <li><strong>Velocidad:</strong>45ppm Mono/45ppm color</li>
+                                            <li><strong>Conectividad:</strong>USB, LAN</li>
+                                            <li><strong>Memoria:</strong>8192GB</li>
+                                            <li><strong>Procesador:</strong>1.6 GHz</li>
+                                            <li><strong>Disco Duro:</strong>256GB SSD</li>
+                                            <li><strong>Alimentador (ADF):</strong>300 hojas DualScan</li>
+                                            <li><strong>Dúplex Automático:</strong>Incluido</li>
+                                            <li><strong>Panel:</strong>10.1 pulgadas</li>
+                                            <li><strong>Tamaños de Papel:</strong>A5, A4, A3</li>
+                                            <li><strong>Gramaje de Papel:</strong>52 a 300 g/m<sup>2</sup></li>
+                                            <li><strong>Lenguaje de Impresión:</strong>PCL6, PS3</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Producto 4 -->
+                        <div class="producto-card">
+                            <div class="producto-card-inner">
+                                <div class="producto-card-front border-3">
+                                    <div class="mostrar-efecto">
+                                        <img src="{{ url_for('static', path='img/productos/bizhub-c551i.jpg') }}" class="card-img-top" alt="Producto 4">
+                                    </div>
+                                    <div class="card-body text-center p-2">
+                                        <p class="producto-nombre">Bizhub-C551i</p>
+                                        <p class="producto-precio">Precio: S/ 40,696.30</p>
+                                        <div class="separador-producto"></div>
+                                        <div class="producto-footer d-flex justify-content-between align-items-center px-2">
+                                            <a href="/productos/fotocopiadoras?producto=bizhub-c551i" class="producto-detalles">Ver Detalles</a>
+                                            <span class="badge rounded-pill bg-success d-flex align-items-center gap-1 producto-oferta">
+                                                <i class="fas fa-tag"></i> OFERTADA
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Reverso -->
+                                <div class="producto-card-back ">
+                                    <div class="contenido-caracteristicas">
+                                        <div class="titulo-caracteristicas">Características</div>
+                                        <ul>
+                                            <li><strong>FUNCIONES:</strong>IMPRESORA/COPIA/ESCANER</li>
+                                            <li><strong>CTR recomendado:</strong>50000Pag</li>
+                                            <li><strong>Velocidad:</strong>55ppm Mono/55ppm color</li>
+                                            <li><strong>Conectividad:</strong>USB, LAN, WLAM</li>
+                                            <li><strong>Memoria:</strong>8192GB</li>
+                                            <li><strong>Procesador:</strong>1.6 HG</li>
+                                            <li><strong>Disco Duro:</strong>256 GB SSD</li>
+                                            <li><strong>Alimentador (ADF):</strong>300 hojas DualScan</li>
+                                            <li><strong>Dúplex Automático:</strong>Incluido</li>
+                                            <li><strong>Panel:</strong>10.1 pulgadas</li>
+                                            <li><strong>Tamaños de Papel:</strong>A5, A4, A3</li>
+                                            <li><strong>Gramaje de Papel:</strong>52 a 300 g/m<sup>2</sup></li>
+                                            <li><strong>Lenguaje de Impresión:</strong>PCL6, PS3</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>         
+                
+                <!-- Slide 2: Equipo multifuncional monocromas -->
+                <div class="carousel-item">
+                    <div class="slider-categoria text-center mb-3">
+                        <h3 class="slider-titulo slider-mono">Equipo multifuncional monocromas</h3>
+                    </div>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        
+                        <!-- Productos del Slide 2 -->
+                        <!-- Producto 1 -->
+                        <div class="producto-card">
+                            <div class="producto-card-inner">
+                                <div class="producto-card-front border-3">
+                                    <div class="mostrar-efecto">
+                                        <img src="{{ url_for('static', path='img/productos/bizhub-185en.jpg') }}" class="card-img-top" alt="Producto 5">
+                                    </div>
+                                    <div class="card-body text-center p-2">
+                                        <p class="producto-nombre">Bizhub-185en</p>
+                                        <p class="producto-precio">Precio: S/ 4,280.90</p>
+                                        <div class="separador-producto"></div>
+                                        <div class="producto-footer d-flex justify-content-between align-items-center px-2">
+                                            <a href="/productos/fotocopiadoras?producto=bizhub-185en" class="producto-detalles">Ver Detalles</a>
+                                            <span class="badge rounded-pill bg-success d-flex align-items-center gap-1 producto-oferta">
+                                                <i class="fas fa-tag"></i> OFERTADA
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Reverso -->
+                                <div class="producto-card-back ">
+                                    <div class="contenido-caracteristicas">
+                                        <div class="titulo-caracteristicas">Características</div>
+                                        <ul>
+                                            <li><strong>FUNCIONES:</strong>IMPRESORA/COPIA/ESCANER</li>
+                                            <li><strong>CTR recomendado:</strong>2500Pag</li>
+                                            <li><strong>Velocidad:</strong>18ppm Monocromático</li>
+                                            <li><strong>Conectividad:</strong>USB, LAN</li>
+                                            <li><strong>Memoria:</strong>64 MB</li>
+                                            <li><strong>Tamaños de Papel:</strong>A5, A4, A3</li>
+                                            <li><strong>Gramaje de Papel:</strong>64 a 157 g/m<sup>2</sup></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                <!-- Producto 2 -->
+                        <div class="producto-card">
+                            <div class="producto-card-inner">
+                                <div class="producto-card-front border-3">
+                                    <div class="mostrar-efecto">
+                                        <img src="{{ url_for('static', path='img/productos/bizhub-367.jpg') }}" class="card-img-top" alt="Producto 6">
+                                    </div>
+                                    <div class="card-body text-center p-2">
+                                        <p class="producto-nombre">Bizhub-367</p>
+                                        <p class="producto-precio">Precio: S/ 19,280.70</p>
+                                        <div class="separador-producto"></div>
+                                        <div class="producto-footer d-flex justify-content-between align-items-center px-2">
+                                            <a href="/productos/fotocopiadoras?producto=bizhub-367" class="producto-detalles">Ver Detalles</a>
+                                            <span class="badge rounded-pill bg-success d-flex align-items-center gap-1 producto-oferta">
+                                                <i class="fas fa-tag"></i> OFERTADA
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Reverso -->
+                                <div class="producto-card-back ">
+                                    <div class="contenido-caracteristicas">
+                                        <div class="titulo-caracteristicas">Características</div>
+                                        <ul>
+                                            <li><strong>FUNCIONES:</strong>IMPRESORA/COPIA/ESCANER</li>
+                                            <li><strong>CTR recomendado:</strong>20,000Pag</li>
+                                            <li><strong>Velocidad:</strong>36ppm Mono</li>
+                                            <li><strong>Conectividad:</strong>USB, LAN</li>
+                                            <li><strong>Memoria:</strong>2048 MB</li>
+                                            <li><strong>Procesador:</strong>1.2 HGz DualCore</li>
+                                            <li><strong>Disco Duro:</strong>250 GB</li>
+                                            <li><strong>Alimentador (ADF):</strong>100 hojas</li>
+                                            <li><strong>Dúplex Automático:</strong>Incluido</li>
+                                            <li><strong>Panel:</strong>7 pulgadas</li>
+                                            <li><strong>Tamaños de Papel:</strong>A5, A4, A3</li>
+                                            <li><strong>Gramaje de Papel:</strong>60 a 220 g/m<sup>2</sup></li>
+                                            <li><strong>Lenguaje de Impresión:</strong>PCL6, PS3</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Producto 3 -->
+                        <div class="producto-card">
+                            <div class="producto-card-inner">
+                                <div class="producto-card-front border-3">
+                                    <div class="mostrar-efecto">
+                                        <img src="{{ url_for('static', path='img/productos/bizhub-651i.jpg') }}" class="card-img-top" alt="Producto 7">
+                                    </div>
+                                    <div class="card-body text-center p-2">
+                                        <p class="producto-nombre">Bizhub-651i</p>
+                                        <p class="producto-precio">Precio: S/ 31,154.00</p>
+                                        <div class="separador-producto"></div>
+                                        <div class="producto-footer d-flex justify-content-between align-items-center px-2">
+                                            <a href="/productos/fotocopiadoras?producto=bizhub-651i" class="producto-detalles">Ver Detalles</a>
+                                            <span class="badge rounded-pill bg-success d-flex align-items-center gap-1 producto-oferta">
+                                                <i class="fas fa-tag"></i> OFERTADA
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Reverso -->
+                                <div class="producto-card-back ">
+                                    <div class="contenido-caracteristicas">
+                                        <div class="titulo-caracteristicas">Características</div>
+                                        <ul>
+                                            <li><strong>FUNCIONES:</strong>IMPRESORA/COPIA/ESCANER_color</li>
+                                            <li><strong>CTR recomendado:</strong>50,000Pag</li>
+                                            <li><strong>Velocidad:</strong>65ppm Monocromático</li>
+                                            <li><strong>Conectividad:</strong>USB, LAN, WLAN</li>
+                                            <li><strong>Memoria:</strong>8192 MB</li>
+                                            <li><strong>Procesador:</strong>1.6 HGz DuadCore</li>
+                                            <li><strong>Disco Duro:</strong>256 GB SSD</li>
+                                            <li><strong>Alimentador (ADF):</strong>300 hojas DualScan</li>
+                                            <li><strong>Dúplex Automático:</strong>Incluido</li>
+                                            <li><strong>Panel:</strong>10.1 pulgadas</li>
+                                            <li><strong>Tamaños de Papel:</strong>A5, A4, A3</li>
+                                            <li><strong>Gramaje de Papel:</strong>52 a 300 g/m<sup>2</sup></li>
+                                            <li><strong>Lenguaje de Impresión:</strong>PCL5, PCL6, PS3</li>
+                                            <li><strong>Formato de Escaner:</strong>JPEG, TIFF, PPTX, XPS, PDF, PDF(OCR)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Producto 4 -->
+                        <div class="producto-card">
+                            <div class="producto-card-inner">
+                                <div class="producto-card-front border-3">
+                                    <div class="mostrar-efecto">
+                                        <img src="{{ url_for('static', path='img/productos/bizhub-750i.jpg') }}" class="card-img-top" alt="Producto 8">
+                                    </div>
+                                    <div class="card-body text-center p-2">
+                                        <p class="producto-nombre">Bizhub-750i</p>
+                                        <p class="producto-precio">Precio: S/ 47,915.00</p>
+                                        <div class="separador-producto"></div>
+                                        <div class="producto-footer d-flex justify-content-between align-items-center px-2">
+                                            <a href="/productos/fotocopiadoras?producto=bizhub-750i" class="producto-detalles">Ver Detalles</a>
+                                            <span class="badge rounded-pill bg-success d-flex align-items-center gap-1 producto-oferta">
+                                                <i class="fas fa-tag"></i> OFERTADA
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Reverso -->
+                                <div class="producto-card-back ">
+                                    <div class="contenido-caracteristicas">
+                                        <div class="titulo-caracteristicas">Características</div>
+                                        <ul>
+                                            <li><strong>FUNCIONES:</strong>IMPRESORA/COPIA/ESCANER_color</li>
+                                            <li><strong>CTR recomendado:</strong>80,000Pag</li>
+                                            <li><strong>Velocidad:</strong>75ppm Monocromático</li>
+                                            <li><strong>Conectividad:</strong>USB, LAN, WLAN</li>
+                                            <li><strong>Memoria:</strong>8192 MB</li>
+                                            <li><strong>Procesador:</strong>1.6 HGz QuadlCore</li>
+                                            <li><strong>Disco Duro:</strong>256 GB SSD</li>
+                                            <li><strong>Alimentador (ADF):</strong>300 hojas DualScan</li>
+                                            <li><strong>Dúplex Automático:</strong>Incluido</li>
+                                            <li><strong>Panel:</strong>10.1 pulgadas</li>
+                                            <li><strong>Tamaños de Papel:</strong>A5, A4, A3</li>
+                                            <li><strong>Gramaje de Papel:</strong>52 a 300 g/m<sup>2</sup></li>
+                                            <li><strong>Lenguaje de Impresión:</strong>PCL5, PCL6, PS3</li>
+                                            <li><strong>Formato de Escaner:</strong>JPEG, TIFF, PPTX, XPS, PDF, PDF(OCR)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>        
+                </div>
+
+                <!-- Slide 3: Impresoras Kyocera -->
+                <div class="carousel-item">
+                    <div class="slider-categoria text-center mb-3">
+                        <h3 class="slider-titulo slider-Kyocera">Impresoras Kyoceras</h3>
+                    </div>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <!-- Productos del Slide 3 -->
+                        <!-- Producto 1 -->
+                        <div class="producto-card">
+                            <div class="producto-card-inner">
+                                <div class="producto-card-front border-3">
+                                    <div class="mostrar-efecto">
+                                        <img src="{{ url_for('static', path='img/productos/ECOSYS M8124CIDN.jpg') }}" class="card-img-top" alt="Producto 5">
+                                    </div>
+                                    <div class="card-body text-center p-2">
+                                        <p class="producto-nombre">ECOSYS M8124CIDN</p>
+                                        <p class="producto-precio">Precio: S/ 8,900.00</p>
+                                        <div class="separador-producto"></div>
+                                        <div class="producto-footer d-flex justify-content-between align-items-center px-2">
+                                            <a href="/productos/fotocopiadoras?producto=ECOSYS M8124CIDN" class="producto-detalles">Ver Detalles</a>
+                                            <span class="badge rounded-pill bg-success d-flex align-items-center gap-1 producto-oferta">
+                                                <i class="fas fa-tag"></i> OFERTADA
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Reverso -->
+                                <div class="producto-card-back kyocera-back">
+                                    <div class="contenido-caracteristicas">
+                                        <div class="titulo-caracteristicas">Características</div>
+                                        <ul>
+                                            <li><strong>FUNCIONES:</strong>Impresora Multifuncional Láser</li>
+                                            <li><strong>TIPO:</strong>Color</li>
+                                            <li><strong>Velocidad Monocromática:</strong>24 ppm</li>
+                                            <li><strong>Velocidad Color:</strong>24 ppm</li>
+                                            <li><strong>Conectividad USB:</strong>Si</li>
+                                            <li><strong>Conectividad LAN:</strong>Si</li>
+                                            <li><strong>Conectividad WLAN:</strong>Si</li>
+                                            <li><strong>Memoria Interna:</strong>1536 MB</li>
+                                            <li><strong>Memoria Maxima:</strong>3072 MB</li>
+                                            <li><strong>Alimentador Automático de Documento(ADF):</strong>Si</li>
+                                            <li><strong>Duplex Automático:</strong>Si</li>
+                                            <li><strong>Resolución de Impresión:</strong>1200 ppp</li>
+                                            <li><strong>Resolución de Captura:</strong>600 ppp</li>
+                                            <li><strong>Ciclo de Trabajo Mensual Recomendado:</strong>80,000 pg</li>
+                                            <li><strong>Marca:</strong>Kyocera</li>
+                                            <li><strong>Modelo:</strong>Ecosys M8124CIDN</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Producto 2 -->
+                        <div class="producto-card">
+                            <div class="producto-card-inner">
+                                <div class="producto-card-front border-3">
+                                    <div class="mostrar-efecto">
+                                        <img src="{{ url_for('static', path='img/productos/ECOSYS MA5500IFX.jpg') }}" class="card-img-top" alt="Producto 6">
+                                    </div>
+                                    <div class="card-body text-center p-2">
+                                        <p class="producto-nombre">ECOSYS MA5500IFX</p>
+                                        <p class="producto-precio">Precio: S/ 4,915.42</p>
+                                        <div class="separador-producto"></div>
+                                        <div class="producto-footer d-flex justify-content-between align-items-center px-2">
+                                            <a href="/productos/fotocopiadoras?producto=ECOSYS MA5500IFX" class="producto-detalles">Ver Detalles</a>
+                                            <span class="badge rounded-pill bg-success d-flex align-items-center gap-1 producto-oferta">
+                                                <i class="fas fa-tag"></i> OFERTADA
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Reverso -->
+                                <div class="producto-card-back ">
+                                    <div class="contenido-caracteristicas">
+                                        <div class="titulo-caracteristicas">Características</div>
+                                        <ul>
+                                            <li><strong>FUNCIONES:</strong>Impresora multifuncional a Láser</li>
+                                            <li><strong>TIPO:</strong>Monocromática</li>
+                                            <li><strong>Velocidad Monocromática:</strong>57 ppm</li>
+                                            <li><strong>Velocidad Color:</strong>No Aplica</li>
+                                            <li><strong>Conectividad USB:</strong>Si</li>
+                                            <li><strong>Conectividad LAN:</strong>Si</li>
+                                            <li><strong>Conectividad WLAN:</strong>Si</li>
+                                            <li><strong>Memoria Interna:</strong>3.5 GB</li>
+                                            <li><strong>Memoria Maxima:</strong>3.5 GB</li>
+                                            <li><strong>Reconocimiento Optico de Caracteres(OCR):</strong>Si</li>
+                                            <li><strong>Alimentador Automático de Documentos(ADF):</strong>Si</li>
+                                            <li><strong>Duplex Automático:</strong>Si</li>
+                                            <li><strong>Resolución de Impresión:</strong>1200 x 1200 ppp</li>
+                                            <li><strong>Resolución de Captura:</strong>600 ppp</li>
+                                            <li><strong>Ciclo de Trabajo Mensual Recomendado:</strong>50,000 pg</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Producto 3 -->
+                        <div class="producto-card">
+                            <div class="producto-card-inner">
+                                <div class="producto-card-front border-3">
+                                    <div class="mostrar-efecto">
+                                        <img src="{{ url_for('static', path='img/productos/ECOSYS PA4000WX.jpg') }}" class="card-img-top" alt="Producto 7">
+                                    </div>
+                                    <div class="card-body text-center p-2">
+                                        <p class="producto-nombre">ECOSYS PA4000WX</p>
+                                        <p class="producto-precio">Precio: S/ 1,120.50</p>
+                                        <div class="separador-producto"></div>
+                                        <div class="producto-footer d-flex justify-content-between align-items-center px-2">
+                                            <a href="/productos/fotocopiadoras?producto=ECOSYS PA4000WX" class="producto-detalles">Ver Detalles</a>
+                                            <span class="badge rounded-pill bg-success d-flex align-items-center gap-1 producto-oferta">
+                                                <i class="fas fa-tag"></i> OFERTADA
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Reverso -->
+                                <div class="producto-card-back ">
+                                    <div class="contenido-caracteristicas">
+                                        <div class="titulo-caracteristicas">Características</div>
+                                        <ul>
+                                            <li><strong>Marca:</strong>Kyocera</li>
+                                            <li><strong>Modelo:</strong>ECOSYS PA4000WX</li>
+                                            <li><strong>TIPO:</strong>T/Monocromática</li>
+                                            <li><strong>Velocidad Monocromática:</strong>42 ppm</li>
+                                            <li><strong>Velocidad Color:</strong>No Aplica</li>
+                                            <li><strong>Conectividad USB:</strong>Si</li>
+                                            <li><strong>Conectividad LAN:</strong>Si</li>
+                                            <li><strong>Conectividad WLAN:</strong>Si</li>
+                                            <li><strong>Memoria Interna:</strong>512 MB</li>
+                                            <li><strong>Memoria Maxima:</strong>512 MB</li>
+                                            <li><strong>Alimentador Automático de Documentos(ADF):</strong>No</li>
+                                            <li><strong>Duplex Automático:</strong>Si</li>
+                                            <li><strong>Resolución de Impresión:</strong>1200 x 1200 ppp</li>
+                                            <li><strong>Ciclo de Trabajo Mensual Recomendado:</strong>10000 pg</li>
+                                            <li><strong>Sistema de Manejo de Raee:</strong>Individual</li>
+                                            <li><strong>Empaque de Fabrica:</strong>En Caja</li>
+                                            <li><strong>Componentes:</strong>Cable de poder</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Producto 4 -->
+                        <div class="producto-card">
+                            <div class="producto-card-inner">
+                                <div class="producto-card-front border-3">
+                                    <div class="mostrar-efecto">
+                                        <img src="{{ url_for('static', path='img/productos/WORKFORCE PRO WF-C5890.jpg') }}" class="card-img-top" alt="Producto 8">
+                                    </div>
+                                    <div class="card-body text-center p-2">
+                                        <p class="producto-nombre">WORKFORCE PRO WF-C5890</p>
+                                        <p class="producto-precio">Precio: S/ 2,358.50</p>
+                                        <div class="separador-producto"></div>
+                                        <div class="producto-footer d-flex justify-content-between align-items-center px-2">
+                                            <a href="/productos/fotocopiadoras?producto=WORKFORCE PRO WF-C5890" class="producto-detalles">Ver Detalles</a>
+                                            <span class="badge rounded-pill bg-success d-flex align-items-center gap-1 producto-oferta">
+                                                <i class="fas fa-tag"></i> OFERTADA
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Reverso -->
+                                <div class="producto-card-back ">
+                                    <div class="contenido-caracteristicas">
+                                        <div class="titulo-caracteristicas">Características</div>
+                                        <ul>
+                                            <li><strong>FUNCIONES:</strong>Impresora Multifuncional de inyección de tinta</li>
+                                            <li><strong>TIPO:</strong>Color</li>
+                                            <li><strong>CTR recomendado:</strong>80,000Pag</li>
+                                            <li><strong>Velocidad Normal Monocromática:</strong>25 ppm</li>
+                                            <li><strong>Velocidad Normal Color:</strong>25 ppm</li>
+                                            <li><strong>Conectividad USB:</strong>Si</li>
+                                            <li><strong>Conectividad LAN:</strong>Si</li>
+                                            <li><strong>Conectividad WLAN:</strong>Si</li>
+                                            <li><strong>Memoria Interna:</strong>1024 MB</li>
+                                            <li><strong>Memoria Maxima:</strong>1024 MB</li>
+                                            <li><strong>Alimentador Automático de Documentos:</strong>Si</li>
+                                            <li><strong>Duplex Automático:</strong>Si</li>
+                                            <li><strong>Resolución de Impresión:</strong>4800 ppp</li>
+                                            <li><strong>Resolución de Captura:</strong>1200 ppp</li>
+                                            <li><strong>Ciclo de Trabajo Mensual Recomendado:</strong>50,000 pg</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>        
+                </div>
+            </div>
+            <!-- Botón izquierda -->
+            <button class="carousel-control-prev custom-carousel-btn" type="button" data-bs-target="#carouselProductos" data-bs-slide="prev">
+                <i class="fas fa-chevron-left custom-icon"></i>
+            </button>
+
+            <!-- Botón derecha -->
+            <button class="carousel-control-next custom-carousel-btn" type="button" data-bs-target="#carouselProductos" data-bs-slide="next">
+                <i class="fas fa-chevron-right custom-icon"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- ESPACIADO USANDO BOOTSTRAP -->
+<div class="my-5"></div> <!-- margen vertical 1.5rem arriba y abajo -->
+
+<!-- Tercera cinta propaganda para tuners y otros-->
+<section class="w-100">
+    <div class="container-fluid p-0">
+        <img src="{{ url_for('static', path='img/slide-7502-1536x250.png') }}" class="img-fluid w-100" style="max-height: 420px; object-fit: cover;" alt="Banner Promocional Copier Mundo">
+    </div>
+</section>
+
+<!-- Línea separadora de canto a canto para nuevos productos -->
+<div style="width: 100%; height: 1px; background-color: #dee2e6; margin: 40px 0;"></div>
+
+
+<!-- TÍTULO CON LÍNEAS A LOS COSTADOS que podemos usar para mas adelante 
+    <div class="seccion-titulo mb-5">
+      <div class="linea"></div>
+      <h2 class="titulo-destacado">Nuestros Productos Destacados</h2>
+      <div class="linea"></div>
+    </div>-->
+
+<!-- Sección: Tuners y Guillotinas -->
+<section class="container py-3 seccion-productos container-fluid px-3 px-sm-4 px-md-5 px-lg-6">
+    <h2 class="titulo-seccion text-center">
+        Toners y Guillotinas
+    </h2>
+
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 g-4 justify-content-center">
+
+        <!-- Producto 1 -->
+        <div class="col">
+            <div class="card text-center border-4 producto-cards">
+                <a href="/productos/tonerescartuchos?producto=TONER-AMARILLO" class="text-decoration-none text-dark">
+                    <div class="position-relative">
+                        <img src="{{ url_for('static', path='img/productos-tuners/Tuners-color-amarillo.jpg') }}" class="card-img-top" alt="Toner-color-amarillo">
+                        <span class="position-absolute top-0 start-0 badge bg-danger rounded-circle p-1">
+                            <i class="fas fa-star text-white small"></i>
+                        </span>
+                        <span class="producto-arrow arrow-amarillo">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                    <div class="card-body toner-amarillo">
+                        <p class="text-muted small mb-1 marca-hover">   MARCA: KONICA MINOLTA, RENDIMIENTO: RENDIMIENTO: 20000pg...
+                        </p>
+                        <p class="fw-semibold small mb-0 color-hover">Toner COLOR: Amarillo
+                        </p>
+                        <span class="badge-color toner-amarillo-badge"> AMARILLO
+                        </span>   
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="col">
+            <div class="card  text-center border-4 producto-cards">
+                <a href="/productos/tonerescartuchos?producto=TONER-CIAN" class="text-decoration-none text-dark">
+                    <div class="position-relative">
+                        <img src="{{ url_for('static', path='img/productos-tuners/Tuners-color-cian.jpg') }}" class="card-img-top" alt="Tuners-color-cian">
+                        <span class="position-absolute top-0 start-0 badge bg-danger rounded-circle p-1">
+                            <i class="fas fa-star text-white small"></i>
+                        </span>
+                        <span class="producto-arrow arrow-cian">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                    <div class="card-body toner-cian">
+                        <p class="text-muted small mb-1 marca-hover">MARCA: KONICA MINOLTA, RENDIMIENTO: RENDIMIENTO: 25000 pg...</p>
+                        <p class="fw-semibold small mb-0 color-hover">Toner COLOR: CIAN.</p>
+                            <span class="badge-color toner-cian-badge">CIAN</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="col">
+            <div class="card  text-center border-4 producto-cards">
+                <a href="/productos/tonerescartuchos?producto=TONER-MAGENTA" class="text-decoration-none text-dark">
+                    <div class="position-relative">
+                        <img src="{{ url_for('static', path='img/productos-tuners/Tuners-color-magenta.jpg') }}" class="card-img-top" alt="tuners-magenta">
+                        <span class="position-absolute top-0 start-0 badge bg-danger rounded-circle p-1">
+                            <i class="fas fa-star text-white small"></i>
+                        </span>
+                        <span class="producto-arrow arrow-magenta">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                    <div class="card-body toner-magenta">
+                        <p class="text-muted small mb-1 marca-hover">MARCA: KONICA MINOLTA, RENDIMIENTO: RENDIMIENTO: 25000 pg...</p>
+                        <p class="fw-semibold small mb-0 color-hover">Toner COLOR: MAGENTA.</p>
+                            <span class="badge-color toner-magenta-badge">MAGENTA</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="col">
+            <div class="card  text-center border-4 producto-cards">
+                <a href="/productos/tonerescartuchos?producto=TONER-NEGRO" class="text-decoration-none text-dark">
+                    <div class="position-relative">
+                        <img src="{{ url_for('static', path='img/productos-tuners/Tuners-color-negro.jpg') }}" class="card-img-top" alt="tuners-negro">
+                        <span class="position-absolute top-0 start-0 badge bg-danger rounded-circle p-1">
+                            <i class="fas fa-star text-white small"></i>
+                        </span>
+                        <span class="producto-arrow arrow-negro">
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                    </div>
+                    <div class="card-body toner-negro">
+                        <p class="text-muted small mb-1 marca-hover">MARCA: KONICA MINOLTA, RENDIMIENTO: RENDIMIENTO: 41500pg..</p>
+                        <p class="fw-semibold small mb-0 color-hover">Toner COLOR: NEGRO.</p>
+                            <span class="badge-color toner-negro-badge">NEGRO</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- Segunda seccion de productos -->
+        <!-- Producto 1 guillotinas-->
+        <div class="col">
+            <div class="card card-guillotina  text-center border-4 bg-soft-guillotinas">
+                <a href="/productos/accesoriosoficina?producto=GUILLOTINA-SEMI-INDUSTRIAL-A3-A4" class="text-decoration-none text-dark">
+                    <div class="position-relative">
+                        <img src="{{ url_for('static', path='img/productos-guillotinas/GUILLOTINA-SEMI-INDUSTRIAL-A3-A4.jpg') }}" class="card-img-top" alt="metalica-warrior">
+                        <span class="flecha-hover position-absolute top-50 start-50">→</span>
+                        <span class="position-absolute top-0 start-0 badge bg-danger rounded-circle p-1">
+                            <i class="fas fa-star text-white small"></i>
+                        </span>
+                        
+                    </div>
+                    <div class="cards-bodys p-1">
+                        <p class="text-muted small mb-1 ">Fácil ajuste para cortar en tamaños deseados, Abrazadera de corte precisa y fácil.</p>
+                        <p class="fw-semibold small mb-0 product-title">
+                            <span class="titulo-enmarcado">GUILLOTINA SEMI INDUSTRIAL A4</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Producto 2 guillotinas-->
+        <div class="col">
+            <div class="card card-guillotina text-center border-4 bg-soft-guillotinas">
+                <a href="/productos/accesoriosoficina?producto=GUILLOTINA-BASICA-A3" class="text-decoration-none text-dark">
+                    <div class="position-relative">
+                        <img src="{{ url_for('static', path='img/productos-guillotinas/GUILLOTINA-BASICA-A3.jpg') }}" class="card-img-top" alt="guillotina-a3-kw-trio">
+                        <span class="flecha-hover position-absolute top-50 start-50">→</span>
+                        <span class="position-absolute top-0 start-0 badge bg-danger rounded-circle p-1">
+                            <i class="fas fa-star text-white small"></i>
+                        </span>
+                    </div>
+                    <div class="cards-bodys p-1">
+                        <p class="text-muted small mb-1">Guillotina básica con Capacidad máxima de corte 12 hojas a la vez de 80gm, para uso en oficinas.</p>
+                        <p class="fw-semibold small mb-0">
+                            <span class="titulo-enmarcado">GUILLOTINA BASICA A3 CORTE 12</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Producto 3 guillotinas-->
+        <div class="col">
+            <div class="card card-guillotina text-center border-4 bg-soft-guillotinas">
+                <a href="/productos/accesoriosoficina?producto=GUILLOTINA-BASICA-A4" class="text-decoration-none text-dark">
+                    <div class="position-relative">
+                        <img src="{{ url_for('static', path='img/productos-guillotinas/GUILLOTINA-BASICA-A4.jpg') }}" class="card-img-top" alt="guillotina-a4-metalica-warrior">
+                        <span class="flecha-hover position-absolute top-50 start-50">→</span>
+                        <span class="position-absolute top-0 start-0 badge bg-danger rounded-circle p-1">
+                            <i class="fas fa-star text-white small"></i>
+                        </span>
+                    </div>
+                    <div class="cards-bodys p-1">
+                        <p class="text-muted small mb-1">Guillotina Básica-A4: Guillotina Básica A4 con Capacidad máxima de corte 12 hojas a la vez de 80gm.</p>
+                        <p class="fw-semibold small mb-0">
+                            <span class="titulo-enmarcado">GUILLOTINA BASICA A4 CORTE 12</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Producto 4 guillotinas-->
+        <div class="col">
+            <div class="card card-guillotina text-center border-4 bg-soft-guillotinas">
+                <a href="/productos/accesoriosoficina?producto=GUILLOTINA-BASICA-B4" class="text-decoration-none text-dark">
+                    <div class="position-relative">
+                        <img src="{{ url_for('static', path='img/productos-guillotinas/GUILLOTINA-BASICA-B4.jpg') }}" class="card-img-top" alt="guillotina-a4-tope">
+                        <span class="flecha-hover position-absolute top-50 start-50">→</span>
+                        <span class="position-absolute top-0 start-0 badge bg-danger rounded-circle p-1">
+                            <i class="fas fa-star text-white small"></i>
+                        </span>
+                    </div>
+                    <div class="cards-bodys p-1">
+                        <p class="text-muted small mb-1">Guillotina Básica Capacidad máxima de corte 12 hojas a la vez de 80gm con estructura metal.</p>
+                        <p class="fw-semibold small mb-0">
+                            <span class="titulo-enmarcado">GUILLOTINA BASICA B4 AUTOFIL</span>
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- Agrega más productos aquí según sea necesario -->
+    </div>
+</section>
+
+<!-- ESPACIADO USANDO BOOTSTRAP -->
+<div class="my-4
+"></div> <!-- margen vertical 1.5rem arriba y abajo -->
+
+<!-- Cuarta cinta final propaganda fotocopiadoras -->
+<section class="w-100">
+    <a href="/producto/impresoras">
+        <div class="container-fluid p-0">
+            <img src="{{ url_for('static', path='img/MAQUINAS-RICOH-WEB.png') }}" class="img-fluid w-100" style="max-height: 420px; object-fit: cover;" alt="Banner Promocional Copier Mundo">
+        </div>
+    </a> 
+</section>
+
+<!-- Cinta lineal  -->
+<div style="width: 100%; height: 1px; background-color: #dee2e6; margin: 40px 0;"></div>
+
+
+<!-- propaganda al finalizar la pagina -->
+<section class="max-w-7xl mx-auto px-4 py-8 logos-section">
+    <p class="text-center text-uppercase fw-semibold text-secondary small mb-4 titulos-logos" style="font-family: 'Inter', sans-serif;">
+        ¡LAS MEJORES FOTOCOPIADORAS!
+    </p>
+    <div class="d-flex justify-content-center align-items-center flex-wrap gap-4 logos-container">
+        <img src="{{ url_for('static', path='img/syscopys.png') }}" alt="Logo Ricoh" class="logos-img" />
+        <img src="{{ url_for('static', path='img/konica-minolta.png') }}" alt="Logo Konica Minolta" class="logos-img" />
+        <img src="{{ url_for('static', path='img/cannon.png') }}" alt="Logo Canon" class="logos-img" />
+        <img src="{{ url_for('static', path='img/epson.jpg') }}" alt="Logo Epson" class="logos-img" />
+        <img src="{{ url_for('static', path='img/kyocera.png') }}" alt="Logo Kyocera" class="logos-img" />
+        <img src="{{ url_for('static', path='img/hp.png') }}" alt="Logo Hp" class="logos-img" />
+        <img src="{{ url_for('static', path='img/DENSITONE.png') }}" alt="Logo DENSITONE" class="logos-img" />
+    </div>
+</section>
+
+<!-- ESPACIADO USANDO BOOTSTRAP -->
+<div class="my-5"></div> <!-- margen vertical 1.5rem arriba y abajo -->
+
+<!-- Cinta de propaganda de canto a canto color azul -->
+<section class="cinta-ajustada text-white d-flex align-items-center">
+    <div class="container text-center py-3">
+        <h2 class="fw-bold display-6">"Más de 10,000 clientes confían en Copier Mundo"</h2>
+        <p class="small mb-0">
+            Importadores de fotocopiadoras en Lima, venta de fotocopiadoras multifuncionales, Equipos nuevos y remanufacturados a Color y Blanco/Negro, en formatos A4 y A3. Más de 100 modelos de las marcas Ricoh, Canon, Kyocera y Konica Minolta.
+        </p>
+        <a href="#" class="text-xs font-semibold uppercase tracking-widest flex items-center space-x-2" style="font-family: 'Inter', sans-serif;">
+            <span>Contáctanos</span>
+            <i class="fas fa-chevron-right text-white"> 
+            </i>
+        </a>
+    </div>
+</section>
+
+
+<section class="container py-5">
+    <!-- Título central con líneas -->
+    <div class="d-flex align-items-center justify-content-center mb-5">
+        <hr class="flex-grow-1 border-secondary" />
+        <h2 class="titulo-valores px-3">NUESTROS VALORES</h2>
+        <hr class="flex-grow-1 border-secondary" />
+    </div>
+
+    <!-- Cuadrícula de valores -->
+    <div class="row text-center gy-4">
+
+        <!-- Valor: Eficiencia -->
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
+                <i class="fas fa-star text-white"></i>
+            </div>
+            <h5 class="text-primary fw-bold mb-2">Eficiencia</h5>
+            <p class="small text-muted">
+            Productos que aumentan la productividad con soluciones multifuncionales que ahorran tiempo y recursos.
+            </p>
+        </div>
+
+        <!-- Valor: Orientación al cliente -->
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
+                <i class="fas fa-handshake text-white"></i>
+            </div>
+            <h5 class="text-primary fw-bold mb-2">Orientación al cliente</h5>
+            <p class="small text-muted">
+                Atención personalizada con equipos adecuados y un servicio postventa eficiente.
+            </p>
+        </div>
+
+        <!-- Valor: Durabilidad -->
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
+                <i class="fas fa-chess-rook text-white"></i>
+            </div>
+            <h5 class="text-primary fw-bold mb-2">Durabilidad</h5>
+            <p class="small text-muted">
+                Equipos de calidad con rendimiento constante y una vida útil prolongada.
+            </p>
+        </div>
+
+        <!-- Valor: Responsabilidad Social -->
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
+                <i class="fas fa-seedling text-white"></i>
+            </div>
+            <h5 class="text-primary fw-bold mb-2">Responsabilidad Social</h5>
+            <p class="small text-muted">
+                Promovemos el uso de insumos reciclables y tecnologías con bajo impacto ambiental.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- SEPARADOR - VISUAL ENTRE BANNER Y CINTA 
+<div class="w-100" style="height: 40px; background-color: #f8f9fa; border-bottom: 1px solid #dee2e6;"></div>-->
+
+<!-- ESPACIADO USANDO BOOTSTRAP -->
+<div class="my-5"></div> <!-- margen vertical 1.5rem arriba y abajo -->
+
+
+<!-- Botones flotantes - deben estar fuera de cualquier section o div con overflow-hidden o relative -->
+<!-- Contenedor de notificaciones -->
+<div id="toast-container" class="fixed top-5 right-5 space-y-3 z-50"></div>
+
+
+
+{% endblock %}

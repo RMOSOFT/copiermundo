@@ -1,0 +1,170 @@
+<!-- productos.html -->
+{% extends "index.html" %}
+
+{% block content %}
+
+<section>
+    <!-- Breadcrumb + Título -->
+    <div class="bg-gray-100 py-3 px-4 mb-4 rounded">
+        <nav class="text-sm text-gray-600">
+            <a href="/" class="text-blue-600 hover:underline">Inicio</a> &gt;
+            <span>Nosotros</span>
+        </nav>
+    </div>
+</section>
+
+<section class="m-0 p-0">
+    <video class="d-block w-100 h-13 slide-video" autoplay muted loop playsinline>
+        <source src="{{ url_for('static', path='video/descarga.mp4') }}" type="video/mp4">
+        Tu navegador no soporta la reproducción de video.
+    </video>
+    <div class="carousel-caption caption-responsive">
+        <div class="desktop-text fade-in text-light">
+            <h2 class="fw-bold">Bienvenido a Copier Mundo</h2>
+            <p>Explora soluciones audiovisuales de vanguardia con fotocopiadoras multifuncionales</p>
+        </div>
+        <div class="mobile-button d-block d-md-none">
+            <a href="#servicios" class="btn btn-light">Ver más</a>
+        </div>
+    </div>
+</section>
+
+<section>
+  <!-- CINTA AZUL -->
+    <div class="bg-blue-800 text-white py-6 text-center">
+        <h1 class="text-3xl md:text-3xl font-bold mb-3">Soluciones para todo negocio</h1>
+        <p class="text-lg md:text-xl">Innovación y tecnología al servicio de tu empresa</p>
+    </div>
+</section>
+
+<section class="bg-gray-100 pt-3 pb-10 py-5">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4">
+    
+        <!-- Video: contenedor proporcional -->
+        <div class="w-full h-0 pb-[56.25%] relative rounded-lg overflow-hidden shadow-lg py-">
+          <iframe 
+            src="https://www.youtube.com/embed/vWBJtNdg19w"
+            title="We are Konica Minolta Corporate Movie 2018"
+            class="absolute top-0 left-0 w-full h-full"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+    
+        <!-- Texto -->
+        <div class="bg-blue-700 text-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-4">¿QUIÉN ES KONICA MINOLTA?</h2>
+            <p class="mb-3 font-semibold">Fabricante japonés de tecnologías de impresión líder a nivel mundial</p>
+            <p class="mb-4">La empresa fue fundada en el año 1873 y después de 144 años, KONICA MINOLTA está a la vanguardia en tecnologías de imagen e impresión.</p>
+            <ul class="list-disc pl-5 space-y-1 text-sm">
+                <li>Productos Ópticos</li>
+                <li>Instrumentos de Medición</li>
+                <li>Equipos para el Cuidado de la Salud</li>
+                <li>Equipos de Impresión para Oficina</li>
+                <li>Equipos de Impresión de Producción</li>
+                <li>Equipos de Impresión de Inyección de Tinta Industriales</li>
+                <li>Iluminación OLED</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section>
+  <!-- CINTA ESTILIZADA -->
+  <div class="bg-gray-400 text-blue-800 py-3 text-center">
+    <h1 class="text-2xl md:text-2xl font-bold mb-1">COPIER MUNDO - CUSCO, DISTRIBUIDOR OFICIAL DE KONICA MINOLTA</h1>
+    <p class="text-base md:text-lg"></p>
+  </div>
+</section>
+
+
+<section class="bg-white py-12 px-4">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-8">
+    
+    <!-- Texto -->
+    <div class="md:w-2/3 border-r md:pr-8">
+      <h2 class="text-xl font-bold text-blue-800 mb-4">ACERCA DE COPIER MUNDO</h2>
+      <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+        Copier mundo es una empresa reconocida a nivel nacional
+      </p>
+      <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+        Copier mundo de EE.UU es representante en México e importador de la marca KONICA MINOLTA desde el año 1999. Iniciamos con los equipos MINOLTA-QMS con la línea MAGICOLOR y PAGEPRO.
+      </p>
+      <p class="text-gray-600 text-sm leading-relaxed">
+        Contamos con un muy amplio y permanente stock de equipos, consumibles y refacciones además de personal técnico certificado y calificado para la atención de los productos KONICA MINOLTA.
+      </p>
+    </div>
+
+    <!-- Imágenes y enlace -->
+    <aside class="md:w-1/3 flex flex-col items-center text-center">
+        <img src="{{ url_for('static', path='img/productos/bizhub-c3321i.jpg') }}" class="card-img-top producto-img" alt="Producto 1">
+        
+        <p class="text-sm text-gray-700">
+        Conoce más de Copier mundo DE EE.UU en nuestra página:<br>
+            <a href="https://dataproducts.com.mx" target="_blank" rel="noopener noreferrer" class="text-blue-600 font-semibold hover:underline">copiermundo.com</a>
+        </p>
+    </aside>
+    
+  </div>
+</section>
+
+<section class="container py-5">
+    <!-- Título central con líneas -->
+    <div class="d-flex align-items-center justify-content-center mb-5">
+        <hr class="flex-grow-1 border-secondary" />
+        <h2 class="titulo-valores px-3">VALORES DE EMPRESA</h2>
+        <hr class="flex-grow-1 border-secondary" />
+    </div>
+
+    <!-- Cuadrícula de valores -->
+    <div class="row text-center gy-4">
+
+        <!-- Valor: Eficiencia -->
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
+                <i class="fas fa-star text-white"></i>
+            </div>
+            <h5 class="text-primary fw-bold mb-2">Eficiencia</h5>
+            <p class="small text-muted">
+            Productos que aumentan la productividad con soluciones multifuncionales que ahorran tiempo y recursos.
+            </p>
+        </div>
+
+        <!-- Valor: Orientación al cliente -->
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
+                <i class="fas fa-handshake text-white"></i>
+            </div>
+            <h5 class="text-primary fw-bold mb-2">Orientación al cliente</h5>
+            <p class="small text-muted">
+            Atención personalizada con equipos adecuados y un servicio postventa eficiente.
+            </p>
+        </div>
+
+        <!-- Valor: Durabilidad -->
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
+                <i class="fas fa-chess-rook text-white"></i>
+            </div>
+            <h5 class="text-primary fw-bold mb-2">Durabilidad</h5>
+            <p class="small text-muted">
+                Equipos de calidad con rendimiento constante y una vida útil prolongada.
+            </p>
+        </div>
+
+        <!-- Valor: Responsabilidad Social -->
+        <div class="col-12 col-sm-6 col-md-3">
+            <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
+                <i class="fas fa-seedling text-white"></i>
+            </div>
+            <h5 class="text-primary fw-bold mb-2">Responsabilidad Social</h5>
+            <p class="small text-muted">
+            Promovemos el uso de insumos reciclables y tecnologías con bajo impacto ambiental.
+            </p>
+        </div>
+  </div>
+</section>
+
+{% endblock %}

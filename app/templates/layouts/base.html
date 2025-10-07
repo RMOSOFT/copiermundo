@@ -1,0 +1,1005 @@
+<!-- layouts/base.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Include head -->
+    {% include "components/head.html" %}
+</head>
+<body class="bg-white text-black">
+    
+    <!-- Include header/nav -->
+    {% include "components/header.html" %}
+
+    <!-- Cuerpo de cada página hija -->
+    <main>
+        {% block content %}
+        <!-- Aquí va el contenido de la página hija -->
+        {% endblock %}
+    </main>
+
+    <!-- Incluir pie de página en el futuro -->
+    {% include "components/footer.html" %}
+
+    <script>
+        let currentIndex = 0;
+        const totalSlides = 4; // cambia esto si agregas más imágenes
+
+        function updateCarousel() {
+            const carousel = document.getElementById("carousel");
+            const slideWidth = carousel.clientWidth / totalSlides;
+            carousel.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
+
+        function nextCarouselSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevCarouselSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }   
+    </script>
+    
+    <script>
+        let currentProductSlide = 0;
+        const productSlider = document.getElementById("product-slider");
+        const totalProductSlides = productSlider.children.length;
+
+        function updateProductSlide() {
+            productSlider.style.transform = `translateX(-${currentProductSlide * 100}%)`;
+        }
+
+        function nextProductSlide() {
+            if (currentProductSlide < totalProductSlides - 1) {
+                currentProductSlide++;
+                updateProductSlide();
+            }
+        }
+
+        function prevProductSlide() {
+            if (currentProductSlide > 0) {
+                currentProductSlide--;
+                updateProductSlide();
+            }
+        }
+    </script>
+
+    <!-- Bootstrap 5 JS (necesario para el carousel y componentes interactivos) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- 🔽 SCRIPT DE AUTOCOMPLETADO -->
+    <script>
+    (function() {
+      const initSearch = () => {
+        (function($) {
+          $('#search').on('input', function() {
+            const query = $(this).val();
+            const category = $('#product_cat').val();
+            if (query.length < 3) return;
+
+            $('#search').css('background', 'url(loader.gif) no-repeat 97% center');
+
+            $.ajax({
+              url: '/ruta_ajax', // ← Cambia esto por tu backend o API
+              method: 'GET',
+              data: {
+                action: 'buscar_productos',
+                q: query,
+                category: category
+              },
+              success: function(data) {
+                $('#suggestions').html(data).show();
+                $('#search').css('background', 'transparent');
+              }
+            });
+          });
+        })(jQuery);
+      };
+
+      if (document.readyState === 'complete') {
+        initSearch();
+      } else {
+        window.addEventListener('load', initSearch);
+      }
+    })();
+    </script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const header = document.getElementById("main-header");
+      const topbar = document.getElementById("topbar");
+      const logo = document.getElementById("logo");
+
+      window.addEventListener("scroll", function () {
+        const scrollY = window.scrollY;
+
+        // Activar estilos al hacer scroll
+        if (scrollY > 50) {
+          header.classList.add("scrolled", "shadow-lg", "bg-white");
+          if (topbar) topbar.classList.add("scrolled");
+
+          // Reducir tamaño del logo
+          if (logo) logo.style.transform = "scale(0.85)";
+        } else {
+          header.classList.remove("scrolled", "shadow-lg", "bg-white");
+          if (topbar) topbar.classList.remove("scrolled");
+
+          // Restaurar tamaño original del logo
+          if (logo) logo.style.transform = "scale(1)";
+        }
+      });
+    });
+    </script>
+
+    <script>
+      function mostrarDetallesProducto(nombre, descripcion, imagen, precio, caracteristicasTexto, aficheUrl) {
+        document.getElementById('modal-titulo').innerText = nombre;
+        document.getElementById('modal-descripcion').innerText = descripcion;
+        document.getElementById('modal-img').src = "{{ url_for('static', path='') }}" + imagen;
+        document.getElementById("modal-precio").innerHTML = `<span class="bg-red-600 text-white font-bold px-4 py-2 rounded-full text-sm shadow-md border-4 border-dashed border-white rotate-[-5deg]">${precio}</span>`;
+
+        // Descargar afiche
+        // Asigna la URL del PDF al botón
+        const aficheBtn = document.getElementById("modal-afiche");
+        aficheBtn.href = aficheUrl;
+
+        // Limpiar características anteriores
+        const lista = document.getElementById('modal-caracteristicas');
+        lista.innerHTML = '';
+        const caracteristicas = caracteristicasTexto.split('. ').filter(c => c.trim() !== '');
+        caracteristicas.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item.trim();
+          lista.appendChild(li);
+        });
+
+        document.getElementById('modal-producto').classList.remove('hidden');
+      }
+
+      function cerrarModal() {
+        document.getElementById('modal-producto').classList.add('hidden');
+      }
+    </script>
+
+    <!-- MODAL: Producto Detallado -->
+    <div id="modal-producto" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden overflow-auto">
+      <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] p-6 relative shadow-xl overflow-y-auto">
+
+        <!-- Cinta superior class="bg-blue-600 text-white text-lg text-sm font-bold px-4 py-2 flex justify-between items-center rounded-t-lg" -->
+        <div class="bg-blue-600 text-white text-lg  font-bold px-6 py-3 flex justify-between items-center rounded-t-lg w-full">
+          <span>Ficha-producto</span>
+          <span class="text-xl">Copier Mundo</span>
+        </div>
+
+        <!-- Botón cerrar -->
+        <button onclick="cerrarModal()" class="absolute top-2 right-2 text-gray-500 hover:text-black text-xl">&times;</button>
+
+        <!-- Botón descarga afiche -->
+        <a id="modal-afiche" 
+           src="/static/pdf/bizhubC3321i.pdf" 
+           target="_blank" 
+           class="inline-block bg-green-600 text-white font-semibold px-4 py-2 mt-4 rounded hover:bg-green-700 transition"
+           download>
+            Descargar afiche
+        </a>
+
+        <div class="flex flex-col md:flex-row gap-6">
+          <!-- Imagen -->
+          <img id="modal-img" src="" alt="Producto" class="mx-auto md:max-w-xs md:max-h-64 object-contain" />
+
+          <!-- Información -->
+          <div class="flex-1">
+            <!-- Título -->
+            <h2 id="modal-titulo" class="text-2xl font-bold mb-2"></h2>
+
+            <!-- Descripción -->
+            <p id="modal-descripcion" class="text-gray-600 mb-3"></p>
+
+            <!-- Características -->
+            <ul id="modal-caracteristicas" class="text-sm text-gray-700 list-disc pl-5 columns-2 gap-x-8 mb-4">
+              <!-- Se llenará dinámicamente -->
+            </ul>
+
+            <!-- Precio y etiqueta -->
+            <div class="flex justify-between items-center">
+                <div id="modal-precio" class="relative inline-block">
+                <!-- Aquí insertaremos el sticker del precio dinámicamente -->
+                </div>
+                <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Ofertada</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    function toggleMenu() {
+        const menu = document.getElementById('menuMovilOverlay');
+        if (menu.style.display === 'none' || menu.style.display === '') {
+            menu.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Evita desplazamiento del fondo
+        } else {
+        menu.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        }
+    }
+
+    // Cierra el menú al hacer clic en cualquier enlace
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('#menuMovilOverlay a').forEach(link => {
+        link.addEventListener('click', () => toggleMenu());
+        });
+    });
+    </script>
+
+
+    <script>
+        document.addEventListener("click", function (event) {
+            const menu = document.getElementById("menuMovil");
+            const toggleButton = document.querySelector(".navbar-toggler");
+
+            // Si el clic NO es dentro del menú ni en el botón hamburguesa
+            if (!menu.contains(event.target) && !toggleButton.contains(event.target)) {
+                if (menu.classList.contains("show")) {
+                    // Cierra el menú usando Bootstrap collapse
+                    const bsCollapse = bootstrap.Collapse.getInstance(menu);
+                    if (bsCollapse) {
+                        bsCollapse.hide();
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const productoId = params.get("producto");
+
+            if (productoId) {
+                const target = document.getElementById(productoId);
+                if (target) {
+                    target.scrollIntoView({ behavior: "smooth", block: "center" });
+                    target.classList.add("resaltado-producto");
+                }
+            }
+        });
+    </script>
+
+    <!-- Cargar productos desde el JSON productos.json-->
+    <script>
+      // Ejecuta cuando el DOM está completamente cargado
+      document.addEventListener("DOMContentLoaded", function () {
+        // Obtén los parámetros de la URL
+        const params = new URLSearchParams(window.location.search);
+        const productoId = params.get("producto");
+
+        // Si no hay un ID de producto, no hacer nada
+        if (!productoId) return;
+
+        // Cargar el archivo JSON con los productos
+        fetch("/static/data/productos.json")
+          .then(response => response.json())
+          .then(productos => {
+            // Verifica si el producto existe en el JSON
+            if (productos[productoId]) {
+              // Mostrar el modal con la información del producto
+              mostrarModalProducto(productos[productoId]);
+              // Reemplazar la URL para evitar los parámetros en la barra de direcciones
+              history.replaceState(null, "", "/productos/fotocopiadoras");
+            } else {
+              console.warn("Producto no encontrado:", productoId);
+            }
+          })
+          .catch(error => {
+            console.error("Error al cargar el archivo JSON de productos:", error);
+          });
+      });
+
+      // Función para mostrar el modal con los detalles del producto
+      function mostrarModalProducto(producto) {
+        // Actualizar la imagen
+        document.getElementById("modal-img").src = producto.imagen;
+
+        // Actualizar el título y descripción
+        document.getElementById("modal-titulo").textContent = producto.titulo;
+        document.getElementById("modal-descripcion").textContent = producto.descripcion;
+
+        // Actualizar el enlace del afiche
+        document.getElementById("modal-afiche").href = producto.afiche;
+
+        // Limpia la lista de características y las añade
+        const lista = document.getElementById("modal-caracteristicas");
+        lista.innerHTML = "";
+        producto.caracteristicas.forEach(carac => {
+          const li = document.createElement("li");
+          li.textContent = carac;
+          lista.appendChild(li);
+        });
+
+        // Actualizar el precio
+        document.getElementById("modal-precio").innerHTML = `
+          <span class="text-lg font-bold text-green-700">${producto.precio}</span>
+        `;
+
+        // Mostrar el modal
+        document.getElementById("modal-producto").classList.remove("hidden");
+      }
+
+      // Función para cerrar el modal
+      function cerrarModal() {
+        document.getElementById("modal-producto").classList.add("hidden");
+      }
+    </script>
+
+    <!-- Cargar productos desde el JSON productos-tuners.json-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const params = new URLSearchParams(window.location.search);
+          const productoId = params.get("producto");
+
+          if (!productoId) return;
+
+          // Scroll hasta el producto en pantalla si existe un contenedor con ese ID
+          const target = document.getElementById(productoId);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "center" });
+            target.classList.add("border", "border-4", "border-red-500", "rounded");
+          }
+
+          // Cargar productos desde el JSON
+          fetch("/static/data/productos-tuners.json")
+            .then(response => response.json())
+            .then(productos => {
+              const producto = productos[productoId];
+              if (producto) {
+                mostrarModalProducto(producto);
+                history.replaceState(null, "", "/productos/tonerescartuchos"); // Limpia la URL
+              }
+            })
+            .catch(error => console.error("Error al cargar los productos:", error));
+        });
+
+        // Función que muestra el modal con la información del producto
+        function mostrarModalProducto(producto) {
+          document.getElementById("modal-img").src = producto.imagen;
+          document.getElementById("modal-titulo").textContent = producto.titulo;
+          document.getElementById("modal-descripcion").textContent = producto.descripcion;
+
+          // Características
+          const lista = document.getElementById("modal-caracteristicas");
+          lista.innerHTML = "";
+          producto.caracteristicas.forEach(c => {
+            const li = document.createElement("li");
+            li.textContent = c;
+            lista.appendChild(li);
+          });
+
+          // Precio
+          document.getElementById("modal-precio").innerHTML = `
+            <span class="text-lg font-bold text-green-700">${producto.precio}</span>
+          `;
+
+          // PDF
+          document.getElementById("modal-afiche").href = producto.afiche;
+
+          // Mostrar modal
+          document.getElementById("modal-producto").classList.remove("hidden");
+        }
+
+        function cerrarModal() {
+          document.getElementById("modal-producto").classList.add("hidden");
+        }
+    </script>
+    
+    <!-- Cargar productos desde el JSON productos-guillotinas.json-->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const params = new URLSearchParams(window.location.search);
+          const productoId = params.get("producto");
+
+          if (!productoId) return;
+
+          // Scroll hasta el producto en pantalla si existe un contenedor con ese ID
+          const target = document.getElementById(productoId);
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "center" });
+            target.classList.add("border", "border-4", "border-red-500", "rounded");
+          }
+
+          // Cargar productos desde el JSON
+          fetch("/static/data/productos-guillotinas.json")
+            .then(response => response.json())
+            .then(productos => {
+              const producto = productos[productoId];
+              if (producto) {
+                mostrarModalProducto(producto);
+                history.replaceState(null, "", "/productos/tonerescartuchos"); // Limpia la URL
+              }
+            })
+            .catch(error => console.error("Error al cargar los productos:", error));
+        });
+
+        // Función que muestra el modal con la información del producto
+        function mostrarModalProducto(producto) {
+          document.getElementById("modal-img").src = producto.imagen;
+          document.getElementById("modal-titulo").textContent = producto.titulo;
+          document.getElementById("modal-descripcion").textContent = producto.descripcion;
+
+          // Características
+          const lista = document.getElementById("modal-caracteristicas");
+          lista.innerHTML = "";
+          producto.caracteristicas.forEach(c => {
+            const li = document.createElement("li");
+            li.textContent = c;
+            lista.appendChild(li);
+          });
+
+          // Precio
+          document.getElementById("modal-precio").innerHTML = `
+            <span class="text-lg font-bold text-green-700">${producto.precio}</span>
+          `;
+
+          // PDF
+          document.getElementById("modal-afiche").href = producto.afiche;
+
+          // Mostrar modal
+          document.getElementById("modal-producto").classList.remove("hidden");
+        }
+
+        function cerrarModal() {
+          document.getElementById("modal-producto").classList.add("hidden");
+        }
+    </script>
+
+    <!-- Scripts para filtrar los precios  -->
+   <script>
+      async function obtenerProductos() {
+        const res = await fetch("/static/data/productos.json");
+        const data = await res.json();
+
+        const productos = Object.values(data).map(p => ({
+          ...p,
+          precioNumerico: parseFloat(p.precio.replace(/[^\d.]/g, ""))
+        }));
+
+        return productos;
+      }
+
+      function getParams() {
+        const params = new URLSearchParams(window.location.search);
+        return {
+          min: parseFloat(params.get("min")) || 1,
+          max: parseFloat(params.get("max")) || Infinity
+        };
+      }
+
+      function renderProductos(productos) {
+        const contenedor = document.getElementById("resultado-productos");
+        contenedor.innerHTML = "";
+
+        if (productos.length === 0) {
+          contenedor.innerHTML = `<p class="text-gray-500">No se encontraron productos en este rango de precios.</p>`;
+          return;
+        }
+
+        productos.forEach(p => {
+          const card = `
+            <div class="border rounded-lg shadow p-4">
+              <img src="${p.imagen}" alt="${p.titulo}" class="w-full h-48 object-contain mb-3">
+              <h3 class="text-lg font-semibold">${p.titulo}</h3>
+              <p class="text-sm text-gray-600">${p.descripcion}</p>
+              <p class="text-blue-700 font-bold mt-2">S/ ${p.precioNumerico.toFixed(2)}</p>
+            </div>
+          `;
+          contenedor.innerHTML += card;
+        });
+      }
+
+      window.addEventListener("DOMContentLoaded", async () => {
+        const { min, max } = getParams();
+        const productos = await obtenerProductos();
+        const filtrados = productos.filter(p => p.precioNumerico >= min && p.precioNumerico <= max);
+        renderProductos(filtrados);
+      });
+    </script>
+
+
+    <!-- Scripts para filtrar los precios fotocopiadoras -->
+    <script>
+        document.getElementById("/productos/filtro-precio").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            
+            const min = document.getElementById("precio-min").value;
+            const max = document.getElementById("precio-max").value;
+
+            const response = await fetch(`/productos/filtro-precio?min=${min}&max=${max}`);
+            const data = await response.text();
+            
+            if (data.includes("no hay productos")) {
+                mostrarNotificacion("No hay más productos filtrados, busca otros productos.");
+            } else {
+                document.body.innerHTML = data; // reemplaza resultados dinámicamente
+            }
+        });
+    </script>
+    
+
+    <!-- Scripts para filtrar los precios de accesorios  -->
+    <script>
+      function filtrarPorPrecio(event) {
+        event.preventDefault();
+
+        const min = document.getElementById("precio-min").value;
+        const max = document.getElementById("precio-max").value;
+
+        if (!min || !max || parseFloat(min) > parseFloat(max)) {
+          alert("Por favor ingrese un rango válido.");
+          return;
+        }
+
+        const url = `/productos/filtro-precios-accesorios?min=${min}&max=${max}`;
+        window.location.href = url;
+      }
+    </script>
+
+    <!-- Scripts para filtrar los precios de toneres y cartuchos  -->
+    <script>
+      function filtrarPorPrecio(event) {
+        event.preventDefault();
+
+        const min = document.getElementById("precio-min").value;
+        const max = document.getElementById("precio-max").value;
+
+        if (!min || !max || parseFloat(min) > parseFloat(max)) {
+          alert("Por favor ingrese un rango válido.");
+          return;
+        }
+
+        const url = `/productos/filtro-precios-toners?min=${min}&max=${max}`;
+        window.location.href = url;
+      }
+    </script>
+
+
+    <!-- Scripts para filtrar los precios impresoras-color  -->
+    <script>
+      function filtrarPorPrecioColor(event) {
+        event.preventDefault();
+
+        const min = document.getElementById("precio-min").value;
+        const max = document.getElementById("precio-max").value;
+
+        if (!min || !max || parseFloat(min) > parseFloat(max)) {
+          alert("Por favor ingrese un rango válido.");
+          return;
+        }
+
+        const url = `/productos/fotocopiadoras/filtro-precios-impresora-color?min=${min}&max=${max}`;
+        window.location.href = url;
+      }
+    </script>
+    
+
+    <!-- Scripts para filtrar los precios de fotocopiadoras o impresoras-kyoceras  -->
+    <script>
+      function filtrarPorPrecioKyocera(event) {
+        event.preventDefault();
+
+        const min = document.getElementById("precio-min").value;
+        const max = document.getElementById("precio-max").value;
+
+        if (!min || !max || parseFloat(min) > parseFloat(max)) {
+          alert("Por favor ingrese un rango válido.");
+          return;
+        }
+
+        const url = `/productos/fotocopiadoras/filtro-precios-impresora-kyoceras?min=${min}&max=${max}`;
+        window.location.href = url;
+      }
+    </script>
+
+    <!-- Scripts para filtrar los precios impresoras-monocromaticas  -->
+    <script>
+        document.getElementById("filtro-precios-impresora-monocromatica").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            
+            const min = document.getElementById("precio-min").value;
+            const max = document.getElementById("precio-max").value;
+
+            const response = await fetch(`/productos/fotocopiadoras/filtro-precios-impresora-monocromatica?min=${min}&max=${max}`);
+            const data = await response.text();
+            
+            if (data.includes("no hay productos")) {
+                mostrarNotificacion("No hay más productos filtrados, busca otros productos.");
+            } else {
+                document.body.innerHTML = data; // reemplaza resultados dinámicamente
+            }
+        });
+    </script>
+
+
+    <!-- Contenedor de notificaciones -->
+    <div id="toast-container" class="fixed top-5 right-5 space-y-3 z-50">
+    </div>
+
+    <script>
+        function showToast(message, type = "info") {
+            const container = document.getElementById("toast-container");
+
+            // Crear el div de la notificación
+            const toast = document.createElement("div");
+            toast.className = `
+                px-4 py-3 rounded-lg shadow-lg text-white animate-slide-in
+                ${type === "success" ? "bg-green-500" : ""}
+                ${type === "error" ? "bg-red-600" : ""}
+                ${type === "info" ? "bg-blue-600" : ""}
+                ${type === "warning" ? "bg-yellow-500 text-black" : ""}
+            `;
+            toast.innerText = message;
+
+            // Agregar al contenedor
+            container.appendChild(toast);
+
+            // Quitar después de 3 segundos
+            setTimeout(() => {
+                toast.classList.add("animate-slide-out");
+                setTimeout(() => toast.remove(), 500); // Espera animación antes de borrar
+            }, 5000);
+        }
+    </script>
+
+
+    <!--Java Scripts para la dinamica de la pagina de consumibles del formulario (este codigo es antiguo que estuvimos haciendo)-->
+    <!-- Antes de cerrar </body> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--Java Scripts para la dinamica de la pagina de consumibles del formulario esta parte es lo nuevo que estamos haciendo-->
+    <script>
+        // Filtrar tabla
+      document.getElementById('buscador').addEventListener('keyup', function() {
+          const filtro = this.value.toLowerCase();
+          document.querySelectorAll('#tablaConsumibles tr').forEach(fila => {
+              fila.style.display = fila.textContent.toLowerCase().includes(filtro) ? '' : 'none';
+          });
+      });
+
+      // Seleccionar consumible desde tabla
+      document.querySelectorAll('.seleccionar-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+              const fila = this.closest('tr');
+              const nombre = fila.children[1].textContent;
+              document.querySelector('input[name="consumible"]').value = nombre;
+              document.querySelector('input[name="cantidad"]').focus();
+          });
+      });
+
+      // Enviar formulario sin recargar
+      document.getElementById('solicitudForm').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const data = Object.fromEntries(new FormData(this).entries());
+          try {
+              const resp = await fetch('/api/solicitar-consumible', {
+                  method: 'POST',
+                  headers: {'Content-Type': 'application/json'},
+                  body: JSON.stringify(data)
+              });
+
+              const json = await resp.json();
+
+              if (resp.ok && json.status === "ok") {
+                  mostrarToast("✅ Solicitud enviada correctamente.", "success");
+                  this.reset();
+              } else {
+                  mostrarToast("❌ Error al enviar la solicitud.", "danger");
+              }
+          } catch (error) {
+              mostrarToast("❌ Error de conexión con el servidor.", "danger");
+          }
+      });
+
+      // Función toast dinámica
+      function mostrarToast(mensaje, tipo = "success") {
+          const toastEl = document.getElementById('toastNotificacion');
+          const toastBody = document.getElementById('toastMensaje');
+
+          toastBody.textContent = mensaje;
+
+          toastEl.classList.remove("text-bg-success", "text-bg-danger");
+          toastEl.classList.add(tipo === "success" ? "text-bg-success" : "text-bg-danger");
+
+          const toast = new bootstrap.Toast(toastEl);
+          toast.show();
+        }
+    </script>
+    <!--Java Scripts que va junto con el formulario al solicitar consumibles, nos hace la dinamica de una ventana verde -->
+
+    <!-- Toast Notificación -->
+    <div id="toast" class="fixed bottom-4 right-4 bg-blue-600 text-white px-4 py-2 rounded shadow-lg hidden z-50">
+        🛒 Producto agregado al carrito
+    </div>
+
+    <!-- Sidebar Carrito -->
+    <div id="cartModal" class="fixed top-0 right-0 w-96 h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+        <div class="flex justify-between items-center p-4 border-b">
+            <h2 class="text-xl font-semibold">Carrito -(<span id="cartCount">0</span>)</h2>
+            <button onclick="closeCart()" class="text-gray-600 text-xl">&times;</button>
+        </div>
+        <div id="cartItems" class="p-4 space-y-4 overflow-y-auto max-h-[70%]">
+            
+        </div>
+        <div class="p-4 border-t">
+            <div class="flex justify-between font-semibold">
+                <span>Total estimado</span>
+                <span id="cartTotal">S/ 0.00</span>
+            </div>
+            <button onclick="openCheckout()" class="mt-4 w-full bg-purple-700 text-white py-2 rounded hover:bg-purple-800">Finalizar compra</button>
+            <button class="mt-4 w-full bg-purple-700 text-white py-2 rounded hover:bg-purple-800"><a href="/carrito" class="block text-center mt-2 text-black-700">Ver carrito completo</a></button>
+        </div>
+    </div>
+
+    <!-- Modal Checkout  Principal formulario para agregar varios consumibles con el carrito. -->
+    <div id="checkoutModal" class="fixed inset-0 bg-black bg-opacity-40 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-xl w-full max-w-lg p-6 shadow-2xl">
+            <h2 class="text-xl font-semibold mb-4">Detalles del cliente</h2>
+            <form id="checkoutForm" class="space-y-3">
+                <div>
+                    <label class="block font-medium">Nombre </label>
+                    <input type="text" name="nombre" required placeholder="Nombre completo" class="w-full border p-2 rounded">
+                </div>
+                <div>
+                    <label class="block font-medium">Correo </label>
+                    <input type="email" name="correo" placeholder="Correo electrónico" class="w-full border p-2 rounded" required>
+                </div>
+                <div>
+                    <label class="block font-medium">Teléfono </label>
+                    <input type="text" name="telefono" placeholder="Teléfono" class="w-full border p-2 rounded" required>
+                </div>
+                <div>
+                    <label class="block font-medium">Empresa</label>
+                    <input type="text" name="empresa" placeholder="Empresa / Organización" class="w-full border p-2 rounded">
+                </div>
+                <div>
+                    <label class="block font-medium">Dirección</label>
+                    <input type="text" name="direccion" placeholder="Dirección" class="w-full border p-2 rounded">
+                </div>
+                <div>
+                    <label class="block font-medium">Notas</label>
+                    <textarea name="notas" placeholder="Notas adicionales" class="w-full border p-2 rounded"></textarea>
+                </div>
+                <div class="flex justify-end space-x-2">
+                    <button type="button" onclick="closeCheckout()" class="px-4 py-2 border rounded">Cancelar</button>
+                    <button type="submit" class="px-4 py-2 bg-purple-700 text-white rounded">Enviar solicitud</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+    <!--Logica para el diseño de consumibles esta parte es el carrito que estamos presentando-->
+    <!-- script global que maneje el carrito -->
+    <!-- Script del carrito -->
+    <script>
+        
+        let cart = JSON.parse(localStorage.getItem("carrito")) || [];
+
+        function saveCart() {
+            localStorage.setItem("carrito", JSON.stringify(cart));
+        }
+
+        function showToast(msg, callback) {
+          const toast = document.getElementById("toast");
+          toast.textContent = msg;
+          toast.classList.remove("hidden");
+
+          // Ocultar después de 2 segundos
+          setTimeout(() => {
+            toast.classList.add("hidden");
+
+            // Si se pasó un callback, lo ejecutamos (ej: abrir carrito)
+            if(callback) callback();
+          }, 2000);
+        }
+
+        function parsePrice(precioStr){
+          if(!precioStr) return 0;
+          return parseFloat(precioStr.replace(/[^\d,\.]/g,'').replace(',','.')) || 0;
+        }
+
+        function addToCartFromServer(p){
+            console.log("Agregando producto:", p);
+                const product = {
+                id: p.id || '',
+                nombre: p.nombre || p.titulo || '',
+                precio: parsePrice(p.precio || ""),
+                imagen: p.imagen || "",
+                qty: 1
+            };
+            const existing = cart.find(item => item.id === product.id);
+            if(existing){
+                existing.qty += 1;
+            } else {
+                cart.push(product);
+            }
+
+            saveCart(); // ✅ guardamos
+            renderCart();
+
+            // Mostrar notificación y abrir carrito luego
+            showToast(`🛒 ${product.nombre} agregado al carrito.`, () => {
+                openCart();
+            });
+        }
+
+        function renderCart(){
+          const itemsContainer = document.getElementById('cartItems');
+          const countEl = document.getElementById('cartCount');
+          const totalEl = document.getElementById('cartTotal');
+          if(!itemsContainer) return;
+
+          itemsContainer.innerHTML = "";
+          let total = 0;
+
+          cart.forEach((item, index) => {
+            const subtotal = item.precio * (item.qty || 1);
+            total += subtotal;
+
+            const div = document.createElement('div');
+            div.className = "flex items-center space-x-4 border-b pb-2";
+            div.innerHTML = `
+              <img src="${item.imagen}" alt="${item.nombre}" class="w-16 h-16 object-cover">
+              <div class="flex-1">
+                <p class="font-medium">${item.nombre}</p>
+                <p class="text-sm text-gray-500">S/ ${item.precio.toFixed(2)}</p>
+                <div class="flex items-center mt-1">
+                  <button onclick="updateQty(${index}, -1)" class="px-2 border">-</button>
+                  <span class="px-2">${item.qty}</span>
+                  <button onclick="updateQty(${index}, 1)" class="px-2 border">+</button>
+                </div>
+              </div>
+              <p class="font-semibold">S/ ${subtotal.toFixed(2)}</p>
+            `;
+            itemsContainer.appendChild(div);
+          });
+
+          countEl.textContent = cart.reduce((s, i) => s + i.qty, 0);
+          totalEl.textContent = `S/ ${total.toFixed(2)}`;
+        }
+
+        function updateQty(index, delta){
+          cart[index].qty += delta;
+          if(cart[index].qty <= 0) cart.splice(index, 1);
+          saveCart(); // ✅ guardamos
+          renderCart();
+        }
+
+        function openCart(){
+          document.getElementById("cartModal").classList.remove("translate-x-full");
+        }
+
+        function closeCart(){
+          document.getElementById("cartModal").classList.add("translate-x-full");
+        }
+
+        function openCheckout(){
+            closeCart(); // si existe modal lateral, lo cerramos
+            const modal = document.getElementById("checkoutModal");
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+
+        }
+
+        function closeCheckout(){
+            const modal = document.getElementById("checkoutModal");
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+          
+        }
+
+
+        document.getElementById("checkoutForm").addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const formData = new FormData(e.target);
+        
+
+          const data = {
+            cliente: {
+              nombre: formData.get("nombre"),
+              correo: formData.get("correo"),
+              telefono: formData.get("telefono"),
+              empresa: formData.get("empresa"),
+              direccion: formData.get("direccion"),
+              notas: formData.get("notas"),
+            },
+            carrito: cart.map(item => ({
+                id: String(item.id || ""),
+                nombre: item.nombre || "",
+                precio: item.precio || 0,
+                imagen: item.imagen || "",
+                qty: item.qty || 1   // 👈 garantizamos qty
+            }))
+          };
+
+          console.log("📦 Pedido a enviar:", data);
+
+            try {
+              const resp = await fetch("/api/enviar-pedido", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+
+            if(res.ok){
+              const result = await res.json();
+              alert("✅ Pedido enviado correctamente");
+              console.log("📥 Respuesta del servidor:", result);
+
+              cart = [];
+              renderCart();
+              closeCheckout();
+              localStorage.removeItem("carrito");
+
+            } else {
+              const errorText = await res.text(); 
+              console.error("❌ Error del servidor:", errorText); 
+              alert("❌ Error al enviar el pedido: " + errorText);
+            }
+
+          } catch(err){
+        
+            console.error("❌ Error de conexión:", err);
+            alert("❌ Error de conexión con el servidor");
+          }
+        });
+    </script>
+
+    <!-- Toast contenedor -->
+    <!-- Toast contenedor -->
+    <div id="toasts" class="fixed inset-0 flex justify-center items-center pointer-events-none hidden z-50">
+      <div id="toastMessage" class="bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg text-center"></div>
+    </div>
+
+    <script>
+        document.getElementById("checkoutForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            const response = await fetch("/api/carrito", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            alert(result.mensaje);
+        });
+    </script>
+    
+    <!-- Desde aqui es para el formulario de contactanos -->
+    <script>
+        document.getElementById('form-presupuesto').addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const data = Object.fromEntries(new FormData(e.target).entries());
+
+          const resp = await fetch('/api/solicitar-presupuesto', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+
+          const result = await resp.json();
+          if (result.status === 'ok') {
+            alert('Presupuesto enviado');
+          } else {
+            alert('Error al enviar el presupuesto');
+          }
+        });
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+
+<!--bg-light cambiado de color para le pie de pagina-->
+<footer class="bg-gray-300 text-dark py-0">
+    <div class="cinta-final">
+        <div class="texto-marquesina-unica">
+            <span class="icono">📢</span>
+                Copier Mundo - Partner Oficial de Konica Minolta 
+            <span class="icono">🖨️</span>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row gy-4 text-center text-md-start mt-2">
+            <!-- Logo y redes -->
+            <div class="col-12 col-md-4 d-flex flex-column align-items-center align-items-md-start">
+                <img src="https://storage.googleapis.com/a1aa/image/bd4bc522-eb39-44b6-9eee-444bcce1f223.jpg" alt="Logo Konica Minolta" class="mb-2" style="width: 80px; height: 80px; object-fit: contain;">
+                <h5 class="fw-semibold mb-1">KONICA MINOLTA | COPIER MUNDO E.I.R.L</h5>
+                <div class="d-flex align-items-center gap-2 small text-muted">
+                    <span>por:</span>
+                    <img src="https://storage.googleapis.com/a1aa/image/052ca2d9-d4c4-4dbf-42a9-0f84316799ce.jpg" alt="Logo Dataproducts" style="width: 80px; height: auto;">
+                </div>
+                <div class="mt-3 d-flex gap-3">
+                    <a href="#" class="text-dark"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-dark"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-dark"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Información de contacto -->
+            <div class="col-12 col-md-5">
+                <h5 class="text-primary fw-bold mb-3">CONTACTO</h5>
+                <p class="mb-1 small text-primary">COPIER MUNDO E.I.R.L</p>
+                <p class="mb-1 small text-primary">AV. MICAELA BASTIDAS Nro-727</p>
+                <p class="mb-1 small text-primary">Distruidor oficial de konica minolta 2025</p>
+                <p class="mb-1 small text-primary">Cusco-Peru</p>
+                <p class="mb-1 small text-primary">CP 02040, Azcapotzalco CDMX</p>
+                <p class="mb-2 small">Tel: <span class="text-dark">+51 974950533-940414440-084-237096</span></p>
+                <p class="small"><a href="#" class="text-primary text-decoration-underline">Envíanos un email: copiermundo33@gmail.com</a></p>
+                <p class="small"><a href="#" class="text-primary text-decoration-underline">Aviso de privacidad: copiers2022@gmail.com</a></p>
+            </div>
+
+            <!-- Mapa -->
+            <!-- Imagen de Mapa enlazada a Contacto -->
+        
+            <div class="col-12 col-md-3 mt-4">
+                <a href="/contacto" target="_blank">
+                    <img src="{{ url_for('static', path='img/contactos/mapa-micaela.jpg') }}" 
+                    alt="Ubicación Copier Mundo" 
+                    class="img-fluid rounded border border-secondary shadow-sm hover:shadow-lg transition duration-300">
+                </a>
+                <p class="text-center text-sm mt-1 text-primary">Ver ubicación en mapa</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botones flotantes -->
+    <a href="mailto:vandammeluquerodriguez@gmail.com?subject=Consulta%20desde%20la%20web&body=Hola%2C%20quisiera%20más%20información..." class="btn btn-primary position-fixed bottom-0 end-0 m-3 d-flex align-items-center gap-2 shadow z-3">
+        <i class="far fa-envelope"></i>
+        <span class="text-uppercase small">Deja tu mensaje</span>
+    </a>
+    <a href="https://api.whatsapp.com/send?phone=51940414440" class="position-fixed bottom-0 start-0 m-3">
+        <img src="https://storage.googleapis.com/a1aa/image/6e6ed052-61ce-4d4a-8365-8fa75532ff96.jpg" alt="WhatsApp" style="width: 40px; height: 40px;">
+    </a>
+</footer>

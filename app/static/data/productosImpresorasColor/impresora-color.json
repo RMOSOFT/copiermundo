@@ -1,0 +1,108 @@
+
+{
+    "bizhub-c3321i": {
+        "titulo": "Bizhub C3321i",
+        "descripcion": "IMPRESORA MULTIFUNCIONAL LASER - color A4, Color y blanco y negro, formatos de papel A6-A4 y tamaño personalizado, copiar, imprimir, escanear y enviar faxes",
+        "imagen": "/static/img/productos/bizhub-c3321i.jpg",
+        "afiche": "/static/pdf/bizhubC3321i.pdf",
+        "precio": "S/ 7,925.40",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.",
+            "MODELO: BIZHUB C3321i.", 
+            "VELOCIDAD COLOR: 33 ppm.", 
+            "VELOCIDAD MONOCROMATICA: 33 ppm.", 
+            "CONECTIVIDAD WLAN: No.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 4096 MB.", 
+            "MEMORIA MAXIMA: MEM.MAX: 4096 MB.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí.", 
+            "RESOLUCION DE IMPRESION: 1200 x 1200 ppp.", 
+            "GARANTIA DE FABRICA: 12 meses on-site.",
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 6500 páginas.", 
+            "CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR.", 
+            "Fecha publicación: 13/02/2025.", 
+            "Fecha de último estado: 13/02/2025."
+        ]
+    },
+
+    "bizhub-c266i": {
+        "titulo": "Bizhub C266i",
+        "descripcion": "Impresora multifuncional A3 para entornos de oficina exigentes.",
+        "imagen": "/static/img/productos/bizhub-c266i.jpg",
+        "afiche": "/static/pdf/bizhubC266i.pdf",
+        "precio": "S/ 18,149.46",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB C226i.", 
+            "VELOCIDAD MONOCROMATICA: 36 ppm.",
+            "CONECTIVIDAD WLAN: Sí.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA MAXIMA: 6 GB.", 
+            "MEMORIA INTERNA: 6 GB", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí.", 
+            "TIPO: T/COLOR.", 
+            "COMPONENTES: CD con software, cable de poder, manual.", 
+            "DUPLEX AUTOMATICO(DA): Si.", 
+            "RESOLUCION DE CAPTURA:  600 ppp.", 
+            "RESOLUCION DE IMPRESION: 600x600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 16000 pg.", 
+            "CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR.", 
+            "Fecha publicación: 13/03/2022.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "bizhub-c451i": {
+        "titulo": "Bizhub C451i",
+        "descripcion": "Impresora multifuncion laser Velocidad: Rápida producción de documentos a 45 ppm en color y B/N.",
+        "imagen": "/static/img/productos/bizhub-c451i.jpg",
+        "afiche": "/static/pdf/bizhubC451i.pdf",
+        "precio": "S/ 38,165.50",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB C451i.", 
+            "VELOCIDAD MONOCROMATICA: 45 ppm.", 
+            "CONECTIVIDAD WLAN: Sí.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 8192 MB.", 
+            "MEMORIA MAXIMA: 8192 MB.", 
+            "SISTEMA DE MANEJO DE RAEE: Indidual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí.", 
+            "RESOLUCION DE IMPRESION: 1200 x 1200 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 40000 pg.", 
+            "CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR.", 
+            "Fecha de publicación: 13/08/2024.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    },
+
+    "bizhub-c551i": {
+        "titulo": "Bizhub C551i",
+        "descripcion": "Alimentador Dual Scan. Capacidad de papel de 500 + 500 hojas y 150 en entrada manual.",
+        "imagen": "/static/img/productos/bizhub-c551i.jpg",
+        "afiche": "/static/pdf/bizhubC551i.pdf",
+        "precio": "S/ 38,106.30",
+        "caracteristicas": [
+            "MARCA: KONICA MINOLTA.", 
+            "MODELO: BIZHUB C551i.", 
+            "VELOCIDAD MONOCROMATICA: 55 ppm.", 
+            "CONECTIVIDAD WLAN: Si.", 
+            "CONECTIVIDAD LAN: Sí.", 
+            "CONECTIVIDAD USB: Sí.", 
+            "MEMORIA INTERNA: 8192 MB.", 
+            "MEMORIA MAXIMA: 8192 MB.", 
+            "SISTEMA DE MANEJO DE RAEE: Individual.", 
+            "ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si.", 
+            "RESOLUCION DE IMPRESION: 1200 x 1200 ppp.", 
+            "RESOLUCION DE CAPTURA: 600 ppp.", 
+            "CICLO DE TRABAJO MENSUAL RECOMENDADO: 45000 pg.", 
+            "CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR.", 
+            "Fecha de publicación: 13/10/2024.", 
+            "Fecha de último estado: 23/10/2024."
+        ]
+    }
+}
