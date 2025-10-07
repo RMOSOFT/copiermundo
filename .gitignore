@@ -20,3 +20,10 @@ Thumbs.db
 # Environment
 .env
 .env.*
+
+# Ignorar videos y archivos grandes
+*.mp4
+*.avi
+*.mov
+*.zip
+*.rar
