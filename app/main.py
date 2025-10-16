@@ -1,7 +1,7 @@
 # app/main.py
 from fastapi import FastAPI, Request, HTTPException, Body
 from fastapi.responses import RedirectResponse
-from fastapi.responses import HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pathlib import Path
@@ -48,7 +48,7 @@ app.mount("/static", StaticFiles(directory=os.path.join(os.path.dirname(__file__
 async def sitemap():
     file_path = os.path.join(os.path.dirname(__file__), "static", "sitemap.xml")
     return FileResponse(file_path, media_type="application/xml")
-    
+
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 
 # Configurar plantilla

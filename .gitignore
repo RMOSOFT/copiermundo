@@ -1,27 +1,27 @@
-# Python
+#sPython
 __pycache__/
 *.py[cod]
 *.egg-info/
 
-# venv
+#venv
 venv/
 ENV/
 env/
 .venv/
 
-# IDEs
+#IDEs
 .vscode/
 .idea/
 
-# OS
+#OS
 .DS_Store
 Thumbs.db
 
-# Environment
+#Environment
 .env
 .env.*
 
-# Ignorar videos y archivos grandes
+#Ignorar videos y archivos grandes
 *.mp4
 *.avi
 *.mov
