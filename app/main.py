@@ -20,6 +20,7 @@ from datetime import datetime
 from email.message import EmailMessage
 import aiosmtplib
 from email.message import EmailMessage
+import uvicorn
 
 
 load_dotenv()
@@ -41,6 +42,13 @@ app = FastAPI()
 BASE_DIR = Path(__file__).resolve().parent
 
 # Montar carpeta static
+app.mount("/static", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "static")), name="static")
+
+@app.get("/sitemap.xml", include_in_schema=False)
+async def sitemap():
+    file_path = os.path.join(os.path.dirname(__file__), "static", "sitemap.xml")
+    return FileResponse(file_path, media_type="application/xml")
+    
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 
 # Configurar plantilla
@@ -56,6 +64,9 @@ app.include_router(productos.router)
 
 # Registrar router de contacto
 app.include_router(contacto.router)
+
+
+
 
 # Ahora desde aqui la logica del carrito
 class OrderItem(BaseModel):
@@ -716,3 +727,8 @@ async def enviar_carrito(data: dict = Body(...)):
     except Exception as e:
         print("❌ Error enviando correo:", e)
         return {"status": "error", "mensaje": str(e)}
+
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("app.main:app", host="0.0.0.0", port=port)
