@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://www.copiermundo.com/</loc>
+    <lastmod>2025-10-16</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- Sección Productos -->
+  <url>
+    <loc>https://www.copiermundo.com/productos/fotocopiadoras</loc>
+    <lastmod>2025-10-16</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://www.copiermundo.com/productos/fotocopiadoras/impresoras-seminuevas</loc>
+    <lastmod>2025-10-16</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.copiermundo.com/productos/fotocopiadoras/impresoras-seminuevas-series-8</loc>
+    <lastmod>2025-10-16</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.copiermundo.com/productos/fotocopiadoras/impresoras-color</loc>
+    <lastmod>2025-10-16</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.copiermundo.com/productos/tonerescartuchos</loc>
+    <lastmod>2025-10-16</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.copiermundo.com/productos/accesoriosoficina</loc>
+    <lastmod>2025-10-16</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Sección Consumibles -->
+  <url>
+    <loc>https://www.copiermundo.com/consumibles/papelimpresion</loc>
+    <lastmod>2025-10-16</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.copiermundo.com/consumibles/toneroriginal</loc>
+    <lastmod>2025-10-16</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.copiermundo.com/consumibles/recargacompatible</loc>
+    <lastmod>2025-10-16</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Sección Nosotros -->
+  <url>
+    <loc>https://www.copiermundo.com/nosotros</loc>
+    <lastmod>2025-10-16</lastmod>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Sección Contacto -->
+  <url>
+    <loc>https://www.copiermundo.com/contacto</loc>
+    <lastmod>2025-10-16</lastmod>
+    <priority>0.75</priority>
+  </url>
+
+</urlset>
