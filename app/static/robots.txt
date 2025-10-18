@@ -1,5 +1,6 @@
 # robots.txt para https://www.copiermundo.com
 User-agent: *
+
 # Permitir todo lo público
 Allow: /
 
@@ -13,3 +14,4 @@ Disallow: /app/__pycache__/
 
 # Indicar sitemap (ya lo tienes)
 Sitemap: https://www.copiermundo.com/sitemap.xml
+
