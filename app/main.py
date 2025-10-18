@@ -49,6 +49,13 @@ async def sitemap():
     file_path = os.path.join(os.path.dirname(__file__), "static", "sitemap.xml")
     return FileResponse(file_path, media_type="application/xml")
 
+@app.get("/robots.txt", include_in_schema=False)
+async def robots_txt():
+    file_path = os.path.join(os.path.dirname(__file__), "static", "robots.txt")
+    if os.path.exists(file_path):
+        return FileResponse(file_path, media_type="text/plain")
+    return {"error": "robots.txt no encontrado"}
+
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 
 # Configurar plantilla
