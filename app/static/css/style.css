@@ -1,77 +1,250 @@
+/* 🌐 Barra superior moderna y profesional */
 .topbar-custom {
-  background: linear-gradient(90deg, #006eff, #007bff);
+  background: linear-gradient(90deg, #0048ff, #007bff);
   color: white;
   padding: 0.7rem 0;
   font-size: 0.9rem;
-  border-bottom: 2px solid #0056b3;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  border-bottom: 2px solid #003b99;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
 }
+
+/* 🔹 Redes sociales con efecto sutil y elegante */
 .social-icon {
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   transition: all 0.3s ease;
-  border: 1px solid transparent;
-  padding: 5px 8px;
   border-radius: 50%;
+  padding: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .social-icon:hover {
-  color: #fff;
-  background-color: #0056b3;
-  border: 1px solid #ffffff66;
-  box-shadow: 0 0 8px #ffffff99;
+  transform: scale(1.2);
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(255,255,255,0.4);
 }
 
-
-/*darle forma al titulo de la cinta de la cabecera del nombre de la empresa*/
+/* 🔹 Título de la empresa con badge circular animado */
 .nombre-empresa {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   color: #000;
   display: flex;
   align-items: center;
-  flex-wrap: wrap; /* Para que se ajuste en móviles */
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Caja del nombre */
+.nombre-box {
+  background-color: #011816;
+  padding: 6px 14px;
+  border-radius: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  background: linear-gradient(80deg, #F5B427, #27F5B4);
+}
+.nombre-box:hover {
+  transform: translateY(-3px);
+  background-color: #011811;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  
+}
+
+/* 🔵 Badge circular (puede ser número o letra "KM" de Konica Minolta Partner) */
+.badge-circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #007bff, #00b8ff);
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.badge-circle:hover {
+  transform: rotate(10deg) scale(1.1);
+  box-shadow: 0 0 12px rgba(0,123,255,0.6);
+}
+
+/* 💠 Círculo envolvente para número completo */
+.badge-numero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px; /* ancho mínimo para número completo */
+  height: 45px;
+  padding: 0 15px;
+  border-radius: 50px; /* más elíptico para adaptarse al número */
+  background: linear-gradient(135deg, #007bff, #00b8ff);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+  border: 2px solid #ffffff40;
+  text-align: center;
+}
+
+.badge-numero:hover {
+  transform: scale(1.15);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35);
+  background: linear-gradient(135deg, #00b8ff, #007bff);
+}
+
+/* Contenedor para los números */
+.telefono {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 10px;
 }
 
-/* Cuadro con estilo #f0f0f0*/
-.nombre-box {
-  background-color: #FFF;
-  padding: 6px 12px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  font-weight: bold;
-}
+/* 📱💡 Ajustes Responsive Mejorados */
+@media (max-width: 768px) {
+  /* 🔹 Ajuste general de la barra superior */
+  .topbar-custom {
+    padding: 0.4rem 0;
+    font-size: 0.8rem;
+  }
 
-/* Efecto al pasar el mouse #d3e7d9*/
-.nombre-box:hover {
-  background-color: #FF5;
-  transform: translateY(-6px);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+  /* 🔹 Badge circular “KM” más pequeño */
+  .badge-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  }
 
-/* Teléfono normal */
-.telefono {
-  color: #333;
-  font-weight: normal;
-}
-
-/* 🎯 Responsive para pantallas pequeñas (móviles) */
-@media (max-width: 600px) {
+  /* 🔹 Nombre de la empresa más compacto */
   .nombre-empresa {
-    justify-content: center;
+    flex-direction: column;
+    gap: 6px;
     font-size: 14px;
-    text-align: center;
   }
 
   .nombre-box {
     padding: 4px 10px;
-    font-size: 15px;
+    font-size: 0.85rem;
   }
 
-  .telefono {
-    font-size: 14px;
+  /* 🔹 Números más pequeños y adaptables */
+  .badge-numero {
+    min-width: 90px;
+    height: 38px;
+    font-size: 0.8rem;
+    padding: 0 10px;
+    border-radius: 30px;
   }
+
+  /* 🔹 Contenedor de teléfonos centrado */
+  .telefono {
+    justify-content: center;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .badge-numero {
+    min-width: 80px;
+    height: 32px;
+    font-size: 0.75rem;
+    padding: 0 8px;
+    border-radius: 25px;
+  }
+
+  .badge-circle {
+    width: 24px;
+    height: 24px;
+    font-size: 0.7rem;
+  }
+
+  .nombre-box {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+  }
+
+  .topbar-custom {
+    font-size: 0.75rem;
+    padding: 0.3rem 0;
+  }
+}
+
+/* Animacion de colores claros originales de las redes sociales al hacer hover */
+/* 🌐 Estilos base para los íconos sociales */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  color: #007bff; /* Color base (azul Konica Minolta) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+/* 💫 Efecto al pasar el mouse */
+.social-icon:hover {
+  transform: scale(1.1);
+  color: white;
+}
+
+/* 🎯 Colores específicos para cada red social */
+.social-icon[href*="facebook"]:hover {
+  background: #1877f2; /* Azul Facebook */
+}
+
+.social-icon[href*="whatsapp"]:hover {
+  background: #25d366; /* Verde WhatsApp */
+}
+
+.social-icon[href*="instagram"]:hover {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  /* Efecto degradado tipo Instagram */
+}
+
+.social-icon[href*="tiktok"]:hover {
+  background: linear-gradient(135deg, #69C9D0, #EE1D52); /* Colores de TikTok */
+}
+
+/* 📱 Responsive para móviles */
+@media (max-width: 768px) {
+  .social-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .d-flex.align-items-center.gap-3 {
+    gap: 0.75rem; /* Reduce el espacio entre íconos en pantallas pequeñas */
+  }
+}
+
+/* ✨ Animación de entrada del header dinamico */
+@keyframes fadeSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.topbar-custom {
+  animation: fadeSlideDown 0.8s ease-out;
 }
 
 

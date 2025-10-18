@@ -51,10 +51,10 @@ async def sitemap():
 
 @app.get("/robots.txt", include_in_schema=False)
 async def robots_txt():
-    file_path = os.path.join(os.path.dirname(__file__), "static", "robots.txt")
-    if os.path.exists(file_path):
-        return FileResponse(file_path, media_type="text/plain")
-    return {"error": "robots.txt no encontrado"}
+    file_path = os.path.join(BASE_DIR, "static", "robots.txt")
+    if not os.path.exists(file_path):
+        raise HTTPException(status_code=404, detail="robots.txt no encontrado")
+    return FileResponse(file_path, media_type="text/plain")
 
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 
