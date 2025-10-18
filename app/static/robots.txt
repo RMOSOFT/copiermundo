@@ -1,0 +1,15 @@
+# robots.txt para https://www.copiermundo.com
+User-agent: *
+# Permitir todo lo público
+Allow: /
+
+# Bloquear rutas internas/administrativas que no deben indexarse
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /login
+Disallow: /venv/
+Disallow: /private/
+Disallow: /app/__pycache__/
+
+# Indicar sitemap (ya lo tienes)
+Sitemap: https://www.copiermundo.com/sitemap.xml
