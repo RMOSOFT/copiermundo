@@ -283,6 +283,48 @@
   }
 }
 
+/* Diseño de actualizacion para las letras de los menus principales como producto,consumibles,nosotros,contacto */
+/* 🔹 Estilo general del menú de navegación superior */
+.nav-link-custom {
+  color: #000;
+  font-weight: 700; /* negrita */
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+
+/* Hover moderno: azul brillante con subrayado sutil */
+.nav-link-custom:hover {
+  color: #007bff;
+  text-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* 🔹 Dropdown items: estilo más limpio */
+.dropdown-menu .dropdown-item {
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background: #007bff;
+  color: white;
+}
+
+/* 📱 Responsive (móviles): menú más compacto */
+@media (max-width: 768px) {
+  .nav-link-custom {
+    font-size: 0.85rem;
+    padding: 4px 8px;
+  }
+  .dropdown-menu .dropdown-item {
+    font-size: 0.85rem;
+  }
+}
+
+
 /* Ancho máximo del contenedor del header */
 .header-row.container {
   max-width: 100%;       /* Ocupa todo el ancho */
@@ -298,16 +340,7 @@
   transform: scale(1.05);  /* Solo 5% más grande */
   cursor: pointer;         /* Cambia a manito */
 }
-/* Menú de navegación centrado y con letras negras grandes */
-.header-center ul li a {
-  font-size: 1rem;         /* Tamaño de letra más grande */
-  font-weight: 500;
-  color: #000 !important;  /* Fuerza el color negro */
-  text-decoration: none;
-}
-.header-center ul li a:hover {
-  color: #d5192c !important; /* Color rojo al pasar el mouse */
-}
+
 /* Íconos del menú */
 .header-center ul li i {
   color: #d5192c; /* Flechita roja */
@@ -326,7 +359,7 @@
 
 /* Contenedor principal del formulario */
 .search-form-wrapper {
-  max-width: 400px; /* aqui podemos ajustar todo el contenido del buscador */
+  max-width: 360px; /* aqui podemos ajustar todo el contenido del buscador */
   margin: auto;
 }
 
@@ -426,7 +459,7 @@
   animation: deslizarTexto 25s linear infinite;/*correr-unico 10s linear forwards;*/
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  color: #fff;
+  color: #ffeb3b;
   font-size: 18px;
   padding-left: 100%;
   transition: color 0.3s ease;
@@ -435,7 +468,7 @@
 }
 
 .texto-marquesina-unica:hover {
-  color: #ffeb3b;
+  color: #180E01;
 }
 
 .icono {
@@ -675,6 +708,119 @@
       max-width: 60px;
     }
 }
+
+/* Diseño de actualizacion de las cinta de propaganda con diseño copiermundo */
+/* 💙 Efecto neón profesional */
+/* 💙 Efecto neón profesional */
+.neon-title {
+  color: #0072ce;
+  text-shadow: 
+    0 0 5px rgba(0, 114, 206, 0.6),
+    0 0 10px rgba(0, 114, 206, 0.4),
+    0 0 20px rgba(0, 114, 206, 0.2);
+  animation: neonPulse 3s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 5px rgba(0, 114, 206, 0.6),
+      0 0 10px rgba(0, 114, 206, 0.4),
+      0 0 20px rgba(0, 114, 206, 0.2);
+  }
+  50% {
+    text-shadow:
+      0 0 10px rgba(0, 114, 206, 0.9),
+      0 0 20px rgba(0, 114, 206, 0.6),
+      0 0 30px rgba(0, 114, 206, 0.4);
+  }
+}
+
+/* ✨ Texto secundario */
+.subtitle {
+  color: #222;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* 🎨 Ajustes de sección */
+.cinta-konica {
+  background: #f8f9fa;
+  border-top: 2px solid #e9ecef;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.cinta-konica img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 🧩 Ajustes visuales */
+.cinta-konica .col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+/* 📱 Responsive: márgenes y centrado */
+@media (max-width: 768px) {
+  .cinta-konica h5 {
+    font-size: 16px;
+  }
+  .cinta-konica h6 {
+    font-size: 10px;
+  }
+}
+
+/* === BLOQUE CENTRAL - COPIER MUNDO === */
+.titulo-box {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.titulo-box.azul {
+  background-color: #007bff;
+  color: white;
+}
+
+.titulo-box.negro {
+  background-color: #000;
+}
+
+.titulo-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transform: scale(1.30);
+}
+
+.logo-konica {
+  max-height: 100px;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-konica:hover {
+  transform: scale(1.30);
+}
+
+/* Forzar letras blancas dentro de los cuadros */
+.titulo-box h5,
+.titulo-box h6 {
+  color: #fff !important;
+}
+
+
 
 /* Desde aqui va la seccion de nuestros productos destacados con sytylos personalizados */
 /* ESTILO DEL TÍTULO DE SECCIÓN DESTACADA */

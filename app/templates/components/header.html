@@ -55,46 +55,47 @@
                 </h1>  
             </div>     
 
-            <!-- Columna centro: navegación (oculta en móviles) -->  
-            <div class="header-col header-center hidden-for-sm d-flex justify-content-center">  
-                <ul class="list-inline mb-0">  
-                    <!-- PRODUCTOS con submenú -->
-                    <!-- Ícono de Home -->
-                    <li class="list-inline-item">
-                      <a href="/" class="text-dark small px-2">
-                        <i class="fas fa-home me-1"></i>
-                      </a>
-                    </li>
-                    <li class="list-inline-item dropdown position-relative">
-                        <a href="#" class="text-dark text-sm px-1 dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fas fa-caret-right small"></i> PRODUCTOS
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- FOTOCOPIADORAS CON SUBMENU -->
-                            <li><a class="dropdown-item" href="/productos/fotocopiadoras">Fotocopiadoras Multifuncionales Nuevas</a></li>
-                            <li><a class="dropdown-item" href="/productos/fotocopiadoras/impresoras-seminuevas">Fotocopiadoras Multifuncionales Seminuevas</a></li>
-                            <li><a class="dropdown-item" href="/productos/fotocopiadoras/impresoras-seminuevas-series-8">Fotocopiadoras Multifuncionales Seminuevas Series 8</a></li>
-                            <li><a class="dropdown-item" href="/productos/fotocopiadoras/impresoras-color">Fotocopiadoras Multifuncionales a Color</a></li>
-                            <li><a class="dropdown-item" href="/productos/tonerescartuchos">Cartuchos y Recargas Tóner</a></li>
-                            <li><a class="dropdown-item" href="/productos/accesoriosoficina">Accesorios para Oficina</a></li>
-                        </ul>
-                    </li>
+            <!-- Columna centro: navegación (oculta en móviles) -->
+            <div class="header-col header-center hidden-for-sm d-flex justify-content-center">
+              <ul class="list-inline mb-0">
+                <!-- Ícono de Home -->
+                <li class="list-inline-item">
+                  <a href="/" class="nav-link-custom">
+                    <i class="fas fa-home me-1"></i>
+                  </a>
+                </li>
 
-                    <!-- CONSUMIBLES CON SUBMENU -->
-                    <li class="list-inline-item dropdown position-relative">
-                        <a href="#" class="text-dark small px-1 dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fas fa-caret-right small"></i> CONSUMIBLES
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/consumibles/papelimpresion">Papel para impresión </a></li>
-                            <li><a class="dropdown-item" href="/consumibles/toneroriginal">Tóner original</a></li>
-                            <li><a class="dropdown-item" href="/consumibles/recargacompatible">Recargas compatibles </a></li>
-                        </ul>
-                    </li>  
-                    <li class="list-inline-item"><a href="/nosotros" class="text-dark small px-1"><i class="fas fa-caret-right small"></i> NOSOTROS </a></li>  
-                    <li class="list-inline-item"><a href="/contacto" class="text-dark small px-1"><i class="fas fa-caret-right small"></i> CONTACTO </a></li>  
-                </ul>  
-            </div>  
+                <!-- PRODUCTOS -->
+                <li class="list-inline-item dropdown position-relative">
+                  <a href="#" class="nav-link-custom dropdown-toggle" data-bs-toggle="dropdown">
+                    <i class="fas fa-caret-right small"></i> PRODUCTOS
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/productos/fotocopiadoras">Fotocopiadoras Multifuncionales Nuevas</a></li>
+                    <li><a class="dropdown-item" href="/productos/fotocopiadoras/impresoras-seminuevas">Fotocopiadoras Multifuncionales Seminuevas</a></li>
+                    <li><a class="dropdown-item" href="/productos/fotocopiadoras/impresoras-seminuevas-series-8">Fotocopiadoras Multifuncionales Series 8</a></li>
+                    <li><a class="dropdown-item" href="/productos/fotocopiadoras/impresoras-color">Fotocopiadoras Multifuncionales a Color</a></li>
+                    <li><a class="dropdown-item" href="/productos/tonerescartuchos">Cartuchos y Recargas Tóner</a></li>
+                    <li><a class="dropdown-item" href="/productos/accesoriosoficina">Accesorios para Oficina</a></li>
+                  </ul>
+                </li>
+
+                <!-- CONSUMIBLES -->
+                <li class="list-inline-item dropdown position-relative">
+                  <a href="#" class="nav-link-custom dropdown-toggle" data-bs-toggle="dropdown">
+                    <i class="fas fa-caret-right small"></i> CONSUMIBLES
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/consumibles/papelimpresion">Papel para impresión</a></li>
+                    <li><a class="dropdown-item" href="/consumibles/toneroriginal">Tóner original</a></li>
+                    <li><a class="dropdown-item" href="/consumibles/recargacompatible">Recargas compatibles</a></li>
+                  </ul>
+                </li>
+
+                <li class="list-inline-item"><a href="/nosotros" class="nav-link-custom"><i class="fas fa-caret-right small"></i> NOSOTROS</a></li>
+                <li class="list-inline-item"><a href="/contacto" class="nav-link-custom"><i class="fas fa-caret-right small"></i> CONTACTO</a></li>
+              </ul>
+            </div>
 
             <!-- Columna derecha: buscador en móvil, icono y/o opción para escritorio -->  
             <div class="header-col header-right d-flex align-items-center justify-content-end">
@@ -159,8 +160,8 @@
                 <li class="list-group-item"><a href="/productos/fotocopiadoras/impresoras-seminuevas-series-8">Fotocopiadoras seminuevas-series(8)</a></li>
                 <li class="list-group-item"><a href="/productos/fotocopiadoras/impresoras-color">Fotocopiadoras a color</a></li>
                 <li class="list-group-item"><a href="/productos/tonerescartuchos">Tóner y Cartuchos</a></li>
-                <li class="list-group-item"><a href="/productos/accesoriosoficina">Accesorios</a></li>
-                <li class="list-group-item"><a href="/consumibles/papelimpresion">Papel</a></li>
+                <li class="list-group-item"><a href="/productos/accesoriosoficina">Accesorios de oficina</a></li>
+                <li class="list-group-item"><a href="/consumibles/papelimpresion">Papel para impresion</a></li>
                 <li class="list-group-item"><a href="/consumibles/toneroriginal">Tóner Original</a></li>
                 <li class="list-group-item"><a href="/nosotros">Nosotros</a></li>
                 <li class="list-group-item"><a href="/contacto">Contacto</a></li>

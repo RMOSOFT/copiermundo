@@ -3,7 +3,7 @@
 
 {% block content %}
 <!-- Hero banner sliders cabecera del cuerpo height: 400px; -->
-<section class="relative slider-container mx-auto my-3 py-3" style="max-width: 1200px; overflow: hidden;">
+<section class="relative slider-container mx-auto my-1 py-3" style="max-width: 1351px; overflow: hidden;">
     <!-- Slider container -->
     <div id="carouselKonica" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -82,6 +82,64 @@
 <!-- ESPACIADO USANDO BOOTSTRAP -->
 <div class="my-4"></div> <!-- margen vertical 1.5rem arriba y abajo -->
 
+<!-- 🌟 CINTA PROMOCIONAL -->
+<section class="w-100 py-4 cinta-konica">
+  <div class="container-fluid">
+    <div class="row justify-content-center align-items-center text-center g-3">
+
+      <!-- Logo Konica Izquierda -->
+      <div class="col-6 col-md-2">
+        <img src="{{ url_for('static', path='img/Imagenes-cintas/logo-konica.png') }}" 
+            alt="Logo Copier Mundo" style="max-height: 180px;"
+             alt="Logo Konica Minolta"
+             style="max-height: 40px;">
+      </div>
+
+      <!-- Imagen 1 -->
+      <div class="col-6 col-md-2">
+        <img src="https://storage.googleapis.com/a1aa/image/bccd6e1d-1a78-423d-a3b1-74a0cbdf4ae8.jpg"
+             class="rounded shadow-sm" alt="Oficina">
+      </div>
+
+      <!-- Texto central principal -->
+        <div class="col-12 col-md-4 text-center">
+          <div class="titulo-box azul mb-2">
+            <h5 class="fw-bold neon-title mb-0">Copier Mundo</h5>
+          </div>
+          <div class="titulo-box negro mb-3">
+            <h6 class="subtitle text-uppercase mb-0">Partner Oficial de Konica Minolta</h6>
+          </div>
+          <img src="{{ url_for('static', path='img/Imagenes-cintas/logo-konica-digital.jpg') }}"
+               alt="Konica Icon" class="logo-konica">
+        </div>
+
+      <!-- Imagen 2 -->
+      <div class="col-6 col-md-2">
+        <img src="https://storage.googleapis.com/a1aa/image/a8c06022-9d4b-4237-471e-80a5184ade28.jpg"
+             class="rounded shadow-sm" alt="Fotocopiadora">
+      </div>
+
+      <!-- Logo Densitone -->
+      <div class="col-6 col-md-2">
+        <img src="{{ url_for('static', path='img/img-cinta.jpg') }}"
+             class="rounded shadow-sm" alt="Logo Densitone" style="max-height: 150px;">
+      </div>
+
+    </div>
+
+    <!-- Segunda fila con compatibilidad -->
+    <div class="row justify-content-center mt-3">
+      <div class="col-12 col-md-6 text-center">
+        <img src="https://storage.googleapis.com/a1aa/image/b0f4639c-0597-4ac9-1fe4-7c89e9f82ae8.jpg"
+             alt="Sello técnico" style="width: 60px; height: 60px;" class="mb-2">
+        <p class="fw-bold text-uppercase mb-1" style="font-size: 11px;">Amplia Compatibilidad</p>
+        <p class="small text-muted" style="font-size: 10px; line-height: 1.3;">
+          Aficio 1050 - 1075 - MP 2051 - MP 2060 - MP 2075 - MP 5500 - MP 6500 - MP 7500 - MP 7503 - MP 9003
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- NUESTRAS CATEGORIAS -->
 <section class="container seccion-categorias py-4 my-2 ajuste-cercano ">
       <!-- Título con líneas laterales estilo exacto -->
@@ -138,59 +196,10 @@
 <!-- BANNER DESTACADO - ENCIMA DE LA CINTA -->
 <section class="w-100">
   <div class="container-fluid p-0">
-    <img src="{{ url_for('static', path='img/slide-Canon-1536x250.png') }}" class="img-fluid w-100" style="max-height: 420px; object-fit: cover;" alt="Banner Promocional Copier Mundo">
+    <img src="{{ url_for('static', path='img/slide-copiermundo.png') }}" class="img-fluid w-100" style="max-height: 420px; object-fit: cover;" alt="Banner Promocional Copier Mundo">
   </div>
 </section>
 
-<!-- SEPARADOR - VISUAL ENTRE BANNER Y CINTA -->
-<div class="w-100" style="height: 40px; background-color: #f8f9fa; border-bottom: 1px solid #dee2e6;"></div>
-
-
-<!-- IMÁGENES ADICIONALES Y SELLOS -->
-<!-- CINTA DE IMÁGENES Y SELLOS -->
-<section class="w-100 py-4 bg-light">
-  <div class="container-fluid">
-    <div class="row justify-content-center align-items-center g-3 text-center">
-
-      <!-- Imagen 1 -->
-      <div class="col-6 col-sm-4 col-md-2">
-        <img src="https://storage.googleapis.com/a1aa/image/bccd6e1d-1a78-423d-a3b1-74a0cbdf4ae8.jpg" class="img-fluid rounded" alt="Oficina">
-      </div>
-
-      <!-- Imagen 2 -->
-      <div class="col-6 col-sm-4 col-md-2">
-        <img src="https://storage.googleapis.com/a1aa/image/a8c06022-9d4b-4237-471e-80a5184ade28.jpg" class="img-fluid rounded" alt="Fotocopiadora">
-      </div>
-
-      <!-- Texto y compatibilidad -->
-      <div class="col-12 col-md-4 col-lg-3">
-        <div class="d-flex flex-column align-items-center">
-          <img src="https://storage.googleapis.com/a1aa/image/b0f4639c-0597-4ac9-1fe4-7c89e9f82ae8.jpg" class="mb-2" style="width: 60px; height: 60px;" alt="Sello técnico">
-          <p class="fw-bold text-uppercase mb-1" style="font-size: 10px;">Amplia Compatibilidad</p>
-          <p class="small text-muted" style="font-size: 9px; line-height: 1.2;">
-            Aficio 1050 - 1075 - MP 2051 - MP 2060<br>
-            MP 2075 - MP 5500 - MP 6500 - MP 6503<br>
-            MP 7500 - MP 7502 - MP 7503 - MP 8002<br>
-            MP 8003 - MP 9002 - MP 9003
-          </p>
-          <img src="https://storage.googleapis.com/a1aa/image/68c91bbc-2393-465b-a35e-57711451b84f.jpg" class="mt-1" style="width: 60px; height: 120px;" alt="Cartuchos">
-        </div>
-      </div>
-
-      <!-- Logo y ayuda -->
-      <div class="col-12 col-md-4 col-lg-3">
-        <div class="d-flex flex-column align-items-center">
-          <img src="{{ url_for('static', path='img/img-cinta.jpg') }}" style="max-width: 120px;" alt="Logo Densitone">
-          <p class="text-uppercase fw-bold mb-2" style="font-size: 10px;">Tu confianza es nuestro compromiso</p>
-          <div class="bg-danger text-white px-3 py-1 rounded-pill" style="font-size: 11px; max-width: 160px; line-height: 1.2;">
-            ¿Necesitas ayuda?<br>Habla con nosotros
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- Línea separadora de canto a canto para nuevos productos -->
 <div style="width: 100%; height: 1px; background-color: #dee2e6; margin: 40px 0;"></div>
@@ -1000,7 +1009,7 @@
 <section class="w-100">
     <a href="/producto/impresoras">
         <div class="container-fluid p-0">
-            <img src="{{ url_for('static', path='img/MAQUINAS-RICOH-WEB.png') }}" class="img-fluid w-100" style="max-height: 420px; object-fit: cover;" alt="Banner Promocional Copier Mundo">
+            <img src="{{ url_for('static', path='img/slider-konica-minolta.png') }}" class="img-fluid w-100" style="max-height: 420px; object-fit: cover;" alt="Banner Promocional Copier Mundo">
         </div>
     </a> 
 </section>
