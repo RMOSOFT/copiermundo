@@ -46,11 +46,13 @@
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   background: linear-gradient(80deg, #F5B427, #27F5B4);
+  color: #F52E27;
 }
 .nombre-box:hover {
   transform: translateY(-3px);
   background-color: #011811;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transform: scale(1.1);
   
 }
 
@@ -177,7 +179,7 @@
   }
 }
 
-/* Animacion de colores claros originales de las redes sociales al hacer hover */
+/* Diseño de actualizacion Animacion de colores claros originales de las redes sociales al hacer hover */
 /* 🌐 Estilos base para los íconos sociales */
 .social-icon {
   width: 40px;
