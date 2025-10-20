@@ -1,16 +1,87 @@
 
 <!-- components/head.html -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Konica Minolta</title>
+<meta charset="UTF-8" />
+<!-- ✅ Codificación y vista adaptable -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 🔹 Título SEO optimizado -->
+<title>Copier Mundo – Fotocopiadoras y Servicio Técnico Konica Minolta en Cusco</title>
+<!-- 🔹 Descripción y palabras clave -->
+<meta name="description" content="Copier Mundo – Partner Oficial de Konica Minolta en Cusco. Venta, alquiler y servicio técnico de fotocopiadoras e impresoras. Soluciones empresariales con soporte técnico especializado.">
+<meta name="keywords" content="fotocopiadoras Cusco, Konica Minolta Cusco, servicio técnico fotocopiadoras, soporte técnico Cusco, impresoras multifuncionales, mantenimiento de equipos, recarga de tóner, reparación de impresoras, técnicos Cusco, venta de equipos Konica Minolta, partner oficial, Copier Mundo Cusco">
+<meta name="author" content="Vandamme Luque Rodríguez (RMOSOFT) & Alex - Asistente IA">
+
+<!-- 🧭 Instrucciones para los motores de búsqueda -->
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+
+<!-- 🟦 Open Graph (vista previa en redes sociales) -->
+<meta property="og:title" content="Copier Mundo – Partner Oficial de Konica Minolta en Cusco">
+<meta property="og:description" content="Venta, alquiler y mantenimiento de fotocopiadoras e impresoras en Cusco. Partner Oficial de Konica Minolta.">
+<meta property="og:image" content="https://www.copiermundo.com/static/img/Imagenes-cintas/logo-konica-digital.jpg">
+<meta property="og:url" content="https://www.copiermundo.com/">
+<meta property="og:type" content="website">
+
+<!-- 🕊️ Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Copier Mundo – Partner Oficial de Konica Minolta en Cusco">
+<meta name="twitter:description" content="Soluciones empresariales en fotocopiadoras, impresoras y soporte técnico profesional en Cusco.">
+<meta name="twitter:image" content="https://www.copiermundo.com/static/img/Imagenes-cintas/logo-konica-digital.jpg">
+
+<!-- 🌐 Idioma y geolocalización -->
+<meta name="language" content="Spanish">
+<meta name="geo.region" content="PE-CUS">
+<meta name="geo.placename" content="Cusco, Perú">
+<meta name="geo.position" content="-13.53195;-71.967463">
+<meta name="ICBM" content="-13.53195, -71.967463">
+
+<!-- 🔹 Canonical URL (evita duplicados SEO) -->
+<link rel="canonical" href="https://www.copiermundo.com/">
+
+<!-- 🧩 Favicon -->
+<link rel="icon" href="{{ url_for('static', path='img/favicon.ico') }}" type="image/x-icon">
+
+<!-- 🖋️ Fuentes y estilos -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- 📜 JSON-LD (estructura de negocio para Google) -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Copier Mundo",
+    "image": "https://www.copiermundo.com/static/img/Imagenes-cintas/logo-konica-digital.jpg",
+    "url": "https://www.copiermundo.com/",
+    "telephone": "+51986950533",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Cusco, Perú",
+      "addressLocality": "Cusco",
+      "addressRegion": "Cusco",
+      "postalCode": "08000",
+      "addressCountry": "PE"
+    },
+    "openingHours": "Mo-Fr 08:00-18:00",
+    "sameAs": [
+      "https://www.facebook.com/copiermundo/",
+      "https://www.instagram.com/konicaminoltacusco/",
+      "https://www.tiktok.com/@copier.mundo"
+    ]
+  }
+</script>
+
+  <!-- 🔧 Otros -->
+
 <!-- Bootstrap 5 CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 <link rel="icon" type="image/x-icon" href="/static/img/favicon.png">
-<link rel="icon" type="image/x-icon" href="/static/img/productos/hp-laser-107w-01.jpg">
+<!--<link rel="icon" type="image/x-icon" href="/static/img/productos/hp-laser-107w-01.jpg">-->
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="{{ url_for('static', path='img/favicon.png') }}">
+<link rel="icon" type="image/x-icon" href="{{ url_for('static', path='img/logo-principal-01.png') }}">
 <link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -19,6 +90,7 @@
 </script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet"/>
+
 <style>
    body {
       font-family: "Roboto", sans-serif;
