@@ -1,0 +1,220 @@
+
+[
+  {
+    "id": 1,
+    "nombre": "Toner Konica Minolta C-3320i (BLACK).",
+    "tipo": "TNP80K",
+    "precio": "150.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-tnp80k-black.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "tonercartucho-tnp80k-black.json"
+  },
+  {
+    "id": 2,
+    "nombre": "Toner Konica Minolta C-3320i (CYAN).",
+    "tipo": "TNP80C",
+    "precio": "180.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-tnp80c-cyan.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "tonercartucho-tnp80c-cyan.json"
+  },
+  {
+    "id": 3,
+    "nombre": "Toner Konica Minolta C-3320i (MAGENTA).",
+    "tipo": "TNP80M",
+    "precio": "180.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-tnp80m-magenta.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "tonercartucho-tnp80m-magenta.json"
+  },
+  {
+    "id": 4,
+    "nombre": "Toner Konica Minolta C-3320i (YELLOW).",
+    "tipo": "TNP80Y.",
+    "precio": "180.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-tnp80y-yellow.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "tonercartucho-tnp80y-yellow.json"
+  },
+  {
+    "id": 5,
+    "nombre": "Toner Konica Minolta TN328K (BLACK).",
+    "tipo": "TN328K Negro.",
+    "precio": "176.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-tn328k-black.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "tonercartucho-tn328k-black.json"
+  },
+  {
+    "id": 6,
+    "nombre": "Toner Konica Minolta TN328C (CYAN).",
+    "tipo": "TN328C Cyan.",
+    "precio": "310.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-tn328c-cyan.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "tonercartucho-tn328c-cyan.json"
+  },
+  {
+    "id": 7,
+    "nombre": "Toner Konica Minolta TN328M (MAGENTA).",
+    "tipo": "TN328M Magenta.",
+    "precio": "310.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-tn328m-magenta.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "tonercartucho-tn328m-magenta.json"
+  },
+  {
+    "id": 8,
+    "nombre": "Toner Konica Minolta TN328Y (YELLOW).",
+    "tipo": "TN328Y Yellow.",
+    "precio": "310.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-tn328y-yellow.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "tonercartucho-tn328y-yellow.json"
+  },
+  {
+    "id": 9,
+    "nombre": "Tóner Konica Minolta TN-311 original (Negro).",
+    "tipo": "TN-311 Negro.",
+    "precio": "60.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-tn311-black.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "tonercartucho-tn311-black.json"
+  },
+  {
+    "id": 10,
+    "nombre": "Kit de tóner Konica Minolta TN-223 (Black,Cyan,Magenta,Yellow).",
+    "tipo": "TN-223.",
+    "precio": "605.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Kit-toneres-cartuchos-tn223-black-cyan-magenta-yellow.jpg",
+    "categoria": "TonerCartuchoCompatibleKonica",
+    "archivo_ficha": "tonercartucho-tn223-black-cyan-magente-yellow.json"
+  },
+  {
+    "id": 11,
+    "nombre": "Tóner Compatible Konica Minolta TN-324 (Black).",
+    "tipo": "TN-324.",
+    "precio": "145.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-konica-tn324-black.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "toner-cartucho-tn324-black.json"
+  },
+  {
+    "id": 12,
+    "nombre": "Tóner Compatible Konica Minolta TN-324 (Magenta).",
+    "tipo": "TN-324.",
+    "precio": "185.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-konica-tn324-magenta.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "toner-cartucho-tn324-magenta.json"
+  },
+  {
+    "id": 13,
+    "nombre": "Tóner Compatible Konica Minolta TN-324 (Cyan).",
+    "tipo": "TN-324.",
+    "precio": "185.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-konica-tn324-cyan.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "toner-cartucho-tn324-cyan.json"
+  },
+  {
+    "id": 14,
+    "nombre": "Tóner Compatible Konica Minolta TN-324 (Yellow).",
+    "tipo": "TN-324.",
+    "precio": "185.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-konica-tn324-yellow.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "toner-cartucho-tn324-yellow.json"
+  },
+  {
+    "id": 15,
+    "nombre": "Toner Compatible Konica Minolta 367 TN-323 (Negro).",
+    "tipo": "TN-323.",
+    "precio": "150.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-tn323-black.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "toner-cartucho-tn323-black.json"
+  },
+  {
+    "id": 16,
+    "nombre": "Kit Toner Compatible Konica Minolta TN-319.",
+    "tipo": "TN-319.",
+    "precio": "800.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Kit-toneres-cartuchos-tn319-black-cyan-magenta-yellow.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "toner-cartucho-tn319-black-cyan-magenta-yellow.json"
+  },
+  {
+    "id": 17,
+    "nombre": "Kit Toner Compatible de Color TN-321.",
+    "tipo": "TN-321.",
+    "precio": "605.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Kit-toner-cartucho-tn321-black-cyan-magenta-yellow.png",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "toner-cartucho-tn321-black-cyan-magenta-yellow.json"
+  },
+  {
+    "id": 18,
+    "nombre": "Kit Tóner Konica Minolta TN-613.",
+    "tipo": "TN-613.",
+    "precio": "705.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Kit-toner-cartucho-tn613-black-cyan-magenta-yellow.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "toner-cartucho-tn613-black-cyan-magenta-yellow.json"
+  },
+  {
+    "id": 19,
+    "nombre": "Toner Konica Minolta TN-217 (Negro).",
+    "tipo": "TN-217.",
+    "precio": "75.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-tn217-black.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "toner-cartucho-tn217-black.json"
+  },
+  {
+    "id": 20,
+    "nombre": "Toner Konica Minolta TN-512 (Negro).",
+    "tipo": "TN-512.",
+    "precio": "140.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-tn512-black.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "toner-cartucho-tn512-black.json"
+  },
+  {
+    "id": 21,
+    "nombre": "Toner Konica Minolta TN-512 (Cyan).",
+    "tipo": "TN-512.",
+    "precio": "160.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-tn512-cyan.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "toner-cartucho-tn512-cyan.json"
+  },
+  {
+    "id": 22,
+    "nombre": "Toner Konica Minolta TN-512 (Magenta).",
+    "tipo": "TN-512.",
+    "precio": "160.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-tn512-magenta.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "toner-cartucho-tn512-magenta.json"
+  },
+  {
+    "id": 23,
+    "nombre": "Toner Konica Minolta TN-512 (Yellow).",
+    "tipo": "TN-512.",
+    "precio": "160.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-tn512-yellow.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "toner-cartucho-tn512-yellow.json"
+  },
+  {
+    "id": 24,
+    "nombre": "Toner Konica Minolta TN-712 (Black).",
+    "tipo": "TN-712.",
+    "precio": "185.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-tn712-black.jpg",
+    "categoria": "tonercartuchocompatiblekonica",
+    "archivo_ficha": "toner-cartucho-tn712-black.json"
+  }
+]
+

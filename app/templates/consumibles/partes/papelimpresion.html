@@ -1,9 +1,17 @@
-{% extends "index.html" %}
 
-{% block content %}
-<div class="container mt-5">
-    <h2 class="text-center text-uppercase fw-bold"> Contenido de papel e impresion </h2>
-    <p class="text-center">Aquí irán todos los productos de papel de impresion con sus características.</p>
+{# templates/consumibles/partes/papelimpresion.html #}
+<div class="table-responsive">
+  <table class="table">
+    <thead><tr><th>#</th><th>Descripción</th><th>Precio</th><th>Acción</th></tr></thead>
+    <tbody>
+      {% for key, p in productos.items() %}
+      <tr class="fila-consumible">
+        <td>{{ loop.index }}</td>
+        <td>{{ p.titulo or p.descripcion }}</td>
+        <td>{{ p.precio }}</td>
+        <td><a class="btn btn-sm btn-primary" href="#">Ver</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
-
-{% endblock %}

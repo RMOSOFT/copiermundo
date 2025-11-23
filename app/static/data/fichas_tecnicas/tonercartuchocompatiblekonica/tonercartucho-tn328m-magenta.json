@@ -1,0 +1,25 @@
+{
+  "producto": "Toner Konica Minolta TN328M Magenta.",
+  "categoria": "Toner Cartucho Compatible",
+  "marca": "KONICA MINOLTA",
+  "modelo": "TN328M",
+  "descripcion": "El Konica Minolta TN328M es la mejor opción para quienes buscan impresiones nítidas y duraderas. Compatible con varias impresoras Konica Minolta Bizhub C250i, C251i, C300i, C301i, C360i, C361i, este toner garantiza un rendimiento óptimo en cada impresión, reduciendo costos y maximizando la eficiencia.",
+
+  "especificaciones": {
+    "Tipo de producto": "Cartucho de tóner original",
+    "Codigo del fabricante": "TN-328M",
+    "Tecnologia de impresion": "Láser",
+    "Color": "Magenta (Magenta)",
+    "Condicion": "Nuevo",
+    "Tipo": "Original",
+    "Unidad": "1pieza(s)",
+    "Uso": "Rellenar cartuchos de tóner compatibles con los modelos indicados de impresoras konica minolta ",
+    "Rendimiento": "28,000 Páginas.",
+    "compatibilidad": [
+      "Konica Minolta Bizhub C250i, C251i, C300i, C301i, C360i, C361i"
+      
+    ]
+  },
+
+  "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-Cartucho-tn328m-magenta.jpg"
+}

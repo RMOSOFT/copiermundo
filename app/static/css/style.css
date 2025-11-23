@@ -1,3 +1,16 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.titulo-seccion-interna {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #1e3a8a;
+}
+
+
 /* 🌐 Barra superior moderna y profesional */
 .topbar-custom {
   background: linear-gradient(90deg, #0048ff, #007bff);
@@ -179,6 +192,7 @@
   }
 }
 
+
 /* Diseño de actualizacion Animacion de colores claros originales de las redes sociales al hacer hover */
 /* 🌐 Estilos base para los íconos sociales */
 .social-icon {
@@ -284,6 +298,79 @@
     display: none !important; /* Oculta el menú central en móvil */
   }
 }
+
+/* Diseño para las cabeceras del menu productos con submenu */
+/* --- Submenú dentro del submenú --- */
+/* Estilo para el submenu profesional (flyout) */
+/* 🎯 MEGAMENU PROFESIONAL */
+/* 🔹 Submenú lateral profesional */
+/* CONTENEDOR DEL SUBMENÚ INTERNO */
+.dropdown-submenu {
+    position: relative;
+}
+
+/* Botón que abre submenú 
+.submenu-toggle {
+    width: 100%;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    
+    color: #0E0D0C;
+}*/
+
+.submenu-toggle {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center;
+    gap: 8px; /* espacio entre flecha y texto */
+}
+
+/* Icono flecha */
+.icon-submenu {
+    transition: transform 0.3s ease;
+}
+
+/* Caja oculta */
+.submenu-inner {
+    display: none;
+    padding-left: 15px;
+}
+/* 🔹 Flecha al inicio con color negro */
+.flecha-submenu {
+    order: -1; /* mueve la flecha al inicio */
+    color: #000 !important;   
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 🔻 Flecha para submenú */
+
+
+
+/* Cuando el submenú esté activo (hover), gira flecha */
+.dropdown-submenu:hover .flecha-submenu {
+    transform: rotate(90deg);
+}
+
+/* Mostrar submenú */
+.dropdown-submenu.open .submenu-inner {
+    display: block;
+}
+
+/* Rotación flecha */
+.dropdown-submenu.open .icon-submenu {
+    transform: rotate(90deg);
+}
+
+/* Para que NO se abra hacia abajo como card gigante */
+.dropdown-menu {
+    overflow: visible !important;
+}
+
+
+
 
 /* Diseño de actualizacion para las letras de los menus principales como producto,consumibles,nosotros,contacto */
 /* 🔹 Estilo general del menú de navegación superior */
@@ -1776,9 +1863,6 @@
 }
 
 
-
-
-
 /* Sección general */
 #consumibles-section {
   background-color: #f8f9fa; /* fondo suave */
@@ -1857,8 +1941,6 @@
 
 /* Diseñando el titulo para todos los consumibles */
 /* Título principal dinámico */
-
-
 /* Estilo para el card de la targeta del carrito */
 
 .cart-sidebar {
@@ -1874,6 +1956,3228 @@
   z-index: 1050; /* Para que quede encima */
 }
 
+/* Actualizacion para la pagina de accesorios guillotinas diseño general */
+.nombre-producto {
+  background: linear-gradient(90deg, #0072ce, #00b4ff);
+  color: white;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.nombre-producto:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
 
-/*CSS para la ventanita (notificación lateral) de solitud de consumibles*/
+/* --- Botón de WhatsApp individual --- */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #25d366;
+  color: white;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 30px;
+  margin-top: 6px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.btn-whatsapp:hover {
+  background-color: #27F53C;
+  transform: translateY(-2px);
+}
 
+/* #1ebd5a--- Ícono de WhatsApp flotante global ---color-#25d366 */
+/* === Animación de entrada para el botón flotante === */
+#whatsapp-float-container {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 2s cubic-bezier(0.25, 0.1, 0.25, 1); /* animación tipo ease-out lenta */
+  position: fixed;
+  bottom: 40px;
+  right: 1px;
+  z-index: 99999;
+  display: flex; /* ✅ garantiza que el botón mantenga su ancho */
+  align-items: center;
+}
+/* Clase que activa la animación */
+#whatsapp-float-container.mostrar {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.whatsapp-flotante {
+  position: fixed;
+  justify-content: center;
+  right: 1px;
+  bottom: 20px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #25d366;
+  color: white;
+  font-weight: 600;
+  padding: 2px 1px;
+  border-radius: 40px;
+  min-width: 288px; /* ✅ más largo *//* ✅ Aumenta el largo visible */
+  max-height: 52px; /* ✅ evita que se haga alto */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+/* back-color-#20bd5a*/
+.whatsapp-flotante:hover {
+  background-color: #27F53C;
+  transform: translateY(-2px);
+}
+.whatsapp-flotante img {
+  width: 70px;
+  height: 70px;
+}
+
+
+/* 🟢 Indicador de "en línea" rgba(255,255,255,0.15)*/
+.estado-linea {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #079C16;
+  padding: 2px 8px;
+  border-radius: 14px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1; /* 🔹 mantiene altura compacta */
+  min-width: 78px; /* ✅ más largo */
+  max-height: 59px; /* ✅ evita que se haga alto */
+}
+/*backgroud-color-#00ff66   #00ff66 #00ff66*/
+.punto-verde {
+  width: 10px;
+  height: 10px;
+  padding: 1px 4px; /* 🔹 reduce el grosor */
+  background-color: #27F53C;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #91F527;
+  animation: parpadeo 0.99s infinite;
+}
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .whatsapp-flotante {
+    min-width: 238px;
+    bottom: 39px;
+    right: 1px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+  .whatsapp-flotante img {
+    width: 28px;
+    height: 28px;
+  }
+
+  #whatsapp-float-container {
+    bottom: 15px;
+    right: 0.1px;
+    transform: scale(0.9);
+    min-width: 238px;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Actualizacion de los productos guillotinas al pasar el mouse en la imagen se habre el wassapp */
+/* === CARD DEL PRODUCTO === */
+.producto-card {
+  position: relative;
+  overflow: hidden;
+  max-width: 260px;
+   /*min-height: 260px; margin: auto 🔹 Tamaño más compacto */
+  margin: 8px 10px;
+  margin-bottom: 0px !important;
+  
+}
+
+/*.producto-card {
+  position: relative;
+  overflow: hidden;
+  max-width: 260px;
+  min-height: 320px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}*/
+/* Aqui para estilizar los nombres productos #00b8ff*/
+.nombre-producto-accesorios {
+  font-size: 1.05rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #007bff, #F527F5);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 8px;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* === TÍTULO DE PRODUCTO === 
+.nombre-producto {
+  font-size: 1.05rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #007bff, #00b8ff);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+*/
+
+/* Contenedor de imagen */
+.producto-imagen img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.producto-imagen:hover {
+  transform: translateY(-5px);
+}
+
+/* === OVERLAY WHATSAPP - NUEVO AJUSTE === */
+.overlay-whatsapp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 57%; /* 🔹 ahora cubre toda la tarjeta */
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  border-radius: 12px;
+  pointer-events: none; /* evita interferencia cuando está oculto */
+}
+
+/* Aparece con fade + zoom */
+.producto-card:hover .overlay-whatsapp {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto; /* se activa el clic */
+}
+
+/* 🔹 Imagen siempre se ajusta sin deformarse */
+.producto-imagen-a3 img {
+  width: 100%;
+  height: 180px; /* o 200px si deseas más altura */
+  object-fit: contain; /* asegura que la imagen no se deforme */
+  display: block;
+  margin: 0 auto;
+}
+/* 🔹 Imagen siempre se ajusta sin deformarse */
+.producto-imagen-trio img {
+  width: 100%;
+  height: 180px; /* o 200px si deseas más altura */
+  object-fit: contain; /* asegura que la imagen no se deforme */
+  display: block;
+  margin: 0 auto;
+}
+/* 🔹 Imagen siempre se ajusta sin deformarse */
+.producto-imagen-warrior img {
+  width: 100%;
+  height: 180px; /* o 200px si deseas más altura */
+  object-fit: contain; /* asegura que la imagen no se deforme */
+  display: block;
+  margin: 0 auto;
+}
+/* 🔹 Imagen siempre se ajusta sin deformarse */
+.producto-imagen-paper img {
+  width: 100%;
+  height: 180px; /* o 200px si deseas más altura */
+  object-fit: contain; /* asegura que la imagen no se deforme */
+  display: block;
+  margin: 0 auto;
+}
+/* 🔹 Imagen siempre se ajusta sin deformarse */
+.producto-imagen-semi img {
+  width: 100%;
+  height: 180px; /* o 200px si deseas más altura */
+  object-fit: contain; /* asegura que la imagen no se deforme */
+  display: block;
+  margin: 0 auto;
+}
+/* 🔹 Imagen siempre se ajusta sin deformarse */
+.producto-imagen-basica img {
+  width: 100%;
+  height: 180px; /* o 200px si deseas más altura */
+  object-fit: contain; /* asegura que la imagen no se deforme */
+  display: block;
+  margin: 0 auto;
+}
+/* 🔹 Imagen siempre se ajusta sin deformarse */
+.producto-imagen-basica-a4 img {
+  width: 100%;
+  height: 180px; /* o 200px si deseas más altura */
+  object-fit: contain; /* asegura que la imagen no se deforme */
+  display: block;
+  margin: 0 auto;
+}
+/* 🔹 Imagen siempre se ajusta sin deformarse  object-fit: contain;*/
+
+.producto-imagen-basica-b4 img {
+  width: 100%;
+  height: 180px; /* o 200px si deseas más altura */
+  object-fit: contain; /* asegura que la imagen no se deforme */
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+
+/* Desde aqui el diseño para las enmicadoras */
+.producto-imagen-enmicadora-a4 {
+  position: relative;
+  width: 100%;
+  height: 204px; /* o ajusta a lo necesario */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.producto-imagen-enmicadora-a4 img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+.producto-imagen-enmicadora-a3 {
+  position: relative;
+  width: 100%;
+  height: 204px; /* o ajusta a lo necesario */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.producto-imagen-enmicadora-a3 img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+
+
+/* Diseño de las espiladoras en producto guillotinas para oficina */
+.overlay-whatsapp-oficios {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* 🔹 ahora cubre toda la tarjeta */
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  border-radius: 12px;
+  pointer-events: none; /* evita interferencia cuando está oculto */
+}
+/* Aparece con fade + zoom */
+.producto-card:hover .overlay-whatsapp-oficios {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto; /* se activa el clic */
+}
+
+.producto-imagen-espiraladora-prata {
+  position: relative;
+  width: 100%;
+  height: 204px; /* o ajusta a lo necesario */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.producto-imagen-espiraladora-prata img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-espiraladora-lassane {
+  position: relative;
+  width: 100%;
+  height: 204px; /* o ajusta a lo necesario */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.producto-imagen-espiraladora-lassane img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+
+/* Desde aqui el diseño de las guillotinas semi industriales */
+.producto-imagen-guillotina-semi-industrial-A4 {
+  position: relative;
+  width: 100%;
+  height: 204px; /* o ajusta a lo necesario */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.producto-imagen-guillotina-semi-industrial-A4 img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-guillotina-semi-industrial-A3 {
+  position: relative;
+  width: 100%;
+  height: 204px; /* o ajusta a lo necesario */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.producto-imagen-guillotina-semi-industrial-A3 img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+
+/* Desde aqui productos de estabilizadores */
+.producto-imagen-estabilizador-elise {
+  position: relative;
+  width: 100%;
+  height: 204px; /* o ajusta a lo necesario */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.producto-imagen-estabilizador-elise img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+
+/* === Ajuste de separación según dispositivos === */
+@media (min-width: 768px) {
+  .producto-card {
+    margin: 12px; /* Tablets y laptops */
+  }
+}
+
+@media (min-width: 1024px) {
+  .producto-card {
+    margin: 15px; /* Pantallas grandes */
+  }
+}
+
+
+/* === ESTADO EN LÍNEA CON PUNTO PARPADEANTE === */
+.estado-en-linea {
+  background: #ffffff22;
+  color: white;
+  padding: 4px 10px 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Punto parpadeante #22c55e */
+.estado-en-linea::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: #27F53C;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #22c55e;
+  animation: blink 1.4s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+/* === BOTÓN DE WHATSAPP === */
+.btn-whatsapp-overlay {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #25d366, #1ebe5d);
+  color: white;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  animation: zoomIn 0.6s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ✨ Brillo (efecto premium) */
+.btn-whatsapp-overlay:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(37, 211, 102, 0.8);
+  background: linear-gradient(135deg, #27F53C, #27F53C);
+  background-color: #27F53C #2ff579 #1ebe5d;
+}
+
+.btn-whatsapp-overlay i {
+  font-size: 1.1rem;
+}
+
+/* Animaciones de entrada */
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* 📱 Responsive: más compacto en móviles */
+@media (max-width: 768px) {
+  .producto-card {
+    max-width: 180px;
+  }
+  .btn-whatsapp-overlay {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+  .estado-en-linea {
+    font-size: 0.7rem;
+  }
+}
+
+/* Estilo del modal wasapp y ofertada diseño */
+/* Contenedor general (vertical y centrado) */
+.oferta-cotizacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* 🔺 Estilo de “Ofertada” */
+.badge-oferta {
+  background: linear-gradient(90deg, #10b981, #059669);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  text-transform: uppercase;
+}
+
+/* 💬 Botón de WhatsApp */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #25d366;
+  color: white;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+.btn-whatsapp i {
+  font-size: 1.2rem;
+}
+/* back-color-#1ebe5d*/
+.btn-whatsapp:hover {
+  background-color: #27F53C;
+  transform: translateY(-2px);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .oferta-cotizacion {
+    gap: 6px;
+  }
+  .btn-whatsapp {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+  .badge-oferta {
+    font-size: 0.8rem;
+  }
+}
+
+/* Desde aqui la actualizacion para la seccion de cartuchos y recargas toners*/
+
+.overlay-whatsapp-toneres {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 62%; /* 🔹 ahora cubre toda la tarjeta */
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  border-radius: 12px;
+  pointer-events: none; /* evita interferencia cuando está oculto */
+}
+/* Aparece con fade + zoom */
+.producto-card:hover .overlay-whatsapp-toneres {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto; /* se activa el clic */
+}
+
+.nombre-producto-toneres {
+  background: linear-gradient(90deg, #111, #333);
+  color: white;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 18px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.nombre-producto-toneres:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.producto-imagen-toner-negro img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-toner-negro-323 img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-toner-kyocera-negro img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-toner-tn-118-negro img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-toner-tn-328k-negro img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+
+/* Desde aqui vamos a diseñar para todos los productos de fotocopiadoras multifuncionales */
+.overlay-whatsapp-fotocopiadoras {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 62%; /* 🔹 ahora cubre toda la tarjeta */
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  border-radius: 12px;
+  pointer-events: none; /* evita interferencia cuando está oculto */
+}
+/* Aparece con fade + zoom */
+.producto-card:hover .overlay-whatsapp-fotocopiadoras {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto; /* se activa el clic */
+}
+
+.nombre-producto-fotocopiadoras {
+  background: linear-gradient(90deg, #111, #C8F527); /* 90deg, #111, #333 */
+  color: white;
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.0rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.nombre-producto-fotocopiadoras:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.producto-imagen-BIZHUB-C3321i img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+
+.producto-imagen-BIZHUB-C266i img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+
+.producto-imagen-BIZHUB-C451i img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+
+.producto-imagen-BIZHUB-750i img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+
+.producto-imagen-BIZHUB-185en img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+
+.producto-imagen-BIZHUB-367 img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+
+.producto-imagen-BIZHUB-651i img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+
+.producto-imagen-BIZHUB-C551i img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+
+.producto-imagen-KYOCERA-M8124CIDN img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-KYOCERA-MA5500IFX img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-KYOCERA-MA5500IFX img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-KYOCERA-PA4000WX img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-KYOCERA-C5890 img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-BIZHUB-225i img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-BIZHUB-361i img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-BIZHUB-650i img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-BIZHUB-751i img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+
+/*min-height: 260px; margin: auto 🔹 Tamaño más compacto */
+/*.producto-card {
+  position: relative;
+  overflow: hidden;
+  max-width: 260px;
+   
+  margin: 8px 10px;
+  
+}*/
+/* Desde aqui vamos diseñar para las fotocopiadoras seminuevas*/
+.overlay-whatsapp-fotocopiadoras-seminuevas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%; /* 🔹 ahora cubre toda la tarjeta */
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  border-radius: 12px;
+  pointer-events: none; /* evita interferencia cuando está oculto */
+}
+/* Aparece con fade + zoom */
+.producto-card:hover .overlay-whatsapp-fotocopiadoras-seminuevas {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto; /* se activa el clic */
+}
+
+.nombre-producto-fotocopiadoras-seminuevas {
+  background: linear-gradient(90deg, #111, #C8F527); /* 90deg, #111, #333 */
+  color: white;
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.0rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 1px;    /* 🔥 SEPARA imagen del título */
+}
+.nombre-producto-fotocopiadoras-seminuevas:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+/*
+.producto-imagen-BIZHUB-C754e {
+    position: relative;
+}*/
+.producto-card .btn-detalles {
+    margin-top: 4px;      /* separa el botón del contenido */
+    margin-bottom: 8px;   /* evita que quede pegado abajo */
+}
+
+/* SEPARACIÓN ENTRE IMAGEN Y TÍTULO DE TODAS LAS FOTOCOPIADORAS */
+.producto-card [class^="producto-imagen-"] {
+    margin-bottom: 8px;
+}
+
+/* Ajuste para el nombre del producto */
+.nombre-producto-fotocopiadoras,
+.nombre-producto-fotocopiadoras-seminuevas,
+.nombre-producto-fotocopiadoras-series-8,
+.nombre-producto-fotocopiadoras-color{
+    display: inline-block;
+}
+
+.producto-imagen-BIZHUB-C754e img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+}
+
+.producto-imagen-BIZHUB-C224e img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+  
+}
+.producto-imagen-BIZHUB-C284e img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-BIZHUB-C364e img {
+  width: 100%;
+  height: 202px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-BIZHUB-C454e img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-BIZHUB-C554e img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+.producto-imagen-BIZHUB-C654e img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
+
+/* Diseño para fotocopiadoras multifuncionales serie-8  */
+.overlay-whatsapp-fotocopiadoras-series-8 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%; /* 🔹 ahora cubre toda la tarjeta */
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  border-radius: 12px;
+  pointer-events: none; /* evita interferencia cuando está oculto */
+}
+/* Aparece con fade + zoom */
+.producto-card:hover .overlay-whatsapp-fotocopiadoras-series-8 {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto; /* se activa el clic */
+}
+
+.nombre-producto-fotocopiadoras-series-8 {
+  background: linear-gradient(90deg, #111, #C8F527); /* 90deg, #111, #333 */
+  color: white;
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.0rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 1px;    /* 🔥 SEPARA imagen del título */
+}
+.nombre-producto-fotocopiadoras-series-8:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.producto-imagen-BIZHUB-C308 img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+}
+.producto-imagen-BIZHUB-C368 img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+}
+.producto-imagen-BIZHUB-C458 img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+}
+.producto-imagen-BIZHUB-C558 img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+}
+.producto-imagen-BIZHUB-C658 img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+}
+
+
+/* Diseño de seccino de productos fotocopiadoras a color */
+.overlay-whatsapp-fotocopiadoras-color {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%; /* 🔹 ahora cubre toda la tarjeta */
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  border-radius: 12px;
+  pointer-events: none; /* evita interferencia cuando está oculto */
+}
+/* Aparece con fade + zoom */
+.producto-card:hover .overlay-whatsapp-fotocopiadoras-color {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto; /* se activa el clic */
+}
+
+.nombre-producto-fotocopiadoras-color {
+  background: linear-gradient(90deg, #111, #C8F527); /* 90deg, #111, #333 */
+  color: white;
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.0rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 1px;    /* 🔥 SEPARA imagen del título */
+}
+.nombre-producto-fotocopiadoras-color:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.producto-imagen-BIZHUB-C3321i img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+}
+.producto-imagen-BIZHUB-C266i img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+}
+.producto-imagen-BIZHUB-C451i img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+}
+
+/* Diseño para los productos fotocopiadoras mononocromaticas negro */
+
+.overlay-whatsapp-fotocopiadoras-negro-monocromaticas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%; /* 🔹 ahora cubre toda la tarjeta */
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  border-radius: 12px;
+  pointer-events: none; /* evita interferencia cuando está oculto */
+}
+/* Aparece con fade + zoom */
+.producto-card:hover .overlay-whatsapp-fotocopiadoras-negro-monocromaticas {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto; /* se activa el clic */
+}
+
+.nombre-producto-fotocopiadoras-negro-monocromaticas {
+  background: linear-gradient(90deg, #111, #C8F527); /* 90deg, #111, #333 */
+  color: white;
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.0rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 1px;    /* 🔥 SEPARA imagen del título */
+}
+.nombre-producto-fotocopiadoras-negro-monocromaticas:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.producto-imagen-BIZHUB-185en img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+}
+
+.producto-imagen-BIZHUB-367 img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+}
+.producto-imagen-BIZHUB-651i img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+}
+
+.producto-imagen-BIZHUB-750i img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+} 
+
+/* Diseño para fotocopiadoras de Kyoceras */
+.overlay-whatsapp-fotocopiadoras-kyoceras {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%; /* 🔹 ahora cubre toda la tarjeta */
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  border-radius: 12px;
+  pointer-events: none; /* evita interferencia cuando está oculto */
+}
+/* Aparece con fade + zoom */
+.producto-card:hover .overlay-whatsapp-fotocopiadoras-kyoceras {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto; /* se activa el clic */
+}
+
+.nombre-producto-fotocopiadoras-kyoceras{
+  background: linear-gradient(90deg, #111, #C8F527); /* 90deg, #111, #333 */
+  color: white;
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.0rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 1px;    /* 🔥 SEPARA imagen del título */
+}
+.nombre-producto-fotocopiadoras-kyoceras:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.producto-imagen-kyocera-ECOSYSM8124CIDN img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+}
+
+.producto-imagen-kyocera-ECOSYSMA5500IFX img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+}
+
+
+
+/* Diseño de actualizacion para las cabeceras del header */
+/* 🔹 Estilo base del header */
+/* ============================
+   ESTILOS DEL HEADER GENERAL
+============================ */
+#topbar, #cinta-verde, #main-header {
+  transition: all 0.4s ease-in-out;
+}
+
+/* Ocultar cinta y topbar al hacer scroll */
+.cinta-verde.oculto,
+#topbar.oculto {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ============================
+   HEADER CONDENSADO
+============================ */
+/* Eliminar altura del topbar y cinta cuando se ocultan */
+.header-condensado #topbar,
+.header-condensado #cinta-verde {
+  
+  height: 0 !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  display: none !important;
+}
+
+/* Forzar el main content a subir sin espacio adicional */
+main, section:first-of-type {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* ===============================
+   🧩 Corrección del espacio blanco
+   =============================== */
+
+/* Forzar que el header quede pegado sin dejar espacio */
+.header-condensado .sticky,
+.header-condensado #main-header {
+  margin: 0 !important;
+  padding: 0 !important;
+  top: 0 !important;
+}
+/* Evitar que el body reserve espacio cuando el header se fija */
+body.header-condensado {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+.header-condensado #main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 10px 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(210,230,255,0.95));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  z-index: 9999;
+  animation: headerSlideDown 0.35s ease forwards;
+}
+
+
+@keyframes headerSlideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+
+/* ============================
+   AJUSTE Y CENTRADO DEL MENÚ
+============================ */
+#main-header .header-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+#main-header .header-center {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+#main-header .search-form-wrapper {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+/* Ítems de menú */
+#main-header .nav-link-custom {
+  font-weight: 600;
+  color: #222;
+  transition: color 0.3s ease;
+}
+#main-header .nav-link-custom:hover {
+  color: #007bff;
+}
+
+/* ============================
+   DROPDOWN MENÚ
+============================ */
+.dropdown-menu {
+  z-index: 3000 !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  margin-top: 10px;
+}
+
+/* ============================
+   LOGO AJUSTADO
+============================ */
+.logo-img {
+  max-width: 220px;
+  transition: all 0.3s ease;
+}
+
+.header-condensado .logo-img {
+  max-width: 200px;
+  opacity: 0.95;
+}
+
+/* ============================
+   CINTA VERDE
+============================ */
+.cinta-verde {
+  background: linear-gradient(90deg, #28a745, #35c65c);
+  color: #fff;
+  text-align: center;
+  padding: 6px 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ============================
+   MOBILE (RESPONSIVE)
+============================ */
+@media (max-width: 992px) {
+  .header-condensado #topbar,
+  .header-condensado #cinta-verde {
+    display: none !important;
+  }
+
+  .header-condensado #main-header {
+    padding: 8px 0 !important;
+    background: rgba(255,255,255,0.98);
+  }
+
+  body.header-condensado {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  main, section:first-of-type {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
+
+/* ============================
+   EFECTO GLASS AZUL EN CONDENSADO
+============================  background: linear-gradient(120deg, rgba(0,102,204,0.85), rgba(255,255,255,0.95));*/
+.header-condensado #main-header {
+  background: #2A7B9B;
+  background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(58, 224, 128, 1) 3%, rgba(237, 221, 83, 1) 100%);
+  
+  backdrop-filter: blur(10px);
+}
+
+/* Desde aqui diseño para moviles cabecera lupa y el buscador */
+/* ============================
+   🔹 Controles móviles
+============================ */
+.mobile-controls {
+  position: absolute;
+  top: 50%; /*12px*/
+  /* left: 1px;  Hamburguesa al borde izquierdo */
+  justify-content: flex-end; /* 🔸 los mantiene juntos al borde derecho */
+  right: 12px; /* Lupa al borde derecho */
+  transform: translateY(-50%); /* ✅ centra verticalmente ambos botones */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 2000;
+  /*justify-content: space-between;  🔸 separa a ambos a los extremos */
+}
+/* 🔸 Ajustes del botón hamburguesa nuevo agregacion*/
+.mobile-controls .navbar-toggler {
+  background: transparent;
+  border: none;
+  color: #333;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+/* 🔸 Ajustes del botón hamburguesa nuevo agregacion*/
+.mobile-controls .navbar-toggler {
+  background: transparent;
+  border: none;
+  color: #333;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+
+.btn-lupa {
+  background: #ff7a00;
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  /* 🧭 centrado vertical en móviles */
+  position: relative;
+  top: 4px; /* mueve sutilmente hacia abajo o arriba */
+}
+
+.btn-lupa:hover {
+  background: #ff9900;
+  transform: scale(1.05);
+}
+
+/* ============================
+   🔸 Buscador expandible
+============================ */
+.buscador-expandible {
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  width: 90%;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 5px 10px;
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  transition: all 0.35s ease;
+  z-index: 2100;
+}
+
+.buscador-expandible.activo {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* Input y botón */
+.form-busqueda-movil {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.form-busqueda-movil input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 0.9rem;
+  border-radius: 20px;
+  padding: 6px 10px;
+  background: transparent;
+  color: #333;
+}
+
+.btn-naranja {
+  background: #ff7a00;
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.btn-naranja:hover {
+  background: #ff9500;
+}
+
+/* ============================
+   Responsive ajustes
+============================ */
+@media (max-width: 768px) {
+  .mobile-controls {
+    right: 10px;
+    top: 10px;
+    transform: translateY(-6%); /* Ajuste fino en teléfonos más angostos */
+  }
+
+  .buscador-expandible {
+    top: 70px;
+    width: 92%;
+  }
+  
+  .btn-lupa {
+    width: 36px;
+    height: 36px;
+    top: 2px; /* más preciso en móviles pequeños */
+  }
+  .btn-lupa,
+  .mobile-controls .navbar-toggler {
+    width: 34px;
+    height: 34px;
+    transform: translateY(-8%); /* Ajuste fino en teléfonos más angostos */
+  }
+}
+
+
+/* Seccion productos estilizando para que se vea mas dinamico y profesional */
+/* === 🌐 SECCIÓN DE PRODUCTOS CON FONDO TECNOLÓGICO === */
+/* === Fondo general con partículas === */
+/* === Fondo tecnológico (solo segunda sección) === */
+/* 🔹 Contenedor principal del fondo tecnológico */
+#fondo-tecnologias {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: transparent; /*#000 visible mientras carga */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8)); /* gris oscuro suave */
+  overflow: hidden;
+}
+
+/* 🔹 Canvas generado por tsparticles (solo dentro de la sección) */
+#fondo-tecnologias canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important; /* 🔹 ahora sobre las tarjetas encima puedes ajustar abajo con 1*/
+  pointer-events: none;
+
+}
+
+/* 🔹 Sección del carrusel encima del canvas */
+.seccion-tecnologicas {
+  position: relative;
+  z-index: 3; /* un poco más bajo que el canvas */
+  /*background: #F54927;  color de fondo de tu sección */
+  padding: 20px 0; /* menos espacio interno */
+  margin-top: -20px; /* 🔹 sube la sección hacia el título */
+}
+
+/* 🔹 Quitar cualquier altura forzada que agrande el fondo */
+#fondo-tecnologia-valores {
+  min-height: auto;
+  height: auto;
+}
+
+#fondo-tecnologia-valores {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: transparent; /*#000 visible mientras carga */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8)); /* gris oscuro suave */
+  overflow: hidden;
+}
+
+/* 🔹 Canvas generado por tsparticles (solo dentro de la sección) */
+#fondo-tecnologia-valores canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 5 !important; /* 🔹 ahora sobre las tarjetas encima puedes ajustar abajo con 1*/
+  pointer-events: none;
+
+}
+
+/* 🔹 Sección del carrusel encima del canvas */
+.seccion-tecnologica-valores {
+  position: relative;
+  z-index: 3; /* un poco más bajo que el canvas */
+  /*background: #F54927;  color de fondo de tu sección */
+  padding: 20px 0; /* menos espacio interno */
+  margin-top: -20px; /* 🔹 sube la sección hacia el título */
+}
+
+/* 🔹 Quitar cualquier altura forzada que agrande el fondo */
+#fondo-tecnologia-valores {
+  min-height: auto;
+  height: auto;
+}
+
+/* === 📱 Versión móvil === */
+
+
+/* === Botón “Ver detalles” moderno === */
+.btn-detalles {
+  background: linear-gradient(90deg, #c70000, #ff1e1e);
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Hover animado con efecto brillo y zoom */
+.btn-detalles:hover {
+  background: linear-gradient(90deg, #007bff, #00b8ff);
+  transform: scale(1.00);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35), 0 0 10px rgba(0,123,255,0.6);
+}
+
+/* 📱 Responsive (móvil) */
+@media (max-width: 768px) {
+  .btn-detalles {
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    transform: scale(1);
+  }
+  .btn-detalles:hover {
+    transform: scale(1.05);
+  }
+}
+
+
+
+/* Seccion de consumibles diseño para todos los consumibles y pagina */
+/* Banner consumibles profesional */
+
+.banner-consumibles {
+  max-height: 390px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.banner-consumibles-tabla {
+  max-height: 540px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Diseño para la imagen del banner cinta */
+/* Contenedor */
+.banner-consumibles-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+/* Contenedor de burbujas 
+    overflow: hidden; */
+.burbujas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* no estorba */
+}
+
+/* Base de TODAS las burbujas */
+.burbujas span {
+    position: absolute;
+    bottom: -120px;    /* 🔥 ORIGEN de la burbuja (más abajo para que suba más tiempo) */
+    border-radius: 50%;
+    opacity: 0.85;
+    animation: bubble-rise 10s linear infinite;
+    filter: drop-shadow(0px 0px 8px rgba(255,255,255,0.7)); /* ✨ BRILLO alrededor */
+}
+
+/* Creando mas burbujas */
+/* ---------- NUEVAS BURBUJAS 🔥 ---------- */
+.b6 {
+    width: 50px;
+    height: 50px;
+    left: 10%;
+    background: #ff7ae0;   /* rosado brillante */
+    animation-duration: 9s;
+}
+.b7 {
+    width: 35px;
+    height: 35px;
+    left: 40%;
+    background: #7af0ff;   /* celeste claro */
+    animation-duration: 6.5s;
+}
+.b8 {
+    width: 65px;
+    height: 65px;
+    left: 70%;
+    background: #ffe066;   /* amarillo pastel */
+    animation-duration: 11s;
+}
+.b9 {
+    width: 25px;
+    height: 25px;
+    left: 85%;
+    background: #00ffc8;   /* verde aqua */
+    animation-duration: 7.5s;
+}
+.b10 {
+    width: 90px;  
+    height: 90px;
+    left: 25%;
+    background: #ff4f4f;   /* rojo suave */
+    animation-duration: 12s;
+}
+
+/* ============================
+   🎨 COLORES TEMÁTICOS
+   ============================ */
+.b1 { background: #0072BC; }   /* Azul Konica Minolta */
+.b2 { background: #25D366; }   /* Verde WhatsApp */
+.b3 { background: #FFD800; }   /* Amarillo Oxford */
+.b4 { background: #25D366; }   /* Verde WhatsApp */
+.b5 { background: #0072BC; }   /* Azul Konica */
+
+   📏 TAMAÑOS Y POSICIONES INICIALES
+   (🔥 AQUÍ CAMBIAS EL TAMAÑO DE LAS BURBUJAS)
+   ============================================ */
+.b1 { width: 70px; height: 70px; left: 12%; animation-duration: 9s; }
+.b2 { width: 35px; height: 35px; left: 30%; animation-duration: 7s; }
+.b3 { width: 80px; height: 80px; left: 55%; animation-duration: 10s; }
+.b4 { width: 45px; height: 45px; left: 75%; animation-duration: 6s; }
+.b5 { width: 28px; height: 28px; left: 22%; animation-duration: 8s; }
+
+/* ============================================
+   🎬 ANIMACIÓN DE SUBIDA
+   (🔥 AQUÍ CAMBIAS QUÉ TAN ALTO SUBE)
+   ============================================ */
+@keyframes bubble-rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-250px) scale(1.25); /* 🔥 MITAD DEL CAMINO */
+    }
+    100% {
+        transform: translateY(-500px) scale(1.45); /* 🔥 SUBE HASTA ARRIBA (AQUÍ EDITAS ALTURA) */
+        opacity: 0;
+    }
+}
+
+/* Fondo para las seccion de consumibles dentro de los cards */
+/* 🌈 Fondo profesional para la sección de consumibles */
+/* Fondo visible y en capa superior */
+/* 🔧 Restaurar fondo blanco en formulario, filtros y buscador */
+#consumibles-section .card,
+#consumibles-section .form-control,
+#consumibles-section .form-select {
+    background-color: #ffffff !important;
+    color: #222 !important;
+}
+
+/* Input profesional */
+#consumibles-section .form-control {
+    border: 1px solid #d7d7d7 !important;
+    box-shadow: none !important;
+}
+
+#consumibles-section {
+    background-image: url('/static/img/consumibles/fondos/fondo-burbujas-abstracto.jpg') !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2rem 0;
+    min-height: 600px; /* opcional para que se note más */
+}
+
+/*opcional si queremos que se mueva el formulario
+#consumibles-section .card:hover {
+  transform: translateY(-10px);
+  transition: all 0.10s ease;
+}*/
+
+#consumibles-section .btn {
+  border-radius: 25px;
+  font-size: 0.85rem;
+}
+#consumibles-section {
+  background: #F3F2F1;
+}
+
+#consumibles-Tablero{
+    background: #F3F2F1;
+}
+
+/*Diseño para los espacios de los datos del formulario alumbrado*/
+/* 🔵 Estilo profesional del focus en inputs #0d6efd*/
+#solicitudForm .form-control:focus,
+#solicitudForm .form-select:focus {
+    border-color: #26201D !important;      /* azul profesional Bootstrap */
+    box-shadow: 0 0 0 13px rgba(13,110,253,0.30) !important;
+    background-color: #ffffff !important;   /* evitar transparencia */
+    outline: none !important;
+    transition: all 0.2s ease-in-out;
+}
+
+#buscadorCards:focus {
+    border-color: #ff7b00 !important;
+    box-shadow: 0 0 0 2px rgba(255,122,0,0.25) !important; 
+}
+
+/* Mantener inputs blancos */
+#solicitudForm .form-control,
+#solicitudForm .form-select {
+    background-color: #fff !important;
+    border: 1px solid #ced4da !important;
+}
+
+/* 🔹 Ajustes del formulario en la derecha */
+#solicitudForm {
+  font-size: 0.9rem;
+}
+
+#solicitudForm .form-control {
+  border-radius: 16px;
+  font-size: 0.9rem;
+}
+
+#solicitudForm button {
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* 🎯 Estilos exclusivos del buscador de consumibles */
+/* 📌 Estilo general del grupo del buscador */
+/* Ambos Diseños para el buscador del tablero de consumibles */
+.buscador-tablero,
+.buscador-cards {
+    max-width: 100%;
+}
+
+/* 🔍 Icono del buscador */
+.buscador-icono {
+    background-color: #0d6efd !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px 0 0 10px !important;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+/* Hover naranja corporativo */
+.buscador-icono:hover {
+    background-color: #ff9800 !important;
+    color: #fff !important;
+    transform: scale(1.07);
+    box-shadow: 0 4px 8px rgba(255, 152, 0, 0.4);
+}
+
+/* Input del buscador */
+.buscador-input {
+    border-radius: 0 10px 10px 0 !important;
+    box-shadow: none !important;
+    padding-left: 12px;
+}
+
+/* Al hacer click, borde azul profesional */
+.buscador-input:focus {
+    border-color: #0d6efd !important;
+    box-shadow: 0 0 0 2px rgba(13,110,253,0.25) !important;
+    background-color: white !important;
+}
+
+
+.card-body textarea {
+  resize: none;
+}
+
+
+
+
+/* 🔹 Centrado vertical en pantallas grandes */
+@media (min-width: 992px) {
+  .col-lg-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+/* 🔹 Espaciado responsivo */
+@media (max-width: 768px) {
+  #solicitudForm .row > div {
+    flex: 0 0 100%;
+  }
+}
+
+/* Ajuste responsive */
+@media (max-width: 768px) {
+  #consumibles-section .card {
+    margin-top: 1rem;
+  }
+}
+
+/* 🔹 Centrado vertical en pantallas grandes */
+@media (min-width: 992px) {
+  .col-lg-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
+
+/* 🔹 Espaciado responsivo */
+@media (max-width: 768px) {
+  #solicitudForm .row > div {
+    flex: 0 0 100%;
+  }
+}
+
+/* Diseño de tablas */
+/* =====================================
+   🧩 Diseño general de tabla consumibles
+===================================== */
+
+/* Estructura base */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+}
+
+/* Estilo general de celdas */
+table th,
+table td {
+  white-space: nowrap;
+  text-align: left;
+  vertical-align: middle;
+  padding: 10px 12px;
+}
+
+/* Botones dentro de tabla */
+.table td .btn {
+  font-size: 0.8rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* =====================================
+   📱 Celulares: scroll horizontal abajo
+===================================== */
+@media (max-width: 768px) {
+  .table-responsive {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-height: none;
+  }
+
+  .table td,
+  .table th {
+    font-size: 0.85rem;
+    padding: 6px 8px;
+  }
+
+  .btn-sm {
+    font-size: 0.75rem;
+    padding: 3px 6px;
+  }
+}
+
+/* =====================================
+   💻 PCs/Laptops: scroll vertical derecho
+===================================== */
+@media (min-width: 769px) {
+  .table-responsive {
+    overflow-y: auto;   /* ✅ Scroll vertical derecho */
+    overflow-x: hidden; /* ❌ Desactiva scroll inferior */
+    max-height: 550px;  /* width: 930px; Ajusta la altura visible */
+    scrollbar-width: thin;
+    scrollbar-color: #999 #f2f2f2;
+    /* ✅ Ajuste responsivo */
+    width: 100%;               /* Ocupa el ancho disponible */
+    max-width: 100%;           /* Se adapta al contenedor */
+    margin: 0 auto;            /* Centrada visualmente */
+  }
+
+  /* Scroll personalizado para Chrome/Edge */
+  .table-responsive::-webkit-scrollbar {
+    width: 8px; /* ancho del scroll lateral */
+  }
+
+  .table-responsive::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+  }
+
+  .table-responsive::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+  }
+}
+
+input[name="consumible"].border-success {
+  box-shadow: 0 0 8px rgba(25, 135, 84, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+/* ============================
+   🧩 Diseño de sección Consumibles
+============================ #f8f9fa*/
+/* Título grande profesional */
+/* Estilo base */
+.titulo-consumibles, .subtitulo-consumibles, .subtitulo-dinamico {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    animation: fadeUp 0.8s ease-out;
+    margin-bottom: 0.5rem;
+}
+
+/* Título principal con degradado fuerte */
+.titulo-consumibles {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 2rem;
+    text-align: center;
+    background: linear-gradient(to right, #facc15, #64748b, #1e3a8a);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 8px;
+}
+
+/* Subtítulo – más claro y elegante */
+.subtitulo-consumibles {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 450;             /* más delgado */
+    font-size: 1.4rem;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.45);    /* gris suave */
+    letter-spacing: 0.5px;        /* mayor separación */
+    margin-bottom: 2px;
+}
+
+
+/* Subtítulo dinámico (opcional) – aún más claro */
+.subtitulo-dinamico {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.35);    /* gris más tenue */
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 🎨 PALETAS OFICIALES POR CATEGORÍA linear-gradient(90deg, #0090d9, #003c76);*/
+.color-konica {
+    background: #000024;
+    background: linear-gradient(90deg,rgba(0, 0, 36, 1) 0%, rgba(9, 63, 121, 1) 44%, rgba(0, 212, 255, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* linear-gradient(50deg, #d90000, #7a0000); */
+.color-kyocera {
+    background: linear-gradient(90deg,rgba(155, 115, 42, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.color-papel {
+    background: linear-gradient(90deg, #FFD026, #1E3A8A);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/*linear-gradient(90deg, #16a34a, #065f46);*/
+.color-recargas {
+    background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Default */
+.color-default {
+    background: linear-gradient(90deg, #555, #222);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* =============================
+   SECCIÓN: CONSUMIBLES – CARDS
+   ============================= */
+
+.consumible-card {
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.10);
+    transition: transform .2s ease, box-shadow .2s ease;
+    padding-bottom: 25px; /* más espacio para el card para los botones */
+
+}
+
+.consumible-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+}
+/* Para achicar la imagen de los cards*/
+.consumible-img {
+    width: 100%;
+    height: 170px;
+    object-fit: contain;
+    padding: 8px;
+    border-bottom: 1px solid #e6e6e6; /* línea suave pero controlada */
+}
+
+.consumible-body {
+    text-align: center;
+    padding: 12px 15px;
+}
+
+.precio {
+    color: #0072CE; /* azul Konica Minolta */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* ===============================
+ BOTONES DEL CARD Consumibles botones diseño 
+================================ */
+/* CARD GENERAL */
+.consumible-card {
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.10);
+    transition: transform .2s ease, box-shadow .2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;         /* Necesario para sticky */
+    overflow: hidden;
+    position: relative;
+}
+
+.consumible-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+}
+
+/* CONTENIDO DEL PRODUCTO */
+.consumible-body {
+    text-align: center;
+    padding: 15px;
+    flex-grow: 1;          /* Empuja el footer hacia abajo */
+}
+
+/* BOTONES PEGADOS AL FONDO #eee*/
+.consumible-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 8px;
+    background: #f9f9f9;
+    border-top: 1px solid #e6e6e6;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+/* BOTONES PREMIUM */
+.btn-premium {
+    flex: 1;
+    height: 32px; /* Más pequeño */
+    padding: 0 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 0.50rem; /* Letra más pequeña */
+    font-weight: 600;
+    border-radius: 12px; /* Menos redondeado */
+    border: none;
+    color: #fff;
+    gap: 4px;
+    transition: all 0.25s ease-in-out;
+}
+
+/* COLORES #0b8a3b*/
+.cotizar-btn { background-color: #97F40B; color: #fff; }
+.agregar-btn { background-color: #f4b400; color: #000; font-weight: 700; }
+.ficha-btn   { background-color: #00b3d6; color: #fff; }
+
+/* ICONOS  margin-right: 6px;*/
+.btn-premium i {
+    
+    font-size: 0.85rem;
+}
+
+/* Hover */
+.btn-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+/* Estilo del boton cuando este seleccionado con el javascritp */
+.btn-selected {
+    background-color: #0b8a3b !important; /* Verde fuerte */
+    color: #fff !important;
+    border-color: #0b8a3b !important;
+}
+
+.btn-selected i {
+    color: #fff !important;
+}
+
+
+/* =====================================
+   CARD SELECCIONADO – FONDO DEGRADADO
+===================================== */
+.card-selected {
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(0,0,0,0.65), rgba(0,0,0,0.35)) !important;
+    border: 2px solid #00d68f;
+    box-shadow: 0 0 18px rgba(0,255,200,0.25);
+    position: relative;
+    transition: all .35s ease;
+}
+
+/* =========================================================
+   CHECK REDONDO PROFESIONAL (solo aparece si está seleccionado)
+========================================================= */
+.selected-check-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+    border: 3px solid white;
+
+    background: rgba(0, 150, 90, 0.85);
+    backdrop-filter: blur(3px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-size: 20px;
+    opacity: 0;
+    transform: scale(0.4);
+    transition: all 0.25s ease-out;
+    z-index: 5;
+}
+
+/* CUANDO ESTÁ SELECCIONADO → MOSTRAR ICONO */
+.card-selected .selected-check-icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* =====================================
+   ANIMACIÓN SHAKE DEL CARD
+===================================== */
+.card-shake {
+    animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}
+
+/* =====================================
+   TOAST PROFESIONAL
+===================================== */
+.toast-pro {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #0b8a3b;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.35s ease;
+    z-index: 9999;
+}
+
+.toast-pro.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MÓVIL */
+@media (max-width: 480px) {
+    .selected-check-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 17px;
+        border-width: 2px;
+    }
+}
+
+
+/* ===============================
+   FICHA TÉCNICA: Animación PRO
+================================ */
+
+.ficha-slide-in {
+    opacity: 0;
+    transform: translateX(80px);
+    filter: blur(6px);
+    transition:
+        transform 0.55s cubic-bezier(0.18, 0.89, 0.32, 1.25),
+        opacity 0.45s ease-out,
+        filter 0.45s ease-out;
+}
+
+.ficha-slide-in.active {
+    opacity: 1;
+    transform: translateX(0px);
+    filter: blur(0px);
+}
+
+/* Imagen responsive adaptable */
+.ficha-img {
+    max-height: 220px;
+    object-fit: contain;
+}
+
+/* ==== Ficha Técnica Profesional mejorando el diseño ==== */
+
+.ficha-title {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #222;
+}
+
+.ficha-info p {
+    margin: 0;
+    font-size: 0.95rem;
+
+}
+/* Caja de la imagen */
+.ficha-img-box {
+    padding: 10px;
+    border-radius: 12px;
+    background: #f7f7f7;
+}
+
+/* Badge del precio */
+.precio-badge {
+    background: #4a148c;
+    color: white;
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
+.precio-text {
+    font-weight: bold;
+}
+
+/* Botón WhatsApp */
+.btn-wsp {
+    background: #25d366;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.btn-wsp:hover {
+    background: #1ebe57;
+}
+
+/* Secciones */
+.section-title {
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.ficha-descripcion {
+    text-align: justify;
+}
+
+.ficha-list li {
+    margin-bottom: 6px;
+}
+
+.sub-list {
+    margin-left: 15px;
+    list-style: square;
+}
+
+/* Animación */
+.ficha-slide-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.4s ease;
+}
+
+.ficha-slide-in.active {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* Mejor separación en móviles */
+@media (max-width: 768px) {
+    .ficha-img {
+        max-height: 180px;
+    }
+
+    #fichaContenido {
+        padding: 10px;
+    }
+
+    .modal-dialog {
+        margin: 10px;
+    }
+}
+
+
+/* Diseño pero con el bloqueo para cerrar el carrito de interferencia */
+
+.toast-pro {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #0b8a3b;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.35s ease;
+    z-index: 9999;
+    pointer-events: none;      /* 👈 ESTA LÍNEA ES LA CURA */
+}
+
+
+
+/* BOTÓN WHATSAPP PARA PÁGINAS PÚBLICAS index,nosotros,contacto*/
+/* 🔵 CONTENEDOR PRINCIPAL */
+/* --- CONTENEDOR --- */
+/* ============================
+   WIDGET WHATSAPP PROFESIONAL
+=============================== */
+
+.wsp-widget {
+    position: fixed;
+    bottom: 10px;              /* Ajustado para estar sobre “DEJA TU MENSAJE” */
+    right: 20px;   /* Ajustado mas a la derecha */
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.wsp-widget.hidden {
+    display: none;
+}
+
+/* -------------------------
+    BURBUJA FLOTANTE
+-------------------------- */
+/* Animacion para el widget automatico entrante diseño */
+/* Animación del botón flotante + animación del widget*/
+/* BOTÓN FLOTANTE (BURBUJA) */
+.wsp-bubble {
+    position: fixed;
+    bottom: 60px;
+    right: 10px; /* 10animation: wspBounce 0.6s ease-out forwards; entrada de boton de wasap de afuera*/
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    cursor: pointer;
+    z-index: 9999;
+
+    transform: scale(0);
+    animation: wspBounce 0.8s ease-out forwards;
+
+}
+/* 
+@keyframes slideInRight {
+    from { right: 10px; }
+    to { right: 20px; }
+    animation: slideInRight 0.6s ease-out forwards;
+} */
+
+
+/* ANIMACIÓN DE REBOTE */
+@keyframes wspBounce {
+    0%   { transform: scale(0); }
+    60%  { transform: scale(1.1); }
+    80%  { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.wsp-box {
+    background: #f0f2f5; /* color gris claro estilo WhatsApp */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+/* Estado visible con animación */
+.wsp-box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.wsp-bubble:hover {
+    transform: scale(1.08);
+}
+
+.wsp-bubble img {
+    width: 50px;
+    height: 50px;
+}
+/* ANIMAR BURBUJA */
+@keyframes floatBubble {
+    from { transform: scale(0) translateY(40px); opacity: 0; }
+    to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* -------------------------
+    TARJETA DEL MENSAJE
+-------------------------- #fff*/
+.wsp-box {
+    width: 310px;
+    background: #8CA190;
+    border-radius: 20px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.20);
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    transform: translateY(20px);
+    transition: all .25s ease;
+    pointer-events: none;
+
+
+}
+
+/* Mostrar */
+.wsp-box.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* -------------------------
+     HEADER DE LA TARJETA
+-------------------------- */
+.wsp-header {
+    background: #25D366;
+    color: white;
+    padding: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.wsp-header img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+}
+#wsp-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+.wsp-title {
+    flex-grow: 1;
+    font-weight: bold;
+    font-weight: 700;
+}
+/*#F55027 Diseño para el boton de cerrar del widget wasap rgba(255,255,255,0.3)*/
+.wsp-close {
+    margin-left: auto;
+    background: #5E7362;
+    border: none;
+    color: white;
+    font-size: 17px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 42%;
+}
+.wsp-close:hover {
+    color: #000;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+}
+
+/* -------------------------
+     MENSAJE DEL WIDGET
+-------------------------- */
+.wsp-message {
+    background: #ffffff; /* fondo burbuja */
+    padding: 14px 18px;
+    border-radius: 14px;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #444;
+    margin: 12px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+    position: relative; /* necesario para la colita */
+}
+.wsp-message::before {
+    content: "";
+    position: absolute;
+    left: -6px;          /* más metido hacia adentro */
+    top: 12px;           /* ajusta vertical */
+    width: 10px;         /* más delgada */
+    height: 10px;
+    background: #ffffff;
+    border-radius: 0px;  /* filo más puntiagudo */
+    transform: rotate(45deg) scale(1.2, 1.4); /* más alargada: MÁS PUNTA */
+    box-shadow: -1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* -------------------------
+       BOTÓN "ABRIR CHAT"
+-------------------------- */
+.wsp-btn {
+    margin: 15px;
+    width: 85%;
+    display: block;
+    background: #25D366;
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    transition: .2s ease;
+}
+.wsp-btn:hover {
+    background: #1ebe5b;
+
+}
+
+.wsp-btn i {
+    margin-left: 6px;
+    transform: scale(1.03);
+}
+
+
+/* ============================
+        MÓVIL
+=============================== }*/
+@media (max-width: 500px) {
+    #wsp-widget {
+        bottom: 110px;
+        right: 15px;
+    }
+
+    .wsp-box {
+        width: 90vw;
+        right: -10px;
+    }
+}
+@media (max-width: 480px) {
+    .wsp-box {
+        width: 260px;
+        padding: 12px;
+    }
+
+    .wsp-bubble {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+
+
+/* Diseño para todos los cards de cada producto centrado sea izquierda o derecha 
+
+
+/* 📌 Ajuste general — móviles primero 
+.grid-left-adjust {
+    margin-left: -24px !important;   mueve la grilla a la izquierda 
+}*/
+/*
+@media (min-width: 480px) {
+    .grid-left-adjust {
+        margin-left: -30px !important;   tablets y laptops 
+    }
+}*/
+
+/* ======== 0) Móvil (el más importante) ======== */
+/* ======== AJUSTE PRINCIPAL ======== */
+.grid-left-adjust {
+    margin-left: -20px;
+}
+
+
+
+/* ======== MÓVILES (pantallas pequeñas) ======== */
+@media (max-width: 480px) {
+
+    /* Ajustes de la cuadrícula */
+    .grid-left-adjust {
+        padding-left: -3px !important;
+        padding-right: 4px !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        gap: 0.90rem !important; /* espacio entre las cards */
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 columnas reales */
+        justify-items: center !important;
+    }
+
+    /* Card más compacta */
+    .producto-card {
+        width: 140px !important;
+        height: 80px !important;
+        padding: 2px !important;
+        margin: 0 auto 2px auto !important;
+        margin-bottom: 2px !important;
+    }
+
+    .producto-card img {
+        height: 170px; /* MUY pequeño */
+        margin-bottom: 20px !important;
+    }
+
+    .nombre-producto-fotocopiadoras,
+    .nombre-producto-fotocopiadoras-seminuevas {
+        font-size: 0.70rem !important;
+        padding: 2px 6px !important;
+        margin: 2px 0 !important;
+    }
+
+    .btn-detalles {
+        font-size: 0.65rem !important;
+        padding: 3px 7px !important;
+        margin: 3px 0 !important;
+    }
+
+    /* Overlay ajustado */
+    .overlay-whatsapp-fotocopiadoras,
+    .overlay-whatsapp-fotocopiadoras-seminuevas {
+        height: 55% !important; /* reduce overlay */
+    }
+
+    /* Botón del overlay más pequeño */
+    .btn-whatsapp-overlay {
+        font-size: 0.70rem !important;
+        padding: 4px 8px !important;
+    }
+
+    .estado-en-linea {
+        font-size: 0.65rem !important;
+        padding: 3px 6px !important;
+    }
+}
+
+
+
+/* Diseños de banners para la pagina index.html */
+/* Contenedor del banner */
+.banner-cinta-section {
+    width: 100%;
+    padding: 0;
+    margin-top: -28px; /*para subirlo la todo el contenedor */
+    text-align: center;
+    background: transparent;
+    margin-bottom: -70px;  /* sepáralo del siguiente contenido */
+}
+
+/* Imagen ajustada SIN recortar */
+.banner-cinta-img {
+    width: 100%;
+    max-width: 1366px;        /* ancho máximo recomendado */
+    height: auto;             /* mantiene proporciones */
+    max-height: 260px;        /* ajusta la altura más compacta */
+    object-fit: contain;      /* NO recorta */
+    display: block;
+    margin: 0 auto;           /* centrado */
+    padding: 10px 10;          /* aire arriba y abajo */
+    padding-top: 0;
+}
+
+
+/* Diseño para las mejores fotocopiadoras los logos recorriendo hacia la izquierda */
+/* ===============================
+   SCROLL INFINITO DE LOGOS
+================================*/
+.logos-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0;
+}
+
+.logos-track {
+    display: flex;
+    align-items: center;
+    gap: 50px;                /* separación entre logos */
+    animation: scrollLeft 18s linear infinite;
+    width: max-content;
+}
+
+.logos-img {
+    height: 60px;
+    width: auto;
+    filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.15));
+    transition: transform 0.3s ease;
+}
+
+/* hover suave */
+.logos-img:hover {
+    transform: scale(1.15);
+}
+
+/* ANIMACIÓN */
+@keyframes scrollLeft {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+/* Para móviles (logos más pequeños) */
+@media (max-width: 480px) {
+    .logos-img {
+        height: 40px;
+    }
+}
+
+/* Diseño para la cinta de propaganda de copier mundo con gradients */
+/* 🔵 GRADIENTE CORPORATIVO PREMIUN */
+/*.cinta-gradient {
+    background: linear-gradient(90deg, #004fe4, #007bff, #00c3ff, #00ffaa);
+    box-shadow: inset 0 0 25px rgba(255,255,255,0.18);
+}
+
+}*/
+
+.cinta-gradient {
+    background: linear-gradient(90deg, 
+        #0047ff, 
+        #00a2ff, 
+        #00ffcc, 
+        #ffdd00, 
+        #ff9100);
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.2);
+}
+
+
+/* TÍTULO PREMIUM */
+.cinta-titulo {
+    font-size: 1.9rem;
+    font-weight: 800;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+}
+.cinta-titulo span {
+    color: #ffe066;
+    text-shadow: 0 0 8px rgba(255, 240, 150, 0.7);
+}
+
+/* SUBTÍTULO ELEGANTE */
+.cinta-subtitulo {
+    font-size: 1.10rem;
+    opacity: 1.80;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+}
+
+/* BOTÓN LINEAL 255,255,255,0.15*/
+.cinta-boton {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 18px;
+    font-size: 0.99rem;
+    font-weight: 700;
+    background: rgba(159, 7, 18);
+    border-radius: 30px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+.cinta-boton:hover {
+    background: rgba(255,255,255,0.25);
+    padding-left: 24px;
+}
+
+
+/* Diseño de cinta de banner cliclabe */
+.banner-clickable {
+    position: relative;
+    width: 100%;
+}
+
+.banner-with-overlay {
+    display: block;
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+}
+
+/* 🔥 Área que parpadea (sobre el sector amarillo) */
+.banner-overlay-pulse {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 220px;         /* ancho del rectángulo highlight */
+    height: 120px;
+    background: rgba(255, 207, 0, 0.35);
+    border-radius: 15px;
+    animation: pulseBlink 1.4s infinite ease-in-out;
+    pointer-events: none; /* permite click en el WhatsApp */
+}
+
+@keyframes pulseBlink {
+    0% { opacity: 0.2; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.07); }
+    100% { opacity: 0.2; transform: scale(1); }
+}
+
+/* Hacer toda la sección clickeable */
+.banner-clickable a {
+    display: block;
+    cursor: pointer;
+}
+
+/* Diseño para la imagen de cinta con la imagen azul rotante */
+.glow-rotating {
+    position: absolute;
+    top: 22%;    /* Ajusta para que coincida con la zona azul */
+    left: 38%;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,145,255,0.45), rgba(0,0,0,0));
+    animation: spinGlow 6s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes spinGlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+
+/* Desde aqui es el nuevo diseño para banners de la cinta */
+.banner-copiermundo {
+    width: 100%;
+}
+
+.banner-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.banner-img {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    display: block;
+}
+
+/* 🔵 Círculo azul giratorio centrado */
+.circle-anim {
+    position: absolute;
+    top: 18.80%;
+    left: 56.55%;
+    transform: translateY(-50%);
+    width: 78px;
+    height: 78px;
+    border-radius: 45%;
+    background: rgba(0,162,255,0.25);
+    border: 2px solid rgba(0,162,255,0.8);
+    animation: spinCircle 3s linear infinite;
+}
+
+@keyframes spinCircle {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* 🟡 Texto parpadeante clickeable */
+.cta-yellow {
+    position: absolute;
+    right: 4.40%;        /* AJUSTA LA POSICIÓN HORIZONTAL */
+    top: 40.10%;
+    width: 301px;
+    height: 90px;         /* AJUSTA LA POSICIÓN VERTICAL */
+    transform: translateY(-50%);
+    font-size: 28px;
+    font-weight: 800;
+    font-family: 'Inter', sans-serif;
+    color: #000;
+    background: rgba(255,255,0,0.15);
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    animation: blinkYellow 1s infinite;
+    cursor: pointer;
+}
+
+@keyframes blinkYellow {
+    0%, 100% { background: rgba(255,230,0,0.8); color:#000; }
+    50% { background: rgba(255,190,0,0.4); color:#222; }
+}
+
+
+/* Diseño de la cinta konica minolta de rayos tecnologicos */
+/* 🌐 Fondo tecnológico animado */
+.cinta-konica {
+    position: relative;
+    overflow: hidden;
+    background: #001f3f; /* color base oscuro elegante */
+}
+
+/* 🔵 Capa de circuitos tecnológicos */
+.cinta-konica::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/static/img/fondos/fondo-tecnology.jpg"); /* pon tu imagen tech */
+    background-size: cover;
+    background-position: center;
+    opacity: 0.45;
+    filter: brightness(1.2);
+    animation: moverCircuito 2s linear infinite alternate;
+    z-index: 1;
+}
+
+/* ✨ Rayo animado desde las esquinas */
+.cinta-konica::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top left, rgba(0,174,255,0.4), transparent 60%),
+                radial-gradient(circle at bottom right, rgba(0,174,255,0.4), transparent 60%);
+    mix-blend-mode: screen;
+    animation: pulsoRayo 4s ease-in-out infinite;
+    z-index: 2;
+}
+
+/* ANIMACIÓN: movimiento suave del circuito */
+@keyframes moverCircuito {
+    0% { transform: scale(1.1) translate(0,0); }
+    50% { transform: scale(1.15) translate(-10px, -10px); }
+    100% { transform: scale(1.1) translate(0,0); }
+}
+
+/* ANIMACIÓN: pulsos de luz */
+@keyframes pulsoRayo {
+    0% { opacity: 0.4; }
+    50% { opacity: 0.85; }
+    100% { opacity: 0.4; }
+}
+
+/* Asegurar que el contenido quede encima del fondo */
+.cinta-konica > .container-fluid {
+    position: relative;
+    z-index: 5;
+}
+
+/* 🌟 Luz que sigue al cursor */
+.cursor-light {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(0,162,255,0.35), transparent 70%);
+    mix-blend-mode: screen;
+    filter: blur(25px);
+    z-index: 4; /* debajo del contenido pero sobre el fondo */
+    transform: translate(-50%, -50%);
+}
+
+
+/* Diseño de ajustes de las imagenes de ojo a colores */
+.ojo-izquierdo img {
+    margin-right: -2px;   /* acerca más el ojo */
+}
+.ojo-derecho img {
+    margin-left: -2px;    /* acerca más el ojo */
+}
+
+
+/* Diseño para el logo de soporte redondeado */
+/* 🔵 Logo técnico recortado circular profesional */
+.sello-tecnico {
+    margin-left: 170px; /* MOVER A LA DERECHA SUAVEMENTE:*/
+    margin-right: 40px; /* MOVER A LA izquierda SUAVEMENTE:*/
+    margin-top: -15px;   /* subir */
+    margin-bottom: 1px; /* bajar */
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(0,162,255,0.7);
+    box-shadow: 0 0 12px rgba(0,162,255,0.50);
+    animation: pulseTech 2s ease-in-out infinite;
+    /*
+    left: 55%; mover un poquito a la derecha
+    top: 45%; mover un poquito a la izquierda
+    position: absolute;
+    top: 50%;         bajar o subir 
+    left: 50%;        mover a lados 
+    transform: translate(-50%, -50%);
+    */
+}
+.contenedor-sello {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* pulso suave */
+@keyframes pulseTech {
+    0% { transform: scale(1); box-shadow: 0 0 10px rgba(0,162,255,0.4); }
+    50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(0,162,255,0.7); }
+    100% { transform: scale(1); box-shadow: 0 0 10px rgba(0,162,255,0.4); }
+}

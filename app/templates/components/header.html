@@ -2,13 +2,18 @@
 <!-- components/header.html -->
 <!-- Top bar -->
 <!-- TOPBAR Moderno -->
-<div class="sticky top-0 z-50 bg-white shadow-md transition-all duration-300 ease-in-out" >
+<div class="sticky top-0 z-50 bg-white shadow-md transition-all duration-600 ease-in-out" >
     <div class="topbar-custom" id="topbar">
         <div class="container d-flex justify-content-between align-items-center">
         
             <div class="nombre-empresa">
-                <!-- Logo circular KM -->
-                <div class="badge-circle">KM</div>
+                <h1 class="logo mb-0">  
+                    <a href="/">  
+                        <img src="{{ url_for('static', path='img/Logo-copiermundo-1.png') }}" alt="Konica Minolta" class="logo-img img-fluid w-75 w-md-100" id="logo" class="transition-all duration-300" alt="Logo" >  
+                    </a>  
+                </h1>
+                <!-- Logo circular KM si deseamos un bonito circular 
+                <div class="badge-circle">KM</div>-->
 
                 <!-- Nombre -->
                 <span class="nombre-box">COPIER MUNDO E.I.R.L</span>
@@ -58,6 +63,7 @@
             <!-- Columna centro: navegación (oculta en móviles) -->
             <div class="header-col header-center hidden-for-sm d-flex justify-content-center">
               <ul class="list-inline mb-0">
+                
                 <!-- Ícono de Home -->
                 <li class="list-inline-item">
                   <a href="/" class="nav-link-custom">
@@ -70,13 +76,29 @@
                   <a href="#" class="nav-link-custom dropdown-toggle" data-bs-toggle="dropdown">
                     <i class="fas fa-caret-right small"></i> PRODUCTOS
                   </a>
+
                   <ul class="dropdown-menu">
+
                     <li><a class="dropdown-item" href="/productos/fotocopiadoras">Fotocopiadoras Multifuncionales Nuevas</a></li>
-                    <li><a class="dropdown-item" href="/productos/fotocopiadoras/impresoras-seminuevas">Fotocopiadoras Multifuncionales Seminuevas</a></li>
+
+                    <!-- SUBMENÚ INTERNO -->
+                    <li class="dropdown-submenu">
+                      <button class="dropdown-item submenu-toggle d-flex justify-content-between align-items-center">
+                        Fotocopiadoras Multifuncionales Seminuevas
+                        <i class="fas fa-chevron-right icon-submenu flecha-submenu"></i>
+                      </button>
+
+                      <ul class="submenu-inner">
+                        <li><a class="dropdown-item" href="/productos/fotocopiadoras/impresoras-color#seccion-color">> Impresoras seminuevas general color/negro</a></li>
+                        <li><a class="dropdown-item" href="/productos/fotocopiadoras/impresoras-color#seccion-color">> Impresoras Seminuevas a Color</a></li>
+                        <li><a class="dropdown-item" href="/productos/fotocopiadoras/impresoras-monocromaticas#seccion-negro">> Impresoras Seminuevas Blanco & Negro</a></li>
+                      </ul>
+                    </li>
+
                     <li><a class="dropdown-item" href="/productos/fotocopiadoras/impresoras-seminuevas-series-8">Fotocopiadoras Multifuncionales Series 8</a></li>
-                    <li><a class="dropdown-item" href="/productos/fotocopiadoras/impresoras-color">Fotocopiadoras Multifuncionales a Color</a></li>
                     <li><a class="dropdown-item" href="/productos/tonerescartuchos">Cartuchos y Recargas Tóner</a></li>
                     <li><a class="dropdown-item" href="/productos/accesoriosoficina">Accesorios para Oficina</a></li>
+
                   </ul>
                 </li>
 
@@ -86,9 +108,10 @@
                     <i class="fas fa-caret-right small"></i> CONSUMIBLES
                   </a>
                   <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/consumibles/papelimpresion">Papel para impresión</a></li>
-                    <li><a class="dropdown-item" href="/consumibles/toneroriginal">Tóner original</a></li>
-                    <li><a class="dropdown-item" href="/consumibles/recargacompatible">Recargas compatibles</a></li>
+                    <li><a class="dropdown-item" href="/consumibles/papelimpresion">Papel de impresion para fotocopiadoras konica minolta</a></li>
+                    <li><a class="dropdown-item" href="/consumibles/tonercartuchocompatiblekonica">Tóner Cartucho Konica Minolta Original</a></li>
+                    <li><a class="dropdown-item" href="/consumibles/tonercartuchocompatiblekyocera">Tóner Cartucho Kyocera Original</a></li>
+                    <li><a class="dropdown-item" href="/consumibles/recargacompatible">Recargas compatibles para equipos</a></li>
                   </ul>
                 </li>
 
@@ -98,14 +121,14 @@
             </div>
 
             <!-- Columna derecha: buscador en móvil, icono y/o opción para escritorio -->  
-            <div class="header-col header-right d-flex align-items-center justify-content-end">
+            <div class="header-col header-right d-flex align-items-center justify-content-end"></div>
 
                 <!-- Icono búsqueda para móviles 
                 <a class="search-toggle d-md-none" aria-label="Search" href="#" style="font-size: 1.2em; margin-right:10px;">
                     <i class="fas fa-search"></i>
                 </a>-->
 
-                <!-- Formulario con diseño estilo "pill" moderno -->
+                <!-- Formulario con diseño estilo "pill" moderno buscador de la pagina principal d-none d-md-block-->
             <div class="search-form-wrapper d-none d-md-block">
                 <form role="search" method="get" action="/buscar" class="form-busqueda form-inline">
                     <div class="input-group pill-search-group">
@@ -144,29 +167,53 @@
             </div>
         </div>
 
+        <!-- 🔹 Contenedor de controles móviles -->
+        <div class="mobile-controls d-flex align-items-center d-md-none">
+          
+          <!-- Botón hamburguesa -->
+          <button class="navbar-toggler" type="button" onclick="toggleMenu()" aria-label="Abrir menú">
+            <i class="fas fa-bars fs-4 text-dark"></i>
+          </button>
 
-        <!-- Botón hamburguesa visible solo en móviles -->
+          <!-- Ícono de lupa (para desplegar el buscador) -->
+          <button class="btn-lupa" id="toggleSearchMobile" aria-label="Buscar">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+
+        <!-- 🔸 Buscador móvil expandible -->
+        <div class="buscador-expandible d-md-none" id="buscadorExpandible">
+          <form role="search" method="get" action="/buscar" class="form-busqueda-movil">
+            <div class="input-group">
+              <input type="text" name="s" class="form-control" placeholder="Buscar..." autocomplete="off">
+              <button class="btn btn-naranja" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <!-- Botón hamburguesa visible solo en móviles 
         <button class="navbar-toggler d-md-none" type="button" onclick="toggleMenu()" aria-label="Abrir menú">
           <i class="fas fa-bars fs-4 text-dark"></i>
-        </button>   
+        </button> -->  
     </header>
 
-        <!-- Menú colapsable para móviles -->
-        <div id="menuMovilOverlay" class="d-md-none position-fixed top-0 end-0 w-75 h-100 bg-white shadow-lg p-3 z-50" style="display: none;">
-            <ul class="list-group text-center">
-                <li class="list-group-item"><a href="/" class="text-dark">Inicio</a></li>
-                <li class="list-group-item"><a href="/productos/fotocopiadoras">Fotocopiadoras nuevas</a></li>
-                <li class="list-group-item"><a href="/productos/fotocopiadoras/impresoras-seminuevas">Fotocopiadoras seminuevas</a></li>
-                <li class="list-group-item"><a href="/productos/fotocopiadoras/impresoras-seminuevas-series-8">Fotocopiadoras seminuevas-series(8)</a></li>
-                <li class="list-group-item"><a href="/productos/fotocopiadoras/impresoras-color">Fotocopiadoras a color</a></li>
-                <li class="list-group-item"><a href="/productos/tonerescartuchos">Tóner y Cartuchos</a></li>
-                <li class="list-group-item"><a href="/productos/accesoriosoficina">Accesorios de oficina</a></li>
-                <li class="list-group-item"><a href="/consumibles/papelimpresion">Papel para impresion</a></li>
-                <li class="list-group-item"><a href="/consumibles/toneroriginal">Tóner Original</a></li>
-                <li class="list-group-item"><a href="/nosotros">Nosotros</a></li>
-                <li class="list-group-item"><a href="/contacto">Contacto</a></li>
-            </ul>
-        </div>
+    <!-- Menú colapsable para móviles -->
+    <div id="menuMovilOverlay" class="d-md-none position-fixed top-0 end-0 w-75 h-100 bg-white shadow-lg p-3 z-50" style="display: none;">
+        <ul class="list-group text-center">
+            <li class="list-group-item"><a href="/" class="text-dark">Inicio</a></li>
+            <li class="list-group-item"><a href="/productos/fotocopiadoras">Fotocopiadoras nuevas</a></li>
+            <li class="list-group-item"><a href="/productos/fotocopiadoras/impresoras-seminuevas">Fotocopiadoras seminuevas</a></li>
+            <li class="list-group-item"><a href="/productos/fotocopiadoras/impresoras-seminuevas-series-8">Fotocopiadoras seminuevas-series(8)</a></li>
+            <li class="list-group-item"><a href="/productos/fotocopiadoras/impresoras-color">Fotocopiadoras a color</a></li>
+            <li class="list-group-item"><a href="/productos/tonerescartuchos">Tóner y Cartuchos</a></li>
+            <li class="list-group-item"><a href="/productos/accesoriosoficina">Accesorios de oficina</a></li>
+            <li class="list-group-item"><a href="/consumibles/papelimpresion">Papel para impresion</a></li>
+            <li class="list-group-item"><a href="/consumibles/toneroriginal">Tóner Original</a></li>
+            <li class="list-group-item"><a href="/nosotros">Nosotros</a></li>
+            <li class="list-group-item"><a href="/contacto">Contacto</a></li>
+        </ul>
+    </div>
 
     <!-- Seccion de la cinta verde de diseño en la cabecera-->
     <div class="cinta-verde">

@@ -1,0 +1,23 @@
+{
+  "producto": "Toner Canon Magenta Recarga de 500 gr",
+  "categoria": "Toner Recargas Compatibles",
+  "marca": "Canon",
+  "modelo": "Polvo de tóner genérico para rellenar cartuchos (compatible con modelos como CRG-054)",
+  "descripcion": "Tóner Canon magenta de 500g es una recarga de polvo de tóner para impresoras láser, con un rendimiento de páginas que puede variar significativamente dependiendo del modelo de impresora y del cartucho",
+
+  "especificaciones": {
+    "Tipo de producto": "Polvo de toner recargable",
+    "Peso": "500 gramos",
+    "Color": "Magenta",
+    "Tecnologia": "Tóner para impresoras láser, compuesto por partículas de plástico y pigmentos que se fijan al papel.",
+    "Origen": "Comúnmente importado de MADE IN USA (en el caso de productos de recarga genéricos).",
+    "Uso": "Rellenar cartuchos de tóner compatibles con los modelos indicados de impresoras konica minolta ",
+    "Rendimiento": "GPR-58 Magenta: ~60.000 páginas. / T02 Magenta: ~43.000 páginas.",
+    "compatibilidad": [
+      "Konica Minolta Bizhub C452 /C552 /C652 (TN 613Y)"
+      
+    ]
+  },
+
+  "imagen": "/static/img/consumibles/TonerRecargaCompatible/TonerCanon-Magenta.png"
+}

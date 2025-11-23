@@ -1,0 +1,32 @@
+{
+  "producto": "Cartucho De Tóner Kyocera TK-3102 (Negro).",
+  "categoria": "Toner Cartucho kyocera Compatible",
+  "marca": "Kyocera",
+  "modelo": "TK-3102",
+  "descripcion": "Estos cartuchos son de tóner negro y tienen un rendimiento de aproximadamente 12.500 páginas con una cobertura del 5%.",
+
+  "especificaciones": {
+    "Tipo de producto": "Cartucho de tóner kyocera original",
+    "Codigo del fabricante": "1T02MS0US0",
+    "Tecnologia de impresion": "Láser Monocromatica",
+    "Color": "Black (Negro)",
+    "Condicion": "Nuevo",
+    "Tipo": "Original",
+    "Unidad": "1pieza(s)",
+    "Uso": "Rellenar cartuchos de tóner compatibles con los modelos indicados de impresoras kyocera monocromatica.",
+    "Rendimiento": "Aproximadamente 12.500 páginas.",
+    "Chip inteligente": "El cartucho incluye un chip que contabiliza las impresiones para un seguimiento preciso.",
+    "compatibilidad": [
+      "Impresora Kyocera FS-2100d",
+      "Impresora Kyocera FS-2100dn",
+      "Impresora Kyocera FS-4100dn",
+      "Impresora Kyocera FS-4200dn",
+      "Impresora Kyocera FS-4300dn",
+      "Impresora Kyocera Ecosys M3040idn",
+      "Impresora Kyocera Ecosys M3540idn"
+      
+    ]
+  },
+
+  "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKyocera/Toner-Cartucho-kyocera-tk3102-black.jpg"
+}

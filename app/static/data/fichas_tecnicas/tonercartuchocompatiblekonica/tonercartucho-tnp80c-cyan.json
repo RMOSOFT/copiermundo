@@ -1,0 +1,24 @@
+{
+  "producto": "TONER KONICA MINOLTA BIZHUB C-3320i (CYAN) TNP80C 220V/60HZ AAJW492",
+  "categoria": "Toner Cartucho Compatible",
+  "marca": "KONICA MINOLTA",
+  "modelo": "TNP-80C AAJW492",
+  "descripcion": "Toner Konica Minolta Tnp80C Bizhub C-3320I CIAN Aajw492 Rendimiento 9,000 paginas",
+
+  "especificaciones": {
+    "Tipo de producto": "Cartucho de tóner original",
+    "Codigo del fabricante": "AAJW192",
+    "Tecnologia de impresion": "Láser",
+    "Color": "Cyan (Cyan)",
+    "Condicion": "Nuevo",
+    "Tipo": "Original",
+    "Uso": "Rellenar cartuchos de tóner compatibles con los modelos indicados de impresoras konica minolta ",
+    "Rendimiento": "Aproximadamente a 9,000 páginas (aproximado, basado en cobertura al 5%)",
+    "compatibilidad": [
+      "Konica Minolta Bizhub C3320i."
+      
+    ]
+  },
+
+  "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-tnp80c-cyan.jpg"
+}

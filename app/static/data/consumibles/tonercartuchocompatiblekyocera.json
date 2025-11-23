@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "nombre": "Toner Kyocera TK-1175 (Negro).",
+    "tipo": "TK-1175",
+    "precio": "135.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKyocera/Toner-Cartucho-kyocera-tk1175-black.jpg",
+    "categoria": "tonercartuchocompatiblekyocera",
+    "archivo_ficha": "tonercartucho-tk1175-black.json"
+  },
+  {
+    "id": 2,
+    "nombre": "Cartucho De Tóner Kyocera TK-3102 (Negro).",
+    "tipo": "TK-3102",
+    "precio": "130.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKyocera/Toner-Cartucho-Kyocera-tk3102-black.jpg",
+    "categoria": "tonercartuchocompatiblekyocera",
+    "archivo_ficha": "tonercartucho-tk3102-black.json"
+  },
+  {
+    "id": 3,
+    "nombre": "Toner Cartucho Kyocera TK-3182 (Negro).",
+    "tipo": "TK-3182",
+    "precio": "130.00",
+    "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKyocera/Toner-Cartucho-Kyocera-tk3182-black.jpg",
+    "categoria": "tonercartuchocompatiblekyocera",
+    "archivo_ficha": "tonercartucho-tk3182-black.json"
+  }
+]
+
+

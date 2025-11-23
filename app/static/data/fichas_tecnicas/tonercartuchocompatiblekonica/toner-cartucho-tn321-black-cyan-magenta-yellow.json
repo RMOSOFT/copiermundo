@@ -1,0 +1,27 @@
+{
+  "producto": "Cartucho de tóner de Color TN-321, Compatible con Konica Minolta Bizhub C224 C284 C364 C224e C284e C364e 7822 7828, polvo CMYK.",
+  "categoria": "Toner Cartucho Compatible",
+  "marca": "KONICA MINOLTA",
+  "modelo": "TN-321",
+  "descripcion": "Kit Los cartuchos de tóner compatibles Konica Minolta TN-216 y TN-319 están ampliamente disponibles a través de varios minoristas en línea, y son compatibles con las impresoras Konica Minolta Bizhub C220, C280, C360, y C7722/C7728.",
+
+  "especificaciones": {
+    "Tipo de producto": "Cartucho de tóner original",
+    "Codigo del fabricante": "TN-321",
+    "Tecnologia de impresion": "Láser",
+    "Color": "Black, Cyan, Magenta, Yellow.",
+    "Condicion": "Nuevo",
+    "Tipo": "Original",
+    "¿Qué incluye en la caja?": "Kit de tóner Konica Minolta TN-319",
+    "Unidad": "4pieza(s)",
+    "Uso": "Rellenar cartuchos de tóner compatibles con los modelos indicados de impresoras konica minolta ",
+    "Rendimiento Negro": "29,000 páginas (cobertura de papel A4 5%).",
+    "Rendimiento Cian amarillo Magenta": "26,000 páginas (cobertura de papel A4 5%)",
+    "compatibilidad": [
+      "Para impresoras Konica Minolta Bizhub C220, C280, C360, y C7722/C7728."
+      
+    ]
+  },
+
+  "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Kit-toner-cartucho-tn321-black-cyan-magenta-yellow.png"
+}

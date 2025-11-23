@@ -4,6 +4,37 @@
 {% block content %}
 
 <section>
+    <!-- ============================
+     WIDGET WHATSAPP MODERNO
+    =============================== -->
+    <div id="wsp-widget" class="wsp-widget hidden">
+
+        <!-- Tarjeta del mensaje -->
+        <div class="wsp-box">
+            <div class="wsp-header">
+                <img id="wsp-img" src="/static/img/icons/agent-general.png" alt="agente">
+                <span class="wsp-title" id="wsp-title">Soporte General</span>
+
+                <button id="wsp-close" class="wsp-close">
+                    ×
+                </button>
+            </div>
+
+            <div class="wsp-message" id="wsp-message">
+                Hola 👋 ¿En qué podemos ayudarte?
+            </div>
+
+            <a id="wsp-btn" target="_blank" class="wsp-btn">
+                Abrir chat <i class="fas fa-paper-plane"></i>
+            </a>
+        </div>
+
+        <!-- Botón flotante -->
+        <div id="wsp-bubble" class="wsp-bubble">
+            <img src="/static/img/icons/whatsapp-1.png" alt="WhatsApp">
+        </div>
+    </div>
+
     <!-- Breadcrumb + Título -->
     <div class="bg-gray-100 py-3 px-4 mb-4 rounded">
         <nav class="text-sm text-gray-600">
@@ -87,10 +118,14 @@
     <div class="md:w-2/3 border-r md:pr-8">
       <h2 class="text-xl font-bold text-blue-800 mb-4">ACERCA DE COPIER MUNDO</h2>
       <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-        Copier mundo es una empresa reconocida a nivel nacional
+        Copier mundo es una empresa orgullosamente cusqueña, peru 
+        Con una trayectoria de mas de 15 años en el mercado , ofreciendo equipos multifuncionales , fotocopiadoras , impresoras , plotter  y equipos de oficina en general. 
+        Recibiendo el reconocimiento  por diferentes empresas , por nuestro cualidades y virtual en nuestra forma de trabajo. 
       </p>
       <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-        Copier mundo de EE.UU es representante en México e importador de la marca KONICA MINOLTA desde el año 1999. Iniciamos con los equipos MINOLTA-QMS con la línea MAGICOLOR y PAGEPRO.
+        
+        Nos destacamos por la calidad de nuestro servicio y por una forma de trabajar basada en la excelencia, la innovación y la atención al cliente. Este compromiso ha sido reconocido por diversas empresas que valoran nuestra profesionalidad y eficiencia.
+
       </p>
       <p class="text-gray-600 text-sm leading-relaxed">
         Contamos con un muy amplio y permanente stock de equipos, consumibles y refacciones además de personal técnico certificado y calificado para la atención de los productos KONICA MINOLTA.
@@ -110,61 +145,74 @@
   </div>
 </section>
 
-<section class="container py-5">
-    <!-- Título central con líneas -->
-    <div class="d-flex align-items-center justify-content-center mb-5">
-        <hr class="flex-grow-1 border-secondary" />
-        <h2 class="titulo-valores px-3">VALORES DE EMPRESA</h2>
-        <hr class="flex-grow-1 border-secondary" />
-    </div>
-
-    <!-- Cuadrícula de valores -->
-    <div class="row text-center gy-4">
-
-        <!-- Valor: Eficiencia -->
-        <div class="col-12 col-sm-6 col-md-3">
-            <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
-                <i class="fas fa-star text-white"></i>
-            </div>
-            <h5 class="text-primary fw-bold mb-2">Eficiencia</h5>
-            <p class="small text-muted">
-            Productos que aumentan la productividad con soluciones multifuncionales que ahorran tiempo y recursos.
-            </p>
+<!-- Cuarta cinta propaganda para tuners y otros-->
+<section class="w-100">
+    <a href="/producto/impresoras">
+        <div class="container-fluid p-0">
+            <img src="{{ url_for('static', path='img/ImgCabecera5.jpg') }}" class="img-fluid w-100" style="max-height: 300px; object-fit: cover;" alt="Banner Promocional Copier Mundo">
         </div>
-
-        <!-- Valor: Orientación al cliente -->
-        <div class="col-12 col-sm-6 col-md-3">
-            <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
-                <i class="fas fa-handshake text-white"></i>
-            </div>
-            <h5 class="text-primary fw-bold mb-2">Orientación al cliente</h5>
-            <p class="small text-muted">
-            Atención personalizada con equipos adecuados y un servicio postventa eficiente.
-            </p>
-        </div>
-
-        <!-- Valor: Durabilidad -->
-        <div class="col-12 col-sm-6 col-md-3">
-            <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
-                <i class="fas fa-chess-rook text-white"></i>
-            </div>
-            <h5 class="text-primary fw-bold mb-2">Durabilidad</h5>
-            <p class="small text-muted">
-                Equipos de calidad con rendimiento constante y una vida útil prolongada.
-            </p>
-        </div>
-
-        <!-- Valor: Responsabilidad Social -->
-        <div class="col-12 col-sm-6 col-md-3">
-            <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
-                <i class="fas fa-seedling text-white"></i>
-            </div>
-            <h5 class="text-primary fw-bold mb-2">Responsabilidad Social</h5>
-            <p class="small text-muted">
-            Promovemos el uso de insumos reciclables y tecnologías con bajo impacto ambiental.
-            </p>
-        </div>
-  </div>
+    </a> 
 </section>
 
+<!-- Sección 2 con fondo tecnológico -->
+<div id="fondo-tecnologia-valores">
+    <section class="seccion-tecnologica-valores container py-5">
+        <!-- Título central con líneas -->
+        <div class="d-flex align-items-center justify-content-center mb-5">
+            <hr class="flex-grow-1 border-secondary" />
+            <h2 class="titulo-valores px-3">NUESTROS VALORES</h2>
+            <hr class="flex-grow-1 border-secondary" />
+        </div>
+
+        <!-- Cuadrícula de valores -->
+        <div class="row text-center gy-4">
+
+            <!-- Valor: Eficiencia -->
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
+                    <i class="fas fa-star text-white"></i>
+                </div>
+                <h5 class="text-primary fw-bold mb-2">Eficiencia</h5>
+                <p class="small text-muted">
+                Productos que aumentan la productividad con soluciones multifuncionales que ahorran tiempo y recursos.
+                </p>
+            </div>
+
+            <!-- Valor: Orientación al cliente -->
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
+                    <i class="fas fa-handshake text-white"></i>
+                </div>
+                <h5 class="text-primary fw-bold mb-2">Orientación al cliente</h5>
+                <p class="small text-muted">
+                    Atención personalizada con equipos adecuados y un servicio postventa eficiente.
+                </p>
+            </div>
+
+            <!-- Valor: Durabilidad -->
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
+                    <i class="fas fa-chess-rook text-white"></i>
+                </div>
+                <h5 class="text-primary fw-bold mb-2">Durabilidad</h5>
+                <p class="small text-muted">
+                    Equipos de calidad con rendimiento constante y una vida útil prolongada.
+                </p>
+            </div>
+
+            <!-- Valor: Responsabilidad Social -->
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
+                    <i class="fas fa-seedling text-white"></i>
+                </div>
+                <h5 class="text-primary fw-bold mb-2">Responsabilidad Social</h5>
+                <p class="small text-muted">
+                    Promovemos el uso de insumos reciclables y tecnologías con bajo impacto ambiental.
+                </p>
+            </div>
+        </div>
+    </section>
+</div>
+
 {% endblock %}
+

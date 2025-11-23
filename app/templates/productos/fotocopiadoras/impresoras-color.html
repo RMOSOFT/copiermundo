@@ -2,11 +2,29 @@
 
 
 {% block content %}
+<!-- 💬 BOTÓN WHATSAPP FLOTANTE -->
+<div id="whatsapp-float-container">
+    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! 👋 Estoy interesado en una COTIZACIÓN con Copier Mundo."
+       class="whatsapp-flotante" target="_blank" title="Estamos en línea">
+        <img src="{{ url_for('static', path='img/icons/whatsapp-1.png') }}" alt="WhatsApp"/>
+        <!-- 🟢 Estado en línea con animación -->
+        <div class="estado-linea">
+            <span class="punto-verde"></span>
+            En línea
+        </div>
+
+        <!-- Texto principal -->
+        <span>Solicitar <strong>COTIZACIÓN</strong></span>
+    </a>
+</div>
+
+
+
 <div class="relative w-full h-32 sm:h-40 md:h-40 lg:h-44 xl:h-48">
     <img alt="Impresora en fondo oscuro con pantalla y bandejas" class="w-full h-full object-cover" height="288" src="{{ url_for('static', path='img/productos-fotocopiadoras/img-color.png') }}" width="1930"/>
     <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-10 flex items-center justify-between px-6 sm:px-10 md:px-16">
         <h1 class="text-white text-xl sm:text-2xl md:text-3xl font-normal">
-            IMPRESORAS A COLOR
+            IMPRESORAS MULTIFUNCIONALES A COLOR
         </h1>
         <a class="text-white text-xs sm:text-sm md:text-base flex items-center gap-1 hover:underline" href="/productos/fotocopiadoras">
             <i class="fas fa-chevron-left text-xs">
@@ -14,6 +32,15 @@
             Volver a página anterior
         </a>
     </div>
+</div>
+
+<div class="text-center my-4">
+    <a href="/productos/fotocopiadoras/impresoras-color#seccion-color" class="btn btn-primary me-2">
+        💙 Seminuevas a Color
+    </a>
+    <a href="/productos/fotocopiadoras/impresoras-monocromaticas#seccion-negro" class="btn btn-dark">
+        🖤 Seminuevas en Blanco & Negro
+    </a>
 </div>
 
 <main class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6">
@@ -67,31 +94,20 @@
                             <span class="flex items-center gap-2">
                                 <i class="fas fa-chevron-right text-xs">
                                 </i>
-                                IMPRESORAS MULTIFUNCIONALES SEMINUEVAS-SERIES(8)
+                                IMPRESORAS MULTIFUNCIONALES SEMINUEVAS SERIES(8)
                             </span>
                             <span class="text-gray-400">
                                 (5)
                             </span>
                         </li>
                     </a>
-                    <a href="/productos/tonerescartuchos">
-                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
-                            <span class="flex items-center gap-2">
-                                <i class="fas fa-chevron-right text-xs">
-                                </i>
-                                RECARGAS TONERS Y CARTUCHOS
-                            </span>
-                            <span class="text-gray-400">
-                                (4)
-                            </span>
-                        </li>
-                    </a>
+                    
                     <a href="/productos/fotocopiadoras/impresoras-color">
                         <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
                             <span class="flex items-center gap-2">
                                 <i class="fas fa-chevron-right text-xs">
                                 </i>
-                                IMPRESORAS A COLOR
+                                IMPRESORAS MULTIFUNCIONALES A COLOR
                             </span>
                             <span class="text-gray-400">
                                 (4)
@@ -103,7 +119,7 @@
                             <span class="flex items-center gap-2">
                                 <i class="fas fa-chevron-right text-xs">
                                 </i>
-                                IMPRESORAS MONOCROMÁTICAS
+                                IMPRESORAS MULTIFUNCIONALES A NEGRO MONOCROMÁTICAS
                             </span>
                             <span class="text-gray-400">
                                 (4)
@@ -131,6 +147,18 @@
                             </span>
                             <span class="text-gray-400">
                                 (8)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/tonerescartuchos">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                RECARGAS TONERS Y CARTUCHOS
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
                             </span>
                         </li>
                     </a>
@@ -260,8 +288,8 @@
                 </nav>
             </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                <article class="text-center text-xs sm:text-sm">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 grid-left-adjust">
+                <article class="text-center text-xs sm:text-sm producto-card">
                     <button  
                         onclick="mostrarDetallesProducto(
                         'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB c3321i',
@@ -272,13 +300,26 @@
                         RESOLUCION DE IMPRESION: 1200 x 1200 ppp. GARANTIA DE FABRICA: 12 meses on-site. CICLO DE TRABAJO MENSUAL RECOMENDADO: 6500 páginas. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/02/2025. Fecha de último estado: 13/02/2025.`,
                         '/static/pdf/bizhubC3321i.pdf'
                         )">
-                        <img src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c3321i.jpg') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer" />
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-BIZHUB-C3321i">
+                            <img src="{{ url_for('static', path='img/productos-fotocopiadoras-color/Konica-minolta-bizhub-C3321i-color.png') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer" />
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-fotocopiadoras-color">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C3321i de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
                     </button>
-                    <h3 class="mb-1 leading-tight">
-                        BIZHUB-C3321i: Impresora laser multifunción color A4, Color y blanco y negro, formatos de papel A6-A4 y tamaño personalizado.
-                    </h3>
-                    <p class="font-bold text-base sm:text-lg">
-                        S/ 7,925.40
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-fotocopiadoras-color">Fotocopiadora Multifuncional BIZHUB-C3321i</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
                     </p>
                     <button onclick="mostrarDetallesProducto(
                         'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB c3321i',
@@ -289,11 +330,11 @@
                             RESOLUCION DE IMPRESION: 1200 x 1200 ppp. GARANTIA DE FABRICA: 12 meses on-site. CICLO DE TRABAJO MENSUAL RECOMENDADO: 6500 páginas. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/02/2025. Fecha de último estado: 13/02/2025.`,
                           
                         '/static/pdf/bizhubC3321i.pdf'
-                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c3321i">Ver detalles
+                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c3321i">Ver detalles
                     </button>
                 </article>
 
-                <article class="text-center text-xs sm:text-sm">
+                <article class="text-center text-xs sm:text-sm producto-card">
                     <button onclick="mostrarDetallesProducto(
                       'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C266i',
                       'Es una impresora láser a color con una velocidad de impresión de 26 páginas por minuto tanto en blanco y negro como a color. Incluye funciones de escaneo, copiado y conectividad Wi-Fi, Ethernet y USB..',
@@ -302,13 +343,26 @@
                       `MARCA: KONICA MINOLTA. MODELO: BIZHUB C226i. VELOCIDAD MONOCROMATICA: 36 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA MAXIMA: 6 GB. MEMORIA INTERNA: 6 GB AALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. TIPO: T/COLOR. COMPONENTES: CD con software, cable de poder, manual. DUPLEX AUTOMATICO(DA): Si. RESOLUCION DE CAPTURA:  600 ppp. RESOLUCION DE IMPRESION: 600x600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 16000 pg. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
                       '/static/pdf/bizhubC266i.pdf'
                         )">
-                        <img alt="Impresora negra cuadrada Konica Minolta vista frontal" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c266i.jpg') }}"/>
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-BIZHUB-C266i">
+                            <img alt="Impresora negra cuadrada Konica Minolta vista frontal" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras-color/Konica-minolta-bizhub-c266i-color.jpg') }}"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-fotocopiadoras-color">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C266i de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
                     </button>
-                    <h3 class="mb-1 leading-tight">
-                        BIZHUB C266i: Impresora laser multifunción a color con una velocidad de impresión de 26 páginas por minuto.
-                    </h3>
-                    <p class="font-bold text-base sm:text-lg">
-                        S/ 18,149.46
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-fotocopiadoras-color">Fotocopiadora Multifuncional BIZHUB-C266i</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
                     </p>
                     <button onclick="mostrarDetallesProducto(
                         'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C266i',
@@ -317,11 +371,11 @@
                         'S/ 18,149.46',
                         `MARCA: KONICA MINOLTA. MODELO: BIZHUB C226i. VELOCIDAD MONOCROMATICA: 36 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA MAXIMA: 6 GB. MEMORIA INTERNA: 6 GB AALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. TIPO: T/COLOR. COMPONENTES: CD con software, cable de poder, manual. DUPLEX AUTOMATICO(DA): Si. RESOLUCION DE CAPTURA:  600 ppp. RESOLUCION DE IMPRESION: 600x600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 16000 pg. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
                         '/static/pdf/bizhubC266i.pdf'
-                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c266i">Ver detalles
+                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c266i">Ver detalles
                     </button>
                 </article>
 
-                <article class="text-center text-xs sm:text-sm">
+                <article class="text-center text-xs sm:text-sm producto-card">
                     <button onclick="mostrarDetallesProducto(
                       'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C451i',
                       'Impresora multifuncional Velocidad de Impresión: Rápida producción de documentos a 45 ppm en color y B/N. Calidad de Imagen: Impresiones nítidas y vibrantes gracias a su alta resolución de 1200 x 1200 dpi. Funcionalidad Avanzada: Incluye impresión, copia, escaneo y fax con alimentación de papel flexible desde A6 hasta SRA3.',
@@ -330,13 +384,26 @@
                       `MARCA: KONICA MINOLTA. MODELO: BIZHUB C451i. VELOCIDAD MONOCROMATICA: 45 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Indidual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 40000 pg. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha de publicación: 13/08/2024. Fecha de último estado: 23/10/2024.`,
                       '/static/pdf/bizhubC451i.pdf'
                         )">
-                        <img alt="Impresora Konica Minolta blanca y negra con pantalla táctil" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c451i.jpg') }}"/>
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-BIZHUB-C451i">
+                            <img alt="Impresora Konica Minolta blanca y negra con pantalla táctil" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras-color/Konica-minolta-bizhub-c451i-color.jpg') }}"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-fotocopiadoras-color">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C451i de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
                     </button>
-                    <h3 class="mb-1 leading-tight">
-                        Bizhub c451i: Impresora multifuncion laser Velocidad: Rápida producción de documentos a 45 ppm en color y B/N.
-                    </h3>
-                    <p class="font-bold text-base sm:text-lg">
-                        S/ 35,501.50
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-fotocopiadoras-color">Fotocopiadora Multifuncional BIZHUB-C451i</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
                     </p>
                     <button onclick="mostrarDetallesProducto(
                         'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB c451i',
@@ -345,11 +412,11 @@
                         'S/ 35,501.50',
                         `MARCA: KONICA MINOLTA. MODELO: BIZHUB C451i. VELOCIDAD MONOCROMATICA: 45 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Indidual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 40000 pg. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha de publicación: 13/08/2024. Fecha de último estado: 23/10/2024.`,
                         '/static/pdf/bizhubC451i.pdf'
-                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c451i">Ver detalles
+                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c451i">Ver detalles
                     </button>
                 </article>
 
-                <article class="text-center text-xs sm:text-sm">
+                <article class="text-center text-xs sm:text-sm producto-card">
                     <button onclick="mostrarDetallesProducto(
                       'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C551i',
                       'Alimentador Dual Scan. Capacidad de papel de 500 + 500 hojas y 150 en entrada manual. Tamaños desde A6 a SRA3, carteles de 1,2 m y de 52 a 300 gr. 8 GB de memoria, disco duro de 256 GB y estándar Gigabit Ethernet.',
@@ -358,13 +425,26 @@
                       `MARCA: KONICA MINOLTA. MODELO: BIZHUB C551i. VELOCIDAD MONOCROMATICA: 55 ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 45000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/10/2024. Fecha de último estado: 23/10/2024.`,
                       '/static/pdf/bizhubC551i.pdf'
                         )">
-                        <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-C551i.jpg') }}"/>
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-BIZHUB-C551i">
+                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras-color/Konica-minolta-bizhub-C551i-color.jpg') }}"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-fotocopiadoras-color">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C551i de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
                     </button>
-                    <h3 class="mb-1 leading-tight">
-                        Bizhub C551i: Impresora multifuncion laser monocromatica alimentador Dual Scan. Capacidad de papel de 500 + 500 hojas.
-                    </h3>
-                    <p class="font-bold text-base sm:text-lg">
-                        S/ 38,106.30
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-fotocopiadoras-color">Fotocopiadora Multifuncional BIZHUB-C551i</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
                     </p>
                     <button onclick="mostrarDetallesProducto(
                       'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C551i',
@@ -373,7 +453,7 @@
                       'S/ 38,106.30',
                       `MARCA: KONICA MINOLTA. MODELO: BIZHUB C551i. VELOCIDAD MONOCROMATICA: 55 ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 45000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/10/2024. Fecha de último estado: 23/10/2024.`,
                       '/static/pdf/bizhubC551i.pdf'
-                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c551i">Ver detalles
+                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c551i">Ver detalles
                     </button>
                 </article>
             </div>

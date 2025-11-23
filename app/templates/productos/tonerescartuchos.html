@@ -2,9 +2,40 @@
 {% extends "index.html" %}
 
 {% block content %}
+<!-- 💬 BOTÓN WHATSAPP FLOTANTE -->
+<div id="whatsapp-float-container">
+    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! 👋 Estoy interesado en una COTIZACIÓN con Copier Mundo."
+       class="whatsapp-flotante" target="_blank" title="Estamos en línea">
+        <img src="{{ url_for('static', path='img/icons/whatsapp-1.png') }}" alt="WhatsApp"/>
+        <!-- 🟢 Estado en línea con animación -->
+        <div class="estado-linea">
+            <span class="punto-verde"></span>
+            En línea
+        </div>
+
+        <!-- Texto principal -->
+        <span>Solicitar <strong>COTIZACIÓN</strong></span>
+    </a>
+</div>
+
 <!-- Header with background image and text -->
-<div class="relative w-full h-32 sm:h-40 md:h-40 lg:h-44 xl:h-48">
-    <img alt="Impresora en fondo oscuro con pantalla y bandejas" class="w-full h-full object-cover" height="288" src="{{ url_for('static', path='img/productos-tuners/img-cinta-toners.png') }}" width="1930"/>
+<div class="text-center my-0 banner-consumibles-wrapper">
+    <img alt="Impresora en fondo oscuro con pantalla y bandejas" class="img-fluid banner-consumibles" alt="Consumibles" src="{{ url_for('static', path='img/productos-tuners/Cinta-toneres-konica-minolta-1.jpg') }}"/>
+
+    <!-- Burbujas Temáticas -->
+    <div class="burbujas">
+        <span class="b1"></span>
+        <span class="b2"></span>
+        <span class="b3"></span>
+        <span class="b4"></span>
+        <span class="b5"></span>
+        <span class="b6"></span>
+        <span class="b7"></span>
+        <span class="b8"></span>
+        <span class="b9"></span>
+        <span class="b10"></span>
+    </div>
+
     <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-10 flex items-center justify-between px-6 sm:px-10 md:px-16">
         <h1 class="text-white text-xl sm:text-2xl md:text-3xl font-normal">
             PRODUCTOS TONERES
@@ -76,18 +107,7 @@
                             </span>
                         </li>
                     </a>
-                    <a href="/productos/tonerescartuchos">
-                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
-                            <span class="flex items-center gap-2">
-                                <i class="fas fa-chevron-right text-xs">
-                                </i>
-                                RECARGAS TONERS Y CARTUCHOS
-                            </span>
-                            <span class="text-gray-400">
-                                (4)
-                            </span>
-                        </li>
-                    </a>
+                    
                     <a href="/productos/fotocopiadoras/impresoras-color">
                         <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
                             <span class="flex items-center gap-2">
@@ -121,6 +141,18 @@
                             </span>
                             <span class="text-gray-400">
                                 (8)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/tonerescartuchos">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                RECARGAS TONERS Y CARTUCHOS
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
                             </span>
                         </li>
                     </a>
@@ -251,268 +283,236 @@
             </div>
 
             <!-- Desde aqui son los productos que hay para todo tipo de toneres y cartuchos -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                <article class="text-center text-xs sm:text-sm">
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 grid-left-adjust">
+
+                <!-- Seccion de productos de Cartuchos y recargas toners -->
+
+                <article class="text-center text-xs sm:text-sm producto-card">
                     <button onclick="mostrarDetallesProducto(
-                      'MARCA: SHARP. MODELO: TONER SHARP MX-75NTYA. COLOR: AMARILLO',
-                      'Cartucho de Toner Konica Minolta TN-223Y original de color Yellow con rendimiento de 1.300 páginas de impresión.',
-                      'img/productos-tuners/Tuners-color-amarillo.jpg',
-                      'S/ 595.00',
-                      `MARCA: SHARP. MODELO: TONER SHARP MX-75NTYA. 
-                        COLOR: AMARILLO. SISTEMA DE MANEJO DE RAEE: Individual.
-                          RENDIMIENTO: 60000 pg.
-                          UNIDAD: CAJA X 01 UNIDAD. 
-                          EMPAQUE DE FABRICA: EN: CAJA. NRO PARTE: MX-75NTYA. Fecha de publicación: 14/08/2021. Fecha de último estado: 23/10/2024.`,
-                      '/static/pdf/pdf-toners/TonerTN223Y.pdf'
-                    )">
-                        <img src="{{ url_for('static', path='img/productos-tuners/Tuners-color-amarillo.jpg') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer"/>
+                        'KONICA MINOLTA BIZHUB-C3320I TNP-80K ORIGINAL.',
+                        'El tóner original Konica Minolta TNP-80 es un consumible diseñado para la impresora multifuncional a color bizhub C3320i. A continuación, se detallan las especificaciones y características de los cartuchos TNP-80 en sus diferentes colores.',
+                        'img/productos-tuners/Toner-negro-cartucho.jpeg',
+                        'S/ 333.00',
+                        `MARCA: Konica Minolta. MODELO: TNP-80k. 
+                        COLOR: Negro. Condición: Nuevo. Codigo: Aajw192. Compatibilidad: Bizhub C-3320I. Rendimiento: 13,500 páginas.`,
+                        '/static/pdf/pdf-toners/Toner-negro-TNP-80K.pdf'
+                        )">
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-toner-negro">
+                            <img src="{{ url_for('static', path='img/productos-tuners/Toner-negro-cartucho.jpeg') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-toneres">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la Toner negro TNP-80K de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
                     </button>
-                    <h3 class="mb-1 leading-tight">
-                        Toner-color-amarillo: Cartucho de Toner Konica Minolta TN-223Y original de color Yellow con rendimiento de 1.300 páginas.
-                    </h3>
-                    <p class="font-bold text-base sm:text-lg">
-                        S/ 595.00
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-toneres">Toner bizhub-C3320I TNP-80k</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
                     </p>
+
+                    <p class="font-bold text-base sm:text-lg"></p>
+
                     <button onclick="mostrarDetallesProducto(
-                      'MARCA: SHARP. MODELO: TONER SHARP MX-75NTYA. COLOR: AMARILLO',
-                      'Cartucho de Toner Konica Minolta TN-223Y original de color Yellow con rendimiento de 1.300 páginas de impresión.',
-                      'img/productos-tuners/Tuners-color-amarillo.jpg',
-                      'S/ 595.00',
-                      `MARCA: SHARP. MODELO: TONER SHARP MX-75NTYA. 
-                        COLOR: AMARILLO. SISTEMA DE MANEJO DE RAEE: Individual.
-                          RENDIMIENTO: 60000 pg.
-                          UNIDAD: CAJA X 01 UNIDAD. 
-                          EMPAQUE DE FABRICA: EN: CAJA. NRO PARTE: MX-75NTYA. Fecha de publicación: 14/08/2021. Fecha de último estado: 23/10/2024.`,
-                      
-                      '/static/pdf/pdf-toners/TonerTN223Y.pdf'
-                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="TONER-AMARILLO" >Ver detalles
+                      'KONICA MINOLTA BIZHUB-C3320I TNP-80K ORIGINAL.',
+                      'El tóner original Konica Minolta TNP-80 es un consumible diseñado para la impresora multifuncional a color bizhub C3320i. A continuación, se detallan las especificaciones y características de los cartuchos TNP-80 en sus diferentes colores.',
+                      'img/productos-tuners/Toner-negro-cartucho.jpeg',
+                      'S/ 333.00',
+                      `MARCA: Konica Minolta. MODELO: TNP-80k. 
+                        COLOR: Negro. Condición: Nuevo. Codigo: Aajw192. Compatibilidad: Bizhub C-3320I. Rendimiento: 13,500 páginas.`,
+                      '/static/pdf/pdf-toners/Toner-negro-TNP-80K.pdf'
+                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="Toner-negro-TNP-80K" >Ver detalles
                     </button>
                 </article>
 
-                <article class="text-center text-xs sm:text-sm">
+                <article class="text-center text-xs sm:text-sm producto-card">
                     <button onclick="mostrarDetallesProducto(
-                      'MARCA: DENSITONE PREMIUM. MODELO: TN220C. COLOR: CIAN.',
-                      'El Tóner Konica Minolta TN-220C tiene un rendimiento excelente si se trata de impresiones de calidad, la cual te rinde para 11,000 páginas de impresión aproximadamente, este cartucho TN-220C viene con insumo tecnológico de color Cyan la cual ayuda a mantener su impresora en óptimas condiciones, para su rendimiento',
-                      'img/productos-tuners/Tuners-color-cian.jpg',
-                      'S/ 217.00',
-                      `MARCA: DENSITONE PREMIUM. MODELO: TN220C. 
-                        COLOR: CIAN. SISTEMA DE MANEJO DE RAEE: Individual.
-                          RENDIMIENTO: 26000 pg.
-                          UNIDAD: CAJA X 01 UNIDAD. 
-                          EMPAQUE DE FABRICA: EN: CAJA. NRO PARTE: T-BHC221/281C. Fecha de publicación: 13/10/2020. Fecha de último estado: 21/11/2024.`,
-                      '/static/pdf/pdf-toners/TonerTN220C.pdf'
+                        'KONICA MINOLTA BIZHUB-367 TN-323 ORIGINAL.',
+                        'El tóner Konica Minolta TN-323 es un cartucho negro para la Bizhub 367, Bizhub 227 y 287, con una tecnología de impresión láser monocromática y un rendimiento de hasta 23,000 páginas con una cobertura del 5%.',
+                        'img/productos-tuners/Toner-konica-minolta-bizhub-367-tn-323.jpg',
+                        'S/ 370.00',
+                        `MARCA: Konica Minolta. MODELO: TNP-323. COLOR: Negro. Codigo de Fabricante: A87M090. Tecnologia de Impresión: Láser monocromática. Rendimiento: Hasta 23,000 páginas(con cobertura del 5%). Compatibilidad: Konica Minolta Bizhub 227,287 y 367. Tipo de Cartucho: Tóner original.`,
+                        '/static/pdf/pdf-toners/Toner-negro-tn-323.pdf'
                         )">
-                        <img alt="Impresora negra cuadrada Konica Minolta vista frontal" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-tuners/Tuners-color-cian.jpg') }}"/>
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-toner-negro-323">
+                            <img src="{{ url_for('static', path='img/productos-tuners/Toner-konica-minolta-bizhub-367-tn-323.jpg') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-toneres">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la Toner negro Toner konica minolta bizhub 367 tn-323 de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
                     </button>
-                    <h3 class="mb-1 leading-tight">
-                        Toner-color-cian: El Tóner Konica Minolta TN-220C tiene un rendimiento excelente si se trata de impresiones de calidad.
-                    </h3>
-                    <p class="font-bold text-base sm:text-lg">
-                        S/ 217.00 
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-toneres">Toner km bizhub-367 tn-323</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
                     </p>
+
+                    <p class="font-bold text-base sm:text-lg"></p>
+
                     <button onclick="mostrarDetallesProducto(
-                      'MARCA: DENSITONE PREMIUM. MODELO: TN220C. COLOR: CIAN.',
-                      'El Tóner Konica Minolta TN-220C tiene un rendimiento excelente si se trata de impresiones de calidad, la cual te rinde para 11,000 páginas de impresión aproximadamente, este cartucho TN-220C viene con insumo tecnológico de color Cyan la cual ayuda a mantener su impresora en óptimas condiciones, para su rendimiento',
-                      'img/productos-tuners/Tuners-color-cian.jpg',
-                      'S/ 217.00',
-                      `MARCA: DENSITONE PREMIUM. MODELO: TN220C. 
-                        COLOR: CIAN. SISTEMA DE MANEJO DE RAEE: Individual.
-                          RENDIMIENTO: 26000 pg.
-                          UNIDAD: CAJA X 01 UNIDAD. 
-                          EMPAQUE DE FABRICA: EN: CAJA. NRO PARTE: T-BHC221/281C. Fecha de publicación: 13/10/2020. Fecha de último estado: 21/11/2024.`,
-                      
-                      '/static/pdf/pdf-toners/Toner-TN220C.pdf'
-                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="TONER-CIAN">Ver detalles
+                      'KONICA MINOLTA BIZHUB-367 TN-323 ORIGINAL.',
+                        'El tóner Konica Minolta TN-323 es un cartucho negro para la Bizhub 367, Bizhub 227 y 287, con una tecnología de impresión láser monocromática y un rendimiento de hasta 23,000 páginas con una cobertura del 5%.',
+                        'img/productos-tuners/Toner-konica-minolta-bizhub-367-tn-323.jpg',
+                        'S/ 370.00',
+                        `MARCA: Konica Minolta. MODELO: TNP-323. COLOR: Negro. Codigo de Fabricante: A87M090. Tecnologia de Impresión: Láser monocromática. Rendimiento: Hasta 23,000 páginas(con cobertura del 5%). Compatibilidad: Konica Minolta Bizhub 227,287 y 367. Tipo de Cartucho. Tóner original.`,
+                        '/static/pdf/pdf-toners/Toner-negro-tn-323.pdf'
+                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="Toner-negro-tn-323" >Ver detalles
                     </button>
                 </article>
 
-                <article class="text-center text-xs sm:text-sm">
+                <article class="text-center text-xs sm:text-sm producto-card">
                     <button onclick="mostrarDetallesProducto(
-                      'MARCA: DENSITONE PREMIUM. MODELO: TN220M. COLOR: MAGENTA',
-                      'Utiliza suministros originales de Konica Minolta, obtendrás colores vibrantes, textos nítidos, líneas finas y una salida consistente, página tras página.',
-                      'img/productos-tuners/Tuners-color-magenta.jpg',
-                      'S/ 610.98',
-                      `MARCA: DENSITONE PREMIUM. MODELO: TN220M. 
-                        COLOR: MAGENTA. SISTEMA DE MANEJO DE RAEE: Individual.
-                          RENDIMIENTO: 26000 pg.
-                          UNIDAD: CAJA X 01 UNIDAD. 
-                          EMPAQUE DE FABRICA: EN: CAJA. NRO PARTE: T-BHC221/281M. Fecha de publicación: 13/10/2020. Fecha de último estado: 21/11/2024.`,
-                      '/static/pdf/pdf-toners/TonerTN220M.pdf'
+                        'KONICA MINOLTA KYOCERA TONER TK-1175 ORIGINAL.',
+                        'El tóner Kyocera TK-1175 es un cartucho de tóner monocromático original diseñado para impresoras láser Kyocera ECOSYS de alto rendimiento, ideal para oficinas y empresas con grandes volúmenes de impresión.',
+                        'img/productos-tuners/Toner-Kyocera-TK-1175-negro.jpg',
+                        'S/ 333.00',
+                        `MARCA: Kyocera. MODELO: TK-1175. 
+                        Color de Impresión: Negro. Tecnología de Impresión: Láser. Rendimiento: Aproximadamente 12.000páginas, basado en una cobertura del 5% de papel A4. Tipo: Cartucho original de la marca kyocera.`,
+                        '/static/pdf/pdf-toners/Toner-Kyocera-TK-1175-negro.pdf'
                         )">
-                        <img alt="Impresora Konica Minolta blanca y negra con pantalla táctil" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-tuners/Tuners-color-magenta.jpg') }}"/>
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-toner-kyocera-negro">
+                            <img src="{{ url_for('static', path='img/productos-tuners/Toner-Kyocera-TK-1175-negro.jpg') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-toneres">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la Toner Kyocera TK-1175 negro de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
                     </button>
-                    <h3 class="mb-1 leading-tight">
-                        Toner-color-magenta: Utiliza suministros originales de Konica Minolta, obtendrás colores vibrantes, textos nítidos.
-                    </h3>
-                    <p class="font-bold text-base sm:text-lg">
-                        S/ 610.98
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-toneres">Toner Kyocera TK-1175 negro</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
                     </p>
+
+                    <p class="font-bold text-base sm:text-lg"></p>
+
                     <button onclick="mostrarDetallesProducto(
-                      'MARCA: DENSITONE PREMIUM. MODELO: TN220M. COLOR: MAGENTA',
-                      'Utiliza suministros originales de Konica Minolta, obtendrás colores vibrantes, textos nítidos, líneas finas y una salida consistente, página tras página.',
-                      'img/productos-tuners/Tuners-color-magenta.jpg',
-                      'S/ 610.98',
-                      `MARCA: DENSITONE PREMIUM. MODELO: TN220M. 
-                        COLOR: MAGENTA. SISTEMA DE MANEJO DE RAEE: Individual.
-                          RENDIMIENTO: 26000 pg.
-                          UNIDAD: CAJA X 01 UNIDAD. 
-                          EMPAQUE DE FABRICA: EN: CAJA. NRO PARTE: T-BHC221/281M. Fecha de publicación: 13/10/2020. Fecha de último estado: 21/11/2024.`,
-                      
-                      '/static/pdf/pdf-toners/TonerTN220M.pdf'
-                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="TONER-MAGENTA">Ver detalles
+                      'KONICA MINOLTA KYOCERA TONER TK-1175 ORIGINAL.',
+                        'El tóner Kyocera TK-1175 es un cartucho de tóner monocromático original diseñado para impresoras láser Kyocera ECOSYS de alto rendimiento, ideal para oficinas y empresas con grandes volúmenes de impresión.',
+                        'img/productos-tuners/Toner-Kyocera-TK-1175-negro.jpg',
+                        'S/ 333.00',
+                        `MARCA: Kyocera. MODELO: TK-1175. 
+                        Color de Impresión: Negro. Tecnología de Impresión: Láser. Rendimiento: Aproximadamente 12.000páginas, basado en una cobertura del 5% de papel A4. Tipo: Cartucho original de la marca kyocera.`,
+                        '/static/pdf/pdf-toners/Toner-Kyocera-TK-1175-negro.pdf'
+                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="Toner-Kyocera-TK-1175-negro" >Ver detalles
                     </button>
                 </article>
 
-                <article class="text-center text-xs sm:text-sm">
+                <article class="text-center text-xs sm:text-sm producto-card">
                     <button onclick="mostrarDetallesProducto(
-                      'MARCA: DENSITONE PREMIUM. MODELO: TN323. COLOR: NEGR0.',
-                      'El cartucho de tóner TN-323 es un cartucho de tóner negro, lo que significa que se utiliza para imprimir documentos en blanco y negro. Tiene un alto rendimiento por página, capaz de producir aproximadamente 23.000 páginas con una tasa de cobertura estándar del 5%.',
-                      'img/productos-tuners/Tuners-color-negro.jpg',
-                      'S/ 307.70',
-                      `MARCA: DENSITONE PREMIUM. MODELO: TN220M. 
-                        COLOR: MAGENTA. SISTEMA DE MANEJO DE RAEE: Individual.
-                          RENDIMIENTO: 26000 pg.
-                          UNIDAD: CAJA X 01 UNIDAD. 
-                          EMPAQUE DE FABRICA: EN: CAJA. NRO PARTE: T-BH227K. Fecha de publicación: 13/11/2020. Fecha de último estado: 21/11/2024.`,
-                      '/static/pdf/pdf-toners/TonerTN323.pdf'
+                        'KONICA MINOLTA BH-215 TONER TN-118 BLANCO Y NEGRO COMPATIBILIDAD.',
+                        'TONER ORIGINAL de máxima calidad para la impresora Konica Minolta, modelo bizhub 215 TN-118 Blanco y Negro de color Negro con capacidad de 12.000 páginas.',
+                        'img/productos-tuners/Toner-km-bizhub-226-215-tn-118-negro.jpg',
+                        'S/ 370.00',
+                        `MARCA: Konica Minolta. MODELO: TN-118. 
+                        COLOR: Negro. Material: Cartucho de Toner. Serie: A3VW030. SKU: A3VW030 Fabricante: Konica Minolta Holdings.Presentación del Producto: Original. Pais de Origen: Japón. Ancho: 30cm. Altura: 8cm. Profundidad: 14cm. Peso: 200g.`,
+                        '/static/pdf/pdf-toners/Toner-km-bizhub-226-215-tn-118-negro.pdf'
                         )">
-                        <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-tuners/Tuners-color-negro.jpg') }}"/>
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-toner-tn-118-negro">
+                            <img src="{{ url_for('static', path='img/productos-tuners/Toner-km-bizhub-226-215-tn-118-negro.jpg') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-toneres">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la konica minolta Toner tn118-negro de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
                     </button>
-                    <h3 class="mb-1 leading-tight">
-                        Toners-color-negro: Tiene un alto rendimiento por página, capaz de producir aproximadamente 23.000 páginas.
-                    </h3>
-                    <p class="font-bold text-base sm:text-lg">
-                        S/ 307.70
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-toneres">Toner TN-118 blanco y negro</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
                     </p>
+
+                    <p class="font-bold text-base sm:text-lg"></p>
+
                     <button onclick="mostrarDetallesProducto(
-                      'MARCA: DENSITONE PREMIUM. MODELO: TN323. COLOR: NEGR0.',
-                      'El cartucho de tóner TN-323 es un cartucho de tóner negro, lo que significa que se utiliza para imprimir documentos en blanco y negro. Tiene un alto rendimiento por página, capaz de producir aproximadamente 23.000 páginas con una tasa de cobertura estándar del 5%.',
-                      'img/productos-tuners/Tuners-color-negro.jpg',
-                      'S/ 307.70',
-                      `MARCA: DENSITONE PREMIUM. MODELO: TN323. 
-                        COLOR: NEGR0. SISTEMA DE MANEJO DE RAEE: Individual.
-                          RENDIMIENTO: 23000 pg.
-                          UNIDAD: CAJA X 01 UNIDAD. 
-                          EMPAQUE DE FABRICA: EN: CAJA. NRO PARTE: T-BH227K. Fecha de publicación: 13/11/2020. Fecha de último estado: 21/11/2024.`,
-                      
-                      '/static/pdf/pdf-toners/TonerTN323.pdf'
-                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="TONER-NEGRO">Ver detalles
+                      'KONICA MINOLTA BH-215 TONER TN-118 BLANCO Y NEGRO COMPATIBILIDAD.',
+                        'TONER ORIGINAL de máxima calidad para la impresora Konica Minolta, modelo bizhub 215 TN-118 Blanco y Negro de color Negro con capacidad de 12.000 páginas.',
+                        'img/productos-tuners/Toner-km-bizhub-226-215-tn-118-negro.jpg',
+                        'S/ 370.00',
+                        `MARCA: Konica Minolta. MODELO: TN-118. 
+                        COLOR: Negro. Material: Cartucho de Toner. Serie: A3VW030. SKU: A3VW030 Fabricante: Konica Minolta Holdings.Presentación del Producto: Original. Pais de Origen. Japón. Ancho: 30cm. Altura: 8cm. Profundidad: 14cm. Peso: 200g.`,
+                        '/static/pdf/pdf-toners/Toner-km-bizhub-226-215-tn-118-negro.pdf'
+                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="Toner-km-bizhub-226-215-tn-118-negro" >Ver detalles
                     </button>
                 </article>
 
-                <article class="text-center text-xs sm:text-sm">
+                <article class="text-center text-xs sm:text-sm producto-card">
                     <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB c3321i',
-                      'Impresora monocromática de alto rendimiento con conectividad completa y ADF.',
-                      'img/productos-fotocopiadoras/bizhub-c3321i.jpg',
-                      'S/ 7,925.40',
-                      `Marca: KONICA MINOLTA. Modelo: BIZHUB 3611. Vel. Mono: 36 ppm. WLAN: Sí. LAN: Sí. USB: Sí. Memoria: 8192 MB. ADF: Sí. Resolución: 1200 x 1200 ppp. Garantía: 12 meses on-site. Ciclo: 30000 páginas. Certificaciones: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/08/2024. Última actualización: 23/10/2024.`,
-                      '/static/pdf/pdf-toners/Tuners-color-amarillo.pdf'
-                    )">
-                        <img src="{{ url_for('static', path='img/productos-tuners/Tuners-color-amarillo.jpg') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer"/>
-                    </button>
-                    <h3 class="mb-1 leading-tight">
-                        Tuners-color-amarillo: Toners maximo color para grupo de trabajos y mantenimiento general para impresora.
-                    </h3>
-                    <p class="font-bold text-base sm:text-lg">
-                        S/ 7,925.40
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB c3321i',
-                      'Impresora monocromática de alto rendimiento con conectividad completa y ADF.',
-                      'img/productos-tuners/Tuners-color-amarillo.jpg',
-                      'S/ 7,925.40',
-                      `Marca: KONICA MINOLTA. Modelo: BIZHUB 3611. Vel. Mono: 36 ppm. WLAN: Sí. LAN: Sí. USB: Sí. Memoria: 8192 MB. ADF: Sí. Resolución: 1200 x 1200 ppp. Garantía: 12 meses on-site. Ciclo: 30000 páginas. Certificaciones: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/08/2024. Última actualización: 23/10/2024.`,
-                      
-                      '/static/pdf/pdf-toners/Tuners-color-amarillo.pdf'
-                        )" class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition">Ver detalles
-                    </button>
-                </article>
-                
-                <article class="text-center text-xs sm:text-sm">
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB c266i',
-                      'Impresora monocromática de alto rendimiento con conectividad completa y ADF.',
-                      'img/productos-tuners/Tuners-color-cian.jpg',
-                      'S/ 7,925.40',
-                      `Marca: KONICA MINOLTA. Modelo: BIZHUB 3611. Vel. Mono: 36 ppm. WLAN: Sí. LAN: Sí. USB: Sí. Memoria: 8192 MB. ADF: Sí. Resolución: 1200 x 1200 ppp. Garantía: 12 meses on-site. Ciclo: 30000 páginas. Certificaciones: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/08/2024. Última actualización: 23/10/2024.`,
-                      '/static/pdf/pdf-toners/Tuners-color-cian.pdf'
+                        'TONER NEGRO MODELO TN-328K RENDIMIENTO 28K PARA KONICA MINOLTA BIZHUB bh C360i (AAV8130).',
+                        'TONER ORIGINAL de máxima calidad para la impresora Konica Minolta, modelo bizhub C360i de color Negro con capacidad de 28.000 páginas.',
+                        'img/productos-tuners/Toner-km-tn328k.jpg',
+                        'S/ 235.00',
+                        `MARCA: Konica Minolta. MODELO: TN-328K. 
+                        COLOR: Negro. Material: Cartucho de Toner. Serie: SAAV8130. SKU: SAAV8130. Frabricante: Konica Minolta Holdings. Presentación del Producto: Original. Pais Origen: Japón. Ancho: 30cm. Altura: 6cm. Profundidad: 14cm. Peso: 600g.`,
+                        '/static/pdf/pdf-toners/Toner-km-tn328k.pdf'
                         )">
-                        <img alt="Impresora negra cuadrada Konica Minolta vista frontal" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-tuners/Tuners-color-cian.jpg') }}"/>
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-toner-tn-328k-negro">
+                            <img src="{{ url_for('static', path='img/productos-tuners/Toner-km-tn328k.jpg') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-toneres">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la Toner konica minolta tn-328k de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
                     </button>
-                    <h3 class="mb-1 leading-tight">
-                        Toners-color-cian: Toners maximo color para grupo de trabajos y mantenimiento general para impresora.
-                    </h3>
-                    <p class="font-bold text-base sm:text-lg">
-                        S/ 18,149.46
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB c3321i',
-                      'Impresora monocromática de alto rendimiento con conectividad completa y ADF.',
-                      'img/productos-tuners/Tuners-color-cian.jpg',
-                      'S/ 7,925.40',
-                      `Marca: KONICA MINOLTA. Modelo: BIZHUB 3611. Vel. Mono: 36 ppm. WLAN: Sí. LAN: Sí. USB: Sí. Memoria: 8192 MB. ADF: Sí. Resolución: 1200 x 1200 ppp. Garantía: 12 meses on-site. Ciclo: 30000 páginas. Certificaciones: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/08/2024. Última actualización: 23/10/2024.`,
-                      
-                      '/static/pdf/pdf-toners/Tuners-color-cian.pdf'
-                        )" class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition">Ver detalles
-                    </button>
-                </article>
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-toneres">Toner bizhub-C3320I TNP-80k</span>
+                    </div>
 
-                <article class="text-center text-xs sm:text-sm">
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB c451i',
-                      'Impresora monocromática de alto rendimiento con conectividad completa y ADF.',
-                      'img/productos-tuners/Tuners-color-magenta.jpg',
-                      'S/ 7,925.40',
-                      `Marca: KONICA MINOLTA. Modelo: BIZHUB 3611. Vel. Mono: 36 ppm. WLAN: Sí. LAN: Sí. USB: Sí. Memoria: 8192 MB. ADF: Sí. Resolución: 1200 x 1200 ppp. Garantía: 12 meses on-site. Ciclo: 30000 páginas. Certificaciones: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/08/2024. Última actualización: 23/10/2024.`,
-                      '/static/pdf/pdf-toners/Tuners-color-magenta.pdf'
-                        )">
-                        <img alt="Impresora Konica Minolta blanca y negra con pantalla táctil" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-tuners/Tuners-color-magenta.jpg') }}"/>
-                    </button>
-                    <h3 class="mb-1 leading-tight">
-                        Toners-color-magenta: Toners maximo color para grupo de trabajos y mantenimiento general para impresora.
-                    </h3>
-                    <p class="font-bold text-base sm:text-lg">
-                        S/ 35,501.50
+                    <p class="mt-2 text-gray-700">
+                        
                     </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB c451i',
-                      'Impresora monocromática de alto rendimiento con conectividad completa y ADF.',
-                      'img/productos-tuners/Tuners-color-magenta.jpg',
-                      'S/ 7,925.40',
-                      `Marca: KONICA MINOLTA. Modelo: BIZHUB 3611. Vel. Mono: 36 ppm. WLAN: Sí. LAN: Sí. USB: Sí. Memoria: 8192 MB. ADF: Sí. Resolución: 1200 x 1200 ppp. Garantía: 12 meses on-site. Ciclo: 30000 páginas. Certificaciones: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/08/2024. Última actualización: 23/10/2024.`,
-                      
-                      '/static/pdf/pdf-toners/Tuners-color-magenta.pdf'
-                        )" class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition">Ver detalles
-                    </button>
-                </article>
 
-                <article class="text-center text-xs sm:text-sm">
+                    <p class="font-bold text-base sm:text-lg"></p>
+
                     <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB 750i',
-                      'Impresora monocromática de alto rendimiento con conectividad completa y ADF.',
-                      'img/productos-tuners/Tuners-color-negro.jpg',
-                      'S/ 7,925.40',
-                      `Marca: KONICA MINOLTA. Modelo: BIZHUB 3611. Vel. Mono: 36 ppm. WLAN: Sí. LAN: Sí. USB: Sí. Memoria: 8192 MB. ADF: Sí. Resolución: 1200 x 1200 ppp. Garantía: 12 meses on-site. Ciclo: 30000 páginas. Certificaciones: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/08/2024. Última actualización: 23/10/2024.`,
-                      '/static/pdf/pdf-toners/Tuners-color-negro.pdf'
-                        )">
-                        <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-tuners/Tuners-color-negro.jpg') }}"/>
-                    </button>
-                    <h3 class="mb-1 leading-tight">
-                        Toners-color-negro: Toners maximo color para grupo de trabajos y mantenimiento general para impresora.
-                    </h3>
-                    <p class="font-bold text-base sm:text-lg">
-                        S/ 58,417.30
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB 750i',
-                      'Impresora monocromática de alto rendimiento con conectividad completa y ADF.',
-                      'img/productos-tuners/Tuners-color-negro.jpg',
-                      'S/ 7,925.40',
-                      `Marca: KONICA MINOLTA. Modelo: BIZHUB 3611. Vel. Mono: 36 ppm. WLAN: Sí. LAN: Sí. USB: Sí. Memoria: 8192 MB. ADF: Sí. Resolución: 1200 x 1200 ppp. Garantía: 12 meses on-site. Ciclo: 30000 páginas. Certificaciones: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/08/2024. Última actualización: 23/10/2024.`,
-                      
-                      '/static/pdf/pdf-toners/Tuners-color-negro.pdf'
-                        )" class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition">Ver detalles
+                      'TONER NEGRO MODELO TN-328K RENDIMIENTO 28K PARA KONICA MINOLTA BIZHUB bh C360i (AAV8130).',
+                        'TONER ORIGINAL de máxima calidad para la impresora Konica Minolta, modelo bizhub C360i de color Negro con capacidad de 28.000 páginas.',
+                        'img/productos-tuners/Toner-km-tn328k.jpg',
+                        'S/ 235.00',
+                        `MARCA: Konica Minolta. MODELO: TN-328K. 
+                        COLOR: Negro. Material: Cartucho de Toner. Serie: SAAV8130. SKU: SAAV8130. Frabricante: Konica Minolta Holdings. Presentación del Producto: Original. Pais Origen: Japón. Ancho: 30cm. Altura: 6cm. Profundidad: 14cm. Peso: 600g.`,
+                        '/static/pdf/pdf-toners/Toner-km-tn328k.pdf'
+                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="Toner-km-tn328k" >Ver detalles
                     </button>
                 </article>
                 

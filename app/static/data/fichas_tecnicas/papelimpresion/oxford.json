@@ -1,0 +1,23 @@
+{
+  "producto": "Oxford",
+  "categoria": "Papel de Impresión",
+  "marca": "Oxford A4",
+  "modelo": "Oxford A4, A5, A3",
+  "descripcion": "Papel multipropósito para A4, A3, A5 compatible para impresora de konica minolta bizhub.",
+  "precio": "124.00",
+
+  "especificaciones": {
+    "gramaje": "80 g/m²",
+    "formato": "A4 (210 mm × 297 mm)",
+    "hojas_por_resma": "500",
+    "blancura": "98%",
+    "certificacion": "FSC",
+    "compatibilidad": [
+      "Impresoras Láser",
+      "Impresoras Inkjet",
+      "Multifuncionales"
+    ]
+  },
+
+  "imagen": "/static/img/consumibles/Papel/Oxford-paper.jpg"
+}

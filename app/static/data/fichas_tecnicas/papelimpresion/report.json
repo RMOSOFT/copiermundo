@@ -1,0 +1,23 @@
+{
+  "id": 1,
+  "producto": "Report",
+  "categoria": "Papel de Impresión",
+  "marca": "Suzano",
+  "modelo": "Report® A4",
+  "descripcion": "Papel multipropósito de alta blancura ideal para impresoras láser e inkjet.",
+  "precio": "124.00",
+
+  "especificaciones": {
+    "gramaje": "80 g/m²",
+    "formato": "A4 (210 mm × 297 mm)",
+    "hojas_por_resma": "500",
+    "blancura": "98%",
+    "certificacion": "FSC",
+    "compatibilidad": [
+      "Impresoras Láser",
+      "Impresoras Inkjet",
+      "Multifuncionales"
+    ]
+  },
+  "imagen": "/static/img/consumibles/Papel/Report-paper.jpg"
+}

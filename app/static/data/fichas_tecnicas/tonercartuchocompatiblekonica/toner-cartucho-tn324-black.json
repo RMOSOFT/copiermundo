@@ -1,0 +1,25 @@
+{
+  "producto": "Tóner Compatible Konica Minolta Tn324 Bizhub C258, C368 Negro.",
+  "categoria": "Toner Cartucho Compatible",
+  "marca": "KONICA MINOLTA",
+  "modelo": "TN-324 Bizhub",
+  "descripcion": "El tóner Konica Minolta TN-324 negro está diseñado para las impresoras multifunción bizhub C368, C458 y C558, y su característica principal es la impresión en negro de alta calidad.",
+
+  "especificaciones": {
+    "Tipo de producto": "Cartucho de tóner original",
+    "Codigo del fabricante": "TN-324",
+    "Tecnologia de impresion": "Láser",
+    "Color": "Black (Negro)",
+    "Condicion": "Nuevo",
+    "Tipo": "Original",
+    "Unidad": "1pieza(s)",
+    "Uso": "Rellenar cartuchos de tóner compatibles con los modelos indicados de impresoras konica minolta ",
+    "Rendimiento": "28,000 páginas.",
+    "compatibilidad": [
+      "Konica Minolta bizhub C368, C458 y C558."
+      
+    ]
+  },
+
+  "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-konica-tn324-black.jpg"
+}

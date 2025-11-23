@@ -1,0 +1,24 @@
+{
+  "producto": "Toner Canon Negro Recarga de 500 gr",
+  "categoria": "Toner Recargas Compatibles",
+  "marca": "Canon",
+  "modelo": "Polvo de tóner genérico para rellenar cartuchos (compatible con modelos como CRG-054)",
+  "descripcion": "El Tóner Canon negro recarga de 500 gr es un insumo de tóner en polvo para impresoras láser, que sirve como recarga para rellenar cartuchos de un peso aproximado de 500 gramos.",
+
+  "especificaciones": {
+    "Marca": "Canon",
+    "Tipo de producto": "Polvo de toner recargable",
+    "Peso": "500 gramos aproximado",
+    "Tecnologia": "Tóner para impresoras láser, compuesto por partículas de plástico y pigmentos que se fijan al papel.",
+    "Color": "Black (Negro)",
+    "Origen": "Comúnmente importado de MADE IN USA (en el caso de productos de recarga genéricos).",
+    "Uso": "Rellenar cartuchos de tóner compatibles con los modelos indicados de impresoras konica minolta ",
+    "Rendimiento": "El rendimiento (número de páginas impresas) varía significativamente según el modelo exacto del cartucho y la calidad de la impresión.",
+    "compatibilidad": [
+      "Konica Minolta Bizhub C452 /C552 /C652 (TN 613Y)"
+      
+    ]
+  },
+
+  "imagen": "/static/img/consumibles/TonerRecargaCompatible/TonerCanon-Negro.png"
+}

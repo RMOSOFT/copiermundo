@@ -1,0 +1,25 @@
+{
+  "producto": "Toner Konica Minolta bizhub c454e, c554 TN-512 Cyan.",
+  "categoria": "Toner Cartucho Compatible",
+  "marca": "KONICA MINOLTA",
+  "modelo": "TN-512 Bizhub",
+  "descripcion": "El Konica Minolta TN512C es la mejor opción para quienes buscan impresiones nítidas y duraderas.",
+
+  "especificaciones": {
+    "Tipo de producto": "Cartucho de tóner original",
+    "Codigo del fabricante": "TN-512 Konica Minolta Holdings",
+    "Tecnologia de impresion": "Láser",
+    "Color": "Cyan (Cyan)",
+    "Condicion": "Nuevo",
+    "Tipo": "Original",
+    "Unidad": "1pieza(s)",
+    "Uso": "Rellenar cartuchos de tóner compatibles con los modelos indicados de impresoras konica minolta ",
+    "Rendimiento": "26,000 páginas.",
+    "compatibilidad": [
+      "Impresoras Konica Minolta Bizhub C554e, C454, C554, C454e."
+      
+    ]
+  },
+
+  "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-tn512-cyan.jpg"
+}

@@ -1,0 +1,25 @@
+{
+  "producto": "Toner Konica Minolta TN-217 Bizhub 223/283 / 17,500 PAGINAS- Negro",
+  "categoria": "Toner Cartucho Compatible",
+  "marca": "KONICA MINOLTA",
+  "modelo": "TN-217 Bizhub",
+  "descripcion": "Los tóners TN-217 (rendimiento aproximado de 17,500 páginas) y TN-414 (rendimiento aproximado de 25,000 páginas).",
+
+  "especificaciones": {
+    "Tipo de producto": "Cartucho de tóner original",
+    "Codigo del fabricante": "TN-217",
+    "Tecnologia de impresion": "Láser",
+    "Color": "Black (Negro)",
+    "Condicion": "Nuevo",
+    "Tipo": "Original",
+    "Unidad": "1pieza(s)",
+    "Uso": "Rellenar cartuchos de tóner compatibles con los modelos indicados de impresoras konica minolta ",
+    "Rendimiento": "17,500 páginas.",
+    "compatibilidad": [
+      "Konica Minolta Bizhub 223, 283, 363,  423, 7828."
+      
+    ]
+  },
+
+  "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-tn217-black.jpg"
+}

@@ -1,0 +1,23 @@
+{
+  "producto": "Toner Canon Cyan Recarga de 500 gr",
+  "categoria": "Toner Recargas Compatibles",
+  "marca": "Canon",
+  "modelo": "Polvo de tóner genérico para rellenar cartuchos (compatible con modelos como CRG-054)",
+  "descripcion": "Insumo en polvo para recargar cartuchos de tóner de color cian. Viene en un envase de 500 gramos y está diseñado para usarse en impresoras Canon compatibles con los cartuchos de la serie CRG-054, como las LBP621Cw, LBP623Cdn, MF641Cw, entre otras. ",
+
+  "especificaciones": {
+    "Marca": "Canon",
+    "Tipo de producto": "Polvo de toner recargable",
+    "Peso": "500 gramos",
+    "Color": "Cyan",
+    "Tecnologia": "Tóner para impresoras láser, compuesto por partículas de plástico y pigmentos que se fijan al papel.",
+    "Origen": "Comúnmente importado de China (en el caso de productos de recarga genéricos).",
+    "Uso": "Rellenar cartuchos de tóner compatibles con los modelos indicados. ",
+    "compatibilidad": [
+      "Canon Advance IR C5045 / C5051 / C5250 / C5255 / C5030 / C5035 / C5235 / C5240 / C5535i / C5540i / C5550i / C5560i / IR C7260 / C7270"
+      
+    ]
+  },
+
+  "imagen": "/static/img/consumibles/TonerRecargaCompatible/TonerCanon-Cyan.png"
+}

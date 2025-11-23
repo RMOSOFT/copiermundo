@@ -1,0 +1,26 @@
+{
+  "producto": "Toner Kyocera FS P3055DN, M3655IDN TK-3182 Original.",
+  "categoria": "Toner Cartucho kyocera Compatible",
+  "marca": "Kyocera",
+  "modelo": "TK-3182",
+  "descripcion": "Los cartuchos para las impresoras Kyocera ECOSYS M3655idn y P3155dn son el TK-3182 de color negro, con un rendimiento de 21,000 páginas aproximadamente.",
+
+  "especificaciones": {
+    "Tipo de producto": "Cartucho de tóner kyocera original",
+    "Codigo del fabricante": "Kyocera Corporation",
+    "Tecnologia de impresion": "Láser Monocromatica",
+    "Color": "Black (Negro)",
+    "Condicion": "Nuevo",
+    "Tipo": "Original",
+    "Unidad": "1pieza(s)",
+    "Uso": "Rellenar cartuchos de tóner compatibles con los modelos indicados de impresoras kyocera monocromatica.",
+    "Rendimiento": "Aproximadamente 21,000 páginas.",
+    "Chip inteligente": "El cartucho incluye un chip que contabiliza las impresiones para un seguimiento preciso.",
+    "compatibilidad": [
+      "Funciona con los modelos ECOSYS M3655idn, P3155dn, P3055dn y M3644Ind."
+      
+    ]
+  },
+
+  "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKyocera/Toner-Cartucho-kyocera-tk3102-black.jpg"
+}

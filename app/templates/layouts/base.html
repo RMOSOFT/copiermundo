@@ -13,13 +13,69 @@
     <!-- Cuerpo de cada página hija -->
     <main>
         {% block content %}
-        <!-- Aquí va el contenido de la página hija -->
+        <!-- Aquí va el contenido de la página de todo el contenido index.html -->
         {% endblock %}
     </main>
+    
 
     <!-- Incluir pie de página en el futuro -->
     {% include "components/footer.html" %}
 
+{% block scripts %}
+
+{% endblock %}
+    
+    <!-- Scripts para el diseño de la cabecera que estamos diseñando esta funcion hace que se desaparesca la cabecera la cinta verde y la cinta azul de contactos -->
+    <!-- ==============================
+     Scripts de cabecera dinámica
+    ============================== -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          let lastScrollTop = 0;
+          const threshold = 150;
+          const body = document.body;
+          const cintaVerde = document.querySelector(".cinta-verde");
+          const topbar = document.getElementById("topbar");
+          const mainHeader = document.getElementById("main-header");
+
+          let isCondensed = false;
+
+          window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            // Mostrar todo si el usuario está arriba
+            if (currentScroll < threshold) {
+              body.classList.remove("header-condensado");
+              if (cintaVerde) cintaVerde.classList.remove("oculto");
+              if (topbar) topbar.classList.remove("oculto");
+              isCondensed = false;
+              return;
+            }
+
+            // Si baja y no está condensado
+            if (currentScroll > lastScrollTop && !isCondensed) {
+              body.classList.add("header-condensado");
+              if (cintaVerde) cintaVerde.classList.add("oculto");
+              if (topbar) topbar.classList.add("oculto");
+              isCondensed = true;
+            }
+
+            // Si sube hasta arriba
+            if (currentScroll < lastScrollTop && currentScroll <= threshold && isCondensed) {
+              body.classList.remove("header-condensado");
+              if (cintaVerde) cintaVerde.classList.remove("oculto");
+              if (topbar) topbar.classList.remove("oculto");
+              isCondensed = false;
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+          });
+        });
+    </script>
+
+
+    
+    
     <script>
         let currentIndex = 0;
         const totalSlides = 4; // cambia esto si agregas más imágenes
@@ -105,32 +161,7 @@
     })();
     </script>
 
-    <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const header = document.getElementById("main-header");
-      const topbar = document.getElementById("topbar");
-      const logo = document.getElementById("logo");
-
-      window.addEventListener("scroll", function () {
-        const scrollY = window.scrollY;
-
-        // Activar estilos al hacer scroll
-        if (scrollY > 50) {
-          header.classList.add("scrolled", "shadow-lg", "bg-white");
-          if (topbar) topbar.classList.add("scrolled");
-
-          // Reducir tamaño del logo
-          if (logo) logo.style.transform = "scale(0.85)";
-        } else {
-          header.classList.remove("scrolled", "shadow-lg", "bg-white");
-          if (topbar) topbar.classList.remove("scrolled");
-
-          // Restaurar tamaño original del logo
-          if (logo) logo.style.transform = "scale(1)";
-        }
-      });
-    });
-    </script>
+    
 
     <script>
       function mostrarDetallesProducto(nombre, descripcion, imagen, precio, caracteristicasTexto, aficheUrl) {
@@ -205,8 +236,19 @@
             <div class="flex justify-between items-center">
                 <div id="modal-precio" class="relative inline-block">
                 <!-- Aquí insertaremos el sticker del precio dinámicamente -->
+
                 </div>
-                <span class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Ofertada</span>
+                
+                <div class="oferta-cotizacion">
+                    <!-- 🔺 Etiqueta de oferta -->
+                    <span class="badge-oferta">Ofertada</span>
+
+                    <!-- 💬 Botón de cotización por WhatsApp -->
+                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! 👋 Quiero cotizar la Guillotina Metálica Warrior A3 de Copier Mundo."
+                         class="btn-whatsapp" target="_blank">
+                         <i class="fab fa-whatsapp"></i> Solicitar cotización
+                    </a>
+                </div>
             </div>
           </div>
         </div>
@@ -653,82 +695,26 @@
 
     <!--Java Scripts para la dinamica de la pagina de consumibles del formulario (este codigo es antiguo que estuvimos haciendo)-->
     <!-- Antes de cerrar </body> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!--Java Scripts para la dinamica de la pagina de consumibles del formulario esta parte es lo nuevo que estamos haciendo-->
-    <script>
-        // Filtrar tabla
-      document.getElementById('buscador').addEventListener('keyup', function() {
-          const filtro = this.value.toLowerCase();
-          document.querySelectorAll('#tablaConsumibles tr').forEach(fila => {
-              fila.style.display = fila.textContent.toLowerCase().includes(filtro) ? '' : 'none';
-          });
-      });
-
-      // Seleccionar consumible desde tabla
-      document.querySelectorAll('.seleccionar-btn').forEach(btn => {
-          btn.addEventListener('click', function() {
-              const fila = this.closest('tr');
-              const nombre = fila.children[1].textContent;
-              document.querySelector('input[name="consumible"]').value = nombre;
-              document.querySelector('input[name="cantidad"]').focus();
-          });
-      });
-
-      // Enviar formulario sin recargar
-      document.getElementById('solicitudForm').addEventListener('submit', async function(e) {
-          e.preventDefault();
-          const data = Object.fromEntries(new FormData(this).entries());
-          try {
-              const resp = await fetch('/api/solicitar-consumible', {
-                  method: 'POST',
-                  headers: {'Content-Type': 'application/json'},
-                  body: JSON.stringify(data)
-              });
-
-              const json = await resp.json();
-
-              if (resp.ok && json.status === "ok") {
-                  mostrarToast("✅ Solicitud enviada correctamente.", "success");
-                  this.reset();
-              } else {
-                  mostrarToast("❌ Error al enviar la solicitud.", "danger");
-              }
-          } catch (error) {
-              mostrarToast("❌ Error de conexión con el servidor.", "danger");
-          }
-      });
-
-      // Función toast dinámica
-      function mostrarToast(mensaje, tipo = "success") {
-          const toastEl = document.getElementById('toastNotificacion');
-          const toastBody = document.getElementById('toastMensaje');
-
-          toastBody.textContent = mensaje;
-
-          toastEl.classList.remove("text-bg-success", "text-bg-danger");
-          toastEl.classList.add(tipo === "success" ? "text-bg-success" : "text-bg-danger");
-
-          const toast = new bootstrap.Toast(toastEl);
-          toast.show();
-        }
-    </script>
+    
     <!--Java Scripts que va junto con el formulario al solicitar consumibles, nos hace la dinamica de una ventana verde -->
 
-    <!-- Toast Notificación -->
+    <!-- Toast Notificación-->
+    <div id="toastPro" class="toast-pro">Producto seleccionado</div>
+
+    <!-- Toast Notificación-->
     <div id="toast" class="fixed bottom-4 right-4 bg-blue-600 text-white px-4 py-2 rounded shadow-lg hidden z-50">
         🛒 Producto agregado al carrito
     </div>
-
     <!-- Sidebar Carrito -->
-    <div id="cartModal" class="fixed top-0 right-0 w-96 h-full bg-white shadow-2xl transform translate-x-full transition-transform duration-300 z-50">
+    <div id="cartModal" class="fixed top-0 right-0 w-96 h-full bg-white shadow-2xl transform transition-transform duration-300 z-50" style="transform: translateX(100%);">
         <div class="flex justify-between items-center p-4 border-b">
             <h2 class="text-xl font-semibold">Carrito -(<span id="cartCount">0</span>)</h2>
-            <button onclick="closeCart()" class="text-gray-600 text-xl">&times;</button>
+            <button onclick="closeSideCart()" class="text-gray-600 text-xl">&times;</button>
         </div>
-        <div id="cartItems" class="p-4 space-y-4 overflow-y-auto max-h-[70%]">
-            
-        </div>
+    <div id="cartItems" class="p-4 space-y-4 overflow-y-auto max-h-[70%]">
+                
+    </div>
         <div class="p-4 border-t">
             <div class="flex justify-between font-semibold">
                 <span>Total estimado</span>
@@ -737,7 +723,8 @@
             <button onclick="openCheckout()" class="mt-4 w-full bg-purple-700 text-white py-2 rounded hover:bg-purple-800">Finalizar compra</button>
             <button class="mt-4 w-full bg-purple-700 text-white py-2 rounded hover:bg-purple-800"><a href="/carrito" class="block text-center mt-2 text-black-700">Ver carrito completo</a></button>
         </div>
-    </div>
+    </div>    
+    
 
     <!-- Modal Checkout  Principal formulario para agregar varios consumibles con el carrito. -->
     <div id="checkoutModal" class="fixed inset-0 bg-black bg-opacity-40 hidden items-center justify-center z-50">
@@ -777,6 +764,187 @@
     </div>
     
 
+    
+
+    <!-- Toast contenedor -->
+    
+
+    <script>
+        document.getElementById("checkoutForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            const response = await fetch("/api/carrito", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            alert(result.mensaje);
+        });
+    </script>
+    
+    <!-- Desde aqui es para el formulario de contactanos -->
+    <script>
+        document.getElementById('form-presupuesto').addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const data = Object.fromEntries(new FormData(e.target).entries());
+
+          const resp = await fetch('/api/solicitar-presupuesto', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+          });
+
+          const result = await resp.json();
+          if (result.status === 'ok') {
+            alert('Presupuesto enviado');
+          } else {
+            alert('Error al enviar el presupuesto');
+          }
+        });
+    </script>
+
+    <!-- Desde aqui es la dinamica de el wassap flotante al lado derecho -->
+    <!-- Desde aqui es la dinamica de el wassap flotante al lado derecho -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const floatBox = document.getElementById("whatsapp-float-container");
+
+          // Aparece solo en ciertas rutas (Accesorios y Toners)
+          const path = window.location.pathname;
+          const paginasPermitidas = ["/productos/accesoriosoficina", "/productos/tonerescartuchos"];
+
+          // Si existe el botón y estamos en una de esas páginas
+          if (floatBox && paginasPermitidas.some(url => path.includes(url))) {
+            setTimeout(() => {
+              floatBox.classList.add("mostrar");
+            }, 2000); // 2 segundos de retraso
+          }
+        });
+    </script>
+
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const floatBox = document.getElementById("whatsapp-float-container");
+
+        // 🔥 TODAS LAS PÁGINAS DONDE QUEREMOS MOSTRAR WHATSAPP
+        const paginasPermitidas = [
+            "/consumibles",
+            "/papelimpresion",
+            "/recargacompatible",
+            "/tonercartuchocompatiblekonica",
+            "/tonercartuchocompatiblekyocera",
+            "/productos/tonerescartuchos",
+            "/productos/fotocopiadoras",
+
+        ];
+
+        const path = window.location.pathname;
+
+        // Mostrar si coincide con alguna ruta
+        if (floatBox && paginasPermitidas.some(url => path.includes(url))) {
+            setTimeout(() => floatBox.classList.add("mostrar"), 1000);
+        }
+    });
+    </script>
+
+   <!-- Dinamica para el buscador y lupa para los celulares diseños -->
+   <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const toggleSearch = document.getElementById("toggleSearchMobile");
+          const buscador = document.getElementById("buscadorExpandible");
+
+          toggleSearch.addEventListener("click", () => {
+            buscador.classList.toggle("activo");
+          });
+
+          // Cierra el buscador al hacer clic fuera de él
+          document.addEventListener("click", (e) => {
+            if (!buscador.contains(e.target) && !toggleSearch.contains(e.target)) {
+              buscador.classList.remove("activo");
+            }
+          });
+        });
+    </script>  
+
+
+    <!-- Dinamica para la seccion de consumibles -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const buscador = document.getElementById("buscador");
+          const filtro = document.getElementById("filtroCategoria");
+          const items = document.querySelectorAll(".producto-item");
+
+          function filtrar() {
+            const texto = buscador.value.toLowerCase();
+            const categoria = filtro.value.toLowerCase();
+
+            items.forEach(item => {
+              const nombre = item.dataset.nombre;
+              const tipo = item.dataset.tipo;
+
+              const coincide = 
+                nombre.includes(texto) && 
+                (categoria === "" || tipo.includes(categoria));
+
+              item.style.display = coincide ? "block" : "none";
+            });
+          }
+
+          buscador.addEventListener("input", filtrar);
+          filtro.addEventListener("change", filtrar);
+        });
+    </script>
+
+
+    <!--Java Scripts para la dinamica de la pagina de consumibles del formulario esta parte es lo nuevo que estamos haciendo esta funcion incluye todo el funcionamiento de consumibles -->
+    {% if request.url.path.startswith('/consumibles') %}
+        <script src="{{ url_for('static', path='js/consumibles/funciones_consumibles.js') }}"></script>
+    {% endif %}
+
+
+    <!-- Funcion para el formulario de envio de productos consumibles validaciones form y botones -->
+    {% if request.url.path.startswith('/consumibles') %}
+        <script src="{{ url_for('static', path='js/consumibles/formulario_validaciones.js') }}"></script>
+    {% endif %}
+
+    <!-- Funcion javascript para ficha de productos de los consumibles -->
+    {% if request.url.path.startswith('/consumibles') %}
+        <script src="{{ url_for('static', path='js/consumibles/funciones_ficha_tecnica.js') }}"></script>
+    {% endif %}
+
+    <!-- Funcion javascript para consumibles de los botones carsd de seleccionar -->
+    {% if request.url.path.startswith('/consumibles') %}
+        <script src="{{ url_for('static', path='js/consumibles/activar_desactivar_seleccion.js') }}"></script>
+    {% endif %}
+
+    <!-- MODAL FICHA TÉCNICA para el boton delos cards en consumibles -->
+    
+
+    <div class="modal fade" id="fichaTecnicaModal" tabindex="-1">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="fichaTitulo">Ficha Técnica</h5>
+            <button class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+          </div>
+
+          <div class="modal-body" id="fichaContenido"></div>
+
+          <div class="modal-footer">
+            <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
     <!--Logica para el diseño de consumibles esta parte es el carrito que estamos presentando-->
     <!-- script global que maneje el carrito -->
     <!-- Script del carrito -->
@@ -809,13 +977,14 @@
 
         function addToCartFromServer(p){
             console.log("Agregando producto:", p);
-                const product = {
+            const product = {
                 id: p.id || '',
                 nombre: p.nombre || p.titulo || '',
                 precio: parsePrice(p.precio || ""),
                 imagen: p.imagen || "",
                 qty: 1
             };
+            // Buscar si el producto ya existe en el carrito
             const existing = cart.find(item => item.id === product.id);
             if(existing){
                 existing.qty += 1;
@@ -828,7 +997,7 @@
 
             // Mostrar notificación y abrir carrito luego
             showToast(`🛒 ${product.nombre} agregado al carrito.`, () => {
-                openCart();
+                openSideCart();
             });
         }
 
@@ -874,16 +1043,22 @@
           renderCart();
         }
 
-        function openCart(){
-          document.getElementById("cartModal").classList.remove("translate-x-full");
+        function openSideCart(){
+            const modal = document.getElementById("cartModal");
+            modal.style.transform = "translateX(0%)";
         }
 
-        function closeCart(){
-          document.getElementById("cartModal").classList.add("translate-x-full");
+
+        function closeSideCart() {
+            const modal = document.getElementById("cartModal");
+            console.log("CERRANDO CARRITO:", modal);
+            modal.style.transform = "translateX(100%)";
         }
+
+        
 
         function openCheckout(){
-            closeCart(); // si existe modal lateral, lo cerramos
+            closeSideCart(); // si existe modal lateral, lo cerramos
             const modal = document.getElementById("checkoutModal");
             modal.classList.remove("hidden");
             modal.classList.add("flex");
@@ -954,52 +1129,166 @@
           }
         });
     </script>
-
-    <!-- Toast contenedor -->
-    <!-- Toast contenedor -->
-    <div id="toasts" class="fixed inset-0 flex justify-center items-center pointer-events-none hidden z-50">
-      <div id="toastMessage" class="bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg text-center"></div>
-    </div>
+    
+    <!-- ================================
+     WIDGET WHATSAPP FLOTANTE GLOBAL con widget para el wassap flotante para solo paginas permitidas
+    ================================ -->
 
     <script>
-        document.getElementById("checkoutForm").addEventListener("submit", async function(e) {
-            e.preventDefault();
+        document.addEventListener("DOMContentLoaded", () => {
 
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
+            const widget = document.getElementById("wsp-widget");
+            const card = document.querySelector(".wsp-box");
+            const bubble = document.getElementById("wsp-bubble");
+            const closeBtn = document.getElementById("wsp-close");
 
-            const response = await fetch("/api/carrito", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data)
+            const title = document.getElementById("wsp-title");
+            const message = document.getElementById("wsp-message");
+            const wspBtn = document.getElementById("wsp-btn");
+            const avatar = document.getElementById("wsp-img");
+
+            const path = window.location.pathname;
+
+            const paginasPermitidas = ["/", "/index", "/nosotros", "/contacto"];
+
+            const mostrar = paginasPermitidas.some(p => path === p || path.includes(p)); // No mostrar si no está permitido
+
+            if (!mostrar) {
+                widget.classList.add("hidden");
+                return;
+            }
+
+            widget.classList.remove("hidden");// activar widget
+
+            // Cambios según la página
+            if (path === "/" || path.includes("index")) {
+                title.textContent = "Soporte General";
+                message.textContent = "Hola soy tu asistenta de copier mundo 👋 ¿En qué podemos ayudarte hoy?";
+                wspBtn.href = "https://wa.me/51940414440?text=Hola%20necesito%20ayuda%20📩";
+                avatar.src = "/static/img/icons/icons-whatsapp/apoyo-tecnico-1.png";
+            }
+
+            if (path.includes("nosotros")) {
+                title.textContent = "Atención Corporativa";
+                message.textContent = "¿Deseas información sobre nuestros servicios empresariales?";
+                wspBtn.href = "https://wa.me/51940414440?text=Hola%20quiero%20consultar%20sobre%20sus%20servicios%20🏢";
+                avatar.src = "/static/img/icons/icons-whatsapp/servicio-al-cliente.png";
+            }
+
+            if (path.includes("contacto")) {
+                title.textContent = "Central Telefónica";
+                message.textContent = "Estamos listos para atender tu consulta!!.";
+                wspBtn.href = "https://wa.me/51940414440?text=Hola%20necesito%20contactarme%20📞";
+                avatar.src = "/static/img/icons/icons-whatsapp/atencion-corporativa.png";
+            }
+
+            /* =======================================
+               ANIMACIÓN AUTOMÁTICA:
+               1️⃣ Burbuja rebota
+               2️⃣ Luego aparece el widget
+            ======================================= */
+            // esperamos que termine el rebote (~600ms)
+            setTimeout(() => {
+                card.classList.add("show");
+            }, 800);
+
+            // Mostrar tarjeta o boton flotante normal 
+            bubble.addEventListener("click", () => {
+                card.classList.add("show");
             });
 
-            const result = await response.json();
-            alert(result.mensaje);
+            // Cerrar tarjeta
+            closeBtn.addEventListener("click", () => {
+                card.classList.remove("show");
+            });
+
+        });
+    </script>
+
+    <!--Diseño para los cambios de titulos en la pagina consumibles -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const select = document.getElementById("filtroCategoria");
+            const titulo = document.querySelector(".subtitulo-consumibles");
+            const tituloMain = document.querySelector(".titulo-consumibles");
+            const subtitulo = document.querySelector(".subtitulo-dinamico");
+
+            function aplicarEstiloCategoria(value) {
+
+                // limpiar estilos anteriores
+                [tituloMain, titulo, subtitulo].forEach(el => {
+                    if (!el) return;
+                    el.classList.remove("color-konica", "color-kyocera", "color-papel", "color-recargas", "color-default");
+                });
+
+                let clase = "color-default";
+
+                if (value === "tonercartuchocompatiblekonica") clase = "color-konica";
+                if (value === "tonercartuchocompatiblekyocera") clase = "color-kyocera";
+                if (value === "papelimpresion") clase = "color-papel";
+                if (value === "recargacompatible") clase = "color-recargas";
+
+                // aplicar clase
+                [tituloMain, titulo, subtitulo].forEach(el => {
+                    if (el) el.classList.add(clase);
+                });
+            }
+
+            // Detectar cambio del select
+            select.addEventListener("change", () => {
+                aplicarEstiloCategoria(select.value);
+            });
+
+            // Al cargar página, aplicar según selección actual
+            aplicarEstiloCategoria(select.value);
+        });
+    </script>
+
+
+    <script>
+        document.querySelectorAll(".submenu-toggle").forEach(btn => {
+            btn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                const parent = this.closest(".dropdown-submenu");
+                parent.classList.toggle("open");
+            });
+        });
+    </script>
+
+
+    <!-- Dinamica para el buscador del tablero de consumibles-->
+    <script>
+        document.querySelector(".buscador-icono").addEventListener("click", () => {
+        document.getElementById("buscadorCards").dispatchEvent(new Event("input"));
         });
     </script>
     
-    <!-- Desde aqui es para el formulario de contactanos -->
+
+    <!-- Dinamica para el buscador del tablero de consumibles-->
     <script>
-        document.getElementById('form-presupuesto').addEventListener('submit', async (e) => {
-          e.preventDefault();
-          const data = Object.fromEntries(new FormData(e.target).entries());
-
-          const resp = await fetch('/api/solicitar-presupuesto', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-          });
-
-          const result = await resp.json();
-          if (result.status === 'ok') {
-            alert('Presupuesto enviado');
-          } else {
-            alert('Error al enviar el presupuesto');
-          }
+        document.querySelector(".buscador-icono").addEventListener("click", () => {
+            document.getElementById("buscadorTablero").focus();
         });
     </script>
 
 
+    <!-- Dinamica para que el mause vaya junto con el diseño tecnologico lo diga al pasar el mouse-->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const light = document.createElement("div");
+            light.classList.add("cursor-light");
+            document.querySelector(".cinta-konica").appendChild(light);
+
+            document.querySelector(".cinta-konica").addEventListener("mousemove", (e) => {
+                const rect = e.target.getBoundingClientRect();
+                light.style.left = `${e.clientX - rect.left}px`;
+                light.style.top = `${e.clientY - rect.top}px`;
+            });
+
+        });
+    </script>
+    
 </body>
 </html>

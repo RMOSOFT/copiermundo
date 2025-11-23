@@ -1,0 +1,23 @@
+{
+  "producto": "TONER KONICA MINOLTA BIZHUB C-3320i (BLACK) TNP80K 220V / 60HZ AAJW192",
+  "categoria": "Toner Cartucho Compatible",
+  "marca": "KONICA MINOLTA",
+  "modelo": "TNP-80K AAJW192",
+  "descripcion": "Toner Konica Minolta Tnp80K Bizhub C-3320I Negro Aajw192 Rendimiento 13,000 paginas",
+
+  "especificaciones": {
+    "Tipo de producto": "Cartucho de tóner original",
+    "Codigo del fabricante": "AAJW192",
+    "Tecnologia de impresion": "Láser",
+    "Color": "Black (Negro)",
+    "Condicion": "Nuevo",
+    "Uso": "Rellenar cartuchos de tóner compatibles con los modelos indicados de impresoras konica minolta ",
+    "Rendimiento": "Aproximadamente 13,000 páginas.",
+    "compatibilidad": [
+      "Konica Minolta Bizhub C3320i y Bizhub C3321i"
+      
+    ]
+  },
+
+  "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-tnp80k-black.jpg"
+}

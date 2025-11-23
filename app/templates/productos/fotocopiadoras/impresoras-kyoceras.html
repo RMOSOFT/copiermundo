@@ -2,6 +2,23 @@
 
 
 {% block content %}
+<!-- 💬 BOTÓN WHATSAPP FLOTANTE -->
+<div id="whatsapp-float-container">
+    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! 👋 Estoy interesado en una COTIZACIÓN con Copier Mundo."
+       class="whatsapp-flotante" target="_blank" title="Estamos en línea">
+        <img src="{{ url_for('static', path='img/icons/whatsapp-1.png') }}" alt="WhatsApp"/>
+        <!-- 🟢 Estado en línea con animación -->
+        <div class="estado-linea">
+            <span class="punto-verde"></span>
+            En línea
+        </div>
+
+        <!-- Texto principal -->
+        <span>Solicitar <strong>COTIZACIÓN</strong></span>
+    </a>
+</div>
+
+
 <div class="relative w-full h-32 sm:h-40 md:h-40 lg:h-44 xl:h-48">
     <img alt="Impresora en fondo oscuro con pantalla y bandejas" class="w-full h-full object-cover" height="288" src="{{ url_for('static', path='img/productos-fotocopiadoras/img-kyocera.jpg') }}" width="1930"/>
     <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-10 flex items-center justify-between px-6 sm:px-10 md:px-16">
@@ -67,31 +84,20 @@
                             <span class="flex items-center gap-2">
                                 <i class="fas fa-chevron-right text-xs">
                                 </i>
-                                IMPRESORAS MULTIFUNCIONALES SEMINUEVAS-SERIES(8)
+                                IMPRESORAS MULTIFUNCIONALES SEMINUEVAS SERIES(8)
                             </span>
                             <span class="text-gray-400">
                                 (5)
                             </span>
                         </li>
                     </a>
-                    <a href="/productos/tonerescartuchos">
-                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
-                            <span class="flex items-center gap-2">
-                                <i class="fas fa-chevron-right text-xs">
-                                </i>
-                                RECARGAS TONERS Y CARTUCHOS
-                            </span>
-                            <span class="text-gray-400">
-                                (4)
-                            </span>
-                        </li>
-                    </a>
+                    
                     <a href="/productos/fotocopiadoras/impresoras-color">
                         <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
                             <span class="flex items-center gap-2">
                                 <i class="fas fa-chevron-right text-xs">
                                 </i>
-                                IMPRESORAS A COLOR
+                                IMPRESORAS MULTIFUNCIONALES A COLOR
                             </span>
                             <span class="text-gray-400">
                                 (4)
@@ -103,7 +109,7 @@
                             <span class="flex items-center gap-2">
                                 <i class="fas fa-chevron-right text-xs">
                                 </i>
-                                IMPRESORAS MONOCROMÁTICAS
+                                IMPRESORAS MULTIFUNCIONALES A NEGRO MONOCROMÁTICAS
                             </span>
                             <span class="text-gray-400">
                                 (4)
@@ -131,6 +137,18 @@
                             </span>
                             <span class="text-gray-400">
                                 (8)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/tonerescartuchos">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                RECARGAS TONERS Y CARTUCHOS
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
                             </span>
                         </li>
                     </a>
@@ -260,7 +278,7 @@
             </div>
 
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                <article class="text-center text-xs sm:text-sm">
+                <article class="text-center text-xs sm:text-sm producto-card">
                     <button onclick="mostrarDetallesProducto(
                       'IMPRESORA MULTIFUNCIONAL LASER - ECOSYS M8124CIDN',
                       'Una multifuncional para A4/A3 a color con 24ppm en A4. Con su diseño compacto y su magnífica funcionabilidad es ideal para equipos pequeños de trabajo.',
@@ -269,13 +287,26 @@
                       `MARCA: KONICA MINOLTA. MODELO: BIZHUB ECOSYS M8124CIDN. VELOCIDAD MONOCROMATICA: 24 ppm. VELOCIDAD COLOR: 24 ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 1536 MB. MEMORIA MAXIMA: 1536 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 8000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/05/2018. Fecha de último estado: 23/10/2024.`,
                       '/static/pdf/pdf-fotocopiadoras/ECOSYSM8124CIDN.pdf'
                         )">
-                        <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras/ECOSYS M8124CIDN.jpg') }}"/>
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-kyocera-ECOSYSM8124CIDN">
+                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras/ECOSYS M8124CIDN.jpg') }}"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-fotocopiadoras-kyoceras">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KYOCERA ECOSYS M8124CIDN de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
                     </button>
-                    <h3 class="mb-1 leading-tight">
-                        ECOSYS M8124CIDN: Una multifuncional para A4/A3 a color con 24ppm en A4. Con su diseño compacto.
-                    </h3>
-                    <p class="font-bold text-base sm:text-lg">
-                        S/ 9,200.00
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-fotocopiadoras-series-8">Fotocopiadora KYOCERA ECOSYS-M8124CIDN</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
                     </p>
                     <button onclick="mostrarDetallesProducto(
                       'IMPRESORA MULTIFUNCIONAL LASER - ECOSYS M8124CIDN',
@@ -284,11 +315,11 @@
                       'S/ 7,925.40',
                       `MARCA: KONICA MINOLTA. MODELO: BIZHUB ECOSYS M8124CIDN. VELOCIDAD MONOCROMATICA: 24 ppm. VELOCIDAD COLOR: 24 ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 1536 MB. MEMORIA MAXIMA: 1536 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 8000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/05/2018. Fecha de último estado: 23/10/2024.`,
                       '/static/pdf/pdf-fotocopiadoras/ECOSYSM8124CIDN.pdf'
-                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="ECOSYS M8124CIDN">Ver detalles
+                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="ECOSYS M8124CIDN">Ver detalles
                     </button>
                 </article>
 
-                <article class="text-center text-xs sm:text-sm">
+                <article class="text-center text-xs sm:text-sm producto-card">
                     <button onclick="mostrarDetallesProducto(
                       'IMPRESORA MULTIFUNCIONAL LASER - ECOSYS MA5500IFX',
                       'Esta multifuncional es perfecta para equipos dinámicos con altas exigencias de productividad y eficiencia de software, al tiempo que ofrece costes de funcionamiento excepcionalmente bajos.',
@@ -297,13 +328,26 @@
                       `MARCA: KONICA MINOLTA. MODELO: BIZHUB ECOSYS MA5500IFX. VELOCIDAD MONOCROMATICA: 57 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 1.5 GB. MEMORIA MAXIMA: 3.5 GB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 50000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/07/2024. Fecha de último estado: 23/10/2024.`,
                       '/static/pdf/pdf-fotocopiadoras/ECOSYSMA5500IFX.pdf'
                         )">
-                        <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras/ECOSYS MA5500IFX.jpg') }}"/>
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-kyocera-ECOSYSMA5500IFX">
+                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras/ECOSYS MA5500IFX.jpg') }}"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-fotocopiadoras-kyoceras">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KYOCERA ECOSYS-MA5500IFX de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
                     </button>
-                    <h3 class="mb-1 leading-tight">
-                        ECOSYS MA5500IFX: Esta multifuncional es perfecta para equipos dinámicos con altas exigencias de productividad.
-                    </h3>
-                    <p class="font-bold text-base sm:text-lg">
-                        S/ 5,600.00
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-fotocopiadoras-series-8">Fotocopiadora KYOCERA ECOSYS-MA5500IFX</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
                     </p>
                     <button onclick="mostrarDetallesProducto(
                       'IMPRESORA MULTIFUNCIONAL LASER - ECOSYS MA5500IFX',
@@ -313,11 +357,11 @@
                       `MARCA: KONICA MINOLTA. MODELO: BIZHUB ECOSYS MA5500IFX. VELOCIDAD MONOCROMATICA: 57 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 1.5 GB. MEMORIA MAXIMA: 3.5 GB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 50000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/07/2024. Fecha de último estado: 23/10/2024.`,
                       
                       '/static/pdf/pdf-fotocopiadoras/ECOSYSMA5500IFX.pdf'
-                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="ECOSYS MA5500IFX">Ver detalles
+                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="ECOSYS MA5500IFX">Ver detalles
                     </button>
                 </article>
 
-                <article class="text-center text-xs sm:text-sm">
+                <article class="text-center text-xs sm:text-sm producto-card">
                     <button onclick="mostrarDetallesProducto(
                       'IMPRESORA MULTIFUNCIONAL LASER - ECOSYS PA4000WX',
                       'Equipo completo, desde una alta capacidad de papel y conexión Wi-Fi, hasta impresión dúplex y un diseño compacto. ECOSYS PA4000wx es la impresora perfecta, fiable, gracias a sus componentes de larga duración, a su alta velocidad de impresión y con un bajo coste total de propiedad',
@@ -326,13 +370,26 @@
                       `MARCA: KONICA MINOLTA. MODELO: BIZHUB ECOSYS PA4000WX. VELOCIDAD MONOCROMATICA: 42 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 512 MB. MEMORIA MAXIMA: 512 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): No. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 10000 pg. CERTIFICACION: ISO 9001, ISO 14001, ENERGY STAR. Fecha de publicación: 13/01/2025. Fecha de último estado: 13/01/2025.`,
                       '/static/pdf/pdf-fotocopiadoras/ECOSYSPA4000WX.pdf'
                         )">
-                        <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras/ECOSYS PA4000WX.jpg') }}"/>
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-kyocera-ECOSYSPA4000WX">
+                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras/ECOSYS PA4000WX.jpg') }}"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-fotocopiadoras-kyoceras">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KYOCERA ECOSYS-PA4000WX de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
                     </button>
-                    <h3 class="mb-1 leading-tight">
-                        ECOSYS PA4000WX: Equipo completo, desde una alta capacidad de papel y conexión Wi-Fi, hasta impresión dúplex.
-                    </h3>
-                    <p class="font-bold text-base sm:text-lg">
-                        S/ 1124.49
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-fotocopiadoras-series-8">Fotocopiadora KYOCERA ECOSYS-PA4000WX</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
                     </p>
                     <button onclick="mostrarDetallesProducto(
                       'IMPRESORA MULTIFUNCIONAL LASER - ECOSYS PA4000WX',
@@ -341,11 +398,11 @@
                       'S/ 7,925.40',
                       `MARCA: KONICA MINOLTA. MODELO: BIZHUB ECOSYS PA4000WX. VELOCIDAD MONOCROMATICA: 42 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 512 MB. MEMORIA MAXIMA: 512 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): No. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 10000 pg. CERTIFICACION: ISO 9001, ISO 14001, ENERGY STAR. Fecha de publicación: 13/01/2025. Fecha de último estado: 13/01/2025.`,
                       '/static/pdf/pdf-fotocopiadoras/ECOSYSPA4000WX.pdf'
-                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="ECOSYS PA4000WX">Ver detalles
+                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="ECOSYS PA4000WX">Ver detalles
                     </button>
                 </article>
 
-                <article class="text-center text-xs sm:text-sm">
+                <article class="text-center text-xs sm:text-sm producto-card">
                     <button onclick="mostrarDetallesProducto(
                       'IMPRESORA MULTIFUNCIONAL LASER - WORKFORCE PRO WF-C5890',
                       'La impresora multifunción a color WorkForce® Pro WF-C5890 presenta la próxima generación de tecnología de impresión de inyección de tinta. Con el consumo de energía más bajo de su clase¹, la WF-C5890 ofrece una gran productividad, velocidades de impresión de 25 ISO ppm (negro/color)† y una rápida salida de la primera página prácticamente sin tiempo de espera.',
@@ -354,13 +411,26 @@
                       `MARCA: KONICA MINOLTA. MODELO: BIZHUB WORKFORCE PRO WF-C5890. VELOCIDAD MONOCROMATICA: 25 ppm. VELOCIDAD COLOR: 25 ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 1024 MB. MEMORIA MAXIMA: 1024 MB. SISTEMA DE MANEJO DE RAEE: Colectivo. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 4800 ppp. RESOLUCION DE CAPTURA: 1200 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 8000 pg. CERTIFICACION: Reach, ISO 14001, ROHS. Fecha de publicación: 13/10/2024. Fecha de último estado: 23/10/2024.`,
                       '/static/pdf/pdf-fotocopiadoras/WORKFORCEPROC5890.pdf'
                         )">
-                        <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras/WORKFORCE PRO WF-C5890.jpg') }}"/>
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-kyocera-WORKFORCEPROC5890">
+                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/productos-fotocopiadoras/WORKFORCE PRO WF-C5890.jpg') }}"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-fotocopiadoras-kyoceras">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KYOCERA WORKFORCE PRO WF-C5890 de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
                     </button>
-                    <h3 class="mb-1 leading-tight">
-                        WORKFORCE PRO WF-C5890: La impresora multifunción a color WorkForce® Pro WF-C5890 presenta la próxima generación.
-                    </h3>
-                    <p class="font-bold text-base sm:text-lg">
-                        S/. 2,083.54
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-fotocopiadoras-series-8">Fotocopiadora KYOCERA WORKFORCE PRO WF-C5890</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
                     </p>
                     <button onclick="mostrarDetallesProducto(
                       'IMPRESORA MULTIFUNCIONAL LASER - WORKFORCE PRO WF-C5890',
@@ -369,7 +439,7 @@
                       'S/ 7,925.40',
                       `MARCA: KONICA MINOLTA. MODELO: WORKFORCE PRO WF-C5890. VELOCIDAD MONOCROMATICA: 25 ppm. VELOCIDAD COLOR: 25 ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 1024 MB. MEMORIA MAXIMA: 1024 MB. SISTEMA DE MANEJO DE RAEE: Colectivo. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 4800 ppp. RESOLUCION DE CAPTURA: 1200 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 8000 pg. CERTIFICACION: Reach, ISO 14001, ROHS. Fecha de publicación: 13/10/2024. Fecha de último estado: 23/10/2024.`,
                       '/static/pdf/pdf-fotocopiadoras/WORKFORCEPROC5890.pdf'
-                        )" class="bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="WORKFORCE PRO WF-C5890">Ver detalles
+                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="WORKFORCE PRO WF-C5890">Ver detalles
                     </button>
                 </article>
             </div>

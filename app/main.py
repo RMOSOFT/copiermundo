@@ -44,11 +44,13 @@ BASE_DIR = Path(__file__).resolve().parent
 # Montar carpeta static
 app.mount("/static", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "static")), name="static")
 
+# Archivo de sitemap.xml para las urls
 @app.get("/sitemap.xml", include_in_schema=False)
 async def sitemap():
     file_path = os.path.join(os.path.dirname(__file__), "static", "sitemap.xml")
     return FileResponse(file_path, media_type="application/xml")
 
+# Archivo de robots.txt para permitir o restringir capetas de login y paneles
 @app.get("/robots.txt", include_in_schema=False)
 async def robots_txt():
     file_path = os.path.join(BASE_DIR, "static", "robots.txt")
@@ -72,9 +74,6 @@ app.include_router(productos.router)
 # Registrar router de contacto
 app.include_router(contacto.router)
 
-
-
-
 # Ahora desde aqui la logica del carrito
 class OrderItem(BaseModel):
     id: str | None = None
@@ -95,10 +94,8 @@ class OrderRequest(BaseModel):
     cliente: Cliente
     carrito: List[OrderItem]
 
-
 def format_currency(v: float) -> str:
     return f"S/ {v:,.2f}"
-
 
 
 # Ruta para la pagina principal
@@ -177,8 +174,12 @@ def cargar_consumibles(nombre_archivo):
 # ✅ Ruta para consumibles
 @app.get("/consumibles", response_class=HTMLResponse)
 async def consumibles_generales(request: Request):
+    # Aqui definimos el archivo por defecto
+    nombre_archivo = "consumibles.json"
     productos = cargar_consumibles(nombre_archivo)
-    return templates.TemplateResponse("consumibles/index_consumibles.html", {"request": request, "productos": productos})
+
+    titulo = "Consumibles" # Titulo general
+    return templates.TemplateResponse("consumibles/index_consumibles.html", {"request": request, "productos": productos, "titulo": titulo})
 
 @app.get("/consumibles/{categoria}", response_class=HTMLResponse)
 async def consumibles_categoria(request: Request, categoria: str):
@@ -187,8 +188,9 @@ async def consumibles_categoria(request: Request, categoria: str):
 
     # Mapea títulos amigables
     titulos = {
-        "toneroriginal": "Tóner Original",
-        "recargacompatible": "Recarga / Tóner Compatible",
+        "tonercartuchocompatiblekonica": "Tóner Cartucho Konica Minolta Original",
+        "tonercartuchocompatiblekyocera": "Tóner Cartucho kyocera Original",
+        "recargacompatible": "Recarga / Tóneres Compatibles",
         "papelimpresion": "Papel de Impresión",
     }
 
@@ -609,7 +611,7 @@ async def filtrar_por_precio(request: Request, min: float = 0, max: float = 9999
     })
 
 
-# --- Configuración de correo ---
+# --- Configuración de correo para solicitar consumibles de la pagina ---
 @app.post("/api/solicitar-consumible")
 async def solicitar_consumible(data: dict = Body(...)):
     # 1. Armar el correo

@@ -1,0 +1,25 @@
+{
+  "producto": "Tóner Konica Minolta TN-712 original Negro",
+  "categoria": "Toner Cartucho Compatible",
+  "marca": "KONICA MINOLTA",
+  "modelo": "TN-712 Bizhub",
+  "descripcion": "Los Cartuchos de Tóner Konica Minolta con sub-código de identidad TN-712 viene con un chip inteligente insertado en el cartucho TN-712 la cual contabiliza las impresiones de color Negro que sé realizan.",
+
+  "especificaciones": {
+    "Tipo de producto": "Cartucho de tóner original",
+    "Codigo del fabricante": "TN-712 Konica Minolta Holdings",
+    "Tecnologia de impresion": "Láser",
+    "Color": "Black (Black)",
+    "Condicion": "Nuevo",
+    "Tipo": "Original",
+    "Unidad": "1pieza(s)",
+    "Uso": "Rellenar cartuchos de tóner compatibles con los modelos indicados de impresoras konica minolta ",
+    "Rendimiento": "40,800 páginas.",
+    "compatibilidad": [
+      "Impresoras Konica Minolta Bizhub 754E."
+      
+    ]
+  },
+
+  "imagen": "/static/img/consumibles/TonerCartuchoCompatibleKonica/Toner-cartucho-tn712-black.jpg"
+}
