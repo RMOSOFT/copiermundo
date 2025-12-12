@@ -1,0 +1,558 @@
+{% extends "index.html" %}
+
+
+{% block content %}
+<!-- 💬 BOTÓN WHATSAPP FLOTANTE -->
+<div id="whatsapp-float-container">
+    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! 👋 Estoy interesado en una COTIZACIÓN con Copier Mundo."
+       class="whatsapp-flotante" target="_blank" title="Estamos en línea">
+        <img src="{{ url_for('static', path='img/icons/whatsapp-1.png') }}" alt="WhatsApp"/>
+        <!-- 🟢 Estado en línea con animación -->
+        <div class="estado-linea">
+            <span class="punto-verde"></span>
+            En línea
+        </div>
+
+        <!-- Texto principal -->
+        <span>Solicitar <strong>COTIZACIÓN</strong></span>
+    </a>
+</div>
+
+<div class="banner-fotocopiadoras relative w-full">
+    <img alt="Banner" class="w-full h-full object-cover" 
+         src="{{ url_for('static', path='img/BannersFotocopiadorasNegroSeminuevos/Banner-cinta-seminuevos-negro.png') }}">
+    
+    <!-- Texto principal banner-overlay absolute top-0 left-0 w-full h-full flex items-center justify-between px-6 sm:px-10 md:px-16-->
+    <div class="banner-contenedor absolute top-0 left-0 w-full h-full">
+        
+        <h1 id="tituloAnimadoSeminuevaNegro" class="titulo-banner-seminueva-negro typewriter ">
+            Impresoras Multifuncionales SemiNuevas Negro.
+        </h1>
+
+        <a class="btn-volver" href="/productos/fotocopiadoras">
+            <i class="fas fa-chevron-left"></i>
+            Volver a página anterior
+        </a>
+
+    </div>
+</div>
+
+
+
+<div class="text-center my-4">
+    <a href="/productos/fotocopiadoras/impresoras-color#seccion-color" class="btn btn-primary me-2">
+        💙 Seminuevas a Color
+    </a>
+    <a href="/productos/fotocopiadoras/impresoras-monocromaticas#seccion-negro" class="btn btn-dark">
+        🖤 Seminuevas en Blanco & Negro
+    </a>
+</div>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6">
+    <div class="flex flex-col md:flex-row md:space-x-8">
+        <!-- Left sidebar -->
+        <aside class="w-full md:w-64 border-r border-gray-300 pb-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="font-semibold text-sm sm:text-base uppercase">
+                    BÚSQUEDA DE PRODUCTOS
+                </h2>
+                <div class="border-b border-gray-300 w-12">
+                </div>
+            </div>
+
+            <div>
+                <button aria-expanded="true" class="flex items-center justify-between w-full text-xs sm:text-sm font-normal text-gray-700 uppercase mb-2" type="button">
+                    <span>
+                        SECCION DE CATEGORIAS
+                    </span>
+                    <span class="text-2xl leading-none select-none">
+                        −
+                    </span>
+                </button>
+                <ul class="text-xs sm:text-sm font-normal text-gray-500 border-t border-b border-gray-300 divide-y divide-gray-300">
+                    <a href="/productos/fotocopiadoras">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES NUEVAS
+                            </span>
+                            <span class="text-gray-400">
+                                (16)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-seminuevas">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES SEMINUEVAS
+                            </span>
+                            <span class="text-gray-400">
+                                (7)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-seminuevas-series-8">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES SEMINUEVAS SERIES(8)
+                            </span>
+                            <span class="text-gray-400">
+                                (5)
+                            </span>
+                        </li>
+                    </a>
+                    
+                    <a href="/productos/fotocopiadoras/impresoras-color">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES A COLOR
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-monocromaticas">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS MULTIFUNCIONALES A NEGRO MONOCROMÁTICAS
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/fotocopiadoras/impresoras-kyoceras">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                IMPRESORAS KYOCERAS
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/accesoriosoficina">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                ACCESORIOS DE OFICINA
+                            </span>
+                            <span class="text-gray-400">
+                                (8)
+                            </span>
+                        </li>
+                    </a>
+                    <a href="/productos/tonerescartuchos">
+                        <li class="flex items-center justify-between py-2 px-2 hover:text-gray-700 cursor-pointer">
+                            <span class="flex items-center gap-2">
+                                <i class="fas fa-chevron-right text-xs">
+                                </i>
+                                RECARGAS TONERS Y CARTUCHOS
+                            </span>
+                            <span class="text-gray-400">
+                                (4)
+                            </span>
+                        </li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="mb-8">
+            </div>
+
+            <!-- Filtro de precio dentro del <aside> -->
+            <div class="mt-4">
+                <h3 class="text-md font-semibold mb-2">Filtrar por precio</h3>
+                <form id="filtro-precio" method="get" class="space-y-2" action="/productos/fotocopiadoras/filtro-precios-impresora-seminuevas" onsubmit="filtrarPorPrecioMonocromatica(event)" >
+                    <input type="number" name="min" id="precio-min" placeholder="Mínimo" class="pl-6 pr-2 px-3 py-1 w-60 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"/>
+                    <input type="number" name="max" id="precio-max" placeholder="Máximo" class="pl-6 pr-2 px-3 py-1 w-60 border rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm"/>
+                    <button type="submit" class="bg-blue-600 text-white px-3 py-1 rounded w-60 hover:bg-blue-700">
+                        Filtrar
+                    </button>
+                </form>
+            </div>
+
+            <div class="mb-8">
+            </div>
+            
+            <div>
+                <h3 class="text-xs font-bold uppercase mb-1 border-b border-gray-300 pb-2 font-semibold text-sm sm:text-base uppercase">
+                    PRODUCTOS VISTOS
+                </h3>
+                <ul class="space-y-6 text-xs">
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c266i.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub c266i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                S/ 18,149.46
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c3321i.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub-C3321i: IMPRESORA MONOCROMÁTICA DE ALTA VELOCIDAD PARA GRUPOS
+                                DE TRABAJO  
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                S/ 7,925.40
+                            </p>
+                        </div>
+                    </li>
+
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="https://storage.googleapis.com/a1aa/image/90bae295-9001-4e53-4fd7-936b12ff77ae.jpg" width="40"/>
+                        <div>
+                            <p>
+                                BIZHUB 360I: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                S/ 28,427.69
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-185en.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub 185en: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                $ 3,940.50
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-2">
+                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c451i.jpg') }}" width="40"/>
+                        <div>
+                            <p>
+                                Bizhub c451i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                            </p>
+                            <p class="text-blue-700 mt-1">
+                                $ 35,501.50
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Right content -->
+        <section class="flex-1">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-300 pb-4 mb-4">
+                <div class="flex items-center space-x-2 mb-3 sm:mb-0">
+                    <select aria-label="Ordenar productos" class="border border-gray-300 rounded px-3 py-1 text-xs sm:text-sm">
+                        <option>
+                         Orden predeterminado
+                        </option>
+                    </select>
+                    <button aria-label="Vista en cuadrícula" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                        <i class="fas fa-th">
+                        </i>
+                    </button>
+                    <button aria-label="Vista en lista" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                        <i class="fas fa-list">
+                        </i>
+                    </button>
+                </div>
+                <nav aria-label="Paginación" class="flex items-center space-x-2 text-xs sm:text-sm text-gray-700">
+                    <button aria-current="page" class="bg-black text-white px-3 py-1" disabled="">
+                        1
+                    </button>
+                    <button class="hover:underline px-1">
+                        2
+                    </button>
+                    <span>
+                        ..
+                    </span>
+                    <button class="hover:underline px-1">
+                        5
+                    </button>
+                    <button aria-label="Siguiente página" class="px-1">
+                        <i class="fas fa-angle-double-right">
+                        </i>
+                    </button>
+                </nav>
+            </div>
+
+
+
+            <!-- Desde aqui van las fotocopiadoras seminuevas -->
+            <div class="seccion-productos grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 grid-left-adjust">
+                <article class="text-center text-xs sm:text-sm producto-card-seminuevas-negro">
+                    <span class="badge-ofertada-seminuevas-negro">OFERTADA</span>
+                    <button class="btn-imagen-seminuevas-negro" onclick="mostrarDetallesProducto(
+                      'IMPRESORA ESCÁNER MULTIFUNCIONAL LÁSER RICOH MP-501 BLANCO Y NEGRO',
+                      'Con 50 y 60 ppm respectivamente, la MP 501SPF y la MP 601SPF son dos veloces impresorasmultifunción A4 de B/N que cuentan con el panel táctil Smart Operation Panel de 10,1 pulgadas, gracias al cual podrá trabajar colaborativamente con otros dispositivos Ricoh.',
+                      'img/ProductosFotocopiadorasSemiNuevasNegro/ricoh-mp-501.png',
+                      'S/ 2,700.00',
+                      `MARCA: RICOH. MODELO: MP-501. IMPRESORA: Copiadora – Escáner. IMPRESION Y COPIADO:  en blanco y negro. ESCANEO: a color. VELOCIDAD DE IMPRESION: Imprime hasta 50 ppm (páginas por minuto). RESOLUCION MAXIMA DE IMPRESION: 1200 x 1200 ppp. CAPACIDAD DE PAPEL (ESTANDAR): 600 hojas. BANDEJA DE PAPEL: 1 x 500 hojas. BANDEJA BYPASS: 100 hojas. CAPACIDAD DE PAPEL (MAXIMA): 2600 hojas. CUATRO BANDEJAS DE PAPEL (OPCIONAL): 4 x 500 hojas. TAMAÑOS DE PAPEL: A4, A5, A6, B4, B5, B6. SMART OPERATION DE PANEL: a Todo Color de 10.1» de ancho.`,
+                      '/static/pdf/PdfFotocopidorasNegroSemiNuevas/ricoh-mp-501.pdf'
+                        )">
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-fotocopiadoras-seminuevas-ricoh-mp-501">
+                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer"  src="{{ url_for('static', path='img/ProductosFotocopiadorasSemiNuevasNegro/ricoh-mp-501.png') }}"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-seminuevas-negro">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA ESCÁNER MULTIFUNCIONAL LÁSER RICOH MP-501 BLANCO Y NEGRO de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
+                    </button>
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-seminuevas-negro">Impresora multifuncional RICOH-501</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA ESCÁNER MULTIFUNCIONAL LÁSER RICOH MP-501 BLANCO Y NEGRO',
+                      'Con 50 y 60 ppm respectivamente, la MP 501SPF y la MP 601SPF son dos veloces impresorasmultifunción A4 de B/N que cuentan con el panel táctil Smart Operation Panel de 10,1 pulgadas, gracias al cual podrá trabajar colaborativamente con otros dispositivos Ricoh.',
+                      'img/ProductosFotocopiadorasSemiNuevasNegro/ricoh-mp-501.png',
+                      'S/ 2,700.00',
+                      `MARCA: RICOH. MODELO: MP-501. IMPRESORA: Copiadora – Escáner. IMPRESION Y COPIADO:  en blanco y negro. ESCANEO: a color. VELOCIDAD DE IMPRESION: Imprime hasta 50 ppm (páginas por minuto). RESOLUCION MAXIMA DE IMPRESION: 1200 x 1200 ppp. CAPACIDAD DE PAPEL (ESTANDAR): 600 hojas. BANDEJA DE PAPEL: 1 x 500 hojas. BANDEJA BYPASS: 100 hojas. CAPACIDAD DE PAPEL (MAXIMA): 2600 hojas. CUATRO BANDEJAS DE PAPEL (OPCIONAL): 4 x 500 hojas. TAMAÑOS DE PAPEL: A4, A5, A6, B4, B5, B6. SMART OPERATION DE PANEL: a Todo Color de 10.1» de ancho.`,
+                      '/static/pdf/PdfFotocopidorasNegroSemiNuevas/ricoh-mp-501.pdf'
+                        )" class="btn-detalles-seminuevas-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="ricoh-501">Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm producto-card-seminuevas-negro">
+                    <span class="badge-ofertada-seminuevas-negro">OFERTADA</span>
+                    <button class="btn-imagen-seminuevas-negro" onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL DE ESCRITORIO ECOSYS - M2040dn BLANCO Y NEGRO.',
+                      'La ECOSYS M2540dw incluye potentes capacidades en una impresora multifuncional de escritorio en blanco y negro. Con funciones avanzadas, esta impresora multifunción es ideal para empresas que se preocupan por su presupuesto.',
+                      'img/ProductosFotocopiadorasSemiNuevasNegro/Ecosys-M2040dn.png',
+                      'S/ 2,500,00',
+                      `MARCA: Kyocera. MODELO: ECOSYS - M2040dn. CAPACIDAD DE ENTRADA: Bandeja individual de 250 hojas, MPT de 100 hojas. UNIDAD DOBLE: Estandar duplex sin apilar admite media carta (5.5 x 8.5) a doble carta (8.5 x 14), 16 lb Bond - 90 lb Index (60 - 163g/m2). PROCESADOR DE DOCUMENTOS: Procesador de documentos de escaneo doble estándar 50 hojas. MAXIMA CAPACIDAD DE ENTRADA DE OPCIONES: 850 hojas. MAXIMA CAPACIDAD DE SALIDA: Bandeja de salida estándar 150 hojas. PROCESADOR: Cortex-A9 800MHz. SO APLICABLE: Windows Server 2003, Windows, Server 2008, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012. FUENTES: 93 Fuentes PCL 6/KPDL3, 8 Fonts Windows/Vista, 1 Bitmap. TAMAÑO MAXIMO DE ORIGINAL: 8.5 x 14. RESOLUCION DE ESCANEO: Fina 1200 dpi, 600 x 600 dpi, 400 x 400 dpi. VELOCIDAD DEL ESCANEO: Hasta 40 ipm simplex / 32 ipm duplex. FORMATO DE ARCHIVO: TIFF (Compressed MMR/JPEG), PDF (CompressedMMR/JPEG), XPS. VELOCIDAD DEL MOTOR: 42 ppm b&n. CONSUMO DE ENERGIA: Impresion/Copia: 120V: 681 W; 220-240V: 661 W.`
+                      '/static/pdf/PdfFotocopidorasNegroSemiNuevas/Ecosys-M2040dn.pdf'
+                        )">
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-fotocopiadoras-seminuevas-Ecosys-M2040dn">
+                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer"  src="{{ url_for('static', path='img/ProductosFotocopiadorasSemiNuevasNegro/Ecosys-M2040dn.png') }}"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-seminuevas-negro">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL DE ESCRITORIO ECOSYS-M2040dn BLANCO Y NEGRO de Copier Mundo."ECOSYS-M2040dn
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
+                    </button>
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-seminuevas-negro">Impresora Multifuncional ECOSYS-M2040dn</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
+                    </p>
+                    
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL DE ESCRITORIO KYOCERA ECOSYS - M2040dn BLANCO Y NEGRO.',
+                      'La ECOSYS M2540dw incluye potentes capacidades en una impresora multifuncional de escritorio en blanco y negro. Con funciones avanzadas, esta impresora multifunción es ideal para empresas que se preocupan por su presupuesto.',
+                      'img/ProductosFotocopiadorasSemiNuevasNegro/Ecosys-M2040dn.png',
+                      'S/ 2,500,00',
+                      `MARCA: Kyocera. MODELO: ECOSYS - M2040dn. CAPACIDAD DE ENTRADA: Bandeja individual de 250 hojas, MPT de 100 hojas. UNIDAD DOBLE: Estandar duplex sin apilar admite media carta (5.5 x 8.5) a doble carta (8.5 x 14), 16 lb Bond - 90 lb Index (60 - 163g/m2). PROCESADOR DE DOCUMENTOS: Procesador de documentos de escaneo doble estándar 50 hojas. MAXIMA CAPACIDAD DE ENTRADA DE OPCIONES: 850 hojas. MAXIMA CAPACIDAD DE SALIDA: Bandeja de salida estándar 150 hojas. PROCESADOR: Cortex-A9 800MHz. SO APLICABLE: Windows Server 2003, Windows, Server 2008, Windows Server 2008 R2, Windows Server 2012, Windows Server 2012. FUENTES: 93 Fuentes PCL 6/KPDL3, 8 Fonts Windows/Vista, 1 Bitmap. TAMAÑO MAXIMO DE ORIGINAL: 8.5 x 14. RESOLUCION DE ESCANEO: Fina 1200 dpi, 600 x 600 dpi, 400 x 400 dpi. VELOCIDAD DEL ESCANEO: Hasta 40 ipm simplex / 32 ipm duplex. FORMATO DE ARCHIVO: TIFF (Compressed MMR/JPEG), PDF (CompressedMMR/JPEG), XPS. VELOCIDAD DEL MOTOR: 42 ppm b&n. CONSUMO DE ENERGIA: Impresion/Copia: 120V: 681 W; 220-240V: 661 W.`,
+                      '/static/pdf/PdfFotocopidorasNegroSemiNuevas/Ecosys-M2040dn.pdf'
+                        )" class="btn-detalles-seminuevas-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-C224e">Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm producto-card-seminuevas-negro">
+                    <span class="badge-ofertada-seminuevas-negro">OFERTADA</span>
+                    <button class="btn-imagen-seminuevas-negro" onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL - KYOCERA ECOSYS-M3540idn',
+                      'El ECOSYS M3540idn brinda a las pequeñas y medianas empresas poderosas capacidades de manejo de documentos digitales. Ofrece las funciones estándar que usted espera, como la impresión nítida en blanco y negro de 42 ppm, copia, fax y escaneo color, pero tiene otras funciones también.',
+                      'img/ProductosFotocopiadorasSemiNuevasNegro/Ecosys-M3540idn.jpg',
+                      'S/ 2,400.00',
+                      `MARCA: KYOCERA. MODELO: ECOSYS-M3540idn. Capacidad de Papel: 500 Hojas. Configuración: Impresora Multifuncional Blanco y Negro, Impresión / Escaneo Color / Copia. Páginas por Minuto: Carta: 42 ppm; Legal: 33 ppm; A4: 40 ppm. Pantalla: Panel de Control con Pantalla Táctil Color de 7. Niveles de Bits / Resolución: Resolución interpolada multi-bit 600 x 600 dpi, 1,800 x 600. Memoria: Estándar con 1 GB, Expandible a 2 GB. Disco Duro: Opción de HD-6 (32 GB SSD); Opción de HD-7 (128 GB SSD). LAN Inalámbrico: IB-51: IEEE 802.11 b/g/n. Tipo de Escaneo: Escáner Color y Blanco y Negro. Resolución del Escáner: 600dpi, 400dpi, 300dpi, 200dpi, 200x400dpi, 200x100dpi. Formatos de Archivo: Blanco y Negro: TIFF, XPS, PDF; Color: TIFF, JPEG, XPS, PDF. Velocidades de Escaneo: Monocromático/a: 300 dpi - 42 ipm Simple faz; 18 ipm Dúplex. Memoria del Fax: 3.5 MB. Driver: Driver para Fax en Red. Seguridad: Kit de Seguridad de Datos (E), Kit de Autenticación de Tarjetas (B).`,
+                      '/static/pdf/PdfFotocopidorasNegroSemiNuevas/Ecosys-M3540idn.pdf'
+                        )">
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-fotocopiadoras-seminuevas-Ecosys-M3540idn">
+                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasSemiNuevasNegro/Ecosys-M3540idn.jpg') }}"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-seminuevas-negro">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C284e de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                       </div> 
+                    </button>
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-seminuevas-negro">Impresora Multifuncional Ecosys-M3540idn</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL - KYOCERA ECOSYS-M3540idn',
+                      'El ECOSYS M3540idn brinda a las pequeñas y medianas empresas poderosas capacidades de manejo de documentos digitales. Ofrece las funciones estándar que usted espera, como la impresión nítida en blanco y negro de 42 ppm, copia, fax y escaneo color, pero tiene otras funciones también.',
+                      'img/ProductosFotocopiadorasSemiNuevasNegro/Ecosys-M3540idn.jpg',
+                      'S/ 2,400.00',
+                      `MARCA: KYOCERA. MODELO: ECOSYS-M3540idn. Capacidad de Papel: 500 Hojas. Configuración: Impresora Multifuncional Blanco y Negro, Impresión / Escaneo Color / Copia. Páginas por Minuto: Carta: 42 ppm; Legal: 33 ppm; A4: 40 ppm. Pantalla: Panel de Control con Pantalla Táctil Color de 7. Niveles de Bits / Resolución: Resolución interpolada multi-bit 600 x 600 dpi, 1,800 x 600. Memoria: Estándar con 1 GB, Expandible a 2 GB. Disco Duro: Opción de HD-6 (32 GB SSD); Opción de HD-7 (128 GB SSD). LAN Inalámbrico: IB-51: IEEE 802.11 b/g/n. Tipo de Escaneo: Escáner Color y Blanco y Negro. Resolución del Escáner: 600dpi, 400dpi, 300dpi, 200dpi, 200x400dpi, 200x100dpi. Formatos de Archivo: Blanco y Negro: TIFF, XPS, PDF; Color: TIFF, JPEG, XPS, PDF. Velocidades de Escaneo: Monocromático/a: 300 dpi - 42 ipm Simple faz; 18 ipm Dúplex. Memoria del Fax: 3.5 MB. Driver: Driver para Fax en Red. Seguridad: Kit de Seguridad de Datos (E), Kit de Autenticación de Tarjetas (B).`,
+                      
+                      '/static/pdf/PdfFotocopidorasNegroSemiNuevas/Ecosys-M3540idn.pdf'
+                        )" class="btn-detalles-seminuevas-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-651i">Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm producto-card-seminuevas-negro">
+                    <span class="badge-ofertada-seminuevas-negro">OFERTADA</span>
+                    <button class="btn-imagen-seminuevas-negro" onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL KYOCERA - ECOSYS M3655idn/A',
+                      'Esta eficiente impresora multifunción, con una velocidad de hasta 55 ppm, es la elección perfecta para grupos de trabajo medianos y grandes. Está diseñada para producir incluso las tiradas de impresión más grandes y su procesador de documentos dúplex escanea 100 hojas de una sola pasada a una impresionante velocidad de 120 ipm.',
+                      'img/ProductosFotocopiadorasSemiNuevasNegro/Ecosys-M3655idn.png',
+                      'S/ 2,700.00',
+                      `MARCA: KYOCERA. MODELO: COSYS M3655idn/A. Tecnología: KYOCERA ECOSYS Láser, plataforma de soluciones HyPAS. Panel de control: pantalla táctil a color de 7” con ángulo de giro y altavoz para notificación de trabajos. Velocidad (páginas por minuto): hasta 55 páginas A4. Resolución: 1.200 x 1.200 ppp (impresión), 600 x 600 ppp (escaneo/copia). Volumen máximo de impresión1: 250.000 páginas por mes. CPU: ARM Cortex-A9 Dual core 1.2GHz + ARM Cortex-M3 100MHz. Memoria: Standard 1GB, Max. 3GB + 512GB SSD. Interfaces estándar: USB 2.0 (Hi-Speed), 1 x USB Host Interface, Giga bit Ethernet (10BaseT/100BaseTX/ 1000Ba seT, IPv6, IPv4. Fuente de alimentación: AC 220 ~ 240 V, 50/60 Hz. Sistemas operativos: Todos los sistemas operativos Windows actuales, MAC OS X Versión 10.8 o superior, UNIX LINUX. Funciones de impresión: Impresión directa PDF, impresión IPP, impresión por correo electrónico, impresión WSD, impresión segura a través de SSL, IPsec, SNMPv3. Tamaño original máx.: A4/Legal. Formato de archivo: TIFF, PDF, PDF/A, PDF de alta compresión. Memoria: 512MB/1GB/2GB. Fuente de alimentación: AC 220 ~ 240 V, 50/60 Hz.`,. 
+                        '/static/pdf/PdfFotocopidorasNegroSemiNuevas/Ecosys-M3655idn.pdf'
+                        )">
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-fotocopiadoras-seminuevas-Ecosys-M3655idn">
+                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasSemiNuevasNegro/Ecosys-M3655idn.png') }}"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-seminuevas-negro">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL KYOCERA ECOSYS-M3655idn/A de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
+                    </button>
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-seminuevas-negro">Impresora Multifuncional ECOSYS-M3655idn</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL KYOCERA - ECOSYS M3655idn/A',
+                      'Esta eficiente impresora multifunción, con una velocidad de hasta 55 ppm, es la elección perfecta para grupos de trabajo medianos y grandes. Está diseñada para producir incluso las tiradas de impresión más grandes y su procesador de documentos dúplex escanea 100 hojas de una sola pasada a una impresionante velocidad de 120 ipm.',
+                      'img/ProductosFotocopiadorasSemiNuevasNegro/Ecosys-M3655idn.png',
+                      'S/ 2,700.00',
+                      `MARCA: KYOCERA. MODELO: COSYS M3655idn/A. Tecnología: KYOCERA ECOSYS Láser, plataforma de soluciones HyPAS. Panel de control: pantalla táctil a color de 7” con ángulo de giro y altavoz para notificación de trabajos. Velocidad (páginas por minuto): hasta 55 páginas A4. Resolución: 1.200 x 1.200 ppp (impresión), 600 x 600 ppp (escaneo/copia). Volumen máximo de impresión1: 250.000 páginas por mes. CPU: ARM Cortex-A9 Dual core 1.2GHz + ARM Cortex-M3 100MHz. Memoria: Standard 1GB, Max. 3GB + 512GB SSD. Interfaces estándar: USB 2.0 (Hi-Speed), 1 x USB Host Interface, Giga bit Ethernet (10BaseT/100BaseTX/ 1000Ba seT, IPv6, IPv4. Fuente de alimentación: AC 220 ~ 240 V, 50/60 Hz. Sistemas operativos: Todos los sistemas operativos Windows actuales, MAC OS X Versión 10.8 o superior, UNIX LINUX. Funciones de impresión: Impresión directa PDF, impresión IPP, impresión por correo electrónico, impresión WSD, impresión segura a través de SSL, IPsec, SNMPv3. Tamaño original máx.: A4/Legal. Formato de archivo: TIFF, PDF, PDF/A, PDF de alta compresión. Memoria: 512MB/1GB/2GB. Fuente de alimentación: AC 220 ~ 240 V, 50/60 Hz.`,. 
+                        '/static/pdf/PdfFotocopidorasNegroSemiNuevas/Ecosys-M3655idn.pdf'
+                        )" class="btn-detalles-seminuevas-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-750i" >Ver detalles
+                    </button>
+                </article>
+
+                <article class="text-center text-xs sm:text-sm producto-card-seminuevas-negro">
+                    <span class="badge-ofertada-seminuevas-negro">OFERTADA</span>
+                    <button class="btn-imagen-seminuevas-negro" onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB 287 BLANCO Y NEGRO',
+                      'Potente equipo multifuncional A3 monocromo con 28 páginas por minuto departamental. Incluye 2GB de memoria RAM ampliable hasta 4GB y disco duro de 250GB. Su controlador Emperon a 1,2GHz con drivers PCL6, PostScript 3 posibilita su uso en cualquier entorno como por ejemplo Windows, MAC y Linux y además permite la impresión nativa de formatos de Microsoft Office.',
+                      'img/ProductosFotocopiadorasSemiNuevasNegro/bizhub-287.png',
+                      'S/ 3,600,00',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB 287. VELOCIDAD A4: hasta 45 cpm (color/monocromo). TECNOLOGIA DE IMPRESION: Láser monocromatica. VELOCIDAD DE IMPRESION: Hasta 28 ppm en A4. RESOLUCION MAXIMA: 1200x1200 dpi. CAPACIDAD DE PAPEL: Hasta 1,350 hojas. DIMENSIONES: 585 mm x 660 x 735 mm. PESO: 56 kg. CONECTIVIDAD: USB 2.0 Ethernet y Wifi. FUNCIONES ADICIONALES: Impresión duplex. escaneo fax(opcional). CONSUMO ENERGETICO: Menos de 1,45kw. FUNCIONES: Imprime, copia, escanea, y envia fax. ESCANEO RAPIDO: Hasta 45 originales por minuto a color blanco y negro.`,
+                        '/static/pdf/PdfFotocopidorasNegroSemiNuevas/bizhub-287.pdf'
+                        )">
+                        <!-- Imagen con overlay dinámico -->
+                        <div class="producto-imagen-fotocopiadoras-seminuevas-bizhub-287">
+                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasSemiNuevasNegro/bizhub-287.png') }}"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-seminuevas-negro">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB 287 de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
+                    </button>
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-seminuevas-negro">Impresora Multifuncional BIZHUB-287</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB 287 BLANCO Y NEGRO',
+                      'Potente equipo multifuncional A3 monocromo con 28 páginas por minuto departamental. Incluye 2GB de memoria RAM ampliable hasta 4GB y disco duro de 250GB. Su controlador Emperon a 1,2GHz con drivers PCL6, PostScript 3 posibilita su uso en cualquier entorno como por ejemplo Windows, MAC y Linux y además permite la impresión nativa de formatos de Microsoft Office.',
+                      'img/ProductosFotocopiadorasSemiNuevasNegro/bizhub-287.png',
+                      'S/ 3,600,00',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB 287. VELOCIDAD A4: hasta 45 cpm (color/monocromo). TECNOLOGIA DE IMPRESION: Láser monocromatica. VELOCIDAD DE IMPRESION: Hasta 28 ppm en A4. RESOLUCION MAXIMA: 1200x1200 dpi. CAPACIDAD DE PAPEL: Hasta 1,350 hojas. DIMENSIONES: 585 mm x 660 x 735 mm. PESO: 56 kg. CONECTIVIDAD: USB 2.0 Ethernet y Wifi. FUNCIONES ADICIONALES: Impresión duplex. escaneo fax(opcional). CONSUMO ENERGETICO: Menos de 1,45kw. FUNCIONES: Imprime, copia, escanea, y envia fax. ESCANEO RAPIDO: Hasta 45 originales por minuto a color blanco y negro.`,
+                        '/static/pdf/PdfFotocopidorasNegroSemiNuevas/bizhub-287.pdf'
+                        )" class="btn-detalles-seminuevas-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-750i" >Ver detalles
+                    </button>
+                </article>
+
+                
+                <article class="text-center text-xs sm:text-sm producto-card-seminuevas-negro">
+                    <span class="badge-ofertada-seminuevas-negro">OFERTADA</span>
+                    <button class="btn-imagen-seminuevas-negro" onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB 654e',
+                      'La Bizhub 654e tiene una impresión de alta velocidad de 65 ppm, el escaneo dual hasta 180 originales por minuto marcando una diferencia en cuanto potencia y productividad; incluye una interfaz optimizada que opera con solo tocar la pantalla y deslizar el dedo.',
+                      'img/ProductosFotocopiadorasSemiNuevasNegro/bizhub-654e.png',
+                      'S/ 5,900.00',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB 654e. Memoria del equipo: 2048 MB. Disco duro del equipo: 250 GB.. Interfaz: 10BASE-T/100BASE-TX/1000BASE-T Ethernet, USB 2.0. Protocolos de red: TCP/IP (IPv4 / IPv6), SMB, LPD, IPP, SNMP, HTTP, HTTPS. Alimentador de documentos de escaneado doble: Hasta 150 originales/5,5 x 8,5 pulg. a 11 x 17 pulg./35 a 210 g/m2. Tamaño del papel de impresión: Escaneado y copiado: Hasta 11 x 17 pulg. Impresión: Hasta 11 x 17 pulg. de sangría completa en papel de 12 x 18 pulg. Tamaños de papel personalizado. Velocidad de impresión(8,5 x 11 pulg.): Hasta 65 ppm (vertical). Resolución de copias 600 x 600 ppp. Formatos de archivo: JPEG, TIFF, PDF, PDF/A 1a y 1b (opcional), PDF compacto, PDF cifrado y PDF. Destinos de escaneado 2100 (compartidos con fax), compatibilidad con LDAP. Peso del equipo Aprox. 487,25 lb. Resolución Máx.: 600 x 600 ppp (ultrafina). Fax Super G3 (opcional). `,
+                        '/static/pdf/PdfFotocopidorasNegroSemiNuevas/bizhub-654e.pdf'
+                        )">
+                        <!-- Imagen con overlay Dinámico -->
+                        <div class="producto-imagen-fotocopiadoras-seminuevas-bizhub-654e">
+                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasSemiNuevasNegro/bizhub-654e.png') }}"/>
+                            <!-- Overlay que aparece al pasar -->
+                            <div class="overlay-whatsapp-seminuevas-negro">
+                                <span class="estado-en-linea">En línea</span>
+                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB 654e de Copier Mundo."
+                                class="btn-whatsapp-overlay" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                </a>
+                            </div>
+                        </div>
+                    </button>
+                    <!-- Nombre y precio -->
+                    <div class="mt-2">
+                        <span class="nombre-producto-seminuevas-negro">Impresora Multifuncional BIZHUB-654e</span>
+                    </div>
+
+                    <p class="mt-2 text-gray-700">
+                        
+                    </p>
+                    <button onclick="mostrarDetallesProducto(
+                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB 654e',
+                      'La Bizhub 654e tiene una impresión de alta velocidad de 65 ppm, el escaneo dual hasta 180 originales por minuto marcando una diferencia en cuanto potencia y productividad; incluye una interfaz optimizada que opera con solo tocar la pantalla y deslizar el dedo.',
+                      'img/ProductosFotocopiadorasSemiNuevasNegro/bizhub-654e.png',
+                      'S/ 5,900.00',
+                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB 654e. Memoria del equipo: 2048 MB. Disco duro del equipo: 250 GB.. Interfaz: 10BASE-T/100BASE-TX/1000BASE-T Ethernet, USB 2.0. Protocolos de red: TCP/IP (IPv4 / IPv6), SMB, LPD, IPP, SNMP, HTTP, HTTPS. Alimentador de documentos de escaneado doble: Hasta 150 originales/5,5 x 8,5 pulg. a 11 x 17 pulg./35 a 210 g/m2. Tamaño del papel de impresión: Escaneado y copiado: Hasta 11 x 17 pulg. Impresión: Hasta 11 x 17 pulg. de sangría completa en papel de 12 x 18 pulg. Tamaños de papel personalizado. Velocidad de impresión(8,5 x 11 pulg.): Hasta 65 ppm (vertical). Resolución de copias 600 x 600 ppp. Formatos de archivo: JPEG, TIFF, PDF, PDF/A 1a y 1b (opcional), PDF compacto, PDF cifrado y PDF. Destinos de escaneado 2100 (compartidos con fax), compatibilidad con LDAP. Peso del equipo Aprox. 487,25 lb. Resolución Máx.: 600 x 600 ppp (ultrafina). Fax Super G3 (opcional). `,
+                        '/static/pdf/PdfFotocopidorasNegroSemiNuevas/bizhub-654e.pdf'
+                        )" class="btn-detalles-seminuevas-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-750i" >Ver detalles
+                    </button>
+                </article>
+
+            </div>
+        </<section>
+    </div>
+</main>
+{% endblock %}

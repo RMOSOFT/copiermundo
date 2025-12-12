@@ -299,74 +299,195 @@ html {
   }
 }
 
-/* Diseño para las cabeceras del menu productos con submenu */
-/* --- Submenú dentro del submenú --- */
-/* Estilo para el submenu profesional (flyout) */
-/* 🎯 MEGAMENU PROFESIONAL */
-/* 🔹 Submenú lateral profesional */
+/* Diseño para las cabeceras del menu productos con submenu y diseño para pasar el mouse y se despliegue automaticamente */
 /* CONTENEDOR DEL SUBMENÚ INTERNO */
+
+/* =======================================
+   🟦 SUBMENÚ INTERNO LATERAL – estilo Fluent
+   ======================================= */
 .dropdown-submenu {
     position: relative;
 }
 
-/* Botón que abre submenú 
 .submenu-toggle {
-    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6px;
     font-weight: 600;
     cursor: pointer;
-    border: none;
-    background: transparent;
-    
-    color: #0E0D0C;
-}*/
-
-.submenu-toggle {
-    display: flex !important;
-    justify-content: flex-start !important;
-    align-items: center;
-    gap: 8px; /* espacio entre flecha y texto */
+    transition: all 0.2s ease;
 }
 
-/* Icono flecha */
-.icon-submenu {
-    transition: transform 0.3s ease;
+.submenu-toggle:hover {
+    color: #007bff;
+    transform: translateX(3px);
 }
 
-/* Caja oculta */
-.submenu-inner {
-    display: none;
-    padding-left: 15px;
-}
-/* 🔹 Flecha al inicio con color negro */
+/* Flecha */
 .flecha-submenu {
-    order: -1; /* mueve la flecha al inicio */
-    color: #000 !important;   
+    order: -1;
     font-size: 12px;
-    font-weight: bold;
+    transition: transform 0.25s ease;
+    color: #000;
 }
 
-/* 🔻 Flecha para submenú */
-
-
-
-/* Cuando el submenú esté activo (hover), gira flecha */
-.dropdown-submenu:hover .flecha-submenu {
-    transform: rotate(90deg);
+/* Panel del submenú */
+.submenu-inner {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    min-width: 240px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 10px;
+    padding: 12px 0;
+    display: none;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    z-index: 9999;
 }
 
 /* Mostrar submenú */
-.dropdown-submenu.open .submenu-inner {
-    display: block;
+@media (min-width: 992px) {
+    .dropdown-submenu:hover > .submenu-inner {
+        display: block !important;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .dropdown-submenu:hover .flecha-submenu {
+        transform: rotate(90deg);
+    }
 }
 
-/* Rotación flecha */
-.dropdown-submenu.open .icon-submenu {
-    transform: rotate(90deg);
+/* Items internos para el submenus cambiando letras y fondos con linear gradient */
+.dropdown-menu .dropdown-item{
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.92rem;
+    letter-spacing: 0.3px;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 6px;
+}
+.dropdown-menu .dropdown-item:hover {
+    background: #0099d8 !important;
+    background: linear-gradient(90deg, #000000 0%, #55555A 50%, #B4B4B4 100%) !important;
+    color: #fff !important;
+    transform: translateX(4px);
 }
 
-/* Para que NO se abra hacia abajo como card gigante */
-.dropdown-menu {
-    overflow: visible !important;
+.submenu-inner .dropdown-item {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.92rem;
+    letter-spacing: 0.3px;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 6px;
+
+    position: relative;
+    padding-left: 26px; /* espacio para el icono */
+}
+/* Puntito base */
+.submenu-inner .dropdown-item::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+/* 🟢 General (color/negro) */
+.submenu-inner .link-semi-general::before {
+    background: linear-gradient(135deg, #16a34a, #22c55e); /* verde asesoría */
+}
+
+/* 🔵 Color */
+.submenu-inner .link-semi-color::before {
+    background: linear-gradient(135deg, #2563eb, #38bdf8); /* azul Konica */
+}
+
+/* ⚫ Blanco y Negro */
+.submenu-inner .link-semi-negro::before {
+    background: linear-gradient(135deg, #111827, #4b5563); /* negro técnico */
+}
+
+/* Al pasar el mouse cambia de color: #ff8c00 !important; /linear-gradient(90deg, #0067ff, #00a8ff)  */
+.submenu-inner .dropdown-item:hover {
+    background: #0099d8 !important;
+    background: linear-gradient(90deg, #0a0a0a, #1e90ff) !important;
+    color: #fff !important;
+    transform: translateX(4px);
+}
+
+/* ================================
+   🟦 MENÚ PRINCIPAL – ESTILO APPLE PREMIUM
+   ================================ */
+@media (min-width: 992px) {
+
+    .header-center .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.25s ease;
+        backdrop-filter: blur(14px);
+        background: rgba(255,255,255,0.85);
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .header-center .dropdown:hover > .dropdown-menu {
+        display: block !important;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    /* Animación suave */
+    .header-center .dropdown-menu {
+        margin-top: 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.25s ease-in-out;
+    }
+
+    /* Quitar caret de Bootstrap */
+    .header-center .dropdown-toggle::after {
+        display: none !important;
+    }
+
+    /* Enlaces */
+    .dropdown-menu .dropdown-item {
+        padding: 10px 18px;
+        border-radius: 6px;
+        transition: all 0.22s ease-in-out;
+        font-weight: 600;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+        background: linear-gradient(90deg, #0067ff, #00a8ff);
+        color: #fff;
+        box-shadow: 0 3px 10px rgba(0,102,255,0.35);
+        transform: translateX(4px);
+    }
+
+    /* Ícono flecha del menú */
+    .nav-link-custom i {
+        transition: transform 0.3s ease;
+    }
+    .dropdown:hover > a i {
+        transform: rotate(90deg);
+        color: #007bff;
+    }
+
+    /* Quitar caret de Bootstrap */
+    .dropdown-toggle::after {
+        display: none !important;
+    }
 }
 
 
@@ -374,14 +495,17 @@ html {
 
 /* Diseño de actualizacion para las letras de los menus principales como producto,consumibles,nosotros,contacto */
 /* 🔹 Estilo general del menú de navegación superior */
+
+/* TITULOS DEL MENÚ PRINCIPAL */
 .nav-link-custom {
-  color: #000;
-  font-weight: 700; /* negrita */
-  font-size: 0.95rem;
-  letter-spacing: 0.3px;
-  text-decoration: none;
-  padding: 5px 10px;
-  transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    font-weight: 900; /* negrita */
+    font-size: 0.95rem;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
 }
 
 /* Hover moderno: azul brillante con subrayado sutil */
@@ -2556,7 +2680,6 @@ html {
 }
 
 /* Desde aqui la actualizacion para la seccion de cartuchos y recargas toners*/
-
 .overlay-whatsapp-toneres {
   position: absolute;
   top: 0;
@@ -2633,7 +2756,8 @@ html {
   border-radius: 15px;
 }
 
-/* Desde aqui vamos a diseñar para todos los productos de fotocopiadoras multifuncionales */
+/* Desde aqui vamos a diseñar para todos los productos de fotocopiadoras multifuncionales 
+Nuevas a colores */
 .overlay-whatsapp-fotocopiadoras {
   position: absolute;
   top: 0;
@@ -2681,7 +2805,6 @@ html {
   display: block;
   border-radius: 15px;
 }
-
 .producto-imagen-BIZHUB-C266i img {
   width: 100%;
   height: 201px;
@@ -2689,7 +2812,13 @@ html {
   display: block;
   border-radius: 15px;
 }
-
+.producto-imagen-BIZHUB-C361i img {
+  width: 100%;
+  height: 201px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px;
+}
 .producto-imagen-BIZHUB-C451i img {
   width: 100%;
   height: 201px;
@@ -2697,39 +2826,6 @@ html {
   display: block;
   border-radius: 15px;
 }
-
-.producto-imagen-BIZHUB-750i img {
-  width: 100%;
-  height: 201px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px;
-}
-
-.producto-imagen-BIZHUB-185en img {
-  width: 100%;
-  height: 201px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px;
-}
-
-.producto-imagen-BIZHUB-367 img {
-  width: 100%;
-  height: 201px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px;
-}
-
-.producto-imagen-BIZHUB-651i img {
-  width: 100%;
-  height: 201px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px;
-}
-
 .producto-imagen-BIZHUB-C551i img {
   width: 100%;
   height: 201px;
@@ -2737,64 +2833,7 @@ html {
   display: block;
   border-radius: 15px;
 }
-
-.producto-imagen-KYOCERA-M8124CIDN img {
-  width: 100%;
-  height: 201px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px;
-}
-.producto-imagen-KYOCERA-MA5500IFX img {
-  width: 100%;
-  height: 201px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px;
-}
-.producto-imagen-KYOCERA-MA5500IFX img {
-  width: 100%;
-  height: 201px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px;
-}
-.producto-imagen-KYOCERA-PA4000WX img {
-  width: 100%;
-  height: 201px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px;
-}
-.producto-imagen-KYOCERA-C5890 img {
-  width: 100%;
-  height: 201px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px;
-}
-.producto-imagen-BIZHUB-225i img {
-  width: 100%;
-  height: 201px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px;
-}
-.producto-imagen-BIZHUB-361i img {
-  width: 100%;
-  height: 201px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px;
-}
-.producto-imagen-BIZHUB-650i img {
-  width: 100%;
-  height: 201px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px;
-}
-.producto-imagen-BIZHUB-751i img {
+.producto-imagen-BIZHUB-C751i img {
   width: 100%;
   height: 201px;
   object-fit: contain;
@@ -3005,145 +3044,1074 @@ html {
 }
 
 
-/* Diseño de seccino de productos fotocopiadoras a color */
-.overlay-whatsapp-fotocopiadoras-color {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 65%; /* 🔹 ahora cubre toda la tarjeta */
-  background: rgba(0,0,0,0.55);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  border-radius: 12px;
-  pointer-events: none; /* evita interferencia cuando está oculto */
-}
-/* Aparece con fade + zoom */
-.producto-card:hover .overlay-whatsapp-fotocopiadoras-color {
-  opacity: 1;
-  transform: scale(1);
-  pointer-events: auto; /* se activa el clic */
+/* Diseño de seccion de productos fotocopiadoras seminuevas a color nuevo diseño para los cards y general */
+/* Diseño para las fotocopiadoras siminuevas colocando el banner y diseñando toda esa pagina hija */
+/* ===============================
+   🔵 Banner ampliado SOLO esta página
+   =============================== */
+.banner-fotocopiadoras {
+    height: 218px; /* Aumentamos tamaño */
 }
 
-.nombre-producto-fotocopiadoras-color {
-  background: linear-gradient(90deg, #111, #C8F527); /* 90deg, #111, #333 */
-  color: white;
-  display: inline-block;
-  padding: 2px 10px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 1.0rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 1px;    /* 🔥 SEPARA imagen del título */
-}
-.nombre-producto-fotocopiadoras-color:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+@media (min-width: 768px) {
+    .banner-fotocopiadoras {
+        height: 300px; /* En pantallas medianas */
+    }
 }
 
-.producto-imagen-BIZHUB-C3321i img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px; 
-}
-.producto-imagen-BIZHUB-C266i img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px; 
-}
-.producto-imagen-BIZHUB-C451i img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px; 
+@media (min-width: 1024px) {
+    .banner-fotocopiadoras {
+        height: 340px; /* En laptops/PC */
+    }
 }
 
-/* Diseño para los productos fotocopiadoras mononocromaticas negro */
-
-.overlay-whatsapp-fotocopiadoras-negro-monocromaticas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 65%; /* 🔹 ahora cubre toda la tarjeta */
-  background: rgba(0,0,0,0.55);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  border-radius: 12px;
-  pointer-events: none; /* evita interferencia cuando está oculto */
-}
-/* Aparece con fade + zoom */
-.producto-card:hover .overlay-whatsapp-fotocopiadoras-negro-monocromaticas {
-  opacity: 1;
-  transform: scale(1);
-  pointer-events: auto; /* se activa el clic */
+/* Oscurecer un poco la imagen filter: brightness(0.00);*/
+.banner-fotocopiadoras img {
+    filter: brightness(1.12) contrast(1.08) saturate(1.15);
+    image-rendering: auto;
+    transform: translateZ(0);       /* mejora nitidez en Chrome */
+    will-change: filter, transform; /* optimización */
 }
 
-.nombre-producto-fotocopiadoras-negro-monocromaticas {
-  background: linear-gradient(90deg, #111, #C8F527); /* 90deg, #111, #333 */
-  color: white;
-  display: inline-block;
-  padding: 2px 10px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 1.0rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  margin-bottom: 1px;    /* 🔥 SEPARA imagen del título */
-}
-.nombre-producto-fotocopiadoras-negro-monocromaticas:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+/* ===============================
+   🔵 Botón volver + animaciones
+   =============================== */
+.btn-volver {
+    position: absolute;
+    top: 250px;
+    right: 30px;
+
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    font-size: 0.95rem;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    
+    padding: 8px 16px;
+    border-radius: 30px;
+
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.3);
+
+    transition: all .25s ease-in-out;
 }
 
-.producto-imagen-BIZHUB-185en img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px; 
+/* Hover elegante */
+.btn-volver:hover {
+    background: #00a6ff;
+    color: white;
+    transform: translateX(-5px);
+    box-shadow: 0 0 12px rgba(0,166,255,0.6);
 }
 
-.producto-imagen-BIZHUB-367 img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px; 
-}
-.producto-imagen-BIZHUB-651i img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px; 
+/* Icono animado */
+.btn-volver i {
+    transition: transform .25s;
 }
 
-.producto-imagen-BIZHUB-750i img {
-  width: 100%;
-  height: 200px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px; 
-} 
+.btn-volver:hover i {
+    transform: translateX(-4px);
+}
 
-/* Diseño para fotocopiadoras de Kyoceras */
+/* para el titulo del banner de entrada a maquina */ 
+.titulo-banner-seminueva {
+    margin-top: 200px;   /* 🔥 Ajusta esta medida para subir o bajar */
+    margin-left: 20px;  /* Más pegado a la izquierda */
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: white;
+    padding: 10px 28px;
+    font-size: 1.1rem; /* Achicamos el tamaño aqui*/
+    display: inline-block;
+
+    background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+    border-radius: 40px;
+    border: 2px solid rgba(255,255,255,0.35);
+    text-shadow: 0 0 8px rgba(255,255,255,0.4);
+
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid rgba(255,255,255,0.75);
+
+    opacity: 1;
+    transform: translateX(100px);   /* inicia bien a la derecha */
+}
+
+/* CARD EXCLUSIVO PARA PÁGINAS DE COLOR */
+/* CARD crema específico para COLOR */
+/* ============================================
+   🎨 CARD PREMIUM – Copier Mundo Style #FFC8B8
+   ============================================ */
+.producto-card-seminuevas-color {
+    background: linear-gradient(180deg, #0094D8, #00F2A0);                 /*linear-gradient(90deg, #E7007D, #FFDE59);    #ffffffee #90CFF9 #869CD5 #DDDBD9 #faf8f4 crema suave */
+    color: #FFFFFF;
+    border-radius: 22px;                 /* bordes redondos premium */
+    padding: 16px;
+    text-align: center;
+    width: 242px;                        /* más ancho */
+    min-height: 300px;                   /* alto uniforme */
+    margin: auto;
+    position: relative;                   /* necesario para pegatinas */
+
+    /* 🔵 Menos alto (menos padding) */
+    padding: 14px 18px 14px;
+
+    box-shadow: 0px 14px 25px rgba(0,0,0,0.25);
+    border: 2px solid rgba(0,0,0,0.07);
+
+    transition: all .25s ease-in-out;
+}
+
+/* Hover elegante */
+.producto-card-seminuevas-color:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 14px 32px rgba(0,0,0,0.18);
+}
+/* ============================================
+   🟢 Etiqueta OFERTADA – Profesional
+   ============================================ */
+.badge-ofertada {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    background: #19c014;             /* verde profesional */
+    color: #fff;
+    font-size: 0.70rem;
+    font-weight: 700;
+
+    padding: 4px 10px;
+    border-radius: 12px;
+
+    letter-spacing: .5px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.18);
+
+    z-index: 10;
+}
+
+/* Botón que envuelve la imagen: sin bordes ni fondo */
+.btn-imagen-color {
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: 100%;
+}
+
+/* Overlay WhatsApp SOLO encima de la imagen */
+.overlay-whatsapp-seminuevas-color {
+    position: absolute;
+    inset: 0;                    /* top:0 right:0 bottom:0 left:0 */
+    display: flex;
+    height: 65%; /* 🔹 ahora cubre toda la tarjeta */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.55);
+    opacity: 0;
+    transform: scale(0.95);
+    border-radius: 14px;
+    pointer-events: none;
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+/* Mostrar overlay al pasar por el card */
+.producto-card-seminuevas-color:hover .overlay-whatsapp-seminuevas-color {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+/* Nombre del producto linear-gradient(90deg, #111, #C8F527);  linear-gradient(90deg, #e52e71, #ff9a2b);*/
+/* Título premium */
+.nombre-producto-seminuevas-color {
+    background: linear-gradient(90deg, #FF8F1F, #FFDE59);
+    color: white;
+    font-weight: 700;
+    font-size: 1.05rem;                  /* 🔥 ampliar letras linear-gradient(90deg, #003A75, #E7007D);*/
+    padding: 1px 2px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+/* Botón premium #e52e2e #001775 #5200A3 #5200A3 !important;*/
+.btn-detalles-color {
+    margin-top: 4px;
+    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    padding: 8px 20px !important;
+    font-size: 0.90rem !important;
+    border-radius: 28px;
+    transition: all .25s ease;
+}
+/*#c10b0b !important*/
+.btn-detalles-color:hover {
+    background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%) !important;
+    transform: scale(1.05);
+}
+
+/* Contenedor de la imagen: referencia del overlay */
+/* Contenedor de imagen con fondo premium */
+.producto-imagen-seminuevas-color-bizhub-C3320i {
+    /*background: #ffffff !important;Fondo blanco puro */
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 14px;
+    height: 200px;                       /* tamaño uniforme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.25); /* sombra MUY suave opcional */
+}
+.producto-imagen-seminuevas-color-bizhub-C3320i img {
+    border-radius: 30%; /* 🔵 convierte la imagen en círculo */
+    width: 100%;
+    height: 115%;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25)); /* efecto sin fondo */
+}
+
+.producto-imagen-seminuevas-color-bizhub-C284 {
+    /*background: #ffffff !important;Fondo blanco puro */
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 14px;
+    height: 200px;                       /* tamaño uniforme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.25); /* sombra MUY suave opcional */
+}
+.producto-imagen-seminuevas-color-bizhub-C284 img {
+    border-radius: 30%; /* 🔵 convierte la imagen en círculo */
+    width: 100%;
+    height: 115%;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25)); /* efecto sin fondo */
+}
+.producto-imagen-seminuevas-color-bizhub-C364 {
+    /*background: #ffffff !important;Fondo blanco puro */
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 14px;
+    height: 200px;                       /* tamaño uniforme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.25); /* sombra MUY suave opcional */
+}
+.producto-imagen-seminuevas-color-bizhub-C364 img {
+    border-radius: 30%; /* 🔵 convierte la imagen en círculo */
+    width: 100%;
+    height: 115%;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25)); /* efecto sin fondo */
+}
+.producto-imagen-seminuevas-color-bizhub-C454e {
+    /*background: #ffffff !important;Fondo blanco puro */
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 14px;
+    height: 200px;                       /* tamaño uniforme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.25); /* sombra MUY suave opcional */
+}
+.producto-imagen-seminuevas-color-bizhub-C454e img {
+    border-radius: 30%; /* 🔵 convierte la imagen en círculo */
+    width: 100%;
+    height: 115%;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25)); /* efecto sin fondo */
+}
+.producto-imagen-seminuevas-color-bizhub-C654e {
+    /*background: #ffffff !important;Fondo blanco puro */
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 14px;
+    height: 200px;                       /* tamaño uniforme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.25); /* sombra MUY suave opcional */
+}
+.producto-imagen-seminuevas-color-bizhub-C654e img {
+    border-radius: 30%; /* 🔵 convierte la imagen en círculo */
+    width: 100%;
+    height: 115%;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25)); /* efecto sin fondo */
+}
+.producto-imagen-seminuevas-color-bizhub-C754e {
+    /*background: #ffffff !important;Fondo blanco puro */
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 14px;
+    height: 200px;                       /* tamaño uniforme */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.25); /* sombra MUY suave opcional */
+}
+.producto-imagen-seminuevas-color-bizhub-C754e img {
+    border-radius: 30%; /* 🔵 convierte la imagen en círculo */
+    width: 100%;
+    height: 115%;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25)); /* efecto sin fondo */
+}
+
+
+
+/* Diseño para el banners de fotocopiadoras monocromaticas pagina hija*/
+/* para el titulo del banner de entrada a maquina linear-gradient(90deg, #d53369 0%, #daae51 100%);*/ 
+.titulo-banner-seminueva-monocromatica {
+    margin-top: 200px;
+    margin-left: 20px;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: white;
+
+    padding: 10px 20px; /* 🔥 Espacio horizontal REAL */
+    font-size: 1.15rem;
+
+    display: inline-block;
+    max-width: 1450px;        /* 🔥 El contenedor podrá crecer hasta aquí */
+    width: fit-content;       /* 🔥 Se adapta pero permite typing animar */
+    
+    background: linear-gradient(to top, #000000, #444444);
+    border-radius: 40px;
+    border: 2px solid rgba(255,255,255,0.35);
+    text-shadow: 0 0 8px rgba(255,255,255,0.4);
+
+    white-space: nowrap;      
+    overflow: hidden;         /* necesario para máquina de escribir */
+    border-right: 3px solid rgba(255,255,255,0.75);
+
+    opacity: 1;
+    transform: translateX(100px);
+}
+
+/* 🔵 Máquina de escribir SOLO para esta página hija */
+.titulo-banner-seminueva-monocromatica.typewriter {
+    animation: typingMono 3.1s steps(50) forwards,
+               cursorBlink .8s step-end infinite;
+}
+
+/* 🔵 ANIMACIÓN ÚNICA SOLO PARA ESTA PÁGINA */
+@keyframes typingMono {
+    from { width: 0; }
+    to { width: 55%; }   /* Ajusta según tu título largo/largo exacto */
+}
+
+
+
+/* Diseño para los productos fotocopiadoras mononocromaticas negro para los cards y diseño general de la pagina hija */
+/* PRODUCTO CARDS NUEVO DISEÑOS */
+.producto-card-monocromaticas-negro {
+    background: linear-gradient(180deg, #F1F1F1, #A8A8A8);
+    border-radius: 22px;
+    padding: 16px;
+    text-align: center;
+    width: 242px;
+    min-height: 298px;
+    margin: auto;
+    position: relative;
+
+    padding: 14px 18px 14px; /* tu padding original */
+
+    box-shadow: 0px 14px 25px rgba(0,0,0,0.25);
+    border: 2px solid rgba(0,0,0,0.07);
+    transition: all .25s ease-in-out;
+}
+/* Hover elegante */
+.producto-card-monocromaticas-negro:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 14px 32px rgba(0,0,0,0.18);
+}
+
+/* ============================================
+   🟢 Etiqueta OFERTADA – Profesional
+   ============================================ */
+.badge-ofertada-negro {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+
+    background: #19c014;             /* verde profesional */
+    color: #fff;
+    font-size: 0.70rem;
+    font-weight: 700;
+
+    padding: 2px 10px;
+    border-radius: 12px;
+
+    letter-spacing: .5px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.18);
+
+    z-index: 10;
+}
+
+/* Botón que envuelve la imagen: sin bordes ni fondo */
+.btn-imagen-negro {
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: 100%;
+}
+
+/* Overlay WhatsApp SOLO encima de la imagen */
+.overlay-whatsapp-monocromaticas-negro {
+    position: absolute;
+    inset: 0;                    /* top:0 right:0 bottom:0 left:0 */
+    display: flex;
+    height: 100%; /* 🔹 ahora cubre toda la tarjeta */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.55);
+    opacity: 0;
+    transform: scale(0.95);
+    border-radius: 14px;
+    pointer-events: none;
+    transition: opacity .3s ease, transform .3s ease;
+}
+/* Mostrar overlay al pasar por el card */
+.producto-card-monocromaticas-negro:hover .overlay-whatsapp-monocromaticas-negro {
+    opacity: 3;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.nombre-producto-monocromaticas-negro {
+    background: linear-gradient(90deg, #000000, #D9D9D9);
+    color: white;
+    font-weight: 700;
+    font-size: 1.05rem;
+
+    display: block;
+
+    width: calc(100% + 20px); /* 🔥 se expande más que el contenedor */
+    margin-left: -10px;        /* lo pega a los bordes */
+    margin-right: -10px;       /* lo pega a los bordes */
+
+    padding: 2px 12px;
+    border-radius: 14px;
+
+    margin-top: 12px;
+    margin-bottom: 14px;
+
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.nombre-producto-monocromaticas-negro:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+
+/* Botón premium #e52e2e #001775*/
+.btn-detalles-negro {
+    margin-top: 4px;
+    background: linear-gradient(90deg, #111111, #1CB954);
+    padding: 8px 20px !important;
+    font-size: 0.90rem !important;
+    border-radius: 28px;
+    transition: all .25s ease;
+}
+/*#c10b0b !important*/
+.btn-detalles-negro:hover {
+    background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%) !important;
+    transform: scale(1.05);
+}
+
+/* Contenedor de la imagen: referencia del overlay */
+/* Contenedor de imagen con fondo premium */
+.producto-imagen-monocromaticas-negro-bizhub-185en {
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 12px;
+    overflow: hidden;
+
+    padding: 18px 20px;
+
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+
+    width: calc(100% + 15px); /* 🔥 se expande más que el contenedor */
+    margin-left: -8px;        /* lo pega a los bordes */
+    margin-right: -10px;       /* lo pega a los bordes */
+}
+.producto-imagen-monocromaticas-negro-bizhub-185en img {
+    width: auto;     /* 🔥 nunca se va a deformar 90%, max-height: 180px;*/
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0; /*   🔥 NO circular, más profesional */
+    
+    transform: scale(1.30) translateY(0px);
+    transform-origin: center center; /* esto evita deformación */
+
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));  
+}
+
+.producto-imagen-monocromaticas-negro-bizhub-255i {
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 12px;
+    overflow: hidden;
+
+    padding: 18px 20px;
+
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+
+    width: calc(100% + 15px); /* 🔥 se expande más que el contenedor */
+    margin-left: -8px;        /* lo pega a los bordes */
+    margin-right: -10px;       /* lo pega a los bordes */
+}
+.producto-imagen-monocromaticas-negro-bizhub-255i img {
+    width: auto;     /* 🔥 nunca se va a deformar 90%, max-height: 180px;*/
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0; /*   🔥 NO circular, más profesional */
+    
+    transform: scale(1.30) translateY(0px);
+    transform-origin: center center; /* esto evita deformación */
+
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));  
+}
+
+.producto-imagen-monocromaticas-negro-bizhub-367 {
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 12px;
+    overflow: hidden;
+
+    padding: 18px 20px;
+
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+
+    width: calc(100% + 15px); /* 🔥 se expande más que el contenedor */
+    margin-left: -8px;        /* lo pega a los bordes */
+    margin-right: -10px;       /* lo pega a los bordes */
+}
+.producto-imagen-monocromaticas-negro-bizhub-367 img {
+    width: auto;     /* 🔥 nunca se va a deformar 90%, max-height: 180px;*/
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0; /*   🔥 NO circular, más profesional */
+    
+    transform: scale(1.30) translateY(0px);
+    transform-origin: center center; /* esto evita deformación */
+
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));  
+}
+.producto-imagen-monocromaticas-negro-bizhub-361i {
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 12px;
+    overflow: hidden;
+
+    padding: 18px 20px;
+
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+
+    width: calc(100% + 15px); /* 🔥 se expande más que el contenedor */
+    margin-left: -8px;        /* lo pega a los bordes */
+    margin-right: -10px;       /* lo pega a los bordes */
+}
+.producto-imagen-monocromaticas-negro-bizhub-361i img {
+    width: auto;     /* 🔥 nunca se va a deformar 90%, max-height: 180px;*/
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0; /*   🔥 NO circular, más profesional */
+    
+    transform: scale(1.30) translateY(0px);
+    transform-origin: center center; /* esto evita deformación */
+
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));  
+}
+.producto-imagen-monocromaticas-negro-bizhub-651i {
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 12px;
+    overflow: hidden;
+
+    padding: 18px 20px;
+
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+
+    width: calc(100% + 15px); /* 🔥 se expande más que el contenedor */
+    margin-left: -8px;        /* lo pega a los bordes */
+    margin-right: -10px;       /* lo pega a los bordes */
+}
+.producto-imagen-monocromaticas-negro-bizhub-651i img {
+    width: auto;     /* 🔥 nunca se va a deformar 90%, max-height: 180px;*/
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0; /*   🔥 NO circular, más profesional */
+    
+    transform: scale(1.30) translateY(0px);
+    transform-origin: center center; /* esto evita deformación */
+
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));  
+}
+.producto-imagen-monocromaticas-negro-bizhub-751i {
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 12px;
+    overflow: hidden;
+
+    padding: 18px 20px;
+
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+
+    width: calc(100% + 15px); /* 🔥 se expande más que el contenedor */
+    margin-left: -8px;        /* lo pega a los bordes */
+    margin-right: -10px;       /* lo pega a los bordes */
+}
+.producto-imagen-monocromaticas-negro-bizhub-751i img {
+    width: auto;     /* 🔥 nunca se va a deformar 90%, max-height: 180px;*/
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0; /*   🔥 NO circular, más profesional */
+    
+    transform: scale(1.30) translateY(0px);
+    transform-origin: center center; /* esto evita deformación */
+
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));  
+}
+.producto-imagen-monocromaticas-negro-bizhub-950i {
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 12px;
+    overflow: hidden;
+
+    padding: 18px 20px;
+
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+
+    width: calc(100% + 15px); /* 🔥 se expande más que el contenedor */
+    margin-left: -8px;        /* lo pega a los bordes */
+    margin-right: -10px;       /* lo pega a los bordes */
+}
+.producto-imagen-monocromaticas-negro-bizhub-950i img {
+    width: auto;     /* 🔥 nunca se va a deformar 90%, max-height: 180px;*/
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0; /*   🔥 NO circular, más profesional */
+    
+    transform: scale(1.30) translateY(0px);
+    transform-origin: center center; /* esto evita deformación */
+
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));  
+}
+
+
+/* Diseño para el banners de fotocopiadoras seminuevas negro para la pagina hija*/
+.titulo-banner-seminueva-negro {
+    margin-top: 200px;
+    margin-left: 20px;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: white;
+
+    padding: 10px 20px; /* 🔥 Espacio horizontal REAL */
+    font-size: 1.15rem;
+
+    display: inline-block;
+    max-width: 1450px;        /* 🔥 El contenedor podrá crecer hasta aquí */
+    width: fit-content;       /* 🔥 Se adapta pero permite typing animar */
+    
+    background: linear-gradient(to top, #000000, #444444);
+    border-radius: 40px;
+    border: 2px solid rgba(255,255,255,0.35);
+    text-shadow: 0 0 8px rgba(255,255,255,0.4);
+
+    white-space: nowrap;      
+    overflow: hidden;         /* necesario para máquina de escribir */
+    border-right: 3px solid rgba(255,255,255,0.75);
+
+    opacity: 1;
+    transform: translateX(100px);
+}
+
+/* 🔵 Máquina de escribir SOLO para esta página hija */
+.titulo-banner-seminueva-negro.typewriter {
+    animation: typingMono 3.1s steps(50) forwards,
+               cursorBlink .8s step-end infinite;
+}
+
+/* 🔵 ANIMACIÓN ÚNICA SOLO PARA ESTA PÁGINA */
+@keyframes typingMono {
+    from { width: 0; }
+    to { width: 42%; }   /* Ajusta según tu título largo/largo exacto */
+}
+
+/* Diseño para los productos fotocopiadoras seminuevos negro para los cards y diseño general de la pagina hija */
+/* PRODUCTO CARDS NUEVO DISEÑOS */
+.producto-card-seminuevas-negro {
+    background: linear-gradient(180deg, #F1F1F1, #A8A8A8);
+    border-radius: 22px;
+    padding: 16px;
+    text-align: center;
+    width: 242px;
+    min-height: 298px;
+    margin: auto;
+    position: relative;
+
+    padding: 14px 18px 14px; /* tu padding original */
+
+    box-shadow: 0px 14px 25px rgba(0,0,0,0.25);
+    border: 2px solid rgba(0,0,0,0.07);
+    transition: all .25s ease-in-out;
+}
+/* Hover elegante */
+.producto-card-seminuevas-negro:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 14px 32px rgba(0,0,0,0.18);
+}
+
+/* ============================================
+   🟢 Etiqueta OFERTADA – Profesional
+   ============================================ */
+.badge-ofertada-seminuevas-negro {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+
+    background: #19c014;             /* verde profesional */
+    color: #fff;
+    font-size: 0.70rem;
+    font-weight: 700;
+
+    padding: 2px 10px;
+    border-radius: 12px;
+
+    letter-spacing: .5px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.18);
+
+    z-index: 10;
+}
+
+/* Botón que envuelve la imagen: sin bordes ni fondo */
+.btn-imagen-seminuevas-negro {
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: 100%;
+}
+
+/* Overlay WhatsApp SOLO encima de la imagen */
+.overlay-whatsapp-seminuevas-negro {
+    position: absolute;
+    inset: 0;                    /* top:0 right:0 bottom:0 left:0 */
+    display: flex;
+    height: 100%; /* 🔹 ahora cubre toda la tarjeta */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.55);
+    opacity: 0;
+    transform: scale(0.95);
+    border-radius: 14px;
+    pointer-events: none;
+    transition: opacity .3s ease, transform .3s ease;
+}
+/* Mostrar overlay al pasar por el card */
+.producto-card-seminuevas-negro:hover .overlay-whatsapp-seminuevas-negro {
+    opacity: 3;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+.nombre-producto-seminuevas-negro {
+    background: linear-gradient(90deg, #000000, #D9D9D9);
+    color: white;
+    font-weight: 700;
+    font-size: 1.05rem;
+
+    display: block;
+
+    width: calc(100% + 20px); /* 🔥 se expande más que el contenedor */
+    margin-left: -10px;        /* lo pega a los bordes */
+    margin-right: -10px;       /* lo pega a los bordes */
+
+    padding: 2px 12px;
+    border-radius: 14px;
+
+    margin-top: 12px;
+    margin-bottom: 14px;
+
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.nombre-producto-seminuevas-negro:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+
+/* Botón premium #e52e2e #001775*/
+.btn-detalles-seminuevas-negro {
+    margin-top: 4px;
+    background: linear-gradient(90deg, #111111, #1CB954);
+    padding: 8px 20px !important;
+    font-size: 0.90rem !important;
+    border-radius: 28px;
+    transition: all .25s ease;
+}
+/*#c10b0b !important*/
+.btn-detalles-seminuevas-negro:hover {
+    background: linear-gradient(90deg, #f8ff00 0%, #3ad59f 100%) !important;
+    transform: scale(1.05);
+}
+
+/* Contenedor de la imagen: referencia del overlay */
+/* Contenedor de imagen con fondo premium */
+.producto-imagen-fotocopiadoras-seminuevas-ricoh-mp-501 {
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 12px;
+    overflow: hidden;
+
+    padding: 18px 20px;
+
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+
+    width: calc(100% + 15px); /* 🔥 se expande más que el contenedor */
+    margin-left: -8px;        /* lo pega a los bordes */
+    margin-right: -10px;       /* lo pega a los bordes */
+}
+.producto-imagen-fotocopiadoras-seminuevas-ricoh-mp-501 img {
+    width: auto;     /* 🔥 nunca se va a deformar 90%, max-height: 180px;*/
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0; /*   🔥 NO circular, más profesional */
+    
+    transform: scale(1.30) translateY(0px);
+    transform-origin: center center; /* esto evita deformación */
+
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));  
+}
+.producto-imagen-fotocopiadoras-seminuevas-Ecosys-M2040dn {
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 12px;
+    overflow: hidden;
+
+    padding: 18px 20px;
+
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+
+    width: calc(100% + 15px); /* 🔥 se expande más que el contenedor */
+    margin-left: -8px;        /* lo pega a los bordes */
+    margin-right: -10px;       /* lo pega a los bordes */
+}
+.producto-imagen-fotocopiadoras-seminuevas-Ecosys-M2040dn img {
+    width: auto;     /* 🔥 nunca se va a deformar 90%, max-height: 180px;*/
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0; /*   🔥 NO circular, más profesional */
+    
+    transform: scale(1.30) translateY(0px);
+    transform-origin: center center; /* esto evita deformación */
+
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));  
+}
+.producto-imagen-fotocopiadoras-seminuevas-Ecosys-M3540idn {
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 12px;
+    overflow: hidden;
+
+    padding: 18px 20px;
+
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+
+    width: calc(100% + 15px); /* 🔥 se expande más que el contenedor */
+    margin-left: -8px;        /* lo pega a los bordes */
+    margin-right: -10px;       /* lo pega a los bordes */
+}
+.producto-imagen-fotocopiadoras-seminuevas-Ecosys-M3540idn img {
+    width: auto;     /* 🔥 nunca se va a deformar 90%, max-height: 180px;*/
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0; /*   🔥 NO circular, más profesional */
+    
+    transform: scale(1.30) translateY(0px);
+    transform-origin: center center; /* esto evita deformación */
+
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));  
+}
+.producto-imagen-fotocopiadoras-seminuevas-Ecosys-M3655idn {
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 12px;
+    overflow: hidden;
+
+    padding: 18px 20px;
+
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+
+    width: calc(100% + 15px); /* 🔥 se expande más que el contenedor */
+    margin-left: -8px;        /* lo pega a los bordes */
+    margin-right: -10px;       /* lo pega a los bordes */
+}
+.producto-imagen-fotocopiadoras-seminuevas-Ecosys-M3655idn img {
+    width: auto;     /* 🔥 nunca se va a deformar 90%, max-height: 180px;*/
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0; /*   🔥 NO circular, más profesional */
+    
+    transform: scale(1.30) translateY(0px);
+    transform-origin: center center; /* esto evita deformación */
+
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));  
+}
+.producto-imagen-fotocopiadoras-seminuevas-bizhub-287 {
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 12px;
+    overflow: hidden;
+
+    padding: 18px 20px;
+
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+
+    width: calc(100% + 15px); /* 🔥 se expande más que el contenedor */
+    margin-left: -8px;        /* lo pega a los bordes */
+    margin-right: -10px;       /* lo pega a los bordes */
+}
+.producto-imagen-fotocopiadoras-seminuevas-bizhub-287 img {
+    width: auto;     /* 🔥 nunca se va a deformar 90%, max-height: 180px;*/
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0; /*   🔥 NO circular, más profesional */
+    
+    transform: scale(1.30) translateY(0px);
+    transform-origin: center center; /* esto evita deformación */
+
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));  
+}
+.producto-imagen-fotocopiadoras-seminuevas-bizhub-654e {
+    background: radial-gradient(circle at center, #ffffff, #f0ede9);
+    border-radius: 12px;
+    overflow: hidden;
+
+    padding: 18px 20px;
+
+    height: 195px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.15);
+
+    width: calc(100% + 15px); /* 🔥 se expande más que el contenedor */
+    margin-left: -8px;        /* lo pega a los bordes */
+    margin-right: -10px;       /* lo pega a los bordes */
+}
+.producto-imagen-fotocopiadoras-seminuevas-bizhub-654e img {
+    width: auto;     /* 🔥 nunca se va a deformar 90%, max-height: 180px;*/
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0; /*   🔥 NO circular, más profesional */
+    
+    transform: scale(1.30) translateY(0px);
+    transform-origin: center center; /* esto evita deformación */
+
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25));  
+}
+
+
+
+
+/* Diseño para fotocopiadoras de Kyoceras y los cards general en toda la pagina hija */
 .overlay-whatsapp-fotocopiadoras-kyoceras {
   position: absolute;
   top: 0;
@@ -3185,14 +4153,13 @@ html {
   box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
 
-.producto-imagen-kyocera-ECOSYSM8124CIDN img {
+.producto-imagen-kyocera-ECOSYSM2640idw-L img {
   width: 100%;
   height: 200px;
   object-fit: contain;
   display: block;
   border-radius: 15px; 
 }
-
 .producto-imagen-kyocera-ECOSYSMA5500IFX img {
   width: 100%;
   height: 200px;
@@ -3200,7 +4167,20 @@ html {
   display: block;
   border-radius: 15px; 
 }
-
+.producto-imagen-kyocera-ECOSYSMA2100cwfx img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+}
+.producto-imagen-kyocera-ECOSYSPA4000WX img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  display: block;
+  border-radius: 15px; 
+}
 
 
 /* Diseño de actualizacion para las cabeceras del header */
@@ -3744,7 +4724,7 @@ body.header-condensado {
 .b3 { background: #FFD800; }   /* Amarillo Oxford */
 .b4 { background: #25D366; }   /* Verde WhatsApp */
 .b5 { background: #0072BC; }   /* Azul Konica */
-
+/*
    📏 TAMAÑOS Y POSICIONES INICIALES
    (🔥 AQUÍ CAMBIAS EL TAMAÑO DE LAS BURBUJAS)
    ============================================ */
@@ -3899,8 +4879,6 @@ body.header-condensado {
 .card-body textarea {
   resize: none;
 }
-
-
 
 
 /* 🔹 Centrado vertical en pantallas grandes */
@@ -4735,19 +5713,6 @@ input[name="consumible"].border-success {
 
 
 /* Diseño para todos los cards de cada producto centrado sea izquierda o derecha 
-
-
-/* 📌 Ajuste general — móviles primero 
-.grid-left-adjust {
-    margin-left: -24px !important;   mueve la grilla a la izquierda 
-}*/
-/*
-@media (min-width: 480px) {
-    .grid-left-adjust {
-        margin-left: -30px !important;   tablets y laptops 
-    }
-}*/
-
 /* ======== 0) Móvil (el más importante) ======== */
 /* ======== AJUSTE PRINCIPAL ======== */
 .grid-left-adjust {
@@ -4892,7 +5857,6 @@ input[name="consumible"].border-success {
     background: linear-gradient(90deg, #004fe4, #007bff, #00c3ff, #00ffaa);
     box-shadow: inset 0 0 25px rgba(255,255,255,0.18);
 }
-
 }*/
 
 .cinta-gradient {
@@ -5181,3 +6145,174 @@ input[name="consumible"].border-success {
     50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(0,162,255,0.7); }
     100% { transform: scale(1); box-shadow: 0 0 10px rgba(0,162,255,0.4); }
 }
+
+
+/* Diseño para areglar el modal de las caracteristicas */
+#modal-caracteristicas li {
+    word-wrap: break-word;           /* Permite saltos en palabras largas */
+    overflow-wrap: break-word;       /* Forzar salto si la palabra es muy larga */
+    white-space: normal !important;  /* Evita que se mantenga en una sola línea */
+}
+
+
+/* Diseño para la pagina de fotocopiadoras a color nuevas*/
+/* Fondo más profundo usando zoom suave */
+.banner-bg {
+    transform: scale(1.01);
+    filter: brightness(1.05);
+    transition: transform 10s ease;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover !important;
+    object-position: center !important;
+}
+
+.banner-fotocopiadoras:hover .banner-bg {
+    transform: scale(1.13);
+}
+
+
+/* Diseño para el banner de fotocopiadoras nuevas a color */
+/* Título elegante y seccioon para cambiar la letra font-size: clamp(1.1rem, 1.8vw, 2.3rem);*/
+/* 🔵 Estilo general del título */
+.banner-contenedor {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: flex-start; /* izquierda */
+    align-items: flex-start;     /* arriba */
+    padding: 40px 10px;          /* ajuste fino */
+    z-index: 20;
+
+}
+
+.titulo-banner {
+    margin-top: 200px;   /* 🔥 Ajusta esta medida para subir o bajar */
+    margin-left: 20px;  /* Más pegado a la izquierda */
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: white;
+    padding: 10px 28px;
+    font-size: 1.2rem; /* Achicamos el tamaño aqui*/
+    display: inline-block;
+
+    background: linear-gradient(90deg, #111, #C8F527);
+    border-radius: 40px;
+    border: 2px solid rgba(255,255,255,0.35);
+    text-shadow: 0 0 8px rgba(255,255,255,0.4);
+
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid rgba(255,255,255,0.75);
+
+    opacity: 1;
+    transform: translateX(100px);   /* inicia bien a la derecha */
+}
+
+/* 🔵 Entrada suave desde la derecha */
+.animar-entrada {
+    animation: slideInTitulo 1s ease-out forwards;
+}
+
+@keyframes slideInTitulo {
+    from {
+        opacity: 0;
+        transform: translateX(500px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 🔵 Animación de máquina de escribir */
+.typewriter {
+    animation: typing 2.8s steps(25) forwards,
+               cursorBlink .8s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 41%; }
+}
+
+@keyframes cursorBlink {
+    50% { border-color: transparent; }
+}
+
+
+/* ✨ EFECTO HOVER SUPER PROFESIONAL */
+.titulo-banner:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 4px 18px rgba(0, 153, 255, 0.55);
+    text-shadow: 0 0 10px rgba(255,255,255,0.7);
+}
+
+/* Link volver */
+.volver-link {
+    position: absolute;
+    top: 250px;
+    right: 30px;
+
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #fff;
+    font-size: 0.95rem;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    
+    padding: 8px 16px;
+    border-radius: 30px;
+
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.3);
+
+    transition: all .25s ease-in-out;
+}
+
+.volver-link:hover {
+    background: #00a6ff;
+    color: white;
+    transform: translateX(-5px);
+    box-shadow: 0 0 12px rgba(0,166,255,0.6);
+}
+
+/* Icono animado */
+.volver-link i {
+    transition: transform .25s;
+}
+
+.volver-link:hover i {
+    transform: translateX(-4px);
+}
+
+
+/* Capa para la imagen cabecera */
+/* Nueva capa premium */
+.banner-overlay {
+    position: absolute;
+    inset: 0;
+
+    /* Degradado suave arriba y abajo */
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.45)
+    );
+
+    /* Efecto vidrio */
+    backdrop-filter: brightness(1.1) blur(1px);
+
+    z-index: 10; /* debajo del texto */
+}
+
+
+
+

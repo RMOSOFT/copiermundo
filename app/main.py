@@ -127,25 +127,25 @@ async def mostrar_fotocopiadoras(request: Request):
     })
 
 # Aqui va productos hijas desde el sidebar.
-@app.get("/productos/fotocopiadoras/impresoras-multifuncional", response_class=HTMLResponse)
-async def mostrar_fotocopiadoras(request: Request):
-    return templates.TemplateResponse("productos/fotocopiadoras/impresoras-multifuncional.html", {"request": request})
 
 @app.get("/productos/fotocopiadoras/impresoras-kyoceras", response_class=HTMLResponse)
 async def mostrar_fotocopiadoras(request: Request):
     return templates.TemplateResponse("productos/fotocopiadoras/impresoras-kyoceras.html", {"request": request})
 
-@app.get("/productos/fotocopiadoras/impresoras-color", response_class=HTMLResponse)
-async def mostrar_fotocopiadoras(request: Request):
-    return templates.TemplateResponse("productos/fotocopiadoras/impresoras-color.html", {"request": request})
 
 @app.get("/productos/fotocopiadoras/impresoras-monocromaticas", response_class=HTMLResponse)
 async def mostrar_fotocopiadoras(request: Request):
     return templates.TemplateResponse("productos/fotocopiadoras/impresoras-monocromaticas.html", {"request": request})
 
-@app.get("/productos/fotocopiadoras/impresoras-seminuevas", response_class=HTMLResponse)
+
+@app.get("/productos/fotocopiadoras/impresoras-seminuevas-color", response_class=HTMLResponse)
 async def mostrar_fotocopiadoras(request: Request):
-    return templates.TemplateResponse("productos/fotocopiadoras/impresoras-seminuevas.html", {"request": request})
+    return templates.TemplateResponse("productos/fotocopiadoras/impresoras-seminuevas-color.html", {"request": request})
+
+
+@app.get("/productos/fotocopiadoras/impresoras-seminuevas-negro", response_class=HTMLResponse)
+async def mostrar_fotocopiadoras(request: Request):
+    return templates.TemplateResponse("productos/fotocopiadoras/impresoras-seminuevas-negro.html", {"request": request})
 
 @app.get("/productos/fotocopiadoras/impresoras-seminuevas-series-8", response_class=HTMLResponse)
 async def mostrar_fotocopiadoras(request: Request):
@@ -261,9 +261,9 @@ async def buscar(request: Request, s: str ="", category: str =""):
     # Diccionario para redirigir a páginas existentes
     rutas = {
         "fotocopiadoras multifuncionales": "/productos/fotocopiadoras",
-        "fotocopiadoras multifuncionales seminuevas": "/productos/fotocopiadoras/impresoras-seminuevas",
+        "fotocopiadoras multifuncionales seminuevas": "/productos/fotocopiadoras/impresoras-seminuevas-negro",
         "fotocopiadoras multifuncionales seminuevas series 8": "/productos/fotocopiadoras/impresoras-seminuevas-series-8",
-        "fotocopiadoras multifuncionales seminuevas a color": "/productos/fotocopiadoras/impresoras-color",
+        "fotocopiadoras multifuncionales seminuevas a color": "/productos/fotocopiadoras/impresoras-seminuevas-color",
         "fotocopiadoras kyoceras": "/productos/fotocopiadoras/impresoras-kyoceras",
         "fotocopiadoras monocromaticas": "/productos/fotocopiadoras/impresoras-monocromaticas",
         "cartuchos y recargas toners": "/productos/tonerescartuchos",
