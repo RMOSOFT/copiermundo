@@ -193,61 +193,26 @@
                 <h3 class="text-xs font-bold uppercase mb-1 border-b border-gray-300 pb-2 font-semibold text-sm sm:text-base uppercase">
                     PRODUCTOS VISTOS
                 </h3>
-                <ul class="space-y-6 text-xs">
+                <ul id="productosVistosList" class="space-y-6 text-xs">
                     <li class="flex gap-2">
-                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c266i.jpg') }}" width="40"/>
+                        <img alt="Impresora bizhub-C3320i vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C3320i.jpeg') }}" width="40"/>
                         <div>
                             <p>
-                                Bizhub c266i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                                Bizhub-C3320i: IMPRESORA MULTIFUNCIONAL PARA OFICINAS
                             </p>
                             <p class="text-blue-700 mt-1">
-                                S/ 18,149.46
+                                S/ 3,800,00'
                             </p>
                         </div>
                     </li>
                     <li class="flex gap-2">
-                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c3321i.jpg') }}" width="40"/>
+                        <img alt="Impresora bizhub-C284 vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C284.png') }}" width="40"/>
                         <div>
                             <p>
-                                Bizhub-C3321i: IMPRESORA MONOCROMÁTICA DE ALTA VELOCIDAD PARA GRUPOS
-                                DE TRABAJO  
+                                Bizhub-C284: IMPRESORA MULTIFUNCIONAL PARA OFICINAS
                             </p>
                             <p class="text-blue-700 mt-1">
-                                S/ 7,925.40
-                            </p>
-                        </div>
-                    </li>
-
-                    <li class="flex gap-2">
-                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="https://storage.googleapis.com/a1aa/image/90bae295-9001-4e53-4fd7-936b12ff77ae.jpg" width="40"/>
-                        <div>
-                            <p>
-                                BIZHUB 360I: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
-                            </p>
-                            <p class="text-blue-700 mt-1">
-                                S/ 28,427.69
-                            </p>
-                        </div>
-                    </li>
-                    <li class="flex gap-2">
-                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-185en.jpg') }}" width="40"/>
-                        <div>
-                            <p>
-                                Bizhub 185en: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
-                            </p>
-                            <p class="text-blue-700 mt-1">
-                                $ 3,940.50
-                            </p>
-                        </div>
-                    </li>
-                    <li class="flex gap-2">
-                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c451i.jpg') }}" width="40"/>
-                        <div>
-                            <p>
-                                Bizhub c451i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
-                            </p>
-                            <p class="text-blue-700 mt-1">
-                                $ 35,501.50
+                                S/ 4,300,00
                             </p>
                         </div>
                     </li>
@@ -255,302 +220,352 @@
             </div>
         </aside>
 
-        <!-- Right content -->
-        <section class="flex-1">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-300 pb-4 mb-4">
-                <div class="flex items-center space-x-2 mb-3 sm:mb-0">
-                    <select aria-label="Ordenar productos" class="border border-gray-300 rounded px-3 py-1 text-xs sm:text-sm">
-                        <option>
-                         Orden predeterminado
-                        </option>
-                    </select>
-                    <button aria-label="Vista en cuadrícula" class="border border-gray-300 p-2 text-xs sm:text-sm">
-                        <i class="fas fa-th">
-                        </i>
-                    </button>
-                    <button aria-label="Vista en lista" class="border border-gray-300 p-2 text-xs sm:text-sm">
-                        <i class="fas fa-list">
-                        </i>
-                    </button>
+        <div id="pageConfig" data-vistos-key="copiermundo_vistos_color">
+            <!-- Right content -->
+            <section class="flex-1">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-300 pb-4 mb-4">
+                    <div class="flex items-center space-x-2 mb-3 sm:mb-0">
+                        <select aria-label="Ordenar productos" class="border border-gray-300 rounded px-3 py-1 text-xs sm:text-sm">
+                            <option>
+                             Orden predeterminado
+                            </option>
+                        </select>
+                        <button aria-label="Vista en cuadrícula" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                            <i class="fas fa-th">
+                            </i>
+                        </button>
+                        <button aria-label="Vista en lista" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                            <i class="fas fa-list">
+                            </i>
+                        </button>
+                    </div>
+                    <nav aria-label="Paginación" class="flex items-center space-x-2 text-xs sm:text-sm text-gray-700">
+                        <button aria-current="page" class="bg-black text-white px-3 py-1" disabled="">
+                            1
+                        </button>
+                        <button class="hover:underline px-1">
+                            2
+                        </button>
+                        <span>
+                            ..
+                        </span>
+                        <button class="hover:underline px-1">
+                            5
+                        </button>
+                        <button aria-label="Siguiente página" class="px-1">
+                            <i class="fas fa-angle-double-right">
+                            </i>
+                        </button>
+                    </nav>
                 </div>
-                <nav aria-label="Paginación" class="flex items-center space-x-2 text-xs sm:text-sm text-gray-700">
-                    <button aria-current="page" class="bg-black text-white px-3 py-1" disabled="">
-                        1
-                    </button>
-                    <button class="hover:underline px-1">
-                        2
-                    </button>
-                    <span>
-                        ..
-                    </span>
-                    <button class="hover:underline px-1">
-                        5
-                    </button>
-                    <button aria-label="Siguiente página" class="px-1">
-                        <i class="fas fa-angle-double-right">
-                        </i>
-                    </button>
-                </nav>
-            </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-12 grid-left-adjust">
-                <article class="text-center text-xs sm:text-sm producto-card-seminuevas-color">
-                    <span class="badge-ofertada">OFERTADA</span>
-                    <button class="btn-imagen-color" 
-                        onclick="mostrarDetallesProducto(
-                        'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C3320i',
-                        'Impresora multifunción color A4, Color y blanco y negroformatos de papel A6-A4 y tamaño personalizado, copiar, imprimir, escanear y enviar faxes, incluido tóner de alta capacidad, función de escaneo rápido, Panel de usuario similar a una tableta, Wi-Fi integrado.',
-                        'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C3320i.jpeg',
-                        'S/ 3,800,00',
-                        `MARCA: KONICA MINOLTA. MODELO: BIZHUB C3320i. VELOCIDAD DE IMPRESION A4: 33 ppm. TAMAÑO PAPEL: A4. WIFI DIRECTO: SI. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. BLUETOOTH: No. PAPEL DE TAMAÑO: A4. COPIA: SI. ESCANER: SI. PERFORADOR: NO. IMPRESIÓN AUTOMATICA 2 CARAS: SI. PANTALLA TACTÍL: SI. AIRPRINT (iOS): Si. FAX: SI. SALIDA COLOR: Color. CAPACIDAD DE ENTRADA DE PAPEL: 600 hojas. MOPRIA(Android): Si. PESO(KG): 39kg.`,
-                        '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C3320i.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-seminuevas-color-bizhub-C3320i">
-                            <img src="{{ url_for('static', path='img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C3320i.jpeg') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer" />
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-seminuevas-color">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C3320i de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-12 grid-left-adjust">
+                    <article class="text-center text-xs sm:text-sm producto-card-seminuevas-color">
+                        <span class="badge-ofertada">OFERTADA</span>
+                        <button class="btn-imagen-color" 
+                            onclick="mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C3320i',
+                            'Impresora multifunción color A4, Color y blanco y negroformatos de papel A6-A4 y tamaño personalizado, copiar, imprimir, escanear y enviar faxes, incluido tóner de alta capacidad, función de escaneo rápido, Panel de usuario similar a una tableta, Wi-Fi integrado.',
+                            'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C3320i.jpeg',
+                            'S/ 3,800,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB C3320i. VELOCIDAD DE IMPRESION A4: 33 ppm. TAMAÑO PAPEL: A4. WIFI DIRECTO: SI. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. BLUETOOTH: No. PAPEL DE TAMAÑO: A4. COPIA: SI. ESCANER: SI. PERFORADOR: NO. IMPRESIÓN AUTOMATICA 2 CARAS: SI. PANTALLA TACTÍL: SI. AIRPRINT (iOS): Si. FAX: SI. SALIDA COLOR: Color. CAPACIDAD DE ENTRADA DE PAPEL: 600 hojas. MOPRIA(Android): Si. PESO(KG): 39kg.`,
+                            '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C3320i.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-seminuevas-color-bizhub-C3320i">
+                                <img src="{{ url_for('static', path='img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C3320i.jpeg') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer" />
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-seminuevas-color">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C3320i de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
                             </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-seminuevas-color">Fotocopiadora Multifuncional BIZHUB-C3320i</span>
                         </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-seminuevas-color">Fotocopiadora Multifuncional BIZHUB-C3320i</span>
-                    </div>
 
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                        'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C3320i',
-                        'Impresora multifunción color A4, Color y blanco y negroformatos de papel A6-A4 y tamaño personalizado, copiar, imprimir, escanear y enviar faxes, incluido tóner de alta capacidad, función de escaneo rápido, Panel de usuario similar a una tableta, Wi-Fi integrado.',
-                        'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C3320i.jpeg',
-                        'S/ 3,800,00',
-                        `MARCA: KONICA MINOLTA. MODELO: BIZHUB C3320i. VELOCIDAD DE IMPRESION A4: 33 ppm. TAMAÑO PAPEL: A4. WIFI DIRECTO: SI. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. BLUETOOTH: No. PAPEL DE TAMAÑO: A4. COPIA: SI. ESCANER: SI. PERFORADOR: NO. IMPRESIÓN AUTOMATICA 2 CARAS: SI. PANTALLA TACTÍL: SI. AIRPRINT (iOS): Si. FAX: SI. SALIDA COLOR: Color. CAPACIDAD DE ENTRADA DE PAPEL: 600 hojas. MOPRIA(Android): Si. PESO(KG): 39kg.`,
-                          
-                        '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C3320i.pdf'
-                        )" class="btn-detalles-color bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-C3320i">Ver detalles
-                    </button>
-                </article>
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-C3320i',
+                            nombre: 'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C3320i',
+                            descripcion: 'Impresora multifunción color A4, Color y blanco y negroformatos de papel A6-A4 y tamaño personalizado, copiar, imprimir, escanear y enviar faxes, incluido tóner de alta capacidad, función de escaneo rápido, Panel de usuario similar a una tableta, Wi-Fi integrado.',
+                            img: '/static/img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C3320i.jpeg',
+                            precio: 'S/ 3,800,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C3320i.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C3320i',
+                            'Impresora multifunción color A4, Color y blanco y negroformatos de papel A6-A4 y tamaño personalizado, copiar, imprimir, escanear y enviar faxes, incluido tóner de alta capacidad, función de escaneo rápido, Panel de usuario similar a una tableta, Wi-Fi integrado.',
+                            'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C3320i.jpeg',
+                            'S/ 3,800,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB C3320i. VELOCIDAD DE IMPRESION A4: 33 ppm. TAMAÑO PAPEL: A4. WIFI DIRECTO: SI. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. BLUETOOTH: No. PAPEL DE TAMAÑO: A4. COPIA: SI. ESCANER: SI. PERFORADOR: NO. IMPRESIÓN AUTOMATICA 2 CARAS: SI. PANTALLA TACTÍL: SI. AIRPRINT (iOS): Si. FAX: SI. SALIDA COLOR: Color. CAPACIDAD DE ENTRADA DE PAPEL: 600 hojas. MOPRIA(Android): Si. PESO(KG): 39kg.`,
+                              
+                            '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C3320i.pdf'
+                            )" class="btn-detalles-color bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-C3320i">Ver detalles
+                        </button>
+                    </article>
 
-                <article class="text-center text-xs sm:text-sm producto-card-seminuevas-color">
-                    <span class="badge-ofertada">OFERTADA</span>
-                    <button class="btn-imagen-color" onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C284',
-                      'Con la serie bizhub C284, tendrá el poder que le esta faltando a su oficina: rapidez en salida, color superior, escaneo flexible, acabados automáticos e innovaciones de alta tecnología con Bajo Costo mientras protege el medio ambiente.',
-                      'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C284.png',
-                      'S/ 4,300,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C284. IMPRESION EN RED: Si. IMPRESIÓN DOBLE CARA: Si. COLOR DE IMPRESIÓN: Color. VOLUMEN DE COPIAS MENSUAL: 100000. CAPACIDAD MAXIMA DE PAPEL: 500/500 hojas. COPIAS POR MINUTO: 28m. TAMAÑO MAXIMO DE PAPEL: A3. IMPRESIONES TONER NEGRO: 27000 paginas. IMPRESIONES TONER COLOR: 25000 paginas. RESOLUCIÓN MAXIMA IMPRESION: 1200 x 1200. TIEMPO PRIMERA COPIA: 5.8 segundos. TIEMPO DE CALENTAMIENTO: 20 segundos.FORMATOS DE ESCANEO: JPEG/ TIFF/ PDF.`,
-                      '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C284.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-seminuevas-color-bizhub-C284">
-                            <img alt="Impresora negra cuadrada Konica Minolta vista frontal" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C284.png') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-seminuevas-color">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C284 de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
+                    <article class="text-center text-xs sm:text-sm producto-card-seminuevas-color">
+                        <span class="badge-ofertada">OFERTADA</span>
+                        <button class="btn-imagen-color" onclick="mostrarDetallesProducto(
+                          'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C284',
+                          'Con la serie bizhub C284, tendrá el poder que le esta faltando a su oficina: rapidez en salida, color superior, escaneo flexible, acabados automáticos e innovaciones de alta tecnología con Bajo Costo mientras protege el medio ambiente.',
+                          'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C284.png',
+                          'S/ 4,300,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB C284. IMPRESION EN RED: Si. IMPRESIÓN DOBLE CARA: Si. COLOR DE IMPRESIÓN: Color. VOLUMEN DE COPIAS MENSUAL: 100000. CAPACIDAD MAXIMA DE PAPEL: 500/500 hojas. COPIAS POR MINUTO: 28m. TAMAÑO MAXIMO DE PAPEL: A3. IMPRESIONES TONER NEGRO: 27000 paginas. IMPRESIONES TONER COLOR: 25000 paginas. RESOLUCIÓN MAXIMA IMPRESION: 1200 x 1200. TIEMPO PRIMERA COPIA: 5.8 segundos. TIEMPO DE CALENTAMIENTO: 20 segundos.FORMATOS DE ESCANEO: JPEG/ TIFF/ PDF.`,
+                          '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C284.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-seminuevas-color-bizhub-C284">
+                                <img alt="Impresora negra cuadrada Konica Minolta vista frontal" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C284.png') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-seminuevas-color">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C284 de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
                             </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-seminuevas-color">Fotocopiadora Multifuncional BIZHUB-C284</span>
                         </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-seminuevas-color">Fotocopiadora Multifuncional BIZHUB-C284</span>
-                    </div>
 
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                        'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C284',
-                        'Con la serie bizhub C284, tendrá el poder que le esta faltando a su oficina: rapidez en salida, color superior, escaneo flexible, acabados automáticos e innovaciones de alta tecnología con Bajo Costo mientras protege el medio ambiente.',
-                        'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C284.png',
-                        'S/ 4,300,00',
-                        `MARCA: KONICA MINOLTA. MODELO: BIZHUB C284. IMPRESION EN RED: Si. IMPRESIÓN DOBLE CARA: Si. COLOR DE IMPRESIÓN: Color. VOLUMEN DE COPIAS MENSUAL: 100000. CAPACIDAD MAXIMA DE PAPEL: 500/500 hojas. COPIAS POR MINUTO: 28m. TAMAÑO MAXIMO DE PAPEL: A3. IMPRESIONES TONER NEGRO: 27000 paginas. IMPRESIONES TONER COLOR: 25000 paginas. RESOLUCIÓN MAXIMA IMPRESION: 1200 x 1200. TIEMPO PRIMERA COPIA: 5.8 segundos. TIEMPO DE CALENTAMIENTO: 20 segundos.FORMATOS DE ESCANEO: JPEG/ TIFF/ PDF.`,
-                        '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C284.pdf'
-                        )" class="btn-detalles-color bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-C284">Ver detalles
-                    </button>
-                </article>
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-C284',
+                            nombre: 'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C284',
+                            descripcion: 'Con la serie bizhub C284, tendrá el poder que le esta faltando a su oficina: rapidez en salida, color superior, escaneo flexible, acabados automáticos e innovaciones de alta tecnología con Bajo Costo mientras protege el medio ambiente.',
+                            img: '/static/img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C284.png',
+                            precio: 'S/ 4,300,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C284.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C284',
+                            'Con la serie bizhub C284, tendrá el poder que le esta faltando a su oficina: rapidez en salida, color superior, escaneo flexible, acabados automáticos e innovaciones de alta tecnología con Bajo Costo mientras protege el medio ambiente.',
+                            'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C284.png',
+                            'S/ 4,300,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB C284. IMPRESION EN RED: Si. IMPRESIÓN DOBLE CARA: Si. COLOR DE IMPRESIÓN: Color. VOLUMEN DE COPIAS MENSUAL: 100000. CAPACIDAD MAXIMA DE PAPEL: 500/500 hojas. COPIAS POR MINUTO: 28m. TAMAÑO MAXIMO DE PAPEL: A3. IMPRESIONES TONER NEGRO: 27000 paginas. IMPRESIONES TONER COLOR: 25000 paginas. RESOLUCIÓN MAXIMA IMPRESION: 1200 x 1200. TIEMPO PRIMERA COPIA: 5.8 segundos. TIEMPO DE CALENTAMIENTO: 20 segundos.FORMATOS DE ESCANEO: JPEG/ TIFF/ PDF.`,
+                            '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C284.pdf'
+                            )" class="btn-detalles-color bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-C284">Ver detalles
+                        </button>
+                    </article>
 
-                <article class="text-center text-xs sm:text-sm producto-card-seminuevas-color">
-                    <span class="badge-ofertada">OFERTADA</span>
-                    <button class="btn-imagen-color" onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C364',
-                      'Impresora multifuncional Con la serie bizhub C364, tendrá el poder que le esta faltando a su oficina: rapidez en salida, color superior, escaneo flexible, acabados automáticos e innovaciones de alta tecnología con Bajo Costo mientras protege el medio ambiente, su carga de trabajo esta creciendo pero las oportunidades de negocio no van a esperar.',
-                      'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C364.jpg',
-                      'S/ 4,700,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C364. TAMAÑO DE PAPEL: A3. TIPO DE PRODUCTO: Color. PANTALLA TACTIL: Color inclinable y personalizable de 9. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. ESCANER: PowerPoint, PDF, FTP, SMB, TWAIN, Escanear a mí, Escanear a casa. MODO DE IMPRESION: Arrastrar y soltar de archivos de Microsoft Office. BANDEJAS: multi-bypass de 150 hojas. APLICACION MOVIL: PageScope permite imprimir desde teléfonos inteligentes. DISCO DURO: 160 GB. PAGINAS POR MINUTOS: 36m.`,
-                      '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C364.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-seminuevas-color-bizhub-C284">
-                            <img alt="Impresora Konica Minolta blanca y negra con pantalla táctil" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C364.jpg') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-seminuevas-color">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C364 de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
+                    <article class="text-center text-xs sm:text-sm producto-card-seminuevas-color">
+                        <span class="badge-ofertada">OFERTADA</span>
+                        <button class="btn-imagen-color" onclick="mostrarDetallesProducto(
+                          'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C364',
+                          'Impresora multifuncional Con la serie bizhub C364, tendrá el poder que le esta faltando a su oficina: rapidez en salida, color superior, escaneo flexible, acabados automáticos e innovaciones de alta tecnología con Bajo Costo mientras protege el medio ambiente, su carga de trabajo esta creciendo pero las oportunidades de negocio no van a esperar.',
+                          'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C364.jpg',
+                          'S/ 4,700,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB C364. TAMAÑO DE PAPEL: A3. TIPO DE PRODUCTO: Color. PANTALLA TACTIL: Color inclinable y personalizable de 9. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. ESCANER: PowerPoint, PDF, FTP, SMB, TWAIN, Escanear a mí, Escanear a casa. MODO DE IMPRESION: Arrastrar y soltar de archivos de Microsoft Office. BANDEJAS: multi-bypass de 150 hojas. APLICACION MOVIL: PageScope permite imprimir desde teléfonos inteligentes. DISCO DURO: 160 GB. PAGINAS POR MINUTOS: 36m.`,
+                          '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C364.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-seminuevas-color-bizhub-C284">
+                                <img alt="Impresora Konica Minolta blanca y negra con pantalla táctil" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C364.jpg') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-seminuevas-color">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C364 de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
                             </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-seminuevas-color">Fotocopiadora Multifuncional BIZHUB-C364</span>
                         </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-seminuevas-color">Fotocopiadora Multifuncional BIZHUB-C364</span>
-                    </div>
 
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                        'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C364',
-                        'Impresora multifuncional Con la serie bizhub C364, tendrá el poder que le esta faltando a su oficina: rapidez en salida, color superior, escaneo flexible, acabados automáticos e innovaciones de alta tecnología con Bajo Costo mientras protege el medio ambiente, su carga de trabajo esta creciendo pero las oportunidades de negocio no van a esperar.',
-                        'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C364.jpg',
-                        'S/ 4,700,00',
-                        `MARCA: KONICA MINOLTA. MODELO: BIZHUB C364. TAMAÑO DE PAPEL: A3. TIPO DE PRODUCTO: Color. PANTALLA TACTIL: Color inclinable y personalizable de 9. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. ESCANER: PowerPoint, PDF, FTP, SMB, TWAIN, Escanear a mí, Escanear a casa. MODO DE IMPRESION: Arrastrar y soltar de archivos de Microsoft Office. BANDEJAS: multi-bypass de 150 hojas. APLICACION MOVIL: PageScope permite imprimir desde teléfonos inteligentes. DISCO DURO: 160 GB. PAGINAS POR MINUTOS: 36m.`,
-                        '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C364.pdf'
-                        )" class="btn-detalles-color bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c451i">Ver detalles
-                    </button>
-                </article>
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-C364',
+                            nombre: 'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C364',
+                            descripcion: 'Impresora multifuncional Con la serie bizhub C364, tendrá el poder que le esta faltando a su oficina: rapidez en salida, color superior, escaneo flexible, acabados automáticos e innovaciones de alta tecnología con Bajo Costo mientras protege el medio ambiente, su carga de trabajo esta creciendo pero las oportunidades de negocio no van a esperar.',
+                            img: '/static/img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C364.jpg',
+                            precio: 'S/ 4,300,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C364.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C364',
+                            'Impresora multifuncional Con la serie bizhub C364, tendrá el poder que le esta faltando a su oficina: rapidez en salida, color superior, escaneo flexible, acabados automáticos e innovaciones de alta tecnología con Bajo Costo mientras protege el medio ambiente, su carga de trabajo esta creciendo pero las oportunidades de negocio no van a esperar.',
+                            'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C364.jpg',
+                            'S/ 4,700,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB C364. TAMAÑO DE PAPEL: A3. TIPO DE PRODUCTO: Color. PANTALLA TACTIL: Color inclinable y personalizable de 9. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. ESCANER: PowerPoint, PDF, FTP, SMB, TWAIN, Escanear a mí, Escanear a casa. MODO DE IMPRESION: Arrastrar y soltar de archivos de Microsoft Office. BANDEJAS: multi-bypass de 150 hojas. APLICACION MOVIL: PageScope permite imprimir desde teléfonos inteligentes. DISCO DURO: 160 GB. PAGINAS POR MINUTOS: 36m.`,
+                            '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C364.pdf'
+                            )" class="btn-detalles-color bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c451i">Ver detalles
+                        </button>
+                    </article>
 
-                <article class="text-center text-xs sm:text-sm producto-card-seminuevas-color">
-                    <span class="badge-ofertada">OFERTADA</span>
-                    <button class="btn-imagen-color" onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C454e',
-                      'La bizhub C454e de Konica Minolta es mucho más que una fotocopiadora. Es una solución integral para oficinas que necesitan velocidad, calidad y eficiencia. Imprime, copia, escanea y (opcionalmente) envía fax con una interfaz táctil intuitiva y funciones avanzadas que transforman tu flujo de trabajo.',
-                      'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C454e.jpeg',
-                      'S/ 4,900,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C454e. VELOCIDAD DE IMPRESION: hasta 45 páginas por minuto en color y B/N (A4). ESCANEO DUAL DE ALTA VELOCIDAD: hasta 160 originales por minuto. PANTALLA TACTIL: de 9 tipo tablet con gestos de touch & swipe. RESOLUCION DE IMPRESION: hasta 1200 x 1200 dpi para colores vibrante. CAPACIDAD DE PAPEL: expandible hasta 6,650 hojas. IMPRESION DUPLEX: automática para ahorrar papel. ALIMENTADOR DUAL: que escanea ambas caras en una sola pasada. IMPRESION Y COPIADO: a color y blanco y negro. DOBLE CARA: automática (Dúplex) para ahorro de papel. CONEXIONES: Puerto USB y opciones de red para impresión en red. ECONOMICA Y EFICIENTE: Bajo consumo de tóner y energía, ¡ideal para ahorrar costos!. CONDICION DE EQUIPO: Seminueva, importada desde EEUU.`,
-                      '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C454e.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-seminuevas-color-bizhub-C454e">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C454e.jpeg') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-seminuevas-color">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C454e de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
+                    <article class="text-center text-xs sm:text-sm producto-card-seminuevas-color">
+                        <span class="badge-ofertada">OFERTADA</span>
+                        <button class="btn-imagen-color" onclick="mostrarDetallesProducto(
+                          'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C454e',
+                          'La bizhub C454e de Konica Minolta es mucho más que una fotocopiadora. Es una solución integral para oficinas que necesitan velocidad, calidad y eficiencia. Imprime, copia, escanea y (opcionalmente) envía fax con una interfaz táctil intuitiva y funciones avanzadas que transforman tu flujo de trabajo.',
+                          'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C454e.jpeg',
+                          'S/ 4,900,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB C454e. VELOCIDAD DE IMPRESION: hasta 45 páginas por minuto en color y B/N (A4). ESCANEO DUAL DE ALTA VELOCIDAD: hasta 160 originales por minuto. PANTALLA TACTIL: de 9 tipo tablet con gestos de touch & swipe. RESOLUCION DE IMPRESION: hasta 1200 x 1200 dpi para colores vibrante. CAPACIDAD DE PAPEL: expandible hasta 6,650 hojas. IMPRESION DUPLEX: automática para ahorrar papel. ALIMENTADOR DUAL: que escanea ambas caras en una sola pasada. IMPRESION Y COPIADO: a color y blanco y negro. DOBLE CARA: automática (Dúplex) para ahorro de papel. CONEXIONES: Puerto USB y opciones de red para impresión en red. ECONOMICA Y EFICIENTE: Bajo consumo de tóner y energía, ¡ideal para ahorrar costos!. CONDICION DE EQUIPO: Seminueva, importada desde EEUU.`,
+                          '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C454e.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-seminuevas-color-bizhub-C454e">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C454e.jpeg') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-seminuevas-color">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C454e de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
                             </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-seminuevas-color">Fotocopiadora Multifuncional BIZHUB-C454e</span>
                         </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-seminuevas-color">Fotocopiadora Multifuncional BIZHUB-C454e</span>
-                    </div>
 
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C454e',
-                      'La bizhub C454e de Konica Minolta es mucho más que una fotocopiadora. Es una solución integral para oficinas que necesitan velocidad, calidad y eficiencia. Imprime, copia, escanea y (opcionalmente) envía fax con una interfaz táctil intuitiva y funciones avanzadas que transforman tu flujo de trabajo.',
-                      'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C454e.jpeg',
-                      'S/ 4,900,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C454e. VELOCIDAD DE IMPRESION: hasta 45 páginas por minuto en color y B/N (A4). ESCANEO DUAL DE ALTA VELOCIDAD: hasta 160 originales por minuto. PANTALLA TACTIL: de 9 tipo tablet con gestos de touch & swipe. RESOLUCION DE IMPRESION: hasta 1200 x 1200 dpi para colores vibrante. CAPACIDAD DE PAPEL: expandible hasta 6,650 hojas. IMPRESION DUPLEX: automática para ahorrar papel. ALIMENTADOR DUAL: que escanea ambas caras en una sola pasada. IMPRESION Y COPIADO: a color y blanco y negro. DOBLE CARA: automática (Dúplex) para ahorro de papel. CONEXIONES: Puerto USB y opciones de red para impresión en red. ECONOMICA Y EFICIENTE: Bajo consumo de tóner y energía, ¡ideal para ahorrar costos!. CONDICION DE EQUIPO: Seminueva, importada desde EEUU.`,
-                      '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C454e.pdf'
-                        )" class="btn-detalles-color bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c551i">Ver detalles
-                    </button>
-                </article>
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-C454e',
+                            nombre: 'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C454e',
+                            descripcion: 'La bizhub C454e de Konica Minolta es mucho más que una fotocopiadora. Es una solución integral para oficinas que necesitan velocidad, calidad y eficiencia. Imprime, copia, escanea y (opcionalmente) envía fax con una interfaz táctil intuitiva y funciones avanzadas que transforman tu flujo de trabajo.',
+                            img: '/static/img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C454e.jpeg',
+                            precio: 'S/ 4,900,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C454e.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C454e',
+                            'La bizhub C454e de Konica Minolta es mucho más que una fotocopiadora. Es una solución integral para oficinas que necesitan velocidad, calidad y eficiencia. Imprime, copia, escanea y (opcionalmente) envía fax con una interfaz táctil intuitiva y funciones avanzadas que transforman tu flujo de trabajo.',
+                            'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C454e.jpeg',
+                            'S/ 4,900,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB C454e. VELOCIDAD DE IMPRESION: hasta 45 páginas por minuto en color y B/N (A4). ESCANEO DUAL DE ALTA VELOCIDAD: hasta 160 originales por minuto. PANTALLA TACTIL: de 9 tipo tablet con gestos de touch & swipe. RESOLUCION DE IMPRESION: hasta 1200 x 1200 dpi para colores vibrante. CAPACIDAD DE PAPEL: expandible hasta 6,650 hojas. IMPRESION DUPLEX: automática para ahorrar papel. ALIMENTADOR DUAL: que escanea ambas caras en una sola pasada. IMPRESION Y COPIADO: a color y blanco y negro. DOBLE CARA: automática (Dúplex) para ahorro de papel. CONEXIONES: Puerto USB y opciones de red para impresión en red. ECONOMICA Y EFICIENTE: Bajo consumo de tóner y energía, ¡ideal para ahorrar costos!. CONDICION DE EQUIPO: Seminueva, importada desde EEUU.`,
+                            '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C454e.pdf'
+                            )" class="btn-detalles-color bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c551i">Ver detalles
+                        </button>
+                    </article>
 
-                <article class="text-center text-xs sm:text-sm producto-card-seminuevas-color">
-                    <span class="badge-ofertada">OFERTADA</span>
-                    <button class="btn-imagen-color" onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C654e',
-                      'La bizhub C654e es mucho más que una fotocopiadora. Es un centro de productividad diseñado para empresas que exigen velocidad, calidad y eficiencia. Aunque es un modelo discontinuado, sigue siendo una joya tecnológica para oficinas medianas y grandes que buscan rendimiento sin complicaciones.',
-                      'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C654e.jpg',
-                      'S/ 7,500,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C654e. VELOCIDAD DE IMPRESION: 65 páginas por minuto (A4). ALIMENTADOR DUAL DE ALTA VELOCIDAD: hasta 180 ipm. PANTALLA TACTIL: a color de 9 con tecnología multi-touch. RESOLUCION DE IMPRESION: 1200 x 1200 dpi para resultados nítidos y vibrantes. DOCUMENTOS: hasta 3.000 o 10.000 páginas. TONER: polimerizado Simitri® HD. TIEMPO DE CALENTAMIENTO: aprox. 22 seg. FUNCIONES:  portada, inserción de página, prueba de copia, modo póster. LENGUAJES: PCL6, PCL 5c, PostScript 3, XPS. SISTEMAS OPERATIVOS: Windows XP a Server 2012, Mac OS X 10.x, Unix, Linux, Citrix. VELOCIDAD ESCANER: hasta 180 ipm (mono/color). FORMATOS: JPEG, TIFF, PDF, PDF/A, PDF compacto. SEGURIDAD Y GESTION: Certificación ISO 15408 EAL3. CONDICION DE EQUIPO: Seminueva, importada desde EEUU.`,
-                      '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C654e.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-seminuevas-color-bizhub-C454e">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C654e.jpg') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-seminuevas-color">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C654e de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
+                    <article class="text-center text-xs sm:text-sm producto-card-seminuevas-color">
+                        <span class="badge-ofertada">OFERTADA</span>
+                        <button class="btn-imagen-color" onclick="mostrarDetallesProducto(
+                          'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C654e',
+                          'La bizhub C654e es mucho más que una fotocopiadora. Es un centro de productividad diseñado para empresas que exigen velocidad, calidad y eficiencia. Aunque es un modelo discontinuado, sigue siendo una joya tecnológica para oficinas medianas y grandes que buscan rendimiento sin complicaciones.',
+                          'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C654e.jpg',
+                          'S/ 7,500,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB C654e. VELOCIDAD DE IMPRESION: 65 páginas por minuto (A4). ALIMENTADOR DUAL DE ALTA VELOCIDAD: hasta 180 ipm. PANTALLA TACTIL: a color de 9 con tecnología multi-touch. RESOLUCION DE IMPRESION: 1200 x 1200 dpi para resultados nítidos y vibrantes. DOCUMENTOS: hasta 3.000 o 10.000 páginas. TONER: polimerizado Simitri® HD. TIEMPO DE CALENTAMIENTO: aprox. 22 seg. FUNCIONES:  portada, inserción de página, prueba de copia, modo póster. LENGUAJES: PCL6, PCL 5c, PostScript 3, XPS. SISTEMAS OPERATIVOS: Windows XP a Server 2012, Mac OS X 10.x, Unix, Linux, Citrix. VELOCIDAD ESCANER: hasta 180 ipm (mono/color). FORMATOS: JPEG, TIFF, PDF, PDF/A, PDF compacto. SEGURIDAD Y GESTION: Certificación ISO 15408 EAL3. CONDICION DE EQUIPO: Seminueva, importada desde EEUU.`,
+                          '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C654e.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-seminuevas-color-bizhub-C454e">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C654e.jpg') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-seminuevas-color">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C654e de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
                             </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-seminuevas-color">Fotocopiadora Multifuncional BIZHUB-C654e</span>
                         </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-seminuevas-color">Fotocopiadora Multifuncional BIZHUB-C654e</span>
-                    </div>
 
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C654e',
-                      'La bizhub C654e es mucho más que una fotocopiadora. Es un centro de productividad diseñado para empresas que exigen velocidad, calidad y eficiencia. Aunque es un modelo discontinuado, sigue siendo una joya tecnológica para oficinas medianas y grandes que buscan rendimiento sin complicaciones.',
-                      'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C654e.jpg',
-                      'S/ 7,500,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C654e. VELOCIDAD DE IMPRESION: 65 páginas por minuto (A4). ALIMENTADOR DUAL DE ALTA VELOCIDAD: hasta 180 ipm. PANTALLA TACTIL: a color de 9 con tecnología multi-touch. RESOLUCION DE IMPRESION: 1200 x 1200 dpi para resultados nítidos y vibrantes. DOCUMENTOS: hasta 3.000 o 10.000 páginas. TONER: polimerizado Simitri® HD. TIEMPO DE CALENTAMIENTO: aprox. 22 seg. FUNCIONES:  portada, inserción de página, prueba de copia, modo póster. LENGUAJES: PCL6, PCL 5c, PostScript 3, XPS. SISTEMAS OPERATIVOS: Windows XP a Server 2012, Mac OS X 10.x, Unix, Linux, Citrix. VELOCIDAD ESCANER: hasta 180 ipm (mono/color). FORMATOS: JPEG, TIFF, PDF, PDF/A, PDF compacto. SEGURIDAD Y GESTION: Certificación ISO 15408 EAL3. CONDICION DE EQUIPO: Seminueva, importada desde EEUU.`,
-                      '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C654e.pdf'
-                        )" class="btn-detalles-color bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c551i">Ver detalles
-                    </button>
-                </article>
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-C654e',
+                            nombre: 'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C654e',
+                            descripcion: 'La bizhub C654e es mucho más que una fotocopiadora. Es un centro de productividad diseñado para empresas que exigen velocidad, calidad y eficiencia. Aunque es un modelo discontinuado, sigue siendo una joya tecnológica para oficinas medianas y grandes que buscan rendimiento sin complicaciones.',
+                            img: '/static/img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C654e.jpg',
+                            precio: 'S/ 7,500,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C654e.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C654e',
+                            'La bizhub C654e es mucho más que una fotocopiadora. Es un centro de productividad diseñado para empresas que exigen velocidad, calidad y eficiencia. Aunque es un modelo discontinuado, sigue siendo una joya tecnológica para oficinas medianas y grandes que buscan rendimiento sin complicaciones.',
+                            'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C654e.jpg',
+                            'S/ 7,500,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB C654e. VELOCIDAD DE IMPRESION: 65 páginas por minuto (A4). ALIMENTADOR DUAL DE ALTA VELOCIDAD: hasta 180 ipm. PANTALLA TACTIL: a color de 9 con tecnología multi-touch. RESOLUCION DE IMPRESION: 1200 x 1200 dpi para resultados nítidos y vibrantes. DOCUMENTOS: hasta 3.000 o 10.000 páginas. TONER: polimerizado Simitri® HD. TIEMPO DE CALENTAMIENTO: aprox. 22 seg. FUNCIONES:  portada, inserción de página, prueba de copia, modo póster. LENGUAJES: PCL6, PCL 5c, PostScript 3, XPS. SISTEMAS OPERATIVOS: Windows XP a Server 2012, Mac OS X 10.x, Unix, Linux, Citrix. VELOCIDAD ESCANER: hasta 180 ipm (mono/color). FORMATOS: JPEG, TIFF, PDF, PDF/A, PDF compacto. SEGURIDAD Y GESTION: Certificación ISO 15408 EAL3. CONDICION DE EQUIPO: Seminueva, importada desde EEUU.`,
+                            '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C654e.pdf'
+                            )" class="btn-detalles-color bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c551i">Ver detalles
+                        </button>
+                    </article>
 
-                <article class="text-center text-xs sm:text-sm producto-card-seminuevas-color">
-                    <span class="badge-ofertada">OFERTADA</span>
-                    <button class="btn-imagen-color" onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C754e',
-                      'Los dispositivos multifuncionales de Konica Minolta soportan los requisitos de protección de datos del Reglamento General de Protección de Datos o RGPD (GDPR por sus siglas en inglés). Una gran variedad de funciones y servicios de Konica Minolta (tales como bizhub Secure) le ayudan a securizar la información personal identificable de sus empleados y clientes.',
-                      'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C754e.jpg',
-                      'S/ 7,900,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C754e.
-                      VELOCIDAD A4/A3: color 60/30 ppm; monocromo 75/37 ppm. TAMAÑOS DE PAPEL: A6-SRA3, tamaños personales y carteles de hasta 1,2 mlg. PANTALLA TACTIL: color de 9 pulgadas con soporte multi-toque. ALIMENTADOR ESCANER: con una velocidad de 180 ipm. PROCESO DE COPIA: Electrostatic laser copy, tandem, indirect. SISTEMA DE TONER: Simitri HD® polymerised toner. RESOLUCION DE COPIA (dpi): 600 x 600. GRADACIONES: 256 gradations. SISTEMAS OPERATIVOS: Windows Server 2012 R2 Macintosh OS X 10.x Unix, Linux, Citrix. FUENTES DE IMPRESION: PCL, PS, TIFF, XPS, PDF, encrypted PDF files and OOXML (DOCX, XLSX, PPTX). VELOCIDAD DE ESCANER A COLOR: Max.: 600 x 600. SEGURIDAD Y GESTION: Certificación ISO 15408 EAL3. CONDICION DE EQUIPO: Seminueva, importada desde EEUU.`,
-                      '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C754e.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-seminuevas-color-bizhub-C454e">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C754e.jpg') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-seminuevas-color">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C754e de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
+                    <article class="text-center text-xs sm:text-sm producto-card-seminuevas-color">
+                        <span class="badge-ofertada">OFERTADA</span>
+                        <button class="btn-imagen-color" onclick="mostrarDetallesProducto(
+                          'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C754e',
+                          'Los dispositivos multifuncionales de Konica Minolta soportan los requisitos de protección de datos del Reglamento General de Protección de Datos o RGPD (GDPR por sus siglas en inglés). Una gran variedad de funciones y servicios de Konica Minolta (tales como bizhub Secure) le ayudan a securizar la información personal identificable de sus empleados y clientes.',
+                          'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C754e.jpg',
+                          'S/ 7,900,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB C754e.
+                          VELOCIDAD A4/A3: color 60/30 ppm; monocromo 75/37 ppm. TAMAÑOS DE PAPEL: A6-SRA3, tamaños personales y carteles de hasta 1,2 mlg. PANTALLA TACTIL: color de 9 pulgadas con soporte multi-toque. ALIMENTADOR ESCANER: con una velocidad de 180 ipm. PROCESO DE COPIA: Electrostatic laser copy, tandem, indirect. SISTEMA DE TONER: Simitri HD® polymerised toner. RESOLUCION DE COPIA (dpi): 600 x 600. GRADACIONES: 256 gradations. SISTEMAS OPERATIVOS: Windows Server 2012 R2 Macintosh OS X 10.x Unix, Linux, Citrix. FUENTES DE IMPRESION: PCL, PS, TIFF, XPS, PDF, encrypted PDF files and OOXML (DOCX, XLSX, PPTX). VELOCIDAD DE ESCANER A COLOR: Max.: 600 x 600. SEGURIDAD Y GESTION: Certificación ISO 15408 EAL3. CONDICION DE EQUIPO: Seminueva, importada desde EEUU.`,
+                          '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C754e.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-seminuevas-color-bizhub-C454e">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C754e.jpg') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-seminuevas-color">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C754e de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
                             </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-seminuevas-color">Fotocopiadora Multifuncional BIZHUB-C754e</span>
                         </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-seminuevas-color">Fotocopiadora Multifuncional BIZHUB-C754e</span>
-                    </div>
 
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C754e',
-                      'Los dispositivos multifuncionales de Konica Minolta soportan los requisitos de protección de datos del Reglamento General de Protección de Datos o RGPD (GDPR por sus siglas en inglés). Una gran variedad de funciones y servicios de Konica Minolta (tales como bizhub Secure) le ayudan a securizar la información personal identificable de sus empleados y clientes.',
-                      'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C754e.jpg',
-                      'S/ 7,900,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C754e.
-                      VELOCIDAD A4/A3: color 60/30 ppm; monocromo 75/37 ppm. TAMAÑOS DE PAPEL: A6-SRA3, tamaños personales y carteles de hasta 1,2 mlg. PANTALLA TACTIL: color de 9 pulgadas con soporte multi-toque. ALIMENTADOR ESCANER: con una velocidad de 180 ipm. PROCESO DE COPIA: Electrostatic laser copy, tandem, indirect. SISTEMA DE TONER: Simitri HD® polymerised toner. RESOLUCION DE COPIA (dpi): 600 x 600. GRADACIONES: 256 gradations. SISTEMAS OPERATIVOS: Windows Server 2012 R2 Macintosh OS X 10.x Unix, Linux, Citrix. FUENTES DE IMPRESION: PCL, PS, TIFF, XPS, PDF, encrypted PDF files and OOXML (DOCX, XLSX, PPTX). VELOCIDAD DE ESCANER A COLOR: Max.: 600 x 600. SEGURIDAD Y GESTION: Certificación ISO 15408 EAL3. CONDICION DE EQUIPO: Seminueva, importada desde EEUU.`,
-                      '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C754e.pdf'
-                        )" class="btn-detalles-color bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c551i">Ver detalles
-                    </button>
-                </article>
-            </div>
-        </<section>      
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-C754e',
+                            nombre: 'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C754e',
+                            descripcion: 'Los dispositivos multifuncionales de Konica Minolta soportan los requisitos de protección de datos del Reglamento General de Protección de Datos o RGPD (GDPR por sus siglas en inglés). Una gran variedad de funciones y servicios de Konica Minolta (tales como bizhub Secure) le ayudan a securizar la información personal identificable de sus empleados y clientes.',
+                            img: '/static/img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C754e.jpg',
+                            precio: 'S/ 7,900,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C754e.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C754e',
+                            'Los dispositivos multifuncionales de Konica Minolta soportan los requisitos de protección de datos del Reglamento General de Protección de Datos o RGPD (GDPR por sus siglas en inglés). Una gran variedad de funciones y servicios de Konica Minolta (tales como bizhub Secure) le ayudan a securizar la información personal identificable de sus empleados y clientes.',
+                            'img/ProductosFotocopiadorasColorSemiNuevas/bizhub-C754e.jpg',
+                            'S/ 7,900,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB C754e.
+                            VELOCIDAD A4/A3: color 60/30 ppm; monocromo 75/37 ppm. TAMAÑOS DE PAPEL: A6-SRA3, tamaños personales y carteles de hasta 1,2 mlg. PANTALLA TACTIL: color de 9 pulgadas con soporte multi-toque. ALIMENTADOR ESCANER: con una velocidad de 180 ipm. PROCESO DE COPIA: Electrostatic laser copy, tandem, indirect. SISTEMA DE TONER: Simitri HD® polymerised toner. RESOLUCION DE COPIA (dpi): 600 x 600. GRADACIONES: 256 gradations. SISTEMAS OPERATIVOS: Windows Server 2012 R2 Macintosh OS X 10.x Unix, Linux, Citrix. FUENTES DE IMPRESION: PCL, PS, TIFF, XPS, PDF, encrypted PDF files and OOXML (DOCX, XLSX, PPTX). VELOCIDAD DE ESCANER A COLOR: Max.: 600 x 600. SEGURIDAD Y GESTION: Certificación ISO 15408 EAL3. CONDICION DE EQUIPO: Seminueva, importada desde EEUU.`,
+                            '/static/pdf/PdfFotocopiadorasColorSemiNuevas/bizhub-C754e.pdf'
+                            )" class="btn-detalles-color bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c551i">Ver detalles
+                        </button>
+                    </article>
+                </div>
+            </<section> 
+        </div>     
     </div>
 </main>
 {% endblock %}

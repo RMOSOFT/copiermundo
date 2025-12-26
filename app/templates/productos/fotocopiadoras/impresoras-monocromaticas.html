@@ -3,6 +3,7 @@
 
 {% block content %}
 <!-- 💬 BOTÓN WHATSAPP FLOTANTE -->
+
 <div id="whatsapp-float-container">
     <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! 👋 Estoy interesado en una COTIZACIÓN con Copier Mundo."
        class="whatsapp-flotante" target="_blank" title="Estamos en línea">
@@ -26,7 +27,7 @@
     <!-- Texto principal banner-overlay absolute top-0 left-0 w-full h-full flex items-center justify-between px-6 sm:px-10 md:px-16-->
     <div class="banner-contenedor absolute top-0 left-0 w-full h-full">
         
-        <h1 id="tituloAnimadoMonocromatica" class="titulo-banner-seminueva-monocromatica typewriter ">
+        <h1 id="tituloAnimadoMonocromatica" class="titulo-banner-seminueva-monocromatica typewritermonocromaticas ">
             Impresoras Multifuncionales SemiNuevas Monocromaticas Negro.
         </h1>
 
@@ -192,61 +193,27 @@
                 <h3 class="text-xs font-bold uppercase mb-1 border-b border-gray-300 pb-2 font-semibold text-sm sm:text-base uppercase">
                     PRODUCTOS VISTOS
                 </h3>
-                <ul class="space-y-6 text-xs">
+                <ul id="productosVistosList" class="space-y-6 text-xs">
                     <li class="flex gap-2">
-                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c266i.jpg') }}" width="40"/>
+                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-225i.jpg') }}" width="40"/>
                         <div>
                             <p>
-                                Bizhub c266i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                                Bizhub 225i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
                             </p>
                             <p class="text-blue-700 mt-1">
-                                S/ 18,149.46
-                            </p>
-                        </div>
-                    </li>
-                    <li class="flex gap-2">
-                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c3321i.jpg') }}" width="40"/>
-                        <div>
-                            <p>
-                                Bizhub-C3321i: IMPRESORA MONOCROMÁTICA DE ALTA VELOCIDAD PARA GRUPOS
-                                DE TRABAJO  
-                            </p>
-                            <p class="text-blue-700 mt-1">
-                                S/ 7,925.40
+                                S/ 9,299,00
                             </p>
                         </div>
                     </li>
 
                     <li class="flex gap-2">
-                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="https://storage.googleapis.com/a1aa/image/90bae295-9001-4e53-4fd7-936b12ff77ae.jpg" width="40"/>
-                        <div>
-                            <p>
-                                BIZHUB 360I: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
-                            </p>
-                            <p class="text-blue-700 mt-1">
-                                S/ 28,427.69
-                            </p>
-                        </div>
-                    </li>
-                    <li class="flex gap-2">
-                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-185en.jpg') }}" width="40"/>
+                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-185en.jpg') }}" width="40"/>
                         <div>
                             <p>
                                 Bizhub 185en: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
                             </p>
                             <p class="text-blue-700 mt-1">
-                                $ 3,940.50
-                            </p>
-                        </div>
-                    </li>
-                    <li class="flex gap-2">
-                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c451i.jpg') }}" width="40"/>
-                        <div>
-                            <p>
-                                Bizhub c451i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
-                            </p>
-                            <p class="text-blue-700 mt-1">
-                                $ 35,501.50
+                                S/ 4,299.00
                             </p>
                         </div>
                     </li>
@@ -254,349 +221,407 @@
             </div>
         </aside>
 
-        <!-- Right content -->
-        <section class="flex-1">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-300 pb-4 mb-4">
-                <div class="flex items-center space-x-2 mb-3 sm:mb-0">
-                    <select aria-label="Ordenar productos" class="border border-gray-300 rounded px-3 py-1 text-xs sm:text-sm">
-                        <option>
-                         Orden predeterminado
-                        </option>
-                    </select>
-                    <button aria-label="Vista en cuadrícula" class="border border-gray-300 p-2 text-xs sm:text-sm">
-                        <i class="fas fa-th">
-                        </i>
-                    </button>
-                    <button aria-label="Vista en lista" class="border border-gray-300 p-2 text-xs sm:text-sm">
-                        <i class="fas fa-list">
-                        </i>
-                    </button>
+        <div id="pageConfig" data-vistos-key="copiermundo_vistos_monocromaticas">
+            <!-- Right content -->
+            <section class="flex-1">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-300 pb-4 mb-4">
+                    <div class="flex items-center space-x-2 mb-3 sm:mb-0">
+                        <select aria-label="Ordenar productos" class="border border-gray-300 rounded px-3 py-1 text-xs sm:text-sm">
+                            <option>
+                             Orden predeterminado
+                            </option>
+                        </select>
+                        <button aria-label="Vista en cuadrícula" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                            <i class="fas fa-th">
+                            </i>
+                        </button>
+                        <button aria-label="Vista en lista" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                            <i class="fas fa-list">
+                            </i>
+                        </button>
+                    </div>
+                    <nav aria-label="Paginación" class="flex items-center space-x-2 text-xs sm:text-sm text-gray-700">
+                        <button aria-current="page" class="bg-black text-white px-3 py-1" disabled="">
+                            1
+                        </button>
+                        <button class="hover:underline px-1">
+                            2
+                        </button>
+                        <span>
+                            ..
+                        </span>
+                        <button class="hover:underline px-1">
+                            5
+                        </button>
+                        <button aria-label="Siguiente página" class="px-1">
+                            <i class="fas fa-angle-double-right">
+                            </i>
+                        </button>
+                    </nav>
                 </div>
-                <nav aria-label="Paginación" class="flex items-center space-x-2 text-xs sm:text-sm text-gray-700">
-                    <button aria-current="page" class="bg-black text-white px-3 py-1" disabled="">
-                        1
-                    </button>
-                    <button class="hover:underline px-1">
-                        2
-                    </button>
-                    <span>
-                        ..
-                    </span>
-                    <button class="hover:underline px-1">
-                        5
-                    </button>
-                    <button aria-label="Siguiente página" class="px-1">
-                        <i class="fas fa-angle-double-right">
-                        </i>
-                    </button>
-                </nav>
-            </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-12">
-                <!-- Producto fotocopiadora seminuevas monocromaticas negro seleccionado para la pagina --> 
-                <article class="text-center text-xs sm:text-sm producto-card-monocromaticas-negro">
-                    <span class="badge-ofertada-negro">OFERTADA</span>
-                    <button class="btn-imagen-negro" onclick="mostrarDetallesProducto(
-                      'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 185en',
-                      'Fotocopiadora bizhub 185en Copiadora A3 monocromo equipada con funciones de impresión GDI y escáner TWAIN; copia e imprime a 18 páginas por minuto; capacidad de papel estándar de 350 hojas.',
-                      'img/ProductosFotocopiadorasMonocromaticas/bizhub-185en.jpg',
-                      'S/ 4,299,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB 185en. VELOCIDAD MONOCROMATICA: 18 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 64 MB. MEMORIA MAXIMA: 64 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): No. RESOLUCION DE IMPRESION: 600x600 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 2500 pg. CERTIFICACION: ISO 14001, ROHS 18001, ISO 9001. Fecha de publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
-                      '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-185en.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-monocromaticas-negro-bizhub-185en">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer"  src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-185en.jpg') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-monocromaticas-negro">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB 185en de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-12">
+                    <!-- Producto fotocopiadora seminuevas monocromaticas negro seleccionado para la pagina --> 
+                    <article class="text-center text-xs sm:text-sm producto-card-monocromaticas-negro">
+                        <span class="badge-ofertada-negro">OFERTADA</span>
+                        <button class="btn-imagen-negro" onclick="mostrarDetallesProducto(
+                          'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 185en',
+                          'Fotocopiadora bizhub 185en Copiadora A3 monocromo equipada con funciones de impresión GDI y escáner TWAIN; copia e imprime a 18 páginas por minuto; capacidad de papel estándar de 350 hojas.',
+                          '/static/img/ProductosFotocopiadorasMonocromaticas/bizhub-185en.jpg',
+                          'S/ 4,299,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB 185en. VELOCIDAD MONOCROMATICA: 18 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 64 MB. MEMORIA MAXIMA: 64 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): No. RESOLUCION DE IMPRESION: 600x600 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 2500 pg. CERTIFICACION: ISO 14001, ROHS 18001, ISO 9001. Fecha de publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
+                          '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-185en.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-monocromaticas-negro-bizhub-185en">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer"  src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-185en.jpg') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-monocromaticas-negro">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB 185en de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
                             </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-monocromaticas-negro">Impresora Monocromática BIZHUB-185en</span>
                         </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-monocromaticas-negro">Impresora Monocromática BIZHUB-185en</span>
-                    </div>
 
-                    <p class="mt-2 text-gray-700">
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-185en',
+                            nombre: 'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 185en',
+                            descripcion: 'Fotocopiadora bizhub 185en Copiadora A3 monocromo equipada con funciones de impresión GDI y escáner TWAIN; copia e imprime a 18 páginas por minuto; capacidad de papel estándar de 350 hojas.',
+                            img: '/static/img/ProductosFotocopiadorasMonocromaticas/bizhub-185en.jpg',
+                            precio: 'S/ 4,299.00',
+                            pdf: '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-185en.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 185en',
+                            'Fotocopiadora bizhub 185en Copiadora A3 monocromo equipada con funciones de impresión GDI y escáner TWAIN; copia e imprime a 18 páginas por minuto; capacidad de papel estándar de 350 hojas.',
+                            'img/ProductosFotocopiadorasMonocromaticas/bizhub-185en.jpg',
+                            'S/ 4,299,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB 185en. VELOCIDAD MONOCROMATICA: 18 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 64 MB. MEMORIA MAXIMA: 64 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): No. RESOLUCION DE IMPRESION: 600x600 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 2500 pg. CERTIFICACION: ISO 14001, ROHS 18001, ISO 9001. Fecha de publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
+                            '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-185en.pdf'
+                            )" class="btn-detalles-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-185en">Ver detalles
+                        </button>
+                    </article>
+
+                    <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
+                    <article class="text-center text-xs sm:text-sm producto-card-monocromaticas-negro">
+                        <span class="badge-ofertada-negro">OFERTADA</span>
+                        <button class="btn-imagen-negro" onclick="mostrarDetallesProducto(
+                          'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 225i',
+                          'La bizhub 225i admite equipos con una capacidad de papel flexible que se puede aumentar según sea necesario hasta un máximo de 1.350 hojas, evitando la pérdida de tiempo debido a las frecuentes interrupciones para reponer el papel.',
+                          'img/ProductosFotocopiadorasMonocromaticas/bizhub-225i.jpg',
+                          'S/ 9,299,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB 225i. VELOCIDAD MONOCROMATICA: 22 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 256 MB. MEMORIA MAXIMA: 256 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 600x600 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 3000 pg. CERTIFICACION: ISO 9001, ISO 14001, ENERGY STAR. Fecha de publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
+                          '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-225i.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-monocromaticas-negro-bizhub-225i">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-225i.jpg') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-monocromaticas-negro">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KONICA MINOLTA MULTIFUNCIONAL LAZER BIZHUB-225i, de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
+                            </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-monocromaticas-negro">Impresora Monocromatica BIZHUB-225i</span>
+                        </div>
+                        <p class="mt-2 text-gray-700">
+
+                        </p>
                         
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 185en',
-                      'Fotocopiadora bizhub 185en Copiadora A3 monocromo equipada con funciones de impresión GDI y escáner TWAIN; copia e imprime a 18 páginas por minuto; capacidad de papel estándar de 350 hojas.',
-                      'img/ProductosFotocopiadorasMonocromaticas/bizhub-185en.jpg',
-                      'S/ 4,299,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB 185en. VELOCIDAD MONOCROMATICA: 18 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 64 MB. MEMORIA MAXIMA: 64 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): No. RESOLUCION DE IMPRESION: 600x600 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 2500 pg. CERTIFICACION: ISO 14001, ROHS 18001, ISO 9001. Fecha de publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
-                      '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-185en.pdf'
-                        )" class="btn-detalles-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-185en">Ver detalles
-                    </button>
-                </article>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-225i',
+                            nombre: 'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 225i',
+                            descripcion: 'La bizhub 225i admite equipos con una capacidad de papel flexible que se puede aumentar según sea necesario hasta un máximo de 1.350 hojas, evitando la pérdida de tiempo debido a las frecuentes interrupciones para reponer el papel.',
+                            img: '/static/img/ProductosFotocopiadorasMonocromaticas/bizhub-225i.jpg',
+                            precio: '/ 9,299,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-225i.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - bizhub-225i',
+                            'La bizhub 225i admite equipos con una capacidad de papel flexible que se puede aumentar según sea necesario hasta un máximo de 1.350 hojas, evitando la pérdida de tiempo debido a las frecuentes interrupciones para reponer el papel.',
+                            'img/ProductosFotocopiadorasMonocromaticas/bizhub-225i.jpg',
+                            'S/ 9,299,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB 225i. VELOCIDAD MONOCROMATICA: 22 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 256 MB. MEMORIA MAXIMA: 256 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 600x600 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 3000 pg. CERTIFICACION: ISO 9001, ISO 14001, ENERGY STAR. Fecha de publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
+                            '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-225i.pdf'
+                            )" class="btn-detalles-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-225i">Ver detalles
+                        </button>
+                    </article>
 
-                <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
-                <article class="text-center text-xs sm:text-sm producto-card-monocromaticas-negro">
-                    <span class="badge-ofertada-negro">OFERTADA</span>
-                    <button class="btn-imagen-negro" onclick="mostrarDetallesProducto(
-                      'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 225i',
-                      'La bizhub 225i admite equipos con una capacidad de papel flexible que se puede aumentar según sea necesario hasta un máximo de 1.350 hojas, evitando la pérdida de tiempo debido a las frecuentes interrupciones para reponer el papel.',
-                      'img/ProductosFotocopiadorasMonocromaticas/bizhub-225i.jpg',
-                      'S/ 9,299,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB 225i. VELOCIDAD MONOCROMATICA: 22 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 256 MB. MEMORIA MAXIMA: 256 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 600x600 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 3000 pg. CERTIFICACION: ISO 9001, ISO 14001, ENERGY STAR. Fecha de publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
-                      '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-225i.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-monocromaticas-negro-bizhub-225i">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-225i.jpg') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-monocromaticas-negro">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KONICA MINOLTA MULTIFUNCIONAL LAZER BIZHUB-225i, de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
+                    <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
+                    <article class="text-center text-xs sm:text-sm producto-card-monocromaticas-negro">
+                        <span class="badge-ofertada-negro">OFERTADA</span>
+                        <button class="btn-imagen-negro" onclick="mostrarDetallesProducto(
+                          'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 367',
+                          'Es de gran ayuda y permite ahorrar tiempo a los usuarios. Capacidad de 1150 hojas estándar, ampliable hasta un máx. de 3650 hojas en hasta 4 casetes (opcional).',
+                          'img/ProductosFotocopiadorasMonocromaticas/bizhub-367.jpg',
+                          'S/ 17,000,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB 367. VELOCIDAD MONOCROMATICA: 36 ppm. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 2048 MB. MEMORIA MAXIMA: 2048 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 600x600 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 20000 pg. CERTIFICACION: ISO 14001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/09/2022. Fecha de último estado: 23/10/2024`,
+                          '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-367.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-monocromaticas-negro-bizhub-367">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer"  src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-367.jpg') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-monocromaticas-negro">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KONICA MINOLTA MULTIFUNCIONAL LASER - BIZHUB 367 de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
                             </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-monocromaticas-negro">Impresora Monocromática BIZHUB-367</span>
                         </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-monocromaticas-negro">Impresora Monocromatica BIZHUB-225i</span>
-                    </div>
-                    <p class="mt-2 text-gray-700">
 
-                    </p>
-                    
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - bizhub-225i',
-                      'La bizhub 225i admite equipos con una capacidad de papel flexible que se puede aumentar según sea necesario hasta un máximo de 1.350 hojas, evitando la pérdida de tiempo debido a las frecuentes interrupciones para reponer el papel.',
-                      'img/ProductosFotocopiadorasMonocromaticas/bizhub-225i.jpg',
-                      'S/ 9,299,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB 225i. VELOCIDAD MONOCROMATICA: 22 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 256 MB. MEMORIA MAXIMA: 256 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 600x600 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 3000 pg. CERTIFICACION: ISO 9001, ISO 14001, ENERGY STAR. Fecha de publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
-                      '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-225i.pdf'
-                        )" class="btn-detalles-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-225i">Ver detalles
-                    </button>
-                </article>
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-367',
+                            nombre: 'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL LASER - BIZHUB 367',
+                            descripcion: 'Impresora monocromática de alto rendimiento con conectividad completa y ADF.',
+                            img: '/static/img/ProductosFotocopiadorasMonocromaticas/bizhub-367.jpg',
+                            precio: 'S/ 7,925.40',
+                            pdf: '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-367.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL LASER - BIZHUB 367',
+                            'Impresora monocromática de alto rendimiento con conectividad completa y ADF.',
+                            'img/ProductosFotocopiadorasMonocromaticas/bizhub-367.jpg',
+                            'S/ 7,925.40',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB 367. VELOCIDAD MONOCROMATICA: 36 ppm. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 2048 MB. MEMORIA MAXIMA: 2048 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 600x600 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 20000 pg. CERTIFICACION: ISO 14001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/09/2022. Fecha de último estado: 23/10/2024`,
+                            '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-367.pdf'
+                            )" class="btn-detalles-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-367">Ver detalles
+                        </button>
+                    </article>
 
-                <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
-                <article class="text-center text-xs sm:text-sm producto-card-monocromaticas-negro">
-                    <span class="badge-ofertada-negro">OFERTADA</span>
-                    <button class="btn-imagen-negro" onclick="mostrarDetallesProducto(
-                      'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 367',
-                      'Es de gran ayuda y permite ahorrar tiempo a los usuarios. Capacidad de 1150 hojas estándar, ampliable hasta un máx. de 3650 hojas en hasta 4 casetes (opcional).',
-                      'img/ProductosFotocopiadorasMonocromaticas/bizhub-367.jpg',
-                      'S/ 17,000,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB 367. VELOCIDAD MONOCROMATICA: 36 ppm. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 2048 MB. MEMORIA MAXIMA: 2048 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 600x600 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 20000 pg. CERTIFICACION: ISO 14001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/09/2022. Fecha de último estado: 23/10/2024`,
-                      '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-367.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-monocromaticas-negro-bizhub-367">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer"  src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-367.jpg') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-monocromaticas-negro">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KONICA MINOLTA MULTIFUNCIONAL LASER - BIZHUB 367 de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
+                    <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
+                    <article class="text-center text-xs sm:text-sm producto-card-monocromaticas-negro">
+                        <span class="badge-ofertada-negro">OFERTADA</span>
+                        <button class="btn-imagen-negro" onclick="mostrarDetallesProducto(
+                          'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 361i',
+                          'Disfruta de la bizhub i-Series con el panel de 10,1 pulgadas similar a una tablet, la mejor Experiencia de Usuario del mercado, las funciones de Seguridad número uno con el motor de escaneo antivirus Bitdefender opcional integrado, Servicios Remotos, Servicios IT de Konica Minolta y mucho más.',
+                          'img/ProductosFotocopiadorasMonocromaticas/bizhub-361i.jpg',
+                          'S/ 19,990,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB C361i. VELOCIDAD MONOCROMATICA: 22 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 256 MB. MEMORIA MAXIMA: 256 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 600x600 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 3000 pg. CERTIFICACION: ISO 9001, ISO 14001, ENERGY STAR. Fecha de publicación: 13/08/2024. Fecha de último estado: 23/10/2024.`,
+                          '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-361i.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-monocromaticas-negro-bizhub-361i">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-361i.jpg') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-monocromaticas-negro">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KONICA MINOLTA MULTIFUNCIONAL LAZER BIZHUB-361i, de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
                             </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-monocromaticas-negro">Impresora Monocromática BIZHUB-361i</span>
                         </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-monocromaticas-negro">Impresora Monocromática BIZHUB-367</span>
-                    </div>
+                        <p class="mt-2 text-gray-700">
 
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL LASER - BIZHUB 367',
-                      'Impresora monocromática de alto rendimiento con conectividad completa y ADF.',
-                      'img/ProductosFotocopiadorasMonocromaticas/bizhub-367.jpg',
-                      'S/ 7,925.40',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB 367. VELOCIDAD MONOCROMATICA: 36 ppm. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 2048 MB. MEMORIA MAXIMA: 2048 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 600x600 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 20000 pg. CERTIFICACION: ISO 14001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/09/2022. Fecha de último estado: 23/10/2024`,
-                      '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-367.pdf'
-                        )" class="btn-detalles-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-367">Ver detalles
-                    </button>
-                </article>
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-361i',
+                            nombre: 'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB-361i',
+                            descripcion: 'Disfruta de la bizhub i-Series con el panel de 10,1 pulgadas similar a una tablet, la mejor Experiencia de Usuario del mercado, las funciones de Seguridad número uno con el motor de escaneo antivirus Bitdefender opcional integrado, Servicios Remotos, Servicios IT de Konica Minolta y mucho más.',
+                            img: '/static/img/ProductosFotocopiadorasMonocromaticas/bizhub-361i.jpg',
+                            precio: 'S/ 19,990,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-361i.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB-361i',
+                            'Disfruta de la bizhub i-Series con el panel de 10,1 pulgadas similar a una tablet, la mejor Experiencia de Usuario del mercado, las funciones de Seguridad número uno con el motor de escaneo antivirus Bitdefender opcional integrado, Servicios Remotos, Servicios IT de Konica Minolta y mucho más.',
+                            'img/ProductosFotocopiadorasMonocromaticas/bizhub-361i.jpg',
+                            'S/ 19,990,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB C361i. VELOCIDAD MONOCROMATICA: 22 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 256 MB. MEMORIA MAXIMA: 256 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 600x600 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 3000 pg. CERTIFICACION: ISO 9001, ISO 14001, ENERGY STAR. Fecha de publicación: 13/08/2024. Fecha de último estado: 23/10/2024.`,
+                            '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-361i.pdf'
+                            )" class="btn-detalles-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-361i">Ver detalles
+                        </button>
+                    </article>
 
-                <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
-                <article class="text-center text-xs sm:text-sm producto-card-monocromaticas-negro">
-                    <span class="badge-ofertada-negro">OFERTADA</span>
-                    <button class="btn-imagen-negro" onclick="mostrarDetallesProducto(
-                      'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 361i',
-                      'Disfruta de la bizhub i-Series con el panel de 10,1 pulgadas similar a una tablet, la mejor Experiencia de Usuario del mercado, las funciones de Seguridad número uno con el motor de escaneo antivirus Bitdefender opcional integrado, Servicios Remotos, Servicios IT de Konica Minolta y mucho más.',
-                      'img/ProductosFotocopiadorasMonocromaticas/bizhub-361i.jpg',
-                      'S/ 19,990,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C361i. VELOCIDAD MONOCROMATICA: 22 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 256 MB. MEMORIA MAXIMA: 256 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 600x600 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 3000 pg. CERTIFICACION: ISO 9001, ISO 14001, ENERGY STAR. Fecha de publicación: 13/08/2024. Fecha de último estado: 23/10/2024.`,
-                      '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-361i.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-monocromaticas-negro-bizhub-361i">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-361i.jpg') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-monocromaticas-negro">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KONICA MINOLTA MULTIFUNCIONAL LAZER BIZHUB-361i, de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
+
+                    <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
+                    <article class="text-center text-xs sm:text-sm producto-card-monocromaticas-negro">
+                        <span class="badge-ofertada-negro">OFERTADA</span>
+                        <button class="btn-imagen-negro" onclick="mostrarDetallesProducto(
+                          'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 651i',
+                          'Impresora laser monocromática Velocidad: 65/32 páginas por minuto A4/A3. Pantalla táctil a color de 10,1 pulgadas con función Tipo Tablet. Resolución de 1.200 x 1.200 ppp / 1.800 x 600 ppp. Alimentador originales de 300 hojas.',
+                          'img/ProductosFotocopiadorasMonocromaticas/bizhub-651i.jpg',
+                          'S/ 28,500,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB 651i. VELOCIDAD MONOCROMATICA: 65 ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 50000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/06/2024. Fecha de último estado: 23/10/2024`,
+                          '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-651i.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-monocromaticas-negro-bizhub-651i">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-651i.jpg') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-monocromaticas-negro">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KONICA MINOLTA MULTIFUNCIONAL LASER - BIZHUB 651i de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
                             </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-monocromaticas-negro">Impresora Monocromática BIZHUB-651i</span>
                         </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-monocromaticas-negro">Impresora Monocromática BIZHUB-361i</span>
-                    </div>
-                    <p class="mt-2 text-gray-700">
 
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB-361i',
-                      'Disfruta de la bizhub i-Series con el panel de 10,1 pulgadas similar a una tablet, la mejor Experiencia de Usuario del mercado, las funciones de Seguridad número uno con el motor de escaneo antivirus Bitdefender opcional integrado, Servicios Remotos, Servicios IT de Konica Minolta y mucho más.',
-                      'img/ProductosFotocopiadorasMonocromaticas/bizhub-361i.jpg',
-                      'S/ 19,990,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C361i. VELOCIDAD MONOCROMATICA: 22 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 256 MB. MEMORIA MAXIMA: 256 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 600x600 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 3000 pg. CERTIFICACION: ISO 9001, ISO 14001, ENERGY STAR. Fecha de publicación: 13/08/2024. Fecha de último estado: 23/10/2024.`,
-                      '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-361i.pdf'
-                        )" class="btn-detalles-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-361i">Ver detalles
-                    </button>
-                </article>
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-651i',
+                            nombre: 'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 651i',
+                            descripcion: 'Impresora laser monocromática Velocidad: 65/32 páginas por minuto A4/A3. Pantalla táctil a color de 10,1 pulgadas con función Tipo Tablet. Resolución de 1.200 x 1.200 ppp / 1.800 x 600 ppp. Alimentador originales de 300 hojas.',
+                            img: '/static/img/ProductosFotocopiadorasMonocromaticas/bizhub-651i.jpg',
+                            precio: 'S/ 28,500,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-651i.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 651i',
+                            'Impresora laser monocromática Velocidad: 65/32 páginas por minuto A4/A3. Pantalla táctil a color de 10,1 pulgadas con función Tipo Tablet. Resolución de 1.200 x 1.200 ppp / 1.800 x 600 ppp. Alimentador originales de 300 hojas.',
+                            'img/ProductosFotocopiadorasMonocromaticas/bizhub-651i.jpg',
+                            'S/ 28,500,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB 651i. VELOCIDAD MONOCROMATICA: 65 ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 50000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/06/2024. Fecha de último estado: 23/10/2024.`,
+                          
+                            '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-651i.pdf'
+                            )" class="btn-detalles-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-651i">Ver detalles
+                        </button>
+                    </article>
 
-
-                <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
-                <article class="text-center text-xs sm:text-sm producto-card-monocromaticas-negro">
-                    <span class="badge-ofertada-negro">OFERTADA</span>
-                    <button class="btn-imagen-negro" onclick="mostrarDetallesProducto(
-                      'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 651i',
-                      'Impresora laser monocromática Velocidad: 65/32 páginas por minuto A4/A3. Pantalla táctil a color de 10,1 pulgadas con función Tipo Tablet. Resolución de 1.200 x 1.200 ppp / 1.800 x 600 ppp. Alimentador originales de 300 hojas.',
-                      'img/ProductosFotocopiadorasMonocromaticas/bizhub-651i.jpg',
-                      'S/ 28,500,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB 651i. VELOCIDAD MONOCROMATICA: 65 ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 50000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/06/2024. Fecha de último estado: 23/10/2024`,
-                      '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-651i.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-monocromaticas-negro-bizhub-651i">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-651i.jpg') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-monocromaticas-negro">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KONICA MINOLTA MULTIFUNCIONAL LASER - BIZHUB 651i de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
+                    <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
+                    <article class="text-center text-xs sm:text-sm producto-card-monocromaticas-negro">
+                        <span class="badge-ofertada-negro">OFERTADA</span>
+                        <button class="btn-imagen-negro" onclick="mostrarDetallesProducto(
+                          'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 751i',
+                          'Equipo multifunción de 75 páginas por minuto monocromo. Incluye controlador Emperon™ con PCL 6, PCL 5, PostScript 3, PDF 1.7, XPS y OOXML. Capacidad de papel de 500 + 500 hojas, entrada manual de 150 hojas. Tamaños de papel desde A6 hasta SRA3, carteles de 1,2 m.',
+                          'img/ProductosFotocopiadorasMonocromaticas/bizhub-751i.jpg',
+                          'S/ 45,390,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB 751i. VELOCIDAD MONOCROMATICA: 75 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 80000 pg. CERTIFICACION: ENERGY STAR, ROHS, ISO 9001, ISO 14001. Fecha de publicación: 13/10/2024. Fecha de último estado: 23/10/2024.`,
+                          '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-751i.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-monocromaticas-negro-bizhub-751i">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-751i.jpg') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-monocromaticas-negro">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KONICA MINOLTA MULTIFUNCIONAL LAZER BIZHUB-751i, de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
                             </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-monocromaticas-negro">Impresora Monocromática BIZHUB-751i</span>
                         </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-monocromaticas-negro">Impresora Monocromática BIZHUB-651i</span>
-                    </div>
+                        <p class="mt-2 text-gray-700">
 
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 651i',
-                      'Impresora laser monocromática Velocidad: 65/32 páginas por minuto A4/A3. Pantalla táctil a color de 10,1 pulgadas con función Tipo Tablet. Resolución de 1.200 x 1.200 ppp / 1.800 x 600 ppp. Alimentador originales de 300 hojas.',
-                      'img/ProductosFotocopiadorasMonocromaticas/bizhub-651i.jpg',
-                      'S/ 28,500,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB 651i. VELOCIDAD MONOCROMATICA: 65 ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 50000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/06/2024. Fecha de último estado: 23/10/2024.`,
-                      
-                      '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-651i.pdf'
-                        )" class="btn-detalles-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-651i">Ver detalles
-                    </button>
-                </article>
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-751i',
+                            nombre: 'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL LASER - BIZHUB-751i',
+                            descripcion: 'Equipo multifunción de 75 páginas por minuto monocromo. Incluye controlador Emperon™ con PCL 6, PCL 5, PostScript 3, PDF 1.7, XPS y OOXML. Capacidad de papel de 500 + 500 hojas, entrada manual de 150 hojas. Tamaños de papel desde A6 hasta SRA3, carteles de 1,2 m.',
+                            img: '/static/img/ProductosFotocopiadorasMonocromaticas/bizhub-751i.jpg',
+                            precio: 'S/ 45,390,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-751i.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL LASER - BIZHUB-751i',
+                            'Equipo multifunción de 75 páginas por minuto monocromo. Incluye controlador Emperon™ con PCL 6, PCL 5, PostScript 3, PDF 1.7, XPS y OOXML. Capacidad de papel de 500 + 500 hojas, entrada manual de 150 hojas. Tamaños de papel desde A6 hasta SRA3, carteles de 1,2 m.',
+                            'img/ProductosFotocopiadorasMonocromaticas/bizhub-751i.jpg',
+                            'S/ 45,390,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB 750i. VELOCIDAD MONOCROMATICA: 75 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 80000 pg. CERTIFICACION: ENERGY STAR, ROHS, ISO 9001, ISO 14001. Fecha de publicación: 13/10/2024. Fecha de último estado: 23/10/2024.`,
+                          
+                            '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-751i.pdf'
+                            )" class="btn-detalles-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-751i">Ver detalles
+                        </button>
+                    </article>
 
-                <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
-                <article class="text-center text-xs sm:text-sm producto-card-monocromaticas-negro">
-                    <span class="badge-ofertada-negro">OFERTADA</span>
-                    <button class="btn-imagen-negro" onclick="mostrarDetallesProducto(
-                      'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 751i',
-                      'Equipo multifunción de 75 páginas por minuto monocromo. Incluye controlador Emperon™ con PCL 6, PCL 5, PostScript 3, PDF 1.7, XPS y OOXML. Capacidad de papel de 500 + 500 hojas, entrada manual de 150 hojas. Tamaños de papel desde A6 hasta SRA3, carteles de 1,2 m.',
-                      'img/ProductosFotocopiadorasMonocromaticas/bizhub-751i.jpg',
-                      'S/ 45,390,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB 751i. VELOCIDAD MONOCROMATICA: 75 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 80000 pg. CERTIFICACION: ENERGY STAR, ROHS, ISO 9001, ISO 14001. Fecha de publicación: 13/10/2024. Fecha de último estado: 23/10/2024.`,
-                      '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-751i.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-monocromaticas-negro-bizhub-751i">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-751i.jpg') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-monocromaticas-negro">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KONICA MINOLTA MULTIFUNCIONAL LAZER BIZHUB-751i, de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
+
+                    <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
+                    <article class="text-center text-xs sm:text-sm producto-card-monocromaticas-negro">
+                        <span class="badge-ofertada-negro">OFERTADA</span>
+                        <button class="btn-imagen-negro" onclick="mostrarDetallesProducto(
+                          'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 950i',
+                          'La Konica Minolta bizhub 950i es una impresora multifuncional monocromática (solo en blanco y negro) diseñada para grupos de trabajo que necesitan alta productividad.',
+                          'img/ProductosFotocopiadorasMonocromaticas/bizhub-950i.png',
+                          'S/ 66,280,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB 950i. IMPRESION Y FOTOCOPIADO: Es una fotocopiadora láser blanco y negro de alta productividad. ESCANEO DE VELOCIDAD: hasta 280 opm. CONECTIVIDAD: Permite la impresión móvil y se puede integrar con servicios en la nube. PANTALLA TACTIL: Cuenta con una pantalla multitáctil de 10.1 pulgadas. CAPACIDAD DE PAPEL:  hasta 6.650 hojas. SEGURIDAD: como el motor antivirus Bitdefender, para proteger los datos. RESOLUCION DE ESCANEO: 600 x 600 dpi. VELOCIDAD DE IMPRESIÓN: Hoja A4: 95 ppm - Hoja A3: 48 ppm. FORMATOS DE ESCANEO: JPEG, TIFF, PDF, PDF/A 1a y 1b (opcional), PPTX, DOCX/XLSX con función de búsqueda (opcional). SISTEMAS OPERATIVOS: Windows 7 (32/64) / 8.1 (32/64) / 10 (32/64) / 11, Unix, Citrix, Linux.`,
+                            '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-950i.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-monocromaticas-negro-bizhub-950i">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-950i.png') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-monocromaticas-negro">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 950i de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
                             </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-monocromaticas-negro">Impresora Monocromática BIZHUB-950i</span>
                         </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-monocromaticas-negro">Impresora Monocromática BIZHUB-751i</span>
-                    </div>
-                    <p class="mt-2 text-gray-700">
 
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL LASER - BIZHUB-751i',
-                      'Equipo multifunción de 75 páginas por minuto monocromo. Incluye controlador Emperon™ con PCL 6, PCL 5, PostScript 3, PDF 1.7, XPS y OOXML. Capacidad de papel de 500 + 500 hojas, entrada manual de 150 hojas. Tamaños de papel desde A6 hasta SRA3, carteles de 1,2 m.',
-                      'img/ProductosFotocopiadorasMonocromaticas/bizhub-751i.jpg',
-                      'S/ 45,390,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB 750i. VELOCIDAD MONOCROMATICA: 75 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 80000 pg. CERTIFICACION: ENERGY STAR, ROHS, ISO 9001, ISO 14001. Fecha de publicación: 13/10/2024. Fecha de último estado: 23/10/2024.`,
-                      
-                      '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-751i.pdf'
-                        )" class="btn-detalles-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-751i">Ver detalles
-                    </button>
-                </article>
-
-
-                <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
-                <article class="text-center text-xs sm:text-sm producto-card-monocromaticas-negro">
-                    <span class="badge-ofertada-negro">OFERTADA</span>
-                    <button class="btn-imagen-negro" onclick="mostrarDetallesProducto(
-                      'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 950i',
-                      'La Konica Minolta bizhub 950i es una impresora multifuncional monocromática (solo en blanco y negro) diseñada para grupos de trabajo que necesitan alta productividad.',
-                      'img/ProductosFotocopiadorasMonocromaticas/bizhub-950i.png',
-                      'S/ 66,280,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB 950i. IMPRESION Y FOTOCOPIADO: Es una fotocopiadora láser blanco y negro de alta productividad. ESCANEO DE VELOCIDAD: hasta 280 opm. CONECTIVIDAD: Permite la impresión móvil y se puede integrar con servicios en la nube. PANTALLA TACTIL: Cuenta con una pantalla multitáctil de 10.1 pulgadas. CAPACIDAD DE PAPEL:  hasta 6.650 hojas. SEGURIDAD: como el motor antivirus Bitdefender, para proteger los datos. RESOLUCION DE ESCANEO: 600 x 600 dpi. VELOCIDAD DE IMPRESIÓN: Hoja A4: 95 ppm - Hoja A3: 48 ppm. FORMATOS DE ESCANEO: JPEG, TIFF, PDF, PDF/A 1a y 1b (opcional), PPTX, DOCX/XLSX con función de búsqueda (opcional). SISTEMAS OPERATIVOS: Windows 7 (32/64) / 8.1 (32/64) / 10 (32/64) / 11, Unix, Citrix, Linux.`,
-                        '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-950i.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-monocromaticas-negro-bizhub-950i">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-950i.png') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-monocromaticas-negro">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 950i de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
-                            </div>
-                        </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-monocromaticas-negro">Impresora Monocromática BIZHUB-950i</span>
-                    </div>
-
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 950i',
-                      'La Konica Minolta bizhub 950i es una impresora multifuncional monocromática (solo en blanco y negro) diseñada para grupos de trabajo que necesitan alta productividad.',
-                      'img/ProductosFotocopiadorasMonocromaticas/bizhub-950i.png',
-                      'S/ 66,280,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB 950i. IMPRESION Y FOTOCOPIADO: Es una fotocopiadora láser blanco y negro de alta productividad. ESCANEO DE VELOCIDAD: hasta 280 opm. CONECTIVIDAD: Permite la impresión móvil y se puede integrar con servicios en la nube. PANTALLA TACTIL: Cuenta con una pantalla multitáctil de 10.1 pulgadas. CAPACIDAD DE PAPEL:  hasta 6.650 hojas. SEGURIDAD: como el motor antivirus Bitdefender, para proteger los datos. RESOLUCION DE ESCANEO: 600 x 600 dpi. VELOCIDAD DE IMPRESIÓN: Hoja A4: 95 ppm - Hoja A3: 48 ppm. FORMATOS DE ESCANEO: JPEG, TIFF, PDF, PDF/A 1a y 1b (opcional), PPTX, DOCX/XLSX con función de búsqueda (opcional). SISTEMAS OPERATIVOS: Windows 7 (32/64) / 8.1 (32/64) / 10 (32/64) / 11, Unix, Citrix, Linux.`,
-                      '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-950i.pdf'
-                        )" class="btn-detalles-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-750i" >Ver detalles
-                    </button>
-                </article>
-            </div>
-        </<section>
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-950i',
+                            nombre: 'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 950i',
+                            descripcion: 'La Konica Minolta bizhub 950i es una impresora multifuncional monocromática (solo en blanco y negro) diseñada para grupos de trabajo que necesitan alta productividad.',
+                            img: '/static/img/ProductosFotocopiadorasMonocromaticas/bizhub-950i.png',
+                            precio: 'S/ 66,280,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-950i.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA KONICA MINOLTA MULTIFUNCIONAL MONOCROMATICA - BIZHUB 950i',
+                            'La Konica Minolta bizhub 950i es una impresora multifuncional monocromática (solo en blanco y negro) diseñada para grupos de trabajo que necesitan alta productividad.',
+                            'img/ProductosFotocopiadorasMonocromaticas/bizhub-950i.png',
+                            'S/ 66,280,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB 950i. IMPRESION Y FOTOCOPIADO: Es una fotocopiadora láser blanco y negro de alta productividad. ESCANEO DE VELOCIDAD: hasta 280 opm. CONECTIVIDAD: Permite la impresión móvil y se puede integrar con servicios en la nube. PANTALLA TACTIL: Cuenta con una pantalla multitáctil de 10.1 pulgadas. CAPACIDAD DE PAPEL:  hasta 6.650 hojas. SEGURIDAD: como el motor antivirus Bitdefender, para proteger los datos. RESOLUCION DE ESCANEO: 600 x 600 dpi. VELOCIDAD DE IMPRESIÓN: Hoja A4: 95 ppm - Hoja A3: 48 ppm. FORMATOS DE ESCANEO: JPEG, TIFF, PDF, PDF/A 1a y 1b (opcional), PPTX, DOCX/XLSX con función de búsqueda (opcional). SISTEMAS OPERATIVOS: Windows 7 (32/64) / 8.1 (32/64) / 10 (32/64) / 11, Unix, Citrix, Linux.`,
+                            '/static/pdf/PdfFotocopiadorasMonocromaticas/bizhub-950i.pdf'
+                            )" class="btn-detalles-negro bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-950i" >Ver detalles
+                        </button>
+                    </article>
+                </div>
+            </<section>
+        </div>
     </div>
 </main>
 {% endblock %}

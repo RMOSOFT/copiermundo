@@ -190,12 +190,12 @@
                 <h3 class="text-xs font-bold uppercase mb-1 border-b border-gray-300 pb-2 font-semibold text-sm sm:text-base uppercase">
                     PRODUCTOS VISTOS
                 </h3>
-                <ul class="space-y-6 text-xs">
+                <ul id="productosVistosList" class="space-y-6 text-xs">
                     <li class="flex gap-2">
                         <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-C266i.jpg') }}" width="40"/>
                         <div>
                             <p>
-                                Bizhub c266i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                                Bizhub-C266i: IMPRESORA MULTIFUNCIONAL PARA OFICINAS
                             </p>
                             <p class="text-blue-700 mt-1">
                                 S/ 17,999,00
@@ -206,8 +206,7 @@
                         <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-c3321i.jpg') }}" width="40"/>
                         <div>
                             <p>
-                                Bizhub-C3321i: IMPRESORA MONOCROMÁTICA DE ALTA VELOCIDAD PARA GRUPOS
-                                DE TRABAJO  
+                                Bizhub-C3321i: IMPRESORA MULTIFUNCIONAL PARA OFICINAS  
                             </p>
                             <p class="text-blue-700 mt-1">
                                 S/ 9,300,00
@@ -219,7 +218,7 @@
                         <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-C451i.jpg') }}" width="40"/>
                         <div>
                             <p>
-                                Bizhub c451i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                                Bizhub-C451i: IMPRESORA MULTIFUNCIONAL PARA OFICINAS
                             </p>
                             <p class="text-blue-700 mt-1">
                                 S/ 34,990,00
@@ -231,311 +230,357 @@
         </aside>
 
         
-        
-        <!-- Right content -->
-        <section class="flex-1" >
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-300 pb-4 mb-4">
-                <div class="flex items-center space-x-2 mb-3 sm:mb-0">
-                    <select aria-label="Ordenar productos" class="border border-gray-300 rounded px-3 py-1 text-xs sm:text-sm">
-                        <option>
-                         Orden predeterminado
-                        </option>
-                    </select>
-                    <button aria-label="Vista en cuadrícula" class="border border-gray-300 p-2 text-xs sm:text-sm">
-                        <i class="fas fa-th">
-                        </i>
-                    </button>
-                    <button aria-label="Vista en lista" class="border border-gray-300 p-2 text-xs sm:text-sm">
-                        <i class="fas fa-list">
-                        </i>
-                    </button>
+        <div id="pageConfig" data-vistos-key="copiermundo_vistos_nuevas">
+            <!-- Right content -->
+            <section class="flex-1" >
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-300 pb-4 mb-4">
+                    <div class="flex items-center space-x-2 mb-3 sm:mb-0">
+                        <select aria-label="Ordenar productos" class="border border-gray-300 rounded px-3 py-1 text-xs sm:text-sm">
+                            <option>
+                             Orden predeterminado
+                            </option>
+                        </select>
+                        <button aria-label="Vista en cuadrícula" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                            <i class="fas fa-th">
+                            </i>
+                        </button>
+                        <button aria-label="Vista en lista" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                            <i class="fas fa-list">
+                            </i>
+                        </button>
+                    </div>
+                    <nav aria-label="Paginación" class="flex items-center space-x-2 text-xs sm:text-sm text-gray-700">
+                        <button aria-current="page" class="bg-black text-white px-3 py-1" disabled="">
+                            1
+                        </button>
+                        <button class="hover:underline px-1">
+                            2
+                        </button>
+                        <span>
+                            ..
+                        </span>
+                        <button class="hover:underline px-1">
+                            5
+                        </button>
+                        <button aria-label="Siguiente página" class="px-1">
+                            <i class="fas fa-angle-double-right">
+                            </i>
+                        </button>
+                    </nav>
                 </div>
-                <nav aria-label="Paginación" class="flex items-center space-x-2 text-xs sm:text-sm text-gray-700">
-                    <button aria-current="page" class="bg-black text-white px-3 py-1" disabled="">
-                        1
-                    </button>
-                    <button class="hover:underline px-1">
-                        2
-                    </button>
-                    <span>
-                        ..
-                    </span>
-                    <button class="hover:underline px-1">
-                        5
-                    </button>
-                    <button aria-label="Siguiente página" class="px-1">
-                        <i class="fas fa-angle-double-right">
-                        </i>
-                    </button>
-                </nav>
-            </div>
 
-            <!-- Desde aqui son los productos que hay para todo tipo de fotocopiadoras -->
-            <div class="seccion-productos grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 grid-left-adjust">
-                <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
-                <article class="text-center text-xs sm:text-sm producto-card">
-                    <button  
-                        onclick="mostrarDetallesProducto(
-                        'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C3321i',
-                        'La impresora láser bizhub-C3321i - color A4, Color y blanco y negro, formatos de papel A6-A4 y tamaño personalizado copiar, imprimir, escanear y enviar faxes, incluido tóner de alta capacidad, función de escaneo rápido, panel de usuario similar a una tableta, Wi-Fi integrado.',
-                        'img/ProductosFotocopiadorasColorNuevas/bizhub-c3321i.jpg',
-                        'S/ 9,300,00',
-                        `MARCA: KONICA MINOLTA. MODELO: BIZHUB C3321i. VELOCIDAD COLOR: 33 ppm. VELOCIDAD MONOCROMATICA: 33 ppm. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 4096 MB. MEMORIA MAXIMA: MEM. MAX: 4096 MB. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. 
-                        RESOLUCION DE IMPRESION: 1200 x 1200 ppp. GARANTIA DE FABRICA: 12 meses on-site. CICLO DE TRABAJO MENSUAL RECOMENDADO: 6500 páginas. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/02/2025. Fecha de último estado: 13/02/2025.`,
-                        '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C3321i.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-BIZHUB-C3321i">
-                            <img src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-C3321i.png') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer" />
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-fotocopiadoras">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C3321i de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
-                            </div>
-                        </div>
-                    </button>
-
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-fotocopiadoras">Impresora Multifuncional BIZHUB-C3321i</span>
-                    </div>
-
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-
-                    <button onclick="mostrarDetallesProducto(
-                        'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C3321i',
-                        'La impresora láser bizhub-C3321i - color A4, Color y blanco y negro, formatos de papel A6-A4 y tamaño personalizado copiar, imprimir, escanear y enviar faxes, incluido tóner de alta capacidad, función de escaneo rápido, panel de usuario similar a una tableta, Wi-Fi integrado.',
-                        'img/ProductosFotocopiadorasColorNuevas/bizhub-c3321i.jpg',
-                        'S/ 9,300,00',
-                        `MARCA: KONICA MINOLTA. MODELO: BIZHUB C3321i. VELOCIDAD COLOR: 33 ppm. VELOCIDAD MONOCROMATICA: 33 ppm. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 4096 MB. MEMORIA MAXIMA: MEM. MAX: 4096 MB. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. 
+                <!-- Desde aqui son los productos que hay para todo tipo de fotocopiadoras -->
+                <div class="seccion-productos grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-10 grid-left-adjust">
+                    <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
+                    <article class="text-center text-xs sm:text-sm producto-card">
+                        <button  
+                            onclick="mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C3321i',
+                            'La impresora láser bizhub-C3321i - color A4, Color y blanco y negro, formatos de papel A6-A4 y tamaño personalizado copiar, imprimir, escanear y enviar faxes, incluido tóner de alta capacidad, función de escaneo rápido, panel de usuario similar a una tableta, Wi-Fi integrado.',
+                            'img/ProductosFotocopiadorasColorNuevas/bizhub-c3321i.jpg',
+                            'S/ 9,300,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB C3321i. VELOCIDAD COLOR: 33 ppm. VELOCIDAD MONOCROMATICA: 33 ppm. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 4096 MB. MEMORIA MAXIMA: MEM. MAX: 4096 MB. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. 
                             RESOLUCION DE IMPRESION: 1200 x 1200 ppp. GARANTIA DE FABRICA: 12 meses on-site. CICLO DE TRABAJO MENSUAL RECOMENDADO: 6500 páginas. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/02/2025. Fecha de último estado: 13/02/2025.`,
+                            '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C3321i.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-BIZHUB-C3321i">
+                                <img src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-C3321i.png') }}" alt="Producto" class="w-full h-48 object-contain cursor-pointer" />
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-fotocopiadoras">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C3321i de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
+                            </div>
+                        </button>
+
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-fotocopiadoras">Impresora Multifuncional BIZHUB-C3321i</span>
+                        </div>
+
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-c3321i',
+                            nombre: 'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C3321i',
+                            descripcion: 'La impresora láser bizhub-C3321i - color A4, Color y blanco y negro, formatos de papel A6-A4 y tamaño personalizado copiar, imprimir, escanear y enviar faxes, incluido tóner de alta capacidad, función de escaneo rápido, panel de usuario similar a una tableta, Wi-Fi integrado.',
+                            img: '/static/img/ProductosFotocopiadorasColorNuevas/bizhub-c3321i.jpg',
+                            precio: 'S/ 9,300,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C3321i.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C3321i',
+                            'La impresora láser bizhub-C3321i - color A4, Color y blanco y negro, formatos de papel A6-A4 y tamaño personalizado copiar, imprimir, escanear y enviar faxes, incluido tóner de alta capacidad, función de escaneo rápido, panel de usuario similar a una tableta, Wi-Fi integrado.',
+                            'img/ProductosFotocopiadorasColorNuevas/bizhub-c3321i.jpg',
+                            'S/ 9,300,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB C3321i. VELOCIDAD COLOR: 33 ppm. VELOCIDAD MONOCROMATICA: 33 ppm. CONECTIVIDAD WLAN: No. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 4096 MB. MEMORIA MAXIMA: MEM. MAX: 4096 MB. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. 
+                                RESOLUCION DE IMPRESION: 1200 x 1200 ppp. GARANTIA DE FABRICA: 12 meses on-site. CICLO DE TRABAJO MENSUAL RECOMENDADO: 6500 páginas. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/02/2025. Fecha de último estado: 13/02/2025.`,
+                              
+                            '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C3321i.pdf'
+                            )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c3321i">Ver detalles
+                        </button>
+                    </article>
+
+                    <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
+                    <article class="text-center text-xs sm:text-sm producto-card">
+                        <button onclick="mostrarDetallesProducto(
+                          'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C266i',
+                          'Es una impresora láser a color con una velocidad de impresión de 26 páginas por minuto tanto en blanco y negro como a color. Incluye funciones de escaneo, copiado y conectividad Wi-Fi, Ethernet y USB..',
+                          'img/ProductosFotocopiadorasColorNuevas/bizhub-C266i.jpg',
+                          'S/ 17,999,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB C226i. VELOCIDAD MONOCROMATICA: 36 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA MAXIMA: 6 GB. MEMORIA INTERNA: 6 GB AALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. TIPO: T/COLOR. COMPONENTES: CD con software, cable de poder, manual. DUPLEX AUTOMATICO(DA): Si. RESOLUCION DE CAPTURA:  600 ppp. RESOLUCION DE IMPRESION: 600x600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 16000 pg. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
+                          '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C266i.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-BIZHUB-C266i">
+                                <img alt="Impresora negra cuadrada Konica Minolta vista frontal" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-C266i.jpg') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-fotocopiadoras">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C266i, de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
+                            </div>
+                        </button>
+
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-fotocopiadoras">Fotocopiadora Láser Multifunciónal BIZHUB-C266i</span>
+                        </div>
+
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-C266i',
+                            nombre: 'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C266i',
+                            descripcion: 'Es una impresora láser a color con una velocidad de impresión de 26 páginas por minuto tanto en blanco y negro como a color. Incluye funciones de escaneo, copiado y conectividad Wi-Fi, Ethernet y USB.',
+                            img: '/static/img/ProductosFotocopiadorasColorNuevas/bizhub-C266i.jpg',
+                            precio: 'S/ 17,999,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C266i.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C266i',
+                            'Es una impresora láser a color con una velocidad de impresión de 26 páginas por minuto tanto en blanco y negro como a color. Incluye funciones de escaneo, copiado y conectividad Wi-Fi, Ethernet y USB.',
+                            'img/ProductosFotocopiadorasColorNuevas/bizhub-C266i.jpg',
+                            'S/ 17,999,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB C226i. VELOCIDAD MONOCROMATICA: 36 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA MAXIMA: 6 GB. MEMORIA INTERNA: 6 GB AALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. TIPO: T/COLOR. COMPONENTES: CD con software, cable de poder, manual. DUPLEX AUTOMATICO(DA): Si. RESOLUCION DE CAPTURA:  600 ppp. RESOLUCION DE IMPRESION: 600x600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 16000 pg. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
+                            '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C266i.pdf'
+                            )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c266i">Ver detalles
+                        </button>
+                    </article>
+
+                    <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->    
+                    <article class="text-center text-xs sm:text-sm producto-card">
+                        <button onclick="mostrarDetallesProducto(
+                          'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C361i',
+                          'Disfruta de la serie bizhub i con el panel tipo tableta de 10.1 pulgadas, la mejor experiencia de usuario del mercado, las características de seguridad número uno con el motor de escaneo antivirus Bitdefender opcional integrado, servicios remotos, servicios de TI de Konica Minolta y mucho más.',
+                          'img/ProductosFotocopiadorasColorNuevas/bizhub-C361i.png',
+                          'S/ 28,590,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB C361i. VELOCIDAD DE IMPRESIÓN: A4 33ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. ALMACENAMIENTOS DE BUZON: 3000 documentos - 10000 páginas. RESOLUCION DE COPIA: 600 x 600 dpi - 1200 x 1200. IMPRESIÓN MOVIL: AirPrint, Mopria, konica Minolta Mobile Print, WiFi Direct. SISTEMAS OPERATIVOS DE PC PARA IMPRESION: Windows 10/(32-64)/11, MacOS 10.12 o posterior, Unix, Linux, Citrix. ESCANER: A una cara (en color o en blanco y negro)- 100 ipm, A doble cara (en color o en blanco y negro): 200 ipm CERTIFICACION: ISO 9001, ISO 14001,. MODOS DEL ESCANER: Scan-to-eMail (Scan-to-Me), Scan-to-SMB (Scan-to-Home), Scan-to-FTP. FORMATOS DE ARCHIVOS: JPEG, TIFF, PDF Compacto, PDF Encriptado, PPTX, DOCX/PPTX/XLSX Rastreable (opcional). ESTANDAR DE FAX: Super G3 (opcional).`,
+                          '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C361i.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-BIZHUB-361i">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-C361i.png') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-fotocopiadoras">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LAZER BIZHUB-C361i, de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
+                            </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-fotocopiadoras">Fotocopiadora Láser Multifuncional BIZHUB-C361i</span>
+                        </div>
+                        <p class="mt-2 text-gray-700">
+
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-C361i',
+                            nombre: 'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C361i',
+                            descripcion: 'Disfruta de la serie bizhub i con el panel tipo tableta de 10.1 pulgadas, la mejor experiencia de usuario del mercado, las características de seguridad número uno con el motor de escaneo antivirus Bitdefender opcional integrado, servicios remotos, servicios de TI de Konica Minolta y mucho más.',
+                            img: '/static/img/ProductosFotocopiadorasColorNuevas/bizhub-C361i.png',
+                            precio: 'S/ 28,590,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C361i.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB-C361i',
+                            'Disfruta de la serie bizhub i con el panel tipo tableta de 10.1 pulgadas, la mejor experiencia de usuario del mercado, las características de seguridad número uno con el motor de escaneo antivirus Bitdefender opcional integrado, servicios remotos, servicios de TI de Konica Minolta y mucho más.',
+                            'img/ProductosFotocopiadorasColorNuevas/bizhub-C361i.png',
+                            'S/ 28,590,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB C361i. VELOCIDAD DE IMPRESIÓN: A4 33ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. ALMACENAMIENTOS DE BUZON: 3000 documentos - 10000 páginas. RESOLUCION DE COPIA: 600 x 600 dpi - 1200 x 1200. IMPRESIÓN MOVIL: AirPrint, Mopria, konica Minolta Mobile Print, WiFi Direct. SISTEMAS OPERATIVOS DE PC PARA IMPRESION: Windows 10/(32-64)/11, MacOS 10.12 o posterior, Unix, Linux, Citrix. ESCANER: A una cara (en color o en blanco y negro)- 100 ipm, A doble cara (en color o en blanco y negro): 200 ipm CERTIFICACION: ISO 9001, ISO 14001,. MODOS DEL ESCANER: Scan-to-eMail (Scan-to-Me), Scan-to-SMB (Scan-to-Home), Scan-to-FTP. FORMATOS DE ARCHIVOS: JPEG, TIFF, PDF Compacto, PDF Encriptado, PPTX, DOCX/PPTX/XLSX Rastreable (opcional). ESTANDAR DE FAX: Super G3 (opcional).`,
+                            '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C361i.pdf'
+                            )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-361i">Ver detalles
+                        </button>
+                    </article>
+
+                    <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
+                    <article class="text-center text-xs sm:text-sm producto-card">
+                        <button onclick="mostrarDetallesProducto(
+                          'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C451i',
+                          'Impresora multifuncional Velocidad de Impresión: Rápida producción de documentos a 45 ppm en color y B/N. Calidad de Imagen: Impresiones nítidas y vibrantes gracias a su alta resolución de 1200 x 1200 dpi. Funcionalidad Avanzada: Incluye impresión, copia, escaneo y fax con alimentación de papel flexible desde A6 hasta SRA3.',
+                          'img/ProductosFotocopiadorasColorNuevas/bizhub-C451i.jpg',
+                          'S/ 34,990,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB C451i. VELOCIDAD MONOCROMATICA: 45 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Indidual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 40000 pg. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha de publicación: 13/08/2024. Fecha de último estado: 23/10/2024.`,
+                          '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C451i.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-BIZHUB-C451i">
+                                <img alt="Impresora Konica Minolta blanca y negra con pantalla táctil" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-C451i.jpg') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-fotocopiadoras">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C451i, de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
+                            </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-fotocopiadoras">Fotocopiadora Láser Multifuncional BIZHUB-C451i</span>
+                        </div>
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+
+                        <p class="mt-2 text-gray-700">
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-C451i',
+                            nombre: 'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C451i',
+                            descripcion: 'Velocidad de Impresión: Rápida producción de documentos a 45 ppm en color y B/N. Calidad de Imagen: Impresiones nítidas y vibrantes gracias a su alta resolución de 1200 x 1200 dpi. Funcionalidad Avanzada: Incluye impresión, copia, escaneo y fax con alimentación de papel flexible desde A6 hasta SRA3.',
+                            img: '/static/img/ProductosFotocopiadorasColorNuevas/bizhub-C451i.jpg',
+                            precio: 'S/ 34,990,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C451i.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C451i',
+                            'Velocidad de Impresión: Rápida producción de documentos a 45 ppm en color y B/N. Calidad de Imagen: Impresiones nítidas y vibrantes gracias a su alta resolución de 1200 x 1200 dpi. Funcionalidad Avanzada: Incluye impresión, copia, escaneo y fax con alimentación de papel flexible desde A6 hasta SRA3.',
+                            'img/ProductosFotocopiadorasColorNuevas/bizhub-C451i.jpg',
+                            'S/ 34,990,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB C451i. VELOCIDAD MONOCROMATICA: 45 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Indidual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 40000 pg. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha de publicación: 13/08/2024. Fecha de último estado: 23/10/2024.`,
+                            '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C451i.pdf'
+                            )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c451i">Ver detalles
+                        </button>
+                    </article>
+
+                    <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
+                    <article class="text-center text-xs sm:text-sm producto-card">
+                        <button onclick="mostrarDetallesProducto(
+                          'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C551i',
+                          'Alimentador Dual Scan. Capacidad de papel de 500 + 500 hojas y 150 en entrada manual. Tamaños desde A6 a SRA3, carteles de 1,2 m y de 52 a 300 gr. 8 GB de memoria, disco duro de 256 GB y estándar Gigabit Ethernet.',
+                          'img/ProductosFotocopiadorasColorNuevas/bizhub-C551i.jpg',
+                          'S/ 35,490,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB C551i. VELOCIDAD MONOCROMATICA: 55 ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 45000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/10/2024. Fecha de último estado: 23/10/2024.`,
+                          '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C551i.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-BIZHUB-C551i">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-C551i.jpg') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-fotocopiadoras">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C551i, de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
+                            </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-fotocopiadoras">Fotocopiadora Láser Multifuncional BIZHUB-C551i</span>
+                        </div>
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-C551i',
+                            nombre: 'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C551i',
+                            descripcion: 'Alimentador Dual Scan. Capacidad de papel de 500 + 500 hojas y 150 en entrada manual. Tamaños desde A6 a SRA3, carteles de 1,2 m y de 52 a 300 gr. 8 GB de memoria, disco duro de 256 GB y estándar Gigabit Ethernet.',
+                            img: '/static/img/ProductosFotocopiadorasColorNuevas/bizhub-C551i.jpg',
+                            precio: 'S/ 35,490,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C551i.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C551i',
+                            'Alimentador Dual Scan. Capacidad de papel de 500 + 500 hojas y 150 en entrada manual. Tamaños desde A6 a SRA3, carteles de 1,2 m y de 52 a 300 gr. 8 GB de memoria, disco duro de 256 GB y estándar Gigabit Ethernet.',
+                            'img/ProductosFotocopiadorasColorNuevas/bizhub-C551i.jpg',
+                            'S/ 35,490,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB C551i. VELOCIDAD MONOCROMATICA: 55 ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 45000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/10/2024. Fecha de último estado: 23/10/2024.`,
+                            '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C551i.pdf'
+                            )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c551i">Ver detalles
+                        </button>
+                    </article>
+
+                    <!-- Producto fotocopiadora nuevas seleccionado para la pagina --> 
+                    <article class="text-center text-xs sm:text-sm producto-card">
+                        <button onclick="mostrarDetallesProducto(
+                          'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C751i',
+                          'La Bizhub C751i tiene una pantalla con manejo sencillo con todos los ajustes principales disponibles de un vistazo para facilitar el copiado. Adicional a ello, cada modelo bizhub i-Series tiene una interfaz de usuario mejorada y aún más intuitiva.',
+                          'img/ProductosFotocopiadorasColorNuevas/bizhub-C751i.png',
+                          'S/ 57,990,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB C751i. VELOCIDAD DOS CARAS A4: Hasta 75/70 ppm (mono/color). CONECTIVIDAD WLAN: UK-221 Wireless LAN CONECTIVIDAD USB: Sí. MEMORIA RAM: 8 GB. DISCO DURO SSD: 256 GB SSD (incluido) / 1 TB SSD (opcional). PROCESADOR: Intel Celeron G4900T @ 2.9 GHz. SISTEMAS OPERATIVOS: Windows 7 (32/64); Windows 8.1 (32/64), Windows 10 (32/64); Windows 11; Windows Server 2022, macOS 10.14 o posterior. LENGUAJES DE IMPRESIÓN: Adobe PostScript 3 (CPSI 3020); PCL 6; PCL 5c. RESOLUCION: 1.800 (equivalente) x 600 ppp; 1200 x 1200 ppp. IMPRESIÓN MOVIL: AirPrint (iOS); Mopria (Android); Konica Minolta Mobile Print (iOS/Android)opcional: WiFi Direct. FORMATOS DE ARCHIVOS: JPEG; TIFF; PDF; PDF Compacto; PDF Encriptado; XPS; XPS. VELOCIDAD: Hasta 140/140 ipm a 1 cara (mono/color) y hasta 280/280 ipm a 2 caras (mono/color). PROTOCOLOS DE RED: TCP/IP (IPv4 / IPv6); SMB; LPD; IPP; SNMP; HTTP(S); Bonjour.`,
+                          '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C751i.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-BIZHUB-C751i">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-C751i.png') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-fotocopiadoras">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LAZER BIZHUB-C751i, de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
+                            </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-fotocopiadoras">Fotocopiadora Láser Multifuncional BIZHUB-C751i</span>
+                        </div>
+                        <p class="mt-2 text-gray-700">
+
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'bizhub-C751i',
+                            nombre: 'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C751i',
+                            descripcion: 'La Bizhub C751i tiene una pantalla con manejo sencillo con todos los ajustes principales disponibles de un vistazo para facilitar el copiado. Adicional a ello, cada modelo bizhub i-Series tiene una interfaz de usuario mejorada y aún más intuitiva.',
+                            img: '/static/img/ProductosFotocopiadorasColorNuevas/bizhub-C751i.png',
+                            precio: 'S/ 57,990,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C751i.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB-C751i',
+                            'La Bizhub C751i tiene una pantalla con manejo sencillo con todos los ajustes principales disponibles de un vistazo para facilitar el copiado. Adicional a ello, cada modelo bizhub i-Series tiene una interfaz de usuario mejorada y aún más intuitiva.',
+                            'img/ProductosFotocopiadorasColorNuevas/bizhub-C751i.png',
+                            'S/ 57,990,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB C751i. VELOCIDAD DOS CARAS A4: Hasta 75/70 ppm (mono/color). CONECTIVIDAD WLAN: UK-221 Wireless LAN CONECTIVIDAD USB: Sí. MEMORIA RAM: 8 GB. DISCO DURO SSD: 256 GB SSD (incluido) / 1 TB SSD (opcional). PROCESADOR: Intel Celeron G4900T @ 2.9 GHz. SISTEMAS OPERATIVOS: Windows 7 (32/64); Windows 8.1 (32/64), Windows 10 (32/64); Windows 11; Windows Server 2022, macOS 10.14 o posterior. LENGUAJES DE IMPRESIÓN: Adobe PostScript 3 (CPSI 3020); PCL 6; PCL 5c. RESOLUCION: 1.800 (equivalente) x 600 ppp; 1200 x 1200 ppp. IMPRESIÓN MOVIL: AirPrint (iOS); Mopria (Android); Konica Minolta Mobile Print (iOS/Android)opcional: WiFi Direct. FORMATOS DE ARCHIVOS: JPEG; TIFF; PDF; PDF Compacto; PDF Encriptado; XPS; XPS. VELOCIDAD: Hasta 140/140 ipm a 1 cara (mono/color) y hasta 280/280 ipm a 2 caras (mono/color). PROTOCOLOS DE RED: TCP/IP (IPv4 / IPv6); SMB; LPD; IPP; SNMP; HTTP(S); Bonjour.`,
                           
-                        '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C3321i.pdf'
-                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c3321i">Ver detalles
-                    </button>
-                </article>
-
-                <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
-                <article class="text-center text-xs sm:text-sm producto-card">
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C266i',
-                      'Es una impresora láser a color con una velocidad de impresión de 26 páginas por minuto tanto en blanco y negro como a color. Incluye funciones de escaneo, copiado y conectividad Wi-Fi, Ethernet y USB..',
-                      'img/ProductosFotocopiadorasColorNuevas/bizhub-C266i.jpg',
-                      'S/ 17,999,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C226i. VELOCIDAD MONOCROMATICA: 36 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA MAXIMA: 6 GB. MEMORIA INTERNA: 6 GB AALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. TIPO: T/COLOR. COMPONENTES: CD con software, cable de poder, manual. DUPLEX AUTOMATICO(DA): Si. RESOLUCION DE CAPTURA:  600 ppp. RESOLUCION DE IMPRESION: 600x600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 16000 pg. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
-                      '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C266i.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-BIZHUB-C266i">
-                            <img alt="Impresora negra cuadrada Konica Minolta vista frontal" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-C266i.jpg') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-fotocopiadoras">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C266i, de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
-                            </div>
-                        </div>
-                    </button>
-
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-fotocopiadoras">Fotocopiadora Láser Multifunciónal BIZHUB-C266i</span>
-                    </div>
-
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                        'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C266i',
-                        'Es una impresora láser a color con una velocidad de impresión de 26 páginas por minuto tanto en blanco y negro como a color. Incluye funciones de escaneo, copiado y conectividad Wi-Fi, Ethernet y USB..',
-                        'img/ProductosFotocopiadorasColorNuevas/bizhub-C266i.jpg',
-                        'S/ 17,999,00',
-                        `MARCA: KONICA MINOLTA. MODELO: BIZHUB C226i. VELOCIDAD MONOCROMATICA: 36 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA MAXIMA: 6 GB. MEMORIA INTERNA: 6 GB AALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. TIPO: T/COLOR. COMPONENTES: CD con software, cable de poder, manual. DUPLEX AUTOMATICO(DA): Si. RESOLUCION DE CAPTURA:  600 ppp. RESOLUCION DE IMPRESION: 600x600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 16000 pg. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha publicación: 13/03/2022. Fecha de último estado: 23/10/2024.`,
-                        '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C266i.pdf'
-                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c266i">Ver detalles
-                    </button>
-                </article>
-
-                <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->    
-                <article class="text-center text-xs sm:text-sm producto-card">
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C361i',
-                      'Disfruta de la serie bizhub i con el panel tipo tableta de 10.1 pulgadas, la mejor experiencia de usuario del mercado, las características de seguridad número uno con el motor de escaneo antivirus Bitdefender opcional integrado, servicios remotos, servicios de TI de Konica Minolta y mucho más.',
-                      'img/ProductosFotocopiadorasColorNuevas/bizhub-C361i.png',
-                      'S/ 28,590,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C361i. VELOCIDAD DE IMPRESIÓN: A4 33ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. ALMACENAMIENTOS DE BUZON: 3000 documentos - 10000 páginas. RESOLUCION DE COPIA: 600 x 600 dpi - 1200 x 1200. IMPRESIÓN MOVIL: AirPrint, Mopria, konica Minolta Mobile Print, WiFi Direct. SISTEMAS OPERATIVOS DE PC PARA IMPRESION: Windows 10/(32-64)/11, MacOS 10.12 o posterior, Unix, Linux, Citrix. ESCANER: A una cara (en color o en blanco y negro)- 100 ipm, A doble cara (en color o en blanco y negro): 200 ipm CERTIFICACION: ISO 9001, ISO 14001,. MODOS DEL ESCANER: Scan-to-eMail (Scan-to-Me), Scan-to-SMB (Scan-to-Home), Scan-to-FTP. FORMATOS DE ARCHIVOS: JPEG, TIFF, PDF Compacto, PDF Encriptado, PPTX, DOCX/PPTX/XLSX Rastreable (opcional). ESTANDAR DE FAX: Super G3 (opcional).`,
-                      '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C361i.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-BIZHUB-361i">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-C361i.png') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-fotocopiadoras">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LAZER BIZHUB-C361i, de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
-                            </div>
-                        </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-fotocopiadoras">Fotocopiadora Láser Multifuncional BIZHUB-C361i</span>
-                    </div>
-                    <p class="mt-2 text-gray-700">
-
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB-C361i',
-                      'Disfruta de la serie bizhub i con el panel tipo tableta de 10.1 pulgadas, la mejor experiencia de usuario del mercado, las características de seguridad número uno con el motor de escaneo antivirus Bitdefender opcional integrado, servicios remotos, servicios de TI de Konica Minolta y mucho más.',
-                      'img/ProductosFotocopiadorasColorNuevas/bizhub-C361i.png',
-                      'S/ 28,590,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C361i. VELOCIDAD DE IMPRESIÓN: A4 33ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. ALMACENAMIENTOS DE BUZON: 3000 documentos - 10000 páginas. RESOLUCION DE COPIA: 600 x 600 dpi - 1200 x 1200. IMPRESIÓN MOVIL: AirPrint, Mopria, konica Minolta Mobile Print, WiFi Direct. SISTEMAS OPERATIVOS DE PC PARA IMPRESION: Windows 10/(32-64)/11, MacOS 10.12 o posterior, Unix, Linux, Citrix. ESCANER: A una cara (en color o en blanco y negro)- 100 ipm, A doble cara (en color o en blanco y negro): 200 ipm CERTIFICACION: ISO 9001, ISO 14001,. MODOS DEL ESCANER: Scan-to-eMail (Scan-to-Me), Scan-to-SMB (Scan-to-Home), Scan-to-FTP. FORMATOS DE ARCHIVOS: JPEG, TIFF, PDF Compacto, PDF Encriptado, PPTX, DOCX/PPTX/XLSX Rastreable (opcional). ESTANDAR DE FAX: Super G3 (opcional).`,
-                      '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C361i.pdf'
-                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-361i">Ver detalles
-                    </button>
-                </article>
-
-                <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
-                <article class="text-center text-xs sm:text-sm producto-card">
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C451i',
-                      'Impresora multifuncional Velocidad de Impresión: Rápida producción de documentos a 45 ppm en color y B/N. Calidad de Imagen: Impresiones nítidas y vibrantes gracias a su alta resolución de 1200 x 1200 dpi. Funcionalidad Avanzada: Incluye impresión, copia, escaneo y fax con alimentación de papel flexible desde A6 hasta SRA3.',
-                      'img/ProductosFotocopiadorasColorNuevas/bizhub-C451i.jpg',
-                      'S/ 34,990,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C451i. VELOCIDAD MONOCROMATICA: 45 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Indidual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 40000 pg. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha de publicación: 13/08/2024. Fecha de último estado: 23/10/2024.`,
-                      '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C451i.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-BIZHUB-C451i">
-                            <img alt="Impresora Konica Minolta blanca y negra con pantalla táctil" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-C451i.jpg') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-fotocopiadoras">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C451i, de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
-                            </div>
-                        </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-fotocopiadoras">Fotocopiadora Láser Multifuncional BIZHUB-C451i</span>
-                    </div>
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-
-                    <p class="mt-2 text-gray-700">
-                    <button onclick="mostrarDetallesProducto(
-                        'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C451i',
-                        'Velocidad de Impresión: Rápida producción de documentos a 45 ppm en color y B/N. Calidad de Imagen: Impresiones nítidas y vibrantes gracias a su alta resolución de 1200 x 1200 dpi. Funcionalidad Avanzada: Incluye impresión, copia, escaneo y fax con alimentación de papel flexible desde A6 hasta SRA3.',
-                        'img/ProductosFotocopiadorasColorNuevas/bizhub-C451i.jpg',
-                        'S/ 34,990,00',
-                        `MARCA: KONICA MINOLTA. MODELO: BIZHUB C451i. VELOCIDAD MONOCROMATICA: 45 ppm. CONECTIVIDAD WLAN: Sí. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Indidual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Sí. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 40000 pg. CERTIFICACION: ISO 14001, IHOS 18001, ISO 9001, ENERGY STAR. Fecha de publicación: 13/08/2024. Fecha de último estado: 23/10/2024.`,
-                        '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C451i.pdf'
-                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c451i">Ver detalles
-                    </button>
-                </article>
-
-                <!-- Producto fotocopiadora nuevas seleccionado para la pagina -->
-                <article class="text-center text-xs sm:text-sm producto-card">
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C551i',
-                      'Alimentador Dual Scan. Capacidad de papel de 500 + 500 hojas y 150 en entrada manual. Tamaños desde A6 a SRA3, carteles de 1,2 m y de 52 a 300 gr. 8 GB de memoria, disco duro de 256 GB y estándar Gigabit Ethernet.',
-                      'img/ProductosFotocopiadorasColorNuevas/bizhub-C551i.jpg',
-                      'S/ 35,490,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C551i. VELOCIDAD MONOCROMATICA: 55 ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 45000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/10/2024. Fecha de último estado: 23/10/2024.`,
-                      '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C551i.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-BIZHUB-C551i">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-C551i.jpg') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-fotocopiadoras">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C551i, de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
-                            </div>
-                        </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-fotocopiadoras">Fotocopiadora Láser Multifuncional BIZHUB-C551i</span>
-                    </div>
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C551i',
-                      'Alimentador Dual Scan. Capacidad de papel de 500 + 500 hojas y 150 en entrada manual. Tamaños desde A6 a SRA3, carteles de 1,2 m y de 52 a 300 gr. 8 GB de memoria, disco duro de 256 GB y estándar Gigabit Ethernet.',
-                      'img/ProductosFotocopiadorasColorNuevas/bizhub-C551i.jpg',
-                      'S/ 35,490,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C551i. VELOCIDAD MONOCROMATICA: 55 ppm. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 8192 MB. MEMORIA MAXIMA: 8192 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 45000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/10/2024. Fecha de último estado: 23/10/2024.`,
-                      '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C551i.pdf'
-                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-c551i">Ver detalles
-                    </button>
-                </article>
-
-                <!-- Producto fotocopiadora nuevas seleccionado para la pagina --> 
-                <article class="text-center text-xs sm:text-sm producto-card">
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB C751i',
-                      'La Bizhub C751i tiene una pantalla con manejo sencillo con todos los ajustes principales disponibles de un vistazo para facilitar el copiado. Adicional a ello, cada modelo bizhub i-Series tiene una interfaz de usuario mejorada y aún más intuitiva.',
-                      'img/ProductosFotocopiadorasColorNuevas/bizhub-C751i.png',
-                      'S/ 57,990,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C751i. VELOCIDAD DOS CARAS A4: Hasta 75/70 ppm (mono/color). CONECTIVIDAD WLAN: UK-221 Wireless LAN CONECTIVIDAD USB: Sí. MEMORIA RAM: 8 GB. DISCO DURO SSD: 256 GB SSD (incluido) / 1 TB SSD (opcional). PROCESADOR: Intel Celeron G4900T @ 2.9 GHz. SISTEMAS OPERATIVOS: Windows 7 (32/64); Windows 8.1 (32/64), Windows 10 (32/64); Windows 11; Windows Server 2022, macOS 10.14 o posterior. LENGUAJES DE IMPRESIÓN: Adobe PostScript 3 (CPSI 3020); PCL 6; PCL 5c. RESOLUCION: 1.800 (equivalente) x 600 ppp; 1200 x 1200 ppp. IMPRESIÓN MOVIL: AirPrint (iOS); Mopria (Android); Konica Minolta Mobile Print (iOS/Android)opcional: WiFi Direct. FORMATOS DE ARCHIVOS: JPEG; TIFF; PDF; PDF Compacto; PDF Encriptado; XPS; XPS. VELOCIDAD: Hasta 140/140 ipm a 1 cara (mono/color) y hasta 280/280 ipm a 2 caras (mono/color). PROTOCOLOS DE RED: TCP/IP (IPv4 / IPv6); SMB; LPD; IPP; SNMP; HTTP(S); Bonjour.`,
-                      '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C751i.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-BIZHUB-C751i">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-C751i.png') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-fotocopiadoras">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA MULTIFUNCIONAL LAZER BIZHUB-C751i, de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
-                            </div>
-                        </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-fotocopiadoras">Fotocopiadora Láser Multifuncional BIZHUB-C751i</span>
-                    </div>
-                    <p class="mt-2 text-gray-700">
-
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - BIZHUB-C751i',
-                      'La Bizhub C751i tiene una pantalla con manejo sencillo con todos los ajustes principales disponibles de un vistazo para facilitar el copiado. Adicional a ello, cada modelo bizhub i-Series tiene una interfaz de usuario mejorada y aún más intuitiva.',
-                      'img/ProductosFotocopiadorasColorNuevas/bizhub-C751i.png',
-                      'S/ 57,990,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB C751i. VELOCIDAD DOS CARAS A4: Hasta 75/70 ppm (mono/color). CONECTIVIDAD WLAN: UK-221 Wireless LAN CONECTIVIDAD USB: Sí. MEMORIA RAM: 8 GB. DISCO DURO SSD: 256 GB SSD (incluido) / 1 TB SSD (opcional). PROCESADOR: Intel Celeron G4900T @ 2.9 GHz. SISTEMAS OPERATIVOS: Windows 7 (32/64); Windows 8.1 (32/64), Windows 10 (32/64); Windows 11; Windows Server 2022, macOS 10.14 o posterior. LENGUAJES DE IMPRESIÓN: Adobe PostScript 3 (CPSI 3020); PCL 6; PCL 5c. RESOLUCION: 1.800 (equivalente) x 600 ppp; 1200 x 1200 ppp. IMPRESIÓN MOVIL: AirPrint (iOS); Mopria (Android); Konica Minolta Mobile Print (iOS/Android)opcional: WiFi Direct. FORMATOS DE ARCHIVOS: JPEG; TIFF; PDF; PDF Compacto; PDF Encriptado; XPS; XPS. VELOCIDAD: Hasta 140/140 ipm a 1 cara (mono/color) y hasta 280/280 ipm a 2 caras (mono/color). PROTOCOLOS DE RED: TCP/IP (IPv4 / IPv6); SMB; LPD; IPP; SNMP; HTTP(S); Bonjour.`,
-                      
-                      '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C751i.pdf'
-                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-751i">Ver detalles
-                    </button>
-                </article>
-            </div>
-        </section>
+                            '/static/pdf/PdfFotocopiadorasColorNuevas/bizhub-C751i.pdf'
+                            )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="bizhub-751i">Ver detalles
+                        </button>
+                    </article>
+                </div>
+            </section>
+        </div>
     </div>
-
 </main>
-
-
 {% endblock %}
 
 

@@ -10,10 +10,10 @@ html {
     color: #1e3a8a;
 }
 
-
-/* 🌐 Barra superior moderna y profesional */
+/* Diseño para la cabecera principal de la pagina cinta azul con numeros y redes sociales*/
+/* 🌐 Barra superior moderna y profesional linear-gradient(90deg, #0048ff, #007bff);*/
 .topbar-custom {
-  background: linear-gradient(90deg, #0048ff, #007bff);
+  background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
   color: white;
   padding: 0.7rem 0;
   font-size: 0.9rem;
@@ -68,6 +68,62 @@ html {
   transform: scale(1.1);
   
 }
+/* Etiqueta CONTACTAR */
+.contactar-label {
+  font-weight: 800;              /* 🔥 negrita profesional */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  padding: 4px 12px;
+  border-radius: 14px;
+
+  background: linear-gradient(90deg, #000000, #333333);
+  border: 1px solid rgba(255,255,255,0.35);
+
+  box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.contactar-label:hover {
+  transform: scale(1.08);
+  background: linear-gradient(90deg, #111111, #555555);
+}
+
+/* 🎧 Badge Soporte 24/7 */
+/* 🎧 Badge Soporte 24/7 con WhatsApp */
+.badge-soporte {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 14px;
+  border-radius: 20px;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  text-decoration: none;
+
+  background: linear-gradient(90deg, #00c853, #00e676);
+  border: 1px solid rgba(255,255,255,0.4);
+
+  box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.badge-soporte:hover {
+  transform: scale(1.12);
+  background: linear-gradient(90deg, #00e676, #00c853);
+  box-shadow: 0 0 12px rgba(0, 255, 150, 0.65);
+}
+
+.badge-soporte i {
+  font-size: 0.9rem;
+}
 
 /* 🔵 Badge circular (puede ser número o letra "KM" de Konica Minolta Partner) */
 .badge-circle {
@@ -93,8 +149,8 @@ html {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 120px; /* ancho mínimo para número completo */
-  height: 45px;
+  min-width: 110px; /* ancho mínimo para número completo */
+  height: 30px;
   padding: 0 15px;
   border-radius: 50px; /* más elíptico para adaptarse al número */
   background: linear-gradient(135deg, #007bff, #00b8ff);
@@ -195,55 +251,121 @@ html {
 
 /* Diseño de actualizacion Animacion de colores claros originales de las redes sociales al hacer hover */
 /* 🌐 Estilos base para los íconos sociales */
+/* ✅ Base de ícono social (mantén tu estilo) */
 .social-icon {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: white;
-  color: #007bff; /* Color base (azul Konica Minolta) */
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 18px;
   text-decoration: none;
+
+  color: #fff; /* ✅ texto blanco siempre */
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+
+/* ✅ Hover: solo realce */
+.social-icon:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+  filter: brightness(1.05);
 }
 
 /* 💫 Efecto al pasar el mouse */
-.social-icon:hover {
-  transform: scale(1.1);
-  color: white;
+/* ✅ Colores por red (siempre activos) */
+.social-icon[href*="facebook"] {
+  background: #1877f2;
 }
 
-/* 🎯 Colores específicos para cada red social */
-.social-icon[href*="facebook"]:hover {
-  background: #1877f2; /* Azul Facebook */
+.social-icon[href*="whatsapp"] {
+  background: #25d366;
 }
 
-.social-icon[href*="whatsapp"]:hover {
-  background: #25d366; /* Verde WhatsApp */
-}
-
-.social-icon[href*="instagram"]:hover {
+.social-icon[href*="instagram"] {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  /* Efecto degradado tipo Instagram */
 }
 
-.social-icon[href*="tiktok"]:hover {
-  background: linear-gradient(135deg, #69C9D0, #EE1D52); /* Colores de TikTok */
+.social-icon[href*="tiktok"] {
+  background: linear-gradient(135deg, #69C9D0, #EE1D52);
 }
 
 /* 📱 Responsive para móviles */
 @media (max-width: 768px) {
   .social-icon {
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     font-size: 16px;
   }
 
   .d-flex.align-items-center.gap-3 {
     gap: 0.75rem; /* Reduce el espacio entre íconos en pantallas pequeñas */
+  }
+}
+
+/* Redes sociales flotantes al lado izquierdo de la pagina */
+/* 🧲 Tarjeta flotante izquierda */
+.social-float-card {
+  position: fixed;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 12px 10px;
+  border-radius: 18px;
+
+  background: rgba(255,255,255,0.14); /* vidrio */
+  border: 1px solid rgba(255,255,255,0.35);
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+.social-float-card:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.03); /* 🔥 leve, elegante */
+}
+
+/* Estado inicial oculto (no molesta al cargar) */
+.social-float-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) translateX(-14px); /* se mete un poco hacia la izquierda */
+}
+
+/* Estado visible */
+.social-float-show {
+  opacity: 0.9;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Transición suave profesional */
+#socialFloatCard {
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+@media (max-width: 768px) {
+  .social-float-card {
+    left: 0px;
+    bottom: 110px;
+    top: auto;
+    transform: none;
+    padding: 6px 5px;
+    gap: 6px;
+  }
+
+  .social-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
   }
 }
 
@@ -489,8 +611,6 @@ html {
         display: none !important;
     }
 }
-
-
 
 
 /* Diseño de actualizacion para las letras de los menus principales como producto,consumibles,nosotros,contacto */
@@ -826,104 +946,7 @@ html {
   }
 }
 
-/* Aqui ahora va el estilo para secciones de nuestras categorias*/
-/* Título con línea */
-.titulo-ajustada {
-    font-size: 17px;
-    letter-spacing: 3px;
-}
-
-.ajuste-cercano {
-  margin-top: -10px; /* o -20px si es necesario */
-}
-
-.linea-flex {
-    flex-grow: 1;
-    height: 1px;
-    background-color: #999;
-    max-width: 350px;
-}
-
-/*#f3f4f6*/
-.box-categoria {
-    background-color: #AAA;
-    border-radius: 10px;
-    padding: 0.3rem 0.5rem; /* menos padding lateral */
-    margin-left: 0.2rem;
-    margin-right: 0.2rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.box-categoria:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.seccion-categorias {
-    background-color: #8DD; /* #f5f0f4 un rosado suave, ajusta si es otro */
-    padding: 1.5rem 1rem;
-    border-radius: 10px;
-    max-width: 1000px;
-    margin: 1.5rem auto;
-}
-/* Para que la imagen cresca al pasar el mouse*/
-.imagen-categoria {
-    width: 90%;
-    max-height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    /*object-fit: contain;*/
-    transition: transform 0.3s ease; /* animación suave */
-    cursor: pointer;
-}
-.imagen-categoria:hover {
-    transform: scale(1.09); /* crece 5% */
-
-}
-
-
-.texto-categoria {
-    font-size: 16px;
-    font-weight: 500;
-    color: #333;
-}
-
-.cantidad-productos {
-    font-size: 11px;
-    color: #000;
-    font-weight: 500;
-}
-
-@media (max-width: 576px) {
-    .seccion-categorias{
-        padding: 0.5rem 0.5rem;
-        margin-top: 0.1rem;
-    }
-
-    .imagen-categoria {
-        width: 100%
-        max-height: 10px;
-    }
-
-    .box-categoria{
-        padding: 0.2rem 0.4rem;
-    }
-
-    .texto-categoria {
-      font-size: 13px;
-    }
-
-    .cantidad-productos {
-      font-size: 9px;
-    }
-
-    .linea-flex {
-      max-width: 60px;
-    }
-}
-
 /* Diseño de actualizacion de las cinta de propaganda con diseño copiermundo */
-/* 💙 Efecto neón profesional */
 /* 💙 Efecto neón profesional */
 .neon-title {
   color: #0072ce;
@@ -1034,8 +1057,110 @@ html {
 }
 
 
+/* Diseño para las secciones de nuestras categorias accesorios, cartuchos, fotocopiadoras*/
+/* Título con línea */
+.titulo-ajustada {
+    font-size: 17px;
+    letter-spacing: 3px;
+}
 
-/* Desde aqui va la seccion de nuestros productos destacados con sytylos personalizados */
+.ajuste-cercano {
+  margin-top: -10px; /* o -20px si es necesario */
+}
+
+.linea-flex {
+    flex-grow: 1;
+    height: 1px;
+    background-color: #999;
+    max-width: 350px;
+}
+
+/*#f3f4f6 #AAA*/
+.box-categoria {
+    background: linear-gradient(180deg, #f2f2f2, #e6e6e6); /* 🔥 gris suave */
+    border-radius: 10px;
+    padding: 0.3rem 0.5rem; /* menos padding lateral */
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.box-categoria:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.seccion-categorias {
+    background-color: #E6F1FF; /*#8DD,#f5f0f4  un rosado suave, ajusta si es otro */
+    padding: 1.5rem 1rem;
+    border-radius: 10px;
+    max-width: 1000px;
+    
+    margin: 0 auto;               /* 🔥 centrado real */
+}
+/* Para que la imagen cresca al pasar el mouse*/
+.imagen-categoria {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    /*object-fit: contain;*/
+    transition: transform 0.3s ease; /* animación suave */
+    cursor: pointer;
+}
+.imagen-categoria:hover {
+    transform: scale(1.09); /* crece 5% */
+
+}
+
+.texto-categoria a {
+  font-weight: 700;
+  color: #111;
+  text-decoration: none;
+}
+
+.texto-categoria a:hover {
+  color: #007bff;
+}
+
+.cantidad-productos {
+  margin-top: 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #555;
+}
+
+@media (max-width: 576px) {
+    .seccion-categorias{
+        padding: 0.5rem 0.5rem;
+        margin-top: 0.1rem;
+    }
+
+    .imagen-categoria {
+        width: 100%
+        max-height: 10px;
+    }
+
+    .box-categoria{
+        padding: 0.2rem 0.4rem;
+    }
+
+    .texto-categoria {
+      font-size: 13px;
+    }
+
+    .cantidad-productos {
+      font-size: 9px;
+    }
+
+    .linea-flex {
+      max-width: 60px;
+    }
+}
+
+
+/* Desde aqui va la seccion de nuestros productos destacados con stylos personalizados */
 /* ESTILO DEL TÍTULO DE SECCIÓN DESTACADA */
 .seccion-titulo {
   display: flex;
@@ -1074,8 +1199,6 @@ html {
   }
 }
 
-
-/* Estilo para los sliders del titulo  */
 /* Estilo base para los títulos del slider */
 .slider-titulo {
   font-size: 1.0rem;
@@ -1134,7 +1257,6 @@ html {
 
 /* Aqui es donde personalizamos los stilos de las tarjetas sliders de los productos */
 /* Estilo general de la tarjeta de los sliders para cada producto */
-
 /* Para que el cuerpo siempre empuje hacia abajo si falta altura */
 .producto-card .card-body {
   display: flex;
@@ -1213,9 +1335,8 @@ html {
   }
 }
 
-/* diseño giratorio caracteristicas general que sera para las tarjetas de los productos las caracteristicas giratorias*/
+/* Diseño giratorio caracteristicas general que sera para las tarjetas de los productos las caracteristicas giratorias*/
 /* Contenedor general */
-/* Contenedor principal */
 .producto-card {
     perspective: 1000px;
     width: 15rem;
@@ -1341,7 +1462,7 @@ html {
   }
 }
 
-/* EN esta parte es el diseño de las targetas parte atras de las caracteristicas del producto*/
+/* Diseño de las targetas parte atras de las caracteristicas del producto*/
 .producto-card-back {
   padding: 1rem;
   text-align: center;
@@ -1433,8 +1554,7 @@ html {
 
 
 
-/* En esta parte estilizaremos toda la parte de la seccion de productos de toners y guillotinas*/
-
+/* Diseño que estilizaremos toda la parte de la seccion de productos de toners y guillotinas*/
 .titulo-seccion {
     display: flex;
     align-items: center;
@@ -1486,6 +1606,39 @@ html {
 .producto-cards:hover img {
     transform: scale(1.08);
     filter: brightness(80%);
+}
+
+/* 🔥 Badge OFERTADA – esquina superior derecha */
+.badge-ofertada-top {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 5px 10px;
+  border-radius: 14px;
+
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  color: #fff;
+  background: linear-gradient(135deg, #16a34a, #22c55e); /* verde oferta */
+  
+  box-shadow: 0 3px 8px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,0.35);
+
+  z-index: 5;
+  pointer-events: none; /* no interfiere con clicks */
+}
+
+/* Icono pequeño */
+.badge-ofertada-top i {
+  font-size: 0.65rem;
 }
 
 /* Cambiando color #3368ff  scale(0.8)*/
@@ -1559,7 +1712,7 @@ html {
   color: white;
 }
 
-/* Aqui va ya el diseño para encerrar los nombres del producto de toners y guillotinas*/
+/* Diseño para encerrar los nombres del producto de toners y guillotinas*/
 /* Estilo base para todos los badges */
 .badge-color {
   display: inline-block;
@@ -1680,19 +1833,19 @@ html {
 /* Desde aqui diseñamos la parte de la segunda seccion de guillotinas */
 /* Fondo suave solo para esta sección #f9f9f9 #f5f5f5*/
 .card-guillotina {
-    border-radius: 1rem; /* Bordes curvos */
+    border-radius: 0.1rem; /* Bordes curvos */
     overflow: hidden;
     transition: transform 0.4s ease;
-    border: 2px solid #dee2e6; /* Borde más grueso por defecto */
+    border: 1px solid #dee2e6; /* Borde más grueso por defecto */
     position: relative;
-    min-height: 400px; /* o el valor que quieras */
+    min-height: 300px; /* o el valor que quieras */
 }
 
 /* 1 #eaecee, 2 #f1c40f, 3 #2ecc71 */
 .bg-soft-guillotinas {
     background-color: #2ecc71;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 0.9rem;
+    border-radius: 0.6rem;
 }
 /* Efecto de hover en la tarjeta */
 .card-guillotina:hover {
@@ -1714,32 +1867,9 @@ html {
     filter: brightness(0.7); /* Se oscurece ligeramente */
 }
 
-.card-guillotina:hover .flecha-hover {
-    opacity: 4;
-    transform: translateX(8px);
-}
 
-/* Flecha centrada sobre la imagen  font-weight: bold;*/
-.flecha-hover {
-    font-size: 4.1rem;
-    font-weight: 980; /* 👈 más gruesa si la fuente lo soporta */
-    transition: all 0.9s ease;
-    opacity: 0;
-    display: inline-block;
-    margin-left: 5px;
-    color: #dc3545;
-    pointer-events: none; /* para que no bloquee el clic debajo */
-    text-shadow: 0 0 2px #dc3545, 0 0 3px #dc3545; /* 👈 simula borde/grosor */
-    /* sombra para que se note más text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);*/
-}
-/* Mostrar flecha cuando se pasa el mouse sobre la tarjeta */
-.card-guillotina:hover .flecha-hover {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.2) rotate(720deg);
-    pointer-events: auto;
-}
 /* Texto de características */
-.cards-bodys p.text-muted {
+.cards-bodys p .text-muted {
     background-color: rgba(255, 215, 0, 0.15); /* fondo amarillo claro */
     padding: 0.5rem;
     border-radius: 0.5rem;
@@ -1749,6 +1879,7 @@ html {
 .card-guillotina:hover .cards-bodys p.text-muted {
     color: #d63384; /* rosado/magenta */
     background-color: rgba(255, 215, 0, 0.35); /* más intenso */
+
 }
 /* Título no cambia */
 .cards-bodys .product-title {
@@ -1763,18 +1894,19 @@ html {
     border: 1px solid #dee2e6;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, color 0.3s ease;
+    background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
 }
 
 /* Cambiar color al hacer hover en toda la tarjeta */
 .card-guillotina:hover .titulo-enmarcado {
     background-color: #f8f9fa;
-    color: #5555ff; /* Rojo para resaltar #dc3545  #dc3545*/
+    
     border-color: #0000FF;
     border-width: 1px; /* Más grueso */
 }
 
 
-/* Aqui vamos hacer ya culminando la pagina la cinta de propagandas */
+/* Diseño de Aqui vamos hacer ya culminando la pagina la cinta de propagandas */
 .cinta-propaganda img {
   max-height: 200px;
   object-fit: cover;
@@ -1868,15 +2000,79 @@ html {
   letter-spacing: 1px;
 }
 
-/* AQUI cinta final serca al pie de la pagina */
+/* Diseño AQUI cinta final serca al pie de la pagina */
+/* background-color: #004aad; */
 .cinta-final{
-  background-color: #004aad;
+  background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
   overflow: hidden;
   white-space: nowrap;
   height: 50px; /* Ajusta según lo que necesites */
   position: relative;
   display: flex;
   align-items: center;
+}
+
+/* Diseño para el footer con fondos claros y gradients */
+/* Footer corporativo premium */
+footer {
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,     /* azul negro */
+    #111827 45%,    /* gris oscuro */
+    #0b3c5d 100%    /* azul corporativo */
+  );
+  color: #e5e7eb;
+}
+
+footer h5 {
+  color: #ffffff;
+}
+
+footer .text-muted {
+  color: #9ca3af !important;
+}
+
+/* ===== Footer contacto – estilo corporativo ===== */
+
+/* Ítems del footer con iconos */
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+
+/* Iconos pequeños elegantes */
+.footer-icon {
+  font-size: 0.85rem;
+  color: #38bdf8; /* azul claro corporativo */
+  min-width: 18px;
+}
+
+/* Teléfonos */
+.footer-phone {
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+/* Links del footer */
+.footer-link a {
+  color: #38bdf8;
+  text-decoration: none;
+  transition: color .25s ease;
+}
+
+.footer-link a:hover {
+  color: #22c55e; /* verde soporte */
+  text-decoration: underline;
+}
+
+.footer-link:hover .footer-icon {
+  color: #22c55e;
 }
 
 /* Desde aqui podemos hacer todos los estilos que tenemos para las funcionalidades */
@@ -1907,6 +2103,7 @@ html {
   background-color: #b3b6b7;
   color: white;
 }
+
 /* Desde aqui hacemos que la cabecera header tenga un estilo al pasar el scrooll para mas abajo */
 /* Fija el header */
 .sticky-header {
@@ -3398,7 +3595,8 @@ Nuevas a colores */
 
     display: inline-block;
     max-width: 1450px;        /* 🔥 El contenedor podrá crecer hasta aquí */
-    width: fit-content;       /* 🔥 Se adapta pero permite typing animar */
+    width: 0;
+          /*  width: fit-content;🔥 Se adapta pero permite typing animar */
     
     background: linear-gradient(to top, #000000, #444444);
     border-radius: 40px;
@@ -3414,15 +3612,19 @@ Nuevas a colores */
 }
 
 /* 🔵 Máquina de escribir SOLO para esta página hija */
-.titulo-banner-seminueva-monocromatica.typewriter {
-    animation: typingMono 3.1s steps(50) forwards,
+.titulo-banner-seminueva-monocromatica.typewritermonocromaticas {
+    animation: typingMonoMono 3.1s steps(61, end) forwards,
                cursorBlink .8s step-end infinite;
 }
 
 /* 🔵 ANIMACIÓN ÚNICA SOLO PARA ESTA PÁGINA */
-@keyframes typingMono {
+@keyframes typingMonoMono {
     from { width: 0; }
-    to { width: 55%; }   /* Ajusta según tu título largo/largo exacto */
+    to { width: 61ch; }   /* Ajusta según tu título largo/largo exacto */
+}
+@keyframes cursorBlink {
+  0%, 49%  { border-right-color: rgba(255,255,255,0.75); }
+  50%,100% { border-right-color: transparent; }
 }
 
 
@@ -3795,14 +3997,14 @@ Nuevas a colores */
 
 /* 🔵 Máquina de escribir SOLO para esta página hija */
 .titulo-banner-seminueva-negro.typewriter {
-    animation: typingMono 3.1s steps(50) forwards,
+    animation: typingMonoNegro 3.1s steps(50) forwards,
                cursorBlink .8s step-end infinite;
 }
 
 /* 🔵 ANIMACIÓN ÚNICA SOLO PARA ESTA PÁGINA */
-@keyframes typingMono {
+@keyframes typingMonoNegro {
     from { width: 0; }
-    to { width: 42%; }   /* Ajusta según tu título largo/largo exacto */
+    to { width: 45ch; }   /* Ajusta según tu título largo/largo exacto */
 }
 
 /* Diseño para los productos fotocopiadoras seminuevos negro para los cards y diseño general de la pagina hija */

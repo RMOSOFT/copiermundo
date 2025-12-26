@@ -1174,11 +1174,11 @@
 
             function activarMaquina() {
                 // resetear animación
-                titulo.classList.remove("typewriter");
+                titulo.classList.remove("typewritermonocromaticas");
                 titulo.style.width = "0px";  
                 void titulo.offsetWidth;   // hack para reiniciar animación
 
-                titulo.classList.add("typewriter");
+                titulo.classList.add("typewritermonocromaticas");
             }
 
             // 1️⃣ Espera a que termine la entrada
@@ -1213,7 +1213,32 @@
         });
     </script>
 
+    <!-- Dinamica de javascript para los productos de impresoras monocromaticas al rellenar automaticamente los productos vistos -->
 
+    <script src="{{ url_for('static', path='js/productosfotocopiadoras/productos_vistos.js') }}"></script>
+    
+
+    <!-- Card de redes sociales flotante en la pagina index -->
+    <div class="social-float-card social-float-hidden" id="socialFloatCard" aria-label="Redes sociales">
+      <a class="social-icon" href="https://facebook.com/tuPagina" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+
+      <a class="social-icon" href="https://api.whatsapp.com/send?phone=51940414440&text=Hola%20Copier%20Mundo%2C%20quisiera%20informaci%C3%B3n." target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+
+      <a class="social-icon" href="https://instagram.com/tuCuenta" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a class="social-icon" href="https://www.tiktok.com/@tuCuenta" target="_blank" aria-label="TikTok">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+
+    <!-- Dinamica para las Redes sociales entrada -->  
+    <script src="{{ url_for('static', path='js/paginaIndex/redessociales/redes_sociales_entrada.js') }}"></script>
     
 </body>
 </html>

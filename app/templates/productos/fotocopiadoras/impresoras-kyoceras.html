@@ -177,61 +177,26 @@
                 <h3 class="text-xs font-bold uppercase mb-1 border-b border-gray-300 pb-2 font-semibold text-sm sm:text-base uppercase">
                     PRODUCTOS VISTOS
                 </h3>
-                <ul class="space-y-6 text-xs">
+                <ul id="productosVistosList" class="space-y-6 text-xs">
                     <li class="flex gap-2">
-                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c266i.jpg') }}" width="40"/>
+                        <img alt="Impresora Kyocera ecosys-M2640idw vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/ProductosFotocopiadorasKyoceras/ecosysM2640idw.png') }}" width="40"/>
                         <div>
                             <p>
-                                Bizhub c266i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
+                                Kyocera ecosys-M2640idw: IMPRESORA MULTIFUNCIONAL PARA GRUPOS DE TRABAJO
                             </p>
                             <p class="text-blue-700 mt-1">
-                                S/ 18,149.46
+                                S/ 3,200,00
                             </p>
                         </div>
                     </li>
                     <li class="flex gap-2">
-                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c3321i.jpg') }}" width="40"/>
+                        <img alt="Impresora Bizhub 300i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/ProductosFotocopiadorasKyoceras/ecosys-MA5500IFX.jpg') }}" width="40"/>
                         <div>
                             <p>
-                                Bizhub-C3321i: IMPRESORA MONOCROMÁTICA DE ALTA VELOCIDAD PARA GRUPOS
-                                DE TRABAJO  
+                                Kyocera ecosys-MA5500IFX: IMPRESORA MULTIFUNCIONAL PARA GRUPOS DE TRABAJO 
                             </p>
                             <p class="text-blue-700 mt-1">
-                                S/ 7,925.40
-                            </p>
-                        </div>
-                    </li>
-
-                    <li class="flex gap-2">
-                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="https://storage.googleapis.com/a1aa/image/90bae295-9001-4e53-4fd7-936b12ff77ae.jpg" width="40"/>
-                        <div>
-                            <p>
-                                BIZHUB 360I: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
-                            </p>
-                            <p class="text-blue-700 mt-1">
-                                S/ 28,427.69
-                            </p>
-                        </div>
-                    </li>
-                    <li class="flex gap-2">
-                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-185en.jpg') }}" width="40"/>
-                        <div>
-                            <p>
-                                Bizhub 185en: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
-                            </p>
-                            <p class="text-blue-700 mt-1">
-                                $ 3,940.50
-                            </p>
-                        </div>
-                    </li>
-                    <li class="flex gap-2">
-                        <img alt="Impresora Bizhub 360i monocromática vista pequeña" class="w-10 h-15 object-contain" height="60" src="{{ url_for('static', path='img/productos-fotocopiadoras/bizhub-c451i.jpg') }}" width="40"/>
-                        <div>
-                            <p>
-                                Bizhub c451i: MULTIFUNCIONAL MONOCROMÁTICO PARA GRUPOS DE TRABAJO
-                            </p>
-                            <p class="text-blue-700 mt-1">
-                                $ 35,501.50
+                                S/ 5,800,00
                             </p>
                         </div>
                     </li>
@@ -239,216 +204,248 @@
             </div>
         </aside>
 
-        <!-- Right content -->
-        <section class="flex-1">
-            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-300 pb-4 mb-4">
-                <div class="flex items-center space-x-2 mb-3 sm:mb-0">
-                    <select aria-label="Ordenar productos" class="border border-gray-300 rounded px-3 py-1 text-xs sm:text-sm">
-                        <option>
-                         Orden predeterminado
-                        </option>
-                    </select>
-                    <button aria-label="Vista en cuadrícula" class="border border-gray-300 p-2 text-xs sm:text-sm">
-                        <i class="fas fa-th">
-                        </i>
-                    </button>
-                    <button aria-label="Vista en lista" class="border border-gray-300 p-2 text-xs sm:text-sm">
-                        <i class="fas fa-list">
-                        </i>
-                    </button>
+        <div id="pageConfig" data-vistos-key="copiermundo_vistos_kyoceras">
+            <!-- Right content -->
+            <section class="flex-1">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between border-b border-gray-300 pb-4 mb-4">
+                    <div class="flex items-center space-x-2 mb-3 sm:mb-0">
+                        <select aria-label="Ordenar productos" class="border border-gray-300 rounded px-3 py-1 text-xs sm:text-sm">
+                            <option>
+                             Orden predeterminado
+                            </option>
+                        </select>
+                        <button aria-label="Vista en cuadrícula" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                            <i class="fas fa-th">
+                            </i>
+                        </button>
+                        <button aria-label="Vista en lista" class="border border-gray-300 p-2 text-xs sm:text-sm">
+                            <i class="fas fa-list">
+                            </i>
+                        </button>
+                    </div>
+                    <nav aria-label="Paginación" class="flex items-center space-x-2 text-xs sm:text-sm text-gray-700">
+                        <button aria-current="page" class="bg-black text-white px-3 py-1" disabled="">
+                            1
+                        </button>
+                        <button class="hover:underline px-1">
+                            2
+                        </button>
+                        <span>
+                            ..
+                        </span>
+                        <button class="hover:underline px-1">
+                            5
+                        </button>
+                        <button aria-label="Siguiente página" class="px-1">
+                            <i class="fas fa-angle-double-right">
+                            </i>
+                        </button>
+                    </nav>
                 </div>
-                <nav aria-label="Paginación" class="flex items-center space-x-2 text-xs sm:text-sm text-gray-700">
-                    <button aria-current="page" class="bg-black text-white px-3 py-1" disabled="">
-                        1
-                    </button>
-                    <button class="hover:underline px-1">
-                        2
-                    </button>
-                    <span>
-                        ..
-                    </span>
-                    <button class="hover:underline px-1">
-                        5
-                    </button>
-                    <button aria-label="Siguiente página" class="px-1">
-                        <i class="fas fa-angle-double-right">
-                        </i>
-                    </button>
-                </nav>
-            </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                <!-- Producto fotocopiadora kyoceras seleccionado para la pagina -->
-                <article class="text-center text-xs sm:text-sm producto-card">
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL KYOCERA ECOSYS M2640idw/L',
-                      'ECOSYS M2640idw / L, copia en blanco y negro, escaneo en color y fax, con velocidades de hasta 42 ppm, es el producto elegido por las pequeñas y medianas empresas y grupos de trabajo.',
-                      'img/ProductosFotocopiadorasKyoceras/ecosysM2640idw.png',
-                      'S/ 3,200,00',
-                      `MARCA: KYOCERA. MODELO: ECOSYS M2640idw-L. VELOCIDAD DE IMPRESION: 40 Páginas x minuto, 42 ppm b&n. TSI DE COLOR: de 4.3 Pulgadas. ALIMENTADOR DE DOCUMENTOS DE ESCANEO: doble estándar de 50 hojas. PROCESADOR: Cortex-A9 / 800MHz. SISTEMAS OPERATIVOS: Windows10, Windows 11. MODO: Silencioso. CONEXION A RED: WiFi incorporado estándar. COMPATIBILIDAD: con HyPAS estándar. RESOLUCION: 600 x 600 dpi hasta fino 1200 dpi. TIPO GENERAL: A4 B&N MFP (hasta 8.5 x 14). CONSUMO DE ENERGIA: 120V: 681/681 W; 220-240V: 661/661 W;Lista: 21 W; Reposo: 1.0 W. PROCESADOR DE DOCUMENTOS: 50 hojas. FORMATO DE ARCHIVO: TIFF (MMR/JPEG compression), JPEG, PDF (MMR/JPEG. MAXIMO TAMAÑO DE ESCANEO: 8.5 x 14. VELOCIDAD DE TRANSMISION:33.6/2.4 kbps.`
-                      '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-M2640idw-L.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-kyocera-ECOSYSM2640idw-L">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasKyoceras/ecosys-M2640idw.png') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-fotocopiadoras-kyoceras">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KYOCERA ECOSYS M2640idw/L de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                    <!-- Producto fotocopiadora kyoceras seleccionado para la pagina -->
+                    <article class="text-center text-xs sm:text-sm producto-card">
+                        <button onclick="mostrarDetallesProducto(
+                          'IMPRESORA MULTIFUNCIONAL KYOCERA ECOSYS M2640idw/L',
+                          'ECOSYS M2640idw / L, copia en blanco y negro, escaneo en color y fax, con velocidades de hasta 42 ppm, es el producto elegido por las pequeñas y medianas empresas y grupos de trabajo.',
+                          'img/ProductosFotocopiadorasKyoceras/ecosysM2640idw.png',
+                          'S/ 3,200,00',
+                          `MARCA: KYOCERA. MODELO: ECOSYS M2640idw-L. VELOCIDAD DE IMPRESION: 40 Páginas x minuto, 42 ppm b&n. TSI DE COLOR: de 4.3 Pulgadas. ALIMENTADOR DE DOCUMENTOS DE ESCANEO: doble estándar de 50 hojas. PROCESADOR: Cortex-A9 / 800MHz. SISTEMAS OPERATIVOS: Windows10, Windows 11. MODO: Silencioso. CONEXION A RED: WiFi incorporado estándar. COMPATIBILIDAD: con HyPAS estándar. RESOLUCION: 600 x 600 dpi hasta fino 1200 dpi. TIPO GENERAL: A4 B&N MFP (hasta 8.5 x 14). CONSUMO DE ENERGIA: 120V: 681/681 W; 220-240V: 661/661 W;Lista: 21 W; Reposo: 1.0 W. PROCESADOR DE DOCUMENTOS: 50 hojas. FORMATO DE ARCHIVO: TIFF (MMR/JPEG compression), JPEG, PDF (MMR/JPEG. MAXIMO TAMAÑO DE ESCANEO: 8.5 x 14. VELOCIDAD DE TRANSMISION:33.6/2.4 kbps.`
+                          '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-M2640idw-L.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-kyocera-ECOSYSM2640idw-L">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasKyoceras/ecosys-M2640idw.png') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-fotocopiadoras-kyoceras">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KYOCERA ECOSYS M2640idw/L de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
                             </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-fotocopiadoras-kyoceras">Fotocopiadora KYOCERA ECOSYS-M2640idw/L</span>
                         </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-fotocopiadoras-kyoceras">Fotocopiadora KYOCERA ECOSYS-M2640idw/L</span>
-                    </div>
 
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL KYOCERA ECOSYS M2640idw/L',
-                      'ECOSYS M2640idw / L, copia en blanco y negro, escaneo en color y fax, con velocidades de hasta 42 ppm, es el producto elegido por las pequeñas y medianas empresas y grupos de trabajo.',
-                      'img/ProductosFotocopiadorasKyoceras/ecosys-M2640idw.png',
-                      'S/ 3,200,00',
-                      `MARCA: KYOCERA. MODELO: ECOSYS M2640idw-L. VELOCIDAD DE IMPRESION: 40 Páginas x minuto, 42 ppm b&n. TSI DE COLOR: de 4.3 Pulgadas. ALIMENTADOR DE DOCUMENTOS DE ESCANEO: doble estándar de 50 hojas. PROCESADOR: Cortex-A9 / 800MHz. SISTEMAS OPERATIVOS: Windows10, Windows 11. MODO: Silencioso. CONEXION A RED: WiFi incorporado estándar. COMPATIBILIDAD: con HyPAS estándar. RESOLUCION: 600 x 600 dpi hasta fino 1200 dpi. TIPO GENERAL: A4 B&N MFP (hasta 8.5 x 14). CONSUMO DE ENERGIA: 120V: 681/681 W; 220-240V: 661/661 W;Lista: 21 W; Reposo: 1.0 W. PROCESADOR DE DOCUMENTOS: 50 hojas. FORMATO DE ARCHIVO: TIFF (MMR/JPEG compression), JPEG, PDF (MMR/JPEG. MAXIMO TAMAÑO DE ESCANEO: 8.5 x 14. VELOCIDAD DE TRANSMISION:33.6/2.4 kbps.`,
-                      '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-M2640idw-L.pdf'
-                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="ECOSYSM2640idw/L">Ver detalles
-                    </button>
-                </article>
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'ecosys-M2640idw',
+                            nombre: 'IMPRESORA MULTIFUNCIONAL KYOCERA ECOSYS M2640idw/L',
+                            descripcion: 'ECOSYS M2640idw / L, copia en blanco y negro, escaneo en color y fax, con velocidades de hasta 42 ppm, es el producto elegido por las pequeñas y medianas empresas y grupos de trabajo.',
+                            img: '/static/img/ProductosFotocopiadorasKyoceras/ecosys-M2640idw.png',
+                            precio: 'S/ 3,200,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-M2640idw-L.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL KYOCERA ECOSYS M2640idw/L',
+                            'ECOSYS M2640idw / L, copia en blanco y negro, escaneo en color y fax, con velocidades de hasta 42 ppm, es el producto elegido por las pequeñas y medianas empresas y grupos de trabajo.',
+                            'img/ProductosFotocopiadorasKyoceras/ecosys-M2640idw.png',
+                            'S/ 3,200,00',
+                            `MARCA: KYOCERA. MODELO: ECOSYS M2640idw-L. VELOCIDAD DE IMPRESION: 40 Páginas x minuto, 42 ppm b&n. TSI DE COLOR: de 4.3 Pulgadas. ALIMENTADOR DE DOCUMENTOS DE ESCANEO: doble estándar de 50 hojas. PROCESADOR: Cortex-A9 / 800MHz. SISTEMAS OPERATIVOS: Windows10, Windows 11. MODO: Silencioso. CONEXION A RED: WiFi incorporado estándar. COMPATIBILIDAD: con HyPAS estándar. RESOLUCION: 600 x 600 dpi hasta fino 1200 dpi. TIPO GENERAL: A4 B&N MFP (hasta 8.5 x 14). CONSUMO DE ENERGIA: 120V: 681/681 W; 220-240V: 661/661 W;Lista: 21 W; Reposo: 1.0 W. PROCESADOR DE DOCUMENTOS: 50 hojas. FORMATO DE ARCHIVO: TIFF (MMR/JPEG compression), JPEG, PDF (MMR/JPEG. MAXIMO TAMAÑO DE ESCANEO: 8.5 x 14. VELOCIDAD DE TRANSMISION:33.6/2.4 kbps.`,
+                            '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-M2640idw-L.pdf'
+                            )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="ECOSYSM2640idw/L">Ver detalles
+                        </button>
+                    </article>
 
-                <!-- Producto fotocopiadora kyoceras seleccionado para la pagina -->
-                <article class="text-center text-xs sm:text-sm producto-card">
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - ECOSYS MA5500IFX',
-                      'Esta multifuncional es perfecta para equipos dinámicos con altas exigencias de productividad y eficiencia de software, al tiempo que ofrece costes de funcionamiento excepcionalmente bajos.',
-                      'img/ProductosFotocopiadorasKyoceras/ecosys-MA5500IFX.jpg',
-                      'S/ 5,800,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB ECOSYS MA5500IFX. VELOCIDAD MONOCROMATICA: 57 ppm. VELOCIDAD COLOR: No aplica. VELOCIDAD DE IMPRESION: de 55 paginas por minutos. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 1.5 GB. MEMORIA MAXIMA: 3.5 GB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 50000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/07/2024. Fecha de último estado: 23/10/2024.`,
-                      '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-MA5500IFX.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-kyocera-ECOSYSMA5500IFX">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasKyoceras/ecosys-MA5500IFX.jpg') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-fotocopiadoras-kyoceras">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KYOCERA ECOSYS-MA5500IFX de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
+                    <!-- Producto fotocopiadora kyoceras seleccionado para la pagina -->
+                    <article class="text-center text-xs sm:text-sm producto-card">
+                        <button onclick="mostrarDetallesProducto(
+                          'IMPRESORA MULTIFUNCIONAL LASER - ECOSYS MA5500IFX',
+                          'Esta multifuncional es perfecta para equipos dinámicos con altas exigencias de productividad y eficiencia de software, al tiempo que ofrece costes de funcionamiento excepcionalmente bajos.',
+                          'img/ProductosFotocopiadorasKyoceras/ecosys-MA5500IFX.jpg',
+                          'S/ 5,800,00',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB ECOSYS MA5500IFX. VELOCIDAD MONOCROMATICA: 57 ppm. VELOCIDAD COLOR: No aplica. VELOCIDAD DE IMPRESION: de 55 paginas por minutos. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 1.5 GB. MEMORIA MAXIMA: 3.5 GB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 50000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/07/2024. Fecha de último estado: 23/10/2024.`,
+                          '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-MA5500IFX.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-kyocera-ECOSYSMA5500IFX">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasKyoceras/ecosys-MA5500IFX.jpg') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-fotocopiadoras-kyoceras">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KYOCERA ECOSYS-MA5500IFX de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
                             </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-fotocopiadoras-series-8">Impresora KYOCERA ECOSYS-MA5500IFX</span>
                         </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-fotocopiadoras-series-8">Impresora KYOCERA ECOSYS-MA5500IFX</span>
-                    </div>
 
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL KYOCERA - ECOSYS MA5500IFX',
-                      'Esta multifuncional es perfecta para equipos dinámicos con altas exigencias de productividad y eficiencia de software, al tiempo que ofrece costes de funcionamiento excepcionalmente bajos.',
-                      'img/ProductosFotocopiadorasKyoceras/ecosys-MA5500IFX.jpg',
-                      'S/ 5,800,00',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB ECOSYS MA5500IFX. VELOCIDAD MONOCROMATICA: 57 ppm. VELOCIDAD COLOR: No aplica. VELOCIDAD DE IMPRESION: de 55 paginas por minutos. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 1.5 GB. MEMORIA MAXIMA: 3.5 GB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 50000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/07/2024. Fecha de último estado: 23/10/2024.`,
-                      
-                      '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-MA5500IFX.pdf'
-                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="ECOSYS MA5500IFX">Ver detalles
-                    </button>
-                </article>
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'ecosys-MA5500IFX',
+                            nombre: 'IMPRESORA MULTIFUNCIONAL KYOCERA - ECOSYS MA5500IFX',
+                            descripcion: 'Esta multifuncional es perfecta para equipos dinámicos con altas exigencias de productividad y eficiencia de software, al tiempo que ofrece costes de funcionamiento excepcionalmente bajos.',
+                            img: '/static/img/ProductosFotocopiadorasKyoceras/ecosys-MA5500IFX.jpg',
+                            precio: 'S/ 5,800,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-MA5500IFX.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL KYOCERA - ECOSYS MA5500IFX',
+                            'Esta multifuncional es perfecta para equipos dinámicos con altas exigencias de productividad y eficiencia de software, al tiempo que ofrece costes de funcionamiento excepcionalmente bajos.',
+                            'img/ProductosFotocopiadorasKyoceras/ecosys-MA5500IFX.jpg',
+                            'S/ 5,800,00',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB ECOSYS MA5500IFX. VELOCIDAD MONOCROMATICA: 57 ppm. VELOCIDAD COLOR: No aplica. VELOCIDAD DE IMPRESION: de 55 paginas por minutos. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 1.5 GB. MEMORIA MAXIMA: 3.5 GB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): Si. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 50000 pg. CERTIFICACION: ISO 9001, ROHS, ISO 14001, ENERGY STAR. Fecha de publicación: 13/07/2024. Fecha de último estado: 23/10/2024.`,
+                          
+                            '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-MA5500IFX.pdf'
+                            )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="ECOSYS MA5500IFX">Ver detalles
+                        </button>
+                    </article>
 
-                <!-- Producto fotocopiadora kyoceras seleccionado para la pagina -->
-                <article class="text-center text-xs sm:text-sm producto-card">
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL KYOCERA - ECOSYS MA2100cwfx',
-                      'La ECOSYS MA2100cwfx es una MFP láser de red a color versatil diseñada para grupos de trabajo pequeños y usuarios individuales que buscan la máxima productividad, confiabilidad y asequibilidad.',
-                      'img/ProductosFotocopiadorasKyoceras/ecosys-MA2100cwfx.png',
-                      'S/ 2,450,00',
-                      `MARCA: Kyocera. MODELO: ECOSYS MA2100cwfx. VELOCIDAD DE IMPRESION: Hasta 22 paginas por minutos. VELOCIDAD DE MOTOR: 22 ppm b&n / 22 ppm color. CONSUMO DE ENERGIA: Impresion/Copia: 120V: 345 W. CAPACIDAD DE ENTRADA: Bandeja de 250 hojas, 50 hojas MPT. PROCESADOR DE DOCUMENTOS: 50 hojas. PROCESADOR: Cortex-A9 800MHz. SISTEMAS: Windows 10; Linux, Apple Macintosh OS X 10.9 o posterior. RESOLUCION DE ESCANEO: 1200 x 1200 dpi (Media velocidad). FORMATO ARCHIVO: TIFF (Comprimido MMR/JPEG), PDF (ComprimidoMMR/JPEG), XPS, JPEG, PDF. VELOCIDAD DE ESCANEO: Hasta 30 ipm simple. COMPATIBILIDAD: G3 Fax. VELOCIDAD DE MODEM: 33.6 Kbps. TAMAÑO MAXIMO ORIGINAL: 8.5 x 14. TIPO GENERAL: MFP A COLOR (hasta 8.5' x 14').`,
-                      '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-MA2100cwfx.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-kyocera-ECOSYSMA2100cwfx">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasKyoceras/ecosys-MA2100cwfx.png') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-fotocopiadoras-kyoceras">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KYOCERA ecosys-MA2100cwfx de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
+                    <!-- Producto fotocopiadora kyoceras seleccionado para la pagina -->
+                    <article class="text-center text-xs sm:text-sm producto-card">
+                        <button onclick="mostrarDetallesProducto(
+                          'IMPRESORA MULTIFUNCIONAL KYOCERA - ECOSYS MA2100cwfx',
+                          'La ECOSYS MA2100cwfx es una MFP láser de red a color versatil diseñada para grupos de trabajo pequeños y usuarios individuales que buscan la máxima productividad, confiabilidad y asequibilidad.',
+                          'img/ProductosFotocopiadorasKyoceras/ecosys-MA2100cwfx.png',
+                          'S/ 2,450,00',
+                          `MARCA: Kyocera. MODELO: ECOSYS MA2100cwfx. VELOCIDAD DE IMPRESION: Hasta 22 paginas por minutos. VELOCIDAD DE MOTOR: 22 ppm b&n / 22 ppm color. CONSUMO DE ENERGIA: Impresion/Copia: 120V: 345 W. CAPACIDAD DE ENTRADA: Bandeja de 250 hojas, 50 hojas MPT. PROCESADOR DE DOCUMENTOS: 50 hojas. PROCESADOR: Cortex-A9 800MHz. SISTEMAS: Windows 10; Linux, Apple Macintosh OS X 10.9 o posterior. RESOLUCION DE ESCANEO: 1200 x 1200 dpi (Media velocidad). FORMATO ARCHIVO: TIFF (Comprimido MMR/JPEG), PDF (ComprimidoMMR/JPEG), XPS, JPEG, PDF. VELOCIDAD DE ESCANEO: Hasta 30 ipm simple. COMPATIBILIDAD: G3 Fax. VELOCIDAD DE MODEM: 33.6 Kbps. TAMAÑO MAXIMO ORIGINAL: 8.5 x 14. TIPO GENERAL: MFP A COLOR (hasta 8.5' x 14').`,
+                          '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-MA2100cwfx.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-kyocera-ECOSYSMA2100cwfx">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasKyoceras/ecosys-MA2100cwfx.png') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-fotocopiadoras-kyoceras">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KYOCERA ecosys-MA2100cwfx de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
                             </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-fotocopiadoras-kyoceras">Impresora KYOCERA ECOSYS-MA2100cwfx</span>
                         </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-fotocopiadoras-kyoceras">Impresora KYOCERA ECOSYS-MA2100cwfx</span>
-                    </div>
 
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL KYOCERA - ECOSYS MA2100cwfx',
-                      'La ECOSYS MA2100cwfx es una MFP láser de red a color versatil diseñada para grupos de trabajo pequeños y usuarios individuales que buscan la máxima productividad, confiabilidad y asequibilidad.',
-                      'img/ProductosFotocopiadorasKyoceras/ecosys-MA2100cwfx.png',
-                      'S/ 2,450,00',
-                      `MARCA: Kyocera. MODELO: ECOSYS MA2100cwfx. VELOCIDAD DE IMPRESION: Hasta 22 paginas por minutos. VELOCIDAD DE MOTOR: 22 ppm b&n / 22 ppm color. CONSUMO DE ENERGIA: Impresion/Copia: 120V: 345 W. CAPACIDAD DE ENTRADA: Bandeja de 250 hojas, 50 hojas MPT. PROCESADOR DE DOCUMENTOS: 50 hojas. PROCESADOR: Cortex-A9 800MHz. SISTEMAS: Windows 10; Linux, Apple Macintosh OS X 10.9 o posterior. RESOLUCION DE ESCANEO: 1200 x 1200 dpi (Media velocidad). FORMATO ARCHIVO: TIFF (Comprimido MMR/JPEG), PDF (ComprimidoMMR/JPEG), XPS, JPEG, PDF. VELOCIDAD DE ESCANEO: Hasta 30 ipm simple. COMPATIBILIDAD: G3 Fax. VELOCIDAD DE MODEM: 33.6 Kbps. TAMAÑO MAXIMO ORIGINAL: 8.5 x 14. TIPO GENERAL: MFP A COLOR (hasta 8.5' x 14').`,
-                      '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-MA2100cwfx.pdf'
-                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="ecosys-MA2100cwfx">Ver detalles
-                    </button>
-                </article>
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'ecosys-MA2100cwfx',
+                            nombre: 'IMPRESORA MULTIFUNCIONAL KYOCERA ECOSYS MA2100cwfx',
+                            descripcion: 'La ECOSYS MA2100cwfx es una MFP láser de red a color versatil diseñada para grupos de trabajo pequeños y usuarios individuales que buscan la máxima productividad, confiabilidad y asequibilidad.',
+                            img: '/static/img/ProductosFotocopiadorasKyoceras/ecosys-MA2100cwfx.png',
+                            precio: 'S/ 2,450,00',
+                            pdf: '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-MA2100cwfx.pdf'
+                            }); 
+                            mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL KYOCERA - ECOSYS MA2100cwfx',
+                            'La ECOSYS MA2100cwfx es una MFP láser de red a color versatil diseñada para grupos de trabajo pequeños y usuarios individuales que buscan la máxima productividad, confiabilidad y asequibilidad.',
+                            'img/ProductosFotocopiadorasKyoceras/ecosys-MA2100cwfx.png',
+                            'S/ 2,450,00',
+                            `MARCA: Kyocera. MODELO: ECOSYS MA2100cwfx. VELOCIDAD DE IMPRESION: Hasta 22 paginas por minutos. VELOCIDAD DE MOTOR: 22 ppm b&n / 22 ppm color. CONSUMO DE ENERGIA: Impresion/Copia: 120V: 345 W. CAPACIDAD DE ENTRADA: Bandeja de 250 hojas, 50 hojas MPT. PROCESADOR DE DOCUMENTOS: 50 hojas. PROCESADOR: Cortex-A9 800MHz. SISTEMAS: Windows 10; Linux, Apple Macintosh OS X 10.9 o posterior. RESOLUCION DE ESCANEO: 1200 x 1200 dpi (Media velocidad). FORMATO ARCHIVO: TIFF (Comprimido MMR/JPEG), PDF (ComprimidoMMR/JPEG), XPS, JPEG, PDF. VELOCIDAD DE ESCANEO: Hasta 30 ipm simple. COMPATIBILIDAD: G3 Fax. VELOCIDAD DE MODEM: 33.6 Kbps. TAMAÑO MAXIMO ORIGINAL: 8.5 x 14. TIPO GENERAL: MFP A COLOR (hasta 8.5' x 14').`,
+                            '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-MA2100cwfx.pdf'
+                            )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="ecosys-MA2100cwfx">Ver detalles
+                        </button>
+                    </article>
 
-                <article class="text-center text-xs sm:text-sm producto-card">
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - ECOSYS PA4000WX',
-                      'Equipo completo, desde una alta capacidad de papel y conexión Wi-Fi, hasta impresión dúplex y un diseño compacto. ECOSYS PA4000wx es la impresora perfecta, fiable, gracias a sus componentes de larga duración, a su alta velocidad de impresión y con un bajo coste total de propiedad',
-                      'img/ProductosFotocopiadorasKyoceras/ecosys-PA4000WX.jpg',
-                      'S/ 7,925.40',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB ECOSYS PA4000WX. VELOCIDAD MONOCROMATICA: 42 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 512 MB. MEMORIA MAXIMA: 512 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): No. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 10000 pg. CERTIFICACION: ISO 9001, ISO 14001, ENERGY STAR. Fecha de publicación: 13/01/2025. Fecha de último estado: 13/01/2025.`,
-                      '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-PA4000WX.pdf'
-                        )">
-                        <!-- Imagen con overlay dinámico -->
-                        <div class="producto-imagen-kyocera-ECOSYSPA4000WX">
-                            <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasKyoceras/ecosys-PA4000WX.jpg') }}"/>
-                            <!-- Overlay que aparece al pasar -->
-                            <div class="overlay-whatsapp-fotocopiadoras-kyoceras">
-                                <span class="estado-en-linea">En línea</span>
-                                <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KYOCERA ECOSYS-PA4000WX de Copier Mundo."
-                                class="btn-whatsapp-overlay" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> Solicitar cotización
-                                </a>
+                    <article class="text-center text-xs sm:text-sm producto-card">
+                        <button onclick="mostrarDetallesProducto(
+                          'IMPRESORA MULTIFUNCIONAL LASER - ECOSYS PA4000WX',
+                          'Equipo completo, desde una alta capacidad de papel y conexión Wi-Fi, hasta impresión dúplex y un diseño compacto. ECOSYS PA4000wx es la impresora perfecta, fiable, gracias a sus componentes de larga duración, a su alta velocidad de impresión y con un bajo coste total de propiedad',
+                          'img/ProductosFotocopiadorasKyoceras/ecosys-PA4000WX.jpg',
+                          'S/ 7,925.40',
+                          `MARCA: KONICA MINOLTA. MODELO: BIZHUB ECOSYS PA4000WX. VELOCIDAD MONOCROMATICA: 42 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 512 MB. MEMORIA MAXIMA: 512 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): No. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 10000 pg. CERTIFICACION: ISO 9001, ISO 14001, ENERGY STAR. Fecha de publicación: 13/01/2025. Fecha de último estado: 13/01/2025.`,
+                          '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-PA4000WX.pdf'
+                            )">
+                            <!-- Imagen con overlay dinámico -->
+                            <div class="producto-imagen-kyocera-ECOSYSPA4000WX">
+                                <img alt="Impresora multifuncional Konica Minolta negra con escáner y alimentador automático" class="w-full h-48 object-contain cursor-pointer" src="{{ url_for('static', path='img/ProductosFotocopiadorasKyoceras/ecosys-PA4000WX.jpg') }}"/>
+                                <!-- Overlay que aparece al pasar -->
+                                <div class="overlay-whatsapp-fotocopiadoras-kyoceras">
+                                    <span class="estado-en-linea">En línea</span>
+                                    <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero cotizar la IMPRESORA KYOCERA ECOSYS-PA4000WX de Copier Mundo."
+                                    class="btn-whatsapp-overlay" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> Solicitar cotización
+                                    </a>
+                                </div>
                             </div>
+                        </button>
+                        <!-- Nombre y precio -->
+                        <div class="mt-2">
+                            <span class="nombre-producto-fotocopiadoras-kyoceras">Impresora KYOCERA ECOSYS-PA4000WX</span>
                         </div>
-                    </button>
-                    <!-- Nombre y precio -->
-                    <div class="mt-2">
-                        <span class="nombre-producto-fotocopiadoras-kyoceras">Impresora KYOCERA ECOSYS-PA4000WX</span>
-                    </div>
 
-                    <p class="mt-2 text-gray-700">
-                        
-                    </p>
-                    <button onclick="mostrarDetallesProducto(
-                      'IMPRESORA MULTIFUNCIONAL LASER - ECOSYS PA4000WX',
-                      'Equipo completo, desde una alta capacidad de papel y conexión Wi-Fi, hasta impresión dúplex y un diseño compacto. ECOSYS PA4000wx es la impresora perfecta, fiable, gracias a sus componentes de larga duración, a su alta velocidad de impresión y con un bajo coste total de propiedad',
-                      'img/ProductosFotocopiadorasKyoceras/ecosys-PA4000WX.jpg',
-                      'S/ 7,925.40',
-                      `MARCA: KONICA MINOLTA. MODELO: BIZHUB ECOSYS PA4000WX. VELOCIDAD MONOCROMATICA: 42 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 512 MB. MEMORIA MAXIMA: 512 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): No. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 10000 pg. CERTIFICACION: ISO 9001, ISO 14001, ENERGY STAR. Fecha de publicación: 13/01/2025. Fecha de último estado: 13/01/2025.`,
-                      '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-PA4000WX.pdf'
-                        )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="ECOSYS PA4000WX">Ver detalles
-                    </button>
-                </article>
-
-                
-            </div>
-        </<section>
+                        <p class="mt-2 text-gray-700">
+                            
+                        </p>
+                        <button onclick="agregarProductoVisto({
+                            id: 'ecosys-PA4000WX',
+                            nombre: 'IMPRESORA MULTIFUNCIONAL KYOCERA ECOSYS PA4000WX',
+                            descripcion: 'Equipo completo, desde una alta capacidad de papel y conexión Wi-Fi, hasta impresión dúplex y un diseño compacto. ECOSYS PA4000wx es la impresora perfecta, fiable, gracias a sus componentes de larga duración, a su alta velocidad de impresión y con un bajo coste total de propiedad.',
+                            img: '/static/img/ProductosFotocopiadorasKyoceras/ecosys-PA4000WX.jpg',
+                            precio: 'S/ 7,925.40',
+                            pdf: '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-PA4000WX.pdf'
+                            });
+                            mostrarDetallesProducto(
+                            'IMPRESORA MULTIFUNCIONAL LASER - ECOSYS PA4000WX',
+                            'Equipo completo, desde una alta capacidad de papel y conexión Wi-Fi, hasta impresión dúplex y un diseño compacto. ECOSYS PA4000wx es la impresora perfecta, fiable, gracias a sus componentes de larga duración, a su alta velocidad de impresión y con un bajo coste total de propiedad.',
+                            'img/ProductosFotocopiadorasKyoceras/ecosys-PA4000WX.jpg',
+                            'S/ 7,925.40',
+                            `MARCA: KONICA MINOLTA. MODELO: BIZHUB ECOSYS PA4000WX. VELOCIDAD MONOCROMATICA: 42 ppm. VELOCIDAD COLOR: No aplica. CONECTIVIDAD WLAN: Si. CONECTIVIDAD LAN: Sí. CONECTIVIDAD USB: Sí. MEMORIA INTERNA: 512 MB. MEMORIA MAXIMA: 512 MB. SISTEMA DE MANEJO DE RAEE: Individual. ALIMENTADOR AUTOMATICO DE DOCUMENTOS(ADF): No. RESOLUCION DE IMPRESION: 1200 x 1200 ppp. RESOLUCION DE CAPTURA: 600 ppp. CICLO DE TRABAJO MENSUAL RECOMENDADO: 10000 pg. CERTIFICACION: ISO 9001, ISO 14001, ENERGY STAR. Fecha de publicación: 13/01/2025. Fecha de último estado: 13/01/2025.`,
+                            '/static/pdf/PdfFotocopiadorasKyoceras/ecosys-PA4000WX.pdf'
+                            )" class="btn-detalles bg-red-600 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-700 transition" id="ECOSYS PA4000WX">Ver detalles
+                        </button>
+                    </article>
+                </div>
+            </<section>
+        </div>
     </div>
 </main>
 {% endblock %}
