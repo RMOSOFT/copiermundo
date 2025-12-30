@@ -44,62 +44,200 @@
     </div>
 </section>
 
-<section class="m-0 p-0">
-    <video class="d-block w-100 h-13 slide-video" autoplay muted loop playsinline>
-        <source src="{{ url_for('static', path='video/descarga-2.mp4') }}" type="video/mp4">
-        Tu navegador no soporta la reproducción de video.
+<section class="position-relative m-0 p-0 overflow-hidden">
+    <video class="d-block w-100 slide-video" autoplay muted loop playsinline>
+        <source src="{{ url_for('static', path='video/nosotros-web-final.mp4') }}" type="video/mp4">
     </video>
+
+    <!-- Overlay oscuro elegante -->
+    <div class="position-absolute top-0 start-0 w-100 h-100"
+         style="background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.65));">
+    </div>
+
+    <!-- Texto -->
     <div class="carousel-caption caption-responsive">
         <div class="desktop-text fade-in text-light">
-            <h2 class="fw-bold">Bienvenido a Copier Mundo</h2>
-            <p>Explora soluciones audiovisuales de vanguardia con fotocopiadoras multifuncionales</p>
+            <h2 class="fw-bold display-6">
+                Copier Mundo · Tecnología que impulsa tu empresa
+            </h2>
+            <p class="mt-3 fs-5">
+                Partner oficial Konica Minolta | Soluciones de impresión y gestión documental
+            </p>
         </div>
-        <div class="mobile-button d-block d-md-none">
-            <a href="#servicios" class="btn btn-light">Ver más</a>
+
+        <div class="mobile-button d-block d-md-none mt-3">
+            <a href="#nosotros-info" class="btn btn-outline-light rounded-pill px-4">
+                Conócenos
+            </a>
         </div>
     </div>
 </section>
 
 <section>
-  <!-- CINTA AZUL -->
-    <div class="bg-blue-800 text-white py-6 text-center">
-        <h1 class="text-3xl md:text-3xl font-bold mb-3">Soluciones para todo negocio</h1>
-        <p class="text-lg md:text-xl">Innovación y tecnología al servicio de tu empresa</p>
+    <div class="py-8 text-center text-white"
+         style="background: linear-gradient(90deg, #0f3c7d, #1e6fd9);">
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">
+            Soluciones tecnológicas para tu negocio
+        </h1>
+        <p class="text-lg md:text-xl opacity-90">
+            Innovación, confiabilidad y respaldo para tu empresa
+        </p>
     </div>
 </section>
 
-<section class="bg-gray-100 pt-3 pb-10 py-5">
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-4">
-    
-        <!-- Video: contenedor proporcional -->
-        <div class="w-full h-0 pb-[56.25%] relative rounded-lg overflow-hidden shadow-lg py-">
-          <iframe 
-            src="https://www.youtube.com/embed/vWBJtNdg19w"
-            title="We are Konica Minolta Corporate Movie 2018"
-            class="absolute top-0 left-0 w-full h-full"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen>
-          </iframe>
+<section id="nosotros-info" class="bg-gray-100 py-12">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center px-4">
+
+        <!-- Video -->
+        <div class="w-full h-0 pb-[56.25%] relative rounded-xl overflow-hidden shadow-xl">
+            <iframe 
+                src="https://www.youtube.com/embed/vWBJtNdg19w"
+                title="Konica Minolta – Corporate Overview"
+                class="absolute top-0 left-0 w-full h-full"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
         </div>
-    
+
         <!-- Texto -->
-        <div class="bg-blue-700 text-white p-6 rounded-lg shadow-md">
-            <h2 class="text-2xl font-bold mb-4">¿QUIÉN ES KONICA MINOLTA?</h2>
-            <p class="mb-3 font-semibold">Fabricante japonés de tecnologías de impresión líder a nivel mundial</p>
-            <p class="mb-4">La empresa fue fundada en el año 1873 y después de 144 años, KONICA MINOLTA está a la vanguardia en tecnologías de imagen e impresión.</p>
-            <ul class="list-disc pl-5 space-y-1 text-sm">
-                <li>Productos Ópticos</li>
-                <li>Instrumentos de Medición</li>
-                <li>Equipos para el Cuidado de la Salud</li>
-                <li>Equipos de Impresión para Oficina</li>
-                <li>Equipos de Impresión de Producción</li>
-                <li>Equipos de Impresión de Inyección de Tinta Industriales</li>
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4">
+                ¿Quién es Konica Minolta?
+            </h2>
+
+            <p class="font-semibold text-gray-800 mb-3">
+                Fabricante japonés líder mundial en tecnologías de imagen e impresión
+            </p>
+
+            <p class="text-gray-600 mb-4">
+                Fundada en 1873, Konica Minolta cuenta con más de 140 años de innovación,
+                desarrollando soluciones avanzadas en imagen, impresión y tecnología industrial.
+            </p>
+
+            <ul class="list-disc pl-5 space-y-1 text-sm text-gray-700">
+                <li>Soluciones de impresión para oficina</li>
+                <li>Impresión de producción</li>
+                <li>Tecnologías de inyección de tinta industrial</li>
+                <li>Instrumentos de medición y óptica avanzada</li>
+                <li>Equipos para el cuidado de la salud</li>
                 <li>Iluminación OLED</li>
             </ul>
         </div>
+
     </div>
+</section>
+
+
+<section class="bg-gray-100 py-12">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold text-gray-900">¿Por qué elegir Copier Mundo?</h2>
+      <p class="text-gray-600 mt-2">
+        Experiencia, respaldo y soluciones reales para empresas y organizaciones.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Item 1 -->
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+        <div class="flex items-start gap-3">
+          <div class="text-green-600 text-2xl">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-900">Partner y respaldo</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Productos y asesoría alineados a estándares de Konica Minolta para tu negocio.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+        <div class="flex items-start gap-3">
+          <div class="text-green-600 text-2xl">
+            <i class="fas fa-tools"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-900">Instalación y configuración</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Te dejamos todo listo: red, drivers, escaneo, usuarios y seguridad básica.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+        <div class="flex items-start gap-3">
+          <div class="text-green-600 text-2xl">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-900">Respuesta rápida</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Atención ágil para cotizaciones, soporte técnico y seguimiento postventa.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+        <div class="flex items-start gap-3">
+          <div class="text-green-600 text-2xl">
+            <i class="fas fa-file-invoice-dollar"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-900">Costos optimizados</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Te ayudamos a elegir el equipo ideal para reducir gasto por página y consumibles.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 5 -->
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+        <div class="flex items-start gap-3">
+          <div class="text-green-600 text-2xl">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-900">Seguridad y control</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Recomendaciones y configuración para proteger documentos y acceso de usuarios.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6 -->
+      <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition">
+        <div class="flex items-start gap-3">
+          <div class="text-green-600 text-2xl">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-900">Atención local</h3>
+            <p class="text-sm text-gray-600 mt-1">
+              Estamos en Cusco y atendemos empresas, instituciones y negocios con soporte cercano.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-10">
+      <a href="https://api.whatsapp.com/send?phone=51940414440&text=¡Hola! Quiero una cotización y asesoría de Copier Mundo."
+         target="_blank"
+         class="inline-block bg-green-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-700 transition">
+        <i class="fab fa-whatsapp me-2"></i> Solicitar asesoría por WhatsApp
+      </a>
+    </div>
+  </div>
 </section>
 
 <section>
@@ -112,40 +250,66 @@
 
 
 <section class="bg-white py-12 px-4">
-  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-8">
-    
-    <!-- Texto -->
-    <div class="md:w-2/3 border-r md:pr-8">
-      <h2 class="text-xl font-bold text-blue-800 mb-4">ACERCA DE COPIER MUNDO</h2>
-      <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-        Copier mundo es una empresa orgullosamente cusqueña, peru 
-        Con una trayectoria de mas de 15 años en el mercado , ofreciendo equipos multifuncionales , fotocopiadoras , impresoras , plotter  y equipos de oficina en general. 
-        Recibiendo el reconocimiento  por diferentes empresas , por nuestro cualidades y virtual en nuestra forma de trabajo. 
-      </p>
-      <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-        
-        Nos destacamos por la calidad de nuestro servicio y por una forma de trabajar basada en la excelencia, la innovación y la atención al cliente. Este compromiso ha sido reconocido por diversas empresas que valoran nuestra profesionalidad y eficiencia.
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-10">
 
+    <!-- Texto -->
+    <div class="md:w-2/3 md:pr-10 md:border-r border-gray-200">
+      <h2 class="text-2xl font-bold text-blue-800 mb-4">
+        ACERCA DE COPIER MUNDO
+      </h2>
+
+      <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+        Copier Mundo es una empresa orgullosamente cusqueña, Perú, con más de 15 años de trayectoria
+        en el mercado, ofreciendo equipos multifuncionales, fotocopiadoras, impresoras, plotter
+        y equipos de oficina en general.
       </p>
+
+      <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+        Nos destacamos por la calidad de nuestro servicio y una forma de trabajo basada en la excelencia,
+        la innovación y la atención al cliente. Este compromiso ha sido reconocido por diversas empresas
+        que valoran nuestra profesionalidad y eficiencia.
+      </p>
+
       <p class="text-gray-600 text-sm leading-relaxed">
-        Contamos con un muy amplio y permanente stock de equipos, consumibles y refacciones además de personal técnico certificado y calificado para la atención de los productos KONICA MINOLTA.
+        Contamos con stock permanente de equipos, consumibles y refacciones, además de personal técnico
+        certificado y calificado para la atención de productos KONICA MINOLTA.
       </p>
     </div>
 
-    <!-- Imágenes y enlace -->
+    <!-- Imagen + Link -->
     <aside class="md:w-1/3 flex flex-col items-center text-center">
-        <img src="{{ url_for('static', path='img/productos/bizhub-c3321i.jpg') }}" class="card-img-top producto-img" alt="Producto 1">
-        
-        <p class="text-sm text-gray-700">
-        Conoce más de Copier mundo DE EE.UU en nuestra página:<br>
-            <a href="https://dataproducts.com.mx" target="_blank" rel="noopener noreferrer" class="text-blue-600 font-semibold hover:underline">copiermundo.com</a>
+      
+      <!-- Contenedor PRO para evitar blur y controlar tamaño -->
+      <div class="w-full max-w-[320px] bg-gray-50 rounded-2xl p-4 shadow-lg border border-gray-200">
+        <div class="w-full h-[230px] flex items-center justify-center overflow-hidden rounded-xl bg-white">
+          <img
+            src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-C3321i.png') }}"
+            alt="Bizhub C3321i"
+            class="max-w-full max-h-full object-contain"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <p class="mt-4 text-xs text-gray-500">
+          Konica Minolta – Línea Bizhub
         </p>
+      </div>
+
+      <p class="mt-5 text-sm text-gray-700 leading-relaxed">
+        Conoce más de Copier Mundo en nuestra página:<br>
+        <a href="https://copiermundo.com" target="_blank" rel="noopener noreferrer"
+           class="text-blue-600 font-semibold hover:underline">
+          copiermundo.com
+        </a>
+      </p>
+
     </aside>
-    
+
   </div>
 </section>
 
-<!-- Cuarta cinta propaganda para tuners y otros-->
+<!-- Cuarta cinta propaganda -->
 <section class="w-100">
     <a href="/producto/impresoras">
         <div class="container-fluid p-0">
@@ -154,65 +318,130 @@
     </a> 
 </section>
 
-<!-- Sección 2 con fondo tecnológico -->
+<section class="bg-white py-12">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold text-gray-900">Nuestros Valores Corporativos</h2>
+      <p class="text-gray-600 mt-2">
+        Compromiso real con calidad, confianza y resultados para tu empresa.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Valor 1 -->
+      <div class="bg-gray-50 rounded-xl shadow-sm p-6 hover:shadow-lg transition">
+        <div class="text-blue-700 text-3xl mb-3">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Confianza</h3>
+        <p class="text-sm text-gray-600">
+          Relaciones transparentes y soporte continuo para garantizar tranquilidad.
+        </p>
+      </div>
+
+      <!-- Valor 2 -->
+      <div class="bg-gray-50 rounded-xl shadow-sm p-6 hover:shadow-lg transition">
+        <div class="text-blue-700 text-3xl mb-3">
+          <i class="fas fa-award"></i>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Calidad</h3>
+        <p class="text-sm text-gray-600">
+          Equipos y consumibles alineados a estándares empresariales y rendimiento real.
+        </p>
+      </div>
+
+      <!-- Valor 3 -->
+      <div class="bg-gray-50 rounded-xl shadow-sm p-6 hover:shadow-lg transition">
+        <div class="text-blue-700 text-3xl mb-3">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Innovación</h3>
+        <p class="text-sm text-gray-600">
+          Soluciones modernas en impresión, escaneo y gestión documental.
+        </p>
+      </div>
+
+      <!-- Valor 4 -->
+      <div class="bg-gray-50 rounded-xl shadow-sm p-6 hover:shadow-lg transition">
+        <div class="text-blue-700 text-3xl mb-3">
+          <i class="fas fa-headset"></i>
+        </div>
+        <h3 class="text-lg font-bold text-gray-900 mb-2">Soporte</h3>
+        <p class="text-sm text-gray-600">
+          Atención técnica rápida, asesoría y acompañamiento en cada etapa.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección 2 con fondo tecnológico (Marketing) -->
 <div id="fondo-tecnologia-valores" class="my-4">
-    <section class="seccion-tecnologica-valores container py-5">
-        <!-- Título central con líneas -->
-        <div class="d-flex align-items-center justify-content-center mb-5">
-            <hr class="flex-grow-1 border-secondary" />
-            <h2 class="titulo-valores px-3">NUESTROS VALORES</h2>
-            <hr class="flex-grow-1 border-secondary" />
+  <section class="seccion-tecnologica-valores container py-5">
+
+    <!-- Título central con líneas -->
+    <div class="d-flex align-items-center justify-content-center mb-5">
+      <hr class="flex-grow-1 border-secondary opacity-25" />
+      <h2 class="titulo-valores px-3">Ventajas de trabajar con Copier Mundo</h2>
+      <hr class="flex-grow-1 border-secondary opacity-25" />
+    </div>
+
+    <!-- Cuadrícula -->
+    <div class="row text-center gy-4">
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="mx-auto mb-3 rounded-circle d-flex align-items-center justify-content-center valor-icono">
+          <i class="fas fa-bolt"></i>
         </div>
+        <h5 class="fw-bold mb-2 titulo-beneficio">Más productividad</h5>
+        <p class="small texto-beneficio">
+          Equipos multifuncionales que aceleran tu flujo de trabajo y reducen tiempos de espera.
+        </p>
+      </div>
 
-        <!-- Cuadrícula de valores -->
-        <div class="row text-center gy-4">
-
-            <!-- Valor: Eficiencia -->
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
-                    <i class="fas fa-star text-white"></i>
-                </div>
-                <h5 class="text-primary fw-bold mb-2">Eficiencia</h5>
-                <p class="small text-muted">
-                Productos que aumentan la productividad con soluciones multifuncionales que ahorran tiempo y recursos.
-                </p>
-            </div>
-
-            <!-- Valor: Orientación al cliente -->
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
-                    <i class="fas fa-handshake text-white"></i>
-                </div>
-                <h5 class="text-primary fw-bold mb-2">Orientación al cliente</h5>
-                <p class="small text-muted">
-                    Atención personalizada con equipos adecuados y un servicio postventa eficiente.
-                </p>
-            </div>
-
-            <!-- Valor: Durabilidad -->
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
-                    <i class="fas fa-chess-rook text-white"></i>
-                </div>
-                <h5 class="text-primary fw-bold mb-2">Durabilidad</h5>
-                <p class="small text-muted">
-                    Equipos de calidad con rendimiento constante y una vida útil prolongada.
-                </p>
-            </div>
-
-            <!-- Valor: Responsabilidad Social -->
-            <div class="col-12 col-sm-6 col-md-3">
-                <div class="mx-auto mb-3 rounded-circle bg-primary d-flex align-items-center justify-content-center valor-icono" style="width: 56px; height: 56px;">
-                    <i class="fas fa-seedling text-white"></i>
-                </div>
-                <h5 class="text-primary fw-bold mb-2">Responsabilidad Social</h5>
-                <p class="small text-muted">
-                    Promovemos el uso de insumos reciclables y tecnologías con bajo impacto ambiental.
-                </p>
-            </div>
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="mx-auto mb-3 rounded-circle d-flex align-items-center justify-content-center valor-icono">
+          <i class="fas fa-headset"></i>
         </div>
-    </section>
+        <h5 class="fw-bold mb-2 titulo-beneficio">Soporte que responde</h5>
+        <p class="small texto-beneficio">
+          Acompañamiento y postventa para que tu operación no se detenga.
+        </p>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="mx-auto mb-3 rounded-circle d-flex align-items-center justify-content-center valor-icono">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h5 class="fw-bold mb-2 titulo-beneficio">Confiabilidad real</h5>
+        <p class="small texto-beneficio">
+          Rendimiento constante, alta durabilidad y equipos listos para trabajo exigente.
+        </p>
+      </div>
+
+      <div class="col-12 col-sm-6 col-md-3">
+        <div class="mx-auto mb-3 rounded-circle d-flex align-items-center justify-content-center valor-icono">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <h5 class="fw-bold mb-2 titulo-beneficio">Compromiso sostenible</h5>
+        <p class="small texto-beneficio">
+          Opciones eficientes y prácticas responsables para reducir impacto y costos.
+        </p>
+      </div>
+    </div>
+
+    <!-- ✅ CTA dentro del section -->
+    <div class="text-center mt-5">
+      <p class="mb-3 texto-cta">
+        ¿Listo para optimizar la impresión y gestión documental de tu empresa?
+      </p>
+      <small class="d-block text-center text-muted mb-3">
+        Partners tecnológicos · Equipos certificados · Soporte especializado
+    </small>
+    </div>
+
+  </section>
 </div>
+
 
 {% endblock %}
 

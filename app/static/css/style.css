@@ -6516,5 +6516,44 @@ input[name="consumible"].border-success {
 }
 
 
+/* Diseño para la seccion de la pagina de nosotros */
+/* Fondo tecnológico: contenedor base */
+
+
+
+/* ✅ El contenido SIEMPRE encima */
+.seccion-tecnologica-valores{
+  position: relative;
+  z-index: 2;
+}
+
+/* Título */
+.titulo-valores{
+  color:#fff;
+  font-weight: 800;
+  letter-spacing:.4px;
+  text-shadow: 0 8px 18px rgba(0,0,0,.45);
+}
+
+/* Iconos circulares */
+.valor-icono{
+  width: 56px;
+  height: 56px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.22);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+  backdrop-filter: blur(8px);
+}
+
+.valor-icono i{
+  color:#fff;
+  font-size:1.25rem;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35));
+}
+
+/* Texto de cards (más legible) */
+.titulo-beneficio{ color: #e8f2ff; }
+.texto-beneficio{ color: rgba(255,255,255,0.82); }
+
 
 
