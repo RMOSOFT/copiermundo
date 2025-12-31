@@ -1,0 +1,413 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<section class="serv-hero">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-12 col-lg-7">
+        <p class="serv-kicker">Sobre nuestro servicio</p>
+
+        <h1 class="serv-title">
+          Alquiler de fotocopiadoras marca<br>
+          Konica Minolta Full Color
+        </h1>
+
+        <div class="serv-underline"></div>
+
+        <p class="serv-text">
+          En Copier Mundo, ofrecemos un servicio especializado de alquiler de equipos diseñados para
+          optimizar los procesos de impresión en tu empresa. Nuestro objetivo es brindarte tecnología
+          confiable que se adapte a tus necesidades, garantizando productividad y ahorro en costos operativos.
+        </p>
+
+        <p class="serv-text">
+          Contamos con opciones flexibles a corto y largo plazo. Incluimos mantenimiento, revisiones periódicas
+          y soporte técnico para minimizar tiempos de inactividad.
+        </p>
+
+        <div class="serv-actions">
+          <a class="btn-serv-primary"
+             target="_blank"
+             href="https://api.whatsapp.com/send?phone=51940414440&text=Hola,%20quiero%20cotizar%20alquiler%20de%20fotocopiadoras%20Konica%20Minolta%20Full%20Color%20con%20Copier%20Mundo.">
+            <i class="fab fa-whatsapp me-2"></i> Cotizar por WhatsApp
+          </a>
+
+          <a class="btn-serv-outline" href="/contacto">
+            <i class="fas fa-envelope me-2"></i> Contáctanos
+          </a>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-5 text-center position-relative">
+        <!-- Cambia por tu imagen -->
+        <img class="serv-img"
+             src="{{ url_for('static', path='img/servicios/img-alquileres/alquiler-fotocopiadora-marca-konica-minolta-full-color.webp') }}"
+             alt="Fotocopiadora Konica Minolta Full Color">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seccion para ver los equipos de eligir -->
+<section class="rent-choice-section">
+  <div class="container">
+
+    <p class="rent-choice-kicker">¿Qué tipo de fotocopiadora necesitas?</p>
+    <h2 class="rent-choice-title">Contamos con los mejores equipos tecnológicos</h2>
+
+    <div class="row g-4 mt-2">
+
+      <!-- FULL COLOR -->
+      <div class="col-12 col-lg-6">
+        <a class="rent-choice-card pro"
+           target="_blank"
+           href="https://api.whatsapp.com/send?phone=51940414440&text=Hola,%20quiero%20cotizar%20ALQUILER%20FULL%20COLOR%20(Copier%20Mundo).">
+
+          <!-- Columna imagen -->
+          <div class="rent-media">
+            <img
+              src="{{ url_for('static', path='img/ProductosFotocopiadorasColorNuevas/bizhub-C551i.png') }}"
+              alt="Fotocopiadora Full Color"
+              class="rent-machine">
+          </div>
+
+          <!-- Columna contenido -->
+          <div class="rent-body">
+            <h3 class="rent-h3">FOTOCOPIADORAS<br><span>FULL COLOR</span></h3>
+
+            <div class="rent-pill">
+              <i class="fas fa-award"></i>
+              <span>CALIDAD</span>
+            </div>
+
+            <div class="rent-btn">
+              Cotiza Ahora <i class="fas fa-arrow-right ms-2"></i>
+            </div>
+          </div>
+
+        </a>
+      </div>
+
+      <!-- BLANCO Y NEGRO -->
+      <div class="col-12 col-lg-6">
+        <a class="rent-choice-card pro"
+           target="_blank"
+           href="https://api.whatsapp.com/send?phone=51940414440&text=Hola,%20quiero%20cotizar%20ALQUILER%20BLANCO%20Y%20NEGRO%20(Copier%20Mundo).">
+
+          <div class="rent-media">
+            <img
+              src="{{ url_for('static', path='img/ProductosFotocopiadorasMonocromaticas/bizhub-185en.jpg') }}"
+              alt="Fotocopiadora Blanco y Negro"
+              class="rent-machine">
+          </div>
+
+          <div class="rent-body">
+            <h3 class="rent-h3">FOTOCOPIADORAS<br><span>BLANCO Y NEGRO</span></h3>
+
+            <div class="rent-pill dark">
+              <i class="fas fa-print"></i>
+              <span>B/N</span>
+            </div>
+
+            <div class="rent-btn">
+              Cotiza Ahora <i class="fas fa-arrow-right ms-2"></i>
+            </div>
+          </div>
+
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- HERO / BANNER -->
+<section class="hero-rent my-5">
+  <div class="hero-rent-overlay"></div>
+
+  <div class="container hero-rent-inner">
+    <!-- Texto -->
+    <div class="hero-rent-left">
+      <span class="hero-pill">ALQUILER CORPORATIVO</span>
+
+      <h1 class="hero-title">Alquiler de fotocopiadoras y soporte técnico.</h1>
+      <p class="hero-desc">
+        Soluciones de impresión para empresas e instituciones en Cusco: equipos confiables,
+        soporte técnico, mantenimiento y consumibles según plan.
+      </p>
+
+      <div class="hero-actions">
+        <a class="hero-btn primary" target="_blank"
+           href="https://api.whatsapp.com/send?phone=51940414440&text=Hola,%20quiero%20cotizar%20ALQUILER%20y%20SOPORTE%20T%C3%89CNICO%20(Copier%20Mundo).">
+          Solicitar cotización
+        </a>
+
+        <a class="hero-btn ghost" href="#planes">Ver planes</a>
+      </div>
+
+      <div class="hero-checks">
+        <span><i class="fas fa-check"></i> Soporte técnico</span>
+        <span><i class="fas fa-check"></i> Mantenimiento</span>
+        <span><i class="fas fa-check"></i> Equipos empresariales</span>
+      </div>
+    </div>
+
+    <!-- Imagen soporte -->
+    <div class="hero-rent-right">
+      <img src="{{ url_for('static', path='img/servicios/servicio-tecnico/reparacion-de-impresoras.jpg') }}"
+           alt="Soporte técnico Copier Mundo" class="hero-support-img">
+    </div>
+  </div>
+</section>
+
+<!--
+<section class="alquiler-hero">
+    <div class="alquiler-hero-bg"
+        style="background-image:url('{{ url_for('static', path='img/banners/banner-alquileres.jpg') }}');">
+    </div>
+
+    <div class="container alquiler-hero-content">
+        <div class="alquiler-hero-card">
+            <p class="alquiler-badge">ALQUILER CORPORATIVO</p>
+            <h1 class="alquiler-title">Alquiler de fotocopiadoras y soporte técnico.</h1>
+            <p class="alquiler-subtitle">
+            Soluciones de impresión para empresas e instituciones en Cusco: equipos confiables, soporte técnico,
+            mantenimiento y consumibles según plan.
+            </p>
+
+            <div class="alquiler-hero-actions">
+                <a class="btn-alquiler-primary"
+               target="_blank"
+               href="https://api.whatsapp.com/send?phone=51940414440&text=Hola,%20quisiera%20cotizar%20ALQUILER%20de%20equipos%20de%20impresi%C3%B3n%20con%20Copier%20Mundo.">
+                Solicitar cotización
+                </a>
+                <a class="btn-alquiler-secondary" href="#planes">Ver planes</a>
+            </div>
+
+            <div class="alquiler-mini-info">
+                <span>✅ Soporte técnico</span>
+                <span>✅ Mantenimiento</span>
+                <span>✅ Equipos empresariales</span>
+            </div>
+
+        </div>
+       
+        <div class="hero-rent-right">
+            <img src="{{ url_for('static', path='img/servicios/servicio-tecnico/reparacion-de-impresoras.jpg') }}"
+                   alt="Soporte técnico Copier Mundo" class="hero-support-img">
+        </div>
+    </div>
+</section>
+-->
+
+<!-- BENEFICIOS PRINCIPALES -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="alquiler-section-title">Ventajas del alquiler con Copier Mundo</h2>
+      <p class="alquiler-section-subtitle">
+        Reduce costos, evita paradas y asegura continuidad operativa con un plan claro.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-md-4">
+        <div class="alquiler-card">
+          <h5 class="alquiler-card-title">Costo fijo mensual</h5>
+          <p class="alquiler-card-text">
+            Planes predecibles para controlar presupuesto. Ideal para empresas que buscan orden y eficiencia.
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="alquiler-card">
+          <h5 class="alquiler-card-title">Soporte y mantenimiento</h5>
+          <p class="alquiler-card-text">
+            Atención técnica, revisiones y ajustes para que tu equipo siempre esté operativo.
+          </p>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="alquiler-card">
+          <h5 class="alquiler-card-title">Equipos listos para trabajar</h5>
+          <p class="alquiler-card-text">
+            Configuración e instalación para tu red: impresión, escaneo y parámetros recomendados.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPOS DESTACADOS -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-4">
+      <div>
+        <h2 class="alquiler-section-title mb-1">Equipos disponibles</h2>
+        <p class="alquiler-section-subtitle mb-0">Multifuncionales empresariales según volumen.</p>
+      </div>
+      <a class="btn-alquiler-secondary" href="#contacto-alquiler">Consultar disponibilidad</a>
+    </div>
+
+    <div class="row g-4">
+      <!-- Card equipo 1 -->
+      <div class="col-12 col-md-4">
+        <div class="alquiler-equipo">
+          <div class="alquiler-equipo-img">
+            <img src="{{ url_for('static', path='img/servicios/img-alquileres/bizhub-C451i.png') }}" alt="Equipo de alquiler 1">
+          </div>
+          <div class="p-3">
+            <h5 class="mb-1 fw-bold">Plan Oficina</h5>
+            <p class="text-muted small mb-2">Ideal para oficinas y pequeñas empresas.</p>
+            <ul class="alquiler-list">
+              <li>Impresión + copia + escaneo</li>
+              <li>Soporte técnico incluido</li>
+              <li>Mantenimiento preventivo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card equipo 2 -->
+      <div class="col-12 col-md-4">
+        <div class="alquiler-equipo">
+          <div class="alquiler-equipo-img">
+            <img src="{{ url_for('static', path='img/servicios/img-alquileres/bizhub-C3321i.png') }}" alt="Equipo de alquiler 2">
+          </div>
+          <div class="p-3">
+            <h5 class="mb-1 fw-bold">Plan Corporativo</h5>
+            <p class="text-muted small mb-2">Para empresas con volumen medio/alto.</p>
+            <ul class="alquiler-list">
+              <li>Mayor velocidad y rendimiento</li>
+              <li>Configuración para red</li>
+              <li>Soporte prioritario</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card equipo 3 -->
+      <div class="col-12 col-md-4">
+        <div class="alquiler-equipo">
+          <div class="alquiler-equipo-img">
+            <img src="{{ url_for('static', path='img/servicios/img-alquileres/bizhub-750i.jpg') }}" alt="Equipo de alquiler 3">
+          </div>
+          <div class="p-3">
+            <h5 class="mb-1 fw-bold">Plan Producción</h5>
+            <p class="text-muted small mb-2">Instituciones y grandes cargas de impresión.</p>
+            <ul class="alquiler-list">
+              <li>Alto volumen mensual</li>
+              <li>Monitoreo y control</li>
+              <li>Repuestos según plan</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PLANES -->
+<section id="planes" class="py-5 bg-white">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="alquiler-section-title">Planes de alquiler</h2>
+      <p class="alquiler-section-subtitle">
+        Selecciona el plan según tu volumen. Te asesoramos para elegir el equipo ideal.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-md-4">
+        <div class="alquiler-plan">
+          <h5 class="fw-bold mb-1">Básico</h5>
+          <p class="text-muted small mb-3">Para oficinas y trabajos diarios.</p>
+          <ul class="alquiler-list">
+            <li>Equipo multifuncional</li>
+            <li>Mantenimiento preventivo</li>
+            <li>Asistencia técnica</li>
+          </ul>
+          <a class="btn-alquiler-primary w-100 text-center mt-3"
+             target="_blank"
+             href="https://api.whatsapp.com/send?phone=51940414440&text=Hola,%20quiero%20informaci%C3%B3n%20del%20PLAN%20B%C3%81SICO%20de%20alquiler%20Copier%20Mundo.">
+            Consultar plan
+          </a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="alquiler-plan alquiler-plan-highlight">
+          <p class="alquiler-plan-tag">RECOMENDADO</p>
+          <h5 class="fw-bold mb-1">Empresarial</h5>
+          <p class="text-muted small mb-3">Volumen medio/alto con continuidad.</p>
+          <ul class="alquiler-list">
+            <li>Equipo de mayor rendimiento</li>
+            <li>Soporte prioritario</li>
+            <li>Configuración de red</li>
+          </ul>
+          <a class="btn-alquiler-primary w-100 text-center mt-3"
+             target="_blank"
+             href="https://api.whatsapp.com/send?phone=51940414440&text=Hola,%20quiero%20informaci%C3%B3n%20del%20PLAN%20EMPRESARIAL%20de%20alquiler%20Copier%20Mundo.">
+            Consultar plan
+          </a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="alquiler-plan">
+          <h5 class="fw-bold mb-1">Institucional</h5>
+          <p class="text-muted small mb-3">Para colegios, municipalidades, grandes áreas.</p>
+          <ul class="alquiler-list">
+            <li>Alto volumen mensual</li>
+            <li>Visitas programadas</li>
+            <li>Gestión de consumibles</li>
+          </ul>
+          <a class="btn-alquiler-primary w-100 text-center mt-3"
+             target="_blank"
+             href="https://api.whatsapp.com/send?phone=51940414440&text=Hola,%20quiero%20informaci%C3%B3n%20del%20PLAN%20INSTITUCIONAL%20de%20alquiler%20Copier%20Mundo.">
+            Consultar plan
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="alquiler-section-title">Proceso simple y rápido</h2>
+      <p class="alquiler-section-subtitle">En 4 pasos dejamos tu equipo listo.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-12 col-md-3"><div class="alquiler-step">1. Evaluamos tu volumen</div></div>
+      <div class="col-12 col-md-3"><div class="alquiler-step">2. Te proponemos el plan</div></div>
+      <div class="col-12 col-md-3"><div class="alquiler-step">3. Instalamos y configuramos</div></div>
+      <div class="col-12 col-md-3"><div class="alquiler-step">4. Soporte + mantenimiento</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="contacto-alquiler" class="py-5 bg-white">
+  <div class="container text-center">
+    <h2 class="alquiler-section-title mb-2">Cotiza tu alquiler hoy</h2>
+    <p class="alquiler-section-subtitle mb-4">
+      Respuesta rápida. Asesoría clara. Equipos listos para tu empresa.
+    </p>
+
+    <a class="btn-alquiler-primary"
+       target="_blank"
+       href="https://api.whatsapp.com/send?phone=51940414440&text=Hola,%20quiero%20cotizar%20ALQUILER%20de%20equipos%20de%20impresi%C3%B3n%20con%20Copier%20Mundo.">
+      Solicitar cotización por WhatsApp
+    </a>
+  </div>
+</section>
+
+{% endblock %}

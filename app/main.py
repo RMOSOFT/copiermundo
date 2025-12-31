@@ -120,7 +120,7 @@ async def mostrar_fotocopiadoras(request: Request):
     except FileNotFoundError:
         datos = {}   # 👈 si no existe, que no truene
         
-    return templates.TemplateResponse("productos/fotocopiadoras.html", {
+    return templates.TemplateResponse("productos/fotocopiadoras.ht6                                                                                                                                                         ml", {
         "request": request,
         "productos": datos,
         "categoria": "fotocopiadoras"
@@ -736,6 +736,12 @@ async def enviar_carrito(data: dict = Body(...)):
     except Exception as e:
         print("❌ Error enviando correo:", e)
         return {"status": "error", "mensaje": str(e)}
+
+
+# Seccion para la pagina enrutada de alquileres
+@app.get("/alquileres", response_class=HTMLResponse)
+def alquileres(request: Request):
+    return templates.TemplateResponse("alquiler/alquileres.html", {"request": request})
 
 
 if __name__ == "__main__":

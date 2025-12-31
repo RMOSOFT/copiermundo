@@ -6557,3 +6557,521 @@ input[name="consumible"].border-success {
 
 
 
+/* Diseño de estilo para la seccion de alquileres */
+/* ============================
+   SERVICIOS - HERO (AZUL PRO)
+   ============================ */
+.serv-hero{
+  padding: 70px 0;
+  background: #ffffff;
+}
+
+.serv-kicker{
+  color:#0a58ca;
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+
+.serv-title{
+  font-weight: 900;
+  color:#0f172a;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.05;
+  margin: 0 0 14px;
+}
+
+.serv-underline{
+  width: 170px;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #0a58ca, #35b7ff);
+  margin-bottom: 18px;
+}
+
+.serv-text{
+  color:#334155;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  max-width: 720px;
+}
+
+.serv-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.btn-serv-primary{
+  background:#0a58ca;
+  color:#fff;
+  font-weight: 900;
+  border-radius: 12px;
+  padding: 12px 18px;
+  text-decoration:none;
+  box-shadow: 0 16px 28px rgba(0,0,0,.14);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.btn-serv-primary:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 22px 40px rgba(0,0,0,.18);
+  color:#fff;
+}
+
+.btn-serv-outline{
+  background:#fff;
+  color:#0f172a;
+  font-weight: 900;
+  border-radius: 12px;
+  padding: 12px 18px;
+  text-decoration:none;
+  border: 1px solid rgba(0,0,0,.12);
+}
+
+.btn-serv-outline:hover{
+  background:#f1f5f9;
+  color:#0f172a;
+}
+
+.serv-img{
+  width: min(520px, 100%);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 22px 30px rgba(0,0,0,.18));
+}
+
+/* Seccion para el diseño de los cards azules */
+/* ==============================
+   Sección 2 Cards (AZUL PRO)
+   ============================== */
+/* ====== Cards alquiler (PRO, sin distorsión) ====== */
+.rent-choice-section{ padding: 30px 0 10px; background:#fff; }
+.rent-choice-kicker{ text-align:center; font-weight:900; color:#0a58ca; margin:0; }
+.rent-choice-title{
+  text-align:center; font-weight:900; color:#0f172a;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  margin-top: 6px;
+}
+
+.rent-choice-card.pro{
+  display:flex;
+  align-items: stretch;
+  gap: 0;
+  height: 250px;
+  border-radius: 26px;
+  overflow:hidden;
+  text-decoration:none;
+  background: linear-gradient(135deg, rgba(10,88,202,.98), rgba(53,183,255,.85));
+  box-shadow: 0 18px 38px rgba(0,0,0,.18);
+  transition: transform .22s ease, box-shadow .22s ease;
+  position: relative;
+}
+.rent-choice-card.pro:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 26px 50px rgba(0,0,0,.22);
+}
+
+/* Columna izquierda: imagen (fija y controlada) */
+.rent-media{
+  width: 42%;
+  min-width: 180px;
+  background: rgba(255,255,255,.92);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 14px;
+}
+.rent-machine{
+  width: 100%;
+  height: 100%;
+  max-height: 220px;
+  object-fit: contain;   /* 🔥 nunca se deforma */
+  filter: drop-shadow(0 18px 26px rgba(0,0,0,.28));
+}
+
+/* Columna derecha: texto */
+.rent-body{
+  width: 58%;
+  padding: 18px 18px 18px 22px;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  color:#fff;
+}
+
+.rent-h3{
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  line-height: 1.05;
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  text-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+.rent-h3 span{ display:inline-block; margin-top: 4px; }
+
+.rent-pill{
+  display:inline-flex;
+  align-items:center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.28);
+  font-weight: 900;
+  width: fit-content;
+  margin-bottom: 14px;
+  backdrop-filter: blur(6px);
+}
+.rent-pill.dark{
+  background: rgba(0,0,0,.16);
+  border-color: rgba(0,0,0,.12);
+}
+
+.rent-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.28);
+  font-weight: 900;
+  color:#fff;
+  width: fit-content;
+}
+.rent-choice-card.pro:hover .rent-btn{
+  background: rgba(255,255,255,.26);
+}
+
+/* Responsive: en móvil se apila bonito */
+@media (max-width: 576px){
+  .rent-choice-card.pro{
+    height: auto;
+    flex-direction: column;
+  }
+  .rent-media{ width:100%; min-width prevent; padding: 12px; }
+  .rent-machine{ max-height: 200px; }
+  .rent-body{ width:100%; padding: 14px 16px 18px; text-align:center; align-items:center; }
+}
+
+
+/* Diseño para alquileres segunda fase para diseñar en proceso */
+
+/* =========================
+   ALQUILERES - ESTILO PRO
+========================= */
+/* ===== HERO alquiler + soporte ===== */
+.hero-rent{
+  position: relative;
+  border-radius: 26px;
+  overflow: hidden;
+  background: radial-gradient(circle at 35% 30%, #7a7a7a, #3f3f3f 60%, #2b2b2b);
+  padding: 34px 0;
+}
+.hero-rent-overlay{
+  position:absolute; inset:0;
+  background: linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,.25));
+}
+
+.hero-rent-inner{
+  position: relative;
+  display:flex;
+  align-items:center;
+  gap: 24px;
+}
+
+.hero-rent-left{ flex: 1.2; color:#fff; }
+.hero-rent-right{ flex: .8; display:flex; justify-content:flex-end; }
+
+.hero-pill{
+  display:inline-block;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.20);
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-weight: 900;
+  letter-spacing:.6px;
+  margin-bottom: 12px;
+}
+
+.hero-title{
+  font-weight: 900;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  line-height: 1.05;
+  margin: 0 0 12px;
+}
+
+.hero-desc{
+  color: rgba(255,255,255,.88);
+  max-width: 720px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.hero-actions{ display:flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+
+.hero-btn{
+  border-radius: 14px;
+  padding: 10px 16px;
+  font-weight: 900;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero-btn.primary{
+  background:#eaf2ff;
+  color:#0a58ca;
+  box-shadow: 0 16px 30px rgba(0,0,0,.25);
+}
+.hero-btn.primary:hover{ background:#ffffff; }
+
+.hero-btn.ghost{
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.22);
+  color:#fff;
+}
+.hero-btn.ghost:hover{ background: rgba(255,255,255,.18); }
+
+.hero-checks{ display:flex; gap: 18px; flex-wrap: wrap; color: rgba(255,255,255,.9); }
+.hero-checks i{ color:#5dff9a; margin-right: 6px; }
+
+.hero-support-img{
+  width: min(380px, 100%);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 22px 34px rgba(0,0,0,.35));
+  opacity: .95;
+}
+
+/* Mobile */
+@media (max-width: 992px){
+  .hero-rent-inner{ flex-direction: column; text-align:center; }
+  .hero-rent-right{ justify-content:center; }
+  .hero-rent-left{ display:flex; flex-direction: column; align-items:center; }
+}
+
+/* Imagen “envuelta” en su propia card */
+
+
+
+.alquiler-hero{
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.alquiler-hero-bg{
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.05);
+  transform: scale(1.02);
+}
+
+.alquiler-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.72), rgba(0,0,0,0.25), rgba(0,0,0,0.55));
+  z-index: 1;
+}
+
+.alquiler-hero-content{
+  position: relative;
+  z-index: 2;
+  padding: 60px 0;
+}
+
+.alquiler-hero-card{
+  max-width: 680px;
+  padding: 26px 22px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.16);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  color: #fff;
+}
+
+.alquiler-badge{
+  display:inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: .6px;
+  font-size: .75rem;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.16);
+  margin-bottom: 10px;
+}
+
+.alquiler-title{
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 10px;
+}
+
+.alquiler-subtitle{
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 16px;
+}
+
+.alquiler-hero-actions{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.btn-alquiler-primary{
+  display:inline-block;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffffff, #dbeaff);
+  color: #06223d;
+  font-weight: 900;
+  letter-spacing: .4px;
+  text-decoration: none;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.35);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.btn-alquiler-primary:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 20px 38px rgba(0,0,0,0.45);
+  color: #041d35;
+}
+
+.btn-alquiler-secondary{
+  display:inline-block;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: .3px;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.btn-alquiler-secondary:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.14);
+  color:#fff;
+}
+
+.alquiler-mini-info{
+  display:flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: .85rem;
+  color: rgba(255,255,255,0.85);
+}
+
+.alquiler-section-title{
+  font-weight: 900;
+  color: #0a2a4a;
+}
+
+.alquiler-section-subtitle{
+  color: #6b7280;
+}
+
+.alquiler-card{
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+  height: 100%;
+}
+
+.alquiler-card-title{
+  font-weight: 900;
+  color: #0a2a4a;
+}
+
+.alquiler-card-text{
+  color: #6b7280;
+  margin: 0;
+}
+
+.alquiler-equipo{
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.10);
+  height: 100%;
+}
+
+.alquiler-equipo-img{
+  background: radial-gradient(circle at center, #ffffff, #f0f2f7);
+  height: 240px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 14px;
+}
+
+.alquiler-equipo-img img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 14px rgba(0,0,0,0.18));
+}
+
+.alquiler-list{
+  padding-left: 18px;
+  margin: 0;
+  color: #4b5563;
+  font-size: .92rem;
+}
+
+.alquiler-plan{
+  border-radius: 18px;
+  background:#fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 18px;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.08);
+  height: 100%;
+  position: relative;
+}
+
+.alquiler-plan-highlight{
+  outline: 2px solid rgba(0,160,255,0.25);
+  box-shadow: 0 18px 30px rgba(0,0,0,0.10);
+}
+
+.alquiler-plan-tag{
+  position:absolute;
+  top: 12px;
+  right: 12px;
+  background: #0ea5e9;
+  color:#fff;
+  font-weight: 900;
+  font-size: .72rem;
+  letter-spacing: .5px;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.alquiler-step{
+  background:#fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
+  padding: 14px;
+  text-align: center;
+  font-weight: 900;
+  color: #0a2a4a;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
