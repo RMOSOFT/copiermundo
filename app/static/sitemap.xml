@@ -71,4 +71,11 @@
     <priority>0.75</priority>
   </url>
 
+  <!-- Sección Servicios -->
+  <url>
+    <loc>https://www.copiermundo.com/servicios/alquiler</loc>
+    <lastmod>2026-01-02</lastmod>
+    <priority>0.85</priority>
+  </url>
+
 </urlset>

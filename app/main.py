@@ -32,8 +32,8 @@ EMAIL_USER = os.getenv("EMAIL_USER")
 EMAIL_PASS = os.getenv("EMAIL_PASS")
 EMAIL_TO = os.getenv("EMAIL_TO")
 
-print("EMAIL:", os.getenv("EMAIL_USER"))
-print("PASS:", os.getenv("EMAIL_PASS"))
+# print("EMAIL:", os.getenv("EMAIL_USER"))
+# print("PASS:", os.getenv("EMAIL_PASS"))
 
 app = FastAPI()
 
@@ -120,7 +120,7 @@ async def mostrar_fotocopiadoras(request: Request):
     except FileNotFoundError:
         datos = {}   # 👈 si no existe, que no truene
         
-    return templates.TemplateResponse("productos/fotocopiadoras.ht6                                                                                                                                                         ml", {
+    return templates.TemplateResponse("productos/fotocopiadoras.html", {
         "request": request,
         "productos": datos,
         "categoria": "fotocopiadoras"
