@@ -2876,8 +2876,9 @@ footer .text-muted {
   }
 }
 
+/* Diseño para los productos de impresoras plotters nuevas *
 /* Desde aqui la actualizacion para la seccion de cartuchos y recargas toners*/
-.overlay-whatsapp-toneres {
+.overlay-whatsapp-plotters {
   position: absolute;
   top: 0;
   left: 0;
@@ -2895,13 +2896,13 @@ footer .text-muted {
   pointer-events: none; /* evita interferencia cuando está oculto */
 }
 /* Aparece con fade + zoom */
-.producto-card:hover .overlay-whatsapp-toneres {
+.producto-card:hover .overlay-whatsapp-plotters {
   opacity: 1;
   transform: scale(1);
   pointer-events: auto; /* se activa el clic */
 }
 
-.nombre-producto-toneres {
+.nombre-producto-plotters {
   background: linear-gradient(90deg, #111, #333);
   color: white;
   display: inline-block;
@@ -2912,46 +2913,27 @@ footer .text-muted {
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.nombre-producto-toneres:hover {
+.nombre-producto-plotters:hover {
   transform: scale(1.03);
   box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
 
-.producto-imagen-toner-negro img {
+.producto-imagen-Epson-Plotters-T5470M img {
   width: 100%;
   height: 201px;
   object-fit: contain;
   display: block;
   border-radius: 15px;
 }
-.producto-imagen-toner-negro-323 img {
+.producto-imagen-Epson-plotters-T3170X img {
   width: 100%;
   height: 201px;
   object-fit: contain;
   display: block;
   border-radius: 15px;
 }
-.producto-imagen-toner-kyocera-negro img {
-  width: 100%;
-  height: 201px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px;
-}
-.producto-imagen-toner-tn-118-negro img {
-  width: 100%;
-  height: 201px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px;
-}
-.producto-imagen-toner-tn-328k-negro img {
-  width: 100%;
-  height: 201px;
-  object-fit: contain;
-  display: block;
-  border-radius: 15px;
-}
+
+
 
 /* Desde aqui vamos a diseñar para todos los productos de fotocopiadoras multifuncionales nuevas 
 Nuevas a colores */
@@ -3038,15 +3020,7 @@ Nuevas a colores */
   border-radius: 15px;
 }
 
-/*min-height: 260px; margin: auto 🔹 Tamaño más compacto */
-/*.producto-card {
-  position: relative;
-  overflow: hidden;
-  max-width: 260px;
-   
-  margin: 8px 10px;
-  
-}*/
+
 /* Desde aqui vamos diseñar para las fotocopiadoras seminuevas*/
 .overlay-whatsapp-fotocopiadoras-seminuevas {
   position: absolute;
@@ -6759,7 +6733,6 @@ input[name="consumible"].border-success {
 
 
 /* Diseño para alquileres segunda fase para diseñar en proceso */
-
 /* =========================
    ALQUILERES - ESTILO PRO
 ========================= */
@@ -6856,9 +6829,6 @@ input[name="consumible"].border-success {
 }
 
 /* Imagen “envuelta” en su propia card */
-
-
-
 .alquiler-hero{
   position: relative;
   min-height: 430px;
