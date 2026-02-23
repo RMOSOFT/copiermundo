@@ -2,10 +2,64 @@
 {% extends "index.html" %}
 
 {% block content %}
+<div class="max-w-5xl mx-auto px-4 pt-6">
+  <div class="rounded-2xl overflow-hidden shadow-sm border bg-white">
+    <div class="px-5 py-4 flex items-center justify-between"
+         style="background:linear-gradient(90deg,#0b2a5b,#0ea5e9);">
+      <div class="flex items-center gap-3">
+        <img src="{{ url_for('static', path='img/Logo-copiermundo-1.png') }}" alt="Copier Mundo" class="h-10 w-10 rounded-full bg-white p-1">
+        <div class="text-white">
+          <div class="font-extrabold tracking-wide text-lg">COPIER MUNDO E.I.R.L</div>
+          <div class="text-white/90 text-sm">Distribuidor oficial • Konica Minolta • Cusco</div>
+        </div>
+      </div>
+
+      <div class="hidden md:flex items-center gap-2">
+        <span class="px-3 py-1 rounded-full font-bold"
+              style="background:#facc15;color:#111827;">
+          <i class="fas fa-lock mr-2"></i> Compra segura
+        </span>
+        <span class="px-3 py-1 rounded-full bg-white/10 text-white text-sm">
+          <i class="fas fa-headset mr-2"></i> Soporte 24/7
+        </span>
+      </div>
+    </div>
+
+    <div class="px-5 py-3 bg-white">
+      <div class="flex flex-wrap gap-2 text-xs md:text-sm">
+        <span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 font-semibold">
+          <i class="fas fa-truck mr-2 text-green-600"></i> Entrega coordinada
+        </span>
+        <span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 font-semibold">
+          <i class="fas fa-receipt mr-2 text-blue-600"></i> Cotización rápida
+        </span>
+        <span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 font-semibold">
+          <i class="fas fa-university mr-2 text-purple-700"></i> Transferencia BCP
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Este codigo es la pagina hija del carrito.html -->
-<div class="max-w-5xl mx-auto py-8 px-4 grid md:grid-cols-3 gap-8">
-  <!-- Lista de productos -->
-  <div class="md:col-span-2">
+<div class="max-w-5xl mx-auto py-8 px-4 grid md:grid-cols-3 gap-8" style="background:#f8fafc;">
+    <!-- Lista de productos -->
+    <div class="md:col-span-2">
+        <div class="mb-6">
+      <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">Carrito de compras</h1>
+      <p class="text-sm text-gray-600 mt-1">
+        Revisa tus productos y finaliza tu pedido de forma segura.
+      </p>
+
+      <div class="mt-4 flex items-center gap-2 text-xs md:text-sm">
+        <span class="px-3 py-1 rounded-full bg-purple-700 text-white font-semibold">1. Carrito</span>
+        <span class="h-[2px] w-8 bg-gray-200"></span>
+        <span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 font-semibold">2. Datos</span>
+        <span class="h-[2px] w-8 bg-gray-200"></span>
+        <span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 font-semibold">3. Confirmación</span>
+      </div>
+    </div>
+
     <h2 class="text-xl font-bold mb-4">Mi carrito</h2>
     <div id="carritoPage"></div>
      <!-- Código promocional -->
@@ -64,158 +118,46 @@
   </div>
 </div>
 
+<!-- ✅ Footer informativo del carrito -->
+<div class="max-w-5xl mx-auto px-4 pb-10">
+  <div class="mt-8 grid md:grid-cols-4 gap-4">
+    <div class="rounded-xl border bg-white p-4 shadow-sm">
+      <div class="font-bold text-gray-900">
+        <i class="fas fa-shield-alt mr-2 text-green-600"></i> Pago seguro
+      </div>
+      <p class="text-sm text-gray-600 mt-1">Confirmación por correo/WhatsApp.</p>
+    </div>
+
+    <div class="rounded-xl border bg-white p-4 shadow-sm">
+      <div class="font-bold text-gray-900">
+        <i class="fas fa-university mr-2 text-purple-700"></i> Transferencia BCP
+      </div>
+      <p class="text-sm text-gray-600 mt-1">Te enviamos los datos al confirmar.</p>
+    </div>
+
+    <div class="rounded-xl border bg-white p-4 shadow-sm">
+      <div class="font-bold text-gray-900">
+        <i class="fas fa-headset mr-2 text-blue-600"></i> Asesoría
+      </div>
+      <p class="text-sm text-gray-600 mt-1">Un asesor te atiende en minutos.</p>
+    </div>
+
+    <div class="rounded-xl border bg-white p-4 shadow-sm">
+      <div class="font-bold text-gray-900">
+        <i class="fas fa-box mr-2 text-yellow-500"></i> Stock y entrega
+      </div>
+      <p class="text-sm text-gray-600 mt-1">Coordinamos disponibilidad y envío.</p>
+    </div>
+  </div>
+
+  <div class="mt-6 text-center text-xs text-gray-500">
+    © Copier Mundo E.I.R.L • Konica Minolta Partner • Cusco – Perú
+  </div>
+</div>
+
 <!-- Este codigo hace que traiga todos los consumibles al carrito cuando le dices ver carrito-->
 <!-- Este código maneja el carrito en carrito.html -->
-<script>
-  let cart = JSON.parse(localStorage.getItem("carrito")) || [];
-
-  function saveCart() {
-    localStorage.setItem("carrito", JSON.stringify(cart));
-  }
-
-  // Renderizar carrito en carrito.html
-  function renderCarritoPage() {
-    const container = document.getElementById("carritoPage");
-    const subtotalEl = document.getElementById("cartSubtotal");
-    const totalEl = document.getElementById("cartPageTotal");
-
-    if (!container || !subtotalEl || !totalEl) return;
-
-    if (cart.length === 0) {
-      container.innerHTML = "<p class='text-gray-600'>Tu carrito está vacío 🛒</p>";
-      subtotalEl.textContent = "S/ 0.00";
-      totalEl.textContent = "S/ 0.00";
-      return;
-    }
-
-    let total = 0;
-    container.innerHTML = "";
-
-    cart.forEach((item, index) => {
-      const sub = item.precio * item.qty;
-      total += sub;
-
-      const div = document.createElement("div");
-      div.className = "flex items-center border-b pb-4 mb-4";
-
-      div.innerHTML = `
-        <img src="${item.imagen}" alt="${item.nombre}" class="w-24 h-24 object-cover rounded mr-4">
-        <div class="flex-1">
-          <h3 class="font-medium">${item.nombre}</h3>
-          <p class="text-sm text-gray-500">S/ ${item.precio.toFixed(2)}</p>
-          <div class="flex items-center mt-2">
-            <button onclick="updateQty(${index}, -1)" class="px-2 border">-</button>
-            <span class="px-4">${item.qty}</span>
-            <button onclick="updateQty(${index}, 1)" class="px-2 border">+</button>
-          </div>
-        </div>
-        <div class="flex flex-col items-end">
-          <p class="font-semibold">S/ ${sub.toFixed(2)}</p>
-          <button onclick="removeItem(${index})" class="text-red-600 mt-2">🗑️</button>
-        </div>
-      `;
-
-      container.appendChild(div);
-    });
-
-    subtotalEl.textContent = `S/ ${total.toFixed(2)}`;
-    totalEl.textContent = `S/ ${total.toFixed(2)}`;
-  }
-
-  function updateQty(index, delta) {
-    cart[index].qty += delta;
-    if (cart[index].qty <= 0) removeItem(index);
-    saveCart();
-    renderCarritoPage();
-  }
-
-  function removeItem(index) {
-    cart.splice(index, 1);
-    saveCart();
-    renderCarritoPage();
-  }
-
-  // Extras: promo y nota
-  function togglePromo() {
-    document.getElementById("promoBox").classList.toggle("hidden");
-  }
-
-  function applyPromo() {
-    const code = document.getElementById("promoInput").value.trim();
-    if (!code) return alert("Ingrese un código promocional");
-    alert("✅ Código aplicado: " + code);
-  }
-
-  function toggleNota() {
-    document.getElementById("notaBox").classList.toggle("hidden");
-  }
-
-  function openCheckout() {
-    const modal = document.getElementById("checkoutModal");
-    if (modal) {
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
-    }
-  }
-
-  function closeCheckout() {
-    const modal = document.getElementById("checkoutModal");
-    if (modal) {
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
-    }
-  }
-
-  document.addEventListener("DOMContentLoaded", renderCarritoPage);
-
-  document.getElementById("checkoutForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData(e.target);
-
-    const data = {
-      cliente: {
-        nombre: formData.get("nombre"),
-        correo: formData.get("correo"),
-        telefono: formData.get("telefono"),
-        empresa: formData.get("empresa"),
-        direccion: formData.get("direccion"),
-        notas: formData.get("notas"),
-      },
-      carrito: cart.map(item => ({
-        id: String(item.id || ""),
-        nombre: item.nombre || "",
-        precio: item.precio || 0,
-        imagen: item.imagen || "",
-        qty: item.qty || 1
-      }))
-    };
-
-    try {
-      const resp = await fetch("/api/enviar-pedido", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
-
-      if (resp.ok) {
-        const result = await resp.json();
-        alert("✅ Pedido enviado correctamente");
-
-        // limpiar carrito
-        cart = [];
-        saveCart();
-        renderCarritoPage();
-        closeCheckout();
-      } else {
-        const errorText = await resp.text();
-        alert("❌ Error al enviar pedido: " + errorText);
-      }
-    } catch (err) {
-      console.error("❌ Error conexión:", err);
-      alert("❌ No se pudo conectar con el servidor.");
-    }
-  });
+<script src="{{ url_for('static', path='js/carrito/carrito_pagina.js') }}">
 </script>
 
 {% endblock %}

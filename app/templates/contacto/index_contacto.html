@@ -47,7 +47,7 @@
 
 <!-- contacto.html -->
 <!-- contacto.html -->
-<section class="mt-10">
+<section class="mt-10" style="background:#f8fafc;">
 
   <!-- Encabezado centrado -->
   <div class="max-w-6xl mx-auto px-4">
@@ -102,69 +102,177 @@
 
   <!-- Tu formulario ya lo tienes abajo (déjalo como está) -->
 </section>
-
-<section class="py-5 bg-white">
+<!-- bg-white -->
+<section class="py-5 " style="background:#f8fafc;">
     <div class="container">
         <div class="row">
             <!-- Columna izquierda: Formulario -->
             <div class="col-12 col-md-7">
-                <h4 class="mb-4 fw-bold text-uppercase">Contáctenos</h4>
-                <form method="POST" id="form-presupuesto">
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                          <label for="nombre" class="form-label">Nombres y Apellidos *</label>
-                          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo..." required>
+                <div class="p-4 p-md-5 rounded-4 shadow-sm border bg-white" style="border-top: 6px solid #facc15;">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <div>
+                            <h4 class="mb-1 fw-bold text-uppercase" style="letter-spacing:.5px;">
+                                Contáctenos
+                            </h4>
+                            <div class="text-muted small">
+                                Respuesta rápida por correo o WhatsApp.
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                          <label for="empresa" class="form-label">Empresa</label>
-                          <input type="text" class="form-control" id="empresa" name="empresa" placeholder="Ingresa su empresa..." required>
-                        </div>
-                        <div class="col-md-6">
-                          <label for="correo" class="form-label">Correo de contacto *</label>
-                          <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingresa tu correo electronico..." required>
-                        </div>
-                        <div class="col-md-6">
-                          <label for="telefono" class="form-label">Número de contacto *</label>
-                          <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ingresa su contacto.." required>
-                        </div>
-                        <div class="col-12">
-                          <label for="asunto" class="form-label">Asunto *</label>
-                          <input type="text" class="form-control" id="asunto" name="asunto" placeholder="Ingresa su asunto..."required>
-                        </div>
-                        <div class="col-12">
-                          <label for="mensaje" class="form-label" >Describa sus dudas o comentarios</label>
-                          <textarea class="form-control" id="mensaje" name="mensaje" rows="4" placeholder="Ingresa su asunto que tiene inconvenientes..." required></textarea>
-                        </div>
-                        <div class="col-12">
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="privacidad" name="privacidad" required>
-                            <label class="form-check-label" for="privacidad">
-                              He leído y acepto las <a href="#" class="text-danger">Políticas de Privacidad</a>.
-                            </label>
-                          </div>
-                        </div>
-                        <div class="col-12">
-                          <button type="submit" class="btn btn-dark w-100 text-uppercase">Enviar</button>
+
+                        <div class="d-flex align-items-center justify-content-center rounded-circle"
+                           style="width:46px;height:46px;background:#111827;">
+                            <i class="fas fa-headset text-warning"></i>
                         </div>
                     </div>
-                </form>
+                    <div class="rounded-3 p-3 mb-3"
+                        style="background:linear-gradient(90deg,#16a34a,#84cc16); color:white;">
+                        <i class="fas fa-shield-alt me-2"></i>
+                        Atención profesional • Partners Konica Minolta • Respuesta rápida
+                    </div>
+                    <form method="POST" id="form-presupuesto">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="nombre" class="form-label">Nombres y Apellidos *</label>
+                                <input type="text" class="form-control py-2" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo..." required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="empresa" class="form-label">Empresa</label>
+                                <input type="text" class="form-control py-2" id="empresa" name="empresa" placeholder="Ingresa su empresa..." required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="correo" class="form-label">Correo de contacto *</label>
+                                <input type="email" class="form-control py-2" id="correo" name="correo" placeholder="Ingresa tu correo electronico..." required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telefono" class="form-label">Número de contacto *</label>
+                                <input type="tel" class="form-control py-2" id="telefono" name="telefono" placeholder="Ingresa su contacto.." required>
+                            </div>
+                            <div class="col-12">
+                                <label for="asunto" class="form-label">Asunto *</label>
+                                <input type="text" class="form-control py-2" id="asunto" name="asunto" placeholder="Ingresa su asunto..."required>
+                            </div>
+                            <div class="col-12">
+                                <label for="mensaje" class="form-label" >Describa sus dudas o comentarios</label>
+                                <textarea class="form-control py-2" id="mensaje" name="mensaje" rows="4" placeholder="Ingresa su asunto que tiene inconvenientes..." required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="privacidad" name="privacidad" required>
+                                    <label class="form-check-label" for="privacidad">
+                                        He leído y acepto las <a href="#" class="text-danger">Políticas de Privacidad</a>.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="d-flex flex-column flex-sm-row gap-2 justify-content-end pt-2">
+                                    <!-- WhatsApp (solo botón) -->
+                                    <button type="button" id="btnWhatsappContacto"
+                                        class="btn px-4 fw-bold"
+                                        style="background:#22c55e;color:#0b1220;border-radius:12px;">
+                                        <i class="fab fa-whatsapp me-2"></i> WhatsApp
+                                    </button>
+                                    <button type="submit"
+                                        class="btn px-4 text-uppercase"
+                                        style="background:#7c3aed;color:white;">
+                                        <i class="fas fa-paper-plane me-2"></i> Enviar solicitud
+                                    </button>
+                                </div>
+                                <div class="text-muted small mt-2">
+                                    Al enviar aceptas nuestras políticas de privacidad.
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
 
             <!-- Columna derecha: Información -->
             <div class="col-12 col-md-5 mt-5 mt-md-0">
-                <h5 class="text-danger fw-bold text-uppercase mb-3">Sobre Nosotros</h5>
-                <p class="text-muted">
-                Contáctanos – Somos una empresa dedicada a la importación de fotocopiadoras de konica minolta, venta mayorista y minorista de <span class="text-danger fw-semibold">máquinas fotocopiadoras</span>, repuestos e insumos. Contamos con más de <span class="fw-semibold text-dark">12 años de experiencia</span> ofreciendo soluciones confiables.
+              <div class="p-4 p-md-4 rounded-4 shadow-sm border bg-white"
+                   style="border-top: 6px solid #facc15;">
+
+                <!-- Título -->
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <div>
+                    <h5 class="fw-bold text-uppercase mb-1" style="color:#111827; letter-spacing:.5px;">
+                      Sobre nosotros
+                    </h5>
+                    <div class="text-muted small">Partner oficial • Servicio técnico • Insumos</div>
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-center rounded-circle"
+                       style="width:46px;height:46px;background:#0b2a5b;">
+                    <i class="fas fa-building text-warning"></i>
+                  </div>
+                </div>
+
+                <!-- Texto -->
+                <p class="text-muted mb-4" style="line-height:1.6;">
+                  Somos una empresa dedicada a la importación de equipos Konica Minolta, venta mayorista y minorista de
+                  <span class="fw-semibold" style="color:#dc2626;">máquinas fotocopiadoras</span>, repuestos e insumos.
+                  Contamos con más de <span class="fw-bold" style="color:#111827;">12 años de experiencia</span> ofreciendo soluciones confiables.
                 </p>
 
-                <h6 class="text-danger fw-bold mt-4">Información de Contáctanos</h6>
-                <ul class="list-unstyled small text-muted">
-                    <li><i class="fas fa-map-marker-alt text-success me-2"></i> Dirección: AV. Micaela Bastidas Nro-727 - Cusco, Perú</li>
-                    <li><i class="fas fa-envelope text-primary me-2"></i> Correo: copiermundo33@gmail.com</li>
-                    <li><i class="fab fa-whatsapp text-success me-2"></i> Whatsapp: +51 940 41 44 40</li>
-                    <li><i class="fab fa-instagram text-danger me-2"></i> Instagram: COPIER MUNDO E.I.R.L - PERU</li>
-                    <li><i class="fab fa-facebook text-primary me-2"></i> Facebook: COPIER MUNDO E.I.R.L - PERU</li>
+                <!-- Bloques de contacto -->
+                <div class="rounded-3 p-3 mb-3"
+                     style="background:linear-gradient(90deg,#16a34a,#84cc16); color:white;">
+                  <i class="fas fa-headset me-2"></i>
+                  Atención profesional • Respuesta rápida
+                </div>
+
+                <h6 class="fw-bold mb-3" style="color:#111827;">
+                  Información de contacto
+                </h6>
+
+                <ul class="list-unstyled small text-muted m-0">
+                  <li class="d-flex gap-2 mb-2">
+                    <i class="fas fa-map-marker-alt mt-1" style="color:#16a34a;"></i>
+                    <span><b>Dirección:</b> AV. Micaela Bastidas Nro-727 – Cusco, Perú</span>
+                  </li>
+
+                  <li class="d-flex gap-2 mb-2">
+                    <i class="fas fa-envelope mt-1" style="color:#2563eb;"></i>
+                    <span><b>Correo:</b>
+                      <a class="text-decoration-none" href="mailto:copiermundo33@gmail.com" style="color:#2563eb;">
+                        copiermundo33@gmail.com
+                      </a>
+                    </span>
+                  </li>
+
+                  <li class="d-flex gap-2 mb-2">
+                    <i class="fab fa-whatsapp mt-1" style="color:#16a34a;"></i>
+                    <span><b>WhatsApp:</b>
+                      <a class="text-decoration-none" target="_blank"
+                         href="https://wa.me/51940414440" style="color:#16a34a;">
+                        +51 940 41 44 40
+                      </a>
+                    </span>
+                  </li>
+
+                  <li class="d-flex gap-2 mb-2">
+                    <i class="fab fa-instagram mt-1" style="color:#e11d48;"></i>
+                    <span><b>Instagram:</b> COPIER MUNDO E.I.R.L – PERU</span>
+                  </li>
+
+                  <li class="d-flex gap-2">
+                    <i class="fab fa-facebook mt-1" style="color:#2563eb;"></i>
+                    <span><b>Facebook:</b> COPIER MUNDO E.I.R.L – PERU</span>
+                  </li>
                 </ul>
+
+                <!-- Botones CTA -->
+                <div class="d-flex flex-wrap gap-2 mt-4">
+                  <a href="https://wa.me/51940414440" target="_blank"
+                     class="btn btn-success px-3">
+                    <i class="fab fa-whatsapp me-2"></i> WhatsApp
+                  </a>
+                  <a href="mailto:copiermundo33@gmail.com"
+                     class="btn btn-outline-dark px-3">
+                    <i class="fas fa-envelope me-2"></i> Email
+                  </a>
+                </div>
+
+              </div>
             </div>
         </div>
     </div>
@@ -174,11 +282,23 @@
 <div class="alert alert-success mt-4">Gracias por contactarnos. Te responderemos pronto.</div>
 {% endif %}
 
-<section>
-  <!-- CINTA ESTILIZADA -->
-  <div class="bg-gray-400 text-blue-800 py-3 text-center">
-    <h1 class="text-2xl md:text-2xl font-bold mb-1">COPIER MUNDO - CUSCO, DISTRIBUIDOR OFICIAL DE KONICA MINOLTA</h1>
-    <p class="text-base md:text-lg"></p>
+<section class="mt-5">
+  <div class="py-4 text-center"
+       style="background:linear-gradient(90deg,#0b2a5b,#0ea5e9); color:white;">
+    <div class="container">
+      <div class="fw-bold text-uppercase" style="letter-spacing:.8px; font-size:1.1rem;">
+        COPIER MUNDO – CUSCO
+      </div>
+      <div style="font-size:1.35rem; font-weight:800;">
+        Distribuidor oficial de Konica Minolta
+      </div>
+      <div class="mt-2">
+        <span class="px-3 py-2 rounded-pill"
+              style="background:#facc15; color:#111827; font-weight:700;">
+          +12 años de experiencia • Soporte técnico • Insumos originales
+        </span>
+      </div>
+    </div>
   </div>
 </section>
 

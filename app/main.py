@@ -21,7 +21,7 @@ from email.message import EmailMessage
 import aiosmtplib
 from email.message import EmailMessage
 import uvicorn
-
+import socket
 
 load_dotenv()
 
@@ -205,13 +205,20 @@ async def read_nosotros(request: Request):
     return templates.TemplateResponse("nosotros/index_nosotros.html", {"request": request})
 
 
+def resolve_ipv4(host: str) -> str:
+    # Devuelve primera IPv4 encontrada
+    infos = socket.getaddrinfo(host, None, socket.AF_INET, socket.SOCK_STREAM)
+    return infos[0][4][0]
+
+
 # Esta parte es para el campo del formulario de contactanos
 @app.post("/api/solicitar-presupuesto")
 async def solicitar_presupuesto(data: dict = Body(...)):
     mensaje = EmailMessage()
     mensaje["From"] = EMAIL_USER
-    mensaje["To"] = "administradora@example.com"  # destinatario
+    mensaje["To"] = EMAIL_TO   # ✅ usa EMAIL_TO "enmanuelluquerodriguez5@gmail.com"  # destinatario
     mensaje["Subject"] = f"Solicitud de presupuesto: {data.get('asunto', 'Sin asunto')}"
+    mensaje["Reply-To"] = data.get("correo", EMAIL_USER)   # ✅ para responder al cliente
 
     cuerpo = []
     if data.get('nombre'):
@@ -231,20 +238,24 @@ async def solicitar_presupuesto(data: dict = Body(...)):
     mensaje.set_content("\n".join(cuerpo))
 
     try:
-        await aiosmtplib.send(
+        #host_ipv4 = resolve_ipv4(EMAIL_HOST)
+        result = await aiosmtplib.send(
             mensaje,
             hostname=EMAIL_HOST,
             port=EMAIL_PORT,
             username=EMAIL_USER,
             password=EMAIL_PASS,
-            start_tls=True
+            start_tls=True,
+            timeout=5
         )
+        print("✅ SMTP result:", result)
         return {"status": "ok", "mensaje": "Presupuesto enviado"}
     except Exception as e:
-        print("Error enviando correo:", e)
+        print("Error enviando correo:", repr(e))
         return {"status": "error", "mensaje": "No se pudo enviar el presupuesto"}
 
-
+#use_tls=True,     # ✅ SSL directo
+#hostname=host_ipv4,   # ✅ IPv4
 # ✅ Ruta para contacto
 @app.get("/contacto", response_class=HTMLResponse)
 async def read_contacto(request: Request):
@@ -617,7 +628,8 @@ async def solicitar_consumible(data: dict = Body(...)):
     # 1. Armar el correo
     mensaje = EmailMessage()
     mensaje["From"] = EMAIL_USER
-    mensaje["To"] = "copiermundo33@gmail.com"  # correo de la administradora
+    mensaje["To"] = EMAIL_TO   #"copiermundo33@gmail.com"  # correo de la administradora
+    mensaje["Reply-To"] = data.get("correo", EMAIL_USER)   # ✅ para responder al cliente
     mensaje["Subject"] = f"Solicitud de consumible: {data.get('consumible', 'Desconocido')}"
     mensaje.set_content(
         f"""
@@ -635,18 +647,24 @@ async def solicitar_consumible(data: dict = Body(...)):
 
     # 2. Enviar el correo
     try:
+        print("📨 Enviando mail...")
+        print("HOST:", EMAIL_HOST, "PORT:", EMAIL_PORT)
+        print("FROM:", EMAIL_USER, "TO:", EMAIL_TO)
+
         await aiosmtplib.send(
             mensaje,
             hostname=EMAIL_HOST,
             port=EMAIL_PORT,
             username=EMAIL_USER,
             password=EMAIL_PASS,
-            start_tls=True
+            start_tls=True,
+            timeout=8
         )
+        #print("✅ SMTP result:", result)
         return {"status": "ok", "mensaje": "Solicitud enviada a la administradora"}
     except Exception as e:
-        print("Error enviando correo:", e)
-        return {"status": "error", "mensaje": "No se pudo enviar la solicitud"}
+        print("Error enviando correo:", repr(e))
+        return {"status": "error", "mensaje": str(e)}
 
 
 async def enviar_email_admin(pedido: OrderRequest):
@@ -681,7 +699,8 @@ async def enviar_email_admin(pedido: OrderRequest):
             port=EMAIL_PORT,             # asegúrate que sea 587
             username=EMAIL_USER,
             password=EMAIL_PASS,
-            start_tls=True        # Forzamos STARTTLS
+            start_tls=True,
+            timeout=6        # Forzamos STARTTLS
         )
         print("📧 Correo enviado (async)")
     except Exception as e:
@@ -712,6 +731,7 @@ async def enviar_carrito(data: dict = Body(...)):
     mensaje["From"] = EMAIL_USER
     mensaje["To"] = EMAIL_TO
     mensaje["Subject"] = "🛒 Nuevo Pedido desde el carrito"
+    mensaje["Reply-To"] = data.get("correo", EMAIL_USER)   # ✅ para responder al cliente
 
     mensaje.set_content(f"""
         Cliente: {data.get('nombre')}
@@ -730,7 +750,8 @@ async def enviar_carrito(data: dict = Body(...)):
             port=EMAIL_PORT,
             username=EMAIL_USER,
             password=EMAIL_PASS,
-            start_tls=True
+            start_tls=True,
+            timeout=6
         )
         return {"status": "ok", "mensaje": "Pedido enviado al administrador ✅"}
     except Exception as e:

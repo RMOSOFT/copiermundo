@@ -15,6 +15,8 @@ document.addEventListener("click", function (e) {
         btn.textContent = "Seleccionar";
 
         card.classList.remove("card-selected");
+        // Desmarcar automaticamente 
+        card.dataset.selected = "false";
         return;
     }
 
@@ -33,6 +35,10 @@ document.addEventListener("click", function (e) {
     btn.innerHTML = `<i class="fas fa-check"></i> Seleccionado`;
 
     card.classList.add("card-selected");
+
+    // ✅ Marca seleccionado para que el botón COMPRAR lo detecte fácil
+    document.querySelectorAll(".consumible-card").forEach(c => c.dataset.selected = "false");
+    card.dataset.selected = "true";
 
     // EFECTO DE TEMBLOR
     card.classList.add("card-shake");

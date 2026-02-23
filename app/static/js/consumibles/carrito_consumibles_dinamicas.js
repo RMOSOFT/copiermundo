@@ -48,6 +48,8 @@ function addToCartFromServer(p) {
   showToast(`🛒 ${product.nombre} agregado al carrito.`, () => {
     openSideCart();
   });
+
+  document.dispatchEvent(new CustomEvent("cart:updated"));
 }
 
 function renderCart() {
