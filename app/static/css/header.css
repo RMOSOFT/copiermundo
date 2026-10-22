@@ -1,0 +1,1117 @@
+/* COPIER MUNDO | CABECERA CORPORATIVA */
+.cm-pro-header, .cm-pro-header *, .cm-pro-hero, .cm-pro-hero * {box-sizing:border-box}
+.cm-svg-sprite {position:absolute;width:0;height:0;overflow:hidden;pointer-events:none}
+.cm-icon {display:inline-block;width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.18em}
+.cm-pro-container {width:min(var(--cm-max-width),calc(100% - 44px));margin-inline:auto}
+.cm-pro-header {position:relative;z-index:80;width:100%;background:var(--cm-white);color:var(--cm-text);font-family:var(--cm-font)}
+.cm-pro-header a {text-decoration:none;color:inherit}
+.cm-pro-header img {display:block;max-width:100%}
+.cm-pro-header button,.cm-pro-header input,.cm-pro-header select {font:inherit}
+.cm-pro-header :focus-visible {outline:3px solid var(--cm-cyan);outline-offset:3px}
+.cm-pro-sr-only {position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* Cinta superior */
+.cm-pro-top {position:relative;isolation:isolate;overflow:hidden;padding:16px 0;background:var(--cm-header-background);color:var(--cm-white);border-bottom:2px solid var(--cm-cyan)}
+
+.cm-pro-top::before {content:"";position:absolute;z-index:-1;inset:0;pointer-events:none;background:radial-gradient(circle at 3% 0%,rgb(13 180 255 / 48%),transparent 23%),radial-gradient(circle at 94% 35%,rgb(0 163 255 / 42%),transparent 26%),repeating-linear-gradient(124deg,transparent 0 118px,rgb(255 255 255 / 5%) 119px 120px)}
+.cm-pro-top-grid {display:grid;grid-template-columns:minmax(215px,265px) minmax(0,1fr) minmax(200px,255px);align-items:center;gap:17px}
+.cm-pro-brand {display:flex;flex-direction:column;align-items:center;gap:5px;min-width:0}
+.cm-pro-brand-mark {width:100%;max-width:250px;min-height:67px;display:grid;place-items:center;border-radius:15px;padding:5px;background:rgb(255 255 255 / 10%);border:1px solid var(--cm-glass-border)}
+.cm-pro-brand-mark img {width:100%;max-height:68px;object-fit:contain}
+.cm-pro-header .cm-pro-brand-caption {font-size:9px;font-weight:700;letter-spacing:.5px;color:var(--cm-white);text-align:center;text-transform:uppercase}
+.cm-pro-contact-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;min-width:0}
+.cm-pro-header .cm-pro-contact-card {display:flex;min-width:0;min-height:71px;align-items:center;justify-content:center;gap:7px;padding:9px 7px;border:1px solid var(--cm-glass-border);border-radius:14px;box-shadow:0 7px 19px rgb(0 0 0 / 16%);color:var(--cm-white);transition:transform var(--cm-transition),filter var(--cm-transition)}
+.cm-pro-contact-card:hover {transform:translateY(-3px);filter:brightness(1.1)}
+.cm-pro-card-icon {display:grid;place-items:center;flex:0 0 29px;font-size:24px}
+.cm-pro-card-text {display:flex;flex-direction:column;min-width:0;gap:2px;text-align:left}
+.cm-pro-card-text small {font-size:8px;font-weight:700;line-height:1.2;text-transform:uppercase}
+.cm-pro-card-text strong {font-family:var(--cm-font-heading);font-size:clamp(10px,.88vw,14px);line-height:1.28;white-space:nowrap;font-weight:800}
+.cm-pro-card-text em {font-style:normal;font-size:8px;line-height:1.2;opacity:.87}
+.cm-pro-phone {background:linear-gradient(125deg,#071328,var(--cm-blue-dark))}
+.cm-pro-quote {background:var(--cm-green-background)}
+.cm-pro-support {background:var(--cm-blue-background)}
+.cm-pro-shipping {background:linear-gradient(125deg,var(--cm-red),var(--cm-red-dark))}
+.cm-pro-social-area {display:grid;justify-items:center;align-content:center;gap:9px}
+.cm-pro-location {display:grid;text-align:center}
+.cm-pro-location strong {font-family:Georgia,serif;font-size:31px;font-style:italic;line-height:1;color:var(--cm-white)}
+.cm-pro-location span {font-size:8px;letter-spacing:.8px;text-transform:uppercase}
+.cm-pro-socials {display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
+.cm-pro-header .cm-pro-social {display:grid;place-items:center;position:relative;width:35px;height:35px;flex:none;border:1px solid rgb(255 255 255 / 20%);border-radius:50%;color:var(--cm-white);font-size:16px;transition:transform var(--cm-transition)}
+.cm-pro-social:hover {transform:translateY(-3px)}
+.cm-pro-facebook {background:var(--cm-facebook)}
+.cm-pro-instagram {background:linear-gradient(140deg,var(--cm-instagram-start),var(--cm-instagram-end))}
+.cm-pro-tiktok {background:var(--cm-tiktok)}
+.cm-pro-whatsapp {background:var(--cm-whatsapp)}
+.cm-pro-header .cm-pro-cart {background:var(--cm-yellow);color:var(--cm-navy)}
+.cm-pro-cart-count {position:absolute;top:-7px;right:-8px;min-width:20px;border-radius:var(--cm-pill);padding:2px 5px;background:var(--cm-red);color:var(--cm-white);font-size:10px;font-weight:800;text-align:center}
+
+/* Barra blanca y navegación */
+.cm-pro-nav-shell {position:relative;background:var(--cm-white);border-bottom:1px solid var(--cm-border);box-shadow:0 5px 20px rgb(4 35 80 / 12%)}
+.cm-pro-nav-grid {display:grid;grid-template-columns:minmax(185px,245px) minmax(0,1fr) minmax(265px,330px);align-items:center;gap:14px;min-height:70px}
+.cm-pro-partner {display:flex;align-items:center;min-width:0;gap:11px}
+.cm-pro-partner img {width:155px;max-height:49px;object-fit:contain}
+.cm-pro-partner span {display:grid;gap:2px;padding-left:9px;border-left:1px solid var(--cm-border);font-size:8px;line-height:1.3;text-transform:uppercase;color:var(--cm-muted)}
+.cm-pro-partner strong {font-size:9px;color:var(--cm-text)}
+.cm-pro-navigation {display:flex;align-items:center;justify-content:center;gap:clamp(8px,1.1vw,20px);min-width:0}
+.cm-pro-header .cm-pro-home,.cm-pro-header .cm-pro-nav-link,.cm-pro-dropdown>summary {display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:44px;font-size:11px;font-weight:800;text-transform:uppercase;white-space:nowrap;cursor:pointer}
+.cm-pro-header .cm-pro-home {color:var(--cm-red);font-size:21px}
+.cm-pro-home .cm-icon {width:23px;height:23px}
+.cm-pro-dropdown {position:relative}
+.cm-pro-dropdown>summary {list-style:none}
+.cm-pro-dropdown>summary::-webkit-details-marker {display:none}
+.cm-pro-dropdown>summary .cm-icon {width:13px;height:13px;color:var(--cm-red);transition:transform var(--cm-transition)}
+.cm-pro-dropdown[open]>summary .cm-icon {transform:rotate(180deg)}
+.cm-pro-dropdown-panel {position:absolute;top:calc(100% + 8px);left:0;z-index:100;width:275px;display:grid;padding:8px;background:var(--cm-white);border:1px solid var(--cm-border);border-top:3px solid var(--cm-red);border-radius:var(--cm-radius-small);box-shadow:var(--cm-shadow)}
+.cm-pro-header .cm-pro-dropdown-panel a {padding:10px 11px;border-radius:7px;font-size:12px;line-height:1.4;color:var(--cm-text)}
+.cm-pro-dropdown-panel a:hover,.cm-pro-dropdown-panel a:focus-visible {background:var(--cm-surface);color:var(--cm-blue)}
+.cm-pro-header .cm-pro-nav-link:hover,.cm-pro-dropdown>summary:hover {color:var(--cm-red)}
+.cm-pro-menu-toggle {display:none;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:8px 14px;border:1px solid var(--cm-border);border-radius:9px;background:var(--cm-surface);color:var(--cm-text);font-weight:700;cursor:pointer}
+.cm-pro-menu-toggle[hidden] {display:none!important}
+.cm-pro-menu-close {display:none}
+.cm-pro-menu-toggle[aria-expanded="true"] .cm-pro-menu-open {display:none}
+.cm-pro-menu-toggle[aria-expanded="true"] .cm-pro-menu-close {display:block}
+
+/* Buscador */
+.cm-pro-search {display:flex;align-items:center;min-width:0;height:45px;margin:0;border:1px solid var(--cm-border);border-radius:var(--cm-pill);overflow:hidden;background:var(--cm-surface)}
+.cm-pro-search-leading {margin-left:12px;color:var(--cm-blue-dark);flex:none}
+.cm-pro-search input,.cm-pro-search select {min-width:0;height:100%;border:0;border-radius:0;background:transparent;color:var(--cm-text);font-size:11px;outline-offset:-3px}
+.cm-pro-search input {width:100%;flex:1;padding:7px 9px}
+.cm-pro-search select {width:105px;flex:none;border-left:1px solid var(--cm-border);padding:5px 7px}
+.cm-pro-search button {height:100%;flex:0 0 45px;display:grid;place-items:center;border:0;background:var(--cm-red);color:var(--cm-white);font-size:18px;cursor:pointer}
+.cm-pro-search button:hover {background:var(--cm-red-dark)}
+
+/* Pantallas medianas */
+@media(max-width:1320px) {
+  .cm-pro-top-grid {grid-template-columns:230px minmax(0,1fr)}
+  .cm-pro-social-area {grid-column:1/-1;display:flex;justify-content:center;gap:22px}
+  .cm-pro-location {display:none}
+  .cm-pro-nav-grid {grid-template-columns:195px minmax(0,1fr);gap:5px 12px;padding-block:9px}
+  .cm-pro-search {grid-column:1/-1;max-width:650px;width:100%;justify-self:center}
+}
+@media(max-width:1180px) {
+  .cm-pro-nav-grid {grid-template-columns:minmax(0,1fr) auto}
+  .cm-pro-menu-toggle:not([hidden]) {display:inline-flex}
+  .cm-pro-navigation {grid-column:1/-1;grid-row:3;display:flex;flex-direction:column;align-items:stretch;gap:0;padding:7px 0}
+  .cm-pro-navigation.cm-pro-is-collapsed {display:none}
+  .cm-pro-header .cm-pro-home,.cm-pro-header .cm-pro-nav-link,.cm-pro-dropdown>summary {width:100%;min-height:46px;justify-content:flex-start;padding:10px 12px;border-bottom:1px solid var(--cm-border)}
+  .cm-pro-dropdown>summary {justify-content:space-between}
+  .cm-pro-dropdown-panel {position:static;width:100%;margin:4px 0;border-top-width:1px;box-shadow:none}
+  .cm-pro-search {grid-row:2}
+}
+@media(max-width:760px) {
+  .cm-pro-container {width:calc(100% - 26px)}
+  .cm-pro-top {padding-block:12px}
+  .cm-pro-top-grid {grid-template-columns:1fr;gap:12px}
+  .cm-pro-contact-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cm-pro-contact-card {min-height:65px}
+  .cm-pro-social-area {grid-column:auto;justify-content:center}
+  .cm-pro-brand-mark {max-width:255px}
+  .cm-pro-socials {gap:9px}
+  .cm-pro-partner img {width:145px}
+  .cm-pro-partner span {display:none}
+}
+@media(max-width:420px) {
+  .cm-pro-contact-grid {gap:7px}
+  .cm-pro-header .cm-pro-contact-card {padding:8px 5px}
+  .cm-pro-card-text strong {font-size:12px}
+  .cm-pro-card-text em {font-size:7px}
+  .cm-pro-card-icon {flex-basis:24px;font-size:20px}
+  .cm-pro-search-leading {display:none}
+  .cm-pro-search input {padding-inline:10px}
+  .cm-pro-search select {width:93px}
+}
+@media(prefers-reduced-motion:reduce) {
+  .cm-pro-header *, .cm-pro-header *::before, .cm-pro-header *::after {transition:none!important;animation:none!important}
+}
+
+
+
+/* ======================================================
+   COPIER MUNDO
+   FONDO PERSONALIZADO DE LA CABECERA SUPERIOR
+
+   Imagen:
+   Machu Picchu + bandera peruana + tecnología
+
+   No afecta:
+   - Menú de navegación
+   - Tarjetas de contacto
+   - Redes sociales
+   - Carrito
+   - JavaScript
+====================================================== */
+
+/* 1. FONDO PRINCIPAL */
+.cm-pro-header .cm-pro-top {
+
+  position: relative;
+  isolation: isolate;
+
+  /* Fondo de respaldo */
+  background-color: var(--cm-blue-dark);
+
+  /* Superposición + imagen + fondo de respaldo */
+  background-image:
+    var(--cm-top-overlay),
+    var(--cm-top-image),
+    var(--cm-header-background);
+
+  background-repeat: no-repeat;
+
+  /* Cubrir el contenedor sin deformar la imagen */
+  background-size: cover, cover, cover;
+
+  /* Centrar cada capa */
+  background-position:
+    center,
+    var(--cm-top-image-position),
+    center;
+
+  /* Mantener el contenido dentro de la cinta */
+  overflow: hidden;
+
+  /* Línea inferior corporativa */
+  border-bottom: 2px solid var(--cm-cyan);
+}
+
+
+/* 2. DESACTIVAR LOS DIBUJOS ANTIGUOS DEL FONDO
+
+   Antes teníamos líneas diagonales generadas con
+   ::before. Ahora utilizamos nuestra propia imagen.
+*/
+.cm-pro-header .cm-pro-top::before {
+  display: none;
+}
+
+
+/* 3. MANTENER EL CONTENIDO SOBRE LA IMAGEN */
+.cm-pro-header .cm-pro-top-grid {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* 4. RESALTAR EL TEXTO DE CUSCO */
+.cm-pro-header .cm-pro-location strong,
+.cm-pro-header .cm-pro-location span {
+  text-shadow: 0 2px 7px rgb(0 0 0 / 65%);
+}
+
+
+/* 5. TABLETS Y PANTALLAS MEDIANAS */
+@media (max-width: 1180px) {
+
+  .cm-pro-header .cm-pro-top {
+
+    background-position:
+      center,
+      65% center,
+      center;
+
+    background-size:
+      cover,
+      cover,
+      cover;
+  }
+
+}
+
+
+/* 6. DISEÑO PARA CELULARES */
+@media (max-width: 760px) {
+
+  .cm-pro-header .cm-pro-top {
+
+    /* Más contraste para los textos */
+    background-image:
+      linear-gradient(
+        90deg,
+        rgb(2 16 48 / 75%),
+        rgb(2 16 48 / 55%)
+      ),
+      var(--cm-top-image),
+      var(--cm-header-background);
+
+    /* Conserva la proporción de la imagen */
+    background-size:
+      cover,
+      auto 100%,
+      cover;
+
+    /* Muestra preferentemente el lado de Cusco */
+    background-position:
+      center,
+      76% center,
+      center;
+
+    background-repeat: no-repeat;
+  }
+
+}
+
+
+/* ==========================================================
+   COPIER MUNDO 2026
+   REDISEÑO PROFESIONAL - CABECERA SUPERIOR COMPACTA
+
+   Objetivos:
+   - Reducir la altura
+   - Mejorar legibilidad
+   - Logo rojo circular
+   - Tarjetas compactas
+   - Redes SVG
+   - Mantener fondo corporativo actual
+
+   No modifica el funcionamiento del sistema.
+========================================================== */
+
+
+/* ==========================================================
+   1. ALTURA GENERAL DE LA CINTA AZUL
+========================================================== */
+
+.cm-pro-header .cm-pro-top {
+
+  /* Reduce la altura sin recortar contenido */
+  padding-top: var(--cm-top-padding-y);
+  padding-bottom: var(--cm-top-padding-y);
+
+  /* Conserva la imagen de Machu Picchu */
+  background-repeat: no-repeat;
+
+}
+
+
+/* ==========================================================
+   2. DISTRIBUCIÓN DE LOS ELEMENTOS
+========================================================== */
+
+.cm-pro-header .cm-pro-top-grid {
+
+  display: grid;
+
+  /*
+    Columna 1: logo
+    Columna 2: cuatro tarjetas
+    Columna 3: Cusco + redes
+  */
+
+  grid-template-columns:
+    minmax(180px, 210px)
+    minmax(0, 1fr)
+    minmax(175px, 195px);
+
+  align-items: center;
+
+  gap: 12px;
+
+}
+
+
+/* ==========================================================
+   3. NUEVO LOGO CIRCULAR
+========================================================== */
+
+.cm-pro-header .cm-pro-brand {
+
+  display: flex;
+
+  /* Logo y texto uno al lado del otro */
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 10px;
+
+  min-width: 0;
+
+}
+
+
+/* Contenedor del logo */
+
+.cm-pro-header .cm-pro-brand-mark {
+
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  flex: 0 0 var(--cm-top-logo-size);
+
+  width: var(--cm-top-logo-size);
+  height: var(--cm-top-logo-size);
+
+  /* Eliminar tamaño rectangular antiguo */
+  min-height: 0;
+  max-width: none;
+
+  padding: 0;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  background: var(--cm-white);
+
+  border: 2px solid rgb(255 255 255 / 90%);
+
+  box-shadow:
+    0 3px 12px rgb(0 0 0 / 28%),
+    0 0 0 3px rgb(255 255 255 / 10%);
+
+  transition:
+    transform var(--cm-transition),
+    box-shadow var(--cm-transition);
+
+}
+
+
+/* Imagen del nuevo logo */
+
+.cm-pro-header .cm-pro-brand-mark img {
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  max-width: none;
+  max-height: none;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+}
+
+
+/* Efecto discreto al pasar el mouse */
+
+.cm-pro-header .cm-pro-brand:hover
+.cm-pro-brand-mark {
+
+  transform: scale(1.045);
+
+  box-shadow:
+    0 5px 16px rgb(0 0 0 / 35%),
+    0 0 0 3px rgb(255 255 255 / 22%);
+
+}
+
+
+/* Texto que acompaña al logo */
+
+.cm-pro-header .cm-pro-brand-caption {
+
+  max-width: 136px;
+
+  color: var(--cm-white);
+
+  font-family: var(--cm-font-heading);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.15px;
+
+  text-align: left;
+  text-transform: uppercase;
+
+  opacity: 1;
+
+  text-shadow:
+    0 1px 3px rgb(0 0 0 / 65%);
+
+}
+
+
+/* ==========================================================
+   4. CONTENEDOR DE LAS CUATRO TARJETAS
+========================================================== */
+
+.cm-pro-header .cm-pro-contact-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  width: 100%;
+  max-width: 700px;
+
+  gap: var(--cm-top-card-gap);
+
+  justify-self: center;
+  align-items: center;
+
+  min-width: 0;
+
+}
+
+
+/* ==========================================================
+   5. DISEÑO GENERAL DE CADA TARJETA
+========================================================== */
+
+.cm-pro-header .cm-pro-contact-card {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  min-width: 0;
+
+  height: var(--cm-top-card-height);
+  min-height: var(--cm-top-card-height);
+
+  padding: 8px 9px;
+
+  border-radius: var(--cm-top-card-radius);
+
+  border: 1px solid rgb(255 255 255 / 32%);
+
+  color: var(--cm-white);
+
+  box-shadow:
+    0 4px 12px rgb(0 0 0 / 22%);
+
+  transition:
+    transform var(--cm-transition),
+    box-shadow var(--cm-transition),
+    filter var(--cm-transition);
+
+}
+
+
+/* Hover de las tarjetas */
+
+.cm-pro-header .cm-pro-contact-card:hover {
+
+  transform: translateY(-2px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 7px 17px rgb(0 0 0 / 28%);
+
+}
+
+
+/* ==========================================================
+   6. ICONOS SVG DE LAS TARJETAS
+========================================================== */
+
+.cm-pro-header .cm-pro-card-icon {
+
+  display: grid;
+  place-items: center;
+
+  flex: 0 0 var(--cm-top-card-icon-size);
+
+  width: var(--cm-top-card-icon-size);
+
+  color: var(--cm-white);
+
+}
+
+
+/* Tamaño individual del SVG */
+
+.cm-pro-header .cm-pro-card-icon .cm-icon {
+
+  width: var(--cm-top-card-icon-size);
+  height: var(--cm-top-card-icon-size);
+
+  stroke-width: 1.9;
+
+}
+
+
+/* ==========================================================
+   7. TEXTOS DE LAS TARJETAS - MÁS LEGIBLES
+========================================================== */
+
+.cm-pro-header .cm-pro-card-text {
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  gap: 3px;
+
+  text-align: left;
+
+  color: var(--cm-white);
+
+}
+
+
+/* Texto superior: CONTÁCTANOS, ENVÍOS, etc. */
+
+.cm-pro-header .cm-pro-card-text small {
+
+  display: block;
+
+  color: var(--cm-white);
+
+  font-size: var(--cm-top-card-label-size);
+
+  font-weight: 800;
+
+  line-height: 1.15;
+
+  text-transform: uppercase;
+
+  opacity: 1;
+
+  text-shadow:
+    0 1px 2px rgb(0 0 0 / 25%);
+
+}
+
+
+/* Número telefónico o título principal */
+
+.cm-pro-header .cm-pro-card-text strong {
+
+  display: block;
+
+  color: var(--cm-white);
+
+  font-family: var(--cm-font-heading);
+
+  font-size: var(--cm-top-card-value-size);
+
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.15px;
+
+  white-space: nowrap;
+
+  opacity: 1;
+
+  text-shadow:
+    0 1px 3px rgb(0 0 0 / 28%);
+
+}
+
+
+/* Descripción inferior */
+
+.cm-pro-header .cm-pro-card-text em {
+
+  display: block;
+
+  color: var(--cm-white);
+
+  font-size: var(--cm-top-card-detail-size);
+
+  font-style: normal;
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  opacity: 1;
+
+  text-shadow:
+    0 1px 2px rgb(0 0 0 / 25%);
+
+}
+
+
+/* ==========================================================
+   8. COLORES PROFESIONALES DE CADA TARJETA
+   Todos utilizan nuestras variables globales.
+========================================================== */
+
+
+/* Teléfono: azul marino */
+
+.cm-pro-header .cm-pro-phone {
+
+  background:
+    linear-gradient(
+      125deg,
+      var(--cm-navy),
+      var(--cm-blue-dark)
+    );
+
+}
+
+
+/* Cotización: verde */
+
+.cm-pro-header .cm-pro-quote {
+
+  background:
+    var(--cm-green-background);
+
+}
+
+
+/* Soporte: azul tecnológico */
+
+.cm-pro-header .cm-pro-support {
+
+  background:
+    var(--cm-blue-background);
+
+}
+
+
+/* Envíos: rojo corporativo */
+
+.cm-pro-header .cm-pro-shipping {
+
+  background:
+    linear-gradient(
+      125deg,
+      var(--cm-red),
+      var(--cm-red-dark)
+    );
+
+}
+
+
+/* ==========================================================
+   9. CUSCO - BLOQUE DERECHO
+========================================================== */
+
+.cm-pro-header .cm-pro-social-area {
+
+  display: grid;
+
+  align-content: center;
+  justify-items: center;
+
+  gap: 7px;
+
+  min-width: 0;
+
+}
+
+
+.cm-pro-header .cm-pro-location {
+
+  display: grid;
+
+  text-align: center;
+
+}
+
+
+.cm-pro-header .cm-pro-location strong {
+
+  color: var(--cm-white);
+
+  font-family: Georgia, serif;
+
+  font-size: 29px;
+  font-style: italic;
+
+  line-height: 1;
+
+  text-shadow:
+    0 2px 5px rgb(0 0 0 / 70%);
+
+}
+
+
+.cm-pro-header .cm-pro-location span {
+
+  color: var(--cm-white);
+
+  font-size: 8.5px;
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  letter-spacing: 0.45px;
+
+  opacity: 1;
+
+  text-transform: uppercase;
+
+  text-shadow:
+    0 1px 4px rgb(0 0 0 / 70%);
+
+}
+
+
+/* ==========================================================
+   10. REDES SOCIALES CON ICONOS SVG
+========================================================== */
+
+.cm-pro-header .cm-pro-socials {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  flex-wrap: nowrap;
+
+}
+
+
+/* Base general */
+
+.cm-pro-header .cm-pro-social {
+
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  flex: 0 0 var(--cm-top-social-size);
+
+  width: var(--cm-top-social-size);
+  height: var(--cm-top-social-size);
+
+  border-radius: 50%;
+
+  border: 1px solid rgb(255 255 255 / 22%);
+
+  color: var(--cm-white);
+
+  box-shadow:
+    0 3px 9px rgb(0 0 0 / 20%);
+
+  transition:
+    transform var(--cm-transition),
+    box-shadow var(--cm-transition),
+    filter var(--cm-transition);
+
+}
+
+
+/* Iconos SVG */
+
+.cm-pro-header .cm-pro-social .cm-social-svg {
+
+  display: block;
+
+  width: 18px;
+  height: 18px;
+
+  color: var(--cm-white);
+
+  stroke: currentColor;
+  stroke-width: 2;
+
+  fill: none;
+
+}
+
+
+/* Facebook necesita relleno */
+
+.cm-pro-header .cm-pro-social .cm-facebook-svg {
+
+  fill: currentColor;
+
+  stroke: none;
+
+}
+
+
+/* Hover elegante */
+
+.cm-pro-header .cm-pro-social:hover {
+
+  transform: translateY(-2px) scale(1.06);
+
+  filter: brightness(1.1);
+
+  box-shadow:
+    0 5px 12px rgb(0 0 0 / 28%);
+
+}
+
+
+/* Colores originales */
+
+.cm-pro-header .cm-pro-facebook {
+  background: var(--cm-facebook);
+}
+
+.cm-pro-header .cm-pro-instagram {
+  background:
+    linear-gradient(
+      140deg,
+      var(--cm-instagram-start),
+      var(--cm-instagram-end)
+    );
+}
+
+.cm-pro-header .cm-pro-tiktok {
+  background: var(--cm-tiktok);
+}
+
+.cm-pro-header .cm-pro-whatsapp {
+  background: var(--cm-whatsapp);
+}
+
+
+/* Carrito */
+
+.cm-pro-header .cm-pro-cart {
+
+  background: var(--cm-yellow);
+
+  color: var(--cm-navy);
+
+}
+
+.cm-pro-header .cm-pro-cart .cm-icon {
+
+  width: 19px;
+  height: 19px;
+
+}
+
+
+/* ==========================================================
+   11. LAPTOPS DE 1101 A 1320 PÍXELES
+
+   Conservamos las tres columnas siempre que
+   exista espacio suficiente.
+========================================================== */
+
+@media (min-width: 1101px) and (max-width: 1320px) {
+
+  .cm-pro-header .cm-pro-top-grid {
+
+    grid-template-columns:
+      178px
+      minmax(0, 1fr)
+      190px;
+
+    gap: 10px;
+
+  }
+
+  .cm-pro-header .cm-pro-social-area {
+
+    grid-column: auto;
+
+    display: grid;
+
+    justify-content: center;
+
+  }
+
+  .cm-pro-header .cm-pro-location {
+    display: grid;
+  }
+
+  .cm-pro-header .cm-pro-brand-caption {
+    font-size: 9px;
+  }
+
+}
+
+
+/* ==========================================================
+   12. TABLETS Y LAPTOPS PEQUEÑAS
+========================================================== */
+
+@media (min-width: 951px) and (max-width: 1100px) {
+
+  .cm-pro-header .cm-pro-top-grid {
+
+    grid-template-columns:
+      195px
+      minmax(0, 1fr);
+
+    gap: 12px;
+
+  }
+
+  .cm-pro-header .cm-pro-social-area {
+
+    grid-column: 1 / -1;
+
+    display: flex;
+
+    justify-content: center;
+
+  }
+
+  .cm-pro-header .cm-pro-location {
+    display: none;
+  }
+
+  .cm-pro-header .cm-pro-contact-grid {
+    max-width: 700px;
+  }
+
+}
+
+
+/* ==========================================================
+   13. PANTALLAS MENORES DE 951 PÍXELES
+========================================================== */
+
+@media (max-width: 950px) {
+
+  .cm-pro-header .cm-pro-top-grid {
+
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 12px;
+
+  }
+
+  .cm-pro-header .cm-pro-brand {
+
+    justify-content: center;
+
+  }
+
+  .cm-pro-header .cm-pro-contact-grid {
+
+    max-width: 580px;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+
+  }
+
+  .cm-pro-header .cm-pro-social-area {
+
+    grid-column: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+  }
+
+  .cm-pro-header .cm-pro-location {
+    display: none;
+  }
+
+}
+
+
+/* ==========================================================
+   14. CELULARES
+========================================================== */
+
+@media (max-width: 600px) {
+
+  .cm-pro-header .cm-pro-top {
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+  }
+
+  .cm-pro-header .cm-pro-brand-mark {
+
+    width: 66px;
+    height: 66px;
+
+    flex-basis: 66px;
+
+  }
+
+  .cm-pro-header .cm-pro-brand-caption {
+    font-size: 10px;
+  }
+
+  .cm-pro-header .cm-pro-contact-grid {
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 8px;
+
+  }
+
+  .cm-pro-header .cm-pro-contact-card {
+
+    min-height: 62px;
+
+    padding: 8px 7px;
+
+  }
+
+  .cm-pro-header .cm-pro-card-text strong {
+    font-size: 13px;
+  }
+
+  .cm-pro-header .cm-pro-card-text small {
+    font-size: 9.5px;
+  }
+
+  .cm-pro-header .cm-pro-card-text em {
+    font-size: 9px;
+  }
+
+  .cm-pro-header .cm-pro-card-icon {
+
+    flex-basis: 23px;
+
+    width: 23px;
+
+  }
+
+  .cm-pro-header .cm-pro-card-icon .cm-icon {
+
+    width: 23px;
+    height: 23px;
+
+  }
+
+  .cm-pro-header .cm-pro-socials {
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+  }
+
+}
+
+
+/* ==========================================================
+   15. CELULARES MUY PEQUEÑOS
+========================================================== */
+
+@media (max-width: 380px) {
+
+  .cm-pro-header .cm-pro-contact-card {
+    gap: 5px;
+    padding: 7px 5px;
+  }
+
+  .cm-pro-header .cm-pro-card-text strong {
+    font-size: 12px;
+  }
+
+  .cm-pro-header .cm-pro-card-text small {
+    font-size: 9px;
+  }
+
+  .cm-pro-header .cm-pro-card-text em {
+    font-size: 8.5px;
+  }
+
+}

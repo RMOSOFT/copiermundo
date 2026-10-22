@@ -1,0 +1,137 @@
+/* COPIER MUNDO | SISTEMA DE DISEÑO 2026
+   Modifica esta paleta para actualizar cabecera y hero. */
+:root {
+  --cm-navy: #03132f;
+  --cm-blue-dark: #042755;
+  --cm-blue: #0756a8;
+  --cm-blue-light: #078ee8;
+  --cm-cyan: #14d3ff;
+  --cm-green: #079c47;
+  --cm-green-light: #19ce65;
+  --cm-red: #ca102d;
+  --cm-red-dark: #9d0b23;
+  --cm-yellow: #ffc72c;
+  --cm-white: #ffffff;
+  --cm-text: #10243e;
+  --cm-muted: #5f7186;
+  --cm-surface: #f3f7fc;
+  --cm-border: #dce7f3;
+  --cm-facebook: #0866ff;
+  --cm-whatsapp: #0b9650;
+  --cm-instagram-start: #7b36d4;
+  --cm-instagram-end: #ed3b6b;
+  --cm-tiktok: #171d2a;
+  --cm-glass: rgb(255 255 255 / 10%);
+  --cm-glass-border: rgb(255 255 255 / 24%);
+  --cm-glow: rgb(13 178 255 / 34%);
+  --cm-shadow-color: rgb(0 22 57 / 20%);
+  --cm-font: "Roboto", Arial, sans-serif;
+  --cm-font-heading: "Poppins", Arial, sans-serif;
+  --cm-max-width: 1580px;
+  --cm-radius: 16px;
+  --cm-radius-small: 10px;
+  --cm-pill: 999px;
+  --cm-shadow: 0 12px 32px var(--cm-shadow-color);
+  --cm-transition: 200ms ease;
+  --cm-header-background: linear-gradient(105deg, var(--cm-navy) 0%, var(--cm-blue-dark) 42%, var(--cm-blue) 75%, var(--cm-navy) 100%);
+
+    /* ===========================================
+    FONDO CORPORATIVO - CABECERA SUPERIOR
+    =========================================== */
+
+    /* Imagen de Machu Picchu y bandera peruana */
+    --cm-top-image:
+      url("/static/img/cabecera/cabecera-copiermundo.webp");
+
+    /* Posición de la imagen */
+    --cm-top-image-position: center center;
+
+    /* Oscurecimiento suave para destacar textos */
+    --cm-top-overlay:
+        linear-gradient(
+            90deg,
+            rgb(2 16 48 / 20%) 0%,
+            rgb(2 16 48 / 5%) 55%,
+            rgb(2 16 48 / 20%) 100%
+        );
+
+    --cm-hero-background: linear-gradient(109deg, #031a3e 0%, #0754a0 51%, #031b43 100%);
+    --cm-green-background: linear-gradient(135deg, var(--cm-green-light), var(--cm-green));
+    --cm-blue-background: linear-gradient(135deg, var(--cm-blue-light), var(--cm-blue));
+
+    /* Espacio vertical de la cinta azul */
+  --cm-top-padding-y: 9px;
+
+  /* Tamaño del nuevo logo rojo */
+  --cm-top-logo-size: 70px;
+
+  /* Tarjetas de contacto */
+  --cm-top-card-height: 62px;
+  --cm-top-card-radius: 12px;
+
+  /* Letras de las tarjetas */
+  --cm-top-card-label-size: 10px;
+  --cm-top-card-value-size: 14px;
+  --cm-top-card-detail-size: 9.5px;
+
+  /* Iconos principales */
+  --cm-top-card-icon-size: 25px;
+
+  /* Redes sociales */
+  --cm-top-social-size: 33px;
+
+  /* Separación entre tarjetas */
+  --cm-top-card-gap: 8px;
+
+
+  
+
+  /* Rojo corporativo para las flechas en hover */
+  --cm-slider-arrow-hover: var(--cm-red);
+
+
+  /* Borde amarillo oro */
+  --cm-slider-arrow-border:
+    rgb(245 200 76 / 65%);
+
+    /* =====================================================
+        COPIER MUNDO - COLORES DEL SLIDER PRINCIPAL
+
+        Paleta inspirada en el nuevo logo:
+        Azul marino + amarillo oro + rojo.
+    ===================================================== */
+
+    /* Amarillo oro para las letras y flechas */
+    --cm-slider-gold: #f5c84c;
+
+    /* Rojo cuando el mouse pasa sobre las flechas */
+    --cm-slider-red: var(--cm-red, #d60924);
+
+    /* Fondo azul transparente de las letras */
+    --cm-slider-panel: rgb(3 28 64 / 52%);
+
+    /* Fondo normal de los botones de navegación */
+    --cm-slider-arrow-bg: rgb(3 28 64 / 78%);
+
+
+    /* Identidad principal */
+    --cm-hero-gold: #F5C84C;
+    --cm-hero-gold-light: #FFDB79;
+
+    --cm-hero-red: var(--cm-red, #D60924);
+    --cm-hero-red-dark: var(--cm-red-dark, #A7071C);
+
+    --cm-hero-navy: var(--cm-blue-dark, #031C40);
+
+    /* Transparencias */
+    --cm-hero-gold-soft: rgb(245 200 76 / 15%);
+    --cm-hero-gold-border: rgb(245 200 76 / 55%);
+    --cm-hero-gold-glow: rgb(245 200 76 / 25%);
+
+    /* Colores de botones */
+    --cm-hero-btn-primary: var(--cm-hero-red);
+    --cm-hero-btn-primary-hover: var(--cm-hero-gold);
+
+    --cm-hero-btn-advice: var(--cm-hero-gold);
+    --cm-hero-btn-advice-hover: var(--cm-hero-red);
+}

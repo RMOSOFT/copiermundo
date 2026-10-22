@@ -1,0 +1,16 @@
+<!--{# Widget existente, movido fuera del carrusel. Mantener si lo utiliza tu JS actual. #}-->
+
+<div id="wsp-widget" class="wsp-widget hidden">
+  <div class="wsp-box">
+    <div class="wsp-header">
+      <img id="wsp-img" src="{{ url_for('static', path='img/icons/agent-general.png') }}" alt="Agente de soporte">
+      <span class="wsp-title" id="wsp-title">Soporte General</span>
+      <button type="button" id="wsp-close" class="wsp-close" aria-label="Cerrar chat">×</button>
+    </div>
+    <div class="wsp-message" id="wsp-message">Hola 👋 ¿En qué podemos ayudarte?</div>
+    <a id="wsp-btn" target="_blank" rel="noopener noreferrer" class="wsp-btn">Abrir chat <i class="fas fa-paper-plane" aria-hidden="true"></i></a>
+  </div>
+  <div id="wsp-bubble" class="wsp-bubble">
+    <img src="{{ url_for('static', path='img/icons/whatsapp-1.png') }}" alt="WhatsApp">
+  </div>
+</div>

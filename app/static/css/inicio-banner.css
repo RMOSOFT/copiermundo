@@ -1,0 +1,584 @@
+/* COPIER MUNDO | HERO PRINCIPAL */
+.cm-pro-hero {position:relative;isolation:isolate;overflow:hidden;min-height:380px;padding:43px 0;background:var(--cm-hero-background);color:var(--cm-white);font-family:var(--cm-font)}
+.cm-pro-hero::before {content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse 34% 65% at 46% 80%,rgb(4 211 255 / 36%),transparent 75%),radial-gradient(ellipse 29% 70% at 100% 15%,rgb(12 152 255 / 28%),transparent 80%),repeating-linear-gradient(115deg,transparent 0 165px,rgb(255 255 255 / 4%) 166px 168px)}
+.cm-pro-hero-circuit {position:absolute;z-index:-1;inset:0;width:100%;height:100%;color:var(--cm-cyan);pointer-events:none}
+.cm-pro-hero-grid {display:grid;grid-template-columns:minmax(200px,.72fr) minmax(280px,1.12fr) minmax(360px,1.18fr);align-items:center;gap:clamp(20px,2.5vw,48px)}
+.cm-pro-hero-brand {text-align:center;min-width:0}
+.cm-pro-hero-logo {display:flex;align-items:center;justify-content:center;min-height:78px;margin:0 auto 18px;max-width:225px;padding:9px 15px;border:1px solid var(--cm-glass-border);border-radius:15px;background:rgb(255 255 255 / 93%);box-shadow:0 10px 27px rgb(0 0 0 / 15%)}
+.cm-pro-hero-logo img {width:100%;height:56px;object-fit:contain}
+.cm-pro-hero-statement {margin:0 0 20px;color:var(--cm-white);font-size:clamp(11px,1vw,15px);font-weight:700;line-height:1.55;letter-spacing:1.2px;text-transform:uppercase}
+.cm-pro-benefits {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 9px}
+.cm-pro-benefits>div {display:grid;justify-items:center;gap:7px}
+.cm-pro-benefit-icon {display:grid;place-items:center;width:50px;height:50px;border:1px solid var(--cm-cyan);border-radius:13px;background:rgb(0 30 70 / 45%);box-shadow:inset 0 0 14px rgb(0 196 255 / 14%);font-size:26px}
+.cm-pro-benefits>div>span:last-child {font-size:9px;font-weight:800;line-height:1.45;text-align:center;text-transform:uppercase;letter-spacing:.2px}
+.cm-pro-hero-equipment {position:relative;min-width:0;text-align:center}
+.cm-pro-equipment-halo {position:absolute;z-index:-1;inset:12% -5% -12%;border-radius:50%;background:radial-gradient(ellipse,var(--cm-glow) 0%,transparent 72%);filter:blur(8px)}
+.cm-pro-equipment-frame {position:relative;padding:34px 10px 13px;border:1px solid var(--cm-glass-border);border-radius:25px;background:linear-gradient(160deg,rgb(255 255 255 / 96%),rgb(221 242 255 / 93%));box-shadow:0 20px 40px rgb(0 0 0 / 25%),0 0 35px rgb(0 194 255 / 25%)}
+.cm-pro-equipment-frame::after {content:"";position:absolute;left:10%;right:10%;bottom:-12px;height:20px;border:2px solid rgb(0 225 255 / 60%);border-radius:50%;box-shadow:0 0 18px rgb(0 214 255 / 90%);pointer-events:none}
+.cm-pro-equipment-frame img {display:block;width:100%;height:265px;object-fit:contain}
+.cm-pro-equipment-tag {position:absolute;left:50%;top:9px;transform:translateX(-50%);width:max-content;max-width:92%;padding:5px 13px;border-radius:var(--cm-pill);background:var(--cm-blue-dark);color:var(--cm-white);font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase}
+.cm-pro-equipment-caption {display:block;margin-top:19px;color:rgb(255 255 255 / 93%);font-size:11px;letter-spacing:.2px}
+.cm-pro-hero-content {min-width:0}
+.cm-pro-hero-eyebrow {display:inline-block;margin-bottom:9px;color:var(--cm-cyan);font-size:11px;letter-spacing:1.6px;font-weight:800;text-transform:uppercase}
+.cm-pro-hero h1 {margin:0 0 15px;color:var(--cm-white);font-family:var(--cm-font-heading);font-size:clamp(25px,2.55vw,40px);font-weight:800;line-height:1.12;letter-spacing:-.75px;text-transform:uppercase}
+.cm-pro-hero h1 span {display:block;margin-top:8px;font-size:.65em;line-height:1.27;letter-spacing:0}
+.cm-pro-hero-services {display:inline-flex;justify-content:center;align-items:center;gap:12px;margin:0 0 13px;padding:9px 14px;border:1px solid var(--cm-glass-border);border-radius:var(--cm-pill);background:var(--cm-blue-background);color:var(--cm-white);font-size:11px;font-weight:800;text-transform:uppercase}
+.cm-pro-hero-services span {color:var(--cm-cyan)}
+.cm-pro-hero-description {max-width:470px;margin:0 0 20px;font-size:14px;line-height:1.6;color:rgb(255 255 255 / 93%)}
+.cm-pro-hero-actions {display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.cm-pro-hero .cm-pro-button {display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:43px;padding:10px 16px;border:1px solid transparent;border-radius:9px;font-size:12px;font-weight:800;text-decoration:none;transition:transform var(--cm-transition),background var(--cm-transition);color:var(--cm-white)}
+.cm-pro-hero .cm-pro-button-primary {background:var(--cm-green)}
+.cm-pro-hero .cm-pro-button-outline {background:rgb(255 255 255 / 10%);border-color:var(--cm-glass-border)}
+.cm-pro-hero .cm-pro-button:hover {transform:translateY(-3px)}
+.cm-pro-hero .cm-pro-button-primary:hover {background:var(--cm-green-light)}
+.cm-pro-hero .cm-pro-button:focus-visible {outline:3px solid var(--cm-cyan);outline-offset:3px}
+.cm-pro-hero-services-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.cm-pro-hero-services-grid>div {display:grid;justify-items:center;align-content:start;gap:7px;text-align:center;border-top:1px solid var(--cm-glass-border);padding-top:14px}
+.cm-pro-hero-services-grid .cm-icon {width:30px;height:30px;color:var(--cm-cyan)}
+.cm-pro-hero-services-grid span {font-size:9px;line-height:1.4;font-weight:800;text-transform:uppercase}
+@media(max-width:1180px) {
+  .cm-pro-hero-grid {grid-template-columns:minmax(200px,.8fr) minmax(0,1.2fr)}
+  .cm-pro-hero-brand {grid-column:1/-1;display:flex;align-items:center;justify-content:space-around;gap:20px}
+  .cm-pro-hero-logo {margin:0;flex:0 0 205px}
+  .cm-pro-hero-statement {margin:0}
+  .cm-pro-benefits {grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+  .cm-pro-benefit-icon {width:45px;height:45px}
+}
+@media(max-width:760px) {
+  .cm-pro-hero {padding:32px 0}
+  .cm-pro-hero-grid {grid-template-columns:minmax(0,1fr);gap:27px}
+  .cm-pro-hero-brand {grid-column:auto;flex-wrap:wrap;justify-content:center}
+  .cm-pro-hero-statement {width:100%;order:2}
+  .cm-pro-benefits {order:3;width:100%;max-width:400px}
+  .cm-pro-hero-content {grid-row:2;text-align:center}
+  .cm-pro-hero h1 {font-size:clamp(25px,7vw,34px)}
+  .cm-pro-hero-description {margin-inline:auto}
+  .cm-pro-hero-actions {justify-content:center}
+  .cm-pro-hero-services-grid {gap:6px}
+  .cm-pro-hero-services-grid span {font-size:8px}
+  .cm-pro-hero-equipment {grid-row:3;max-width:570px;width:100%;margin-inline:auto}
+  .cm-pro-equipment-frame img {height:245px}
+}
+@media(max-width:420px) {
+  .cm-pro-hero-services {font-size:9px;gap:6px}
+  .cm-pro-hero-services-grid .cm-icon {width:26px;height:26px}
+  .cm-pro-equipment-frame img {height:205px}
+}
+@media(prefers-reduced-motion:reduce) {
+  .cm-pro-hero * {transition:none!important;animation:none!important}
+}
+
+
+/* ==========================================================
+   COPIER MUNDO - HERO CORPORATIVO V2
+
+   COLORES BASADOS EN EL LOGO:
+   - Azul marino
+   - Amarillo oro
+   - Rojo corporativo
+
+   Solo cambios visuales.
+   No modifica tamaños, columnas ni posiciones.
+========================================================== */
+
+
+/* ==========================================================
+   1. FONDO TECNOLÓGICO
+========================================================== */
+
+.cm-pro-hero::before {
+
+  background:
+
+    /* Iluminación dorada */
+    radial-gradient(
+      ellipse 34% 65% at 46% 80%,
+      var(--cm-hero-gold-glow),
+      transparent 75%
+    ),
+
+    /* Iluminación roja discreta */
+    radial-gradient(
+      ellipse 29% 70% at 100% 15%,
+      rgb(214 9 36 / 12%),
+      transparent 80%
+    ),
+
+    /* Líneas tecnológicas */
+    repeating-linear-gradient(
+      115deg,
+      transparent 0 165px,
+      rgb(245 200 76 / 4%) 166px 168px
+    );
+
+}
+
+
+/* Circuitos SVG del fondo */
+
+.cm-pro-hero .cm-pro-hero-circuit {
+
+  color: var(--cm-hero-gold);
+
+}
+
+
+/* ==========================================================
+   2. BLOQUE IZQUIERDO: KONICA MINOLTA
+========================================================== */
+
+/* Mantener logo Konica Minolta original */
+
+.cm-pro-hero .cm-pro-hero-logo {
+
+  border-color: var(--cm-hero-gold-border);
+
+  box-shadow:
+    0 10px 27px rgb(0 0 0 / 15%),
+    0 0 16px rgb(245 200 76 / 12%);
+
+}
+
+
+/* Texto debajo del logo */
+
+.cm-pro-hero .cm-pro-hero-statement {
+
+  color: var(--cm-white);
+
+  text-shadow:
+    0 2px 5px rgb(0 0 0 / 28%);
+
+}
+
+
+/* ==========================================================
+   3. CUATRO ICONOS SVG DE BENEFICIOS
+========================================================== */
+
+.cm-pro-hero .cm-pro-benefit-icon {
+
+  /* SVG amarillo oro */
+  color: var(--cm-hero-gold);
+
+  border-color: var(--cm-hero-gold-border);
+
+  background: rgb(3 28 64 / 65%);
+
+  box-shadow:
+    inset 0 0 14px rgb(245 200 76 / 10%),
+    0 0 10px rgb(245 200 76 / 8%);
+
+  transition:
+    color 200ms ease,
+    background 200ms ease,
+    border-color 200ms ease;
+
+}
+
+
+/* Asegurar color heredado por los SVG */
+
+.cm-pro-hero .cm-pro-benefit-icon .cm-icon {
+
+  color: inherit;
+
+}
+
+
+/* Efecto cuando el mouse pasa por un beneficio */
+
+.cm-pro-hero
+.cm-pro-benefits > div:hover
+.cm-pro-benefit-icon {
+
+  color: var(--cm-hero-navy);
+
+  background: var(--cm-hero-gold);
+
+  border-color: var(--cm-hero-gold);
+
+}
+
+
+/* Texto de los beneficios */
+
+.cm-pro-hero
+.cm-pro-benefits > div > span:last-child {
+
+  color: var(--cm-white);
+
+}
+
+
+/* ==========================================================
+   4. IMAGEN CENTRAL DE FOTOCOPIADORA
+========================================================== */
+
+/* Marco del equipo */
+
+.cm-pro-hero .cm-pro-equipment-frame {
+
+  border-color: var(--cm-hero-gold-border);
+
+  box-shadow:
+    0 20px 40px rgb(0 0 0 / 25%),
+    0 0 24px rgb(245 200 76 / 15%);
+
+}
+
+
+/* Aro luminoso debajo de la imagen */
+
+.cm-pro-hero
+.cm-pro-equipment-frame::after {
+
+  border-color: var(--cm-hero-gold);
+
+  box-shadow:
+    0 0 18px var(--cm-hero-gold-glow);
+
+}
+
+
+/* Iluminación alrededor del equipo */
+
+.cm-pro-hero .cm-pro-equipment-halo {
+
+  background: radial-gradient(
+    ellipse,
+    var(--cm-hero-gold-glow) 0%,
+    transparent 72%
+  );
+
+}
+
+
+/* Etiqueta superior de la imagen */
+
+.cm-pro-hero .cm-pro-equipment-tag {
+
+  color: var(--cm-hero-gold);
+
+  background: var(--cm-hero-navy);
+
+  border: 1px solid var(--cm-hero-gold-border);
+
+}
+
+
+/* Descripción debajo de la foto */
+
+.cm-pro-hero .cm-pro-equipment-caption {
+
+  color: var(--cm-white);
+
+}
+
+
+/* ==========================================================
+   5. TÍTULOS DEL BLOQUE DERECHO
+========================================================== */
+
+/* COPIER MUNDO - CUSCO, PERÚ */
+
+.cm-pro-hero .cm-pro-hero-eyebrow {
+
+  color: var(--cm-hero-gold);
+
+}
+
+
+/* Título principal */
+
+.cm-pro-hero h1 {
+
+  color: var(--cm-white);
+
+  text-shadow:
+    0 2px 5px rgb(0 0 0 / 25%);
+
+}
+
+
+/* Segunda línea: PARA EMPRESAS E INSTITUCIONES */
+
+.cm-pro-hero h1 span {
+
+  color: var(--cm-hero-gold);
+
+  text-shadow:
+    0 2px 5px rgb(0 0 0 / 28%);
+
+}
+
+
+/* ==========================================================
+   6. ETIQUETA DE SERVICIOS
+   VENTA - ALQUILER - SERVICIO TÉCNICO
+========================================================== */
+
+.cm-pro-hero .cm-pro-hero-services {
+
+  color: var(--cm-white);
+
+  background: var(--cm-hero-gold-soft);
+
+  border-color: var(--cm-hero-gold-border);
+
+}
+
+
+/* Puntos separadores */
+
+.cm-pro-hero .cm-pro-hero-services span {
+
+  color: var(--cm-hero-gold);
+
+}
+
+
+/* Descripción comercial */
+
+.cm-pro-hero .cm-pro-hero-description {
+
+  color: rgb(255 255 255 / 96%);
+
+}
+
+
+/* ==========================================================
+   7. BOTÓN VER EQUIPOS
+
+   NORMAL: ROJO CORPORATIVO
+   HOVER: AMARILLO ORO
+========================================================== */
+
+.cm-pro-hero .cm-pro-button-primary {
+
+  color: var(--cm-white);
+
+  background: var(--cm-hero-btn-primary);
+
+  border: 1px solid var(--cm-hero-red);
+
+  box-shadow:
+    0 4px 13px rgb(0 0 0 / 16%);
+
+}
+
+
+/* Mouse sobre Ver equipos */
+
+.cm-pro-hero
+.cm-pro-button-primary:hover {
+
+  color: var(--cm-hero-navy);
+
+  background: var(--cm-hero-btn-primary-hover);
+
+  border-color: var(--cm-hero-gold);
+
+}
+
+
+/* ==========================================================
+   8. BOTÓN SOLICITAR ASESORÍA
+
+   NORMAL: AMARILLO ORO
+   HOVER: ROJO CORPORATIVO
+
+   Antes era azul transparente.
+========================================================== */
+
+.cm-pro-hero .cm-pro-button-outline {
+
+  /* Fondo visible permanentemente */
+  background: var(--cm-hero-btn-advice);
+
+  /* Texto azul marino para contraste */
+  color: var(--cm-hero-navy);
+
+  border: 1px solid var(--cm-hero-gold);
+
+  box-shadow:
+    0 4px 13px rgb(0 0 0 / 18%);
+
+  transition:
+    background 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease,
+    transform 220ms ease;
+
+}
+
+
+/* Icono de WhatsApp dentro del botón */
+
+.cm-pro-hero
+.cm-pro-button-outline .fa-whatsapp {
+
+  color: inherit;
+
+}
+
+
+/* Mouse sobre Solicitar asesoría */
+
+.cm-pro-hero
+.cm-pro-button-outline:hover {
+
+  background: var(--cm-hero-btn-advice-hover);
+
+  color: var(--cm-white);
+
+  border-color: var(--cm-hero-red-dark);
+
+  transform: translateY(-3px);
+
+}
+
+
+/* Enlaces con teclado */
+
+.cm-pro-hero .cm-pro-button:focus-visible {
+
+  outline: 3px solid var(--cm-hero-gold-light);
+
+  outline-offset: 3px;
+
+}
+
+
+/* Los SVG dentro de botones toman el color del texto */
+
+.cm-pro-hero .cm-pro-button .cm-icon {
+
+  color: inherit;
+
+}
+
+
+/* ==========================================================
+   9. CUATRO ICONOS SVG INFERIORES
+
+   - Asesoría
+   - Envíos
+   - Mantenimiento
+   - Soluciones
+========================================================== */
+
+.cm-pro-hero
+.cm-pro-hero-services-grid > div {
+
+  border-top-color: var(--cm-hero-gold-border);
+
+}
+
+
+/* Iconos amarillos */
+
+.cm-pro-hero
+.cm-pro-hero-services-grid .cm-icon {
+
+  color: var(--cm-hero-gold);
+
+  filter: drop-shadow(
+    0 0 4px rgb(245 200 76 / 15%)
+  );
+
+  transition:
+    color 200ms ease,
+    filter 200ms ease;
+
+}
+
+
+/* Hover sobre servicio */
+
+.cm-pro-hero
+.cm-pro-hero-services-grid > div:hover .cm-icon {
+
+  color: var(--cm-hero-gold-light);
+
+  filter: drop-shadow(
+    0 0 7px var(--cm-hero-gold-glow)
+  );
+
+}
+
+
+/* Nombres debajo de los iconos */
+
+.cm-pro-hero
+.cm-pro-hero-services-grid span {
+
+  color: var(--cm-white);
+
+}
+
+
+/* ==========================================================
+   10. MOVIMIENTO REDUCIDO
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .cm-pro-hero .cm-pro-button,
+  .cm-pro-hero .cm-pro-benefit-icon,
+  .cm-pro-hero .cm-pro-hero-services-grid .cm-icon {
+
+    transition: none;
+
+  }
+
+}
+
+
+/* =====================================================
+   COPIER MUNDO - IMAGEN CENTRAL DEL HERO
+
+   - Amplía la fotografía dentro del marco
+   - Redondea las esquinas
+   - Conserva la etiqueta azul
+   - No modifica las columnas ni botones
+===================================================== */
+
+.cm-pro-hero .cm-pro-equipment-frame {
+  padding: 34px 6px 6px;
+
+  /* Conserva el efecto luminoso inferior */
+  overflow: visible;
+}
+
+.cm-pro-hero .cm-pro-equipment-frame > img {
+  display: block;
+
+  width: 100%;
+  height: 285px;
+
+  /* Esquinas suaves y profesionales */
+  border-radius: 16px 16px 19px 19px;
+
+  /* La imagen llena el espacio disponible */
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* La etiqueta permanece encima de la imagen */
+.cm-pro-hero .cm-pro-equipment-tag {
+  z-index: 2;
+}
+
+/* Tablet y celular */
+@media (max-width: 760px) {
+  .cm-pro-hero .cm-pro-equipment-frame > img {
+    height: 245px;
+  }
+}
+
+@media (max-width: 420px) {
+  .cm-pro-hero .cm-pro-equipment-frame > img {
+    height: 205px;
+  }
+}

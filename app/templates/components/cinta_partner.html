@@ -1,0 +1,171 @@
+<!--
+{# app/templates/components/cinta_partner.html #}
+-->
+
+<section
+  class="cm-partner-strip cinta-konica"
+  aria-labelledby="cm-partner-title"
+>
+
+  <div class="cm-partner-shell">
+
+    <!-- =====================================
+         1. IMAGEN IZQUIERDA
+         Ambiente de oficina
+    ====================================== -->
+    <figure class="cm-partner-visual cm-partner-visual-left">
+
+      <img
+        class="cm-partner-photo"
+        src="https://storage.googleapis.com/a1aa/image/bccd6e1d-1a78-423d-a3b1-74a0cbdf4ae8.jpg"
+        alt="Ambiente de oficina y soluciones empresariales"
+        loading="lazy"
+        decoding="async"
+      >
+
+      <!-- Imagen de marca que ya utilizabas -->
+      <img
+        class="cm-partner-corner-image"
+        src="{{ url_for('static', path='img/img-cinta.jpg') }}"
+        alt="Imagen corporativa de Copier Mundo"
+        loading="lazy"
+      >
+
+      <figcaption class="cm-partner-photo-label">
+        Tecnología empresarial
+      </figcaption>
+
+    </figure>
+
+
+    <!-- =====================================
+         2. CONTENIDO CORPORATIVO CENTRAL
+    ====================================== -->
+    <div class="cm-partner-center">
+
+      <span class="cm-partner-eyebrow">
+        SOLUCIONES DE IMPRESIÓN · CUSCO, PERÚ
+      </span>
+
+      <h2 id="cm-partner-title" class="cm-partner-title">
+        COPIER <span>MUNDO</span>
+      </h2>
+
+      <div class="cm-partner-identity">
+
+        <span class="cm-partner-identity-text">
+          Partner de Konica Minolta
+        </span>
+
+        <!-- Logo original que utilizas en tu header -->
+        <span class="cm-partner-logo-box">
+          <img
+            src="{{ url_for('static', path='img/Konica_Minoltaicono.png') }}"
+            alt="Konica Minolta"
+            width="172"
+            height="52"
+            loading="lazy"
+          >
+        </span>
+
+      </div>
+
+      <p class="cm-partner-description">
+        Equipos de impresión, consumibles y soluciones
+        para acompañar las necesidades de tu empresa.
+      </p>
+
+      <!-- SERVICIOS -->
+      <div class="cm-partner-services">
+
+        <span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16v11H4zM8 4h8v3M8 13h8"/>
+          </svg>
+          Venta
+        </span>
+
+        <span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="5" y="3" width="14" height="18" rx="2"/>
+            <path d="M9 8h6M9 12h6M9 16h4"/>
+          </svg>
+          Alquiler
+        </span>
+
+        <span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M14 5a5 5 0 0 0-6 6L3 16l5 5 5-5a5 5 0 0 0 6-6l-4 2-3-3z"/>
+          </svg>
+          Servicio técnico
+        </span>
+
+      </div>
+
+
+      <!-- BOTONES COMERCIALES -->
+      <div class="cm-partner-actions">
+
+        <a
+          href="/productos/fotocopiadoras"
+          class="cm-partner-button"
+        >
+          Explorar equipos
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6"/>
+          </svg>
+        </a>
+
+        <a
+          href="https://wa.me/51940414440?text=Hola%2C%20deseo%20una%20cotizaci%C3%B3n%20de%20Copier%20Mundo."
+          class="cm-partner-button cm-partner-button-outline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Solicitar cotización
+        </a>
+
+      </div>
+
+      <!-- COMPATIBILIDAD: CONSERVAMOS LOS MODELOS -->
+      <p class="cm-partner-compatibility">
+        Consulta compatibilidad:
+        Aficio 1050 · 1075 · MP 2051 · MP 2060 ·
+        MP 2075 · MP 5500 · MP 6500 · MP 7500 ·
+        MP 7503 · MP 9003
+      </p>
+
+    </div>
+
+
+    <!-- =====================================
+         3. IMAGEN DERECHA
+         Fotocopiadoras y soporte
+    ====================================== -->
+    <figure class="cm-partner-visual cm-partner-visual-right">
+
+      <img
+        class="cm-partner-photo"
+        src="https://storage.googleapis.com/a1aa/image/a8c06022-9d4b-4237-471e-80a5184ade28.jpg"
+        alt="Fotocopiadora y soluciones de impresión"
+        loading="lazy"
+        decoding="async"
+      >
+
+      <!-- Conservamos el sello técnico original -->
+      <img
+        class="cm-partner-support-seal"
+        src="https://storage.googleapis.com/a1aa/image/b0f4639c-0597-4ac9-1fe4-7c89e9f82ae8.jpg"
+        alt="Imagen representativa de soporte técnico"
+        loading="lazy"
+      >
+
+      <figcaption class="cm-partner-photo-label">
+        Equipos y soporte
+      </figcaption>
+
+    </figure>
+
+  </div>
+
+</section>

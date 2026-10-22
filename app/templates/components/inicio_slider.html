@@ -1,0 +1,215 @@
+<!--
+{# app/templates/components/inicio_slider.html #}
+-->
+
+<section
+  class="cm-home-slider"
+  aria-label="Soluciones destacadas de Copier Mundo"
+>
+  <div
+    id="carouselKonica"
+    class="carousel slide cm-home-carousel"
+    data-bs-ride="carousel"
+    data-bs-interval="6500"
+    data-bs-pause="hover"
+    data-bs-touch="true"
+  >
+
+    <!-- INDICADORES DEL CARRUSEL -->
+    <div class="carousel-indicators cm-slide-indicators">
+      <button
+        type="button"
+        data-bs-target="#carouselKonica"
+        data-bs-slide-to="0"
+        aria-label="Ver soporte técnico"
+      ></button>
+
+      <button
+        type="button"
+        data-bs-target="#carouselKonica"
+        data-bs-slide-to="1"
+        aria-label="Ver soluciones empresariales"
+      ></button>
+
+      <button
+        type="button"
+        data-bs-target="#carouselKonica"
+        data-bs-slide-to="2"
+        class="active"
+        aria-current="true"
+        aria-label="Ver fotocopiadoras multifuncionales"
+      ></button>
+    </div>
+
+
+    <div class="carousel-inner">
+
+      <!-- =======================================
+           SLIDE 1 - SOPORTE TÉCNICO
+           Conserva ImgCabeceraicon2.png
+      ======================================== -->
+      <div class="carousel-item">
+
+        <img
+          src="{{ url_for('static', path='img/ImgCabeceraicon2.png') }}"
+          class="d-block w-100 cm-slide-image"
+          alt="Soluciones tecnológicas y soporte para empresas"
+          decoding="async"
+        >
+
+        <div class="cm-slide-shade"></div>
+
+        <div class="cm-slide-panel">
+
+          <span class="cm-slide-eyebrow">
+            <span class="cm-slide-dot"></span>
+            COPIER MUNDO · SOPORTE TÉCNICO
+          </span>
+
+          <h2 class="cm-slide-title">
+            Tu empresa avanza.
+            <span>Nosotros te acompañamos.</span>
+          </h2>
+
+          <p class="cm-slide-description">
+            Asesoría, mantenimiento y soluciones de impresión
+            para mantener tus equipos en funcionamiento.
+          </p>
+
+          <a href="/contacto" class="cm-slide-button">
+            Solicitar soporte
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14m-6-6 6 6-6 6"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+
+      <!-- =======================================
+           SLIDE 2 - TECNOLOGÍA EMPRESARIAL
+           Conserva ImgCabeceraicon3.png
+      ======================================== -->
+      <div class="carousel-item">
+
+        <img
+          src="{{ url_for('static', path='img/ImgCabeceraicon3.png') }}"
+          class="d-block w-100 cm-slide-image"
+          alt="Innovación y soluciones de impresión para empresas"
+          decoding="async"
+        >
+
+        <div class="cm-slide-shade"></div>
+
+        <div class="cm-slide-panel">
+
+          <span class="cm-slide-eyebrow">
+            <span class="cm-slide-dot"></span>
+            INNOVACIÓN PARA TU NEGOCIO
+          </span>
+
+          <h2 class="cm-slide-title">
+            Tecnología que transforma
+            <span>tu manera de trabajar.</span>
+          </h2>
+
+          <p class="cm-slide-description">
+            Copier Mundo y Konica Minolta:
+            soluciones que combinan productividad,
+            calidad y atención personalizada.
+          </p>
+
+          <a href="/nosotros" class="cm-slide-button">
+            Conoce Copier Mundo
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14m-6-6 6 6-6 6"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+
+        <!-- =======================================
+           SLIDE 3 - FOTOCOPIADORAS
+           Conserva Cinta-impresora-multifuncionales.jpg
+           Es el primer slide visible.
+        ======================================== -->
+      <div class="carousel-item active">
+
+        <img
+          src="{{ url_for('static', path='img/consumibles/cintadiseños/Cinta-impresora-multifuncionales.jpg') }}"
+          class="d-block w-100 cm-slide-image"
+          alt="Fotocopiadoras multifuncionales de Copier Mundo"
+          fetchpriority="high"
+        >
+
+        <div class="cm-slide-shade"></div>
+
+        <div class="cm-slide-panel">
+
+          <span class="cm-slide-eyebrow">
+            <span class="cm-slide-dot"></span>
+            EQUIPOS PARA EMPRESAS E INSTITUCIONES
+          </span>
+
+          <h2 class="cm-slide-title">
+            Soluciones de impresión
+            <span>a la medida de tu empresa.</span>
+          </h2>
+
+          <p class="cm-slide-description">
+            Venta, alquiler y asesoría especializada
+            en fotocopiadoras multifuncionales
+            y equipos de impresión.
+          </p>
+
+          <a
+            href="/productos/fotocopiadoras"
+            class="cm-slide-button"
+          >
+            Explorar equipos
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12h14m-6-6 6 6-6 6"/>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- FLECHA IZQUIERDA -->
+    <button
+      class="carousel-control-prev cm-slide-arrow"
+      type="button"
+      data-bs-target="#carouselKonica"
+      data-bs-slide="prev"
+      aria-label="Imagen anterior"
+    >
+      <span
+        class="carousel-control-prev-icon"
+        aria-hidden="true"
+      ></span>
+    </button>
+
+
+    <!-- FLECHA DERECHA -->
+    <button
+      class="carousel-control-next cm-slide-arrow"
+      type="button"
+      data-bs-target="#carouselKonica"
+      data-bs-slide="next"
+      aria-label="Imagen siguiente"
+    >
+      <span
+        class="carousel-control-next-icon"
+        aria-hidden="true"
+      ></span>
+    </button>
+
+  </div>
+</section>
+

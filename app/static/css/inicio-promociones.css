@@ -1,0 +1,1512 @@
+
+/* ==========================================================
+   COPIER MUNDO - INICIO PROMOCIONAL 2026
+
+   Secciones:
+   1. Slider principal de imágenes
+   2. Cinta corporativa Copier Mundo / Konica Minolta
+   3. Adaptación responsive
+
+   Colores obtenidos desde variables.css.
+   No modifica el slider de tarjetas de productos.
+========================================================== */
+
+
+/* ==========================================================
+   1. SLIDER PRINCIPAL
+========================================================== */
+
+.cm-home-slider,
+.cm-home-slider *,
+.cm-partner-strip,
+.cm-partner-strip * {
+  box-sizing: border-box;
+}
+
+.cm-home-slider {
+  width: 100%;
+  padding: 14px 16px 0;
+  background: var(--cm-surface);
+}
+
+.cm-home-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1351px;
+  margin-inline: auto;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--cm-blue-dark);
+  box-shadow: var(--cm-shadow);
+}
+
+.cm-home-carousel .carousel-item {
+  position: relative;
+  height: 410px;
+  overflow: hidden;
+}
+
+/* Imágenes existentes sin deformaciones */
+.cm-home-carousel .cm-slide-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Oscurecimiento suave en la parte inferior */
+.cm-home-carousel .cm-slide-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    0deg,
+    rgb(2 13 36 / 53%) 0%,
+    transparent 70%
+  );
+}
+
+
+/* ==========================================================
+   2. PANEL PROFESIONAL DE TEXTO
+========================================================== */
+
+.cm-home-carousel .cm-slide-panel {
+  position: absolute;
+  z-index: 2;
+  left: clamp(22px, 7vw, 90px);
+  bottom: 40px;
+
+  width: min(630px, calc(100% - 175px));
+  padding: 24px 28px;
+
+  border: 1px solid rgb(255 255 255 / 22%);
+  border-left: 4px solid var(--cm-cyan);
+  border-radius: 15px;
+
+  color: var(--cm-white);
+
+  background: linear-gradient(
+    125deg,
+    rgb(3 28 64 / 94%),
+    rgb(3 28 64 / 77%)
+  );
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow: 0 12px 32px rgb(0 0 0 / 25%);
+}
+
+/* Etiqueta corporativa superior */
+.cm-home-carousel .cm-slide-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 11px;
+  color: var(--cm-cyan);
+
+  font-family: var(--cm-font);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.35px;
+  text-transform: uppercase;
+}
+
+/* Pequeño punto decorativo */
+.cm-slide-dot {
+  display: inline-block;
+  flex: 0 0 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--cm-green-light);
+}
+
+/* Título principal */
+.cm-home-carousel .cm-slide-title {
+  margin: 0 0 12px;
+
+  color: var(--cm-white);
+
+  font-family: var(--cm-font-heading);
+  font-size: clamp(23px, 2.65vw, 36px);
+  font-weight: 800;
+  line-height: 1.2;
+
+  letter-spacing: -0.7px;
+  text-transform: none;
+}
+
+/* Segunda línea destacada */
+.cm-home-carousel .cm-slide-title span {
+  display: block;
+  color: var(--cm-cyan);
+}
+
+/* Texto secundario */
+.cm-home-carousel .cm-slide-description {
+  max-width: 550px;
+  margin: 0 0 16px;
+
+  color: rgb(255 255 255 / 93%);
+  font-family: var(--cm-font);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Botón */
+.cm-home-carousel .cm-slide-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+
+  min-height: 42px;
+  padding: 10px 17px;
+
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 8px;
+
+  color: var(--cm-white);
+  background: var(--cm-green);
+
+  font-family: var(--cm-font);
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+
+  transition:
+    background var(--cm-transition),
+    transform var(--cm-transition);
+}
+
+.cm-home-carousel .cm-slide-button svg {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cm-home-carousel .cm-slide-button:hover {
+  background: var(--cm-green-light);
+  color: var(--cm-white);
+  transform: translateY(-2px);
+}
+
+.cm-home-carousel .cm-slide-button:focus-visible {
+  outline: 3px solid var(--cm-cyan);
+  outline-offset: 3px;
+}
+
+
+/* ==========================================================
+   3. FLECHAS E INDICADORES
+========================================================== */
+
+.cm-home-carousel .cm-slide-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 43px;
+  height: 43px;
+
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 50%;
+
+  background: rgb(3 28 64 / 80%);
+  opacity: 0.92;
+
+  transform: translateY(-50%);
+  transition: background 180ms ease;
+}
+
+.cm-home-carousel .carousel-control-prev {
+  left: 12px;
+}
+
+.cm-home-carousel .carousel-control-next {
+  right: 12px;
+}
+
+.cm-home-carousel .cm-slide-arrow:hover {
+  background: var(--cm-blue);
+  opacity: 1;
+}
+
+.cm-home-carousel .carousel-control-prev-icon,
+.cm-home-carousel .carousel-control-next-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Indicadores inferiores */
+.cm-home-carousel .cm-slide-indicators {
+  z-index: 5;
+  margin-bottom: 9px;
+  gap: 6px;
+}
+
+.cm-home-carousel .cm-slide-indicators button {
+  box-sizing: border-box;
+  width: 24px;
+  height: 5px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background-color: var(--cm-white);
+  opacity: 0.55;
+}
+
+.cm-home-carousel .cm-slide-indicators button.active {
+  width: 39px;
+  background-color: var(--cm-cyan);
+  opacity: 1;
+}
+
+
+/* ==========================================================
+   4. CINTA COPIER MUNDO / KONICA MINOLTA
+========================================================== */
+
+/*
+   Conservamos .cinta-konica para el JS
+   existente del efecto de luz con el mouse.
+*/
+
+.cm-partner-strip.cinta-konica {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+
+  padding: 24px 16px 30px;
+
+  border: 0;
+  background: var(--cm-surface);
+  overflow: hidden;
+}
+
+/* Desactivar el fondo animado antiguo */
+.cm-partner-strip.cinta-konica::before,
+.cm-partner-strip.cinta-konica::after {
+  content: none;
+  display: none;
+}
+
+/* Estructura general */
+.cm-partner-strip .cm-partner-shell {
+  position: relative;
+  z-index: 5;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 245px)
+    minmax(0, 1fr)
+    minmax(0, 245px);
+
+  align-items: stretch;
+  gap: 14px;
+
+  width: 100%;
+  max-width: 1351px;
+  margin: 0 auto;
+  padding: 14px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--cm-border);
+  border-radius: 20px;
+
+  background:
+    radial-gradient(
+      ellipse at 48% 0%,
+      rgb(0 200 255 / 14%),
+      transparent 60%
+    ),
+    var(--cm-header-background);
+
+  box-shadow: var(--cm-shadow);
+}
+
+
+/* ==========================================================
+   5. FOTOGRAFÍAS LATERALES
+========================================================== */
+
+.cm-partner-strip .cm-partner-visual {
+  position: relative;
+  min-width: 0;
+  min-height: 304px;
+  margin: 0;
+  overflow: hidden;
+
+  border: 1px solid rgb(255 255 255 / 20%);
+  border-radius: 13px;
+
+  background: var(--cm-blue-dark);
+}
+
+.cm-partner-strip .cm-partner-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 304px;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 350ms ease;
+}
+
+.cm-partner-strip .cm-partner-visual:hover .cm-partner-photo {
+  transform: scale(1.035);
+}
+
+/* Degradado al pie de las fotografías */
+.cm-partner-strip .cm-partner-visual::after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    transparent,
+    rgb(2 18 45 / 83%)
+  );
+}
+
+/* Etiqueta sobre las fotografías */
+.cm-partner-strip .cm-partner-photo-label {
+  position: absolute;
+  left: 14px;
+  right: 10px;
+  bottom: 15px;
+  z-index: 2;
+
+  color: var(--cm-white);
+
+  font-family: var(--cm-font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+
+  text-shadow: 0 2px 5px rgb(0 0 0 / 45%);
+}
+
+/* Imagen complementaria de la izquierda */
+.cm-partner-strip .cm-partner-corner-image {
+  position: absolute;
+  z-index: 3;
+  top: 14px;
+  left: 14px;
+
+  width: 68px;
+  height: 68px;
+  padding: 4px;
+
+  object-fit: contain;
+
+  border: 1px solid rgb(255 255 255 / 70%);
+  border-radius: 12px;
+  background: var(--cm-white);
+  box-shadow: 0 5px 14px rgb(0 0 0 / 24%);
+}
+
+/* Sello de soporte técnico */
+.cm-partner-strip .cm-partner-support-seal {
+  position: absolute;
+  z-index: 3;
+  top: 14px;
+  right: 14px;
+
+  width: 70px;
+  height: 70px;
+
+  object-fit: cover;
+
+  border: 3px solid var(--cm-white);
+  border-radius: 50%;
+
+  box-shadow: 0 5px 14px rgb(0 0 0 / 26%);
+}
+
+
+/* ==========================================================
+   6. CONTENIDO CENTRAL
+========================================================== */
+
+.cm-partner-strip .cm-partner-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  padding: 14px 8px;
+
+  text-align: center;
+  color: var(--cm-white);
+}
+
+/* Etiqueta pequeña */
+.cm-partner-strip .cm-partner-eyebrow {
+  margin-bottom: 8px;
+
+  color: var(--cm-cyan);
+
+  font-family: var(--cm-font);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+/* Título principal */
+.cm-partner-strip .cm-partner-title {
+  margin: 0 0 12px;
+
+  color: var(--cm-white);
+
+  font-family: var(--cm-font-heading);
+  font-size: clamp(28px, 3vw, 43px);
+  font-weight: 800;
+
+  line-height: 1.12;
+  letter-spacing: -0.6px;
+}
+
+.cm-partner-strip .cm-partner-title span {
+  color: var(--cm-cyan);
+}
+
+/* Nombre de alianza comercial */
+.cm-partner-strip .cm-partner-identity {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 12px;
+}
+
+.cm-partner-strip .cm-partner-identity-text {
+  color: var(--cm-white);
+  font-family: var(--cm-font-heading);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Logo Konica Minolta */
+.cm-partner-strip .cm-partner-logo-box {
+  display: grid;
+  place-items: center;
+
+  padding: 7px 12px;
+  border-radius: 9px;
+  background: var(--cm-white);
+
+  box-shadow: 0 3px 10px rgb(0 0 0 / 18%);
+}
+
+.cm-partner-strip .cm-partner-logo-box img {
+  display: block;
+  width: 150px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Descripción */
+.cm-partner-strip .cm-partner-description {
+  max-width: 490px;
+  margin: 0 0 13px;
+
+  color: rgb(255 255 255 / 90%);
+
+  font-family: var(--cm-font);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+
+/* ==========================================================
+   7. SERVICIOS DE LA EMPRESA
+========================================================== */
+
+.cm-partner-strip .cm-partner-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.cm-partner-strip .cm-partner-services span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  padding: 7px 10px;
+
+  border: 1px solid rgb(255 255 255 / 22%);
+  border-radius: 8px;
+
+  background: rgb(255 255 255 / 10%);
+  color: var(--cm-white);
+
+  font-family: var(--cm-font);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.cm-partner-strip .cm-partner-services svg {
+  width: 16px;
+  height: 16px;
+
+  fill: none;
+  stroke: var(--cm-cyan);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* ==========================================================
+   8. BOTONES COMERCIALES
+========================================================== */
+
+.cm-partner-strip .cm-partner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 9px;
+
+  margin-bottom: 12px;
+}
+
+.cm-partner-strip .cm-partner-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  min-height: 41px;
+  padding: 10px 15px;
+
+  border: 1px solid transparent;
+  border-radius: 8px;
+
+  color: var(--cm-white);
+  background: var(--cm-green);
+
+  font-family: var(--cm-font);
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.cm-partner-strip .cm-partner-button svg {
+  width: 15px;
+  height: 15px;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cm-partner-strip .cm-partner-button-outline {
+  border-color: rgb(255 255 255 / 48%);
+  background: rgb(255 255 255 / 10%);
+}
+
+.cm-partner-strip .cm-partner-button:hover {
+  transform: translateY(-2px);
+  color: var(--cm-white);
+  background: var(--cm-blue-light);
+}
+
+/* Texto de compatibilidad */
+.cm-partner-strip .cm-partner-compatibility {
+  max-width: 510px;
+  margin: 0;
+
+  color: rgb(255 255 255 / 72%);
+
+  font-family: var(--cm-font);
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+
+/* ==========================================================
+   9. TABLET
+========================================================== */
+
+@media (max-width: 1040px) {
+  .cm-partner-strip .cm-partner-shell {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+  }
+
+  .cm-partner-strip .cm-partner-center {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    padding: 20px 12px;
+  }
+
+  .cm-partner-strip .cm-partner-visual {
+    min-height: 200px;
+  }
+
+  .cm-partner-strip .cm-partner-photo {
+    height: 200px;
+    min-height: 200px;
+  }
+
+  .cm-partner-strip .cm-partner-visual-left {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .cm-partner-strip .cm-partner-visual-right {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
+
+
+/* ==========================================================
+   10. CELULARES - SLIDER
+========================================================== */
+
+@media (max-width: 700px) {
+
+  .cm-home-slider {
+    padding: 8px 9px 0;
+  }
+
+  .cm-home-carousel {
+    border-radius: 12px;
+  }
+
+  .cm-home-carousel .carousel-item {
+    height: 385px;
+  }
+
+  .cm-home-carousel .cm-slide-image {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .cm-home-carousel .cm-slide-panel {
+    left: 14px;
+    right: 14px;
+    bottom: 36px;
+
+    width: auto;
+    padding: 15px 17px;
+
+    border-radius: 12px;
+  }
+
+  .cm-home-carousel .cm-slide-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.6px;
+  }
+
+  .cm-home-carousel .cm-slide-title {
+    font-size: clamp(19px, 5.3vw, 27px);
+    letter-spacing: -0.25px;
+  }
+
+  .cm-home-carousel .cm-slide-description {
+    font-size: 11px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .cm-home-carousel .cm-slide-button {
+    min-height: 37px;
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  .cm-home-carousel .cm-slide-arrow {
+    top: 15px;
+
+    width: 34px;
+    height: 34px;
+
+    transform: none;
+  }
+
+  .cm-home-carousel .carousel-control-prev {
+    left: 12px;
+  }
+
+  .cm-home-carousel .carousel-control-next {
+    right: 12px;
+  }
+
+  .cm-home-carousel .cm-slide-indicators {
+    margin-bottom: 6px;
+  }
+}
+
+
+/* ==========================================================
+   11. CELULARES - CINTA PARTNER
+========================================================== */
+
+@media (max-width: 600px) {
+
+  .cm-partner-strip.cinta-konica {
+    padding: 16px 9px 24px;
+  }
+
+  .cm-partner-strip .cm-partner-shell {
+    gap: 8px;
+    padding: 9px;
+    border-radius: 14px;
+  }
+
+  .cm-partner-strip .cm-partner-center {
+    padding: 17px 8px;
+  }
+
+  .cm-partner-strip .cm-partner-title {
+    font-size: clamp(27px, 7vw, 36px);
+  }
+
+  .cm-partner-strip .cm-partner-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.8px;
+  }
+
+  .cm-partner-strip .cm-partner-identity {
+    gap: 8px;
+  }
+
+  .cm-partner-strip .cm-partner-identity-text {
+    font-size: 12px;
+  }
+
+  .cm-partner-strip .cm-partner-logo-box img {
+    width: 132px;
+    height: 35px;
+  }
+
+  .cm-partner-strip .cm-partner-description {
+    font-size: 11px;
+  }
+
+  .cm-partner-strip .cm-partner-services {
+    gap: 6px;
+  }
+
+  .cm-partner-strip .cm-partner-services span {
+    font-size: 9px;
+    padding: 6px;
+  }
+
+  .cm-partner-strip .cm-partner-visual {
+    min-height: 165px;
+  }
+
+  .cm-partner-strip .cm-partner-photo {
+    height: 165px;
+    min-height: 165px;
+  }
+
+  .cm-partner-strip .cm-partner-corner-image,
+  .cm-partner-strip .cm-partner-support-seal {
+    width: 47px;
+    height: 47px;
+    top: 8px;
+  }
+
+  .cm-partner-strip .cm-partner-corner-image {
+    left: 8px;
+  }
+
+  .cm-partner-strip .cm-partner-support-seal {
+    right: 8px;
+  }
+
+  .cm-partner-strip .cm-partner-photo-label {
+    font-size: 10px;
+    left: 9px;
+  }
+
+}
+
+
+/* ==========================================================
+   12. ACCESIBILIDAD Y MOVIMIENTO REDUCIDO
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .cm-home-slider *,
+  .cm-partner-strip * {
+    animation: none !important;
+    transition: none !important;
+  }
+
+}
+
+
+
+
+/* ==========================================================
+   COPIER MUNDO - SLIDER PREMIUM V3
+
+   ARCHIVO: inicio-promociones.css
+
+   OBJETIVOS:
+   1. Slider de canto a canto
+   2. Letras amarillo oro
+   3. Fondo azul transparente
+   4. Flechas doradas
+   5. Hover rojo
+   6. Mantener fotografías originales
+   7. Mantener Bootstrap y enlaces
+
+   Los selectores coinciden con inicio_slider.html.
+========================================================== */
+
+
+/* ==========================================================
+   1. CONTENEDOR PRINCIPAL
+========================================================== */
+
+.cm-home-slider {
+
+  /* Ocupa todo el ancho disponible */
+  width: 100%;
+  max-width: none;
+
+  /* Eliminar espacios exteriores */
+  margin: 0;
+  padding: 0;
+
+  /* Fondo detrás de las imágenes */
+  background: var(--cm-blue-dark);
+
+}
+
+
+/* ==========================================================
+   2. CARRUSEL COMPLETO
+========================================================== */
+
+.cm-home-slider .cm-home-carousel {
+
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+  padding: 0;
+
+  /* Esquinas rectas */
+  border-radius: 0;
+
+  /* Eliminar sombra anterior */
+  box-shadow: none;
+
+  overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   3. IMÁGENES ORIGINALES
+========================================================== */
+
+.cm-home-carousel .carousel-item {
+
+  position: relative;
+
+  height: 410px;
+
+  overflow: hidden;
+
+}
+
+
+.cm-home-carousel .cm-slide-image {
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  /* Mantiene proporciones */
+  object-fit: cover;
+
+  object-position: center;
+
+}
+
+
+/* ==========================================================
+   4. SOMBRA SOBRE LA IMAGEN
+
+   Más transparente para que las imágenes
+   originales tengan mayor protagonismo.
+========================================================== */
+
+.cm-home-carousel .cm-slide-shade {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background: linear-gradient(
+    0deg,
+    rgb(2 13 36 / 24%) 0%,
+    rgb(2 13 36 / 8%) 50%,
+    transparent 100%
+  );
+
+}
+
+
+/* ==========================================================
+   5. PANEL DE TEXTO AZUL TRANSPARENTE
+========================================================== */
+
+.cm-home-carousel .cm-slide-panel {
+
+  position: absolute;
+
+  z-index: 2;
+
+  /* Conservamos la ubicación original */
+  left: clamp(22px, 7vw, 90px);
+
+  bottom: 40px;
+
+  width: min(
+    630px,
+    calc(100% - 175px)
+  );
+
+  padding: 24px 28px;
+
+  /* Borde izquierdo amarillo oro */
+  border-left: 4px solid
+    var(--cm-slider-gold, #f5c84c);
+
+  border-top: 1px solid rgb(255 255 255 / 18%);
+
+  border-right: 1px solid rgb(255 255 255 / 18%);
+
+  border-bottom: 1px solid rgb(255 255 255 / 18%);
+
+  border-radius: 15px;
+
+  /* Fondo controlado por variables.css */
+  background: var(
+    --cm-slider-panel,
+    rgb(3 28 64 / 52%)
+  );
+
+  color: var(--cm-white);
+
+  /* Desenfoque muy ligero */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+
+  box-shadow:
+    0 10px 28px rgb(0 0 0 / 18%);
+
+}
+
+
+/* ==========================================================
+   6. ETIQUETA SUPERIOR AMARILLO ORO
+========================================================== */
+
+.cm-home-carousel .cm-slide-eyebrow {
+
+  color: var(
+    --cm-slider-gold,
+    #f5c84c
+  );
+
+  font-family: var(--cm-font);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.35px;
+
+  text-transform: uppercase;
+
+}
+
+
+/* Punto decorativo existente */
+
+.cm-home-carousel .cm-slide-dot {
+
+  background: var(--cm-green-light);
+
+}
+
+
+/* ==========================================================
+   7. PRIMERA LÍNEA DEL TÍTULO
+========================================================== */
+
+.cm-home-carousel .cm-slide-title {
+
+  color: var(--cm-white);
+
+  font-family: var(--cm-font-heading);
+
+  font-size: clamp(
+    23px,
+    2.65vw,
+    36px
+  );
+
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.7px;
+
+  text-shadow:
+    0 2px 5px rgb(0 0 0 / 28%);
+
+}
+
+
+/* ==========================================================
+   8. SEGUNDA LÍNEA DEL TÍTULO
+
+   ANTES: CELESTE
+   AHORA: AMARILLO ORO
+========================================================== */
+
+.cm-home-carousel .cm-slide-title span {
+
+  display: block;
+
+  color: var(
+    --cm-slider-gold,
+    #f5c84c
+  );
+
+  -webkit-text-fill-color:
+    var(--cm-slider-gold, #f5c84c);
+
+  background-image: none;
+
+  text-shadow:
+    0 2px 5px rgb(0 0 0 / 32%);
+
+}
+
+
+/* ==========================================================
+   9. DESCRIPCIÓN
+========================================================== */
+
+.cm-home-carousel .cm-slide-description {
+
+  color: rgb(255 255 255 / 96%);
+
+  font-family: var(--cm-font);
+
+  font-size: 13px;
+
+  font-weight: 500;
+
+  line-height: 1.6;
+
+  text-shadow:
+    0 1px 3px rgb(0 0 0 / 20%);
+
+}
+
+
+/* ==========================================================
+   10. BOTÓN DE CONTACTO
+
+   Conservamos el verde de asesoría.
+========================================================== */
+
+.cm-home-carousel .cm-slide-button {
+
+  color: var(--cm-white);
+
+  background: var(--cm-green);
+
+  border: 1px solid rgb(255 255 255 / 22%);
+
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+
+}
+
+
+.cm-home-carousel .cm-slide-button:hover {
+
+  color: var(--cm-white);
+
+  background: var(--cm-green-light);
+
+  transform: translateY(-2px);
+
+}
+
+
+/* ==========================================================
+   11. FLECHAS DEL SLIDER
+   COLOR NORMAL: AMARILLO ORO
+========================================================== */
+
+.cm-home-carousel .cm-slide-arrow {
+
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 4;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 43px;
+  height: 43px;
+
+  /* Flecha dorada */
+  color: var(
+    --cm-slider-gold,
+    #f5c84c
+  );
+
+  /* Fondo azul */
+  background: var(
+    --cm-slider-arrow-bg,
+    rgb(3 28 64 / 78%)
+  );
+
+  /* Borde dorado */
+  border: 1px solid
+    var(--cm-slider-gold, #f5c84c);
+
+  border-radius: 50%;
+
+  opacity: 1;
+
+  transform: translateY(-50%);
+
+  transition:
+    color 200ms ease,
+    background 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+
+}
+
+
+/* Conservamos posición izquierda */
+
+.cm-home-carousel .carousel-control-prev {
+  left: 12px;
+}
+
+
+/* Conservamos posición derecha */
+
+.cm-home-carousel .carousel-control-next {
+  right: 12px;
+}
+
+
+/* ==========================================================
+   12. REEMPLAZAR FLECHAS BLANCAS DE BOOTSTRAP
+
+   Dibujamos flechas con CSS usando currentColor.
+========================================================== */
+
+.cm-home-carousel .carousel-control-prev-icon,
+.cm-home-carousel .carousel-control-next-icon {
+
+  display: grid;
+
+  place-items: center;
+
+  width: 20px;
+  height: 20px;
+
+  background-image: none;
+
+}
+
+
+/* Línea de la flecha */
+
+.cm-home-carousel
+.carousel-control-prev-icon::after,
+
+.cm-home-carousel
+.carousel-control-next-icon::after {
+
+  content: "";
+
+  display: block;
+
+  width: 12px;
+  height: 12px;
+
+  border-top: 3px solid currentColor;
+
+  border-right: 3px solid currentColor;
+
+}
+
+
+/* Flecha izquierda */
+
+.cm-home-carousel
+.carousel-control-prev-icon::after {
+
+  transform: rotate(-135deg);
+
+  margin-left: 5px;
+
+}
+
+
+/* Flecha derecha */
+
+.cm-home-carousel
+.carousel-control-next-icon::after {
+
+  transform: rotate(45deg);
+
+  margin-right: 5px;
+
+}
+
+
+/* ==========================================================
+   13. HOVER ROJO COPIER MUNDO
+========================================================== */
+
+.cm-home-carousel .cm-slide-arrow:hover,
+.cm-home-carousel .cm-slide-arrow:focus-visible {
+
+  /* Flecha roja */
+  color: var(
+    --cm-slider-red,
+    #d60924
+  );
+
+  /* Fondo blanco para alto contraste */
+  background: var(--cm-white);
+
+  /* Borde rojo */
+  border-color: var(
+    --cm-slider-red,
+    #d60924
+  );
+
+  opacity: 1;
+
+  box-shadow:
+    0 0 0 3px rgb(214 9 36 / 16%);
+
+}
+
+
+/* ==========================================================
+   14. INDICADORES INFERIORES
+========================================================== */
+
+.cm-home-carousel
+.cm-slide-indicators button {
+
+  background-color: var(--cm-white);
+
+  opacity: 0.58;
+
+}
+
+
+/* Indicador activo amarillo oro */
+
+.cm-home-carousel
+.cm-slide-indicators button.active {
+
+  background-color: var(
+    --cm-slider-gold,
+    #f5c84c
+  );
+
+  opacity: 1;
+
+}
+
+
+/* ==========================================================
+   15. RESPONSIVE PARA CELULARES
+========================================================== */
+
+@media (max-width: 700px) {
+
+  .cm-home-slider {
+
+    width: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+  }
+
+
+  .cm-home-slider .cm-home-carousel {
+
+    border-radius: 0;
+
+  }
+
+
+  .cm-home-carousel .carousel-item {
+
+    height: 385px;
+
+  }
+
+
+  .cm-home-carousel .cm-slide-image {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+  }
+
+
+  /* Panel más oscuro en móvil para legibilidad */
+
+  .cm-home-carousel .cm-slide-panel {
+
+    left: 14px;
+    right: 14px;
+    bottom: 36px;
+
+    width: auto;
+
+    padding: 15px 17px;
+
+    border-left-color:
+      var(--cm-slider-gold, #f5c84c);
+
+    background: rgb(3 28 64 / 66%);
+
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+  }
+
+
+  .cm-home-carousel .cm-slide-title {
+
+    font-size: clamp(
+      19px,
+      5.3vw,
+      27px
+    );
+
+  }
+
+
+  .cm-home-carousel .cm-slide-description {
+
+    font-size: 11px;
+
+  }
+
+
+  /* En móvil conservamos las flechas arriba */
+
+  .cm-home-carousel .cm-slide-arrow {
+
+    top: 15px;
+
+    width: 34px;
+    height: 34px;
+
+    transform: none;
+
+  }
+
+
+  .cm-home-carousel .carousel-control-prev {
+    left: 12px;
+  }
+
+
+  .cm-home-carousel .carousel-control-next {
+    right: 12px;
+  }
+
+}
+
+
+/* ==========================================================
+   16. ACCESIBILIDAD
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .cm-home-carousel .cm-slide-arrow {
+
+    transition: none;
+
+  }
+
+}

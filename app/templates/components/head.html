@@ -1,130 +1,84 @@
 
-<!-- components/head.html -->
-<meta charset="UTF-8" />
-<!-- ✅ Codificación y vista adaptable -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- 🔹 Título SEO optimizado -->
-<title>Copier Mundo – Fotocopiadoras y Servicio Técnico Konica Minolta en Cusco</title>
-<!-- 🔹 Descripción y palabras clave -->
-<meta name="description" content="Copier Mundo – Partner Oficial de Konica Minolta en Cusco. Venta, alquiler y servicio técnico de fotocopiadoras e impresoras. Soluciones empresariales con soporte técnico especializado.">
-<meta name="keywords" content="fotocopiadoras Cusco, Konica Minolta Cusco, servicio técnico fotocopiadoras, soporte técnico Cusco, impresoras multifuncionales, mantenimiento de equipos, recarga de tóner, reparación de impresoras, técnicos Cusco, venta de equipos Konica Minolta, partner oficial, Copier Mundo Cusco">
-<meta name="author" content="Vandamme Luque Rodríguez (RMOSOFT) & Alex - Asistente IA">
+<!--
+{# app/templates/components/head.html — incluir UNA vez dentro de <head> #}
+-->
 
-<!-- 🧭 Instrucciones para los motores de búsqueda -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#03132f">
+<title>{{ page_title | default('Copier Mundo | Fotocopiadoras y servicio técnico en Cusco', true) }}</title>
+<meta name="description" content="{{ page_description | default('Venta, alquiler, mantenimiento y consumibles para fotocopiadoras e impresoras en Cusco. Soluciones de impresión para empresas.', true) }}">
+<meta name="author" content="Copier Mundo">
 <meta name="robots" content="index, follow">
-<meta name="googlebot" content="index, follow">
-
-<!-- 🟦 Open Graph (vista previa en redes sociales) -->
-<meta property="og:title" content="Copier Mundo – Partner Oficial de Konica Minolta en Cusco">
-<meta property="og:description" content="Venta, alquiler y mantenimiento de fotocopiadoras e impresoras en Cusco. Partner Oficial de Konica Minolta.">
-<meta property="og:image" content="https://www.copiermundo.com/static/img/Imagenes-cintas/logo-konica-digital.jpg">
-<meta property="og:url" content="https://www.copiermundo.com/">
+<meta name="google-site-verification" content="26GguQ3vTM90rnCk1B1nZH3aOj0mCGhfJCptGJ__Sk4">
+<link rel="canonical" href="{{ canonical_url | default('https://www.copiermundo.com' ~ request.url.path, true) }}">
+<meta property="og:locale" content="es_PE">
 <meta property="og:type" content="website">
-
-<!-- 🕊️ Twitter Card -->
+<meta property="og:site_name" content="Copier Mundo">
+<meta property="og:title" content="{{ page_title | default('Copier Mundo | Soluciones de impresión', true) }}">
+<meta property="og:description" content="{{ page_description | default('Venta, alquiler, consumibles y soporte técnico en Cusco.', true) }}">
+<meta property="og:url" content="{{ canonical_url | default('https://www.copiermundo.com' ~ request.url.path, true) }}">
+<meta property="og:image" content="https://www.copiermundo.com/static/img/Logo-copiermundo-1.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Copier Mundo – Partner Oficial de Konica Minolta en Cusco">
-<meta name="twitter:description" content="Soluciones empresariales en fotocopiadoras, impresoras y soporte técnico profesional en Cusco.">
-<meta name="twitter:image" content="https://www.copiermundo.com/static/img/Imagenes-cintas/logo-konica-digital.jpg">
-
-<!-- 🌐 Idioma y geolocalización -->
-<meta name="language" content="Spanish">
-<meta name="geo.region" content="PE-CUS">
-<meta name="geo.placename" content="Cusco, Perú">
-<meta name="geo.position" content="-13.53195;-71.967463">
-<meta name="ICBM" content="-13.53195, -71.967463">
-
-<!-- Google Search Console Verification -->
-<meta name="google-site-verification" content="googleb6ed95c999ea8ba5.html" /> 
-
-<meta name="google-site-verification" content="26GguQ3vTM90rnCk1B1nZH3aOj0mCGhfJCptGJ__Sk4" />
-
-<!-- 🔹 Canonical URL (evita duplicados SEO) -->
-<link rel="canonical" href="https://www.copiermundo.com/">
-
-<!-- 🧩 Favicon -->
-<link rel="icon" href="{{ url_for('static', path='img/favicon.ico') }}" type="image/x-icon">
-
-<!-- 🖋️ Fuentes y estilos para cambiar las letras -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
-<!-- 📜 JSON-LD (estructura de negocio para Google) -->
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Copier Mundo",
-    "image": "https://www.copiermundo.com/static/img/Imagenes-cintas/logo-konica-digital.jpg",
-    "url": "https://www.copiermundo.com/",
-    "telephone": "+51986950533",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Cusco, Perú",
-      "addressLocality": "Cusco",
-      "addressRegion": "Cusco",
-      "postalCode": "08000",
-      "addressCountry": "PE"
-    },
-    "openingHours": "Mo-Fr 08:00-18:00",
-    "sameAs": [
-      "https://www.facebook.com/copiermundo/",
-      "https://www.instagram.com/konicaminoltacusco/",
-      "https://www.tiktok.com/@copier.mundo"
-    ]
-  }
-</script>
-
-  <!-- 🔧 Otros -->
-
-<!-- Bootstrap 5 CSS -->
+<meta name="twitter:title" content="Copier Mundo">
+<meta name="twitter:description" content="Soluciones de impresión para empresas en Cusco.">
+<meta name="twitter:image" content="https://www.copiermundo.com/static/img/Logo-copiermundo-1.png">
+<link rel="icon" type="image/png" href="{{ url_for('static', path='img/favicon.png') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-<link rel="icon" type="image/x-icon" href="/static/img/favicon.png">
-<!--<link rel="icon" type="image/x-icon" href="/static/img/productos/hp-laser-107w-01.jpg">-->
-<!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="{{ url_for('static', path='img/logo-principal-01.png') }}">
-<link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+{# Mantener durante la migración: index.html aún usa utilidades Tailwind. #}
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&amp;display=swap" rel="stylesheet"/>
+{# CSS tradicional primero; componentes modernos después. #}
+<link rel="stylesheet" href="{{ url_for('static', path='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', path='css/variables.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', path='css/header.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', path='css/inicio-banner.css') }}">
 
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+<!-- ===========================================
+     DISEÑO DEL SLIDER Y CINTA CORPORATIVA
+     Solamente sus clases nuevas.
+=========================================== -->
+<!-- SLIDER Y CINTA PROMOCIONAL DE LA PORTADA -->
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', path='css/inicio-promociones.css') }}"
+>
 
-<!-- Bootstrap 5 JS (necesario para el carousel y componentes interactivos) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- ==========================================
+     FOOTER CORPORATIVO COPIER MUNDO
+=========================================== -->
 
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', path='css/footer.css') }}"
+>
 
-<style>
-   body {
-      font-family: "Roboto", sans-serif;
-    }
-</style>
-
-<style>
-@keyframes slideIn {
-  from { opacity: 0; transform: translateX(100%); }
-  to { opacity: 1; transform: translateX(0); }
+{# NO duplicar estas bibliotecas si base.html ya las carga. #}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js" defer></script>
+<script src="{{ url_for('static', path='js/header/header.js') }}" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Copier Mundo",
+  "url": "https://www.copiermundo.com/",
+  "image": "https://www.copiermundo.com/static/img/Logo-copiermundo-1.png",
+  "telephone": "+51986500616",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Micaela Bastidas 727",
+    "addressLocality": "Cusco",
+    "addressRegion": "Cusco",
+    "addressCountry": "PE"
+  },
+  "sameAs": [
+    "https://www.facebook.com/copiermundo/",
+    "https://www.instagram.com/konicaminoltacusco/",
+    "https://www.tiktok.com/@copier.mundo"
+  ]
 }
-@keyframes slideOut {
-  from { opacity: 1; transform: translateX(0); }
-  to { opacity: 0; transform: translateX(100%); }
-}
-.animate-slide-in { animation: slideIn 0.5s ease-out; }
-.animate-slide-out { animation: slideOut 0.5s ease-in forwards; }
-</style>
-
-<script src="{{ url_for('static', path='js/cart.js') }}"></script>
-
-
-
+</script>

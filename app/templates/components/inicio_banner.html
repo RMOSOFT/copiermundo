@@ -1,0 +1,64 @@
+
+<!--{# app/templates/components/inicio_banner.html — hero solo para la página de inicio #}-->
+
+
+<section class="cm-pro-hero" aria-labelledby="cm-pro-hero-title">
+  <svg class="cm-pro-hero-circuit" viewBox="0 0 1200 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="currentColor" stroke-width="1" opacity=".35">
+      <path d="M0 350h100l50-50h90m720-235h80l75 75h85M0 120h140l60 60h100M900 355h95l80-80h125"/>
+      <path d="M90 420l70-70h145m590-255h150l75-65h80M100 40h160l60 55h100"/>
+      <circle cx="150" cy="300" r="5"/><circle cx="1040" cy="65" r="5"/>
+      <circle cx="1075" cy="275" r="5"/><circle cx="320" cy="95" r="5"/>
+    </g>
+  </svg>
+  <div class="cm-pro-container cm-pro-hero-grid">
+    <div class="cm-pro-hero-brand">
+      <div class="cm-pro-hero-logo">
+        <img src="{{ url_for('static', path='img/Konica_Minoltaicono.png') }}"
+             alt="Konica Minolta" width="190" height="70">
+      </div>
+      <p class="cm-pro-hero-statement">Tecnología que<br>impulsa tu negocio</p>
+      <div class="cm-pro-benefits">
+        <div><span class="cm-pro-benefit-icon"><svg class="cm-icon"><use href="#cm-i-chart"/></svg></span><span>Alto<br>rendimiento</span></div>
+        <div><span class="cm-pro-benefit-icon"><svg class="cm-icon"><use href="#cm-i-leaf"/></svg></span><span>Eficiencia<br>y ahorro</span></div>
+        <div><span class="cm-pro-benefit-icon"><svg class="cm-icon"><use href="#cm-i-shield"/></svg></span><span>Calidad<br>profesional</span></div>
+        <div><span class="cm-pro-benefit-icon"><svg class="cm-icon"><use href="#cm-i-settings"/></svg></span><span>Soporte<br>especializado</span></div>
+      </div>
+    </div>
+
+    <div class="cm-pro-hero-equipment">
+      <div class="cm-pro-equipment-halo" aria-hidden="true"></div>
+      <div class="cm-pro-equipment-frame">
+        <span class="cm-pro-equipment-tag">Tecnología de impresión</span>
+        <img src="{{ url_for('static', path='img/BannersFotocopiadorasSeminuevasBlancoNegro/ImgFotocopiadoraCopla/Img-fotocopiadora-copla.jpg') }}"
+             alt="Fotocopiadoras multifuncionales disponibles en Copier Mundo"
+             width="580" height="370" decoding="async" fetchpriority="high">
+      </div>
+      <span class="cm-pro-equipment-caption">Equipos para oficinas, negocios e instituciones</span>
+    </div>
+
+    <div class="cm-pro-hero-content">
+      <span class="cm-pro-hero-eyebrow">Copier Mundo <span aria-hidden="true">•</span> Cusco, Perú</span>
+      <h1 id="cm-pro-hero-title">Soluciones de impresión
+        <span>para empresas e instituciones</span>
+      </h1>
+      <p class="cm-pro-hero-services">Venta <span>•</span> Alquiler <span>•</span> Servicio técnico</p>
+      <p class="cm-pro-hero-description">Equipos multifuncionales, consumibles y asistencia especializada para mejorar la productividad de tu negocio.</p>
+      <div class="cm-pro-hero-actions">
+        <a href="/productos/fotocopiadoras" class="cm-pro-button cm-pro-button-primary">
+          Ver equipos <svg class="cm-icon"><use href="#cm-i-arrow"/></svg>
+        </a>
+        <a href="https://wa.me/51940414440?text=Hola%2C%20quiero%20asesor%C3%ADa%20para%20elegir%20una%20fotocopiadora."
+           class="cm-pro-button cm-pro-button-outline" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Solicitar asesoría
+        </a>
+      </div>
+      <div class="cm-pro-hero-services-grid">
+        <div><svg class="cm-icon"><use href="#cm-i-headset"/></svg><span>Asesoría<br>personalizada</span></div>
+        <div><svg class="cm-icon"><use href="#cm-i-truck"/></svg><span>Envíos a<br>todo el Perú</span></div>
+        <div><svg class="cm-icon"><use href="#cm-i-wrench"/></svg><span>Mantenimiento<br>y repuestos</span></div>
+        <div><svg class="cm-icon"><use href="#cm-i-file"/></svg><span>Soluciones<br>para empresas</span></div>
+      </div>
+    </div>
+  </div>
+</section>
